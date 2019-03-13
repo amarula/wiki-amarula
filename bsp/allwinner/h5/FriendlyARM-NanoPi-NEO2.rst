@@ -2,7 +2,7 @@ FriendlyARM-NanoPi-NEO2
 =======================
 Hardware Access
 
-.. image:: nanopi_neo2.jpeg 
+.. image:: /images/nanopi_neo2.jpeg 
 
 Serial debug and Power connections
 

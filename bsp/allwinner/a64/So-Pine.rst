@@ -5,7 +5,7 @@ This tutorial will show the details of SoPine board mainline support and other n
 
 Hardware Access
 
-.. image:: sopine.jpeg
+.. image:: /images/sopine.jpeg
 
 BSP Build
 Manual Build

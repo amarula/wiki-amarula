@@ -19,7 +19,7 @@ Hardware Access
 Power supply: External 5V Jack
 USB OTG Cable, USB to TTL for debug
 
-.. image:: lime2.jpg
+.. image:: /images/lime2.jpg
 
 BSP Build
 *********

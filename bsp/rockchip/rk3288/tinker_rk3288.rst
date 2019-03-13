@@ -17,7 +17,7 @@ Configure falcon
 
 Hardware Access
 
-.. image:: tinker.jpg
+.. image:: /images/tinker.jpg
 
 Serial debug and Power connections
 

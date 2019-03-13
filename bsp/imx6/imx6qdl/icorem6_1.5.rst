@@ -110,7 +110,7 @@ Once Linux boot, prepare media control chart for finding pipeline setups
         On host
         $ dot -T png -o mipi-ov5640.png mipi-ov5640.dot
 
-.. image:: mipi-ov5640.png
+.. image:: /images/mipi-ov5640.png
 
 
 configure the pipeline with default format AYUV32/640x480,this can be alter with any other relevant format to testing with.

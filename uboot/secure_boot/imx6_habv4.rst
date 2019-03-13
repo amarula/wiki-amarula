@@ -12,7 +12,7 @@ termed as Verified or Secure or Trusted system mechanism.
 
 i.MX Trust Architecture - Overview
 
-.. image:: imx_trust_arch.png
+.. image:: /images/imx_trust_arch.png
 
 
 Below are the threats that are identified and processed with trusted architecture.
@@ -156,7 +156,7 @@ AES: Advanced Encryption Standard used for Encryption process
 
 HAB Secure Boot chain 
 
-.. image:: hab-secure-boot.png
+.. image:: /images/hab-secure-boot.png
 
 Upon reset i.MX Boot ROM reads the efuse to determine the security configuration of the SoC and
 the type of the boot device.
@@ -184,7 +184,7 @@ HAB Overview
 HAB - Signed Boot
 Signed Boot Flow
 
-.. image:: hab-sign.png
+.. image:: /images/hab-sign.png
 
 During Signing, host need to generate PKI tree, Super Root Keys, or SRK, are components of the PKI tree,
 then the table of public SRK should burn to E-Fuse and finally signed image can be generated using 
@@ -196,13 +196,13 @@ the result to the SRK fuse values.
 If the SRK verification is successful, this establishes the root of trust, and the remainder of the signature can be processed to authenticate the image.
 Image Signer Flow
 
-.. image:: Image_Sign.png
+.. image:: /images/Image_Sign.png
 
 
 Signed Boot - Usage
 Signed Image Format (U-Boot)
 
-.. image:: format-signed-image.png
+.. image:: /images/format-signed-image.png
 
 
 The below procedure will describe an example on how signed boot has been done with Engicam i.CoreM6 Quad board.
@@ -612,7 +612,7 @@ Once this setup executed, chip will only boot an image signed with the keys that
 HAB - Encrypted boot
 Encrypted Boot Flow
 
-.. image:: hab-encrypt.png
+.. image:: /images/hab-encrypt.png
 
 During Encryption, host need to follow similar steps as Signing process for 'Header' of Software Data.
 then the table of public SRK should burn to E-Fuse and finally payload cab be encrypted using
@@ -630,12 +630,12 @@ DEK_blob using OTPMK and encrypted payload is further decrypt using secrete key 
 
 Image Encrypt Flow
 
-.. image:: Image_Encrypt.png
+.. image:: /images/Image_Encrypt.png
 
 Encrypted boot - Usage
 Encrypted Image Format (U-Boot)
 
-.. image:: format-encrypted-image.png
+.. image:: /images/format-encrypted-image.png
 
 The below procedure will describe an example on how encrypted boot has been done with Engicam i.CoreM6 Quad board.
 
@@ -810,7 +810,7 @@ See uImage format, which built from linux-next tree
 See the same uImage is fitting on memory after proper signed, just numerical understanding nevertheless 
 same procedure as with "HAB - Signed Boot"
 
-.. image:: Signed-uImage-format.png
+.. image:: /images/Signed-uImage-format.png
 
 Signed uImage Creation
 
