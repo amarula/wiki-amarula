@@ -12,7 +12,7 @@ Power: DC-in 12V ~ 24V socket supply
 Sometimes junk characters show on serial console so better to plug-in USB OTG cable
 
 
-.. image:: vyasa.jpg
+.. image:: /images/vyasa.jpg
 
 Prebuilt Image
 Insert the SD card on to host and write the image.

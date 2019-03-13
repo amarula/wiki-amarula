@@ -7,7 +7,7 @@ and other needful information is available at hardware and linux-sunxi
 
 Hardware Access
 
-.. image:: opi-one-plus.jpg
+.. image:: /images/opi-one-plus.jpg
 
 BSP Build
 Manual Build

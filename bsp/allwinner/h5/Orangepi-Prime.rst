@@ -5,7 +5,7 @@ This tutorial will show the details of Orangepi Prime board mainline support and
 
 Hardware Access
 
-.. image:: opi_prime.jpeg
+.. image:: /images/opi_prime.jpeg
 
 
 BSP Build

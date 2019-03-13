@@ -5,7 +5,7 @@ This tutorial will show the details of Orangepi Win/Win+ board mainline support 
 
 Hardware Access
 
-.. image:: opi_win.jpeg
+.. image:: /images/opi_win.jpeg
 
 BSP Build
 Manual Build

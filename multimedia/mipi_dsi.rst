@@ -16,5 +16,5 @@ Bananapi S070WV20-CT16 MIPI-DSI DSI panel connected via board DSI port with
 - PD7 gpio for backlight vdd supply
 Initial patch version is submitted to Linux mailing-list https://lkml.org/lkml/2018/9/27/750
 
-.. image:: mipi.jpg
+.. image:: /images/mipi.jpg
 

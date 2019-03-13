@@ -13,7 +13,7 @@ UiAutomator is testing framework developed by Google. It is used for cross-app f
 
 To start writing test cases in UiAutomator you will certainly use tool included in the SDK, called uiautomatorviewer. It helps to recognize UI elements present on the screen, that can be referenced in the code. It looks as shown on the following image.
 
-.. image:: ScreenShotUiautomator3.png
+.. image:: /images/ScreenShotUiautomator3.png
 
 The framework is based on Java and is well-suited for writing black box-style automated tests. The usage is really simple and the code should mimic manual steps like touch the button, swipe right and enter some text.
 
@@ -41,7 +41,7 @@ JUnit is unit testing framework for testing of java based applications. The base
 
 We have developed additional classes build on jUnit, that help us the manipulation of the device, collecting the results and logs when the test scenario finishes with failed result. The following test setup allows us to test on multiple devices in parallel on linux host.
 
-.. image:: diag_general_arch.png
+.. image:: /images/diag_general_arch.png
 
 
 JUnit framework is complex tool to ease the test development. It uses predefined annotations @Test, @Before, @After etc. The construct is simple as shown in the following code snippet. Instead of testing java code we are basically comparing the results from Android shell commands or logcat output from running test applications with expected results. For example we can verify that the number of users in the OS are equal to three. Each test has to be annotated with @Test. @Before annotates method that is executed before each test present in the class.

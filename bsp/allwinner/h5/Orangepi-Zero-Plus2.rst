@@ -5,7 +5,7 @@ This tutorial will show the details of Orangepi Zero Plus2 board mainline suppor
 
 Hardware Access
 
-.. image:: opi_zero_plus2.jpeg
+.. image:: /images/opi_zero_plus2.jpeg
 
 BSP Build
 Manual Build

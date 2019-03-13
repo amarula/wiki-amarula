@@ -7,7 +7,7 @@ This tutorial will show the details of Pine64 board mainline support and other n
 
 Hardware Access
 
-.. image:: pine64.jpeg
+.. image:: /images/pine64.jpeg
 
 
 BSP Build

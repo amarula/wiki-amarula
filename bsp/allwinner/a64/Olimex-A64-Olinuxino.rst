@@ -5,7 +5,7 @@ This tutorial will show the details of Olimex A64-Olinuxino board mainline suppo
 
 Hardware Access
 
-.. image:: a64-olin.jpeg
+.. image:: /images/a64-olin.jpeg
 
 BSP Build
 Manual Build
