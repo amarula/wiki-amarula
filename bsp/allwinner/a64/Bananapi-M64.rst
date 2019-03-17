@@ -1,5 +1,5 @@
-A60 Bananapi M64
-======================
+Bananapi M64
+============
 
 Hardware Access
 Serial debug and Power connections
