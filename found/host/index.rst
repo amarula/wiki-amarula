@@ -3,20 +3,13 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to Amarula Wiki!
-=======================================
+Host - Tools
+============
 
 
 .. _contents: Table of contents
 
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 2
    :caption: Contents:
-   
-   
-   bsp/index
-   multimedia/index
-   uboot/index
-   giotto_tune/index.rst
-   found/index
