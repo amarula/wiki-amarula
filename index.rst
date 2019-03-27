@@ -19,7 +19,4 @@ Welcome to Amarula Wiki!
    multimedia/index
    uboot/index
    giotto_tune/index.rst
-   os_automatic_testing/index
-   risc_v/index
-   yocto
-
+   misc/index

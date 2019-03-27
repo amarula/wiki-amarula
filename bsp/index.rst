@@ -15,6 +15,6 @@ Board Support Package
    :caption: Contents:
    
    allwinner/index
-   imx6/index
+   imx/index
    rockchip/index
-
+   riscv/riscv.rst

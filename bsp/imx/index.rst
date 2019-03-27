@@ -3,16 +3,13 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Image Boot
+I.MX
 =======================================
 
 .. toctree::
    :maxdepth: 3
    :caption: Contents:
-   
-   boot_linux_on_engicam_imx6
-   boot_linux_on_vyasa_rk3288
-   redundant
-   verified_boot_on_imx6
-   verified_boot_on_sunxi64
+  
+   imx6qdl/index
+   biticino/index
 
