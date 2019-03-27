@@ -3,22 +3,13 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to Amarula Wiki!
-=======================================
+OP-TEE
+======
 
 
 .. _contents: Table of contents
 
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 2
    :caption: Contents:
-   
-   about/about.rst
-   found/index
-   bsp/index
-   uboot/index
-   optee/index
-   drm/index
-   media/index
-   giotto_tune/index.rst
