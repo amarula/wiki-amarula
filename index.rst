@@ -14,7 +14,7 @@ Welcome to Amarula Wiki!
    :maxdepth: 1
    :caption: Contents:
    
-   
+   about/about.rst
    bsp/index
    multimedia/index
    uboot/index
