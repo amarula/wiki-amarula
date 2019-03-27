@@ -15,8 +15,9 @@ Welcome to Amarula Wiki!
    :caption: Contents:
    
    about/about.rst
-   bsp/index
-   multimedia/index
-   uboot/index
-   giotto_tune/index.rst
    found/index
+   bsp/index
+   uboot/index
+   drm/index
+   media/index
+   giotto_tune/index.rst
