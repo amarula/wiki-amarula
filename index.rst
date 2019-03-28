@@ -21,4 +21,4 @@ Welcome to Amarula Wiki!
    optee/index
    drm/index
    media/index
-   giotto_tune/index.rst
+   hw/index
