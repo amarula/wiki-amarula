@@ -9,12 +9,11 @@ Allwinner A64
 .. toctree::
    :maxdepth: 3
    :caption: Contents:
-        
-   Amarula-A64-relic
-   Bananapi-M64
-   Friendly-Nanopi-A64
-   Olimex-A64-Olinuxino
-   Orangepi-Win
-   Pine64
-   So-Pine
 
+   relic
+   bpi-m64
+   npi-a64
+   a64-oli
+   opi-win
+   pine
+   sopine

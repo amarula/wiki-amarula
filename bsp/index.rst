@@ -14,7 +14,7 @@ Board Support Packages
    :maxdepth: 2
    :caption: Contents:
    
-   allwinner/index
+   sunxi/index
    imx/index
    rockchip/index
    riscv/riscv.rst
