@@ -3,7 +3,7 @@ Giotto Tune
 
 Giotto tune-box and board-amarula
 
-.. image:: /images/gcgiotto-tune-box-and-board-amarula.jpg
+.. image:: /images/giotto-tune-box-and-board-amarula.jpg
 
 
 WE PRESENT YOU GIOTTO TUNE
