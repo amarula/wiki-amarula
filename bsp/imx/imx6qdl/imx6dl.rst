@@ -1,5 +1,5 @@
-Mamoj
-======
+BTicino i.MX6DL
+===============
 
 This tutorial will show the detail usage of BTicino i.MX6DL Mamoj board with respective mainline projects.
 

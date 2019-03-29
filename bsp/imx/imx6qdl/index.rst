@@ -15,4 +15,4 @@ IMX6 QDL
    :caption: Contents:
    
    icorem6_1.5
-
+   imx6dl
