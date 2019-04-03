@@ -3,15 +3,13 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-OP-TEE
-======
-
-
-.. _contents: Table of contents
-
+Optee on IMX6QDL ICORE
+=======================================
 
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
-
-   imx6/index
+   
+   imx6qdl_icore
+   optee_demo_applications
+   optee_test_suite
