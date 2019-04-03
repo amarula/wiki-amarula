@@ -3,12 +3,17 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Biticino Mamoj
+Allwinner A64
 =======================================
 
 .. toctree::
    :maxdepth: 3
    :caption: Contents:
-   
-   mamoj
 
+   relic
+   bpi-m64
+   npi-a64
+   a64-oli
+   opi-win
+   pine
+   sopine
