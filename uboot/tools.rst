@@ -1,8 +1,9 @@
-Tools
-=====
+Common Setup and Tools
+=======================
 
 
 Host
+####
 
 These are host ready tools installation for Ubuntu 18.04 LTS on 64 bit
 
@@ -15,8 +16,9 @@ These are host ready tools installation for Ubuntu 18.04 LTS on 64 bit
         $ export PATH=/path/to/install/dtc:$PATH
 
 Crosstool
+#########
 ARM
-
+****
 ::
 
         bash> cd /to/path
@@ -26,7 +28,7 @@ ARM
         bash> export CROSS_COMPILE=arm-linux-gnueabi-
 
 ARM64
-
+******
 ::
 
         bash> cd /to/path
@@ -36,8 +38,10 @@ ARM64
         bash> export CROSS_COMPILE=aarch64-linux-gnu-
 
 SD Setup
-Single partition
+########
 
+Single partition
+****************
 ::
 
         $ fdisk /dev/mmcblk0
@@ -133,6 +137,7 @@ Single partition
         $ mkfs.ext4 -L rootfs /dev/mmcblk0p1
 
 Falcon partition
+****************
 
 ::
 
@@ -224,6 +229,7 @@ Falcon partition
         $ mkfs.ext4 -L rootfs /dev/mmcblk0p1
 
 Dual partition
+**************
 
 ::
 
@@ -335,11 +341,15 @@ Dual partition
 
 
 Console Setting
+###############
 
 We use minicom to get serial console.
 
 SUNXI
+#####
+
 sunxi-fel
+*********
 
 ::
 
@@ -349,7 +359,7 @@ sunxi-fel
         $ make
 
 boot32-fel.scr
-
+**************
 ::
 
         $ boot32-fel.cmd
@@ -366,7 +376,7 @@ boot32-fel.scr
            Image 0: 113 Bytes = 0.11 KiB = 0.00 MiB
 
 boot64-fel.scr
-
+**************
 ::
 
         $ boot64-fel.cmd
@@ -383,7 +393,7 @@ boot64-fel.scr
            Image 0: 113 Bytes = 0.11 KiB = 0.00 MiB
 
 Virtual disk
-
+************
 ::
 
         # dd if=/dev/zero of=zero.bin bs=1024 count=1024
@@ -425,7 +435,9 @@ Virtual disk
         # losetup -d /dev/loop0
 
 Network
+#######
 TFTP
+****
 
 Install package
 
