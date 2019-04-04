@@ -2,37 +2,32 @@
 FriendlyARM Nanopi A64
 ######################
 
-Skip to end of metadata
-Created by Jagan Teki, last modified on 2017-12-31 Go to start of metadata
-This tutorial will show the details of Nanopi A64 board mainline support and other needed details, for more information about hardware and linux-sunxi
+This tutorial will show the details of Nanopi A64 board mainline support and other needed details, for more information about `hardware <http://nanopi.io/nanopi-a64.html>`_ and `linux-sunxi <http://linux-sunxi.org/FriendlyARM_NanoPi_A64>`_
 
 Hardware Access
-BSP Build
-Manual Build
-ATF
-U-Boot
-Linux
-Buildroot
-Booting
-SD Boot
-Linux
-RTL8189ES Wifi
-EMAC
+###############
 Hardware Access
 Serial debug:  4Pin, 2.54mm pitch pin-header 
 
 Power cable: DC 5V/2A USB
 
 
+.. image:: /images/nanopi_a64.jpeg
+
+
+
 
 BSP Build
+#########
+
 Manual Build
-Image building need host to ready with all necessary tools ready, refer here
+************
+Image building need host to ready with all necessary tools ready, refer `here <https://wiki.amarulasolutions.com/uboot/tools.html#arm64>`_
 
 Below are the details of Image build for Nanopi A64 board.
 
 ATF
-
+^^^
 ::
 
         git clone https://github.com/apritzel/arm-trusted-firmware.git
@@ -41,6 +36,7 @@ ATF
         export BL31=/path/to/arm-trusted-firmware/build/sun50iw1p1/release/bl31.bin
 
 U-Boot
+^^^^^^
 
 ::
 
@@ -50,6 +46,7 @@ U-Boot
         make 
 
 Linux
+^^^^^
 
 ::
 
@@ -60,7 +57,8 @@ Linux
         ARCH=arm64 make -j 4 Image dtbs
 
 Buildroot
-It's easy to build entire system using buildroot and mainline supported nanopi-a64 already. See read this readme.txt for more info.
+*********
+It's easy to build entire system using buildroot and mainline supported nanopi-a64 already. See read this `readme.txt <https://git.buildroot.net/buildroot/tree/board/friendlyarm/nanopi-a64/readme.txt>`_ for more info.
 
 ::
 
@@ -70,8 +68,11 @@ It's easy to build entire system using buildroot and mainline supported nanopi-a
         make
 
 Booting
+#######
+
 SD Boot
-Partition the SD card in host with Single Falcon partition
+*******
+Partition the SD card in host with `Single Falcon partitionc <https://wiki.amarulasolutions.com/uboot/tools.html#falcon-partition>`_
 
 ::
 
@@ -88,5 +89,8 @@ Partition the SD card in host with Single Falcon partition
 Insert the SD card and power-on the board. See the Linux boot start from SPL
 
 Linux
+#####
 RTL8189ES Wifi
+**************
 EMAC
+****

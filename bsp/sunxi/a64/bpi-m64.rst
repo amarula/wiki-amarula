@@ -1,21 +1,27 @@
 Bananapi M64
 ============
+This tutorial will show the details of Bananapi M64 board mainline support and other needed details, for more information about `hardware <http://www.banana-pi.org/m64.html>`_ and `linux-sunxi <https://linux-sunxi.org/Banana_Pi_M64>`_
 
 Hardware Access
+###############
+
 Serial debug and Power connections
 
 .. image:: /images/bpi-m64.jpeg
 
 
 BSP Build
+#########
 Manual Build
-For manual building refer here for all necessary information.
+************
+For manual building refer `here <https://wiki.amarulasolutions.com/uboot/image_build/allwinner_sunxi64.html>`_ for all necessary information.
 
-Image building need host to ready with all necessary tools ready, refer here
+Image building need host to ready with all necessary tools ready, refer `here <https://wiki.amarulasolutions.com/uboot/tools.html#arm64>`_
 
 Below are the details of Image build for Banana Pi BPI-M64 board.
 
 ATF
+^^^
 
 ::
 
@@ -25,6 +31,7 @@ ATF
         export BL31=/path/to/arm-trusted-firmware/build/sun50iw1p1/release/bl31.bin
 
 U-Boot
+^^^^^^
 
 ::
 
@@ -34,6 +41,7 @@ U-Boot
         make 
 
 Linux
+^^^^^
 
 ::
 
@@ -44,7 +52,8 @@ Linux
         ARCH=arm64 make -j 4 Image dtbs
 
 Buildroot
-It's easy to build entire system using buildroot and mainline supported bananapi-m64 already. See read this readme.txt for more info.
+*********
+It's easy to build entire system using buildroot and mainline supported bananapi-m64 already. See read this `readme.txt <https://git.buildroot.net/buildroot/tree/board/bananapi/bananapi-m64/readme.txt>`_ for more info.
 
 ::
 
@@ -54,10 +63,12 @@ It's easy to build entire system using buildroot and mainline supported bananapi
         make
 
 Booting
+#########
 
 SD Boot
+*******
 
-Partition the SD card in host with Single Falcon partition
+Partition the SD card in host with `Single Falcon partition <https://wiki.amarulasolutions.com/uboot/tools.html#falcon-partition>`_
 
 Prepare SD
 
@@ -79,10 +90,12 @@ Write rootfs, update boot/extlinux/extlinux.conf
         cp /to/linux-next/arch/arm64/boot/dts/allwinner/sun50i-a64-orangepi-win.dtb /media/jagan/rootfs/boot
         sync && umount /dev/mmcblk0*
 
+
 Insert the SD card and power-on the board. See the Linux boot start from SPL - unplug SD Card during U-Boot proper boot
 
 USB Boot
-Prepare SD card with from SD Boot and prepare USB mass storage with single partition by copying rootfs and update boot/extlinux/extlinux.conf
+********
+Prepare SD card with from `SD Boot <https://wiki.amarulasolutions.com/bsp/sunxi/a64/bpi-m64.html#sd-boot>`_ and prepare USB mass storage with single partition by copying rootfs and update boot/extlinux/extlinux.conf
 
 Insert the SD card, USB Mass storage and power-on the board. See the Linux boot start from SPL
 
@@ -174,7 +187,10 @@ Insert the SD card, USB Mass storage and power-on the board. See the Linux boot 
         [    0.000000] Kernel command line: console=ttyS0,115200 earlyprintk root=/dev/sda1 rootwait
         
 U-Boot
+######
+
 USB Mass Storage gadget
+***********************
 We can use the board as a USB Mass Storage device:
 
 You will be able to access all the partitions of any block device that is on the board or connected to it,
@@ -192,7 +208,10 @@ To do this you need to connect a USB cable between the OTG/Client port of the bo
 and use U-Boot's ums command.
 
 Linux
+#####
 USB OTG
+*******
+
 Here, we can take mass storage as gadget function and will show how it can work with 'host' and 'peripheral' modes
 
 Build otg mass storage as statically linked module with
@@ -202,6 +221,7 @@ Build otg mass storage as statically linked module with
 Append bootargs with 'g_mass_storage.removable=1 g_mass_storage.luns=1'
 
 Peripheral
+^^^^^^^^^^
 Plug USB otg cable A-type to host pc and B-type to bananapi
 
 ::
@@ -230,7 +250,10 @@ Plug USB otg cable A-type to host pc and B-type to bananapi
         # echo /dev/mmcblk0 > /sys/devices/platform/soc/1c19000.usb/musb-hdrc.1.auto/gadget/lun0/file
         
 Access the disk at host pc and write and umount
+
 Host
+^^^^
+
 Plug USB host cable where A-type connect with USB stick and B-type connect to bananapi and
 
 See USB stick detection on bananapi

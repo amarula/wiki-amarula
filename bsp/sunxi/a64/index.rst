@@ -7,7 +7,7 @@ Allwinner A64
 =======================================
 
 .. toctree::
-   :maxdepth: 3
+   :maxdepth: 4
    :caption: Contents:
 
    relic

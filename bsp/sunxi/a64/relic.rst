@@ -1,43 +1,17 @@
 Amarual A64-Relic
-*****************
+=================
 This tutorial will show the details of Amarula A64-Relic mainline support and other needed details
 
 
 BSP Build
-=========
-
+##########
 
 Manual Build
-------------
+************
+Image building need host to ready with all necessary tools ready, refer `here <https://wiki.amarulasolutions.com/uboot/tools.html>`_ for Host and Crosstool
 
 ATF
 ^^^
-U-Boot
-^^^^^^
-Linux
-^^^^^
-
-Buildroot
----------
-
-
-Boot
-****
-FEL boot
-********
-Write eMMC
-**********
-Wifi
-****
-GUI Interface
-*************
-BSP Build
-*********
-Manual Build
-************
-Image building need host to ready with all necessary tools ready, refer here for Host and Crosstool
-
-ATF
 
 ::
 
@@ -47,6 +21,7 @@ ATF
         export BL31=/path/to/arm-trusted-firmware/build/sun50iw1p1/release/bl31.bin
 
 U-Boot
+^^^^^^^
 
 ::
 
@@ -56,8 +31,10 @@ U-Boot
         make 
 
 Linux
+^^^^^
 
 ::
+
         git clone git://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git
         cd linux-next
         make mrproper
@@ -65,8 +42,9 @@ Linux
         ARCH=arm64 make -j 4 Image dtbs
 
 Buildroot
+*********
 
-It's easy to build entire system using buildroot and mainline supported bananapi-m64 already. See read this readme.txt for more info.
+It's easy to build entire system using buildroot and mainline supported bananapi-m64 already. See read this `readme.txt <https://git.buildroot.net/buildroot/tree/board/bananapi/bananapi-m64/readme.txt>`_ for more info.
 
 ::
 
@@ -76,9 +54,11 @@ It's easy to build entire system using buildroot and mainline supported bananapi
         make
 
 Boot
+#####
 Since the target doesn't support SD card, we need to boot the U-Boot from FEL and update the firmware images
 
 FEL boot
+********
 Set FEL mode pins and power-on the board
 
 ::
@@ -90,6 +70,7 @@ Set FEL mode pins and power-on the board
 Interrupt u-boot by pressing enter
 
 Write eMMC
+**********
 on target, create GPT partitions and trigger fastboot
 
 ::
@@ -109,6 +90,7 @@ on host, write images from host onto eMMC using fastboot
         fastboot -i 0x1f3a flash system rootfs.ext4
 
 Wifi
+####
 System will automatically detect wifi if buildroot images were used, once done follow below steps
 
 ::
@@ -120,6 +102,7 @@ System will automatically detect wifi if buildroot images were used, once done f
         # ping google.com
 
 GUI Interface
+#############
 For Display, Touchscreen, Camera, Sensor see below buildroot from respective github sources
 
 ::
