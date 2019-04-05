@@ -11,3 +11,4 @@ Allwinner H3
    :caption: Contents:
         
    Orangepi-PC
+   FriendlyARM_Nanopi_M1_Plus
