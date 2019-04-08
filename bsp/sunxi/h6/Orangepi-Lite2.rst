@@ -20,7 +20,7 @@ ATF
         $ sudo CROSS_COMPILE=/to/path/aarch64-linux-gnu- make PLAT=sun50i_h6
         $ export BL31=/path/to/arm-trusted-firmware/build/sun50i_h6/release/bl31.bin
        
- U-Boot
+U-Boot
 
  ::
 
