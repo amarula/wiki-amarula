@@ -4,7 +4,7 @@
    contain the root `toctree` directive.
 
 Rockchip
-=======================================
+========
 
 .. toctree::
    :maxdepth: 3
@@ -12,4 +12,3 @@ Rockchip
    
    rk3288/index
    rk3399/index
-

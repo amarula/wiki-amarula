@@ -1,5 +1,5 @@
-Vyasa RK3288 Mainline Linux BSP Guide
-=====================================
+Vyasa RK3288
+============
 
 This tutorial will show the details of Vyasa RK3288 Linux BSP Guide. Most of the software supported by Vyasa is mainlined already.
 
