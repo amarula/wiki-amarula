@@ -6,6 +6,9 @@ This tutorial will show the details of Olimex A20-OLinuXino-LIME2 board mainline
 hardware, documentation, schematics are available at hardware and linux-sunxi
 
 Hardware Access
+
+.. image:: /images/orange_pi_pc.jpg
+
 BSP Build
 U-Boot
 Linux
