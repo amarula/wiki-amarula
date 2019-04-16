@@ -13,3 +13,4 @@ Allwinner H3
    Orangepi-PC
    FriendlyARM_Nanopi_M1_Plus
    FriendlyARM_Nanopi_M1
+   Orangepi-Plus
