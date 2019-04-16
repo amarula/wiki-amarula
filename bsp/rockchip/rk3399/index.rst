@@ -10,5 +10,5 @@ RK3399
    :maxdepth: 3
    :caption: Contents:
    
-   nanopi-neo4
+   neo4
    rockpro64
