@@ -11,4 +11,6 @@ RK3399
    :caption: Contents:
    
    neo4
+   nanopi_m4
    rockpro64
+
