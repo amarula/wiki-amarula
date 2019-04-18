@@ -3,14 +3,12 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Rockchip Rk3288
-=======================================
+RK3288
+======
 
 .. toctree::
    :maxdepth: 3
    :caption: Contents:
    
-
-   tinker_rk3288
-   vyasa_rk3288/index 
-
+   tinker
+   vyasa

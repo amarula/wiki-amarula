@@ -3,13 +3,12 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Rockchip Rk3399
-=======================================
+RK3399
+======
 
 .. toctree::
    :maxdepth: 3
    :caption: Contents:
    
-   nanopi-neo4
+   neo4
    rockpro64
-
