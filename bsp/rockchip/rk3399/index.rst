@@ -12,5 +12,5 @@ RK3399
    
    neo4
    nanopi_m4
+   orangepi
    rockpro64
-
