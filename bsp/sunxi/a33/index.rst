@@ -3,18 +3,11 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Allwinner
+Allwinner A33
 =======================================
 
 .. toctree::
-   :maxdepth: 3
+   :maxdepth: 2
    :caption: Contents:
-   
-   a13/index
-   a20/index
-   a33/index
-   a64/index
-   h3/index
-   h5/index
-   h6/index
 
+   Olimex-A33-Olinuxino
