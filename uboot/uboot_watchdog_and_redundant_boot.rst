@@ -1,11 +1,11 @@
 U-BOOT Watchdog and Redundant Boot
-==================================
+##################################
  
 Watchdog Testing
-################
+*****************
 
 Testing via Linux kernel crash
-******************************
+==============================
 
 introduce a BUG() somewhere in kernel code path
 Kernel Crash causing code
@@ -26,28 +26,29 @@ Kernel Crash causing code
 
 
 Testing via invalid Rootfs device mounting
-******************************************
+==========================================
 
 Pass invalid rootfs device in kernel boot arguments from u-boot
 
 ::
-        
+
         setenv bootargs console=${console},${baudrate} root=/dev/invalid_device rootwait rw
 
 
 Testing via U-BOOT command prompt
-*********************************
+=================================
 
 Use invalid load address
 
 ::
-        ext4load mmc 0:1 0x400000000 zImage
+
+   ext4load mmc 0:1 0x400000000 zImage
 
 Redundant Boot
-##############
+**************
         
 Steps
-*****
+=====
 
 ::
 
@@ -60,7 +61,7 @@ Steps
         For Example see imx6qdl_icore_mmc_defconfig use.
 
 Here is the demo log. See **altbootcmd** in the logs
-****************************************************
+====================================================
 
 ::
 

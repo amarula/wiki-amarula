@@ -1,20 +1,12 @@
 SPL HABv4
-=========
+#########
 
-Since, the i.MX6 Secure Boot used u-boot-dtb.imx but this tutorial describe the Secure Boot(HAB) for SPL as well as a singable version of the U-Boot image.
+Since, the `i.MX6 Secure Boot <https://wiki.amarulasolutions.com/uboot/secure_boot/imx6_habv4.html>`_ used u-boot-dtb.imx but this tutorial describe the Secure Boot(HAB) for SPL as well as a singable version of the U-Boot image.
 
 The signature can be verified through High Assurance Boot (HAB).
 
-    Build
-    Generate Signed SPL
-    Generate U-Boot-IVT
-    Write on SD
-    Read e-FUSE
-    Write e-FUSE
-    Close device
-
 Build
-
+*****
 ::
 
         bash> git clone https://github.com/openedev/u-boot-amarula.git -b falcon-hab
@@ -61,8 +53,8 @@ Build
         HAB Blocks:   0x177fffc0   0x0000   0x00064020
 
 Generate Signed SPL
-
-First create PKI keys from here and proceed with below steps
+*******************
+First create PKI keys from `here <https://wiki.amarulasolutions.com/uboot/secure_boot/imx6_habv4.html#signed-boot-usage>`_ and proceed with below steps
 
 ::
 
@@ -136,7 +128,7 @@ First create PKI keys from here and proceed with below steps
         bash> cat SPL SPL_CSF_pad.bin > SPL-signed
 
 Generate U-Boot-IVT
-
+*******************
 ::
 
         bash> cd ~/cst-2.3.2/linux64
@@ -209,7 +201,7 @@ Generate U-Boot-IVT
         bash> cat u-boot-ivt.img u-boot-ivt_CSF_pad.bin > u-boot-ivt-signed.img
 
 Write on SD
-
+***********
 ::
 
         bash> DEV=/dev/mmcblk0
@@ -218,7 +210,7 @@ Write on SD
         bash> sudo dd if=u-boot-ivt-signed.img of=$DEV bs=1K seek=69 oflag=sync status=none && sync
 
 Read e-FUSE
-
+***********
 ::
 
         bash> cd ~/cst-2.3.2/crts
@@ -242,7 +234,7 @@ Read e-FUSE
         0xEA226AAD
 
 Write e-FUSE
-
+************
 ::
 
         U-Boot SPL 2017.05-00002-g5ab54f3 (Jul 04 2017 - 13:54:49)
@@ -331,7 +323,7 @@ Write e-FUSE
         Programming bank 3 word 0x00000007 to 0xea226aad...
 
 Close device
-
+************
 ::
 
         icorem6qdl> hab_status
@@ -425,4 +417,3 @@ Close device
         HAB Configuration: 0xcc, HAB State: 0x99
 
         No HAB Events Found!
-

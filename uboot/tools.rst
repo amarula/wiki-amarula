@@ -1,9 +1,9 @@
 Common Setup and Tools
-=======================
+######################
 
 
 Host
-####
+****
 
 These are host ready tools installation for Ubuntu 18.04 LTS on 64 bit
 
@@ -16,9 +16,9 @@ These are host ready tools installation for Ubuntu 18.04 LTS on 64 bit
         $ export PATH=/path/to/install/dtc:$PATH
 
 Crosstool
-#########
+*********
 ARM
-****
+===
 ::
 
         bash> cd /to/path
@@ -28,7 +28,7 @@ ARM
         bash> export CROSS_COMPILE=arm-linux-gnueabi-
 
 ARM64
-******
+=====
 ::
 
         bash> cd /to/path
@@ -38,10 +38,10 @@ ARM64
         bash> export CROSS_COMPILE=aarch64-linux-gnu-
 
 SD Setup
-########
+********
 
 Single partition
-****************
+================
 ::
 
         $ fdisk /dev/mmcblk0
@@ -137,7 +137,7 @@ Single partition
         $ mkfs.ext4 -L rootfs /dev/mmcblk0p1
 
 Falcon partition
-****************
+================
 
 ::
 
@@ -229,7 +229,7 @@ Falcon partition
         $ mkfs.ext4 -L rootfs /dev/mmcblk0p1
 
 Dual partition
-**************
+==============
 
 ::
 
@@ -341,15 +341,15 @@ Dual partition
 
 
 Console Setting
-###############
+***************
 
 We use minicom to get serial console.
 
 SUNXI
-#####
+*****
 
 sunxi-fel
-*********
+=========
 
 ::
 
@@ -359,7 +359,7 @@ sunxi-fel
         $ make
 
 boot32-fel.scr
-**************
+==============
 ::
 
         $ boot32-fel.cmd
@@ -376,7 +376,7 @@ boot32-fel.scr
            Image 0: 113 Bytes = 0.11 KiB = 0.00 MiB
 
 boot64-fel.scr
-**************
+==============
 ::
 
         $ boot64-fel.cmd
@@ -435,9 +435,9 @@ Virtual disk
         # losetup -d /dev/loop0
 
 Network
-#######
+*******
 TFTP
-****
+====
 
 Install package
 
@@ -470,7 +470,7 @@ Create a folder /tftpboot this should match whatever you gave in server_args
         $ sudo chmod -R 777 /tftpboot
         $ sudo chown -R nobody /tftpboot
 
-Build images from and copy on /tftpboot, example rk3288-vyasa board
+Build images from `here <https://wiki.amarulasolutions.com/uboot/image_build/index.html>`_ and copy on /tftpboot, example rk3288-vyasa board
 
 ::
 
