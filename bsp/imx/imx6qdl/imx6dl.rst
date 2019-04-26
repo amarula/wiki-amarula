@@ -1,35 +1,17 @@
 BTicino i.MX6DL
-===============
+###############
 
 This tutorial will show the detail usage of BTicino i.MX6DL Mamoj board with respective mainline projects.
 
 Hardware Access
+***************
+
 BSP Building
-U-Boot
-Linux
-Buildroot
-Boot
-USB SDP
-eMMC
-Normal Mode
-Falcon Mode
-Secure Boot
-U-Boot Accessing Peripherals
-eMMC
-FEC
-I2C
-PFUSE100
-USB
-Linux Accessing Peripherals
-eMMC
-FEC
-I2C
-USB
-Hardware Access
-BSP Building
+************
 Image building need host to ready with all necessary tools ready, refer here
 
 U-Boot
+======
 
 ::
 
@@ -39,6 +21,7 @@ U-Boot
         $ make imx6dl_mamoj_defconfig && make
 
 Linux
+=====
 
 ::
 
@@ -49,8 +32,13 @@ Linux
         $ ARCH=arm make LOADADDR=0x10008000 uImage dtbs
 
 Buildroot
+=========
+
 Boot
+****
+
 USB SDP
+=======
 More info at, u-boot/doc/README.sdp
 
 1. Clone imx_usb_loader
@@ -74,29 +62,31 @@ Bus 001 Device 010: ID 15a2:0061 Freescale Semiconductor, Inc. i.MX 6Solo/6DualL
 6. Update the conf files
 
    imx_usb.conf
-
+   
    ::
 
-        0x15a2:0x0061, mx6_usb_rom.conf, 0x0525:0xb4a4, mx6_usb_sdp_spl.conf
+      0x15a2:0x0061, mx6_usb_rom.conf, 0x0525:0xb4a4, mx6_usb_sdp_spl.conf
 
   mx6_usb_rom.conf
 
   ::
-        mx6_usb
-        hid,1024,0x910000,0x10000000,512M,0x00900000,0x40000
-        SPL:jump header2
+
+      mx6_usb
+      hid,1024,0x910000,0x10000000,512M,0x00900000,0x40000
+      SPL:jump header2
          
   mx6_usb_sdp_spl.conf
 
   ::
 
-        mx6_spl_sdp
-        hid,uboot_header,1024,0x910000,0x10000000,512M,0x00900000,0x40000
-        u-boot-dtb.img:jump header2
+      mx6_spl_sdp
+      hid,uboot_header,1024,0x910000,0x10000000,512M,0x00900000,0x40000
+      u-boot-dtb.img:jump header2
 
 7. Launch the loader
 
 ::
+
         $ ./imx_usb
 
 8. Identify board booting on serial
@@ -126,12 +116,20 @@ Bus 001 Device 010: ID 15a2:0061 Freescale Semiconductor, Inc. i.MX 6Solo/6DualL
         Hit any key to stop autoboot:  0
         
 eMMC
+====
 Normal Mode
+-----------
 Falcon Mode
+-----------
 Secure Boot
+-----------
+
 U-Boot Accessing Peripherals
+****************************
 eMMC
+====
 FEC
+===
 Build the BSP and Setup host tftp server from here
 
 ::
@@ -187,6 +185,7 @@ Build the BSP and Setup host tftp server from here
         on 6.3.1 20170109 (Linaro GCC 6.3-2017.02)) #2 SMP Thu Mar 8 00:35:51 IST 2018
         
 I2C
+===
 
 ::
 
@@ -213,6 +212,7 @@ I2C
         00ff: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00    ................
         
 PFUSE100
+========
 
 ::
 
@@ -234,8 +234,14 @@ PFUSE100
         0x70: 1a 1f 00 00 00 00 00 00 00 00 00 00 00 00 00
         
 USB
+===
 Linux Accessing Peripherals
+***************************
 eMMC
+====
 FEC
+===
 I2C
+===
 USB
+===

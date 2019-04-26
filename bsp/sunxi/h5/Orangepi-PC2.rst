@@ -3,7 +3,7 @@ Orangepi PC2
 
 This tutorial will show the details of OrangepiPC2 board mainline support and other details like documentation, hardware schismatic
 
-and other needful information is available at hardware and linux-sunxi
+and other needful information is available at `hardware <http://www.orangepi.org/orangepipc2/>`_ and `linux-sunxi <http://linux-sunxi.org/Xunlong_Orange_Pi_PC_2>`_
 
 Hardware Access
 

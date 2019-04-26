@@ -1,6 +1,10 @@
 FriendlyARM-NanoPi-NEO2
-=======================
+#######################
+
+This tutorial will show the details of Nanopi NEO2 board mainline support and other needed details, for more information about `hardware <http://nanopi.io/nanopi-neo2.html>`_ and `linux-sunxi <http://linux-sunxi.org/FriendlyARM_NanoPi_NEO2>`_
+
 Hardware Access
+***************
 
 .. image:: /images/nanopi_neo2.jpeg 
 
@@ -9,13 +13,15 @@ Serial debug and Power connections
 
 
 BSP Build
+*********
 Manual Build
+============
 Image building need host to ready with all necessary tools ready, refer here
 
 Below are the details of Image build for Nanopi NE02 board.
 
 ATF
-
+---
 ::
 
         $ git clone https://github.com/apritzel/arm-trusted-firmware.git
@@ -24,7 +30,7 @@ ATF
         $ export BL31=/path/to/arm-trusted-firmware/build/sun50iw1p1/release/bl31.bin
         
 U-Boot
-
+------
 ::
 
         $ git clone git://git.denx.de/u-boot.git
@@ -33,7 +39,7 @@ U-Boot
         $ make 
         
 Linux
-
+-----
 ::
 
         $ git clone git://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git
@@ -43,6 +49,7 @@ Linux
         $ ARCH=arm64 make -j 4 Image dtbs
 
 Buildroot
+=========
 It's easy to build entire system using buildroot and mainline supported nanopi-neo2 already. See read this readme.txt for more info.
 
 ::
@@ -53,9 +60,13 @@ It's easy to build entire system using buildroot and mainline supported nanopi-n
         $ make
 
 Booting
+*******
 SD Boot
+=======
 U-Boot
+******
 USB Mass Storage gadget
+=======================
 We can use the board as a USB Mass Storage device:
 
 You will be able to access all the partitions of any block device that is on the board or connected to it,
@@ -73,7 +84,9 @@ To do this you need to connect a USB cable between the OTG/Client port of the bo
 and use U-Boot's ums command.
 
 Linux
+*****
 USB Mass Storage gadget
+=======================
 Build otg mass storage as statically linked module with
 
 `CONFIG_USB_GADGET_LEGACY=y`

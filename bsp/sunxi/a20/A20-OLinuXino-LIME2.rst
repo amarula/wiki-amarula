@@ -1,32 +1,22 @@
 A20-OLinuXino-LIME2
-=================================================
+===================
 
 This tutorial will show the details of Olimex A20-OLinuXino-LIME2 board mainline support and other details like
-hardware, documentation, schematics are available at hardware and linux-sunxi
-Hardware Access
-BSP Build
-U-Boot
-Linux
-Booting
-SD Boot
-FEL/USB Boot
-U-Boot
-USB Mass Storage gadget
-
+hardware, documentation, schematics are available at `hardware <https://www.olimex.com/Products/OLinuXino/A20/A20-OLinuXino-LIME2/>`_  and `linux-sunxi <https://www.olimex.com/Products/OLinuXino/A20/A20-OLinuXino-LIME2/>`_
 
 Hardware Access
-****************
+###############
 Power supply: External 5V Jack
 USB OTG Cable, USB to TTL for debug
 
 .. image:: /images/lime2.jpg
 
 BSP Build
-*********
-Image building need host to ready with all necessary tools ready, refer here
+#########
+Image building need host to ready with all necessary tools ready, refer `here <https://wiki.amarulasolutions.com/uboot/tools.html#arm>`_
 
 U-Boot
-********
+******
 
 ::
 
@@ -36,6 +26,7 @@ U-Boot
 
 Linux
 *****
+
 ::
 
         git clone git://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git 
@@ -45,13 +36,13 @@ Linux
         ARCH=arm make -j 4 zImage dtbs 
 
 Booting
-*******
+#######
 SD Boot
 *******
 FEL/USB Boot
 ************
 U-Boot
-******
+######
 
 USB Mass Storage gadget
 ***********************
@@ -166,4 +157,6 @@ and use U-Boot's ums command.
        * to send. This pause is only needed in our example code!
        */
       sleep(1);
+
+   }
 

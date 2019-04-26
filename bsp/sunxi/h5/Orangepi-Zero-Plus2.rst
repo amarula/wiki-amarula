@@ -1,7 +1,7 @@
 Orangepi Zero Plus2
 ===================
 
-This tutorial will show the details of Orangepi Zero Plus2 board mainline support and other needed details, for more information about hardware and linux-sunxi
+This tutorial will show the details of Orangepi Zero Plus2 board mainline support and other needed details, for more information about `hardware <https://linux-sunxi.org/Xunlong_Orange_Pi_Zero_Plus_2>`_ and `linux-sunxi <https://linux-sunxi.org/Xunlong_Orange_Pi_Zero_Plus_2>`_
 
 Hardware Access
 

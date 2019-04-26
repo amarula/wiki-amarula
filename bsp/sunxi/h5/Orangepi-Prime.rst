@@ -1,7 +1,7 @@
 Orangepi Prime
 ==============
 
-This tutorial will show the details of Orangepi Prime board mainline support and other needed details, for more information about hardware
+This tutorial will show the details of Orangepi Prime board mainline support and other needed details, for more information about `hardware <http://www.orangepi.org/OrangePiPrime/>`_
 
 Hardware Access
 
