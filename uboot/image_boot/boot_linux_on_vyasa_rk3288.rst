@@ -1,20 +1,14 @@
 Boot Linux on Vyasa RK3288
-==========================
+##########################
 
-
-Build the images here, and setup SD card with Single partition here
-
-    bootm
-        Ramdisk
-        Rootfs
-    Monolithic
-    FIT
-    Verified Boot
+Build the images `here <https://wiki.amarulasolutions.com/uboot/image_build/rockchip_rk3288.html>`_, and setup SD card with Single partition `here <https://wiki.amarulasolutions.com/uboot/tools.html#sd-setup>`_
 
 bootm
+******
 Ramdisk
+=======
 
-Create Single partition and Insert the SD on host and Built the images from Image Build
+Create `Single partition <https://wiki.amarulasolutions.com/uboot/tools.html#single-partition>`_ and Insert the SD on host and Built the images from `Image Build <https://wiki.amarulasolutions.com/uboot/image_build/rockchip_rk3288.html>`_
 
 ::
 
@@ -123,8 +117,9 @@ Close JP4 and Insert the SD card and power-on the board.
         Starting kernel ...
 
 Rootfs
+======
 
-Create Single partition and Insert the SD on host and Built the images from Image Build
+Create `Single partition <https://wiki.amarulasolutions.com/uboot/tools.html#single-partition>`_ and Insert the SD on host and Built the images from `Image Build <https://wiki.amarulasolutions.com/uboot/image_build/rockchip_rk3288.html>`_
 
 ::
 
@@ -218,7 +213,8 @@ Close JP4 and Insert the SD card and power-on the board.
         Starting kernel ...
 
 Monolithic
+**********
 FIT
+***
 Verified Boot
-
-
+*************
