@@ -7,7 +7,7 @@ Image Boot
 =======================================
 
 .. toctree::
-   :maxdepth: 3
+   :maxdepth: 2
    :caption: Contents:
    
    boot_linux_on_engicam_imx6
