@@ -1,11 +1,11 @@
 Sandbox
-=======
+#######
 
 
 Sandbox is good example to familiar with U-Boot and related functionalities.
 
 Build
-
+*****
 ::
 
         $ git clone git://git.denx.de/u-boot.git
@@ -13,7 +13,7 @@ Build
         $ make sandbox_defconfig all NO_SDL=1
 
 Run
-
+***
 ::
 
         $ ./u-boot
@@ -55,10 +55,11 @@ Run
 With Sandbox approach, we can further emulate the SPI, Disk, I2C etc., See board/sandbox/README.sandbox for more details.
         
 Test
+****
 Sandbox drivers can be available in each peripheral area for basic sanity, below is the procedure to test the same.
         
 Configure
-
+=========
 ::
 
         $ cd /path/to/u-boot
