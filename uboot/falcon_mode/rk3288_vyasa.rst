@@ -1,7 +1,24 @@
 RK3288 Vyasa
-=============
+############
+
+Partition Table
+***************
+
+================= ====================== ====================
+Start KB (blocks)  Size KB (Blocks)       Usage
+================= ====================== ====================
+0                       4K                Partition Table etc
+4K	                32KB	          TPL
+32K                     100K              SPL
+8M	                1024K - 256K      U-Boot
+                        1MB               env (redundant)
+16MB                    1MB (0x800)       args
+17MB                    8MB (0x4000)      kernel
+30MB                    partitions        rootfs
+================= ====================== ====================
 
 Build
+*****
 
 ::
 
@@ -11,6 +28,7 @@ Build
         bash> make -j 4
 
 Create SD
+*********
 
 Create Falcon partition and Insert the SD on host and Built the images from Image Build
 
@@ -31,7 +49,7 @@ Create Falcon partition and Insert the SD on host and Built the images from Imag
         $ sync && sudo umount /media/rfs-rk3288
 
 Configure Falcon
-
+****************
 Now insert the SD and configure the falcon and restart
 
 ::
@@ -135,7 +153,7 @@ Now insert the SD and configure the falcon and restart
         MMC write: dev # 1, block # 32768, count 2048 ... 2048 blocks written: OK
 
 Falcon mode
-
+***********
 Reset or Power on board with SD, Ctr+C will boot U-Boot and/or Linux boot normally
 
 ::
