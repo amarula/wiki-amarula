@@ -1,20 +1,12 @@
 Verified Boot on SUNXI64
-========================
+########################
 
 U-Boot supports an image verification method called "Verified Boot". This tutorial will show the details of verified-boot on SUNXI64 platform with Orangepi A64 board.
 
 See here for more documentation of verified-boot - doc/uImage.FIT directory
 
-    Generate RSA key to sign
-    Build Linux
-    FIT Input - kernel_fdt.its
-    Build U-Boot
-    FIT Output
-    Build Signed-U-Boot
-    Verified Boot
-
 Generate RSA key to sign
-
+************************
 ::
 
         # Create RSA key pair
@@ -25,8 +17,8 @@ Generate RSA key to sign
         $ openssl req -batch -new -x509 -key keys/dev.key -out keys/dev.crt
 
 Build Linux
-
-See this page for building linux
+***********
+See this `page <https://wiki.amarulasolutions.com/bsp/sunxi/a64/opi-win.html#linux>`_ for building linux
 FIT Input - kernel_fdt.its
 
 ::
@@ -126,7 +118,7 @@ You need to change the two '/incbin/' lines, depending on the location of your k
 The "key-name-hint" must specify the key name you have created in the "Generate RSA key to sign" step
 
 Build U-Boot
-
+************
 ::
 
         $ git clone git://git.denx.de/u-boot.git
@@ -137,7 +129,7 @@ Build U-Boot
         $ make
 
 FIT Output
-
+**********
 ::
 
         $ tools/mkimage -f kernel_fdt.its -k keys -K dts/dt.dtb -r -F fitImage
@@ -147,15 +139,17 @@ FIT Output
             => The public key needed for the run-time verification is stored in "dts/dt.dtb"
 
 Build Signed-U-Boot
-
+*******************
 "dt.dtb" has been updated in above step, you need to re-compile the U-Boot.
-
 ::
 
         $ make
 
-        The re-compiled "u-boot.bin" is appended with DTB that contains the public key.
-        Verified Boot
+The re-compiled "u-boot.bin" is appended with DTB that contains the public key.
+
+Verified Boot
+*************
+::
 
         U-Boot SPL 2017.11-rc4-dirty (Nov 08 2017 - 00:11:54)
 

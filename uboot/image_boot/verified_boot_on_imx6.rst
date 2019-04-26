@@ -1,8 +1,8 @@
 Verified Boot on i.MX6
-========================
+######################
 
 Create vmlinux.bin
-
+******************
 ::
 
         $ arm-linux-gnueabi-objcopy -O binary vmlinux vmlinux.bin
@@ -12,7 +12,7 @@ Create vmlinux.bin
         $ cp imx6q-icore-rqs.dtb imx6q-icore-rqs-pubkey.dtb
 
 FIT input
-
+*********
 ::
 
         kernel_fdt.its
@@ -124,7 +124,7 @@ FIT input
         };
 
 RSA key generation
-
+******************
 ::
 
         - Create RSA key pair
@@ -136,19 +136,19 @@ RSA key generation
         $ openssl req  -batch -new -x509 -key mykeys/eng.key -out mykeys/eng.crt
 
 FIT output
-
+**********
 ::
 
         $ ./mkimage -f kernel_fdt.its -K imx6q-icore-rqs-pubkey.dtb -k mykeys/ -r fit.itb
 
 Build U-Boot with Public key
-
+****************************
 ::
 
         $ .make DEV_TREE_BIN=../imx6q-icore-rqs-pubkey.dtb
 
 Boot VerifiedBoot
-
+*****************
 ::
 
         U-Boot SPL 2017.01-rc2-00010-gb42d823 (Dec 21 2016 - 11:13:46)
