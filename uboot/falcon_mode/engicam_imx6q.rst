@@ -1,7 +1,8 @@
 Engicam i.MX6Q
-==============
+##############
 
 Partitions
+**********
 
 ================= ====================== ====================
 Start KB (blocks)  Size KB (Blocks)       Usage             
@@ -16,10 +17,10 @@ Start KB (blocks)  Size KB (Blocks)       Usage
 965KB               59KB                  unused
 ================= ====================== ====================
 
-
 Built the images from Image Build
 
 Configure SD
+************
 Create Falcon partition and Insert the SD on host
 
 ::
@@ -34,6 +35,7 @@ Create Falcon partition and Insert the SD on host
         $ sync && sudo umount /dev/mmcblk0*
         
 Configure Falcon
+****************
 Insert the SD and power-on the board.
 
 ::
@@ -78,6 +80,7 @@ Insert the SD and power-on the board.
         MMC write: dev # 0, block # 2048, count 2048 ... 2048 blocks written: OK
 
 Boot Linux using Falcon
+***********************
 Reset the board and see Linux booting, Pressing 'C' will prevent Linux boot and moved to U-Boot.
 
 ::
