@@ -1,16 +1,13 @@
 Allwinner SUNXI64
 =================
 
-Image building need host to ready with all necessary tools ready, refer here
+Image building need host to ready with all necessary tools ready, `refer here <https://wiki.amarulasolutions.com/uboot/tools.html>`_
 
 Below are the details of Image build for Banana Pi BPI-M64 board.
 
-    ATF
-    U-Boot
-    Linux
 
 ATF
-
+***
 ::
 
         $ git clone https://github.com/apritzel/arm-trusted-firmware.git
@@ -19,7 +16,7 @@ ATF
         $ export BL31=/path/to/arm-trusted-firmware/build/sun50iw1p1/release/bl31.bin
 
 U-Boot
-
+******
 ::
 
         $ git clone git://git.denx.de/u-boot.git
@@ -28,7 +25,7 @@ U-Boot
         $ make 
 
 Linux
-
+*****
 ::
 
         $ git clone git://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git
