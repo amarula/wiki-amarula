@@ -1,14 +1,10 @@
 Engicam i.MX6
-=============
+#############
 
-Image building need host to ready with all necessary tools ready, refer here Below are the details of Image build for Engicam i.CoreM6 Quad board
-
-    U-Boot
-    Linux
-    Ramdisk
+Image building need host to ready with all necessary tools ready, `refer here <https://wiki.amarulasolutions.com/uboot/tools.html>`_ Below are the details of Image build for Engicam i.CoreM6 Quad board
 
 U-Boot
-
+******
 ::
 
         $ git clone git://git.denx.de/u-boot.git
@@ -17,7 +13,7 @@ U-Boot
         $ make 
 
 Linux
-
+*****
 ::
 
         $ git clone git://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git
@@ -26,7 +22,7 @@ Linux
         $ ARCH=arm make LOADADDR=0x10008000 uImage dtbs
 
 Ramdisk
-
+*******
 ::
 
         $ git clone https://github.com/openedev/rootfs-imx6q.git
