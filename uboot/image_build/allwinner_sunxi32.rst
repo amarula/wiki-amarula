@@ -1,16 +1,13 @@
 Allwinner SUNXI32
-=================
+#################
 
-Image building need host to ready with all necessary tools ready, refer here
+Image building need host to ready with all necessary tools ready, `refer here <https://wiki.amarulasolutions.com/uboot/tools.html>`_
 
 Below are the details of Image build for Banana Pi BPI-M1 board.
 
-    U-Boot
-    Linux
-    Rootfs
 
 U-Boot
-
+******
 ::
 
         $ git clone git://git.denx.de/u-boot.git
@@ -19,7 +16,7 @@ U-Boot
         $ make 
 
 Linux
-
+*****
 ::
 
         $ git clone git://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git
@@ -30,7 +27,7 @@ Linux
         $ ARCH=arm make -j 4 zImage dtbs
 
 Rootfs
-
+******
 ::
 
         $ git clone https://github.com/openedev/rfs-rk3288
