@@ -1,15 +1,16 @@
 Boot Linux on Engicam i.MX6
-===========================
+###########################
 
 
-This tutorial describe possible ways of booting Image like Linux and detailed documents are 1 2
+This tutorial describe possible ways of booting Image like Linux and detailed documents are `1 <https://www.denx.de/wiki/pub/U-Boot/OpenSourceIndia2013/Multi_image_booting_scenarios.pdf>`_ `2 <https://www.denx.de/wiki/pub/U-Boot/MiniSummitELCE2013/U-Boot_verified_RSA_boot_flow_on_arm_target.pdf>`_
 
-Build the images here, and setup SD card with Single and Dual partitions here
+Build the images `here <https://wiki.amarulasolutions.com/uboot/image_build/engicam_imx6.html>`_, and setup SD card with Single and Dual partitions `here <https://wiki.amarulasolutions.com/uboot/tools.html#sd-setup>`_
 
 bootm
+*****
 Ramdisk
-
-Create Single partition and Insert the SD on host and Built the images from Image Build
+=======
+Create `Single partition <https://wiki.amarulasolutions.com/uboot/tools.html#single-partition>`_ and Insert the SD on host and Built the images from `Image Build <https://wiki.amarulasolutions.com/uboot/image_build/engicam_imx6.html>`_
 
 ::
 
@@ -154,7 +155,15 @@ Insert the micro SD card in the board, power it up.
         Starting kernel ...
 
 
-Rootfs Monolithic FIT vmlinux.bin
+Rootfs
+======
+
+Monolithic 
+**********
+FIT
+***
+vmlinux.bin
+===========
 
 ::
         
@@ -163,7 +172,7 @@ Rootfs Monolithic FIT vmlinux.bin
         $ gzip vmlinux.bin
 
 FIT Input
-
+=========
 FIT input for Linux and FDT, here and Linux, FDT and Ramdisk, here
 
 ::
@@ -259,14 +268,14 @@ FIT input for Linux and FDT, here and Linux, FDT and Ramdisk, here
         };
 
 FIT Output
-
+==========
 ::
 
         $ /to/path/u-boot/tools/mkimage -f kernel_fdt.its fit.itb
         $ cp fit.itb /media/jagan/BOOT
 
 FIT Boot
-
+========
 ::
 
         Hit any key to stop autoboot:  0
@@ -358,8 +367,9 @@ FIT Boot
 
 
 Verified Boot
+*************
 vmlinux.bin
-
+===========
 ::
 
         $ arm-linux-gnueabi-objcopy -O binary vmlinux vmlinux.bin
@@ -369,7 +379,7 @@ vmlinux.bin
         $ cp imx6q-icore-rqs.dtb imx6q-icore-rqs-pubkey.dtb
 
 FIT input
-
+=========
 ::
 
         kernel_fdt.its
@@ -481,7 +491,7 @@ FIT input
         };
 
 RSA key
-
+=======
 ::
 
         - Create RSA key pair
@@ -493,16 +503,21 @@ RSA key
         $ openssl req  -batch -new -x509 -key mykeys/eng.key -out mykeys/eng.crt
 
 FIT output
-
+==========
 ::
 
         $ ./mkimage -f kernel_fdt.its -K imx6q-icore-rqs-pubkey.dtb -k mykeys/ -r fit.itb
 
-        Build U-Boot Public key
+Build U-Boot Public key
+=======================
+::
 
         $ .make DEV_TREE_BIN=../imx6q-icore-rqs-pubkey.dtb
 
-        VerifiedBoot
+VerifiedBoot
+============
+
+::
 
         U-Boot SPL 2017.01-rc2-00010-gb42d823 (Dec 21 2016 - 11:13:46)
         Trying to boot from MMC1
