@@ -1,5 +1,5 @@
 Giotto Tune
-===========
+###########
 
 Giotto tune-box and board-amarula
 
@@ -7,16 +7,18 @@ Giotto tune-box and board-amarula
 
 
 WE PRESENT YOU GIOTTO TUNE
+**************************
 Giotto Tune is born from a passion to make great sound quality available and affordable to everyone. Named after the painter who stayed true to nature’s purest form, it allows you to listen to music clear and cleaner as you’ve never heard before.
 
 WHAT IS GIOTTO TUNE?
+********************
 Giotto Tune plays music files encoded in PCM of different formats and at different bitrates, ranging from 44.100Khz to 192.000Khz up to 32bit and files in DSD64 format and DSD128 format.
 It allows you to enjoy and control your music with the Open Source Audiophile Music player Volumio 2, Kodi, UPnP and all mpd compatible players.
 
 Plus, it is highly compatible. Not only does it fit perfectly on the well known Raspberry PI, but we are making the Giotto Tune also compatible with the Asus Tinker board.
 
 DOWNLOAD SOURCE CODE FOR GIOTTO AND COMPILE
-
+*******************************************
 ::
 
         git clone https://github.com/panicking/linux-giotto

@@ -1,8 +1,8 @@
 Optee OS
-==========
+################
 
 Optee_os Configs
-################
+****************
 
 ::
 
@@ -33,7 +33,7 @@ Optee_os Configs
         $ make PLATFORM=imx-mx6qsabrelite ARCH=arm CFG_BUILT_IN_ARGS=y CFG_PAGEABLE_ADDR=0 CFG_NS_ENTRY_ADDR=0x12000000 CFG_DT_ADDR=0x18000000 CFG_DT=y CFG_PSCI_ARM32=y DEBUG=y CFG_TEE_CORE_LOG_LEVEL=4 CFG_BOOT_SYNC_CPU=n CFG_BOOT_SECONDARY_REQUEST=y
 
 U-Boot configs for optee
-########################
+************************
 
 ::
 
@@ -88,8 +88,7 @@ U-Boot configs for optee
         $  sudo cp -vf uTee /media/cdrom/
 
 Linux steps
-###########
-
+***********
 Before build disable CAAM and Outer Cache
 
 Cryptographic API  --->  [ ]   Hardware crypto devices
@@ -106,7 +105,7 @@ System Type  --->  [ ] Enable the L2x0 outer cache controller
         $ sudo umount /media/cdrom
 
 Final Steps
-###########
+***********
 
 Insert sd card and Turn on the board, and get into u-boot command prompt by pressing enter.
 
@@ -619,5 +618,3 @@ Insert sd card and Turn on the board, and get into u-boot command prompt by pres
         buildroot login: root
         # uname -a
         Linux buildroot 4.19.0-00618-gbad5e39a548d #16 SMP Wed Oct 24 18:00:15 IST 2018 armv7l GNU/Linux
-
-

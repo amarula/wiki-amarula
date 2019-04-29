@@ -1,8 +1,8 @@
 OP-Tee Test suite
-=================
+#################
 
 optee client
-#############
+************
 
 .. note::
 
@@ -16,7 +16,7 @@ clone optee client repo
 ::
 
    git clone https://github.com/OP-TEE/optee_client.git
- 
+
    cd optee_client
  
 Setenv cross compile environment
@@ -36,7 +36,7 @@ Copy all files from out/export/ to sdcard rootfs
 
 
 Optee Test suite
-#################
+****************
 
 Optee test suite provides benchmark and regression test suite.
  
@@ -90,8 +90,8 @@ First we run benchmark test with level 0, means minimal tests
    xtest -t benchmark
  
  
-Here are results:
-*****************
+Test Results:
+*************
 
 ::
 
