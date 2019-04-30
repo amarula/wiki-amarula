@@ -1,28 +1,19 @@
 i.CoreM6 1.5
+############
+
+This tutorial will show the details of `Engicam i.CoreM6 1.5 <https://www.engicam.com/vis-prod/101123>`_ SOM  Mainline software support and other needed details.
+
+This SOM is compatible with EDIMM STARTER KIT `i.Core 1.5 MIPI Evaluation board <https://www.engicam.com/vis-prod/101145>`_
+Support Boot from SD/MMC card and eMMC.
+
+BSP Build
+*********
+Manual Build
 ============
-
-This tutorial will show the details of Engicam i.CoreM6 1.5 SOM  Mainline software support and other needed details.
-
-This SOM is compatible with EDIMM STARTER KIT i.Core 1.5 MIPI Evaluation board
-Support Boot from SD/MMC card and eMMC with
-BSP Build
-Manual Build
-U-Boot
-Linux
-Buildroot
-Boot
-Write SD
-Boot SD
-Boot eMMC
-MIPI-CSI2 OV5640 Camera
-Build
-Capture
-BSP Build
-Manual Build
-Image building need host to ready with all necessary tools ready, refer here for Host and Crosstool
+Image building need host to ready with all necessary tools ready, refer `here <https://wiki.amarulasolutions.com/uboot/tools.html>`_ for Host and Crosstool
 
 U-Boot
-
+------
 ::
 
         $ git clone git://git.denx.de/u-boot.git
@@ -30,7 +21,7 @@ U-Boot
         $ make imx6qdl_icore_mipi_defconfig && make
         
 Linux
-
+-----
 ::
 
         $ git clone git://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git
@@ -40,7 +31,7 @@ Linux
         $ ARCH=arm make LOADADDR=0x10008000 uImage dtbs
         
 Buildroot
-
+=========
 ::
 
         $ git clone https://github.com/amarula/buildroot-amarula
@@ -49,8 +40,10 @@ Buildroot
         $ make engicam_imx6qdl_icore_qt5_gst1_media_defconfig && make
 
 Boot
+****
 Write SD
-For manual build images will write by partitioning SD card
+========
+For manual build images will write by `partitioning SD card <https://wiki.amarulasolutions.com/uboot/tools.html#sd-setup>`_
 
 ::
 
@@ -72,22 +65,23 @@ For buildroot, we can write single image sdcard.img directly
         $ sync
 
 Boot SD
-Insert the SD card in the SD slot of the board;
-
-Connect 3-wire RS232 serial port J28 on board, and connect with other
-
-Serial end or USB cable(if serial-to-usb converter used) using a terminal emulator at 115200 bps, 8n1;
-
-Close JM3 for sd boot.
-
-Power on the board.
+=======
+* Insert the SD card in the SD slot of the board;
+* Connect 3-wire RS232 serial port J28 on board, and connect with other
+* Serial end or USB cable(if serial-to-usb converter used) using a terminal emulator at 115200 bps, 8n1;
+* Close JM3 for sd boot.
+* Power on the board.
 
 Boot eMMC
-Boot from SD and write images on eMMC in Linux prompt
-Open JM3 for eMMC boot
+=========
+* Boot from SD and write images on eMMC in Linux prompt
+* Open JM3 for eMMC boot
+
 MIPI-CSI2 OV5640 Camera
+***********************
 Build
-Since Mainline Linux has some regression issue with 0v5640 So build linux-next till working commit.
+=====
+Since Mainline Linux has some `regression issue with 0v5640 <https://www.spinics.net/lists/arm-kernel/msg657970.html>`_ So build linux-next till working commit.
 
 ::
 
@@ -100,6 +94,7 @@ Since Mainline Linux has some regression issue with 0v5640 So build linux-next t
 Use rootfs.ext4 from buildroot built
 
 Capture
+=======
 Once Linux boot, prepare media control chart for finding pipeline setups
 
 ::

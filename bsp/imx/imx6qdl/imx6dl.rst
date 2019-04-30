@@ -8,7 +8,7 @@ Hardware Access
 
 BSP Building
 ************
-Image building need host to ready with all necessary tools ready, refer here
+Image building need host to ready with all necessary tools ready, refer `here <https://wiki.amarulasolutions.com/uboot/tools.html#arm64>`_
 
 U-Boot
 ======
@@ -130,7 +130,7 @@ eMMC
 ====
 FEC
 ===
-Build the BSP and Setup host tftp server from here
+Build the BSP and Setup host tftp server from `here <https://wiki.amarulasolutions.com/uboot/tools.html#tftp>`_
 
 ::
 
