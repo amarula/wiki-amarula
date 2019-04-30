@@ -9,7 +9,8 @@ RK3399
 .. toctree::
    :maxdepth: 3
    :caption: Contents:
-   
+
+   npc_t4
    neo4
    nanopi_m4
    orangepi
