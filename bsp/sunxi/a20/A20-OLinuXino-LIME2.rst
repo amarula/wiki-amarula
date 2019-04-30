@@ -1,22 +1,22 @@
 A20-OLinuXino-LIME2
-===================
+###################
 
 This tutorial will show the details of Olimex A20-OLinuXino-LIME2 board mainline support and other details like
 hardware, documentation, schematics are available at `hardware <https://www.olimex.com/Products/OLinuXino/A20/A20-OLinuXino-LIME2/>`_  and `linux-sunxi <https://www.olimex.com/Products/OLinuXino/A20/A20-OLinuXino-LIME2/>`_
 
 Hardware Access
-###############
+***************
 Power supply: External 5V Jack
 USB OTG Cable, USB to TTL for debug
 
 .. image:: /images/lime2.jpg
 
 BSP Build
-#########
+*********
 Image building need host to ready with all necessary tools ready, refer `here <https://wiki.amarulasolutions.com/uboot/tools.html#arm>`_
 
 U-Boot
-******
+======
 
 ::
 
@@ -25,7 +25,7 @@ U-Boot
         make A20-OLinuXino-Lime2_defconfig && make
 
 Linux
-*****
+=====
 
 ::
 
@@ -36,16 +36,17 @@ Linux
         ARCH=arm make -j 4 zImage dtbs 
 
 Booting
-#######
-SD Boot
 *******
+SD Boot
+=======
 FEL/USB Boot
-************
+============
+
 U-Boot
-######
+******
 
 USB Mass Storage gadget
-***********************
+=======================
 We can use the board as a USB Mass Storage device:
 You will be able to access all the partitions of any block device that is on the board or connected to it,
 from your host PC - You will see them as /dev/sdXX, just like connecting a regular USB storage to your PC,
@@ -159,4 +160,3 @@ and use U-Boot's ums command.
       sleep(1);
 
    }
-

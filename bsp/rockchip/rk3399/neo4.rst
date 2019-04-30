@@ -1,17 +1,22 @@
 NanoPI NEO4
-===========
+###########
 
 This tutorial will show the details of NanoPI NEO4 board mainline support.
 
 Hardware details and wiki `NanoPI NEO4 <http://wiki.friendlyarm.com/wiki/index.php/NanoPi_NEO4>`_
 
 Hardware Access
-
+***************
 .. image:: /images/neo4.jpg
 
 BSP Build
+*********
+
+Manual Build
+=============
 
 ATF
+---
 ::
         $ git clone https://github.com/ARM-software/arm-trusted-firmware.git
         $ cd /path/to/arm-trusted-firmware
@@ -20,6 +25,7 @@ ATF
         $ cp /path/to/arm-trusted-firmware/build/rk3399/release/bl31/bl31.elf /path/to/u-boot
 
 U-Boot
+------
 ::     
         $ git clone https://github.com/amarula/u-boot-amarula
         $ cd u-boot-amarula
@@ -29,6 +35,7 @@ U-Boot
         $ make u-boot.itb
 
 Rockchip miniloader
+-------------------
 ::
 
         $ git clone https://github.com/rockchip-linux/rkbin.git
@@ -37,7 +44,7 @@ Rockchip miniloader
         $ ./tools/loaderimage --pack --uboot /path/to/u-boot/u-boot-dtb.bin uboot.img
 
 Linux
-
+-----
 ::
 
         $ git clone git://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git
@@ -47,10 +54,10 @@ Linux
         $ ARCH=arm64 make Image dtbs -j 4
 
 Buildroot
-
+*********
 
 SD Boot
-
+*******
 Create Single partition and Insert the SD on host
 
 ::
@@ -202,4 +209,3 @@ something like:
         [    0.000000] Built 1 zonelists, mobility grouping on.  Total pages: 257544
         [    0.000000] Policy zone: DMA32
         [    0.000000] Kernel command line: earlycon=uart8250,mmio32,0xff1a0000 root=/dev/mmcblk0p1 rootwait
-

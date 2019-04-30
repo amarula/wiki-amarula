@@ -1,17 +1,22 @@
 Orangepi RK3399
-===============
+###############
 
 This tutorial will show the details of OrangePI RK3399 board mainline support.
 
 Hardware details and wiki `OrangePI RK3399 <http://www.orangepi.org/Orange%20Pi%20RK3399>`_
 
 Hardware Access
-
+***************
 .. image:: /images/opi_rk3399.jpg
 
 BSP Build
+*********
+
+Manual Build
+============
 
 ATF
+---
 ::
         $ git clone https://github.com/ARM-software/arm-trusted-firmware.git
         $ cd /path/to/arm-trusted-firmware
@@ -20,6 +25,7 @@ ATF
         $ cp /path/to/arm-trusted-firmware/build/rk3399/release/bl31/bl31.elf /path/to/u-boot
 
 U-Boot
+------
 ::     
         $ git clone https://github.com/amarula/u-boot-amarula
         $ cd u-boot-amarula
@@ -29,7 +35,7 @@ U-Boot
         $ make u-boot.itb
 
 Linux
-
+-----
 ::
 
         $ git clone git://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git
@@ -39,6 +45,7 @@ Linux
         $ ARCH=arm64 make Image dtbs -j 4
 
 Buildroot
+=========
 ::
         $ git clone https://github.com/amarula/buildroot-amarula
         $ cd buildroot-amarula
@@ -46,7 +53,7 @@ Buildroot
         $ make orangepi_rk3399_defconfig
 
 SD Boot
-
+*******
 Create Single partition and Insert the SD on host or use sdcard.img from buildroot.
 
 ::

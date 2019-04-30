@@ -1,35 +1,26 @@
 Tinker RK3288
-=============
+#############
 
-Go to start of metadata
-
-This tutorial will show the details of Tinker board mainline support and other needed details, for more information about hardware
+This tutorial will show the details of Tinker board mainline support and other needed details, for more information about `hardware <https://www.asus.com/in/Single-Board-Computer/Tinker-Board/>`_
 
 Hardware Access
-BSP Build
-Manual Build
-U-Boot
-Linux
-Buildroot
-SD Boot
-Falcon Boot
-Configure falcon
-
-Hardware Access
-
+***************
 .. image:: /images/tinker.jpg
 
 Serial debug and Power connections
 
 BSP Build
+*********
 
+Manual Build
+============
 Image building need host to ready with all necessary tools ready, refer here
 
 Below are the details of Image build for Tinker RK3288 board.
 Manual Build
 
 U-Boot
-
+------
 ::
 
         $ git clone git://git.denx.de/u-boot.git
@@ -38,7 +29,7 @@ U-Boot
         $ make 
 
 Linux
-
+-----
 ::
 
         $ git clone git://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git
@@ -50,8 +41,8 @@ Linux
         $ ARCH=arm make modules_install -j 4
 
 Buildroot
-
-It's easy to build entire system using buildroot and mainline supported Tinker board already. See read this readme.txt for more info.
+=========
+It's easy to build entire system using buildroot and mainline supported Tinker board already. See read this `readme.txt <https://git.buildroot.net/buildroot/tree/board/asus/tinker/readme.txt>`_ for more info.
 
 ::
 
@@ -60,7 +51,7 @@ It's easy to build entire system using buildroot and mainline supported Tinker b
         $ make asus_tinker_rk3288_defconfig && make
 
 SD Boot
-
+*******
 Create Single partition and Insert the SD on host
 
 ::
@@ -77,7 +68,7 @@ Create Single partition and Insert the SD on host
         $ sync && $ umount /dev/mmcblk0
 
 Falcon Boot
-
+***********
 Build U-Boot, Linux manually from above steps, and create falcon mode partition from, here
 
 Once the partitioning done, copy all images like SD Boot.

@@ -1,29 +1,18 @@
 Orangepi Prime
-==============
+##############
 
 This tutorial will show the details of Orangepi Prime board mainline support and other needed details, for more information about `hardware <http://www.orangepi.org/OrangePiPrime/>`_
 
 Hardware Access
-
+***************
 .. image:: /images/opi_prime.jpeg
 
-
-BSP Build
-Manual Build
-ATF
-U-Boot
-Linux
-Buildroot
-Booting
-SD Boot
-Buildroot
-Hardware Access
 Serial debug and Power connections
 
-
-
 BSP Build
+*********
 Manual Build
+============
 For manual building refer here for all necessary information.
 
 Image building need host to ready with all necessary tools ready, refer here
@@ -31,7 +20,7 @@ Image building need host to ready with all necessary tools ready, refer here
 Below are the details of Image build for Orangepi Prime board.
 
 ATF
-
+---
 ::
 
         $ git clone https://github.com/apritzel/arm-trusted-firmware.git
@@ -40,7 +29,7 @@ ATF
         $ export BL31=/path/to/arm-trusted-firmware/build/sun50iw1p1/release/bl31.bin
         
 U-Boot
-
+------
 ::
 
         $ git clone git://git.denx.de/u-boot.git
@@ -49,7 +38,7 @@ U-Boot
         $ make
 
 Linux
-
+-----
 ::
 
         $ git clone git://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git
@@ -59,7 +48,8 @@ Linux
         $ ARCH=arm64 make -j 4 Image dtbs
 
 Buildroot
-It's easy to build entire system using buildroot and mainline supported orangepi prime already. See read this readme.txt for more info.
+=========
+It's easy to build entire system using buildroot and mainline supported orangepi prime already. See read this `readme.txt <https://git.buildroot.net/buildroot/tree/board/orangepi/orangepi-prime/readme.txt>`_ for more info.
 
 ::
 
@@ -69,5 +59,8 @@ It's easy to build entire system using buildroot and mainline supported orangepi
         $ make
 
 Booting
+*******
 SD Boot
+=======
 Buildroot
+=========

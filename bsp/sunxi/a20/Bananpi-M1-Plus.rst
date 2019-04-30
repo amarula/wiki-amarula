@@ -1,15 +1,15 @@
 Bananapi M1 Plus
-================
+################
 This tutorial will show the details of Bananapi M1 board mainline support and other needed details, for more information about `hardware <http://www.banana-pi.org/m1.html>`_ and `linux-sunxi <http://linux-sunxi.org/LeMaker_Banana_Pi>`_
 
 
 BSP Build
-#########
+*********
 
 Image building need host to ready with all necessary tools ready, refer `here <https://wiki.amarulasolutions.com/uboot/tools.html#arm>`_
 
 U-Boot
-******
+======
 ::
 
    $ git clone git://git.denx.de/u-boot.git
@@ -18,7 +18,7 @@ U-Boot
    $ make 
 
 Linux
-*****
+=====
 
 ::
 
@@ -30,7 +30,7 @@ Linux
    $ ARCH=arm make -j 4 zImage dtbs
 
 SD Boot
-#######
+*******
 
 FEL/USB Boot
 ************
@@ -39,7 +39,7 @@ More information `here <http://linux-sunxi.org/FEL/USBBoot>`_ and build the fel 
 Insert SD card from and Press K3 located between the HDMI and USB host connectors and Power-on
 
 Enter FEL
-^^^^^^^^^
+==========
 
 ::
 
@@ -49,7 +49,7 @@ Enter FEL
    AWUSBFEX soc=00001651(A20) 00000001 ver=0001 44 08 scratchpad=00007e00 00000000 00000000
 
 Boot Linux
-^^^^^^^^^^
+==========
 
 From Host, get the boot.scr from `here <https://wiki.amarulasolutions.com/uboot/tools.html#boot32-fel-scr>`_
 

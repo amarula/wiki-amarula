@@ -1,9 +1,10 @@
 RISC V
-======
+######
 
 Testing RISC V under qemu
+*************************
 Build and Install
-
+=================
 Building the full system emulator and the user mode emulator on Linux:
 
 ::
@@ -21,14 +22,14 @@ Building the full system emulator and the user mode emulator on Linux:
 Use a working buildroot environment
 
 Download buildroot project for risc-v
-
+=====================================
 ::
 
         git clone https://github.com/riscv/riscv-buildroot.git
         git checkout origin/riscv-start
 
 Build buildroot enviroment
-
+==========================
 ::
 
         cd riscv-buildroot
@@ -38,7 +39,7 @@ Build buildroot enviroment
 This configuration let you work on version downloaded in the configuration
 
 Use mainline kernel
-
+===================
 ::
 
         # create local.mk file inside your buildroot directory
@@ -64,7 +65,7 @@ Use mainline kernel
         make linux-menuconfig
 
 Run your built image
-
+====================
 Your output image are in output/images. In order to execute just run:
 
 ::

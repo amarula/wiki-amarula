@@ -1,30 +1,21 @@
 Orangepi PC
-===========
+###########
 
 This tutorial will show the details of Olimex A20-OLinuXino-LIME2 board mainline support and other details like
 
-hardware, documentation, schematics are available at hardware and linux-sunxi
+hardware, documentation, schematics are available at `hardware <http://www.orangepi.org/orangepipc/>`_ and `linux-sunxi <https://linux-sunxi.org/Orange_Pi_PC>`_
 
 Hardware Access
+***************
 
 .. image:: /images/orange_pi_pc.jpg
 
 BSP Build
-U-Boot
-Linux
-Booting
-SD Boot
-FEL/USB Boot
-U-Boot
-USB Mass Storage gadget
-Linux
-USB Mass Storage gadget
-Hardware Access
-BSP Build
+*********
 Image building need host to ready with all necessary tools ready, refer here
 
 U-Boot
-
+======
 ::
 
         $ git clone git://git.denx.de/u-boot.git
@@ -32,7 +23,7 @@ U-Boot
         $ make orangepi_pc_defconfig && make 
         
 Linux
-
+=====
 ::
 
         $ git clone git://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git
@@ -41,10 +32,16 @@ Linux
         $ ARCH=arm sunxi_defconfig && $ ARCH=arm make -j 4 zImage dtbs
 
 Booting
+*******
 SD Boot
+=======
 FEL/USB Boot
+============
+
 U-Boot
+******
 USB Mass Storage gadget
+=======================
 We can use the board as a USB Mass Storage device:
 
 You will be able to access all the partitions of any block device that is on the board or connected to it,
@@ -62,7 +59,9 @@ To do this you need to connect a USB cable between the OTG/Client port of the bo
 and use U-Boot's ums command.
 
 Linux
+******
 USB Mass Storage gadget
+=======================
 Build otg mass storage as statically linked module with
 
 `CONFIG_USB_GADGET_LEGACY=y`

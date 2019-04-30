@@ -1,5 +1,5 @@
 MIPI DSI
-========
+########
 
 More details at, https://mipi.org/specifications/dsi
 

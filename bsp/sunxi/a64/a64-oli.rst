@@ -1,25 +1,25 @@
 Olimex A64-Olinuxino
-=====================
+####################
 
 This tutorial will show the details of Olimex A64-Olinuxino board mainline support and other needed details, for more information about `hardware <https://www.olimex.com/Products/OLinuXino/A64/>`_ and `linux-sunxi <http://linux-sunxi.org/Olimex_A64-OLinuXino>`_
 
 Hardware Access
-###############
+***************
 Serial debug and Power connections
 
 .. image:: /images/a64-olin.jpeg
 
 BSP Build
-#########
+**********
 
 Manual Build
-************
+============
 Image building need host to ready with all necessary tools ready, refer `here <https://wiki.amarulasolutions.com/uboot/tools.html#arm64>`_
 
 Below are the details of Image build for Olimex A64-Olinuxino board.
 
 ATF
-^^^
+---
 
 ::
 
@@ -29,7 +29,7 @@ ATF
         export BL31=/path/to/arm-trusted-firmware/build/sun50iw1p1/release/bl31.bin
         
 U-Boot
-^^^^^^
+------
 
 ::
 
@@ -39,7 +39,7 @@ U-Boot
         make
 
 Linux
-^^^^^
+-----
 
 ::
 
@@ -51,7 +51,7 @@ Linux
         ARCH=arm64 make modules && ARCH=arm64 make modules_install
 
 Buildroot
-*********
+=========
 It's easy to build entire system using buildroot and mainline supported a64-olinuxino already. See read this `readme.txt <https://git.buildroot.net/buildroot/tree/board/olimex/a64-olinuxino/readme.txt>`_ for more info.
 
 ::
@@ -62,15 +62,15 @@ It's easy to build entire system using buildroot and mainline supported a64-olin
         make
 
 Booting
-#######
+*******
 SD Boot
-********
+=======
 Prepare SD
 
 Linux
-#####
+*****
 USB OTG
-*******
+=======
 Here, we can take mass storage as gadget function and will show how it can work with 'host' and 'peripheral' modes
 
 Build otg mass storage as statically linked module with
@@ -80,7 +80,7 @@ Build otg mass storage as statically linked module with
 Append bootargs with 'g_mass_storage.removable=1 g_mass_storage.luns=1'
 
 Peripheral
-^^^^^^^^^^
+-----------
 Plug USB otg cable A-type to host pc and B-type to bananapi
 
 ::
@@ -111,7 +111,7 @@ Plug USB otg cable A-type to host pc and B-type to bananapi
 Access the disk at host pc and write and umount
 
 Host
-^^^^
+----
 Plug USB host cable where A-type connect with USB stick and B-type connect to bananapi and
 
 See USB stick detection on bananapi
@@ -133,7 +133,7 @@ See USB stick detection on bananapi
         [  453.197283] sd 0:0:0:0: [sda] Attached SCSI removable disk
         
 RTL8723BS Wifi
-**************
+==============
 Enable custom configuration and build buildroot
 
 Build the Linux with `CONFIG_RTL8723BS=m`

@@ -1,10 +1,10 @@
 Orangepi Win
-============
+############
 
 This tutorial will show the details of Orangepi Win/Win+ board mainline support and other needed details, for more information about `hardware <http://www.orangepi.org/OrangePiWin_WinPlus/>`_ and `linux-sunxi <https://linux-sunxi.org/Xunlong_Orange_Pi_Win>`_
 
 Hardware Access
-###############
+***************
 Serial debug and Power connections
 
 .. image:: /images/opi_win.jpeg
@@ -13,17 +13,16 @@ Serial debug and Power connections
 
 
 BSP Build
-#########
+*********
 
 Manual Build
-************
+============
 Image building need host to ready with all necessary tools ready, refer `here <https://wiki.amarulasolutions.com/uboot/tools.html#arm64>`_
 
 Below are the details of Image build for Orangepi Win/Win+ board.
 
 ATF
-^^^
-
+---
 ::
 
         $ git clone https://github.com/apritzel/arm-trusted-firmware.git
@@ -32,8 +31,7 @@ ATF
         $ export BL31=/path/to/arm-trusted-firmware/build/sun50iw1p1/release/bl31.bin
         
 U-Boot
-^^^^^^
-
+------
 ::
 
         $ git clone git://git.denx.de/u-boot.git
@@ -42,8 +40,7 @@ U-Boot
         $ make 
         
 Linux
-^^^^^
-
+-----
 ::
 
         $ git clone git://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git
@@ -53,7 +50,7 @@ Linux
         $ ARCH=arm64 make -j 4 Image dtbs
 
 Buildroot
-*********
+=========
 It's easy to build entire system using buildroot and mainline supported orangepi-win already. See read this `readme.txt <https://git.buildroot.net/buildroot/tree/board/orangepi/orangepi-win/readme.txt>`_ for more info.
 
 ::
@@ -64,10 +61,8 @@ It's easy to build entire system using buildroot and mainline supported orangepi
         $ make
 
 SD Boot
-#######
-
+*******
 Partition the SD card in host with `Single Falcon partition <https://wiki.amarulasolutions.com/uboot/tools.html#falcon-partition>`_
-
 ::
 
         $ git clone https://github.com/openedev/rootfs-sun64
@@ -164,12 +159,11 @@ Insert the SD card and power-on the board. See the Linux boot start from SPL
         [    0.000000] Kernel command line: console=ttyS0,115200 earlyprintk root=/dev/mmcblk0p1 rootwait
 
 FEL/USB Boot
-############
-
+************
 More information `here <http://linux-sunxi.org/FEL/USBBoot>`_ and build the fel tools `from <https://wiki.amarulasolutions.com/uboot/tools.html#sunxi>`_
 
 Enter FEL
-
+=========
 Prepare `SD card <https://wiki.amarulasolutions.com/bsp/sunxi/a64/opi-win.html#sd-boot>`_ from and Power-on board without SD
 
 ::
@@ -180,7 +174,7 @@ Prepare `SD card <https://wiki.amarulasolutions.com/bsp/sunxi/a64/opi-win.html#s
         AWUSBFEX soc=00001689(A64) 00000001 ver=0001 44 08 scratchpad=00017e00 00000000 00000000
 
 Build U-Boot
-
+============
 Mainline U-Boot not supporting FEL for H5/A64 due to 64-Bit mode in SPL so we need to build 32-bit SPL and 64-bit U-Boot proper
 
 Export arm toolchain from `here <https://wiki.amarulasolutions.com/uboot/tools.html#arm>`_
@@ -193,7 +187,7 @@ Export arm toolchain from `here <https://wiki.amarulasolutions.com/uboot/tools.h
         $ make sun50i_spl32_defconfig && make
 
 Boot Linux
-
+==========
 From Host, get the boot.scr from `here <https://wiki.amarulasolutions.com/uboot/tools.html#boot64-fel-scr>`_
 
 ::

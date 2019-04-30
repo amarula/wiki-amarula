@@ -1,31 +1,23 @@
 Orangepi One Plus
-=================
+#################
 
-This tutorial will show the details of Orangepi One Plus board mainline support and other details like documentation, hardware schismatic
-
-and other needful information is available at hardware and linux-sunxi
+This tutorial will show the details of Orangepi One Plus board mainline support and other details like documentation, hardware schismatic and other needful information is available at `hardware <http://www.orangepi.org/OrangePiOneplus/>`_ and `linux-sunxi <http://linux-sunxi.org/Xunlong_Orange_Pi_One_Plus>`_
 
 Hardware Access
+***************
 
 .. image:: /images/opi-one-plus.jpg
 
-BSP Build
-Manual Build
-ATF
-U-Boot
-Linux
-Buildroot
-Hardware Access
 Serial debug and Power connections
 
-
-
 BSP Build
+*********
 Manual Build
-Image building need host to ready with all necessary tools ready, refer here
+============
+Image building need host to ready with all necessary tools ready, refer `here <https://wiki.amarulasolutions.com/uboot/tools.html>`_
 
 ATF
-
+---
 ::
 
         $ git clone https://github.com/ARM-software/arm-trusted-firmware
@@ -34,7 +26,7 @@ ATF
         $ export BL31=/path/to/arm-trusted-firmware/build/sun50i_h6/release/bl31.bin
         
 U-Boot
-
+------
 ::
 
         $ git clone git://git.denx.de/u-boot.git
@@ -42,7 +34,7 @@ U-Boot
         $ make orangepi_one_plus_defconfig; $ make
 
 Linux
-
+-----
 ::
 
         $ git clone https://github.com/amarula/linux-amarula
@@ -53,7 +45,8 @@ Linux
         $ ARCH=arm64 make -j 4 Image dtbs
 
 Buildroot
-It's easy to build entire system using buildroot and mainline supported  orangepi one plus already.  See read this readme.txt for more info.
+=========
+It's easy to build entire system using buildroot and mainline supported  orangepi one plus already.  See read this `readme.txt <https://git.buildroot.net/buildroot/tree/board/orangepi/orangepi-one-plus/readme.txt>`_ for more info.
 
 ::
 

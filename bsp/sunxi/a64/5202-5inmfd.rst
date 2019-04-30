@@ -1,19 +1,19 @@
 Oceanic 5205-5inMFD
-===================
+###################
 
 Hardware Access
-###############
+***************
 
 BSP Build
-#########
+*********
 Manual Build
-************
+============
 Image building need host to ready with all necessary tools ready, refer `here <https://wiki.amarulasolutions.com/uboot/tools.html#arm64>`_
 
 Below are the details of Image build for SoPine board.
 
 ATF
-^^^
+---
 
 ::
 
@@ -23,7 +23,7 @@ ATF
         $ export BL31=/path/to/arm-trusted-firmware/build/sun50iw1p1/release/bl31.bin
         
 U-Boot
-^^^^^^
+------
 
 ::
 
@@ -33,7 +33,7 @@ U-Boot
         $ make 
         
 Linux
-^^^^^
+-----
 
 ::
 
@@ -44,7 +44,7 @@ Linux
         $ ARCH=arm64 make -j 4 Image dtbs
 
 Buildroot
-*********
+=========
 
 Read readme.txt from board/oceanic/5205-5inmfd/readme.tx for more info.
 

@@ -50,7 +50,7 @@ Linux
 
 Buildroot
 =========
-It's easy to build entire system using buildroot and mainline supported nanopi-neo2 already. See read this readme.txt for more info.
+It's easy to build entire system using buildroot and mainline supported nanopi-neo2 already. See read this `readme.txt <https://git.buildroot.net/buildroot/tree/board/friendlyarm/nanopi-neo2/readme.txt>`_ for more info.
 
 ::
 

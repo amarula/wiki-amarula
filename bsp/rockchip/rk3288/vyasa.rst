@@ -1,10 +1,11 @@
 Vyasa RK3288
-============
+############
 
 This tutorial will show the details of Vyasa RK3288 Linux BSP Guide. Most of the software supported by Vyasa is mainlined already.
+You can check `hardware details here <https://www.amarula-electronics.com/product/vyasa-pico-itx-2-5-single-board-computer/>`_
 
 Hardware Access
-
+***************
 Serial: NULL Modem cable, Serial-to-USB converter
 
 Power: DC-in 12V ~ 24V socket supply
@@ -15,6 +16,7 @@ Sometimes junk characters show on serial console so better to plug-in USB OTG ca
 .. image:: /images/vyasa.jpg
 
 Prebuilt Image
+**************
 Insert the SD card on to host and write the image.
 
 ::
@@ -28,10 +30,14 @@ Insert the SD card on to host and write the image.
 Turn-on the board
 
 BSP Building
-Image building need host to ready with all necessary tools ready, refer here
+************
+
+Manual Build
+============
+Image building need host to ready with all necessary tools ready, refer `here <https://wiki.amarulasolutions.com/uboot/tools.html>`_
 
 U-Boot
-
+------
 ::
 
         $ git clone git://git.denx.de/u-boot.git
@@ -40,7 +46,7 @@ U-Boot
         $ make 
 
 Linux
-
+-----
 ::
 
         $ git clone git://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git
@@ -59,8 +65,11 @@ Linux
         $ find . -name *`cat localversion-next`
 
 Rootfs
+------
+
 Buildroot
-It's easy to build entire system using buildroot and mainline supported Vyasa board already. See read this readme.txt for more info.
+=========
+It's easy to build entire system using buildroot and mainline supported Vyasa board already. See read this `readme.txt <https://git.buildroot.net/buildroot/tree/board/amarula/vyasa/readme.txt>`_ for more info.
 
 ::
 
@@ -80,7 +89,9 @@ Buildroot generates a ready-to-use SD card image that you can flash directly to 
 Finally, you can insert the SD card to the Vyasa RK3288 board, close J4 and boot it.
         
 Ubuntu 16.04
+************
 U-Boot/Linux
+============
 Build U-Boot. Linux from BSP Build and Build Mali
 
 Ubuntu RFS
@@ -236,7 +247,7 @@ Create Single partition and Insert the SD on host.
         $ sync && sudo umount /media/jagan/rootfs
         
 Boot Ubuntu
-
+===========
 Insert the SD card put SD Bootmode and power-on the board
 
 We need insert mali drivers and libs
@@ -271,8 +282,11 @@ Switch to Graphical mode
         root@localhost:~# systemctl start graphical.target
 
 Booting
+********
 SDMMC Boot
+==========
 Write SD
+========
 Create Single partition and Insert the SD on host.
 
 ::
@@ -289,14 +303,15 @@ Create Single partition and Insert the SD on host.
         $ sync && sudo umount /media/jagan/rootfs
         
 Turn-on Board
-        - Plug the SD card to Vyasa,
-        - Open minicom with detected /dev/ttyUSBX device (where X is detected device number)
-        - Baudrate 115200n8
-        - close JP4 for SD boot
-        - Plug-in USB OTG cable
-        - Turn-on the power supply
+* Plug the SD card to Vyasa,
+* Open minicom with detected /dev/ttyUSBX device (where X is detected device number)
+* Baudrate 115200n8
+* close JP4 for SD boot
+* Plug-in USB OTG cable
+* Turn-on the power supply
           
 eMMC Boot
+=========
 U-Boot Accessing Peripherals
 SDMMC
 

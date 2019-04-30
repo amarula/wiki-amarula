@@ -18,4 +18,3 @@ See read this `readme.txt <https://git.buildroot.net/buildroot/tree/board/friend
    $ cd buildroot
    $ make nanopi_m1_defconfig
    $ make
-

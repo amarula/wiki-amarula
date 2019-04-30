@@ -1,26 +1,14 @@
 Bananapi M1
-===========
+###########
 
-This tutorial will show the details of Bananapi M1 board mainline support and other needed details, for more information about hardware and linux-sunxi
+This tutorial will show the details of Bananapi M1 board mainline support and other needed details, for more information about `hardware <http://www.banana-pi.org/m1.html>`_ and `linux-sunxi <http://linux-sunxi.org/LeMaker_Banana_Pi>`_
 
 BSP Build
 *********
-U-Boot
-******
-Linux
-*****
-SD Boot
-*******
-FEL/USB Boot
-************
-Buildroot
-*********
-BSP Build
-*********
-Image building need host to ready with all necessary tools ready, refer here
+Image building need host to ready with all necessary tools ready, `refer here <https://wiki.amarulasolutions.com/uboot/tools.html#arm>`_
 
 U-Boot
-******
+======
 
 ::
 
@@ -30,7 +18,7 @@ U-Boot
         make 
 
 Linux
-*****
+=====
 ::
 
         git clone git://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git
@@ -43,8 +31,8 @@ SD Boot
 *******
 
 FEL/USB Boot
-
-More information here and build the fel tools from
+************
+More information `here <http://linux-sunxi.org/FEL/USBBoot>`_ and build the fel tools from `here <https://wiki.amarulasolutions.com/uboot/tools.html#sunxi>`_
 
 Insert SD card from and Press K3 located between the HDMI and USB host connectors and Power-on
 
@@ -60,7 +48,7 @@ Insert SD card from and Press K3 located between the HDMI and USB host connector
 Boot Linux
 **********
 
-From Host, get the boot.scr from
+From Host, get the boot.scr from `here <https://wiki.amarulasolutions.com/uboot/tools.html#boot32-fel-scr>`_
 
 ::
 
