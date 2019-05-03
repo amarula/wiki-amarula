@@ -51,7 +51,9 @@ More info at, u-boot/doc/README.sdp
 
 2. Build the BSP and copy SPL, u-boot-dtb.img in imx_usb_loader directory
 
-3. Put the board in "Serial Download Mode"
+3. Put the board in "Serial Download Mode" ( Using jumpers circled in below image)
+
+.. image:: /images/engicam_imx_serialdownload_jumpers.jpeg
 
 4. Plug-in USB-to-Serial and USB OTG cables to Host and Turn-on board
 
