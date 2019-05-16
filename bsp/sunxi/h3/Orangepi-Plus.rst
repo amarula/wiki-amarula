@@ -2,12 +2,10 @@ Orangepi Plus
 #############
 
 This tutorial will show the details of Olimex A20-OLinuXino-LIME2 board mainline support and other details like
-
 hardware, documentation, schematics are available at hardware and `linux-sunxi <http://linux-sunxi.org/Xunlong_Orange_Pi_Plus>`_
 
 Hardware Access
 ***************
-
 .. image:: /images/orange_pi_plus.jpg
 
 BSP Build

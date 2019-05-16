@@ -111,4 +111,3 @@ For Display, Touchscreen, Camera, Sensor see below buildroot from respective git
         make
 
 follow flash instruction from board/amarula/a64-relic/readme.txt
-

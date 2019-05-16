@@ -19,7 +19,6 @@ U-Boot
 
 Linux
 =====
-
 ::
 
    $ git clone git://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git

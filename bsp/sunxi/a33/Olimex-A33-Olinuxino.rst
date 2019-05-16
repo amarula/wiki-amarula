@@ -15,7 +15,6 @@ Image building need host to ready with all necessary tools ready, refer here
 
 U-Boot
 ======
-
 ::
 
         git clone git://git.denx.de/u-boot.git

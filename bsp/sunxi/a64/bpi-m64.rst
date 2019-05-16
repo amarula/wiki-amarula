@@ -4,7 +4,6 @@ This tutorial will show the details of Bananapi M64 board mainline support and o
 
 Hardware Access
 ***************
-
 Serial debug and Power connections
 
 .. image:: /images/bpi-m64.jpeg
@@ -274,4 +273,3 @@ See USB stick detection on bananapi
         [  453.175770] sd 0:0:0:0: [sda] Write cache: disabled, read cache: enabled, doesn't support DPO or FUA
         [  453.191292]  sda: sda1
         [  453.197283] sd 0:0:0:0: [sda] Attached SCSI removable disk
-
