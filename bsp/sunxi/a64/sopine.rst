@@ -15,7 +15,7 @@ BSP Build
 *********
 Manual Build
 ============
-Image building need host to ready with all necessary tools ready, refer `here <https://wiki.amarulasolutions.com/uboot/tools.html#arm64>`_
+Image building need host to ready with all necessary tools ready, refer `here <https://wiki.amarulasolutions.com/found/host/tools.html#arm64>`_
 
 Below are the details of Image build for SoPine board.
 
@@ -60,7 +60,7 @@ It's easy to build entire system using buildroot and mainline supported sopine a
 
 SD Write
 ========
-Create `Dual partition <https://wiki.amarulasolutions.com/uboot/tools.html#dual-partition>`_ and Insert the SD on host
+Create `Dual partition <https://wiki.amarulasolutions.com/found/host/tools.html#dual-partition>`_ and Insert the SD on host
 
 ::
 

@@ -6,7 +6,7 @@ This tutorial will show the details of Bananapi M1 board mainline support and ot
 BSP Build
 *********
 
-Image building need host to ready with all necessary tools ready, refer `here <https://wiki.amarulasolutions.com/uboot/tools.html#arm>`_
+Image building need host to ready with all necessary tools ready, refer `here <https://wiki.amarulasolutions.com/found/host/tools.html#arm>`_
 
 U-Boot
 ======
@@ -33,7 +33,7 @@ SD Boot
 
 FEL/USB Boot
 ************
-More information `here <http://linux-sunxi.org/FEL/USBBoot>`_ and build the fel tools from `here <https://wiki.amarulasolutions.com/uboot/tools.html#sunxi>`_
+More information `here <http://linux-sunxi.org/FEL/USBBoot>`_ and build the fel tools from `here <https://wiki.amarulasolutions.com/found/host/tools.html#sunxi>`_
 
 Insert SD card from and Press K3 located between the HDMI and USB host connectors and Power-on
 
@@ -50,7 +50,7 @@ Enter FEL
 Boot Linux
 ==========
 
-From Host, get the boot.scr from `here <https://wiki.amarulasolutions.com/uboot/tools.html#boot32-fel-scr>`_
+From Host, get the boot.scr from `here <https://wiki.amarulasolutions.com/found/host/tools.html#boot32-fel-scr>`_
 
 ::
 

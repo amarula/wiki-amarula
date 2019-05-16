@@ -17,7 +17,7 @@ BSP Build
 
 Manual Build
 ============
-Image building need host to ready with all necessary tools ready, refer `here <https://wiki.amarulasolutions.com/uboot/tools.html#arm64>`_
+Image building need host to ready with all necessary tools ready, refer `here <https://wiki.amarulasolutions.com/found/host/tools.html#arm64>`_
 
 Below are the details of Image build for Orangepi Win/Win+ board.
 
@@ -62,7 +62,7 @@ It's easy to build entire system using buildroot and mainline supported orangepi
 
 SD Boot
 *******
-Partition the SD card in host with `Single Falcon partition <https://wiki.amarulasolutions.com/uboot/tools.html#falcon-partition>`_
+Partition the SD card in host with `Single Falcon partition <https://wiki.amarulasolutions.com/found/host/tools.html#falcon-partition>`_
 ::
 
         $ git clone https://github.com/openedev/rootfs-sun64
@@ -160,7 +160,7 @@ Insert the SD card and power-on the board. See the Linux boot start from SPL
 
 FEL/USB Boot
 ************
-More information `here <http://linux-sunxi.org/FEL/USBBoot>`_ and build the fel tools `from <https://wiki.amarulasolutions.com/uboot/tools.html#sunxi>`_
+More information `here <http://linux-sunxi.org/FEL/USBBoot>`_ and build the fel tools `from <https://wiki.amarulasolutions.com/found/host/tools.html#sunxi>`_
 
 Enter FEL
 =========
@@ -177,7 +177,7 @@ Build U-Boot
 ============
 Mainline U-Boot not supporting FEL for H5/A64 due to 64-Bit mode in SPL so we need to build 32-bit SPL and 64-bit U-Boot proper
 
-Export arm toolchain from `here <https://wiki.amarulasolutions.com/uboot/tools.html#arm>`_
+Export arm toolchain from `here <https://wiki.amarulasolutions.com/found/host/tools.html#arm>`_
 
 ::
 
@@ -188,7 +188,7 @@ Export arm toolchain from `here <https://wiki.amarulasolutions.com/uboot/tools.h
 
 Boot Linux
 ==========
-From Host, get the boot.scr from `here <https://wiki.amarulasolutions.com/uboot/tools.html#boot64-fel-scr>`_
+From Host, get the boot.scr from `here <https://wiki.amarulasolutions.com/found/host/tools.html#boot64-fel-scr>`_
 
 ::
 

@@ -21,7 +21,7 @@ BSP Build
 
 Manual Build
 ============
-Image building need host to ready with all necessary tools ready, refer `here <https://wiki.amarulasolutions.com/uboot/tools.html#arm64>`_
+Image building need host to ready with all necessary tools ready, refer `here <https://wiki.amarulasolutions.com/found/host/tools.html#arm64>`_
 
 Below are the details of Image build for Nanopi A64 board.
 
@@ -69,7 +69,7 @@ Booting
 
 SD Boot
 =======
-Partition the SD card in host with `Single Falcon partitionc <https://wiki.amarulasolutions.com/uboot/tools.html#falcon-partition>`_
+Partition the SD card in host with `Single Falcon partitionc <https://wiki.amarulasolutions.com/found/host/tools.html#falcon-partition>`_
 
 ::
 

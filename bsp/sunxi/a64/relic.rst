@@ -8,7 +8,7 @@ BSP Build
 
 Manual Build
 ============
-Image building need host to ready with all necessary tools ready, refer `here <https://wiki.amarulasolutions.com/uboot/tools.html>`_ for Host and Crosstool
+Image building need host to ready with all necessary tools ready, refer `here <https://wiki.amarulasolutions.com/found/host/tools.html>`_ for Host and Crosstool
 
 ATF
 ---

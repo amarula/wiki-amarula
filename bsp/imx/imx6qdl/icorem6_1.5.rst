@@ -10,7 +10,7 @@ BSP Build
 *********
 Manual Build
 ============
-Image building need host to ready with all necessary tools ready, refer `here <https://wiki.amarulasolutions.com/uboot/tools.html>`_ for Host and Crosstool
+Image building need host to ready with all necessary tools ready, refer `here <https://wiki.amarulasolutions.com/found/host/tools.html>`_ for Host and Crosstool
 
 U-Boot
 ------
@@ -43,7 +43,7 @@ Boot
 ****
 Write SD
 ========
-For manual build images will write by `partitioning SD card <https://wiki.amarulasolutions.com/uboot/tools.html#sd-setup>`_
+For manual build images will write by `partitioning SD card <https://wiki.amarulasolutions.com/found/host/tools.html#sd-setup>`_
 
 ::
 

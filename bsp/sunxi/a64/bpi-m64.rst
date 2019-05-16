@@ -15,7 +15,7 @@ Manual Build
 ============
 For manual building refer `here <https://wiki.amarulasolutions.com/uboot/image_build/allwinner_sunxi64.html>`_ for all necessary information.
 
-Image building need host to ready with all necessary tools ready, refer `here <https://wiki.amarulasolutions.com/uboot/tools.html#arm64>`_
+Image building need host to ready with all necessary tools ready, refer `here <https://wiki.amarulasolutions.com/found/host/tools.html#arm64>`_
 
 Below are the details of Image build for Banana Pi BPI-M64 board.
 
@@ -67,7 +67,7 @@ Booting
 SD Boot
 =======
 
-Partition the SD card in host with `Single Falcon partition <https://wiki.amarulasolutions.com/uboot/tools.html#falcon-partition>`_
+Partition the SD card in host with `Single Falcon partition <https://wiki.amarulasolutions.com/found/host/tools.html#falcon-partition>`_
 
 Prepare SD
 

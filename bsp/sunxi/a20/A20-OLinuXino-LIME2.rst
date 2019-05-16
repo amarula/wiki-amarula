@@ -13,7 +13,7 @@ USB OTG Cable, USB to TTL for debug
 
 BSP Build
 *********
-Image building need host to ready with all necessary tools ready, refer `here <https://wiki.amarulasolutions.com/uboot/tools.html#arm>`_
+Image building need host to ready with all necessary tools ready, refer `here <https://wiki.amarulasolutions.com/found/host/tools.html#arm>`_
 
 U-Boot
 ======

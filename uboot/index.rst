@@ -15,7 +15,6 @@ U-Boot
    image_boot/index
    image_build/index
    secure_boot/index
-   tools
    sandbox
    uboot_watchdog_and_redundant_boot
 
