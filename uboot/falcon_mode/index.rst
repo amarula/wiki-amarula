@@ -9,7 +9,7 @@ Falcon Mode is introduced to speed up the booting process, allowing to boot a Li
 without a full blown U-Boot. See doc/README.falcon for more details.
 
 .. toctree::
-   :maxdepth: 3
+   :maxdepth: 2
    :caption: Contents:
    
    engicam_imx6q

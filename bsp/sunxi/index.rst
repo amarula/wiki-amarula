@@ -7,7 +7,7 @@ Allwinner
 =======================================
 
 .. toctree::
-   :maxdepth: 3
+   :maxdepth: 2
    :caption: Contents:
    
    a13/index

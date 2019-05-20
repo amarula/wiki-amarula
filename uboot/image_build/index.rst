@@ -7,7 +7,7 @@ Image Build
 =======================================
 
 .. toctree::
-   :maxdepth: 3
+   :maxdepth: 2
    :caption: Contents:
 
    allwinner_sunxi32

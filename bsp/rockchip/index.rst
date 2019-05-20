@@ -7,7 +7,7 @@ Rockchip
 ========
 
 .. toctree::
-   :maxdepth: 3
+   :maxdepth: 2
    :caption: Contents:
    
    rk3288/index
