@@ -77,6 +77,62 @@ Boot eMMC
 * Boot from SD and write images on eMMC in Linux prompt
 * Open JM3 for eMMC boot
 
+USB SDP
+=======
+More info at, u-boot/doc/README.sdp
+
+1. Clone imx_usb_loader
+
+::
+
+        $ git clone git://github.com/boundarydevices/imx_usb_loader.git
+        $ cd imx_usb_loader
+        $ make
+
+2. Build the BSP and copy SPL, u-boot-dtb.img in imx_usb_loader directory
+
+3. Put the board in "Serial Download Mode" ( Using jumpers circled in below image)
+
+.. image:: /images/engicam_imx_serialdownload_jumpers.jpeg
+
+4. Plug-in USB-to-Serial and USB OTG cables to Host and Turn-on board
+
+5. Identify VID/PID using lsusb
+
+Bus 001 Device 010: ID 15a2:0061 Freescale Semiconductor, Inc. i.MX 6Solo/6DualLite SystemOnChip in RecoveryMode
+
+6. Update the conf files
+
+   imx_usb.conf
+
+   ::
+      0x15a2:0x0054, mx6_usb_rom.conf, 0x0525:0xb4a4, mx6_usb_sdp_spl.conf
+
+  mx6_usb_rom.conf
+
+  ::
+
+      mx6_usb
+      hid,1024,0x910000,0x10000000,512M,0x00900000,0x40000
+      SPL:jump header
+
+  mx6_usb_sdp_spl.conf
+
+  ::
+
+      mx6_spl_sdp
+      hid,uboot_header,1024,0x910000,0x10000000,512M,0x00900000,0x40000
+      u-boot-dtb.img:jump header
+
+7. Launch the loader
+
+   ::
+      ./imx_usb
+
+8. Identify board booting on serial
+
+   ::
+
 MIPI-CSI2 OV5640 Camera
 ***********************
 Build
