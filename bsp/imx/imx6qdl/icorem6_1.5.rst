@@ -106,6 +106,7 @@ Bus 001 Device 010: ID 15a2:0061 Freescale Semiconductor, Inc. i.MX 6Solo/6DualL
    imx_usb.conf
 
    ::
+
       0x15a2:0x0054, mx6_usb_rom.conf, 0x0525:0xb4a4, mx6_usb_sdp_spl.conf
 
   mx6_usb_rom.conf
@@ -127,6 +128,7 @@ Bus 001 Device 010: ID 15a2:0061 Freescale Semiconductor, Inc. i.MX 6Solo/6DualL
 7. Launch the loader
 
    ::
+
       ./imx_usb
 
 8. Identify board booting on serial
@@ -162,7 +164,6 @@ Once Linux boot, prepare media control chart for finding pipeline setups
         $ dot -T png -o mipi-ov5640.png mipi-ov5640.dot
 
 .. image:: /images/mipi-ov5640.png
-
 
 configure the pipeline with default format AYUV32/640x480,this can be alter with any other relevant format to testing with.
 
