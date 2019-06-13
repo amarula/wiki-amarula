@@ -7,7 +7,7 @@ Allwinner A33
 =======================================
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    :caption: Contents:
 
    Olimex-A33-Olinuxino
