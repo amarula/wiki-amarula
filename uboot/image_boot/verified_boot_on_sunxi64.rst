@@ -19,7 +19,10 @@ Generate RSA key to sign
 Build Linux
 ***********
 See this `page <https://wiki.amarulasolutions.com/bsp/sunxi/a64/opi-win.html#linux>`_ for building linux
-FIT Input - kernel_fdt.its
+
+FIT Input
+*********
+`kernel_fdt.its <https://downloads.amarulasolutions.com/public/linux_image_boot_sunxi/kernel_fdt.its>`_
 
 ::
 

@@ -12,7 +12,3 @@ U-Boot
    
    measurement
 
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`

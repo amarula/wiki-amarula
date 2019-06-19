@@ -162,8 +162,7 @@ add the following repository to etc/apt/sources.list(for compiling xserver)
 
 chroot to RFS
 
-Download ch-mount 
-ch-mount.sh
+Download `ch-mount.sh <https://downloads.amarulasolutions.com/public/vyasa/ch-mount.sh>`_
 
 ::
 
@@ -222,7 +221,7 @@ exit chroot
         
 libmali
 
-Copy libmali here to ubuntu/opt
+Copy `libmali <https://github.com/rockchip-linux/rk-rootfs-build/tree/master/packages/armhf/libmali>`_ here to ubuntu/opt
 
 Prepare SD
 Create Single partition and Insert the SD on host.

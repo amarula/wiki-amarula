@@ -7,7 +7,7 @@ RK3288
 ======
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    :caption: Contents:
    
    tinker

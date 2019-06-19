@@ -173,7 +173,7 @@ vmlinux.bin
 
 FIT Input
 =========
-FIT input for Linux and FDT, here and Linux, FDT and Ramdisk, here
+FIT input for Linux and `FDT <https://downloads.amarulasolutions.com/public/linux_image_boot_imx6/kernel_fdt.its>`_, here and Linux, FDT and Ramdisk, `here <https://downloads.amarulasolutions.com/public/linux_image_boot_imx6/kernel_fdt_ramdisk.its>`_
 
 ::
 

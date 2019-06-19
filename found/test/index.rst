@@ -11,7 +11,7 @@ Testing
 
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    :caption: Contents:
    
    os_auto.rst

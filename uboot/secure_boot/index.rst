@@ -7,7 +7,7 @@ Secure Boot
 =======================================
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    :caption: Contents:
    
    imx6_habv4

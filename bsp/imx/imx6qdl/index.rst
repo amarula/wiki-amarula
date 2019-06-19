@@ -11,7 +11,7 @@ IMX6 QDL
 
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    :caption: Contents:
    
    icorem6_1.5
