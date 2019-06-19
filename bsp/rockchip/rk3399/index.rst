@@ -7,7 +7,7 @@ RK3399
 ======
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    :caption: Contents:
 
    npc_t4
