@@ -6,7 +6,7 @@
 Falcon Mode
 =======================================
 Falcon Mode is introduced to speed up the booting process, allowing to boot a Linux kernel (or whatever image)
-without a full blown U-Boot. See doc/README.falcon for more details.
+without a full blown U-Boot. See `doc/README.falcon <https://gitlab.denx.de/u-boot/u-boot/raw/master/doc/README.falcon>`_ for more details.
 
 .. toctree::
    :maxdepth: 1
