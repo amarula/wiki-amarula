@@ -7,12 +7,17 @@ and related opensource ecosystem projects based on our Amarula experience.
 We keep updating this based on our expertise on respective domains along with 
 knowledge required for Embedded Linux aspirers.
 
-Feel free to write for any corrections and updates?
+Feel free to write for any corrections and updates to 
+shyam.saini@amarulasolutions.com
 
-Mainatiners
-===========
+.. _contents: Table of contents
 
-Shyam Saini <shyam.saini@amarulasolutions.com>
 
+.. toctree::
+   :maxdepth: 1
+   :caption: Contents:
+  
+   open
+   conf
 
 Team Amarula Wiki.
