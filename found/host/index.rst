@@ -14,4 +14,5 @@ Host
    :maxdepth: 1
    :caption: Contents:
 
+   git_bisect
    tools
