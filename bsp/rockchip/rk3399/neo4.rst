@@ -21,7 +21,7 @@ ATF
         $ git clone https://github.com/ARM-software/arm-trusted-firmware.git
         $ cd /path/to/arm-trusted-firmware
         $ make realclean
-        $ make CROSS_COMPILE=aarch64-linux-gnu- PLAT=rk3399
+        $ make CROSS_COMPILE=aarch64-linux-gnu- PLAT=rk3399 bl31
         $ cp /path/to/arm-trusted-firmware/build/rk3399/release/bl31/bl31.elf /path/to/u-boot
 
 U-Boot

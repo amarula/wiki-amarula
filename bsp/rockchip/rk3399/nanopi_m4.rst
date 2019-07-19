@@ -19,7 +19,7 @@ Arm Trusted Firware
 ::
 
    $ git clone https://github.com/ARM-software/arm-trusted-firmware.git
-   $ make CROSS_COMPILE=aarch64-linux-gnu- PLAT=rk3399
+   $ make CROSS_COMPILE=aarch64-linux-gnu- PLAT=rk3399 bl31
 
 U-Boot
 -------
