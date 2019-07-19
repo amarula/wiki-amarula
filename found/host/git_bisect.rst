@@ -1,3 +1,6 @@
+Git Bisect Tutorial
+###################
+
 When we we are not sure which commit in our git repository broke something, we need some tool to find that bad/buggy commit.
 This situation becomes complex when there are large number of commits and we have no clue. In this situation git bisect is our saviour.
 Suppose we found bug in u-boot v2017.07 version and we know that v2017.05 version is working fine. But the number of commits
