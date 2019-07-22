@@ -11,5 +11,7 @@ Linux Media Subsystem
 
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    :caption: Contents:
+
+   imx6-csi
