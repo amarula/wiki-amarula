@@ -19,5 +19,6 @@ shyam.saini@amarulasolutions.com
   
    open
    conf
+   tech
 
 Team Amarula Wiki.
