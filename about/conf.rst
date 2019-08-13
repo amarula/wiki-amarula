@@ -7,6 +7,11 @@ and showcasing our work at international conferences.
 2019, ELC:
 *********
 
+Talk: `Demystifying Linux MIPI DSI Subsystem <https://events.linuxfoundation.org/events/elc-north-america-2019/program/schedule>`_
+
+2019, ELC:
+*********
+
 Talk: `Linux Kernel Memory Subsystem and Facilities: From A Novice Programmer's Perspective <https://ossna19.sched.com/event/PURr/linux-kernel-memory-subsystem-and-facilities-from-a-novice-programmers-perspective-shyam-saini-amarula-solutions>`_
 
 
