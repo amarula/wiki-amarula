@@ -15,3 +15,4 @@ Target
    :caption: Contents:
 
    rk3399_sd
+   rk3399_sdram
