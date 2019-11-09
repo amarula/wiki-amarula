@@ -1,5 +1,5 @@
-RISC V
-######
+QEMU RISC-V
+###########
 
 Testing RISC V under qemu
 *************************

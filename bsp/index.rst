@@ -17,4 +17,4 @@ Board Support Packages
    sunxi/index
    imx/index
    rockchip/index
-   riscv/riscv.rst
+   riscv/index
