@@ -4,6 +4,11 @@ Conferences
 Amarula Solutions have enough record of sponsering, participating, speaking 
 and showcasing our work at international conferences.
 
+2019, CVRF:
+**********
+
+Talk: `An Introduction to RISC-V Boot flow 
+
 2019, ELC:
 *********
 
