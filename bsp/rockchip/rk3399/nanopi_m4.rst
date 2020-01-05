@@ -26,8 +26,8 @@ U-Boot
 
 ::
 
-   $ git clone https://github.com/amarula/u-boot-amarula 
-   $ cd u-boot-amarula
+   $ git clone https://gitlab.denx.de/u-boot/u-boot.git
+   $ cd u-boot
    $ cp /path/to arm-trusted-firmware /build/rk3399/release/bl31/bl31.elf  ./
    $ make nanopi-m4-rk3399_defconfig 
 
