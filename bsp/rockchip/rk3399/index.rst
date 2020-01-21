@@ -15,3 +15,4 @@ RK3399
    nanopi_m4
    orangepi
    rockpro64
+   roc-rk3399-pc
