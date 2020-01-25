@@ -13,7 +13,8 @@ Board Support Packages
 .. toctree::
    :maxdepth: 3
    :caption: Contents:
-   
+
+   setup/index
    sunxi/index
    imx/index
    rockchip/index

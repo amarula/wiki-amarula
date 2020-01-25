@@ -1,5 +1,5 @@
-RK3399 SD Boot
-##############
+RK3399 eMMC Boot
+################
 
 Few of high ended RK3399 SBC's like Firefly and Orangepi vendor boards 
 by default boot from eMMC and there is no way to boot from SD by means 

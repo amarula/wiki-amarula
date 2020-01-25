@@ -15,5 +15,4 @@ Linux Foundations
    :caption: Contents:
 
    host/index
-   target/index
    test/index
