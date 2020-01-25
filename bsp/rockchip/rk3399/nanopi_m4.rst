@@ -12,13 +12,11 @@ Hardware Access
 .. image:: /images/nanopi_m4.jpg
 
 
-        UART:   RS232 PL2303 Serial Port
-        Power:  USB C-Type
-
 BSP Building
 ------------
 
-ATF::
+ATF
+::
 
         $ git clone https://git.trustedfirmware.org/TF-A/trusted-firmware-a.git
         $ cd /path/to/trusted-firmware-a
@@ -26,7 +24,8 @@ ATF::
         $ make CROSS_COMPILE=aarch64-linux-gnu- PLAT=rk3399 bl31
         $ export BL31=/path/to/arm-trusted-firmware/build/rk3399/release/bl31/bl31.elf 
 
-U-Boot::
+U-Boot
+::
 
         $ git clone https://github.com/amarula/u-boot-amarula
         $ cd u-boot-amarula
@@ -34,7 +33,8 @@ U-Boot::
         $ make nanopc-t4-rk3399_defconfig
         $ make
 
-Linux::
+Linux
+::
 
         $ git clone git://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git
         $ cd linux-next
@@ -42,12 +42,14 @@ Linux::
         $ ARCH=arm64 make defconfig
         $ ARCH=arm64 make Image dtbs -j 4
 
-Buildroot::
+Buildroot
+::
 
 Booting from
 -----------
 
-SD::
+SD
+::
 
         $ cd /path/to/u-boot
         $ sudo dd if=u-boot-rockchip.bin of=/dev/mmcblk0 seek=64
