@@ -28,8 +28,8 @@ U-Boot
         
         $ git clone https://github.com/amarula/u-boot-amarula
         $ cd u-boot-amarula
-        $ git checkout -b rockdev origin/rockdev
-        $ make rockpro64-rk3399_defconfig
+        $ git checkout -b rockchip origin/rockchip
+        $ make roc-pc-rk3399_defconfig
         $ make
 
 Linux
