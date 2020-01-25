@@ -12,48 +12,44 @@ Hardware Access
 .. image:: /images/nanopi_m4.jpg
 
 
-BSP Building
+BSP building
 ------------
 
 ATF
 ::
 
-        $ git clone https://git.trustedfirmware.org/TF-A/trusted-firmware-a.git
-        $ cd /path/to/trusted-firmware-a
-        $ make distcleanclean
-        $ make CROSS_COMPILE=aarch64-linux-gnu- PLAT=rk3399 bl31
-        $ export BL31=/path/to/arm-trusted-firmware/build/rk3399/release/bl31/bl31.elf 
+        git clone https://git.trustedfirmware.org/TF-A/trusted-firmware-a.git
+        cd /path/to/trusted-firmware-a
+        make distcleanclean
+        make CROSS_COMPILE=aarch64-linux-gnu- PLAT=rk3399 bl31
+        export BL31=/path/to/arm-trusted-firmware/build/rk3399/release/bl31/bl31.elf 
 
 U-Boot
 ::
 
-        $ git clone https://github.com/amarula/u-boot-amarula
-        $ cd u-boot-amarula
-        $ git checkout -b rockchip origin/rockchip
-        $ make nanopc-t4-rk3399_defconfig
-        $ make
+        git clone https://github.com/amarula/u-boot-amarula
+        cd u-boot-amarula
+        git checkout -b rockchip origin/rockchip
+        make nanopi-m4-rk3399_defconfig
+        make
 
 Linux
 ::
 
-        $ git clone git://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git
-        $ cd linux-next
-        $ make mrproper
-        $ ARCH=arm64 make defconfig
-        $ ARCH=arm64 make Image dtbs -j 4
-
-Buildroot
-::
+        git clone git://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git
+        cd linux-next
+        make mrproper
+        ARCH=arm64 make defconfig
+        ARCH=arm64 make Image dtbs -j 16
 
 Booting from
 -----------
 
-SD
-::
+SD::
 
-        $ cd /path/to/u-boot
-        $ sudo dd if=u-boot-rockchip.bin of=/dev/mmcblk0 seek=64
-        $ sync
+        cd /path/to/u-boot
+        sudo dd if=u-boot-rockchip.bin of=/dev/mmcblk0 seek=64
+        sync
 
 Put this SD (or micro-SD) card into your board and reset it. You should see
 something like on minicom(1500000 8N1):
