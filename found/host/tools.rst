@@ -9,11 +9,10 @@ These are host ready tools installation for Ubuntu 18.04 LTS on 64 bit
 
 ::
 
-        $ apt-get install flex bison libsdl2-dev libssl-dev u-boot-tools git python python-dev ia32-libs lib32ncurses5 lib32z1 swig
-        $ git clone git://git.kernel.org/pub/scm/utils/dtc/dtc.git
-        $ cd dtc
-        $ make && make install PREFIX=/path/to/install
-        $ export PATH=/path/to/install/dtc:$PATH
+        $ apt-get update
+        $ apt-get install flex bison libsdl2-dev libssl-dev u-boot-tools git
+        $ apt-get install dtc python python-dev ia32-libs lib32ncurses5 lib32z1 swig xz
+        $ apt-get install gcc-arm-none-eabi
 
 Crosstool
 *********
@@ -36,6 +35,30 @@ ARM64
         bash> tar xvf gcc-linaro-6.3.1-2017.02-i686_aarch64-linux-gnu.tar.xz
         bash> export PATH=/to/path/gcc-linaro-6.3.1-2017.02-i686_aarch64-linux-gnu/bin:$PATH
         bash> export CROSS_COMPILE=aarch64-linux-gnu-
+
+Rockchip
+********
+
+rkdeveloptool
+::
+        sudo apt-get install libudev-dev libusb-1.0-0-dev dh-autoreconf
+        git clone https://github.com/rockchip-linux/rkdeveloptool
+        cd rkdeveloptool
+        sudo autoreconf -i
+        sudo make 
+        sudo make install
+
+If you encounter compile error like below::
+
+        ./configure: line 4269: syntax error near unexpected token `LIBUSB1,libusb-1.0'
+        ./configure: line 4269: `PKG_CHECK_MODULES(LIBUSB1,libusb-1.0)'
+
+then::
+
+        sudo apt-get install pkg-config libusb-1.0
+        sudo autoreconf -i
+        sudo make
+        sudo make install
 
 SD Setup
 ********
