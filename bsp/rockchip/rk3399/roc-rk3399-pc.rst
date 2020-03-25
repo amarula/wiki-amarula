@@ -32,7 +32,9 @@ U-Boot
         $ cd u-boot-amarula
         $ git checkout -b rockchip origin/rockchip
         $ export BL31=/path/to/arm-trusted-firmware/build/rk3399/release/bl31/bl31.elf
-        $ make roc-pc-rk3399_defconfig
+        $ make roc-pc-rk3399_defconfig #sd
+        (or)
+        $ make roc-pc-rk3399-spi_defconfig #spi
         $ make
 
 Linux
