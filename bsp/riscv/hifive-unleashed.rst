@@ -10,12 +10,6 @@ More information about SoC manual and schematics are at
 Building
 ========
 
-Setup riscv64 cross compiler
-
-.. code-block:: none
-
-   export CROSS_COMPILE=riscv64-buildroot-linux-gnu-
-
 OpenSBI
 ------
 
@@ -88,9 +82,22 @@ Booting
 OpenSBI with Linux as payload
 -----------------------------
 
+Take the empty unpartitioned SD card
+
+Build the Buildroot like
+
 .. code-block:: none
 
-   sudo dd if=/path/to/buildroot/sdcard.img of=/dev/mmcblk0
+   git clone https://github.com/amarula/buildroot-amarula
+   cd buildroot-amarula
+   make hifive_unleashed_defconfig
+   sudo dd if=output/images/sdcard.img of=/dev/mmcblk0
+
+Set MSEL[3:0] to 1111, default bootmode. load FSBL from QSPI
+
+Turn On the board and open minicom with /dev/ttyUSB1 with 115200 baudrate.
+
+.. code-block:: none
 
    SiFive FSBL:       2018-03-20
    HiFive-U serial #: 000001e0
@@ -125,11 +132,20 @@ OpenSBI with U-Boot as payload
 
 Use same SD card partition as of above method.
 
+Attach u-boot payload from `U-Boot <https://wiki.amarulasolutions.com/bsp/riscv/hifive-unleashed.html#u-boot>_`
+
 .. code-block:: none
 
    cd /path/to/opensbi
+   make distclean
    make PLATFORM=sifive/fu540 FW_PAYLOAD_PATH=/path/to/u-boot/u-boot-dtb.bin
-   sudo dd if=/path/to/opensbi/fw_payload.bin of=/dev/mmcblk0p1 bs=1024
+   sudo dd if=./build/platform/sifive/fu540/firmware/fw_payload.bin of=/dev/mmcblk0p1 bs=1024
+
+Set MSEL[3:0] to 1111, default bootmode. load FSBL from QSPI
+
+Turn On the board and open minicom with /dev/ttyUSB1 with 115200 baudrate.
+
+.. code-block:: none
 
    SiFive FSBL:       2018-03-20
    HiFive-U serial #: 000001e0
@@ -169,5 +185,87 @@ Use same SD card partition as of above method.
    Hit any key to stop autoboot:  0
    =>
 
-OpenSBI as FW_DYNAMIC
----------------------
+OpenSBI FW_DYNAMIC
+------------------
+
+1. Boot from MMC
+
+Take the empty unpartitioned SD card
+
+Create the GPT parttion to the SD card.
+
+.. code-block:: none
+
+   sudo sgdisk --clear \
+   > --new=1:34:2081 --change-name=1:loader1 --typecode=1:5B193300-FC78-40CD-8002-E86C45580B47 \
+   > --new=2:2082:10273 --change-name=2:loader2 --typecode=2:2E54B353-1271-4842-806F-E436D6AF6985 \
+   > --new=3:10274: --change-name=3:rootfs --typecode=3:0FC63DAF-8483-4772-8E79-3D69D8477DE4 \
+   > /dev/mmcblk0
+
+Build the `Buildroot <https://wiki.amarulasolutions.com/bsp/riscv/hifive-unleashed.html#buildroot>_`
+
+.. code-block:: none
+
+   cd /path/to/buildroot
+   sudo dd if=output/images/sdcard.img of=/dev/mmcblk0
+   sudo sync
+
+Set MSEL jumper to MSEL[3:0] to 1011 like
+
+.. image:: /images/hifive-unleashed-sdboot.jpg
+
+Turn On the board and open minicom with /dev/ttyUSB1 with 115200 baudrate.
+
+.. code-block:: none
+
+   U-Boot SPL 2020.04-rc4 (Apr 08 2020 - 23:26:19 +0530)
+   Trying to boot from MMC1
+   
+   
+   U-Boot 2020.04-rc4 (Apr 08 2020 - 23:26:19 +0530)
+   
+   CPU:   rv64imafdc
+   Model: SiFive HiFive Unleashed A00
+   DRAM:  8 GiB
+   MMC:   spi@10050000:mmc@0: 0
+   In:    serial@10010000
+   Out:   serial@10010000
+   Err:   serial@10010000
+   Net:   eth0: ethernet@10090000
+   Hit any key to stop autoboot:  0
+   switch to partitions #0, OK
+   mmc0 is current device
+   Scanning mmc 0:3...
+   Found /boot/extlinux/extlinux.conf
+   Retrieving file: /boot/extlinux/extlinux.conf
+   151 bytes read in 3 ms (48.8 KiB/s)
+   1:      HiFive-Unleashed linux
+   Retrieving file: /boot/Image
+   9734224 bytes read in 4735 ms (2 MiB/s)
+   append: console=ttySIF0 root=/dev/mmcblk0p3 rootwait rw
+   Retrieving file: /boot/hifive-unleashed-a00.dtb
+   6987 bytes read in 7 ms (974.6 KiB/s)
+   ## Flattened Device Tree blob at 88000000
+   Booting using the fdt blob at 0x88000000
+   Using Device Tree in place at 0000000088000000, end 0000000088004b4a
+   
+   Starting kernel ...
+   
+   [    0.000000] OF: fdt: Ignoring memory range 0x80000000 - 0x80200000
+   [    0.000000] Linux version 5.6.0 (jagan@jagan-XPS-13-9350) (gcc version 8.4.0 (Buildroot 2020.05-git-00624-g689b9c1a7c-dirty)) #1 SMP Wed Apr 8
+   22:35:27 IST 2020
+   [    0.000000] initrd not found or empty - disabling initrd
+   [    0.000000] Zone ranges:
+   [    0.000000]   DMA32    [mem 0x0000000080200000-0x00000000ffffffff]
+   [    0.000000]   Normal   [mem 0x0000000100000000-0x000000027fffffff]
+   [    0.000000] Movable zone start for each node
+   [    0.000000] Early memory node ranges
+   [    0.000000]   node   0: [mem 0x0000000080200000-0x000000027fffffff]
+   [    0.000000] Initmem setup node 0 [mem 0x0000000080200000-0x000000027fffffff]
+   [    0.000000] software IO TLB: mapped [mem 0xfbfff000-0xfffff000] (64MB)
+   [    0.000000] CPU with hartid=0 is not available
+   [    0.000000] CPU with hartid=0 is not available
+   [    0.000000] elf_hwcap is 0x112d
+   [    0.000000] percpu: Embedded 17 pages/cpu s31848 r8192 d29592 u69632
+   [    0.000000] Built 1 zonelists, mobility grouping on.  Total pages: 2067975
+   [    0.000000] Kernel command line: console=ttySIF0 root=/dev/mmcblk0p3 rootwait rw
