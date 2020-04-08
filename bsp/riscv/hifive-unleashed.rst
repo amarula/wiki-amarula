@@ -23,7 +23,7 @@ OpenSBI
 
    git clone https://github.com/riscv/opensbi
    cd opensbi
-   make PLATFORM=sifive/fu540
+   CROSS_COMPILE=/path/to/riscv64-linux-gnu- make PLATFORM=sifive/fu540 FW_DYNAMIC=y
 
 U-Boot
 ------
@@ -31,7 +31,7 @@ U-Boot
 .. code-block:: none
 
    git clone https://github.com/amarula/u-boot-amarula
-   cd u-boot
+   cd u-boot-amarula
    make sifive_fu540_defconfig
    make
 
@@ -51,8 +51,8 @@ Buildroot
 
 .. code-block:: none
 
-   git clone git://git.busybox.net/buildroot
-   cd buildroot
+   git clone https://github.com/amarula/buildroot-amarula
+   cd buildroot-amarula
    make hifive_unleashed_defconfig
 
 Booting
