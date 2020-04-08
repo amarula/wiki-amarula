@@ -6,4 +6,4 @@ RISC-V
    :caption: Contents:
 
    qemu
-   hifive-unleashed
+   sifive/index

@@ -1,5 +1,5 @@
-SiFive HiFive Unleashed A00
-###########################
+HiFive Unleashed A00
+####################
 
 This tutorial will show the details of SiFive HiFive Unleashed A00 board mainline support.
 
