@@ -3,23 +3,18 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to Amarula Wiki!
-=======================================
+Zephyr
+======================
 
 
 .. _contents: Table of contents
 
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 3
    :caption: Contents:
-   
-   about/about.rst
-   found/index
-   bsp/index
-   uboot/index
-   optee/index
-   drm/index
-   media/index
-   hw/index
-   zephyr/index
+
+   zephyr
+   esp32/index
+   ti/index
+
