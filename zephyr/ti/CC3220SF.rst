@@ -1,0 +1,116 @@
+CC3220SF LaunchXL Zephyr Setup
+##############################
+
+This tutorial shows you how to set up the CC3220SF LaunchXL board for use with Zephyr on Linux.
+
+First time board configuration
+==============================
+
+Before the board can be used with Zephyr for the first time it must be flashed with a service pack. This only has to be done once for each board.
+
+#. Download and install the `SDK <http://www.ti.com/tool/download/SIMPLELINK-CC32XX-SDK>`_ and `UniFlash <https://processors.wiki.ti.com/index.php/Category:CCS_UniFlash>`_.
+
+#. Set the SOP jumper to 010 as shown in the picture.
+
+   .. image:: jumper1.jpg
+
+#. Update the service pack and set the device to developer mode using Uniflash.
+
+   #. Start UniFlash with the board connected by USB. UniFlash should automatically detect the board as shown in the figure below. Click Start.
+
+         .. image:: uf1.png
+
+   #.  Click `New Project`
+
+         .. image:: uf2.png
+
+   #.  Give the project a name. Make sure the device type is set correctly and `Device Mode` is set to `Develop`. Click `Create Project`.
+
+         .. image:: uf3.png
+
+   #.  Click on `Connect` and select the service pack for this device. On a default instalation this file should be in `ti/simplelink_cc32xx_sdk_4_10_00_07/tools/cc32xx_tools/servicepack-cc3x20/sp_3.15.0.1_2.0.0.0_2.2.0.7.bin`.
+
+         .. image:: uf4.png
+
+   #.  On the right side the device information should now be listed. Double check that the mode is set to `Development`. Click `Burn` in the bottom right.
+
+         .. image:: uf5.png
+
+   #.  Click `Program Image` and wait for it to complete.
+
+         .. image:: uf6.png
+
+#. Update XDS-110.
+
+   #. Download and install the xds-110 software `here <https://software-dl.ti.com/ccs/esd/documents/xdsdebugprobes/emu_xds_software_package_download.html#XDS_Emulation_Software_.28emupack.29_Download>`_.
+
+   #. Switch to the instalation directory of the XDS110 software:
+
+         .. code-block:: none
+
+               cd ~/ti/ccs_base/common/uscif/xds110/
+
+   #. Check that the device is correctly detected using the following command: 
+
+         .. code-block:: none
+
+            ./xdsdfu -e
+
+      The output should look like this:
+
+         .. code-block:: none
+
+            USB Device Firmware Upgrade Utility
+            Copyright (c) 2008-2019 Texas Instruments Incorporated.  All rights reserved.
+
+            Scanning USB buses for supported XDS110 devices...
+
+
+            <<<< Device 0 >>>>
+
+            VID: 0x0451    PID: 0xbef3
+            Device Name:   XDS110 Embed with CMSIS-DAP
+            Version:       2.3.0.16
+            Manufacturer:  Texas Instruments
+            Serial Num:    E0071009
+            Mode:          Runtime
+            Configuration: Standard
+
+            Found 1 device.
+
+   #. Put the XDS110 in DFU mode:
+
+         .. code-block:: none
+
+            ./xdsdfu -m
+
+   #. Update the XDS110 firmware:
+
+         .. code-block:: none
+
+            ./xdsdfu -f firmware_3.0.0.11.bin -r
+
+#. Set the SOP jumper to 001 as shown in the picture.
+
+   .. image:: jumper2.jpg
+
+Zephyr Tools
+============
+
+Follow :ref:`these <zephyr-setup>` steps to download and set up zephyr and its build tools.
+
+Environment
+===========
+
+Follow `step 6 <https://docs.zephyrproject.org/latest/getting_started/index.html>`_ to set up the zephyr toolchain and the two environment variables `ZEPHYR_TOOLCHAIN_VARIANT` and `ZEPHYR_SDK_INSTALL_DIR`. Create a script that sets those and source it before starting a development session.
+
+Build and run
+=============
+
+In order to build and run zephyr on the board use the following commands:
+
+.. code-block:: none
+
+   cd ~/zephyrproject
+   west build -b cc3220sf_launchxl -s zephyr/samples/hello_world/
+   west flash
