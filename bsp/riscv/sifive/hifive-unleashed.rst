@@ -7,6 +7,22 @@ More information about SoC manual and schematics are at
 `FU540 C000 <https://static.dev.sifive.com/FU540-C000-v1.0.pdf>`_ and
 `Schematics <https://sifive.cdn.prismic.io/sifive%2Ff7173056-bf37-4407-87cb-d5ab76abf61a_hifive-unleashed-a00-schematics.pdf>`_
 
+Hardware Access
+===============
+
+.. image:: /images/hifive-unleashed.jpg
+
+Prebuilt
+=======
+
+Prebuilt images for Booting from MMC, SPI with Mainline Linux are
+available in below link. The necessary steps available at REAME file.
+
+.. code-block:: none
+  
+  git clone https://github.com/amarula/bsp-sifive
+  cd bsp-sifive
+
 Building
 ========
 
@@ -188,21 +204,21 @@ Turn On the board and open minicom with /dev/ttyUSB1 with 115200 baudrate.
 OpenSBI FW_DYNAMIC
 ------------------
 
-1. Boot from MMC
+1. Booting from MMC
 
-Take the empty unpartitioned SD card
+1.1) Take the empty unpartitioned SD card
 
-Create the GPT parttion to the SD card.
+1.2) Build the buildroot
 
 .. code-block:: none
 
-   sudo sgdisk --clear \
-   > --new=1:34:2081 --change-name=1:loader1 --typecode=1:5B193300-FC78-40CD-8002-E86C45580B47 \
-   > --new=2:2082:10273 --change-name=2:loader2 --typecode=2:2E54B353-1271-4842-806F-E436D6AF6985 \
-   > --new=3:10274: --change-name=3:rootfs --typecode=3:0FC63DAF-8483-4772-8E79-3D69D8477DE4 \
-   > /dev/mmcblk0
+   git clone https://github.com/amarula/buildroot-amarula
+   cd buildroot-amarula
+   git checkout -b sifive origin/sifive
+   make hifive_unleashed_defconfig
+   make
 
-Build the `Buildroot <https://wiki.amarulasolutions.com/bsp/riscv/hifive-unleashed.html#buildroot>_`
+1.3) Program the SD card
 
 .. code-block:: none
 
@@ -210,11 +226,11 @@ Build the `Buildroot <https://wiki.amarulasolutions.com/bsp/riscv/hifive-unleash
    sudo dd if=output/images/sdcard.img of=/dev/mmcblk0
    sudo sync
 
-Set MSEL jumper to MSEL[3:0] to 1011 like
+1.4) Set MSEL jumper to MSEL[3:0] to 1011 like
 
 .. image:: /images/hifive-unleashed-sdboot.jpg
 
-Turn On the board and open minicom with /dev/ttyUSB1 with 115200 baudrate.
+1.5) Turn On the board and open minicom with /dev/ttyUSB1 with 115200 baudrate.
 
 .. code-block:: none
 
@@ -269,3 +285,251 @@ Turn On the board and open minicom with /dev/ttyUSB1 with 115200 baudrate.
    [    0.000000] percpu: Embedded 17 pages/cpu s31848 r8192 d29592 u69632
    [    0.000000] Built 1 zonelists, mobility grouping on.  Total pages: 2067975
    [    0.000000] Kernel command line: console=ttySIF0 root=/dev/mmcblk0p3 rootwait rw
+
+2. Booting from SPI
+
+2.1) Boot the board from MMC as described in section 1)
+
+2.2) On Linux, create GPT over SPI flash
+
+.. code-block:: none
+
+ # sgdisk --clear \
+ > --set-alignment=2 \
+ > --new=1:40:2087 --change-name=1:loader1 --typecode=1:5B193300-FC78-40CD-8002-E86C45580B47 \
+ > --new=2:2088:10279 --change-name=2:loader2 --typecode=2:2E54B353-1271-4842-806F-E436D6AF6985 \
+ > --new=3:10536:65494 --change-name=3:rootfs --typecode=3:0FC63DAF-8483-4772-8E79-3D69D8477DE4 \
+ > /dev/mtdblock0
+
+2.3) Power off and power on the board and stop at U-Boot prompt
+
+2.4) Build the SPI defconfig
+
+.. code-block:: none
+
+   git clone https://github.com/amarula/buildroot-amarula
+   cd buildroot-amarula
+   git checkout -b sifive origin/sifive
+   make hifive_unleashed_spi_defconfig O=../spi
+   cd ../spi
+   make
+
+2.5) Setup tftp and copy spi images at /tftpboot area
+
+.. code-block:: none
+
+   cp ./images/spi/* /tftpboot
+
+2.6) Program the SPI flash
+
+.. code-block:: none
+
+  # tftpboot $fdt_add_r upgrade_sf.scr
+  # source $fdt_add_r
+
+2.7) Power off the board
+
+2.8) Set MSEL jumper to MSEL[3:0] to 0110 like
+
+.. image:: /images/hifive-unleashed-spiboot.jpg
+
+2.9) Turn On the board and open minicom with /dev/ttyUSB1 with 115200 baudrate.
+
+.. code-block:: none
+
+  # sgdisk --clear \
+  > --set-alignment=2 \
+  > --new=1:40:2087 --change-name=1:loader1 --typecode=1:5B193300-FC78-40CD-8002-E
+  86C45580B47 \
+  > --new=2:2088:10279 --change-name=2:loader2 --typecode=2:2E54B353-1271-4842-806
+  F-E436D6AF6985 \
+  > --new=3:10536:65494 --change-name=3:rootfs --typecode=3:0FC63DAF-8483-4772-8E7
+  9-3D69D8477DE4 \
+  > /dev/mtdblock0 
+  Creating new GPT entries in memory.
+  Setting name!
+  partNum is 0
+  Setting name!
+  partNum is 1
+  Setting name!
+  partNum is 2
+  Warning: The kernel is still using the old partition table.
+  The new table will be used at the next reboot or after you
+  run partprobe(8) or kpartx(8)
+  The operation has completed successfully.
+  # 
+  U-Boot SPL 2020.04-rc4 (Apr 29 2020 - 13:48:59 +0530)
+  Trying to boot from MMC1
+
+
+  U-Boot 2020.04-rc4 (Apr 29 2020 - 13:48:59 +0530)
+
+  CPU:   rv64imafdc
+  Model: SiFive HiFive Unleashed A00
+  DRAM:  8 GiB
+  MMC:   spi@10050000:mmc@0: 0
+  Loading Environment from SPI Flash... SF: Detected is25wp256 with page size 256 Bytes, erase size 4 KiB, total 3
+  2 MiB
+  *** Warning - bad CRC, using default environment
+
+  In:    serial@10010000
+  Out:   serial@10010000
+  Err:   serial@10010000
+  Net:   eth0: ethernet@10090000
+  Hit any key to stop autoboot:  0 
+  => 
+  => setenv serverip 192.168.1.10
+  => setenv ipaddr 192.168.1.11
+  => tftpboot $fdt_add_r upgrade_sf.scr
+  ethernet@10090000: PHY present at 0
+  ethernet@10090000: Starting autonegotiation...
+  ethernet@10090000: Autonegotiation complete
+  ethernet@10090000: link up, 100Mbps full-duplex (lpa: 0xcde1)
+  Using ethernet@10090000 device
+  TFTP from server 192.168.1.10; our IP address is 192.168.1.11
+  Filename 'upgrade_sf.scr'.
+  Load address: 0x80200000
+  Loading: #
+	   44.9 KiB/s
+  done
+  Bytes transferred = 920 (398 hex)
+  => source $fdt_add_r
+  ## Executing script at 80200000
+  Probe flash
+  SF: Detected is25wp256 with page size 256 Bytes, erase size 4 KiB, total 32 MiB
+  Program loader1
+  SF: 1048576 bytes @ 0x5000 Erased: OK
+  ethernet@10090000: PHY present at 0
+  ethernet@10090000: Starting autonegotiation...
+  ethernet@10090000: Autonegotiation complete
+  ethernet@10090000: link up, 100Mbps full-duplex (lpa: 0xcde1)
+  Using ethernet@10090000 device
+  TFTP from server 192.168.1.10; our IP address is 192.168.1.11
+  Filename 'u-boot-spl.bin'.
+  Load address: 0x84000000
+  Loading: ##############
+	   5.9 KiB/s
+  done
+  Bytes transferred = 66623 (1043f hex)
+  device 0 offset 0x5000, size 0x1043f
+  SF: 66623 bytes @ 0x5000 Written: OK
+  Program loader2
+  SF: 1048576 bytes @ 0x105000 Erased: OK
+  ethernet@10090000: PHY present at 0
+  ethernet@10090000: Starting autonegotiation...
+  ethernet@10090000: Autonegotiation complete
+  ethernet@10090000: link up, 100Mbps full-duplex (lpa: 0xcde1)
+  Using ethernet@10090000 device
+  TFTP from server 192.168.1.10; our IP address is 192.168.1.11
+  Filename 'u-boot.itb'.
+  Load address: 0x84000000
+  Loading: #################################################################
+	   #######################################
+	   674.8 KiB/s
+  done
+  Bytes transferred = 532404 (81fb4 hex)
+  device 0 offset 0x105000, size 0x81fb4
+  SF: 532404 bytes @ 0x105000 Written: OK
+  Program uImage.itb
+  SF: 14680064 bytes @ 0x525000 Erased: OK
+  ethernet@10090000: PHY present at 0
+  ethernet@10090000: Starting autonegotiation...
+  ethernet@10090000: Autonegotiation complete
+  ethernet@10090000: link up, 100Mbps full-duplex (lpa: 0xcde1)
+  Using ethernet@10090000 device
+  TFTP from server 192.168.1.10; our IP address is 192.168.1.11
+  Filename 'uImage.itb'.
+  Load address: 0x84000000
+  Loading: #################################################################
+	   #################################################################
+	   #################################################################
+	   #################################################################
+	   #################################################################
+	   #################################################################
+	   #################################################################
+	   #################################################################
+	   #################################################################
+	   #################################################################
+	   #################################################################
+	   #################################################################
+	   #################################################################
+	   #################################################################
+	   #################################################################
+	   ###########################
+	   283.2 KiB/s
+  done
+  Bytes transferred = 5126451 (4e3933 hex)
+  device 0 offset 0x525000, size 0x4e3933
+  SF: 5126451 bytes @ 0x525000 Written: OK
+  Program boot_initramfs.scr
+  SF: 4096 bytes @ 0x1fff000 Erased: OK
+  ethernet@10090000: PHY present at 0
+  ethernet@10090000: Starting autonegotiation...
+  ethernet@10090000: Autonegotiation complete
+  ethernet@10090000: link up, 100Mbps full-duplex (lpa: 0xcde1)
+  Using ethernet@10090000 device
+  TFTP from server 192.168.1.10; our IP address is 192.168.1.11
+  Filename 'boot_initramfs.scr'.
+  Load address: 0x84000000
+  Loading: #
+	   26.4 KiB/s
+  done
+  Bytes transferred = 193 (c1 hex)
+  device 0 offset 0x1fff000, size 0xc1
+  SF: 193 bytes @ 0x1fff000 Written: OK
+  Done!
+  =>
+
+  U-Boot SPL 2020.04-rc4 (Apr 29 2020 - 13:46:59 +0530)
+  Trying to boot from SPI
+
+
+  U-Boot 2020.04-rc4 (Apr 29 2020 - 13:46:59 +0530)
+
+  CPU:   rv64imafdc
+  Model: SiFive HiFive Unleashed A00
+  DRAM:  8 GiB
+  MMC:   spi@10050000:mmc@0: 0
+  Loading Environment from SPI Flash... SF: Detected is25wp256 with page size 256 Bytes, erase size 4 KiB, total 3
+  2 MiB
+  *** Warning - bad CRC, using default environment
+
+  In:    serial@10010000
+  Out:   serial@10010000
+  Err:   serial@10010000
+  Net:   eth0: ethernet@10090000
+  Hit any key to stop autoboot:  0 
+  SF: Detected is25wp256 with page size 256 Bytes, erase size 4 KiB, total 32 MiB
+  device 0 offset 0x1fff000, size 0x1000
+  SF: 4096 bytes @ 0x1fff000 Read: OK
+  ## Executing script at 88100000
+  device 0 offset 0x525000, size 0xe00000
+  SF: 14680064 bytes @ 0x525000 Read: OK
+  ## Loading kernel from FIT Image at 84000000 ...
+     Using 'conf@0' configuration                                         
+     Trying 'kernel@0' kernel subimage                                    
+       Description:  RISC-V Linux kernel                                  
+       Type:         Kernel Image                                         
+       Compression:  gzip compressed                                      
+       Data Start:   0x840000e4
+       Data Size:    5117737 Bytes = 4.9 MiB
+       Architecture: RISC-V
+       OS:           Linux
+       Load Address: 0xa4000000
+       Entry Point:  0xa4000000
+     Verifying Hash Integrity ... OK
+  ## Loading fdt from FIT Image at 84000000 ...
+     Using 'conf@0' configuration
+     Trying 'fdt@0' fdt subimage
+       Description:  HiFive Unleashed A00 blob
+       Type:         Flat Device Tree
+       Compression:  uncompressed
+       Data Start:   0x844e18c4
+       Data Size:    6987 Bytes = 6.8 KiB
+       Architecture: RISC-V
+     Verifying Hash Integrity ... OK
+     Booting using the fdt blob at 0x844e18c4
+     Uncompressing Kernel Image
+     Using Device Tree in place at 00000000844e18c4, end 00000000844e640e
+
+  Starting kernel ...
