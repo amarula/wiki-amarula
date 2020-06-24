@@ -3,13 +3,11 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Rockchip
-========
+RK3399pro
+=========
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    :caption: Contents:
-   
-   rk3288/index
-   rk3399/index
-   rk3399pro/index
+
+   rockpi-n10
