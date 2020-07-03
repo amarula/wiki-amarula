@@ -1,0 +1,47 @@
+Embedded Linux Developer (BSP, U-Boot, Kernel)
+==============================================
+
+Job Type::
+
+  Up to 3Years
+  Full Time
+
+Post Date::
+
+  03 July, 2020
+
+About the Amarual Solutions(India)::
+
+  Amarula Solutions India is a start-up with its Main branch located
+  in Amsterdam, The Netherlands. The company has been co-founded by
+  Mr. Jagan Teki, who is the current CEO, a well known personality
+  in the open source community and Maintainer of code bases in Linux
+  Kernel, U-Boot, Buildroot and Yocto.
+
+  Amarula Solutions India has started operations in the year 2019.
+  Office premises are located at Defence colony, Chandanagar, a residential
+  area in Hyderabad, Telangana. It is roughly 6Kms from Miyapur Metro
+  Station and 2Kms from Chandanagar bus stop.
+
+Responsibilities::
+
+  Implementation of Board support packages, drivers.
+  Mainline U-Boot, Linux kernel, Buildroot and Yocto.
+  Implementation of Build Systems, Package Management.
+  Active community proactiveness like mailing lists, IRC Channels.
+  Active customer proactiveness like status updates, bugs.
+
+Requirements::
+
+  Good understanding in hardware schematics.
+  Good understanding in Scripting languages.
+  Good knowledge of Git.
+  Excellent C knowledge.
+  Experience in U-Boot, Linux kernel.
+  Experience in ARM/x86 SoC’s.
+  Able to communicate over Mailing list, IRC channels.
+  Ability to learn and adapt quickly.
+  Self-motivation to deliver according to a schedule.
+
+Please contact us if you would like to be part of Amarula,
+jagan@amarulasolutions.com
