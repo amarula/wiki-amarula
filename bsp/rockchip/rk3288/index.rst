@@ -9,6 +9,7 @@ RK3288
 .. toctree::
    :maxdepth: 1
    :caption: Contents:
-   
+
+   rock-pi-n8
    tinker
    vyasa
