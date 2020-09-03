@@ -11,3 +11,4 @@ PX30
    :caption: Contents:
 
    engicam-px30-edimm2.2
+   engicam-px30-ctouch2.0
