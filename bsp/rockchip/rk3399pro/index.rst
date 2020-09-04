@@ -10,4 +10,4 @@ RK3399pro
    :maxdepth: 1
    :caption: Contents:
 
-   rockpi-n10
+   rock-pi-n10
