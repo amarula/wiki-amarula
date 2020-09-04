@@ -16,4 +16,4 @@ RK3399
    orangepi
    rockpro64
    roc-rk3399-pc
-   rockpi-4c
+   rockpi-4
