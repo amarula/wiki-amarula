@@ -298,3 +298,46 @@ On host /dev/mmcblk2 will be detected as a storage device.
         Units: sectors of 1 * 512 = 512 bytes
         Sector size (logical/physical): 512 bytes / 512 bytes
         I/O size (minimum/optimal): 512 bytes / 512 bytes
+
+U-Boot: Flashing EMMC via fastboot
+----------------------------------
+
+Plug USB otg cable A-type to host pc, Micro USB end to carrier board OTG port.
+Power on the board, halt the machine at u-boot command prompt.
+
+::
+
+        (target side)
+
+        MMC:   dwmmc@ff370000: 1, dwmmc@ff390000: 0
+        Loading Environment from MMC... *** Warning - bad CRC, using default environment
+
+        In:    serial@ff160000
+        Out:   serial@ff160000
+        Err:   serial@ff160000
+        Model: Engicam PX30.Core C.TOUCH 2.0
+        Net:   eth0: ethernet@ff360000
+        Hit any key to stop autoboot:  0
+        =>
+        => mmc dev 0
+        => gpt write mmc 0 $partitions
+        => fastboot 0
+
+
+        (host side)
+
+        engicam/px30/u-boot-amarula$ lsusb
+        Bus 002 Device 040: ID 2207:0000
+        Bus 002 Device 038: ID 067b:2303 Prolific Technology, Inc. PL2303 Serial Port
+        Bus 002 Device 035: ID 0781:55a9 SanDisk Corp.
+        Bus 002 Device 002: ID 8087:0024 Intel Corp. Integrated Rate Matching Hub
+        Bus 002 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+        Bus 001 Device 003: ID 064e:d250 Suyin Corp.
+        Bus 001 Device 002: ID 8087:0024 Intel Corp. Integrated Rate Matching Hub
+        Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+
+        engicam/px30/u-boot-amarula$ sudo fastboot -i 0x2207 flash loader1 idbloader.img
+        engicam/px30/u-boot-amarula$ sudo fastboot -i 0x2207 flash loader2 u-boot.itb
+        engicam/px30/u-boot-amarula$ sudo fastboot -i 0x2207 flash trust trust.img
+
+reboot the target machine, board boots from EMMC
