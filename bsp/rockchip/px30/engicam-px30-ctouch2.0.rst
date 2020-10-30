@@ -11,35 +11,56 @@ Hardware Access
 
 .. image:: /images/engicam-px30-ctouch2-0.jpeg
 
-Download Images
----------------
+Program SD
+----------
 
-::
-        $ git clone https://github.com/amarula/bsp-rockchip.git
+Assume the SD card detected in host via /dev/sda
+
+Flashing::
+
+        git clone https://github.com/amarula/bsp-rockchip.git
+        cd bsp-rockchip
+        sudo xzcat px30-core-ctouch2-of10-buildroot.img.xz | sudo dd of=/dev/sda
+        sync
+
+Insert the Micro SD card on the board microSD slot(J17)
+
+Connect UART port on the board(J26).
+
+Launch minicom at host wih 1152008N1
+
+Power on the kit.
+
+Check the board booting. and enter root at login prompt.
+
+.. code-block:: none
+
+        U-Boot TPL board init
+        DDR4, 333MHz
+        BW=32 Col=10 Bk=4 BG=2 CS0 Row=16 CS=1 Die BW=16 Size=2048MB
+        out
+
+        U-Boot SPL 2020.10 (Oct 30 2020 - 02:55:08 +0530)
+        Trying to boot from MMC2
+        Card did not respond to voltage select!
+        spl: mmc init failed with error: -95
+        Trying to boot from MMC1
+        NOTICE:  BL31: v2.3(release):
+        NOTICE:  BL31: Built : 18:11:03, Oct 29 2020
 
 
-SD/EMMC Boot
-------------
+        U-Boot 2020.10 (Oct 30 2020 - 02:55:08 +0530)
 
-From the bsp-rockchip directory, flash engicam-ctouch2-br.img.xz on to micro sd
-
-::
-
-	$ sudo xzcat engicam-ctouch2-br.img.xz | sudo dd of=/dev/devicefile status=progress (devicefile => sudo fdisk -l)
-	$ sync
-
-Put the micro-SD card onto the carrier board slot, power the board. Boot log is as follows:
-
-
-::
-
+        Model: Engicam PX30.Core C.TOUCH 2.0 10.1" Open Frame
+        DRAM:  2 GiB
+        PMIC:  RK8090 (on=0x40, off=0x00)
         MMC:   dwmmc@ff370000: 1, dwmmc@ff390000: 0
         Loading Environment from MMC... *** Warning - bad CRC, using default environment
 
         In:    serial@ff160000
         Out:   serial@ff160000
         Err:   serial@ff160000
-        Model: Engicam PX30.Core C.TOUCH 2.0
+        Model: Engicam PX30.Core C.TOUCH 2.0 10.1" Open Frame
         Net:   eth0: ethernet@ff360000
         Hit any key to stop autoboot:  0
         switch to partitions #0, OK
@@ -50,106 +71,64 @@ Put the micro-SD card onto the carrier board slot, power the board. Boot log is 
         Scanning mmc 1:3...
         Found /extlinux/extlinux.conf
         Retrieving file: /extlinux/extlinux.conf
-        245 bytes read in 4 ms (59.6 KiB/s)
-        1:      Engicam_CTOUCH2.0 linux
+        197 bytes read in 4 ms (47.9 KiB/s)
+        1:      PX30.Core-EDIMM2.2 linux
         Retrieving file: /Image
-        30880256 bytes read in 1298 ms (22.7 MiB/s)
-        append: earlycon=uart8250,mmio32,0xff160000 root=PARTUUID=0A343564-BD2C-4F74-AD16-B44209B9A821 rw rootwait g_mass_storage.removable=1 g_mass_st
-        orage.luns=1
-        Retrieving file: /px30-px30-core-ctouch2.dtb
+        31070720 bytes read in 1303 ms (22.7 MiB/s)
+        append: earlycon=uart8250,mmio32,0xff160000 root=PARTUUID=e605584d-2513-4fd1-ab25-90cccc9f8ed8 rw rootwait
+        Retrieving file: /px30-px30-core-ctouch2-of10.dtb
         40987 bytes read in 5 ms (7.8 MiB/s)
-        Moving Image from 0x280000 to 0x400000, end=2200000
+        Moving Image from 0x280000 to 0x400000, end=2230000
         ## Flattened Device Tree blob at 08300000
-           Booting using the fdt blob at 0x8300000
-           Loading Device Tree to 000000007df3d000, end 000000007df4a01a ... OK
+        Booting using the fdt blob at 0x8300000
+        Loading Device Tree to 000000007df28000, end 000000007df3501a ... OK
 
         Starting kernel ...
 
         [    0.000000] Booting Linux on physical CPU 0x0000000000 [0x410fd042]
-        [    0.000000] Linux version 5.8.0-rc1 (suniel@suniel-P5WE0) (aarch64-buildroot-linux-uclibc-gcc.br_real (Buildroot 2020.08-rc1-108-g51a8edc) 9
-        .3.0, GNU ld (GNU Binutils) 2.33.1) #4 SMP PREEMPT Wed Sep 2 21:42:26 IST 2020
-        [    0.000000] Machine model: Engicam PX30.Core C.TOUCH 2.0
-        [    0.000000] earlycon: uart8250 at MMIO32 0x00000000ff160000 (options '')
-        [    0.000000] printk: bootconsole [uart8250] enabled
-        [    0.000000] efi: UEFI not found.
-        [    0.000000] cma: Reserved 32 MiB at 0x000000007e000000
-        [    0.000000] NUMA: No NUMA configuration found
-        [    0.000000] NUMA: Faking a node at [mem 0x0000000000200000-0x000000007fffffff]
-        [    0.000000] NUMA: NODE_DATA [mem 0x7dbbd100-0x7dbbefff]
-        [    0.000000] Zone ranges:
-        [    0.000000]   DMA      [mem 0x0000000000200000-0x000000003fffffff]
-        [    0.000000]   DMA32    [mem 0x0000000040000000-0x000000007fffffff]
-        [    0.000000]   Normal   empty
-        .........
-        .........
-        .........
-        .........
-        [    4.681736] libphy: stmmac: probed
-        [    4.688282] mdio_bus stmmac-0:00: attached PHY driver [unbound] (mii_bus:phy_addr=stmmac-0:00, irq=POLL)
-        [    4.729925] rk808-rtc rk808-rtc: registered as rtc0
-        [    4.741500] rk808-rtc rk808-rtc: setting system clock to 2017-08-05T09:00:08 UTC (1501923608)
-        [    4.797317] cfg80211: Loading compiled-in X.509 certificates for regulatory database
-        [    4.860334] cfg80211: Loaded X.509 cert 'sforshee: 00b28ddf47aef9cea7'
-        [    4.913118] brcmfmac: brcmf_fw_alloc_request: using brcm/brcmfmac43430-sdio for chip BCM43430/1
-        [    4.931532] usbcore: registered new interface driver cp210x
-        [    4.940912] usbserial: USB Serial support registered for cp210x
-        [    4.951208] cp210x 2-1.7:1.0: cp210x converter detected
-        [    4.963892] usb 2-1.7: cp210x converter now attached to ttyUSB0
-        Initializing random number generator: OK
-        Saving random seed: [    5.008456] random: dd: uninitialized urandom read (512 bytes read)
-        OK
-        Starting system message bus: [    5.072978] random: dbus-uuidgen: uninitialized urandom read (12 bytes read)
-        [    5.084575] random: dbus-uuidgen: uninitialized urandom read (8 bytes read)
-        [    5.084762] brcmfmac: brcmf_fw_alloc_request: using brcm/brcmfmac43430-sdio for chip BCM43430/1
-        [    5.112855] brcmfmac: brcmf_c_preinit_dcmds: Firmware: BCM43430/1 wl0: Oct 22 2019 01:57:42 version 7.45.98.94 (r723000 CY) FWID 01-73a5ed62
-        done
-        Starting network: [    5.251914] NET: Registered protocol family 10
-        [    5.262230] Segment Routing with IPv6
-        udhcpc: started, v1.32.0
-        [    5.302920] rk_gmac-dwmac ff360000.ethernet eth0: PHY [stmmac-0:00] driver [Generic PHY] (irq=POLL)
-        [    5.329666] rk_gmac-dwmac ff360000.ethernet eth0: No Safety Features support found
-        [    5.341991] rk_gmac-dwmac ff360000.ethernet eth0: PTP not supported by HW
-        [    5.353425] rk_gmac-dwmac ff360000.ethernet eth0: configuring for phy/rmii link mode
-        udhcpc: sending discover
-        [    8.224853] dwc2 ff300000.usb: new device is high-speed
-        [    8.305259] dwc2 ff300000.usb: new device is high-speed
-        [    8.373704] dwc2 ff300000.usb: new address 84
-        udhcpc: sending discover
-        udhcpc: sending discover
-        udhcpc: no lease, forking to background
-        OK
-        Starting ntpd: OK
+        [    0.000000] Linux version 5.10.0-rc1-next-20201028 (ub@ub-XPS-13-9350) (aarch64-buildroot-linux-gnu-gcc.br_real (Buildroot 2020.08-844-g60a98501db) 9.3.0, GNU ld (GNU Binutils) 2
+        .34) #1 SMP PREEMPT Thu Oct 29 20:46:48 IST 2020
+        [    0.000000] Machine model: Engicam PX30.Core C.TOUCH 2.0 10.1" Open Frame
 
-        Welcome to ENGICAM-CTOUCH2.0..!!
-        engicam-ctouch2.0 login: root
+        Starting network: OK
+
+        Welcome to PX30.Core C.TOUCH2 10.1" OF
+        px30-core-ctouch-of10 login: root
         #
 
-use root for login.
-
-WIFI/BT Test:
+Program eMMC
 ------------
 
-::
+Connect USB otg cable A-type to host pc, Micro USB end to board.
 
-        # ifconfig -a
+Close Jumper JM5.
 
-        eth0      Link encap:Ethernet  HWaddr 6A:E6:D0:1A:73:9C
-                  UP BROADCAST MULTICAST  MTU:1500  Metric:1
-                  RX packets:0 errors:0 dropped:0 overruns:0 frame:0
-                  TX packets:0 errors:0 dropped:0 overruns:0 carrier:0
-                  collisions:0 txqueuelen:1000
-                  RX bytes:0 (0.0 B)  TX bytes:0 (0.0 B)
-                  Interrupt:19
+Boot the Kit with SD boot.
 
-        lo        Link encap:Local Loopback
-                  inet addr:127.0.0.1  Mask:255.0.0.0
-                  inet6 addr: ::1/128 Scope:Host
-                  UP LOOPBACK RUNNING  MTU:65536  Metric:1
-                  RX packets:384 errors:0 dropped:0 overruns:0 frame:0
-                  TX packets:384 errors:0 dropped:0 overruns:0 carrier:0
-                  collisions:0 txqueuelen:1000
-                  RX bytes:28416 (27.7 KiB)  TX bytes:28416 (27.7 KiB)
+Program eMMC in U-Boot.
 
+At Target::
+
+        mmc dev 0
+        gpt write mmc 0 $partitions
+        fastboot 0
+
+Copy boot images from /boot of rootfs partition of buildroot img.
+
+At host::
+
+        lsusb | grep 2207
+        sudo fastboot -i 0x2207 flash loader1 idbloader.img
+        sudo fastboot -i 0x2207 flash loader2 u-boot.itb
+
+WIFI/BT
+-------
+
+Testing WiFi on the target.
+
+.. code-block:: none
+
+        # ifconfig -a | grep wlan0
         wlan0     Link encap:Ethernet  HWaddr 00:25:CA:2D:2E:91
                   BROADCAST MULTICAST  MTU:1500  Metric:1
                   RX packets:0 errors:0 dropped:0 overruns:0 frame:0
@@ -183,7 +162,9 @@ WIFI/BT Test:
         64 bytes from 8.8.8.8: seq=1 ttl=119 time=26.163 ms
         64 bytes from 8.8.8.8: seq=2 ttl=119 time=23.070 ms
 
+Testing Bluetooth on the target.
 
+.. code-block:: none
 
         # hciconfig -a
         [  605.701708] Bluetooth: Core ver 2.22
@@ -249,13 +230,14 @@ WIFI/BT Test:
         Confirm passkey: 567321 (yes/no)? yes
         connected
 
-
 Linux USB OTG
 -------------
 
-Plug USB otg cable A-type to host pc, Micro USB end to carrier board OTG port. Power on the board
+Connect USB otg cable A-type to host pc, Micro USB end to board.
 
-::
+Close Jumper JM5.
+
+At Target::
 
         # fdisk -l
         Disk /dev/mmcblk0: 3796 MB, 3980394496 bytes, 7774208 sectors
@@ -288,9 +270,8 @@ Plug USB otg cable A-type to host pc, Micro USB end to carrier board OTG port. P
         [   56.458056] dwc2 ff300000.usb: dwc2_hsotg_ep_sethalt(ep 0000000006ae2021 ep1in, 1)
         [   56.469340] dwc2 ff300000.usb: dwc2_hsotg_ep_sethalt(ep 0000000006ae2021 ep1in, 0)
 
-On host /dev/mmcblk2 will be detected as a storage device.
 
-::
+At Host::
 
         $ sudo fdisk -l
 
@@ -299,45 +280,4 @@ On host /dev/mmcblk2 will be detected as a storage device.
         Sector size (logical/physical): 512 bytes / 512 bytes
         I/O size (minimum/optimal): 512 bytes / 512 bytes
 
-U-Boot: Flashing EMMC via fastboot
-----------------------------------
-
-Plug USB otg cable A-type to host pc, Micro USB end to carrier board OTG port.
-Power on the board, halt the machine at u-boot command prompt.
-
-::
-
-        (target side)
-
-        MMC:   dwmmc@ff370000: 1, dwmmc@ff390000: 0
-        Loading Environment from MMC... *** Warning - bad CRC, using default environment
-
-        In:    serial@ff160000
-        Out:   serial@ff160000
-        Err:   serial@ff160000
-        Model: Engicam PX30.Core C.TOUCH 2.0
-        Net:   eth0: ethernet@ff360000
-        Hit any key to stop autoboot:  0
-        =>
-        => mmc dev 0
-        => gpt write mmc 0 $partitions
-        => fastboot 0
-
-
-        (host side)
-
-        engicam/px30/u-boot-amarula$ lsusb
-        Bus 002 Device 040: ID 2207:0000
-        Bus 002 Device 038: ID 067b:2303 Prolific Technology, Inc. PL2303 Serial Port
-        Bus 002 Device 035: ID 0781:55a9 SanDisk Corp.
-        Bus 002 Device 002: ID 8087:0024 Intel Corp. Integrated Rate Matching Hub
-        Bus 002 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
-        Bus 001 Device 003: ID 064e:d250 Suyin Corp.
-        Bus 001 Device 002: ID 8087:0024 Intel Corp. Integrated Rate Matching Hub
-        Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
-
-        engicam/px30/u-boot-amarula$ sudo fastboot -i 0x2207 flash loader1 idbloader.img
-        engicam/px30/u-boot-amarula$ sudo fastboot -i 0x2207 flash loader2 u-boot.itb
-        engicam/px30/u-boot-amarula$ sudo fastboot -i 0x2207 flash trust trust.img
-
-reboot the target machine, board boots from EMMC
+On host /dev/mmcblk2 will be detected as a storage device.
