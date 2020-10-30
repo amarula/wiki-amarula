@@ -101,8 +101,6 @@ Program eMMC
 
 Connect USB otg cable A-type to host pc, Micro USB end to board.
 
-Close Jumper JM5.
-
 Boot the Kit with SD boot.
 
 Program eMMC in U-Boot.
@@ -234,8 +232,6 @@ Linux USB OTG
 -------------
 
 Connect USB otg cable A-type to host pc, Micro USB end to board.
-
-Close Jumper JM5.
 
 At Target::
 

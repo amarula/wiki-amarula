@@ -1,0 +1,40 @@
+Engicam PX30.Core Mainline Linux-5.10, U-Boot-2020-10
+===========================================================
+
+.. image:: /images/eng-px30-post.jpg
+
+Amarula Solutions has partnered with Engicam Srl and started a project
+to push Engicam SOM’s and Carrier board’s BSP onto Mainline U-Boot,
+Linux Kernel, Yocto/Buildroot and Multimedia Open source projects.
+
+The first success was that we mainlined PX30-Core, which is a Rockchip PX30
+based SOM along with two of its carrier boards namely EDIMM 2.2 and CTouch 2.0.
+
+Along with Mainlining, we are also providing Ubuntu 20.04 (Focal Fossa) Distribution
+running flawlessly on their Carrier Boards.
+
+.. image:: /images/eng-px30.jpg
+
+Supported features::
+
+        PX30.Core SOM
+        EDIMM2.2 Starter kit
+        C.TOUCH 2.0 with 10" Open Frame board
+        Mainline Linux 5.10.0-rc1
+        Mainline U-Boot v2020-10
+        TPL/SPL bootflow
+        EFI booting
+        eMMC boot tested via fastboot, ums
+        Ethernet
+        USB Host/OTG
+        Wifi/BT
+        LVDS
+        Buildroot
+        Ubuntu Focal 20.04
+
+Wiki::
+
+        https://wiki.amarulasolutions.com/bsp/rockchip/px30/index.html
+
+.. Jagan Teki <jagan@amarulasolutions.com>
+.. Friday 30 October 2020 04:43:22 PM IST
