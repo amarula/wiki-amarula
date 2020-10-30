@@ -16,4 +16,4 @@ Welcome to Amarula Wiki!
    media/index
    hw/index
    zephyr/index
-   jobs/index
+   news/index
