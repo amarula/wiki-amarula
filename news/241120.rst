@@ -1,0 +1,30 @@
+Type-C Power Delivery with Altmode Display Port in Linux-5.10
+==============================================================
+
+Hardware::
+
+        SoC: Rockchip RK3399
+        SBC: ROC-RK3399-PC
+
+Amarula Solutions has partnered with Libretech and started a project
+to push Libre Computer Boards onto Mainline U-Boot, Linux Kernel, Buildroot
+and Multimedia Open source projects.
+
+The first success was that we mainlined full functional 
+ROC-RK3399-PC(Renegade Elite) along with community  developers.
+
+Along with Mainlining, we are also providing Ubuntu 20.04 (Focal Fossa)
+Distribution running flawlessly on their SBC's.
+
+Here is the Type C Power Delivery with Altmode Display Port support
+in Linux-5.10. The Type-C chip FUSB302 still using Linux extcon framework
+and the real work is yet to push on Mainline.
+
+.. image:: /images/roc-typec-pd.png
+
+Wiki::
+
+        https://wiki.amarulasolutions.com/bsp/rockchip/rk3399/roc-rk3399-pc.html
+
+.. Jagan Teki <jagan@amarulasolutions.com>
+.. Tuesday 24 November 2020 07:38:52 PM IST
