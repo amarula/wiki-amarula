@@ -1,0 +1,33 @@
+Implementing Linux DRM drivers for DLPC3433 MIPI DSI Projectors
+===============================================================
+
+.. image:: /images/dlpc3433.png
+
+DLP-based projector technology has been evolved in multiple areas of
+applications since it provides sharp, high-quality projections with
+the potential for 3D capabilities.
+
+Most of them are Texas Instrument chipsets based on optical micro-electro-mechanical
+technology that uses a digital micromirror device.
+
+DLPC3433 is one of the newer DPL-based MIPI DSI projectors which uses
+most industrial and consumer electronics.
+
+.. image:: /images/dlpc3433-block.png
+
+DLPC3433 block has three key sets of subsystems,
+
+1. DLPC3433, interfaced from front-end SoC or other chipsets via Parallel,
+   DSI for video, and I2C, SPI for configurations.
+2. DLPA3000 is PMIC and High-CurrentLED driver
+3. DMD, digital mirror device for Sub-LVDS output optics generation.
+
+All the above subsystems are required to implement on respective Linux DRM
+driver stacks to function properly.
+
+Note:
+This blog will help you to understand the basic information on DLP-based projectors 
+implementations. If you have any specific questions or help, please reach us.
+
+.. Jagan Teki <jagan@amarulasolutions.com>
+.. Wednesday 20 January 2021 05:46:29 PM IST
