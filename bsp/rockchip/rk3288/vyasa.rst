@@ -749,3 +749,74 @@ Lauterbach Trace32 script for debugging Linux
         break.config.method.program Onchip
 
         enddo
+        
+Lauterbach Trace32 script for debugging U-Boot
+
+::
+
+        ; --------------------------------------------------------------------------------
+        ; @Title: RK3288-Vyasa U-Boot debugging Rockchip RK3288
+        ; @Description:
+        ;   The example is generated for Rockchip RK3288
+        ; @Keywords: uboot, Rockchip, rk3288*, RK3288*
+        ; @Author: Giulio Benetti <giulio.benetti@benettiengineering.com>
+        ; @Board: RK3288-Vyasa*
+        ; @Chip: RK3288*
+        ; --------------------------------------------------------------------------------
+        ; $Id: uboot.cmm
+
+        LOCAL &uboot_path
+
+        &uboot_path="/home/user/git/amarula/debian/u-boot"
+
+        ; Debugger Reset
+        WinPAGE.RESet
+        AREA.RESet
+        WinPOS 0. 25. 75. 9. 0. 0. W000
+        AREA.view
+
+        PRINT "resetting..."
+
+        RESet
+        SYStem.CPU RK3288
+
+        SYSTEM.RESETOUT ; hard reset
+        SYStem.JTAGCLOCK 20MHz
+
+        SYStem.Up
+
+        SETUP.IMASKASM ON          ; lock interrupts while single stepping
+
+        ;load tpl in sram
+        data.load.binary &uboot_path/tpl/u-boot-tpl.bin 0xff704000
+        data.load.elf &uboot_path/tpl/u-boot-tpl /nocode
+        Register.Init
+        r.s pc 0xff704000
+
+        ; start and wait for tpl to pass sdram_init
+        go.direct back_to_bootrom
+        WAIT !run()
+        break
+
+        ;load spl in sdram
+        data.load.binary &uboot_path/spl/u-boot-spl-dtb.bin 0x0
+        data.load.elf &uboot_path/spl/u-boot-spl /nocode
+        Register.Init
+        r.s pc 0x00000020
+
+        ; start and wait for spl to hang
+        go.direct hang
+        WAIT !run()
+
+        data.load.binary &uboot_path/u-boot-dtb.bin 0x00200000
+        data.load.elf &uboot_path/u-boot /nocode; uncomment this to debug before relocation
+        ;data.load.elf &uboot_path/u-boot 0x14F70000 /nocode /noreg /noclear
+        Register.Init
+        r.s pc 0x00200000
+
+        go.direct board_init_f
+        WAIT !run()
+
+        list.auto
+
+        enddo
