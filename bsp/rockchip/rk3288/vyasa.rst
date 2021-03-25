@@ -603,6 +603,11 @@ Connect HDMI cable between external monitor with vyasa hdmi port
         Mainline Efforts
         See this page for Mainline status and WIP
         
+Jtag debugging needs a jtag-breakout program to be flashed to eMMC while connecting
+jtag probe through sd-card pins. This can be done by using a sd-card sniffer(i.e. Sparkfun
+microSD Sniffer). Follow this repository to make it work:
+https://github.com/giuliobenetti/rk-jtag-breakout
+
 Lauterbach Trace32 script for debugging Linux
 
 ::
