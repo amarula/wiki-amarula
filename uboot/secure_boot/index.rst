@@ -12,5 +12,6 @@ Secure Boot
    
    imx6_habv4
    spl_habv4
+   imx8mm_habv4.rst
 
 
