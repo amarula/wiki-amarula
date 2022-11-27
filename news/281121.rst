@@ -1,0 +1,34 @@
+Runtime display switching in a Linux System (1xn)
+================================================
+
+Due to rapid graphical industrial evolution, display interface providers
+are coming up with display bridges to address the mismatch between 
+application-specific display interfaces vs on-chip display controllers
+(like from SoC, MCU). This simplifies the on-chip solution provider to 
+concentrate on a single display interface so that the application can 
+choose a direct interface or any other interface by using a display bridge.
+
+Display bridges are linear and one-to-one display interface convertors however
+the display interface provider makes the further complexity to these bridges 
+and came up with a display switch that can take a single display interface 
+input and convert more than one display interface output.
+
+This kind of display switch has a variety of use cases in industrial and
+consumer graphic applications. A couple of display switch designs are 
+available in the market via conventional mux with display bridges and a 
+complete converter bridge chip with a one-to-two interface.
+
+As the Linux DRM subsystem progresses toward DRM bridges, these display
+switches are well suited to be part of DRM bridges. Supporting display
+switches in Linux DRM is complex and new as DRM bridges are linear in 
+architecture. In order to operate display switches via drm bridge, it 
+requires a pipeline to non-linear and tree structure as switch operate
+more than one output.
+
+.. video:: /images/display-switch.mp4
+
+Detailed information at:
+https://indico.freedesktop.org/event/2/contributions/76/
+
+.. Jagan Teki <jagan@amarulasolutions.com>
+.. Monday 28 November 2022 12:47:27 AM IST
