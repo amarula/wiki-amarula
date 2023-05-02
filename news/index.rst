@@ -5,6 +5,7 @@ News
    :maxdepth: 2
    :caption: Contents:
 
+   ewc2023
    281121
    052721
    012021

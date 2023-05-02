@@ -1,0 +1,24 @@
+Amarula Solutions India Exhibiting at EmbeddedWorldChina2023
+============================================================
+
+.. image:: /images/amarula_ewch2023.png
+
+(Hyderabad, India - May, 2023) Amarula Solutions India, which specialized
+in developing innovative open-source technologies and solutions in various
+areas within the Free/Libre Open Source Software(FLOSS) community while
+covering a wide set of Linux-enabled hardware platforms is hosting the
+live demonstration and technical showcase of our hardware enablements and
+Linux multimedia work at Embedded World China 2023 in Shanghai between
+14 - 16 June 2023, Start-up Pavillion, Booth A310.
+
+Event::
+
+        Event: EmbeddedWorldChina2023
+        Booth: Start-up Pavillion, Booth A310
+        Time: 14th to 16th June, 2023
+        Place: Shanghai, China
+
+Stay tuned!
+
+.. Jagan Teki <jagan@amarulasolutions.com>
+.. Wednesday 03 May 2023 01:17:26 AM IST
