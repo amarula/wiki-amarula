@@ -4,6 +4,15 @@ Conferences
 Amarula Solutions have enough record of sponsering, participating, speaking 
 and showcasing our work at international conferences.
 
+2024, FOSDEM
+*********
+
+Talk: `Linux CAN upstreaming on MMU-less systems <https://fosdem.org/2024/schedule/event/fosdem-2024-2864-linux-can-upstreaming-on-mmu-less-systems>`_
+
+Talk: `Flutter, Buildroot, and you! <https://fosdem.org/2024/schedule/event/fosdem-2024-2495-flutter-buildroot-and-you->`_
+
+Talk: `Flutter in Embedded <https://fosdem.org/2024/schedule/event/fosdem-2024-2667-flutter-in-embedded>`_
+
 2019, ELC:
 *********
 
