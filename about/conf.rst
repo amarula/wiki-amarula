@@ -13,6 +13,11 @@ Talk: `Flutter, Buildroot, and you! <https://fosdem.org/2024/schedule/event/fosd
 
 Talk: `Flutter in Embedded <https://fosdem.org/2024/schedule/event/fosdem-2024-2667-flutter-in-embedded>`_
 
+2023, PYCON ITALY
+*********
+
+Talk: `Dyndesign: Merging Classes Dynamically <https://2023.pycon.it/en/event/dyndesign-merging-classes-dynamically>`_
+
 2019, ELC:
 *********
 
