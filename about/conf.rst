@@ -75,4 +75,4 @@ Talk: `U-Boot from scratch <https://www.amarulasolutions.com/news/amarula-soluti
 2017, ELCE:
 ***********
 
-Showcase: `Amarula at ELCE <>
+Showcase: `Amarula at ELCE <https://www.crunchbase.com/event/embedded-linux-conference-europe-20171023>`_
