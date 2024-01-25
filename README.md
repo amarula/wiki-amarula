@@ -20,11 +20,13 @@ Install the following package in order to build the project
 
 `sphinx-build  ./  _build/`
 
-Once above comamnd run successfully, a `Makefile` would generated.
+Open the result using firefox/chrome browser
 
-On next time onward we can use generated `Makefile` to build the document
+```bash
+    firefox _build/index.html
+```
 
-`make html`
+You can build it again using the same command
 
 ### Layout of Documentation
 ```
