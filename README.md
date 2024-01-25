@@ -1,5 +1,14 @@
 ## Welcome to Amarula Open Source wiki
 
+### Sphinx Setup (UBUNTU)
+
+Install the following package in order to build the project
+
+```bash
+    sudo apt-get install python3-sphinx
+    pip install sphinx_rtd_theme --break-system-packages
+```
+
 ### Sphinx Usage
 
 ```bash
