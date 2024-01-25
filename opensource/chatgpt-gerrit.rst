@@ -18,7 +18,7 @@ As a **virtual Gerrit user**, ChatGPT should be empowered to
 Control is the Key
 ------------------
 
-    Talking about tools, the thin line that separates a dream from a nightmare is Control.
+*Talking about tools, the thin line that separates a dream from a nightmare is Control.*
 
 Bearing this key principle in mind, it is essential that Gerrit administrators have the capability to selectively enable the ChatGPT review function for particular projects, users, groups, and topics.
 
@@ -46,14 +46,12 @@ PatchSet Review
 ChatGPT, acting as a vigilant overseer, reviews PatchSets of selected Gerrit projects as they arrive. This feature ensures that each submission undergoes a preliminary, AI-driven analysis, setting a high standard of quality and coherence right from the start.
 
 .. image:: /images/chatgpt_patchset_review.png
-    :width: 1200
 
 Behind the scenes, the path towards enhancing the quality of ChatGPT’s responses was achieved through meticulous prompt engineering. This significant progression involved more than just fine-tuning algorithms; it was centered on grasping the subtleties of developer interactions and customizing the responses to match these nuances. The enhanced ChatGPT plugin can now focus more precisely on identifying and correcting code issues.
 
 Moreover, it can examine the congruence of **commit messages** with the PatchSets’ changes, ensuring that the narrative of the commit aligns with the actual modifications made.
 
-.. image:: /images/chatgpt_patchset_review_2_highlighted.png
-    :width: 1200
+.. image:: /images/chatgpt_patchset_review_commit_message.png
 
 Interactive Assistance
 ----------------------
@@ -65,12 +63,11 @@ The ability to start conversations with ChatGPT directly from an inline comment 
 In the following example, the author inquires further about implementing a change recommended by ChatGPT within the code of Gerrit ChatGPT plugin project itself, showcasing the feature’s interactive and responsive capabilities.
 
 .. image:: /images/chatgpt_interactive_assistance_cropped.png
-    :width: 1200
 
 In the example showcased next, ChatGPT is queried about a different implementation approach on a code segment that **isn’t directly related to the changes** in the PatchSet.
 
 .. image:: /images/chatgpt_query_min.png
-    :width: 600
+    :width: 650
 
 Adjusting Verbosity Level
 -------------------------
@@ -78,7 +75,7 @@ Adjusting Verbosity Level
 The verbosity level can be further increased by specifically requesting multiple alternatives and code examples.
 
 .. image:: /images/chatgpt_query_max.png
-    :width: 600
+    :width: 650
 
 Security and Privacy
 --------------------

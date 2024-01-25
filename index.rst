@@ -17,3 +17,4 @@ Welcome to Amarula Wiki!
    hw/index
    zephyr/index
    news/index
+   opensource/index
