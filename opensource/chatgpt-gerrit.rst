@@ -9,7 +9,7 @@ Motivation
 
 At `Amarula <https://www.amarulasolutions.com/>`__, we extensively utilize Gerrit for our development processes, leveraging its robust code review and collaboration features. In light of its features, we concluded that the pairing of Gerrit and ChatGPT was a match already in the making. In our relentless quest for enhanced code quality and improved project management efficiency, we believe that incorporating ChatGPT into Gerrit can refine the review process and introduce an **extra dimension of AI-powered intelligence**.
 
-As a **virtual Gerrit user**, ChatGPT should be empowered to
+As a **Virtual Gerrit User**, ChatGPT should be empowered to
 
 * Offer **Insights** and **Suggestions**
 * Provide **Automated Code Analysis**
@@ -130,7 +130,7 @@ ChatGPT, acting as a vigilant overseer, reviews Patch Sets of selected Gerrit pr
 
 Behind the scenes, the path towards enhancing the quality of ChatGPT’s responses was achieved through meticulous prompt engineering. This significant progression involved more than just fine-tuning algorithms; it focused on understanding the delicate dynamics of developer interactions and tailoring the responses to align with these nuances.
 
-Moreover, it can examine the congruence of **commit messages** with the PatchSets’ changes, ensuring that the narrative of the commit aligns with the actual modifications made.
+An additional feature allows for examining the congruence of the **commit messages** with the Patch Sets’ changes, ensuring that the narrative of the commit aligns with the actual modifications made.
 
 .. figure:: /images/chatgpt_patchset_review_commit_message.png
 
@@ -185,9 +185,9 @@ Conclusion
 
 Our exploration of the integration of ChatGPT into Gerrit has highlighted several key points:
 
-* **Innovative Integration**: We’ve discussed the groundbreaking integration of ChatGPT into a Gerrit plugin, showcasing how it acts not just as a tool but as a virtual collaborator in the development process.
-* **Control and Customization**: We emphasized the importance of control, allowing Gerrit administrators to selectively activate ChatGPT for specific projects, users, groups, and topics. This ensures that ChatGPT’s insights are relevant and aligned with the developers’ needs.
+* **Virtual Gerrit Collaborator**: We’ve discussed the groundbreaking integration of ChatGPT into a Gerrit plugin, showcasing how it acts not just as a tool but as a Virtual Collaborator in the development process.
+* **Control and Customization**: We emphasized the importance of control, allowing Gerrit administrators to selectively activate ChatGPT for specific projects, users, groups, and topics, and enabling developers to maintain a firm grip on the reins of control. This ensures that ChatGPT’s insights are relevant and aligned with the developers’ needs.
 * **Interactive and Responsive Nature**: The feature that allows developers to continue conversations based on initial insights or start new ones independently showcases the interactive and responsive nature of the plugin.
-* **Security and Privacy**: We shared our experiences and best practices for maintaining security and privacy when using ChatGPT within Gerrit.
+* **Security and Privacy**: We shared best practices for maintaining security and privacy when using ChatGPT within Gerrit.
 
 By integrating ChatGPT into Gerrit, we aim to enhance code quality, streamline project management, and introduce AI-driven intelligence into the software development lifecycle. This integration is a step towards a more efficient, collaborative, and intelligent coding environment, highlighting our commitment to innovation and excellence in software development.
