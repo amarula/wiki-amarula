@@ -143,18 +143,18 @@ ChatGPT goes beyond being just a tool, acting more like a virtual colleague. It�
 
 The ability to start conversations with ChatGPT directly from an inline comment adds a layer of dynamism to the interaction. Users can request reviews on specific parts of the code, extending even beyond the current Patch Set, or ask for improvement suggestions. This feature essentially brings an on-demand code review assistant into the workflow, available at the click of a button.
 
-In the following example, the author inquires further about implementing a change recommended by ChatGPT, showcasing the feature’s interactive and responsive capabilities.
+In the following example, a further inquiry about how to implement a change recommended by ChatGPT is showcased.
 
 .. figure:: /images/chatgpt_interactive_assistance_cropped.png
 
-    ChatGPT's interaction with the author on on a patched code segment in Java
+    ChatGPT's interaction on a patched code segment in Java
 
 In the example showcased next, ChatGPT is queried about a different implementation approach on a code segment that **isn’t directly related to the changes** in the Patch Set.
 
 .. figure:: /images/chatgpt_query_min.png
     :width: 650
 
-    ChatGPT interaction with the author in response to an inquiry about a code line from a Python project
+    ChatGPT interaction in response to an inquiry about a code line from a Python project
 
 Adjusting Verbosity Level
 -------------------------
@@ -164,7 +164,7 @@ The verbosity level can be further increased by specifically requesting multiple
 .. figure:: /images/chatgpt_query_max.png
     :width: 650
 
-    ChatGPT interaction with the author in response to an inquiry about a code line from a Python project
+    ChatGPT interaction in response to an inquiry about a code line from a Python project
 
 It is also possible to submit broader inquiries about the entire Patch Set.
 
