@@ -8,13 +8,8 @@ Welcome to Amarula Wiki!
    :caption: Contents:
    
    about/about.rst
+   opensource/index
    found/index
    bsp/index
-   uboot/index
-   optee/index
-   drm/index
-   media/index
    hw/index
-   zephyr/index
    news/index
-   opensource/index

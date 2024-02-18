@@ -10,5 +10,10 @@ Open Source Projects
    :maxdepth: 1
    :caption: Contents:
 
-   chatgpt-gerrit
+   uboot/index
+   optee/index
+   drm/index
+   media/index
+   zephyr/index
+   products/chatgpt-gerrit
 
