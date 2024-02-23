@@ -3,16 +3,11 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Open Source Projects
+Security topics
 ====================
 
 .. toctree::
    :maxdepth: 1
    :caption: Contents:
 
-   uboot/index
-   optee/index
-   drm/index
-   media/index
-   zephyr/index
-   products/chatgpt-gerrit
+   react_native/index.rst
