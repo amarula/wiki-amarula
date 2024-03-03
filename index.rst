@@ -8,9 +8,9 @@ Welcome to Amarula Wiki!
    :caption: Contents:
    
    about/about.rst
+   news/index
    opensource/index
    security/index
    found/index
    bsp/index
    hw/index
-   news/index
