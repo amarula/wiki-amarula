@@ -5,6 +5,7 @@ News
    :maxdepth: 2
    :caption: Contents:
 
+   chatgpt-2.1.0
    ewc2023
    281121
    052721
