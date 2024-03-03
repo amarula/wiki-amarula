@@ -17,6 +17,7 @@ Amarula Solutions S.R.O updates the https://amarula.github.io/chatgpt-code-revie
 * Enabled processing of commands via comments. Command `/review` triggers full Change Set reviews and `/review_last` targets the latest Patch Set.
 
 **Behavior change:**
+
 * Reviews of commit messages are now enabled by default.
 
 **Minor changes and fixes:**
