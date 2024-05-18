@@ -16,3 +16,4 @@ Open Source Projects
    media/index
    zephyr/index
    products/chatgpt-gerrit
+   products/cutekeyboard
