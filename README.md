@@ -5,25 +5,25 @@
 Install the following package in order to build the project
 
 ```bash
-    sudo apt-get install python3-sphinx
-    pip install sphinx_rtd_theme --break-system-packages
+sudo apt-get install python3-sphinx
+     pip install sphinx_rtd_theme --break-system-packages
 ```
 
 ### Sphinx Usage
 
 ```bash
-	usage: sphinx-build [OPTIONS] SOURCEDIR OUTPUTDIR [FILENAMES...]
-	
+usage: sphinx-build [OPTIONS] SOURCEDIR OUTPUTDIR [FILENAMES...]
 ```
 
-### To build this document, run this command 
+### To build this document, run this command
 
-`sphinx-build  ./  _build/`
-
+```bash
+sphinx-build  ./  _build/
+```
 Open the result using firefox/chrome browser
 
 ```bash
-    firefox _build/index.html
+firefox _build/index.html
 ```
 
 You can build it again using the same command
