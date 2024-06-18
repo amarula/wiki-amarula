@@ -7,8 +7,8 @@ Welcome to Amarula Wiki!
    :maxdepth: 1
    :caption: Contents:
    
-   about/about.rst
    news/index
+   about/about.rst
    opensource/index
    security/index
    found/index
