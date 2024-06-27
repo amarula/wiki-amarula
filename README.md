@@ -1,5 +1,27 @@
 ## Welcome to Amarula Open Source wiki
 
+At Amarula Solutions, we pride ourselves on our commitment to excellence, utilizing
+the latest technologies and methodologies to stay at the forefront of the industry.
+Our team of highly skilled engineers and developers has a wealth of experience
+working on complex software projects, and we have a proven track record of
+delivering exceptional results.
+
+Our services include software development, hardware design, and consulting services,
+all aimed at helping businesses improve their processes, increase efficiency,
+and gain a competitive edge. We have extensive experience working with a wide
+range of clients, from small startups to large enterprises, and we have a deep
+understanding of the challenges faced by businesses in today's rapidly evolving
+digital landscape.
+
+We take a customer-focused approach to our work, working closely with our clients
+to understand their unique needs and develop customized solutions that meet their
+requirements. Our commitment to quality is unwavering, and we adhere to the highest
+industry standards to ensure our solutions are reliable and robust.
+
+Whether you are looking for software development services, hardware design solutions,
+or consulting services, Amarula Solutions has the expertise and achieve your business
+goals. Contact us today to discover how we can help you stay ahead of the curve.
+
 ### Sphinx Setup (UBUNTU)
 
 Install the following package in order to build the project
