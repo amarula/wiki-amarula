@@ -10,6 +10,7 @@ Welcome to Amarula Wiki!
    news/index
    about/about.rst
    opensource/index
+   ci/index
    security/index
    found/index
    bsp/index
