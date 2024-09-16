@@ -24,14 +24,14 @@ Shared libraries
 
             The particular features were split into several shared libraries logically by its purpose.
 
-            -  `Automated tests </display/CI/Automated+tests>`__
-            -  `Changelog Jenkins library </display/CI/Changelog+Jenkins+library>`__
-            -  `CI Jenkins library </display/CI/CI+Jenkins+library>`__
-            -  `CodeChecker Jenkins library </display/CI/CodeChecker+Jenkins+library>`__
-            -  `Mend Jenkins library </display/CI/Mend+Jenkins+library>`__
-            -  `Repo Jenkins library </display/CI/Repo+Jenkins+library>`__
-            -  `Shared resource Jenkins library </display/CI/Shared+resource+Jenkins+library>`__
-            -  `UI Jenkins library </display/CI/UI+Jenkins+library>`__
+            -  `Automated tests <https://confluence.amarulasolutions.com/display/CI/Automated+tests>`__
+            -  `Changelog Jenkins library <./changelog_lib/index.html>`__
+            -  `CI Jenkins library <./ci_jenkinslib/index.html>`__
+            -  `CodeChecker Jenkins library <./codechecker_jenkinslib.html>`__
+            -  `Mend Jenkins library <./whitesource_jenkinslib.html>`__
+            -  `Repo Jenkins library <./repo_jenkinslib/index.html>`__
+            -  `Shared resource Jenkins library <https://confluence.amarulasolutions.com/display/CI/Shared+resource+Jenkins+library>`__
+            -  `UI Jenkins library <https://confluence.amarulasolutions.com/display/CI/UI+Jenkins+library>`__
 
    .. container:: columnLayout two-equal
 

@@ -1,9 +1,9 @@
 Jenkins
 ********
 
-Jenkins is a major part of `Amarula Solutions <http://www.amarulasolutions.com/>`__' continuous integration framework. While detailed information about Jenkins can be found in the `Jenkins Guide </download/attachments/4489295/jenkins-the-definitive-guide.pdf?version=1&modificationDate=1473326864935&api=v2>`__, this document specifically outlines Jenkins's significance within the broader context of the Amarula CI product.
+Jenkins is a major part of `Amarula Solutions <http://www.amarulasolutions.com/>`__' continuous integration framework. While detailed information about Jenkins can be found in the `Jenkins Guide <https://confluence.amarulasolutions.com/display/CI/Jenkins?preview=/4489295/6094850/jenkins-the-definitive-guide.pdf>`__, this document specifically outlines Jenkins's significance within the broader context of the Amarula CI product.
 
-At Amarula, we write `pipeline scripts <https://www.jenkins.io/doc/book/pipeline/>`__ in the Groovy programming language. These scripts, dedicated to specific projects, serve as the instructions guiding the workflow for individual Jenkins jobs, defining how tasks are executed and coordinated throughout a CI process. To achieve efficiency and standardization across projects, we have organized these scripts in what we call the `Jenkins shared libraries </display/CI/Shared+libraries>`__. These libraries encapsulate the common elements crucial for every project, promoting re-usability, maintainability, and consistency in our CI pipelines. The Jenkins shared libraries form the backbone of our continuous integration strategy.
+At Amarula, we write `pipeline scripts <https://www.jenkins.io/doc/book/pipeline/>`__ in the Groovy programming language. These scripts, dedicated to specific projects, serve as the instructions guiding the workflow for individual Jenkins jobs, defining how tasks are executed and coordinated throughout a CI process. To achieve efficiency and standardization across projects, we have organized these scripts in what we call the `Jenkins shared libraries <./sharedlibs/shared_lib.html>`__. These libraries encapsulate the common elements crucial for every project, promoting re-usability, maintainability, and consistency in our CI pipelines. The Jenkins shared libraries form the backbone of our continuous integration strategy.
 
 | 
 
@@ -96,7 +96,7 @@ There are more types of the items to be created but mostly we use it to create t
    
 The name of the pipeline is entered and pipeline option selected. It can be fresh new pipeline or copied from already existing pipeline, just the path to existing pipeline needs to be entered. In such case all the existing attributes, parameters and script references will be copied too. This is useful when you create similar pipeline and just few things need to be adopted.
 
-When pipeline is created it can be configured. It consists of particular sections which can be enabled or disabled. New plugins installed in Jenkins can provide additional section or option which will appear in the Jenkins pipeline configuration UI (e.g. `gerrit trigger </display/CI/Gerrit+trigger>`__).
+When pipeline is created it can be configured. It consists of particular sections which can be enabled or disabled. New plugins installed in Jenkins can provide additional section or option which will appear in the Jenkins pipeline configuration UI (e.g. `gerrit trigger <./gerrit_trigger.html>`__).
 
 .. _Jenkins-Pipelinescriptcode:
 
@@ -107,7 +107,7 @@ Pipeline script code
 | There are 2 main ways of passing the script code to job:
 
 -  inject the script code directly to the input field in the UI configuration. We use that only for **quick testing** whether code really works in Jenkins.
--  **reference the script code in version control** (git in our case), and that is how we persist all scripts and track their changes also via `Gerrit Code Review </display/CI/Gerrit+trigger>`__ system.
+-  **reference the script code in version control** (git in our case), and that is how we persist all scripts and track their changes also via `Gerrit Code Review <./gerrit_trigger.html>`__ system.
 
 .. image:: /images/pipeline_script.png
 
@@ -119,7 +119,7 @@ The repository address, path to the file and branch need to be specified togethe
 
    .. container:: confluence-information-macro-body
 
-      The first thing to ask when writing new pipeline is if the functionality is already provided by a `shared library </display/CI/Shared+libraries>`__. It can reduce the amount of code repeated between pipelines and avoids the mistakes done within some areas of Continuous integration like checkout of the code, work with multi-repo, etc ...
+      The first thing to ask when writing new pipeline is if the functionality is already provided by a `shared library <./sharedlibs/shared_lib.html>`__. It can reduce the amount of code repeated between pipelines and avoids the mistakes done within some areas of Continuous integration like checkout of the code, work with multi-repo, etc ...
 
 | Very helpful tool within Jenkins is **Pipeline syntax** which showcase the various features as the code examples dynamically generated, even the referenced global Jenkins variable names or credentials can be provided to be then included in the syntax example. You can get into pipeline syntax from the link at the end of script section.
 
@@ -131,7 +131,7 @@ Another helper is **IntelliJ Idea GDSL**. The Jenkins core methods can be listed
 
 https://gist.github.com/arehmandev/736daba40a3e1ef1fbe939c6674d7da8
 
-`Pipeline examples </display/CI/Pipeline+script+snippets>`__
+`Pipeline examples <./pipeline_snippets.html>`__
 
 .. _Jenkins-Triggeringthejob:
 
@@ -141,7 +141,7 @@ Triggering the job
 Various types of jobs can have different types of triggering. There are few main types we usually use:
 
 | **Gerrit trigger** is crucial for verification builds. It should happen always when some new code patch set appears in code review system. So the task is to confirm automatically whether changes are OK (anything what can be confirmed automatically - compilation, unit testing, static code analysis).
-| It is implemented within additional Jenkins plugin which has to be installed (see plugins section) and appears as new UI section. It has to be setup to interact with existing instance of `Gerrit Code Review </display/CI/Gerrit+Code+Review>`__ system: `Gerrit trigger </display/CI/Gerrit+trigger>`__.
+| It is implemented within additional Jenkins plugin which has to be installed (see plugins section) and appears as new UI section. It has to be setup to interact with existing instance of `Gerrit Code Review <./gerrit_trigger.html>`__ system: `Gerrit trigger <./gerrit_trigger.html>`__.
 
 | **Jenkins UI trigger** is available within the same UI of job which was created. There should be \`Build\` or \`Build with parameters\` button available in the menu.
 | With parametrized build, user can specify various attributes and conditions for that particular build. Those are then passed to the pipeline script in the list of parameters so that code can execute according to conditions provided  (e.g. checkout from specific branch, decide whether to do release or just snapshot build, create build for specific commit, etc...).
@@ -167,9 +167,9 @@ Good practices and tips
 =======================
 
 #. See the `Structure of Jenkins <#Jenkins-StructureofJenkins>`__ above to properly place and name your job. It is good convention to include the type of pipeline in the job name - if it is a Gerrit verification job start the job name with 'gerrit' or end the name with 'verifier', e.g. "ibacAndroidVerifier", "gerritIbacAndroid".
-#. If your job will be computationally demanding (like an OS build), see `Throttling of builds </display/CI/Throttling+of+builds>`__ page.
+#. If your job will be computationally demanding (like an OS build), see `Throttling of builds <./build_throttling.html>`__ page.
 #. Keep only necessary artifacts and set "Discard old builds" in the job configuration. For Gerrit verification, use 30 days and 30-50 last builds.
-#. See `Shared libraries </display/CI/Shared+libraries>`__ page to use some preexisting methods.
+#. See `Shared libraries <./sharedlibs/shared_lib.html>`__ page to use some preexisting methods.
 #. It is recommended to keep verification and release jobs separated.
 
 .. _Jenkins-Gerrittrigger:
@@ -177,7 +177,7 @@ Good practices and tips
 Gerrit trigger
 ==============
 
-In order to have the Gerrit trigger verification working there are few steps needed on both Jenkins and Gerrit instance - `setup gerrit trigger </display/CI/Gerrit+trigger>`__.
+In order to have the Gerrit trigger verification working there are few steps needed on both Jenkins and Gerrit instance - `setup gerrit trigger <./gerrit_trigger.html>`__.
 
 The result of this feature is that every code change pushed in Gerrit review system will verify automatically and label it with result:
 
@@ -230,7 +230,7 @@ Jenkins supports loading of groovy code from custom source. It is useful to extr
 
 Code from the libraries is trusted by default and runs without sandbox.
 
-There is more information available on `Shared libraries </display/CI/Shared+libraries>`__ page.
+There is more information available on `Shared libraries <./sharedlibs/shared_lib.html>`__ page.
 
 .. _Jenkins-Globalenvironmentvariables:
 
@@ -252,7 +252,7 @@ Docker became inseparable part of Jenkins pipelines in Amarula. It provides the 
 
 We are keeping some separation of docker images according to the pipeline type/purpose. E.g. we have mobile-app docker in Amarula docker registry which has preinstalled the Android SDK for Android applications building, cross platform related build chain (npm, yarn, react native...), Java SDKs, Emulators, etc.
 
-The list of currently managed images can be found on `Amarula dockers </display/DEV/Docker+registry>`__ page.
+The list of currently managed images can be found on `Amarula dockers <https://confluence.amarulasolutions.com/display/DEV/Docker+registry>`__ page.
 
 .. _Jenkins-Plugins:
 

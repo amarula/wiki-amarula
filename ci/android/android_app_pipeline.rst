@@ -70,7 +70,7 @@ Manage of exception is suboptimal right now. This script let doing manual build 
    If you have some shell script that need to read some environment from the groovy this should be exported using withEnv(["changeBranch=${changeBranch}"])
 
 
-Using `Shared library <https://confluence.amarulasolutions.com/display/IT/Shared+library>`__
+Using `Shared library <../sharedlibs/shared_lib.html>`__
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 ::
