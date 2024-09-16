@@ -3,7 +3,7 @@ Signing android application releases
 
 `Android signing plugin <https://jenkins.io/doc/pipeline/steps/android-signing/>`__ can be used to sign android application releases in pipeline. Certificate has to be added in Jenkins credentials for this purpose.
 
-The precondition is to have the proper keystore (which key should be used to sign app) within `jenkins credentials. </display/CI/Import+credential+certificate>`__
+The precondition is to have the proper keystore (which key should be used to sign app) within `jenkins credentials. <../jenkins_credentials.html>`__
 
 .. _Signingandroidapplicationreleases-Usingcertificateinpipeline:
 

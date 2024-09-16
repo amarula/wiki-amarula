@@ -51,4 +51,4 @@ Following snippet is example from travel smart application:
 
    .. container:: confluence-information-macro-body
 
-      Google is deprecating usage of standalone APK for uploading the application to google play. Instead the `android application bundle <https://developer.android.com/guide/app-bundle>`__ will be mandatory. See `Signing android application releases </display/CI/Signing+android+application+releases>`__ for the way how to sign .aab in jenkins pipeline.
+      Google is deprecating usage of standalone APK for uploading the application to google play. Instead the `android application bundle <https://developer.android.com/guide/app-bundle>`__ will be mandatory. See `Signing android application releases <./android_app_signing.html>`__ for the way how to sign .aab in jenkins pipeline.

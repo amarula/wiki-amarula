@@ -122,7 +122,7 @@ Supported functionalities
 Integration into CI Jenkins library
 ===================================
 
-The Build and Verification classes from the `CI Jenkins library </display/CI/CI+Jenkins+library>`__ have become the standard way to build/verify projects. Therefore to make it even easier to use this library in our pipelines there are some convenient methods. The details can be found in the CI Jenkins library documentation: `com.amarula.build.Verification </display/CI/com.amarula.build.Verification>`__, `com.amarula.build.Build </display/CI/com.amarula.build.Build>`__
+The Build and Verification classes from the `CI Jenkins library <./sharedlibs/ci_jenkinslib/index.html>`__ have become the standard way to build/verify projects. Therefore to make it even easier to use this library in our pipelines there are some convenient methods. The details can be found in the CI Jenkins library documentation: `com.amarula.build.Verification <./sharedlibs/ci_jenkinslib/verification.html>`__, `com.amarula.build.Build <./sharedlibs/ci_jenkinslib/jenkins_build_lib.html>`__
 
 .. _CodeCheckerJenkinslibrary-Librarydescription:
 
