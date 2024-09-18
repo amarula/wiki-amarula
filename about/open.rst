@@ -48,6 +48,10 @@ Key areas: Boards, configurations, many packages
 
 Links:
 :
+        `Apply patches with fuzz 0 <https://lore.kernel.org/buildroot/20240522070238.3282121-1-dario.binacchi@amarulasolutions.com/>`_
+
+        `Flutter in buildroot <https://lore.kernel.org/buildroot/20240102235957.3072102-1-adam.duskett@amarulasolutions.com/T/>`_
+
         `i.MX boards <https://git.buildroot.net/buildroot/tree/DEVELOPERS#n1019>`_
 
         `Allwinner boards <https://git.buildroot.net/buildroot/tree/DEVELOPERS#n1019>`_
