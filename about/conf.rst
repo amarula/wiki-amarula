@@ -4,6 +4,11 @@ Conferences
 Amarula Solutions have enough record of sponsering, participating, speaking 
 and showcasing our work at international conferences.
 
+2024, Buildroot Developer Day
+*********
+
+Amarula: `Discussing and participating in the future of Buildroot as an open-source platform <https://elinux.org/Buildroot:DeveloperDaysELCE2024>`_
+
 2024, FOSDEM
 *********
 
