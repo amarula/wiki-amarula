@@ -9,6 +9,7 @@ Welcome to Amarula Wiki!
    
    news/index
    about/about.rst
+   articles/index
    opensource/index
    ci/index
    security/index
