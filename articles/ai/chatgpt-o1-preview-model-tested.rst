@@ -1,0 +1,188 @@
+ChatGPT o1-preview Model Tested: Improved Calculations, but Notable Precision Issues
+#######################
+
+.. figure:: /images/intro-image.png
+   :alt: Medium-Image
+
+   Medium-Image
+
+I’ve always been involved in the field of Natural Language Processing
+and Conversational AI, and, since I began testing ChatGPT back in 2022,
+I’ve thoroughly enjoyed testing each new model.
+
+Later on, I was able to combine this passion with my profession at
+Amarula Solutions, and I’ve come to appreciate the steady progress,
+whether big or small, with every model release.
+
+Up until now, the improvements in ChatGPT’s abilities have been truly
+remarkable.
+
+However, with the *o1-preview* Model, things took a different turn.
+
+How I Approach Testing
+*******
+
+Since I began testing, I’ve followed the same approach: submitting the
+same queries to each new model to gauge ChatGPT’s progress firsthand.
+
+I usually present a variety of questions covering Math, Physics, and
+Programming. This time, I was particularly thrilled to start with Math,
+having heard about the significant improvements in the model’s
+calculation abilities.
+
+✅ Test #1: A Diophantine Equation I Invented
+*******
+
+I’ve come across (for example, in this video) that I’m not the only one
+using Diophantine equations to challenge ChatGPT. The reason is simple:
+Diophantine equations require non-standard calculations, making them
+perfect for pushing the boundaries of what an AI can handle. These
+equations, which seek integer solutions, involve complex relationships
+and test a model’s ability to reason beyond standard numerical
+calculations.
+
+However, as mentioned earlier, I prefer not to use well-known equations
+like the one in the video (x³ + y³ + z³ = k), since their possible
+inclusion in the training data could skew the test results.
+
+With this in mind, I crafted my own equation to see how the latest
+version of ChatGPT would perform. |Medium-Image|
+
+This equation has a couple of trivial solutions for (*m, n* ), that are
+(1, 1) and (2, 1), as well as a non-trivial solution, (5, 2), which none
+of the previous ChatGPT models have been able to discover, even after
+being guided in the right direction.
+
+I was pleased to see that the *o1-preview* Model correctly **identified
+all the solutions on the first attempt** . |image1|
+
+❌ Test #2: Continued Fractions
+*******
+
+My initial plan for this test was to evaluate how the *o1-preview* Model
+shows the adherence to Khinchin’s constant in decimal numbers. In short,
+Khinchin demonstrated that for almost all real numbers the coefficients
+of their continued fraction expansion have a finite geometric mean that
+converges to approximately 2.685452 .
+
+What I meant to do was ask ChatGPT to demonstrate the adherence of a
+randomly generated decimal number with many decimal places (to better
+approximate real numbers) to Khinchin’s constant. Following my
+guideline, I avoided using well-known numbers like *π* .
+
+Older models struggled with accurately calculating the geometric mean of
+the coefficients, and I was hopeful that the *o1-preview* Model would
+show improvement. For instance, when the number was less than 1, the
+*gpt-4* Model correctly calculated the continued fraction coefficients
+but mistakenly included the first coefficient, a₀ = 0, leading to an
+incorrect geometric mean of 0 and concluding that the theorem didn’t
+apply.
+
+I decided to shift my focus just to continued fractions and set Khinchin
+aside for a moment. I asked the following question to both the *gpt-4o*
+and *o1-preview* Models:
+
+::
+
+   Can you calculate the first 10 coefficients of the continued fraction of
+   0.1585536657064938800442275742180987996243882347015 ?
+
+The *gpt-4o* Model gave a straightforward, concise answer with the
+correct solution:
+
+[0, 6, 3, 3, 1, 7, 1, 15, 2, 1]
+
+while *o1-preview* starts making mistakes from the sixth element onward:
+
+[0, 6, 3, 3, 1, **2, 9, 20, 3, 1** ]
+
+The reason for this error lies in the approach taken to calculate the
+fractions.
+
+The *gpt-4o* Model uses a straightforward Python code:
+
+::
+
+   from mpmath import mp
+
+   # Set precision high enough for the calculation
+   mp.dps = 50  # Decimal places
+
+   # Value of the number
+   number = mp.mpf(&#x27;0.1585536657064938800442275742180987996243882347015&#x27;)
+
+   # Function to calculate the continued fraction
+   def continued_fraction_coefficients(x, n):
+       coeffs = []
+       for _ in range(n):
+           a = mp.floor(x)
+           coeffs.append(int(a))
+           x = x - a
+           if x == 0:
+               break
+           x = 1 / x
+       return coeffs
+
+   # Calculate the first 10 coefficients
+   coefficients = continued_fraction_coefficients(number, 10)
+   coefficients
+
+On the other hand, the *o1-preview* Model took a completely different
+approach, delivering the wrong result while taking significantly more
+time to calculate (14 secs.): |image2|
+
+From the full ChatGPT response, it’s evident that a precision error
+gradually increases with each step, eventually leading to an incorrect
+result. The error appears as early as the second step, where
+1/0.15855366570649388… is incorrectly approximated as 6.305762195498155
+instead of 6.30701280569032605. This results in an\ **error of 0.0198%,
+which is remarkably high.**
+
+❌ Test #3: Exponential Calculation
+*******
+
+A doubt started to creep into my mind: could even the calculation of a
+math expression be affected by this issue?
+
+Staying true to my guideline, I came up with a simple exponential
+expression to challenge the *o1-preview* Model against\ *gpt-4o:*
+|image3|
+
+When submitted to *gpt-4o* , it provided the answer correctly
+approximated almost immediately with a precision of four decimal places:
+
+7.2625
+
+However, when I posed the same question to the *o1-preview* Model, it
+returned
+
+7.273
+
+with a significant **error of 0.143957%** and a **response time of**
+**14** **seconds** ! |image4|
+
+It should be noted that the three precision errors made by the
+*o1-preview* Model are **independent of each other,** meaning they
+occurred separately in their respective individual calculations: - Error
+in calculating ln *π* : 0.0000737872% - Error in multiplying √3 by ln
+*π* : **0.10675783%** - Error in calculating exp(6.15593929226734) :
+0.06874742%
+
+Conclusion
+*******
+
+There are both highlights and drawbacks to the mathematical capabilities
+of the new *o1-preview* Model. - On one hand, it has significantly
+improved its reasoning abilities, allowing it to solve more complex
+problems in a versatile manner. - On the other hand, applying the same
+approach in certain cases, rather than relying on a straightforward and
+reliable Python code, results in buggy and imprecise solutions.
+
+Written by Patrizio Gelosi
+--------------------------
+
+.. |Medium-Image| image:: https://latex.codecogs.com/svg.image?(m&plus;n)^{m-n}-(m-n)^m=(mn)^n
+.. |image1| image:: /images/diophantine-equation.png
+.. |image2| image:: /images/continued-fraction_corrected.png
+.. |image3| image:: https://latex.codecogs.com/svg.image?\pi^{\sqrt3}
+.. |image4| image:: /images/exponential_corrected.png
