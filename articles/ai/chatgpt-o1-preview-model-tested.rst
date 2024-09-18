@@ -173,6 +173,7 @@ with a significant **error of 0.143957%** and a **response time of**
 It should be noted that the three precision errors made by the
 *o1-preview* Model are **independent of each other,** meaning they
 occurred separately in their respective individual calculations:
+
 * Error in calculating ln *π* : 0.0000737872%
 * Error in multiplying √3 by ln*π* : **0.10675783%**
 * Error in calculating exp(6.15593929226734): 0.06874742%
