@@ -178,6 +178,37 @@ occurred separately in their respective individual calculations:
 * Error in multiplying √3 by ln*π* : **0.10675783%**
 * Error in calculating exp(6.15593929226734): 0.06874742%
 
+UPDATE
+******
+
+I ran into this thread on the ChatGPT official forum (which I hadn’t
+read before, as it doesn’t explicitly refer to the *o1-preview* Model).
+The moderator suggested to “ask it to write a small program in Python
+that does these calculations, and then execute the program.”
+
+I decided to follow the suggestion (even if I felt this extra step was a
+bit of a regression compared to the previous models, where everything
+was more straightforward), and here’s what happened
+
+|image5|
+
+The Python code **wasn’t actually executed** , and the model returned
+the same imprecise result as before.
+
+I suspected ChatGPT might have been influenced by its own previous
+answers in that thread, so I decided to start fresh. I opened a
+completely new thread and asked ChatGPT to write and run a Python code
+to evaluate the formula.
+
+The result? **A completely hallucinated output: 22.459**.
+
+|image6|
+
+As a side note, this is the result from the Python code when actually
+executed, matching the output from the *gpt-4o* Model:
+
+|image7|
+
 Conclusion
 **********
 
@@ -186,7 +217,8 @@ of the new *o1-preview* Model. - On one hand, it has significantly
 improved its reasoning abilities, allowing it to solve more complex
 problems in a versatile manner. - On the other hand, applying the same
 approach in certain cases, rather than relying on a straightforward and
-reliable Python code, results in buggy and imprecise solutions.
+reliable Python code, results in imprecise or sometimes hallucinated
+solutions.
 
 Written by Patrizio Gelosi
 --------------------------
@@ -196,3 +228,6 @@ Written by Patrizio Gelosi
 .. |image2| image:: /images/continued-fraction_corrected.png
 .. |image3| image:: https://latex.codecogs.com/svg.image?%5Cpi%5E%7B%5Csqrt%7B3%7D%7D
 .. |image4| image:: /images/exponential_corrected.png
+.. |image5| image:: /images/calc_with_python_code.png
+.. |image6| image:: /images/hallucination.png
+.. |image7| image:: /images/python_code.png
