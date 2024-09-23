@@ -85,7 +85,7 @@ After downloading the jar files, follow these steps
       #. Click on that and it will be added to your project.       
 
       .. image:: /images/intellij_import_jar.png
-| 
+
 
 Now your project is ready for jenkins shared library autocompletion.
 
@@ -95,27 +95,3 @@ Even after adding gdsl, intellij doesn't show autocomplete for all methods. Thes
 
 #. Jenkins environment variable. Jenkins doesn't expose the environment variable, so autocomplete will not work in this case.
 #. Some of the plugin methods are also not exposed. Example \`withCredentials\` accepts \`usernamePassword\` as param. Intellij doesn’t show autocomplete nor does it highlight the text.
-
-| 
-
-| 
-
-| 
-
-| 
-
-| 
-
-| 
-
-| 
-
-| 
-
-| 
-
-| 
-
-| 
-
-| 

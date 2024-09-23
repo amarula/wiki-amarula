@@ -3,8 +3,6 @@ Gerrit trigger for repo projects
 
 Some projects are composed of several git repositories that are dependent in some way. These repositories are usually managed using \`\ ``repo``\ \` tool. Typical example of such project is Android open-source project (AOSP).
 
-.. container:: toc-macro client-side-toc-macro conf-macro output-block
-
 .. _Gerrittriggerforrepoprojects-Challengesofverificationbuilds:
 
 Challenges of verification builds
@@ -43,11 +41,7 @@ We use Gerrit REST API \`\ :literal:`GET /changes/?q=...`.`
 
 https://gerrit-review.googlesource.com/Documentation/rest-api-changes.html#list-changes
 
-.. container:: code panel pdl conf-macro output-block
-
-   .. container:: codeContent panelContent pdl
-
-      .. code:: syntaxhighlighter-pre
+::
 
          curl --user "jenkins-builder:${GERRIT_JENKINSBUILDER_PASSWORD}" "https://${GERRIT_URL}/a/changes/?q=topic:\"${GERRIT_TOPIC}\"+status:open+parentproject:${PARENT_PROJECT}&o=CURRENT_REVISION&o=CURRENT_COMMIT"
 
@@ -55,22 +49,14 @@ The response contains all Gerrit changes with given ``GERRIT_TOPIC`` that are op
 
 Now for each project we find the latest change by finding the one that is descendant of all the changes. We use git to compare the relation between two commits:
 
-.. container:: code panel pdl conf-macro output-block
-
-   .. container:: codeContent panelContent pdl
-
-      .. code:: syntaxhighlighter-pre
+::
 
          # git merge-base --is-ancestor <maybe-ancestor-commit> <descendant-commit>
          git -C ${PROJECT_PATH} merge-base --is-ancestor ${COMMIT_A} ${COMMIT_B}
 
 We checkout the one that is descendant of the other commits:
 
-.. container:: code panel pdl conf-macro output-block
-
-   .. container:: codeContent panelContent pdl
-
-      .. code:: syntaxhighlighter-pre
+::
 
          # repo download {[project] change[/patchset]}
          repo download ${PROJECT_NAME} ${LATEST_CHANGENUMBER}/${LATEST_CURRENT_PATCHSET}
@@ -84,11 +70,7 @@ The build is triggered for only one specific change, so only that one receives a
 
 https://gerrit-review.googlesource.com/Documentation/rest-api-changes.html#set-review
 
-.. container:: code panel pdl conf-macro output-block
-
-   .. container:: codeContent panelContent pdl
-
-      .. code:: syntaxhighlighter-pre
+::
 
          curl -X POST --user "jenkins-builder:${GERRIT_JENKINSBUILDER_PASSWORD}" --header "Content-Type: application/json; charset=UTF-8" -d "{ \"labels\": { \"Verified\": 1 } }" "https://${GERRIT_URL}/a/changes/${GERRIT_CHANGE_ID}/revisions/${GERRIT_REVISION_COMMIT_ID}/review"
 
@@ -163,11 +145,7 @@ Main classes
 Example usage of library
 ------------------------
 
-.. container:: code panel pdl conf-macro output-block
-
-   .. container:: codeContent panelContent pdl
-
-      .. code:: syntaxhighlighter-pre
+::
 
          @Library('repo_jenkins_lib')
          import com.amarula.gerrit.GerritChange

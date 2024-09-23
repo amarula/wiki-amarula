@@ -28,13 +28,9 @@ Constructor
 
 The Ui class has a private constructor that takes three parameters
 
-.. container:: code panel pdl conf-macro output-block
+::
 
-   .. container:: codeContent panelContent pdl
-
-      .. code:: syntaxhighlighter-pre
-
-         private Ui(parameters, context, is_new = false)
+    private Ui(parameters, context, is_new = false)
 
 -  ``parameters``: A list of parameters that have been added.
 -  ``context``: The context of the Jenkins job.
@@ -47,11 +43,7 @@ Usage
 
 To use this ``Ui`` class, you need to create an instance of its ``Builder`` class and use it to add the parameters you need for your Jenkins job. Then you can call the ``build()`` method to create an instance of the ``Ui`` class, which contains the parameters as a property.
 
-.. container:: code panel pdl conf-macro output-block
-
-   .. container:: codeContent panelContent pdl
-
-      .. code:: syntaxhighlighter-pre
+::
 
          def context = new SecureGroovyScript("").with {
              delegate = null
@@ -76,14 +68,10 @@ The Ui class has the following methods:
 
 .. _com.amarula.ui.UI-get():
 
-``get()``
+get()
 ^^^^^^^^^
 
-.. container:: code panel pdl conf-macro output-block
-
-   .. container:: codeContent panelContent pdl
-
-      .. code:: syntaxhighlighter-pre
+::
 
          def get()
 
@@ -91,14 +79,10 @@ This method returns the list of parameters that have been added.
 
 .. _com.amarula.ui.UI-isNew():
 
-``isNew()``
+isNew()
 ^^^^^^^^^^^
 
-.. container:: code panel pdl conf-macro output-block
-
-   .. container:: codeContent panelContent pdl
-
-      .. code:: syntaxhighlighter-pre
+::
 
          boolean isNew()
 
@@ -117,14 +101,10 @@ The Ui class also has a static inner class called Builder. This class is used to
 
 .. _com.amarula.ui.UI-getValuefromProp(name,defaultValue):
 
-``getValuefromProp(name, defaultValue)``
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+getValuefromProp(name, defaultValue)
+------------------------------------
 
-.. container:: code panel pdl conf-macro output-block
-
-   .. container:: codeContent panelContent pdl
-
-      .. code:: syntaxhighlighter-pre
+::
 
          protected def getValuefromProp(name, defaultValue)
 
@@ -135,14 +115,10 @@ This method is used to get the value of a property from the context of the Jenki
 
 .. _com.amarula.ui.UI-Builder(context):
 
-``Builder(context)``
-^^^^^^^^^^^^^^^^^^^^
+Builder(context)
+----------------
 
-.. container:: code panel pdl conf-macro output-block
-
-   .. container:: codeContent panelContent pdl
-
-      .. code:: syntaxhighlighter-pre
+::
 
          Builder(context)
 
@@ -152,14 +128,10 @@ The constructor for the Builder class takes the context of the Jenkins job as a 
 
 .. _com.amarula.ui.UI-addBooleanParameter(name,defaultValue,description):
 
-``addBooleanParameter(name, defaultValue, description)``
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+addBooleanParameter(name, defaultValue, description)
+----------------------------------------------------
 
-.. container:: code panel pdl conf-macro output-block
-
-   .. container:: codeContent panelContent pdl
-
-      .. code:: syntaxhighlighter-pre
+::
 
          Builder addBooleanParameter(name, defaultValue, description)
 
@@ -171,14 +143,10 @@ This method is used to add a boolean parameter to the Ui class.
 
 .. _com.amarula.ui.UI-addStringParameter(name,defaultValue,description,trim=false):
 
-``addStringParameter(name, defaultValue, description, trim = false)``
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+addStringParameter(name, defaultValue, description, trim = false)
+-----------------------------------------------------------------
 
-.. container:: code panel pdl conf-macro output-block
-
-   .. container:: codeContent panelContent pdl
-
-      .. code:: syntaxhighlighter-pre
+::
 
          Builder addStringParameter(name, defaultValue, description, trim = false)
 
@@ -191,16 +159,10 @@ This method is used to add a string parameter to the Ui class.
 
 .. _com.amarula.ui.UI-addChoiceParameter(name,choices,description):
 
-``addChoiceParameter(name, choices, description)``
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+addChoiceParameter(name, choices, description)
+----------------------------------------------
 
 ::
-
-.. container:: code panel pdl conf-macro output-block
-
-   .. container:: codeContent panelContent pdl
-
-      .. code:: syntaxhighlighter-pre
 
          Builder addChoiceParameter(name, choices, description) 
 
@@ -212,33 +174,22 @@ This method is used to add a choice parameter to the Ui class.
 
 .. _com.amarula.ui.UI-addPasswordParameter(name,defaultValue,description):
 
-``addPasswordParameter(name, defaultValue, description)``
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-.. container:: code panel pdl conf-macro output-block
-
-   .. container:: codeContent panelContent pdl
-
-      .. code:: syntaxhighlighter-pre
-
-         Builder addPasswordParameter(name, defaultValue, description)
+addPasswordParameter(name, defaultValue, description)
+-----------------------------------------------------
 
 ::
 
+    Builder addPasswordParameter(name, defaultValue, description)
+
+
 This method is used to add a password parameter
 
-.. _com.amarula.ui.UI-build():
+build()
+-------
 
-``build()``
-^^^^^^^^^^^
+::
 
-.. container:: code panel pdl conf-macro output-block
-
-   .. container:: codeContent panelContent pdl
-
-      .. code:: syntaxhighlighter-pre
-
-         Ui build()
+    Ui build()
 
 This method builds the ``Ui`` object and returns it. It creates a ``props`` list, which contains the ``parameters`` list as a property definition, and sets it as a property of the ``context`` object. It then creates a new ``Ui`` instance with the ``context``, ``properties``, and \`is_new
 

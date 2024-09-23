@@ -16,7 +16,7 @@ To create an emulator, use the following steps in DockerFile.
 
 Example:
 
-.. code-block::
+::
 
             ARG ANDROID_VERSION="android-25"
             ARG EMULATOR_ARCH="armeabi-v7a"
@@ -39,7 +39,7 @@ Since emulator can take some time to boot, so we have to check if emulator is fu
 
 Example Script:
 
-.. code-block::
+::
 
             adb devices | grep emulator | cut -f1 | while read line; do adb -s $line emu kill; done
             emulator -avd "${EMULATOR_NAME}" -verbose -wipe-data -no-snapshot -no-window -no-audio &
@@ -52,7 +52,7 @@ We have to add this script in our **Dockerfile**, so that we can run it from **J
 
 Example:
 
-.. code-block::
+::
 
             ADD script.sh /
 
@@ -63,7 +63,7 @@ We can use the **shell script** created above to start the emulator from **jenki
 
 Example pipeline:
 
-.. code-block::
+::
 
             #!groovy
         

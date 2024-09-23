@@ -3,8 +3,6 @@ com.amarula.repo.Repo
 
 .. _com.amarula.repo.Repo-:
 
-.. container:: toc-macro client-side-toc-macro conf-macro output-block
-
 .. _com.amarula.repo.Repo-Constructors:
 
 Constructors

@@ -16,11 +16,7 @@ Beware that we only need to care about Docker jobs. Jenkins jobs not running in 
 
 This shows a simple pipeline that will use the proxy cache:
 
-.. container:: code panel pdl conf-macro output-block
-
-   .. container:: codeContent panelContent pdl
-
-      .. code:: syntaxhighlighter-pre
+::
 
          import com.amarula.build.Verification
          node('android-build') {
@@ -50,11 +46,7 @@ Workaround for Yarn (WIP)
 
 Yarn does not honor the overridden registry if a ``package-lock.json`` exists. A workaround is to replace the registry URL in that file with the proxy cache URL. For example, add this before running Yarn:
 
-.. container:: code panel pdl conf-macro output-block
-
-   .. container:: codeContent panelContent pdl
-
-      .. code:: syntaxhighlighter-pre
+::
 
          sh "touch ~/.yarnrc.yml"
          final def registry = sh(

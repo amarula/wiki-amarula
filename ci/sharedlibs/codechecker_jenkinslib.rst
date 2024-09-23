@@ -36,8 +36,6 @@ Due to the nature how the analysis tools work it is necessary to keep the build 
 Installation
 ============
 
-.. _CodeCheckerJenkinslibrary-AddtherepositorytoyourJenkinsinstanceasSharedlibrary::
-
 Add the repository to your Jenkins instance as Shared library:
 --------------------------------------------------------------
 
@@ -213,11 +211,7 @@ Typical use
 
 The example below shows typical use-case of code analysis using this library. The code assumes the project is synced and it is running inside a properly configured Docker container.
 
-.. container:: code panel pdl conf-macro output-block
-
-   .. container:: codeContent panelContent pdl
-
-      .. code:: syntaxhighlighter-pre
+::
 
          library 'codechecker_jenkins_lib'
          import com.amarula.codechecker.analysis.*
@@ -232,11 +226,7 @@ The example below shows typical use-case of code analysis using this library. Th
 
 Following example shows a code that runs analysis and uploads the results to CodeChecker server.
 
-.. container:: code panel pdl conf-macro output-block
-
-   .. container:: codeContent panelContent pdl
-
-      .. code:: syntaxhighlighter-pre
+::
 
          library 'codechecker_jenkins_lib'
          import com.amarula.codechecker.*
@@ -250,11 +240,7 @@ Following example shows a code that runs analysis and uploads the results to Cod
 
 The next example uses diffReport to get only new issues caused by a new Gerrit Change. The code assumes proper credentials are used to access the Git repository and Gerrit REST API. It also assumes it is running inside a properly configured Docker container.
 
-.. container:: code panel pdl conf-macro output-block
-
-   .. container:: codeContent panelContent pdl
-
-      .. code:: syntaxhighlighter-pre
+::
 
          library 'codechecker_jenkins_lib'
          import com.amarula.codechecker.analysis.*
@@ -279,11 +265,7 @@ The next example uses diffReport to get only new issues caused by a new Gerrit C
 
 The previous example could be simplified using checkGerritChanges as shown below. The codechecker.checkGerritChanges step works with a List of GerritChanges. It finds out the target branch of the changes, checks out the branch and runs a base analysis. Then  applies one by one each change and runs a new analysis that is compared to the previous one. The results are reported to each Gerrit change.
 
-.. container:: code panel pdl conf-macro output-block
-
-   .. container:: codeContent panelContent pdl
-
-      .. code:: syntaxhighlighter-pre
+::
 
          library 'codechecker_jenkins_lib'
          import com.amarula.codechecker.*
@@ -302,11 +284,7 @@ The previous example could be simplified using checkGerritChanges as shown below
 
 The next example shows how to analyze Gerrit changes when building several variants. The results are reported to Gerrit.
 
-.. container:: code panel pdl conf-macro output-block
-
-   .. container:: codeContent panelContent pdl
-
-      .. code:: syntaxhighlighter-pre
+::
 
          library 'repo_jenkins_lib'
          import com.amarula.git.Git

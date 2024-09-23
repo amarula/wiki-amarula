@@ -15,11 +15,7 @@ Important options are:
 
 Execution shell needs to take in account the variant for clean the project and for the output directory.
 
-.. container:: code panel pdl conf-macro output-block
-
-   .. container:: codeContent panelContent pdl
-
-      .. code:: syntaxhighlighter-pre
+::
 
          #!/bin/bash -xe
 

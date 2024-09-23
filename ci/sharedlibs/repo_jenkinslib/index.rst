@@ -18,8 +18,6 @@ configured as:
 Installation
 ============
 
-.. _RepoJenkinslibrary-AddtherepositorytoyourJenkinsinstanceasSharedlibrary::
-
 Add the repository to your Jenkins instance as Shared library:
 --------------------------------------------------------------
 
@@ -43,11 +41,7 @@ Generate password for Gerrit REST API
 
 Create password for your Gerrit bot user and add it to Jenkins. You can use gerrit REST API to generate the password:
 
-.. container:: code panel pdl conf-macro output-block
-
-   .. container:: codeContent panelContent pdl
-
-      .. code:: syntaxhighlighter-pre
+::
 
          curl -X PUT \
              --user <admin username>:<admin password> \
@@ -137,14 +131,7 @@ The variable 'env.GERRIT_TOPIC' used in the example below is automatically set b
 
        Click here to see the example code ...
 
-   .. container:: expand-content expand-hidden
-      :name: expander-content-1903968565
-
-      .. container:: code panel pdl conf-macro output-block
-
-         .. container:: codeContent panelContent pdl
-
-            .. code:: syntaxhighlighter-pre
+   ::
 
                @Library('repo_jenkins_lib')
                import com.amarula.gerrit.GerritChange
@@ -205,14 +192,7 @@ The next example shows another typical use-case of test build with cherry-pickin
 
        Click here to see the example code ...
 
-   .. container:: expand-content expand-hidden
-      :name: expander-content-1005801308
-
-      .. container:: code panel pdl conf-macro output-block
-
-         .. container:: codeContent panelContent pdl
-
-            .. code:: syntaxhighlighter-pre
+   ::
 
                @Library('repo_jenkins_lib')
                import com.amarula.gerrit.GerritChange
@@ -270,14 +250,7 @@ The GERRIT_REFSPEC is initialized by the Gerrit Trigger Plugin or can be set fro
 
        Click here to see the example code ...
 
-   .. container:: expand-content expand-hidden
-      :name: expander-content-219122963
-
-      .. container:: code panel pdl conf-macro output-block
-
-         .. container:: codeContent panelContent pdl
-
-            .. code:: syntaxhighlighter-pre
+   ::
 
                @Library('repo_jenkins_lib')
                import com.amarula.gerrit.GerritChange

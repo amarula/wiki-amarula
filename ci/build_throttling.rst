@@ -14,11 +14,7 @@ We configured a Throttle Category called "heavy_job" (Manage Jenkins → Confi
 
 To throttle your pipeline job using this category, you have to adjust the pipeline script. Use 'throttle' step before the node definition with single-element-array argument with the name of the category as parameter of the 'throttle':
 
-.. container:: code panel pdl conf-macro output-block
-
-   .. container:: codeContent panelContent pdl
-
-      .. code:: syntaxhighlighter-pre
+::
 
          throttle(['heavy_job']) {
          node('android-os-build') {

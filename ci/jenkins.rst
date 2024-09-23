@@ -5,10 +5,6 @@ Jenkins is a major part of `Amarula Solutions <http://www.amarulasolutions.com/>
 
 At Amarula, we write `pipeline scripts <https://www.jenkins.io/doc/book/pipeline/>`__ in the Groovy programming language. These scripts, dedicated to specific projects, serve as the instructions guiding the workflow for individual Jenkins jobs, defining how tasks are executed and coordinated throughout a CI process. To achieve efficiency and standardization across projects, we have organized these scripts in what we call the `Jenkins shared libraries <./sharedlibs/shared_lib.html>`__. These libraries encapsulate the common elements crucial for every project, promoting re-usability, maintainability, and consistency in our CI pipelines. The Jenkins shared libraries form the backbone of our continuous integration strategy.
 
-| 
-
-.. container:: toc-macro client-side-toc-macro conf-macro output-block
-
 .. _Jenkins-JenkinsPipelines:
 
 Jenkins Pipelines
@@ -57,20 +53,16 @@ Folders naming convention
 
 Our folder hierarchy consists of one or two levels. The top level directory name should be a customer name written as camelCase. Optional second level is project name also written as camelCase. If the second level is present, the build jobs are in them. The job name is also written in camelCase and describes the purpose of the job - e.g. gerritProjectA, buildProdProjectA.
 
-.. container:: code panel pdl conf-macro output-block
+::
 
-   .. container:: codeContent panelContent pdl
-
-      .. code:: syntaxhighlighter-pre
-
-         <Customer1>
-          |_ <Job>
-          |_ <AnotherJob>
-         <Customer2>
-          |_ <ProjectA>
-              |_ <JobForA>
-          |_ <ProjectB>
-              |_ <JobForB>
+   <Customer1>
+      |_ <Job>
+      |_ <AnotherJob>
+   <Customer2>
+      |_ <ProjectA>
+         |_ <JobForA>
+      |_ <ProjectB>
+         |_ <JobForB>
 
 .. _Jenkins-Creatinganewpipelinejob:
 
@@ -210,16 +202,12 @@ Jenkins credential should be ordered and well named. All the keys are define in�
 
 Keystructure:
 
-.. container:: code panel pdl conf-macro output-block
+::
 
-   .. container:: codeContent panelContent pdl
+   <customer>-<project>_<keyName>
+   example amarula-openid_deployService
 
-      .. code:: syntaxhighlighter-pre
-
-         <customer>-<project>_<keyName>
-         example amarula-openid_deployService
-
-         <keyName> Should be a readable name that describes the usage. keyName should not include - or _ and it can be in camel case format
+   <keyName> Should be a readable name that describes the usage. keyName should not include - or _ and it can be in camel case format
 
 .. _Jenkins-JenkinsSharedlibrary:
 

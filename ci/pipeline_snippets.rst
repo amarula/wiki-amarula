@@ -9,23 +9,6 @@ Pipeline script snippets
 
          .. container:: innerCell
 
-            | 
-
-            .. container:: table-wrap
-
-               +---------------------------------------------------------------------------+
-               | .. container:: content-wrapper                                            |
-               |                                                                           |
-               |    .. container:: toc-macro client-side-toc-macro conf-macro output-block |
-               +===========================================================================+
-               +---------------------------------------------------------------------------+
-
-   .. container:: columnLayout single
-
-      .. container:: cell normal
-
-         .. container:: innerCell
-
             .. rubric:: Useful examples:
                :name: Pipelinescriptsnippets-Usefulexamples:
 
@@ -39,11 +22,7 @@ Pipeline script snippets
 
             The single quotes ' x ' won't expand groovy variables and so shell scripts can be written without escaping the $.
 
-            .. container:: code panel pdl conf-macro output-block
-
-               .. container:: codeContent panelContent pdl
-
-                  .. code:: syntaxhighlighter-pre
+            ::
 
                      node() {
                        def var = 'variable'
@@ -61,11 +40,7 @@ Pipeline script snippets
                        '''
                      }
 
-            .. container:: code panel pdl conf-macro output-block
-
-               .. container:: codeContent panelContent pdl
-
-                  .. code:: syntaxhighlighter-pre
+            ::
 
                      [Pipeline] sh
                      + echo groovyVar=groovy variable
@@ -106,11 +81,7 @@ Pipeline script snippets
                -  All non-existing folders in path are created - 'target/dir/another/dir/'.
                -  Even when you try to specify new name for the artifact, it will create a directory - 'target/path/name.apk' will lead to copying to target/path/name.apk/<artifact_name>.
 
-            .. container:: code panel pdl conf-macro output-block
-
-               .. container:: codeContent panelContent pdl
-
-                  .. code:: syntaxhighlighter-pre
+            ::
 
                      node('...') {
                          stage('...') {
@@ -136,18 +107,10 @@ Pipeline script snippets
 
             Every parameter requires unique name which is used later in pipeline to receive its value:
 
-            .. container:: code panel pdl conf-macro output-block
+            ::
 
-               .. container:: codeHeader panelHeader pdl
-
-                  **Acquiring build parameter value in the pipeline**
-
-               .. container:: codeContent panelContent pdl
-
-                  .. code:: syntaxhighlighter-pre
-
-                     // we checkout specific revision according to the build parameter "revision_tag" defined by user
-                     sh "git reset --hard ${revision_tag}"
+               // we checkout specific revision according to the build parameter "revision_tag" defined by user
+               sh "git reset --hard ${revision_tag}"
 
             .. rubric:: Extendend choice parameters
                :name: Pipelinescriptsnippets-Extendendchoiceparameters
@@ -162,9 +125,7 @@ Pipeline script snippets
 
                   **Array of parameters defined via json-editor**  Expand source
 
-               .. container:: codeContent panelContent pdl hide-toolbar
-
-                  .. code:: syntaxhighlighter-pre
+               ::
 
                      import org.boon.Boon;
 
@@ -228,9 +189,7 @@ Pipeline script snippets
 
                   **Extended choice parameters passed to pipeline**
 
-               .. container:: codeContent panelContent pdl
-
-                  .. code:: syntaxhighlighter-pre
+               ::
 
                      // BuildParams is the name of extended choice parameter,
                      // we access its string value in same way as within simple jenkins parameters
@@ -255,11 +214,7 @@ Pipeline script snippets
 
             Select the 'Extensible Choice' parameter type and then 'System Groovy Script Choice Parameter' as Choice Provider.
 
-            .. container:: code panel pdl conf-macro output-block
-
-               .. container:: codeContent panelContent pdl
-
-                  .. code:: syntaxhighlighter-pre
+            ::
 
                      def builds = ['AOSP_PREBUILT']
 
@@ -282,10 +237,6 @@ Pipeline script snippets
 
             .. image:: /images/pipeline_script_snippet_1.png
 
-      .. container:: cell normal
-
-         .. container:: innerCell
-
    .. container:: columnLayout single
 
       .. container:: cell normal
@@ -297,11 +248,7 @@ Pipeline script snippets
 
             https://jenkins.io/doc/book/pipeline/docker/#using-a-remote-docker-server
 
-            .. container:: code panel pdl conf-macro output-block
-
-               .. container:: codeContent panelContent pdl
-
-                  .. code:: syntaxhighlighter-pre
+            ::
 
                      node("android-os-build") {
                           stage('Build OS') {
