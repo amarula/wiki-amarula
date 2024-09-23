@@ -35,9 +35,7 @@ The backend access credentials can be set within global sonar qube env and proje
 
       **Sonar params injection**
 
-   .. container:: codeContent panelContent pdl
-
-      .. code:: syntaxhighlighter-pre
+   ::
 
          def sonarHome = tool 'sonnar_4.6.2.2472' // tool installed in jenkins. In case of docker, it would have to be passed in some way to docker, or can be simply installed in docker image already
          withSonarQubeEnv(credentialsId: 'amarula-sonar') {

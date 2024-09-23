@@ -17,7 +17,7 @@ This library is a wrapper on top of Jenkins changelog plugin. Jenkins changelog 
 
 | 
 
-First add **Jenkins changelog library **\ in your Jenkins shared library.
+First add **Jenkins changelog library** in your Jenkins shared library.
 
 Now, to generate changelog use the \ **generate**\  method from \ **changelog.groovy**\  script file.  **new C**\ **hangelog().generate(steps, options)**
 
@@ -26,7 +26,7 @@ Now, to generate changelog use the \ **generate**\  method from \ **changelog
 **Example Usage**
 -----------------
 
-.. code:: code
+::
 
    import com.amarula.changelog.Changelog
 

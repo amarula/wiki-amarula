@@ -66,11 +66,7 @@ AWS tuning variable
 
 More configuration is need to delete artifacts in aws and to increase session timeout in /etc/default/jenkins file or /etc/systemd/system/jenkins.service.d/override.conf
 
-.. container:: code panel pdl conf-macro output-block
-
-   .. container:: codeContent panelContent pdl
-
-      .. code:: syntaxhighlighter-pre
+::
 
          # delete artifacts on the S3 Bucket
          JAVA_ARGS="${JAVA_ARGS} -Dio.jenkins.plugins.artifact_manager_jclouds.s3.S3BlobStoreConfig.deleteArtifacts=true"

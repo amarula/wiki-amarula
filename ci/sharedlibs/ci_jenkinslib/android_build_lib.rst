@@ -1,8 +1,6 @@
 com.amarula.build.AndroidBuild
 *******************************
 
-.. container:: toc-macro client-side-toc-macro conf-macro output-block
-
 Helper class that generalizes Android Build steps.
 
 .. _com.amarula.build.AndroidBuild-Constructors:
@@ -63,11 +61,7 @@ Prepares 'out' variable pointing to Android output directory and 'artifactBasena
 Example usage
 =============
 
-.. container:: code panel pdl conf-macro output-block
-
-   .. container:: codeContent panelContent pdl
-
-      .. code:: syntaxhighlighter-pre
+::
 
          import com.amarula.build.AndroidBuild
 

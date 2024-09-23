@@ -18,8 +18,6 @@ configured as:
 Installation
 ============
 
-.. _CIJenkinslibrary-AddtherepositorytoyourJenkinsinstanceasSharedlibrary::
-
 Add the repository to your Jenkins instance as Shared library:
 --------------------------------------------------------------
 
@@ -67,14 +65,14 @@ Optional installation steps
 .. _CIJenkinslibrary-Mattermostendpointurl:
 
 Mattermost endpoint url
-~~~~~~~~~~~~~~~~~~~~~~~
+=======================
 
 Set "MATTERMOST_ENDPOINT_URL" global variable in Jenkins in form: https://mattermost.amarulasolutions.com/hooks/abc
 
 .. _CIJenkinslibrary-MSTeamsendpointurl:
 
 MS Teams endpoint url
-~~~~~~~~~~~~~~~~~~~~~
+=====================
 
 Set "TEAMS_ENDPOINT" global variable in Jenkins in form: https://amarulasolutions.webhook.office.com/webhookb2/abc/IncomingWebhook/abc
 
@@ -102,11 +100,7 @@ The monitoredStage wraps regular stage step with a try-catch and can notify when
 
 This step should be used to notify that the build finished successfully.
 
-.. container:: code panel pdl conf-macro output-block
-
-   .. container:: codeContent panelContent pdl
-
-      .. code:: syntaxhighlighter-pre
+::
 
          node() {
            notification.monitoredStage('Source sync') {
@@ -133,11 +127,7 @@ notification.\ ``withMattermostEndpoint`` / notification.\ ``withTeamsEndpoint``
 
 Allows to change the endpoints for notifications inside them.
 
-.. container:: code panel pdl conf-macro output-block
-
-   .. container:: codeContent panelContent pdl
-
-      .. code:: syntaxhighlighter-pre
+::
 
          def mattermostEndpoint = 'x'
          def teamsEndpoint = 'y'
@@ -228,14 +218,7 @@ The example below show typical use-case of repo project build verification. The 
 
        Click here to see the example code ...
 
-   .. container:: expand-content expand-hidden
-      :name: expander-content-93842874
-
-      .. container:: code panel pdl conf-macro output-block
-
-         .. container:: codeContent panelContent pdl
-
-            .. code:: syntaxhighlighter-pre
+   ::
 
                import com.amarula.build.Verification
                 
@@ -266,14 +249,7 @@ The next example shows another typical use-case of test build with cherry-pickin
 
        Click here to see the example code ...
 
-   .. container:: expand-content expand-hidden
-      :name: expander-content-870278278
-
-      .. container:: code panel pdl conf-macro output-block
-
-         .. container:: codeContent panelContent pdl
-
-            .. code:: syntaxhighlighter-pre
+   ::
 
                import com.amarula.build.Build
 

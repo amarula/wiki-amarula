@@ -1,8 +1,6 @@
 com.amarula.build.Verification
 *******************************
 
-.. container:: toc-macro client-side-toc-macro conf-macro output-block
-
 Helper class derived from Build that generalizes build verification of git and repo managed projects. It sends review to Gerrit to each change.
 
 .. _com.amarula.build.Verification-Constructors:

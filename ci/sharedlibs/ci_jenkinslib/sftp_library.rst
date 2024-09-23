@@ -9,14 +9,6 @@ com.amarula.deploy.Sftp
 
          .. container:: innerCell
 
-            .. container:: toc-macro client-side-toc-macro conf-macro output-block
-
-   .. container:: columnLayout single
-
-      .. container:: cell normal
-
-         .. container:: innerCell
-
             .. rubric:: Constructors
                :name: com.amarula.deploy.Sftp-Constructors
 

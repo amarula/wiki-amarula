@@ -43,19 +43,6 @@ Shared libraries
 
             Public Gerrit Trigger plugin documentation: https://plugins.jenkins.io/gerrit-trigger/
 
-      .. container:: cell normal
-
-         .. container:: innerCell
-
-            .. container:: table-wrap
-
-               +---------------------------------------------------------------------------+
-               | .. container:: content-wrapper                                            |
-               |                                                                           |
-               |    .. container:: toc-macro client-side-toc-macro conf-macro output-block |
-               +===========================================================================+
-               +---------------------------------------------------------------------------+
-
    .. container:: columnLayout single
 
       .. container:: cell normal
@@ -96,11 +83,7 @@ Shared libraries
 
             By setting option 'load implicitly' to true, the library is loaded into the node automatically. To import the set version use:
 
-            .. container:: code panel pdl conf-macro output-block
-
-               .. container:: codeContent panelContent pdl
-
-                  .. code:: syntaxhighlighter-pre
+            ::
 
                      import com.amarula.*
                      /* OR */
@@ -110,22 +93,14 @@ Shared libraries
             | 
             | Importing shared library without the 'load implicitly' option would look like:
 
-            .. container:: code panel pdl conf-macro output-block
-
-               .. container:: codeContent panelContent pdl
-
-                  .. code:: syntaxhighlighter-pre
+            ::
 
                      @Library('ci_scripts')
                      import com.amarula.*
 
             Specific version of library can be loaded using '@<version>'. Version refers to tag, branch or commit id.
 
-            .. container:: code panel pdl conf-macro output-block
-
-               .. container:: codeContent panelContent pdl
-
-                  .. code:: syntaxhighlighter-pre
+            ::
 
                      /* Using a version specifier, such as branch, tag, etc */
                      @Library('ci_scripts@devel')

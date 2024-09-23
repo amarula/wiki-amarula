@@ -1,8 +1,6 @@
 com.amarula.build.Build
 ************************
 
-.. container:: toc-macro client-side-toc-macro conf-macro output-block
-
 Helper class that generalizes builds of git and repo managed projects. It checks the environment for variables set by Gerrit trigger plugin and synces the change(s). It can be set whether to checkout or cherry-pick the changes.
 
 .. _com.amarula.build.Build-Constructors:

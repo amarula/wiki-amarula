@@ -15,11 +15,7 @@ Importing the Archiva class
 
 To use the ``Archiva`` class, you must import the ``com.amarula.deploy.Archiva`` package. Here is an example:
 
-.. container:: code panel pdl conf-macro output-block
-
-   .. container:: codeContent panelContent pdl
-
-      .. code:: syntaxhighlighter-pre
+::
 
          import com.amarula.deploy.Archiva
 
@@ -30,16 +26,11 @@ Creating an instance of the Archiva class
 
 To create an instance of the ``Archiva`` class, you must provide the context of the script that uses this class, the server information, the name of the repository to upload to, and the subdirectories of the repository to upload to. Here is an example:
 
-.. container:: code panel pdl conf-macro output-block
-
-   .. container:: codeContent panelContent pdl
-
-      .. code:: syntaxhighlighter-pre
+::
 
          def serverInfo = [ url: 'https://example.archiva.com/artifacts/repository', login: 'archiva_user', password: 'secret' ] 
          def archiva = new Archiva(ctx, serverInfo, "my-repo", "dirs/of/my/group/")
 
-.. _com.amarula.deploy.Archiva-Parameters::
 
 Parameters:
 ~~~~~~~~~~~
@@ -58,11 +49,7 @@ To set the remote path of the repository and subdirectories to upload to, you ca
 
 | 
 
-.. container:: code panel pdl conf-macro output-block
-
-   .. container:: codeContent panelContent pdl
-
-      .. code:: syntaxhighlighter-pre
+::
 
          archiva.setRemotePath("another-repo", "another/dirs/of/my/group/")
 
@@ -83,11 +70,7 @@ Uploading files to Archiva
 
 To upload multiple files to the Archiva server, you can use the ``uploadFile`` method of the ``Archiva`` class. Here is an example:
 
-.. container:: code panel pdl conf-macro output-block
-
-   .. container:: codeContent panelContent pdl
-
-      .. code:: syntaxhighlighter-pre
+::
 
          def uploadArtifacts = [
              [
@@ -114,7 +97,6 @@ Parameters:
 
 -  ``artifacts``: A list of ``Map<String, Object>`` objects that represent the files to upload.
 
-.. _com.amarula.deploy.Archiva-Returnvalue::
 
 Return value:
 ~~~~~~~~~~~~~
@@ -173,11 +155,7 @@ Private method that runs a list of shell commands to upload files to the Archiva
 Example usage
 =============
 
-.. container:: code panel pdl conf-macro output-block
-
-   .. container:: codeContent panelContent pdl
-
-      .. code:: syntaxhighlighter-pre
+::
 
          def serverInfo = [
              url: 'https://example.archiva.com/artifacts/repository',

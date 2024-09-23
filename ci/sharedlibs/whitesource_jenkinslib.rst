@@ -10,11 +10,7 @@ The result generates a pdf file showing the vulnerabilities and also sends the t
 Builder
 =======
 
-.. container:: code panel pdl conf-macro output-block
-
-   .. container:: codeContent panelContent pdl
-
-      .. code:: syntaxhighlighter-pre
+::
 
          def ws = new WhiteSourceReport.Builder()
                       .context(context)
@@ -22,7 +18,7 @@ Builder
                       .apiKey(apiKey)
                       .build()
 
--  **Context **- Jenkins context ('this' in pipeline context)
+-  **Context**- Jenkins context ('this' in pipeline context)
 -  **Userkey** - WhiteSource Userkey from Jenkins Credentials
 -  **ApiKey** - WhiteSource ApiKey from Jenks Credentials
 
@@ -31,25 +27,17 @@ Builder
 Methods
 =======
 
-.. container:: code panel pdl conf-macro output-block
-
-   .. container:: codeContent panelContent pdl
-
-      .. code:: syntaxhighlighter-pre
+::
 
          void generatePdfReport(String config, String projectToken, String project)
 
 This generates the report in pdf format which will be persisted in the build artifacts. 
 
--  **Config **- This is the config of the environment the project is built in e.g Android, Yarn, or Groovy project. 
+-  **Config**- This is the config of the environment the project is built in e.g Android, Yarn, or Groovy project. 
 -  **ProjectToken** - The WhiteSource token for the particular project
 -  **Project** - The Project name, used to name the pdf generated.
 
-.. container:: code panel pdl conf-macro output-block
-
-   .. container:: codeContent panelContent pdl
-
-      .. code:: syntaxhighlighter-pre
+::
 
          void generateRiskReportAndNotify(String productToken, String peopleToNotify, String project)
 
@@ -64,11 +52,7 @@ This gets the list of all the vulnerabilities of the particular product, and the
 Example Usage
 =============
 
-.. container:: code panel pdl conf-macro output-block
-
-   .. container:: codeContent panelContent pdl
-
-      .. code:: syntaxhighlighter-pre
+::
 
          #!groovy
 

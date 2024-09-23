@@ -16,11 +16,7 @@ Using in pipeline
 
 Following snippet is example from travel smart application:
 
-.. container:: code panel pdl conf-macro output-block
-
-   .. container:: codeContent panelContent pdl
-
-      .. code:: syntaxhighlighter-pre
+::
 
          androidApkUpload apkFilesPattern: '**/*signed.apk',
                  googleCredentialsId: 'Google Play Android Developer',

@@ -39,15 +39,9 @@ The SSH has to be allowed within Global security configuration for certain port 
 
 The new credentials to be uploaded has to be in format of xml like this:
 
-.. container:: code panel pdl conf-macro output-block
+**Credential xml**
 
-   .. container:: codeHeader panelHeader pdl
-
-      **Credential xml**
-
-   .. container:: codeContent panelContent pdl
-
-      .. code:: syntaxhighlighter-pre
+::
 
          <?xml version='1.0' encoding='UTF-8'?>
          <com.cloudbees.plugins.credentials.impl.CertificateCredentialsImpl plugin="credentials@2.3.14">
@@ -70,31 +64,19 @@ In case of uploadedKeystoreBytes it has to be binary data of the .p12 keystore e
 
 The XML can be then uploaded via ssh by following command:
 
-.. container:: code panel pdl conf-macro output-block
+**Jenkins SSH**
 
-   .. container:: codeHeader panelHeader pdl
+::
 
-      **Jenkins SSH**
-
-   .. container:: codeContent panelContent pdl
-
-      .. code:: syntaxhighlighter-pre
-
-         ssh -l <user> -p <port> <address> create-credentials-by-xml <STORE> <DOMAIN> < <xml_file>
+   ssh -l <user> -p <port> <address> create-credentials-by-xml <STORE> <DOMAIN> < <xml_file>
 
 Example:
 
-.. container:: code panel pdl conf-macro output-block
+**Jenkins SSH**
 
-   .. container:: codeHeader panelHeader pdl
+::
 
-      **Jenkins SSH**
-
-   .. container:: codeContent panelContent pdl
-
-      .. code:: syntaxhighlighter-pre
-
-         ssh -l miloslav.stefko -p 53801 localhost create-credentials-by-xml system::system::jenkins _ < newCredential.xml
+   ssh -l miloslav.stefko -p 53801 localhost create-credentials-by-xml system::system::jenkins _ < newCredential.xml
 
 In the example the default system STORE and unspecified DOMAIN is used ( \_ ).
 

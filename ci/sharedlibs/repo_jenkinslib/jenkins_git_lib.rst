@@ -1,8 +1,6 @@
 com.amarula.git.Git
 ********************
 
-.. container:: toc-macro client-side-toc-macro conf-macro output-block
-
 Helper class that generalizes Android Build steps.
 
 .. _com.amarula.git.Git-Constructors:

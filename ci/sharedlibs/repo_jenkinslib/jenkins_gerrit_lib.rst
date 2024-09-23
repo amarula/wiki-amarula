@@ -1,8 +1,6 @@
 com.amarula.gerrit.GerritChange
 ********************************
 
-.. container:: toc-macro client-side-toc-macro conf-macro output-block
-
 Represents single Gerrit change with enough information to fetch the change or set review labels.
 
 .. _com.amarula.gerrit.GerritChange-Constructors:

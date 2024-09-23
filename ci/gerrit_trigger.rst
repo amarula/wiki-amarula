@@ -5,8 +5,6 @@ plugin page: https://plugins.jenkins.io/gerrit-trigger
 
 source: https://github.com/jenkinsci/gerrit-trigger-plugin
 
-.. container:: toc-macro client-side-toc-macro conf-macro output-block
-
 .. _Gerrittrigger-SetupinPipelineconfiguration:
 
 Setup in Pipeline configuration
@@ -53,25 +51,25 @@ Pipeline trigger parameters
 
 Not all of them has to be set. Accessible as environment variables.
 
-**GERRIT_CHANGE_SUBJECT:** Parameter name for the commit subject (commit message's 1st line).
+**GERRIT_CHANGE_SUBJECT:** Parameter name for the commit subject (commit message's 1st line).
 
 **GERRIT_CHANGE_COMMIT_MESSAGE:** Parameter name for the full commit message.
 
 **GERRIT_BRANCH:** Parameter name for the branch.
 
-**GERRIT_TOPIC:** Parameter name for the topic.
+**GERRIT_TOPIC:** Parameter name for the topic.
 
-**GERRIT_OLD_TOPIC:** Parameter name for the old topic (in case of topic was changed).
+**GERRIT_OLD_TOPIC:** Parameter name for the old topic (in case of topic was changed).
 
 **GERRIT_TOPIC_CHANGER:** The name and email of the changer of the topic.
 
 **GERRIT_TOPIC_CHANGER_NAME:** The name of the changer of the topic.
 
-**GERRIT_TOPIC_CHANGER_EMAIL: **\ The email of the changer of the topic.
+**GERRIT_TOPIC_CHANGER_EMAIL:** The email of the changer of the topic.
 
 **GERRIT_CHANGE_ID:** Parameter name for the change-id.
 
-**GERRIT_CHANGE_NUMBER: **\ Parameter name for the change number.
+**GERRIT_CHANGE_NUMBER:** Parameter name for the change number.
 
 **GERRIT_CHANGE_URL:** Parameter name for the URL to the change.
 
@@ -91,7 +89,7 @@ Not all of them has to be set. Accessible as environment variables.
 
 **GERRIT_CHANGE_OWNER:** The name and email of the owner of the change.
 
-**GERRIT_CHANGE_OWNER_NAME:** The name of the owner of the change.
+**GERRIT_CHANGE_OWNER_NAME:** The name of the owner of the change.
 
 **GERRIT_CHANGE_OWNER_EMAIL:** The email of the owner of the change.
 
@@ -154,14 +152,7 @@ Example of values
 
        Click here to expand...
 
-   .. container:: expand-content expand-hidden
-      :name: expander-content-1547571607
-
-      .. container:: code panel pdl conf-macro output-block
-
-         .. container:: codeContent panelContent pdl
-
-            .. code:: syntaxhighlighter-pre
+      ::
 
                GERRIT_CHANGE_ID=I2237c5a9a364df5d5e9f49950768df323110a19c
                GERRIT_CHANGE_NUMBER=4039
@@ -190,11 +181,7 @@ Example of values
 Useful code snippets
 --------------------
 
-.. container:: code panel pdl conf-macro output-block
-
-   .. container:: codeContent panelContent pdl
-
-      .. code:: syntaxhighlighter-pre
+::
 
          //def repoUrl = 'ssh://jenkins-builder-amarula@gerrit-review.amarulasolutions.com:29418/aevi-albert/qa-automated-tests'
          def repoUrl = "ssh://jenkins-builder-amarula@${GERRIT_HOST}:${GERRIT_PORT}/${GERRIT_PROJECT}"

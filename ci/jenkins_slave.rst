@@ -16,11 +16,7 @@ Generate SSH key
 
 Jenkins will connect to the slave using SSH. The first step is thus to setup the Jenkins server to be able to connect to the slave via SSH. To do so, first connect to your Jenkins server via SSH and then generate an SSH key:
 
-.. container:: code panel pdl conf-macro output-block
-
-   .. container:: codeContent panelContent pdl
-
-      .. code:: syntaxhighlighter-pre
+::
 
          # switch user to the user used by Jenkins (jenkins by default)
          $ sudo su jenkins
@@ -38,11 +34,7 @@ Jenkins will connect to the slave using SSH. The first step is thus to setup the
 
 **Deprecated way (NOT USE ANYMORE):**
 
-.. container:: code panel pdl conf-macro output-block
-
-   .. container:: codeContent panelContent pdl
-
-      .. code:: syntaxhighlighter-pre
+::
 
          # switch user to the user used by Jenkins (jenkins by default)
          $ sudo su jenkins
@@ -67,22 +59,14 @@ Setup Jenkins user
 
 Jenkins user needs to be selected in a way that it can unique and mapping to docker building image. Our docker image are created to have jenkins user mapped to 20000
 
-.. container:: code panel pdl conf-macro output-block
-
-   .. container:: codeContent panelContent pdl
-
-      .. code:: syntaxhighlighter-pre
+::
 
          $ groupadd -g 20000 jenkins  
          $ useradd -d /home/jenkins -u 20000 -g 20000 -m -s /bin/bash jenkins
 
 Then add the public key in the authorized_keys file and disable password login for the user jenkins:
 
-.. container:: code panel pdl conf-macro output-block
-
-   .. container:: codeContent panelContent pdl
-
-      .. code:: syntaxhighlighter-pre
+::
 
          # switch user to jenkins
          $ sudo su jenkins
@@ -104,11 +88,7 @@ Since Gradle 3.0, we enable Daemon by default and recommend using it for both de
 
 https://docs.gradle.org/current/userguide/gradle_daemon.html#when_should_i_not_use_the_gradle_daemon
 
-.. container:: code panel pdl conf-macro output-block
-
-   .. container:: codeContent panelContent pdl
-
-      .. code:: syntaxhighlighter-pre
+::
 
          Add org.gradle.daemon=false to the «GRADLE_USER_HOME»/gradle.properties file
 
@@ -125,11 +105,7 @@ Jenkins node dns trouble
 
 Setting up the node resolver according to the vpn endpoint. Add add daemon.json in /etc/docker directory
 
-.. container:: code panel pdl conf-macro output-block
-
-   .. container:: codeContent panelContent pdl
-
-      .. code:: syntaxhighlighter-pre
+::
 
          {
            "dns": ["10.105.6.1"]
@@ -144,11 +120,7 @@ Jenkins node limit bandwidth
 
 AWS plugin can consume all the bandwidth in upload. Service provider does not guarantee  it.
 
-.. container:: code panel pdl conf-macro output-block
-
-   .. container:: codeContent panelContent pdl
-
-      .. code:: syntaxhighlighter-pre
+::
 
          # Limit bandwidth of Jenkins user suppose source address 192.168.77.202
          tc qdisc del dev eth1 root htb
