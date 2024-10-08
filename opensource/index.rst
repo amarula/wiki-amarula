@@ -13,6 +13,7 @@ Open Source Projects
    uboot/index
    optee/index
    drm/index
+   dyndesign/index
    media/index
    zephyr/index
    products/chatgpt-gerrit
