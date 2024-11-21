@@ -15,3 +15,4 @@ DynDesign
    :caption: Contents:
 
    buildclass
+   conditional_decorators
