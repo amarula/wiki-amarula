@@ -16,3 +16,4 @@ DynDesign
 
    buildclass
    conditional_decorators
+   merging_classes
