@@ -5,6 +5,7 @@ News
    :maxdepth: 2
    :caption: Contents:
 
+   cutekeyboard
    CAN-rx-tx-statistics
    linuxday-mantova
    warning-ng-jenkins-scanner
