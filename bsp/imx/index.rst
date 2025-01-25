@@ -11,5 +11,3 @@ I.MX
    :caption: Contents:
   
    imx6qdl/index
-   imx6ul/index
-   imx6ull/index
