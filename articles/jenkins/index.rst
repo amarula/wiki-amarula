@@ -14,3 +14,4 @@ Jenkins technologies
    :caption: Contents:
 
    warning-ng-jenkins-valgrind
+   warning-ng-jenkins-codechecker
