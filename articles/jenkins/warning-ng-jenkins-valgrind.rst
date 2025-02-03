@@ -57,7 +57,7 @@ Example of Jenkins pipeline
 |
 |
 
-.. code-block:: language
+.. code-block:: groovy
 
    #!groovy
 
