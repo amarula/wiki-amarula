@@ -34,7 +34,7 @@ Merged Patches
 Flavia Caforio
 """"""""""""""
 
-* zephyr driver counter fix (`<https://github.com/zephyrproject-rtos/zephyr/pull/64979>`)
+* zephyr driver counter fix (`<https://github.com/zephyrproject-rtos/zephyr/pull/64979>`_)
 * esp-mqtt fix workflows (`<https://github.com/espressif/esp-mqtt/pull/297>`_)
 * esp-mqtt parse disconnect packet (`<https://github.com/espressif/esp-mqtt/pull/295>`_)
 
