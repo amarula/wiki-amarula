@@ -138,3 +138,54 @@ Andrea Ricchi
 
 
 **#linux #buildroot #yocto #opensource #embedded**
+
+Linux kernel and U-boot contribuitions
+--------------------------------------
+
+Amarula Solutions has made contributions to the Linux kernel project and U-boot Project,
+demonstrating their commitment to the development and maintenance of this open-source
+embedded Linux build system. We We are active contributors from Amarula Solutions,
+and we have submitted various patches that enhance the functionality and stability
+of those project
+
+Merged Patches
+^^^^^^^^^^^^^^
+
+Dario Binacchi
+""""""""""""""
+
+* Add usr3 led to stm32f769-disco (`<https://patchwork.kernel.org/project/linux-arm-kernel/patch/20250217114513.1098844-2-dario.binacchi@amarulasolutions.com/>`_)
+
+* Add buttons and leds to stm32f746-disco (`<https://patchwork.kernel.org/project/linux-arm-kernel/patch/20250217114332.1098482-2-dario.binacchi@amarulasolutions.com/>`_)
+
+Pending/Review Patches
+^^^^^^^^^^^^^^^^^^^^^^
+
+Dario Binacchi
+""""""""""""""
+
+* Drop custom compatible from stm32f (`<https://patchwork.ozlabs.org/project/uboot/patch/20250224183931.313491-3-dario.binacchi@amarulasolutions.com/>`_)
+
+
+**#linux #u-boot #opensource #embedded**
+
+
+Other opensource contribuitions
+-------------------------------
+
+Merged Patches
+^^^^^^^^^^^^^^
+
+Andrea Calabrese
+""""""""""""""""
+
+* Remove copy operations from classes in Kompute (`<https://github.com/KomputeProject/kompute/pull/412>`_)
+
+* Add noexcept to all constructors to explicitly state no exception thrown (`<https://github.com/KomputeProject/kompute/pull/411>`_)
+
+Michael Trimarchi
+"""""""""""""""""
+
+* Rewrite rebuild actions using javascript java injection (`<https://github.com/jenkinsci/pipeline-graph-view-plugin/pull/580>`_)
+
+#jenkins #kompute #opensource #linux
