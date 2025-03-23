@@ -1,8 +1,9 @@
 Optimizing Yocto Builds with Jenkins and Resource Throttling
-==========================================================
+============================================================
 
 .. figure:: /images/yocto-pipeline.png
    :align: center
+
 |
 |
 
@@ -77,6 +78,7 @@ Example of Jenkins pipeline
 
 .. figure:: /images/pipeline-overview.png
    :align: center
+
 |
 |
 
