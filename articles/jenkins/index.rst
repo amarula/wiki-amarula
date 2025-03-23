@@ -15,3 +15,4 @@ Jenkins technologies
 
    warning-ng-jenkins-valgrind
    warning-ng-jenkins-codechecker
+   jenkins-yocto-kas-pipeline
