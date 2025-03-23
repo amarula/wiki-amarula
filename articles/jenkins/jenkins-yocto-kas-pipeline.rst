@@ -76,12 +76,6 @@ This Jenkins pipeline demonstrates a robust and efficient approach to building Y
 Example of Jenkins pipeline
 ***************************
 
-.. figure:: /images/pipeline-overview.png
-   :align: center
-
-|
-|
-
 .. code-block:: groovy
 
     pipeline {
