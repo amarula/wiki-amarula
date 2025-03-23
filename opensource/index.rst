@@ -15,6 +15,7 @@ Open Source Projects
    drm/index
    dyndesign/index
    media/index
+   multimedia/index
    zephyr/index
    products/chatgpt-gerrit
    products/cutekeyboard
