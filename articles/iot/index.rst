@@ -14,3 +14,4 @@ IOT projects
    :caption: Contents:
 
    esp32-s3-project
+   esp32-camera
