@@ -5,6 +5,7 @@ News
    :maxdepth: 2
    :caption: Contents:
 
+   embeddedworld-2025
    cutekeyboard
    CAN-rx-tx-statistics
    linuxday-mantova
