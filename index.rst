@@ -18,6 +18,74 @@ Welcome to Amarula Wiki!
    hw/index
 
 
+Amarula Solutions Open source Contributions - March/April 2025
+--------------------------------------------------------------
+
+Amarula Solutions new contribuitions in opensource project
+
+Contribuitions
+------------------------
+
+Patches
+^^^^^^^
+Buildroot Patch Updates
+
+This page summarizes recent patch updates for the Buildroot project.
+
+Adam Duskett
+""""""""""""
+
+  * **package/mender-update-modules: new package** ([https://patchwork.ozlabs.org/project/buildroot/patch/20250225133829.2888663-1-adam.duskett@amarulasolutions.com/])
+  * **package/mender-update-modules: enable docker, rpm, and script modules** ([https://patchwork.ozlabs.org/project/buildroot/patch/20250225133829.2888663-2-adam.duskett@amarulasolutions.com/])
+
+Dario Binacchi
+""""""""""""""
+  * **configs/stm32mp157*_dk*: bump TF-A to 2.10, Linux to 6.12.13 and U-Boot to 2025.01** (Link: [https://patchwork.ozlabs.org/project/buildroot/patch/20250214114612.3682462-1-dario.binacchi@amarulasolutions.com/])
+  * **Add TF-A lts-v2.12.x selection** (Link: [https://patchwork.ozlabs.org/project/buildroot/patch/20250303170245.3657781-1-dario.binacchi@amarulasolutions.com/])
+  * **package/linux-firmware:** Bump to 20250311 (Link: [https://patchwork.ozlabs.org/project/buildroot/list/?series=450826])
+  * **package/ufs-utils:** New package (Link: [https://patchwork.ozlabs.org/project/buildroot/patch/20250401160957.4020794-1-dario.binacchi@amarulasolutions.com/])
+  * **package/armadillo:** bump to version 14.4.1 (Link: [https://patchwork.ozlabs.org/project/buildroot/patch/20250401160957.4020794-1-dario.binacchi@amarulasolutions.com/])
+  * **package/mmc-utils:** bump to version 2aef4cd9a84d	(Link: [https://patchwork.ozlabs.org/project/buildroot/patch/20250402074153.4038837-1-dario.binacchi@amarulasolutions.com/])
+  * **package/apr:** bump to version 1.7.5 [(https://patchwork.ozlabs.org/project/buildroot/patch/20250406150929.691964-1-dario.binacchi@amarulasolutions.com/])
+  * **boot/uboot:** bump to version v2025.04 [(https://patchwork.ozlabs.org/project/buildroot/patch/20250408072500.1771475-1-dario.binacchi@amarulasolutions.com/)]
+  * **configs/stm32f469_disco_{sd, xip}: bump Linux to 5.15.179** ([https://patchwork.ozlabs.org/project/buildroot/patch/20250409061736.2335242-1-dario.binacchi@amarulasolutions.com/])
+  * **configs/stm32f429_disco_xip: bump Linux to 6.1.133** ([https://patchwork.ozlabs.org/project/buildroot/patch/20250410161623.1940341-1-dario.binacchi@amarulasolutions.com/])
+  * **configs/stm32f769_disco_sd: bump Linux to 5.15.179 and U-Boot to 2025.04** [(https://patchwork.ozlabs.org/project/buildroot/patch/20250411061818.2643355-1-dario.binacchi@amarulasolutions.com/])
+  * **package/azure-iot-sdk-c: bump to version LTS_03_2025** ([https://patchwork.ozlabs.org/project/buildroot/patch/20250411144739.3957036-1-dario.binacchi@amarulasolutions.com/])
+  * **boot/ti-k3-boot-firmware: bump to version 11.00.10** ([https://patchwork.ozlabs.org/project/buildroot/patch/20250412091936.1251605-1-dario.binacchi@amarulasolutions.com/])
+  * **configs/imx6ulz_bsh_smm_m2: bump Linux to 6.1.134 and U-Boot to 2025.04**	([https://patchwork.ozlabs.org/project/buildroot/patch/20250417152425.3248986-1-dario.binacchi@amarulasolutions.com/])
+  * **configs/beaglebone: bump Linux to 6.12.17-ti-arm32-r9 and U-Boot to 2025.04** ([https://patchwork.ozlabs.org/project/buildroot/patch/20250417174106.4091085-1-dario.binacchi@amarulasolutions.com/])
+  * **configs/imx8mn_bsh_smm_s2[_pro]: bump Linux to 6.12.23 and U-Boot to 2025.04** ([https://patchwork.ozlabs.org/project/buildroot/patch/20250418153146.151159-1-dario.binacchi@amarulasolutions.com/])
+
+Meena Murphy
+""""""""""""
+  * **[v4] configs/engicam_px30_core_defconfig: new defconfigi** ([https://patchwork.ozlabs.org/project/buildroot/patch/20250401095407.488618-2-meena.murthy@amarulasolutions.com/])
+  * **configs/engicam_px30_core: bump Linux to 6.12.22 and U-Boot to 2025.04** ([https://patchwork.ozlabs.org/project/buildroot/patch/20250409073750.1561127-2-meena.murthy@amarulasolutions.com/])
+
+
+Other patches
+^^^^^^^^^^^^^
+
+Jenkins, Linux kernel and meta-codechecker
+
+Dario Binacchi
+""""""""""""""
+
+  * **clk: stm32f4: fix an uninitialized variable** ([https://patchwork.kernel.org/project/linux-clk/patch/20250124111711.1051436-1-dario.binacchi@amarulasolutions.com/])
+  * **ARM: dts: stm32: use IRQ_TYPE_EDGE_FALLING on stm32mp157c-dk2** ([https://lore.kernel.org/linux-arm-kernel/20250301115116.2862353-1-dario.binacchi@amarulasolutions.com/T/])
+  * **Drop custom compatible from stm32f** ([https://patchwork.ozlabs.org/project/uboot/patch/20250224183931.313491-3-dario.binacchi@amarulasolutions.com/])
+  * **Support NT35510 panel contrroller on stm32f769i-disco board** ([https://patchwork.ozlabs.org/project/uboot/list/?series=449785])
+  * **doc: release_cycle: fix next relase version** ([https://patchwork.ozlabs.org/project/uboot/patch/20250408062847.1520368-1-dario.binacchi@amarulasolutions.com/])
+
+Michael Trimarchi
+"""""""""""""""""
+
+  * **Support warning-ng format** ([https://github.com/dl9pf/meta-codechecker/pull/21])
+  * **Update codechecker version to the latest** ([https://github.com/dl9pf/meta-codechecker/pull/20])
+  * **Support CLANGSA** ([https://github.com/dl9pf/meta-codechecker/pull/23])
+  * **Crumb fix and BitbucketSCM support** ([https://github.com/jenkinsci/bitbucket-plugin/pull/114])
+
+
 Amarula Solutions Open Source Contributions - February 2025
 -----------------------------------------------------------
 
