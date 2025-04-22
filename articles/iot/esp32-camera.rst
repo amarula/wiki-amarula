@@ -23,7 +23,8 @@ The architecture
 The architecture of the solution involves using the ESP32 to manage data traffic between its Ethernet interface and its Wi-Fi interface.
 The operating process is as follows:
 
-- **IP Camera Connection**: A standard IP camera with Ethernet port is physically connected to the Ethernet port of the ESP32 board.
+- **IP Camera Connection**: A standard IP camera (camera module) with Ethernet port is physically connected
+  to the Ethernet port of the ESP32 board.
 - **Ethernet Data Reception**: The ESP32 receives network packets, containing the RTSP stream,
   sent by the IP camera via the Ethernet connection.
 - **Wi-Fi Access Point Configuration**: The ESP32 is configured to operate as a Wi-Fi access point, creating a wireless
@@ -43,7 +44,7 @@ Key advantages
 
 Implementing this Ethernet-Wi-Fi bridge with ESP32 offers the following practical benefits:
 
-- **Extended connectivity**: Allows the use of IP cameras with only Ethernet interface in environments
+- **Extended connectivity**: Allows the use of IP cameras (camera module) with only Ethernet interface in environments
   with Wi-Fi connectivity, maintaining a responsive and real-time video streaming.
 - **Installation flexibility**: Simplifies the positioning of cameras in scenarios where Ethernet cabling
   is not convenient, without compromising real-time video viewing.
@@ -52,6 +53,7 @@ Implementing this Ethernet-Wi-Fi bridge with ESP32 offers the following practica
 - **Versatility**: The operating principle can be extended and adapted to different applications that require
   wireless transmission of data from Ethernet devices, including video surveillance systems with various types of IP cameras,
   ensuring real-time video viewing.
+- **More functionalities**: Allow the iot device to perform operation based on client connect to him using wifi
 
 Integration into Larger IoT Systems
 -----------------------------------
