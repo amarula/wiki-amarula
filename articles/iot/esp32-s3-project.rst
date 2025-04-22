@@ -38,7 +38,7 @@ Basic Commands
 
 - **Output command**
 - **Analog output command**: PWM
-- **Wait command**: Delay in ms
+- **I/O gpio command**: Control GPIO
 - **Send to COM port command**: Communicate with the UART.
 - **HTTP request command**: Send HTTP requests, supporting both GET and POST methods.
 - **Publish MQTT message command**
