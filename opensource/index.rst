@@ -19,3 +19,4 @@ Open Source Projects
    zephyr/index
    products/chatgpt-gerrit
    products/cutekeyboard
+   products/meta-mend
