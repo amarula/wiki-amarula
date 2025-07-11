@@ -17,3 +17,4 @@ Jenkins technologies
    warning-ng-jenkins-codechecker
    jenkins-yocto-kas-pipeline
    jenkins-dsl-gerrit-trigger
+   jenkins-mend-pipeline
