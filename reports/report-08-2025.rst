@@ -1,0 +1,1335 @@
+Today 2025-08-04 Developments: A Look at Our Codebase (3 Months Review)
+=======================================================================
+
+We’re excited to share a summary of the significant progress made across
+our repositories in the last 3 months. Our dedicated team has been busy
+pushing new features, refining existing functionalities, and enhancing
+the overall stability of our products.
+
+Here’s a breakdown of key contributions by repository:
+
+connman
+-------
+
+Repository URL:
+https://git.kernel.org/pub/scm/network/connman/connman.git
+
+Summary of the contributions by author:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+**Andrea Ricchi**: Andrea Ricchi made significant improvements to the
+timezone functionality over three months. The commit messages highlight
+the replacement of the \`/etc/localtime\` file with a symbolic link to
+ensure accurate timezone representation without unnecessary file I/O.
+This change resolved issues with \`\__connman_timezone_lookup()\`.
+Additionally, a previous commit was reverted to ensure \`compare_file\`
+functionality with symlinks for accurate timezone matching against the
+zoneinfo database. These contributions demonstrate a focus on enhancing
+the reliability and efficiency of timezone management within the
+software.
+
+Here the commits of **Andrea Ricchi** in detail:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+-  **Andrea Ricchi** on 2025-06-05: `Revert “timezone: Fix compare_file
+   comparison in timezone
+   checking” <https://git.kernel.org/pub/scm/network/connman/connman.git/commit/?id=3da91cef1c1fb27a25a780a0d4e4256d7435edef>`__
+-  **Andrea Ricchi** on 2025-06-05: `timezone: Replace Localtime file
+   copy with symbolic
+   link <https://git.kernel.org/pub/scm/network/connman/connman.git/commit/?id=670ad57d72500d58b0cfdbf6a5aa4aa5b6ec00d5>`__
+
+**Michael Trimarchi**: Michael Trimarchi made a significant contribution
+to the software by fixing a bug in the timezone feature related to file
+comparison. The original flawed logic caused incorrect results when
+comparing file paths, which has now been rectified to return the correct
+success value. This fix ensures the proper behavior of file comparison
+within the timezone feature, enhancing the overall functionality and
+reliability of the software.
+
+Here the commits of **Michael Trimarchi** in detail:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+-  **Michael Trimarchi** on 2025-05-15: `timezone: Fix compare_file
+   comparison in timezone
+   checking <https://git.kernel.org/pub/scm/network/connman/connman.git/commit/?id=f20ccd19a62bd01aa117bfc8e7c388d2a16cde05>`__
+
+openembedded-core
+-----------------
+
+Repository URL: https://git.openembedded.org/openembedded-core
+
+.. _summary-of-the-contributions-by-author-1:
+
+Summary of the contributions by author:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+**Dario Binacchi**: Dario Binacchi made significant contributions to the
+mmc-utils software over the past 3 months. The commits focused on
+improving the functionality and stability of the software. In one
+commit, a fix was implemented to properly set the sparse option,
+enhancing the handling of the ‘C’ option. Another notable contribution
+was the upgrade to version 1.0, marking the first tagged release of the
+package. This upgrade included various changes such as passing key_mac
+buffer to rpmb_get_key(), introducing a generic print_usage function,
+and streamlining the print_help function. Overall, Dario Binacchi’s
+contributions have led to notable enhancements and progress in the
+mmc-utils software.
+
+Here the commits of **Dario Binacchi** in detail:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+-  **Dario Binacchi** on 2025-04-30: `mmc-utils: upgrade to latest
+   revision <https://git.openembedded.org/openembedded-core/commit/?id=30f0177e74dace0e9a4305d8aa077cbdbc9d786f>`__
+-  **Dario Binacchi** on 2025-07-07: `mmc-utils: upgrade to
+   1.0 <https://git.openembedded.org/openembedded-core/commit/?id=3d4cc4ae897d48c8d8b1338020ea5251347cce59>`__
+-  **Dario Binacchi** on 2025-07-25: `mmc-utils: properly set sparse
+   option <https://git.openembedded.org/openembedded-core/commit/?id=6fec97d6f0326989d37f9e20cf177d3c260979f7>`__
+
+CANopenTerm
+-----------
+
+Repository URL: https://github.com/CANopenTerm/CANopenTerm.git
+
+.. _summary-of-the-contributions-by-author-2:
+
+Summary of the contributions by author:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+**Dario Binacchi**: Dario Binacchi fixed the issue related to the
+installation of the executable when the BUILD_YOCTO option is enabled in
+CanopenTerm within Buildroot. The error causing the CMake installation
+failure was successfully addressed, ensuring the correct installation of
+CANopenTerm. This fix enhances the overall build process stability and
+reliability for users leveraging the BUILD_YOCTO option.
+
+.. _here-the-commits-of-dario-binacchi-in-detail-1:
+
+Here the commits of **Dario Binacchi** in detail:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+-  **Dario Binacchi** on 2025-05-08: `Fix exe installation when
+   BUILD_YOCTO is
+   enabled <https://github.com/CANopenTerm/CANopenTerm/commit/fc150187a2e2ce777e757405eb1d67235fc68d75>`__
+
+ufs-utils
+---------
+
+Repository URL: https://github.com/SanDisk-Open-Source/ufs-utils.git
+
+.. _summary-of-the-contributions-by-author-3:
+
+Summary of the contributions by author:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+**Dario Binacchi**: Dario Binacchi addressed a warning in ufs_hmr by
+removing an unnecessary null check on ‘opt->path’ in ufs-utils under
+Buildroot when using GCC 13. The warning arose due to a fixed-size array
+‘path’ being checked as if it were a pointer. By eliminating this
+invalid check, the warning was resolved. This commit demonstrates Dario
+Binacchi’s attention to detail in resolving issues related to pointer
+handling in the codebase.
+
+.. _here-the-commits-of-dario-binacchi-in-detail-2:
+
+Here the commits of **Dario Binacchi** in detail:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+-  **Dario Binacchi** on 2025-06-22: `ufs_hmr: drop always-true check on
+   ‘opt->path’ <https://github.com/SanDisk-Open-Source/ufs-utils/commit/12fef2b8d314ee0480ac98c37051fe3641ff15ab>`__
+
+calendar-addon-jitsi
+--------------------
+
+Repository URL: https://github.com/amarula/calendar-addon-jitsi.git
+
+.. _summary-of-the-contributions-by-author-4:
+
+Summary of the contributions by author:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+**Michael Trimarchi**: Michael Trimarchi made significant contributions
+over the past 3 months to the Code.js project. These include migrating
+string manipulation and forEach loop to adapt to v8 Javascript, fixing
+payload creation, and moving variables to const where necessary as part
+of the initial migration to V8 Javascript. These changes aim to improve
+code efficiency, maintainability, and compatibility with the latest
+technologies. Michael Trimarchi’s commits demonstrate a focus on
+enhancing functionality and addressing potential bugs within the
+project’s codebase. The migration to V8 Javascript shows a commitment to
+keeping the project up-to-date with modern development practices.
+
+.. _here-the-commits-of-michael-trimarchi-in-detail-1:
+
+Here the commits of **Michael Trimarchi** in detail:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+-  **Michael Trimarchi** on 2025-05-18: `Code.js: Move var to const when
+   is
+   needed <https://github.com/amarula/calendar-addon-jitsi/commit/a9b636351817cdc8814633afebc5d3e403329056>`__
+-  **Michael Trimarchi** on 2025-05-18: `Code.js: Fix payload
+   creation <https://github.com/amarula/calendar-addon-jitsi/commit/a5d79023118f9b92925edd31e2929b05056c0010>`__
+-  **Michael Trimarchi** on 2025-05-18: `Code.js: Migrate of string
+   manipulation and forEach
+   loop <https://github.com/amarula/calendar-addon-jitsi/commit/a935effbecc6b8991d62efd7badc01f0fe1d54e4>`__
+
+connman_proxy
+-------------
+
+Repository URL: https://github.com/amarula/connman_proxy.git
+
+.. _summary-of-the-contributions-by-author-5:
+
+Summary of the contributions by author:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+**Andrea Ricchi**: Andrea Ricchi made significant contributions over the
+past 3 months by adding the \`timeservers_synced\` field to the clock
+info structure in the software. This new boolean field indicates whether
+the system time is synchronized via NTP servers. Additionally, internal
+headers were updated, clock property parsing was extended to handle the
+new key, and notifications to callbacks now include the
+\`timeservers_synced\` information. These enhancements improve the
+accuracy and reliability of time synchronization within the software.
+
+.. _here-the-commits-of-andrea-ricchi-in-detail-1:
+
+Here the commits of **Andrea Ricchi** in detail:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+-  **Andrea Ricchi** on 2025-05-16: `Add ``timeservers\_synced`` field
+   to clock info
+   structure <https://github.com/amarula/connman_proxy/commit/0c7b2acf4fd65a7da30fc506b6a0d80388841131>`__
+
+cutekeyboard
+------------
+
+Repository URL: https://github.com/amarula/cutekeyboard.git
+
+.. _summary-of-the-contributions-by-author-6:
+
+Summary of the contributions by author:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+**Andrea Ricchi**: Andrea Ricchi made significant changes to the
+project’s CMake configuration by disabling Qt5 support due to
+incompatibility issues with Qt macros, focusing on improving
+compatibility with Qt6 instead. This decision was motivated by the
+realization that maintaining Qt5 compatibility was unnecessary given the
+current dependencies on specific Qt features. Additionally, Andrea added
+a new CMake build workflow for Qt6 to streamline the development process
+and ensure future compatibility with the latest Qt version. These
+contributions demonstrate a proactive approach to software development,
+prioritizing efficiency and future-proofing of the project’s build
+process.
+
+.. _here-the-commits-of-andrea-ricchi-in-detail-2:
+
+Here the commits of **Andrea Ricchi** in detail:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+-  **Andrea Ricchi** on 2025-07-16: `workflows/build.yml: add CMake
+   build for
+   Qt6 <https://github.com/amarula/cutekeyboard/commit/f389d6824ab6e53aaf43c1bc7f537c52288dfb19>`__
+-  **Andrea Ricchi** on 2025-07-16: `CMakeLists.txt: disable Qt5 support
+   on
+   CMake <https://github.com/amarula/cutekeyboard/commit/0490917a4a7a6bcf68738baf55bc81f4b6854687>`__
+
+flutekeyboard
+-------------
+
+Repository URL: https://github.com/amarula/flutekeyboard.git
+
+.. _summary-of-the-contributions-by-author-7:
+
+Summary of the contributions by author:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+**Andrea Ricchi**: Andrea Ricchi made significant contributions to the
+FluteKeyboard software over a 3-month period. They added several new
+features such as different keyboard layouts for CS, DE, ES, FR, IT, NL,
+PL, and PT languages. Additionally, Andrea centralized the theme in the
+FluteKeyboardTheme class to facilitate customization in the future. They
+also implemented alternative keys functionality, allowing users to input
+special characters by long-pressing keys. Furthermore, Andrea added a
+customizable return button background color and introduced a
+BaseKeyboard abstract class for shared keyboard fields. Lastly, they
+included a returnIcon parameter to enable users to customize the return
+button with an icon. These contributions enhanced the functionality and
+customization options of the FluteKeyboard software.
+
+.. _here-the-commits-of-andrea-ricchi-in-detail-3:
+
+Here the commits of **Andrea Ricchi** in detail:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+-  **Andrea Ricchi** on 2025-06-03: `FluteKeyboard: add returnIcon
+   parameter <https://github.com/amarula/flutekeyboard/commit/c429baefe23c32ff7bfd242bd959dd9fc13331b3>`__
+-  **Andrea Ricchi** on 2025-06-03: `Flutekeyboard: add BaseKeyboard
+   class <https://github.com/amarula/flutekeyboard/commit/73fb590b6dab5126b72948e22c7dfb5f780aa97c>`__
+-  **Andrea Ricchi** on 2025-06-03: `FluteKeyboard: add
+   btnReturnColor <https://github.com/amarula/flutekeyboard/commit/8ebd670761bbce565deb0ecfd81245a815851ab7>`__
+-  **Andrea Ricchi** on 2025-06-13: `FluteKeyboard: add alternatives
+   keys
+   implementation <https://github.com/amarula/flutekeyboard/commit/5de73f00f9d2144412730fef09c9b89a3177c8cb>`__
+-  **Andrea Ricchi** on 2025-06-13: `FluteKeyboard: centralize theme in
+   FluteKeyboardTheme <https://github.com/amarula/flutekeyboard/commit/b4afd085071fa8dffb87efde88a5598d42e84603>`__
+-  **Andrea Ricchi** on 2025-06-16: `Add new
+   layouts <https://github.com/amarula/flutekeyboard/commit/3f9263c39c3233ea70187f7e373940ab083b10dc>`__
+-  **Andrea Ricchi** on 2025-06-16: `Update
+   README.md <https://github.com/amarula/flutekeyboard/commit/7cafffd12feee681347d27547e20f10f4cfc91d4>`__
+-  **Andrea Ricchi** on 2025-06-24: `Add Analyze GitHub
+   action <https://github.com/amarula/flutekeyboard/commit/0158087612136b576611292b961622fc2f434d59>`__
+-  **Andrea Ricchi** on 2025-07-14: `Add repository and topics to
+   pubspec.yaml <https://github.com/amarula/flutekeyboard/commit/772d226e4cd55af263748c15b7fb9e025b69bb94>`__
+-  **Andrea Ricchi** on 2025-07-14: `Upgrade flutter
+   dependencies <https://github.com/amarula/flutekeyboard/commit/40cdd9a7be3814dd061e542b356f3e9a02364111>`__
+-  **Andrea Ricchi** on 2025-07-14: `lib/flutekeyboard.dart: Remove
+   unnecessary library
+   name <https://github.com/amarula/flutekeyboard/commit/0d5644577e838fb2d3ef8d7450edb5d9f27e3b9c>`__
+-  **Andrea Ricchi** on 2025-07-14: `Add publish.yml
+   workflow <https://github.com/amarula/flutekeyboard/commit/43924f865cdcc96bf24a0a9a9ae3c0688f67e5d6>`__
+-  **Andrea Ricchi** on 2025-07-14: `Version
+   0.1.1 <https://github.com/amarula/flutekeyboard/commit/50d937819958434323465d0ee132524a055169d4>`__
+
+ftu
+---
+
+Repository URL: https://github.com/amarula/ftu.git
+
+.. _summary-of-the-contributions-by-author-8:
+
+Summary of the contributions by author:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+**Andrea Ricchi**: Andrea Ricchi made several key contributions over the
+past 3 months. They fixed a warning related to uninlined format args,
+improved the string parsing in the dart_to_csv feature, and updated the
+launch configuration to enable test debugging. They also added a list of
+recommended VS Code extensions for the FTU project. Additionally, Andrea
+replaced double quotes with single quotes in generated Dart maps for
+better consistency. They enhanced the logic for handling concatenated
+strings in dart_to_csv and added relevant tests. Furthermore, they
+formatted code in csv_to_dart, improved GitHub workflow triggers, added
+unit tests for CSV parsing, and refactored the interface for
+testability.
+
+.. _here-the-commits-of-andrea-ricchi-in-detail-4:
+
+Here the commits of **Andrea Ricchi** in detail:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+-  **Andrea Ricchi** on 2025-05-23: `csv_to_dart: add unit tests and
+   refactor interface for
+   testability <https://github.com/amarula/ftu/commit/6993104260adf6e58e0b77a66d47a16055cb844c>`__
+-  **Andrea Ricchi** on 2025-05-23: `github/workflows/build: improve
+   triggers <https://github.com/amarula/ftu/commit/584878277f39dffc5c5e5596eca6ff08c2a8c201>`__
+-  **Andrea Ricchi** on 2025-06-11: `csv_to_dart: format
+   code <https://github.com/amarula/ftu/commit/b2ba278b8740b4607b1c329fc10735141e3e35f2>`__
+-  **Andrea Ricchi** on 2025-06-11: `dart_to_csv: add
+   test <https://github.com/amarula/ftu/commit/9dfb1069b165a757c77c83ce3b72b26ffc4e5ce5>`__
+-  **Andrea Ricchi** on 2025-06-11: `dart_to_csv: improve read_file to
+   handle concatenated
+   string <https://github.com/amarula/ftu/commit/b41ac2138cf94ae9d7295a20157ea945f153e7de>`__
+-  **Andrea Ricchi** on 2025-06-16: `csv_to_dart: use single quote in
+   generated Dart
+   maps <https://github.com/amarula/ftu/commit/1c609cf9eaf072085addbf21290f561156f52aa4>`__
+-  **Andrea Ricchi** on 2025-07-03: `Add
+   .vscode/extensions.json <https://github.com/amarula/ftu/commit/7f871906bae82b6e0c486844c22fd1f892543507>`__
+-  **Andrea Ricchi** on 2025-07-03: `.vscode/launch.json: Change config
+   to allow test
+   debug <https://github.com/amarula/ftu/commit/2432bda8890de7776836b62f207d76616894d62f>`__
+-  **Andrea Ricchi** on 2025-07-03: `dart_to_csv: improve ts string
+   parsing <https://github.com/amarula/ftu/commit/afad0f4fe1b882e3cd419b0d343d17d67acdd0f0>`__
+-  **Andrea Ricchi** on 2025-07-03: `Fix uninlined_format_args warning
+   across
+   code <https://github.com/amarula/ftu/commit/3f57659cd28c0ba1519550336f1ba54790206245>`__
+-  **Andrea Ricchi** on 2025-07-03: `Tag
+   v1.0.5 <https://github.com/amarula/ftu/commit/06a61b167c5f849b067f2fc8999adab0f007792e>`__
+
+git-analyzer
+------------
+
+Repository URL: https://github.com/amarula/git-analyzer.git
+
+.. _summary-of-the-contributions-by-author-9:
+
+Summary of the contributions by author:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+**Dario Binacchi**: Dario Binacchi has been actively contributing to the
+amarula project over the past 3 months. In a recent commit, they removed
+the poky project from the config.ini file, citing its role as a
+reference distribution. Additionally, Dario Binacchi added other
+open-source projects to the configuration and ensured the projects list
+was sorted alphabetically. These changes indicate a focus on refining
+the project’s configuration and aligning it with relevant external
+contributions. Their contributions showcase a dedication to enhancing
+the project’s organization and integration with other open-source
+initiatives.
+
+.. _here-the-commits-of-dario-binacchi-in-detail-3:
+
+Here the commits of **Dario Binacchi** in detail:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+-  **Dario Binacchi** on 2025-07-15: `amarula: config.ini: sort the
+   projects list in alphabetical
+   order <https://github.com/amarula/git-analyzer/commit/cd488bdb9b88493749a275911402c8301d007184>`__
+-  **Dario Binacchi** on 2025-07-15: `amarula: config.ini: Add other
+   opensource
+   projects <https://github.com/amarula/git-analyzer/commit/125b09018242ebc6573210f14e2c9e3435a45fd6>`__
+-  **Dario Binacchi** on 2025-07-18: `amarula: config.ini: Drop poky
+   project <https://github.com/amarula/git-analyzer/commit/c5b0cff7f25ad5e72e9cfc0768fc4a85cd29911b>`__
+
+**Flavia Caforio**: Flavia Caforio made significant contributions over
+the past 3 months. They added the openAI model to the configuration,
+allowing for easier modifications. Additionally, they improved the
+prompt in the openAI utility, ensuring it correctly references the
+author by name. Flavia also optimized the article generator by
+rearranging the summary structure and fixing a typo in the prompt. They
+enhanced the configuration by including more public Amarula repositories
+and updated the README. Furthermore, Flavia ensured all author commit
+messages are considered for generating summaries using openAI. They also
+adjusted the prompt in openAI utility to include the author’s name and
+updated the gitignore to exclude specific folders. Overall, Flavia
+Caforio’s contributions focused on enhancing functionality, improving
+prompts, and streamlining processes within the software development
+environment.
+
+Here the commits of **Flavia Caforio** in detail:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+-  **Flavia Caforio** on 2025-07-16: `config: Add more public amarula
+   repository <https://github.com/amarula/git-analyzer/commit/9e531f672e7028dcd64dea253d7606150411549c>`__
+-  **Flavia Caforio** on 2025-07-16: `gitignore: Add deploy and .venv to
+   gitignore <https://github.com/amarula/git-analyzer/commit/fe574cf5afcf38bbd70a7fe1c0ee0eec33e02acd>`__
+-  **Flavia Caforio** on 2025-07-17: `openai_utils: Change the prompt
+   adding the author to
+   it <https://github.com/amarula/git-analyzer/commit/a4f27376b13106387864b7b83795b719ea4268d3>`__
+-  **Flavia Caforio** on 2025-07-17: `article_generator: Add the summary
+   generated by the
+   AI <https://github.com/amarula/git-analyzer/commit/016428d73041b8e7e3d8b820dea6785f003f3c17>`__
+-  **Flavia Caforio** on 2025-07-18: `article_generator: Fix the
+   all_author_messages
+   list <https://github.com/amarula/git-analyzer/commit/4272c068ae4b52a7f810d26b2eec84aa4a81c153>`__
+-  **Flavia Caforio** on 2025-07-18: `src: openai_utils: Fix typo in
+   prompt <https://github.com/amarula/git-analyzer/commit/abd28e850f081a6cc20346ec5c6844a77fe26ca9>`__
+-  **Flavia Caforio** on 2025-07-18: `src: article_generator: Move of
+   the title of the
+   summary <https://github.com/amarula/git-analyzer/commit/1923d0312219e1277b9f04b3594aab3d766be65e>`__
+-  **Flavia Caforio** on 2025-07-18: `src: openai_utils: Use a more
+   concise
+   prompt <https://github.com/amarula/git-analyzer/commit/f5b5088cc46a4fbecd0009d363bb57a8f332dac7>`__
+-  **Flavia Caforio** on 2025-07-21: `openai_model: Add openAI model to
+   the
+   config <https://github.com/amarula/git-analyzer/commit/3437ad344ad700c4ae6a636ea030f48b534fa1e7>`__
+
+**Michael Nazzareno Trimarchi**: Michael Nazzareno Trimarchi made
+significant progress over the past three months by creating a pylint.yml
+file and implementing a GitHub action to execute pylint. These additions
+demonstrate a focus on improving code quality and ensuring adherence to
+coding standards. By incorporating these tools into the development
+process, Michael Nazzareno Trimarchi is proactively working towards
+enhancing the overall quality and maintainability of the software. The
+commitment to setting up automated processes for code analysis indicates
+a dedication to ongoing improvement and efficiency in development
+practices.
+
+Here the commits of **Michael Nazzareno Trimarchi** in detail:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+-  **Michael Nazzareno Trimarchi** on 2025-07-12: `Create
+   pylint.yml <https://github.com/amarula/git-analyzer/commit/4a38248e0af75f7c5cdb6124759340634690665f>`__
+
+**Michael Trimarchi**: Michael Trimarchi made several key contributions
+over the 3-month period. These include adding functionality to escape
+characters for compatibility with markdown in the article generator,
+fixing variables and syntax errors in main and git utilities, and
+ensuring the correct structure of the Python project for easier
+contributions. Additionally, improvements were made to the git analyzer
+tool, such as generating hyperlinks from commit messages, reducing
+pylint warnings, and adding command-line parser and configuration file
+support. Changes were also made to enhance project organization, like
+sorting commits by author name and date, discarding sections without
+contributions, and updating README.md with usage instructions. Overall,
+Michael Trimarchi significantly improved project quality and
+functionality through bug fixes, feature additions, and project
+restructuring.
+
+.. _here-the-commits-of-michael-trimarchi-in-detail-2:
+
+Here the commits of **Michael Trimarchi** in detail:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+-  **Michael Trimarchi** on 2025-07-12: `Add first release of
+   git-analyzer <https://github.com/amarula/git-analyzer/commit/9c1b25e72fc91df4a662106a04738bb091e63647>`__
+-  **Michael Trimarchi** on 2025-07-12: `Add support of configuration
+   file <https://github.com/amarula/git-analyzer/commit/e688999f8da04b7ebd54b04672dfd40fb5902bc5>`__
+-  **Michael Trimarchi** on 2025-07-12: `Add initial
+   README.md <https://github.com/amarula/git-analyzer/commit/45f3cc281c2d2ab507e142bc4b5ada4271888776>`__
+-  **Michael Trimarchi** on 2025-07-12: `amarula: Add config init file
+   for amarula
+   solutions <https://github.com/amarula/git-analyzer/commit/7c5a533900068e254d7bc96d55a1fbaa922cc385>`__
+-  **Michael Trimarchi** on 2025-07-12: `.gitignore: Add initial
+   gitignore
+   file <https://github.com/amarula/git-analyzer/commit/1900c08011a93a4220210416d3836f45361beb71>`__
+-  **Michael Trimarchi** on 2025-07-12: `Add command line parser to the
+   tool <https://github.com/amarula/git-analyzer/commit/72a259c5d96c2d119b7c676d4f4411feb6e1954a>`__
+-  **Michael Trimarchi** on 2025-07-12: `amarula: config.ini: Add
+   meta-mend <https://github.com/amarula/git-analyzer/commit/c1fb2554d81284f83ee41ccd604fce69b7e9ed85>`__
+-  **Michael Trimarchi** on 2025-07-12: `README.md: Add TODO
+   section <https://github.com/amarula/git-analyzer/commit/bcd9f167fb877673e32941e4ae733b5029d2ad31>`__
+-  **Michael Trimarchi** on 2025-07-12: `README.md: Fix closing of
+   config.ini
+   section <https://github.com/amarula/git-analyzer/commit/ef53c6af784592ae6bc258b06638229078d54311>`__
+-  **Michael Trimarchi** on 2025-07-12: `amarula: config.ini: Add other
+   opensource
+   projects <https://github.com/amarula/git-analyzer/commit/603c461203c200c0c84596c81183a984ae9bb948>`__
+-  **Michael Trimarchi** on 2025-07-12: `Replace \_ without \\\_ when we
+   export markdown
+   format <https://github.com/amarula/git-analyzer/commit/a9f8cd93b0d8df79c82f1f7448d333eb1e4e0129>`__
+-  **Michael Trimarchi** on 2025-07-12: `Add a carrige return before a
+   index
+   list <https://github.com/amarula/git-analyzer/commit/5165a734b9ed719f9d782edf5914f3e8d327e185>`__
+-  **Michael Trimarchi** on 2025-07-12: `Add LICENSE
+   file <https://github.com/amarula/git-analyzer/commit/d3fade06aa3d368fd1b4cff4d35f6b6fb67677e7>`__
+-  **Michael Trimarchi** on 2025-07-12: `git-analyzer: Fix formatting
+   issues using ruff
+   format <https://github.com/amarula/git-analyzer/commit/6e2c9f12181785325eea3dce48b5789823f14c70>`__
+-  **Michael Trimarchi** on 2025-07-12: `git-analyzer: Remove random
+   that is imported by not
+   used <https://github.com/amarula/git-analyzer/commit/34e2dfd5fe96b4c0bd0270f444748074e67a3956>`__
+-  **Michael Trimarchi** on 2025-07-12: `README.md: Update TODO and
+   suggest to use
+   gitPython <https://github.com/amarula/git-analyzer/commit/164a20e9aad1fd006972692454ce68e8840fe218>`__
+-  **Michael Trimarchi** on 2025-07-13: `Move the project to use
+   gitPython <https://github.com/amarula/git-analyzer/commit/32412ebbd105f6b778ca0b1f112e583e81a31419>`__
+-  **Michael Trimarchi** on 2025-07-13: `Drop the gemini
+   part <https://github.com/amarula/git-analyzer/commit/10dfb6b7bf71a0a057a01d8a56c434331e8401a1>`__
+-  **Michael Trimarchi** on 2025-07-13: `Fix the markdown adding a blank
+   line after project
+   section <https://github.com/amarula/git-analyzer/commit/f3ad45bebd961cd851b9f18f2af304702b8b3952>`__
+-  **Michael Trimarchi** on 2025-07-13: `git-analyzer: Clone under a
+   configurable
+   directory <https://github.com/amarula/git-analyzer/commit/50bc15082171ed8e63a717ae2ac61593ad492066>`__
+-  **Michael Trimarchi** on 2025-07-13: `git-analyzer: Pull the
+   repository if was already
+   cloned <https://github.com/amarula/git-analyzer/commit/ef1011b4ba14bd9fab7e12aeb1ab8065c3c775a8>`__
+-  **Michael Trimarchi** on 2025-07-13: `git-analyzer: Drop unused
+   import <https://github.com/amarula/git-analyzer/commit/4146cac5e688e1257c272e897085b06174a7221b>`__
+-  **Michael Trimarchi** on 2025-07-13: `git-analyzer: Fix pylint
+   warning <https://github.com/amarula/git-analyzer/commit/0bd1ca20fef002869c70e93ceca577bd7e12bb18>`__
+-  **Michael Trimarchi** on 2025-07-13: `README.md: Show how run the
+   tool <https://github.com/amarula/git-analyzer/commit/962cced6a8998a4f84049f606f28dbef1932d1ee>`__
+-  **Michael Trimarchi** on 2025-07-13: `git-analyzer: Generate
+   hyperlink to the project from the
+   commit <https://github.com/amarula/git-analyzer/commit/d19844ad69d174fa80c84fcb3db1dd120aba7cf9>`__
+-  **Michael Trimarchi** on 2025-07-13: `git-analyzer: Add today date in
+   report
+   title <https://github.com/amarula/git-analyzer/commit/dd80df219db5db25a2e9cb9e86074a3691609840>`__
+-  **Michael Trimarchi** on 2025-07-14: `Create a correct structure of
+   the python
+   project <https://github.com/amarula/git-analyzer/commit/3d10fbbfda08c296083083672ee71788c63c56c5>`__
+-  **Michael Trimarchi** on 2025-07-14: `src: article_generator: Discard
+   project without any
+   contributions <https://github.com/amarula/git-analyzer/commit/7199c32c3c9b3fb8558682927deb570096964252>`__
+-  **Michael Trimarchi** on 2025-07-14: `pyproject.toml: Define project
+   URL <https://github.com/amarula/git-analyzer/commit/338a8b39e40b2ae3383f66f1fc87fc3c73dd3f50>`__
+-  **Michael Trimarchi** on 2025-07-14: `Add github workflow to publish
+   to pypi
+   organization <https://github.com/amarula/git-analyzer/commit/88998b7850d43978826ae8f0fa228a5e6a11bf44>`__
+-  **Michael Trimarchi** on 2025-07-14: `src: git_utils: Remove
+   unnecessary
+   else <https://github.com/amarula/git-analyzer/commit/43a5055a9cc27b9b203bdd604b2ade6eae4facb6>`__
+-  **Michael Trimarchi** on 2025-07-14: `src: git_utils: Remove not used
+   variable
+   pull_info <https://github.com/amarula/git-analyzer/commit/2f10e1c10b1df5b204588087d9d34b4acf502deb>`__
+-  **Michael Trimarchi** on 2025-07-14: `Re-introduce: add today date in
+   report
+   title <https://github.com/amarula/git-analyzer/commit/d2b2f8a0a4bf337d89b6ac50332bf2682528335f>`__
+-  **Michael Trimarchi** on 2025-07-14: `Split long line in multiple
+   lines <https://github.com/amarula/git-analyzer/commit/3f5ad44999b32a9da9f27536bd02b27d21822bbd>`__
+-  **Michael Trimarchi** on 2025-07-14: `main.py: Reduce pylint
+   warnings <https://github.com/amarula/git-analyzer/commit/2d2e35451bce32b2889c12ae812dcc0ef1e29c73>`__
+-  **Michael Trimarchi** on 2025-07-14: `src: git_utils.py: Reduce
+   pylint
+   warnings <https://github.com/amarula/git-analyzer/commit/2f18bb4876150ed1bf6fd86b0742d1fb4c95ae1e>`__
+-  **Michael Trimarchi** on 2025-07-15: `src: Add back generate
+   hyperlink to the project from
+   commit <https://github.com/amarula/git-analyzer/commit/70cda23a93f690e0dc063484bb9709a48552db11>`__
+-  **Michael Trimarchi** on 2025-07-16: `src: article_generator: Sort by
+   Author name and then by
+   date <https://github.com/amarula/git-analyzer/commit/01b79740ccfd03fe0ac70f0ecbda375bfa2b097e>`__
+-  **Michael Trimarchi** on 2025-07-16: `Add openai preliminary function
+   to summarize commit
+   message <https://github.com/amarula/git-analyzer/commit/4675602a4fedb8b4cfb17181570adc7106eb6f70>`__
+-  **Michael Trimarchi** on 2025-07-16: `src: git_utils: Provide module
+   description <https://github.com/amarula/git-analyzer/commit/a33de68b6647e3959542ea3d41272a1941d2dffe>`__
+-  **Michael Trimarchi** on 2025-07-16: `amarula: config.ini: Add
+   amarula solutions opensource
+   projects <https://github.com/amarula/git-analyzer/commit/4b7050cf33959412161db9db31d4e410d641110e>`__
+-  **Michael Trimarchi** on 2025-07-16: `Add openai key parameter and
+   option of the config
+   file <https://github.com/amarula/git-analyzer/commit/be7e2d2202e1af0d61b61f42d71e41d618bb4f02>`__
+-  **Michael Trimarchi** on 2025-07-16: `amarula: config.ini: Fix add
+   amarula solutions opensource
+   projects <https://github.com/amarula/git-analyzer/commit/bf2f4a8ab014b821314ef0aadffa0ea43267c3ba>`__
+-  **Michael Trimarchi** on 2025-07-16: `amarula: config.ini: Use trust
+   firmware github
+   mirror <https://github.com/amarula/git-analyzer/commit/767e34a977232a34e3979e8d8ba0a088b65f5224>`__
+-  **Michael Trimarchi** on 2025-07-16: `src: git_utils: Add
+   git.openembedded.org as special
+   prefix <https://github.com/amarula/git-analyzer/commit/d9cea313491f34bbd4dbe2d97245cfc5dd868cf2>`__
+-  **Michael Trimarchi** on 2025-07-16: `src: git_utils: Fix synthax
+   error <https://github.com/amarula/git-analyzer/commit/1011e0998278d1714fb71020d62a45e6b0a92b59>`__
+-  **Michael Trimarchi** on 2025-07-16: `src: config_parser: Check if
+   OpenAi section exists before get the openai
+   key <https://github.com/amarula/git-analyzer/commit/f2640510ebf5fad535de10bdbb219024f6231e96>`__
+-  **Michael Trimarchi** on 2025-07-17: `src: article_generator: Make
+   import and from
+   ordered <https://github.com/amarula/git-analyzer/commit/9c01c604aeff829b31ce0b1e55efe5d9d4c3a49c>`__
+-  **Michael Trimarchi** on 2025-07-17: `src: article_generator: Split
+   multiline
+   string <https://github.com/amarula/git-analyzer/commit/8aab7d0125c5c1604be2f817e104498f8b75ca3b>`__
+-  **Michael Trimarchi** on 2025-07-17: `main: Fix variable used to get
+   the openai
+   key <https://github.com/amarula/git-analyzer/commit/c524df2e965c5d3bf6757049faf89c9f5f226671>`__
+-  **Michael Trimarchi** on 2025-07-17: `README.md: Drop OPENAI
+   todo <https://github.com/amarula/git-analyzer/commit/958e7da998bff25c155d27e325a4e60e64fe22f0>`__
+-  **Michael Trimarchi** on 2025-07-18: `src: article_generator: Add
+   escape for markdown
+   paragraph <https://github.com/amarula/git-analyzer/commit/dcdeebd506b7e6d9b9d3b65bb7d0bb5db39a4add>`__
+
+git-training
+------------
+
+Repository URL: https://github.com/amarula/git-training.git
+
+.. _summary-of-the-contributions-by-author-10:
+
+Summary of the contributions by author:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+**Michael Trimarchi**: Michael Trimarchi made significant contributions
+to the git.md file over the past 3 months. They adjusted slides,
+improved git log slides, added instructions on viewing slides, included
+a license, adjusted slide width to 80%, added more text to slides, fixed
+HTML style, added more examples and changes to slides, removed spaces at
+the end of each line, and expanded some slides with additional context
+and examples. These efforts demonstrate a commitment to enhancing the
+content and user experience of the git.md file, showcasing their
+dedication to improving the software development process.
+
+.. _here-the-commits-of-michael-trimarchi-in-detail-3:
+
+Here the commits of **Michael Trimarchi** in detail:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+-  **Michael Trimarchi** on 2025-05-06: `git: Expand a bit some of the
+   slides <https://github.com/amarula/git-training/commit/ae1f8b4a85aec7d81c22c122afaad367f0434e71>`__
+-  **Michael Trimarchi** on 2025-05-06: `git.md: Remove spaces in the
+   end of each
+   line <https://github.com/amarula/git-training/commit/707b7d3bc9f00ad932af8a7b25847ac167f8b1c7>`__
+-  **Michael Trimarchi** on 2025-05-06: `git.md: Add more examples and
+   changes for several
+   slides <https://github.com/amarula/git-training/commit/406f69714f0ca21477524d69c04d2208a1137720>`__
+-  **Michael Trimarchi** on 2025-05-06: `git.md: Fix html
+   style <https://github.com/amarula/git-training/commit/bf252c85de37b124930e098caf8c75822ed7cadb>`__
+-  **Michael Trimarchi** on 2025-05-06: `git.md: Add more slides
+   text <https://github.com/amarula/git-training/commit/3da7293d8900943bcc7b7a38d72337df104657c6>`__
+-  **Michael Trimarchi** on 2025-05-08: `git.md: Adjust slides width to
+   80% <https://github.com/amarula/git-training/commit/dd74ce860e84ebc31426a8dccfb6738ae46028d1>`__
+-  **Michael Trimarchi** on 2025-05-10: `Add
+   license <https://github.com/amarula/git-training/commit/804a53a7909c20c7700a65d16f87deb416505fb6>`__
+-  **Michael Trimarchi** on 2025-05-10: `Add instruction in how to view
+   the
+   slides <https://github.com/amarula/git-training/commit/f0f743c7f2e16b4d0cad850c82db1961f33211c7>`__
+-  **Michael Trimarchi** on 2025-05-10: `git.md: Improve git log
+   slides <https://github.com/amarula/git-training/commit/e311ceb80854b31ec3d51c5500402a4daeb8cf5d>`__
+-  **Michael Trimarchi** on 2025-05-10: `git.md: Adjust slides and
+   remove sensible
+   names <https://github.com/amarula/git-training/commit/123335e5ebada644f2a1f03615ff0562cfbc6445>`__
+
+jenkins-dsl-training
+--------------------
+
+Repository URL: https://github.com/amarula/jenkins-dsl-training.git
+
+.. _summary-of-the-contributions-by-author-11:
+
+Summary of the contributions by author:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+**Michael Trimarchi**: Michael Trimarchi made several contributions over
+the past 3 months. They updated the slides with additional png/jpeg
+files and more content, fixed a table warning in slides.md by adding a
+tbody tag, bumped the slidev-theme-amarula to the latest version, and
+removed trailing whitespace in slides.md. Additionally, they made the
+initial commit for a Jenkins DSL pipeline presentation based on previous
+work. These contributions demonstrate a focus on enhancing presentation
+materials, addressing warnings, and keeping dependencies up-to-date, all
+while laying the groundwork for a new project.
+
+.. _here-the-commits-of-michael-trimarchi-in-detail-4:
+
+Here the commits of **Michael Trimarchi** in detail:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+-  **Michael Trimarchi** on 2025-06-16: `First
+   commit <https://github.com/amarula/jenkins-dsl-training/commit/2921e24d0a9cc02a43c4d80dfd1a7a733e22449e>`__
+-  **Michael Trimarchi** on 2025-06-16: `slides.md: Remove trailing
+   whitespace <https://github.com/amarula/jenkins-dsl-training/commit/697dab451c541a502c180571174a28986de8cd5e>`__
+-  **Michael Trimarchi** on 2025-06-16: `slidev-theme-amarula: Bump to
+   the latest
+   version <https://github.com/amarula/jenkins-dsl-training/commit/53bbafeab053a5194547cf4c3d571b76dad24cde>`__
+-  **Michael Trimarchi** on 2025-06-16: `slides.md: Fix table
+   warning <https://github.com/amarula/jenkins-dsl-training/commit/c80eb33d29d41cc75a51107e6bb9c8275afa5a3b>`__
+-  **Michael Trimarchi** on 2025-06-21: `slides: Update with last
+   series <https://github.com/amarula/jenkins-dsl-training/commit/ca08c5857a012fe530a81eb6966ac59152bd6084>`__
+
+meta-mend
+---------
+
+Repository URL: https://github.com/amarula/meta-mend.git
+
+.. _summary-of-the-contributions-by-author-12:
+
+Summary of the contributions by author:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+**Michael Trimarchi**: In the past 3 months, Michael Trimarchi made
+significant contributions to the software development process. They
+implemented changes in the \`mend.bbclass\` by skipping the native
+package analysis and ensuring that the Software Bill of Materials (sbom)
+runs only on target packages. Additionally, Michael added functionality
+to check for the required variable \`WS_PRODUCTTOKEN\` before generating
+a JSON report, providing warnings during the build process and skipping
+the step if necessary variables are not defined. These improvements
+enhance the efficiency and accuracy of the software development
+workflow, ensuring that essential processes are carried out effectively.
+
+.. _here-the-commits-of-michael-trimarchi-in-detail-5:
+
+Here the commits of **Michael Trimarchi** in detail:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+-  **Michael Trimarchi** on 2025-05-29: `mend.bbclass: Check needed
+   variable before try to generate json
+   report <https://github.com/amarula/meta-mend/commit/27b06bac37626fa6c0e57bc21d4bb4fc66b3ee24>`__
+-  **Michael Trimarchi** on 2025-06-28: `classes: mend.bbclass: Skip
+   native package
+   analysis <https://github.com/amarula/meta-mend/commit/fbae9dd8fcf427db553b493a852247932b22eee4>`__
+
+**Patrick Barsanti**: In the past 3 months, Patrick Barsanti made
+significant contributions to software development. They addressed issues
+in the mend.wss.config file, ensuring that default regexes were added
+back to prevent vulnerabilities caused by nested duplicated libraries.
+Additionally, Patrick Barsanti improved the flexibility of
+configurations by moving the config outside of the docker container and
+allowing for package-based configs. Furthermore, they enhanced the
+mend.bbclass by adding final report generation for project
+vulnerabilities and avoiding code duplication for HTTP requests. Patrick
+Barsanti also optimized the mend.bbclass to ignore patched CVEs,
+ensuring that the report accurately reflects the project’s
+vulnerabilities. Their work involved implementing efficient HTTP request
+handling and utilizing the Mend API to ignore patched CVEs effectively.
+Overall, Patrick Barsanti’s contributions led to improved security
+measures, enhanced configuration management, and streamlined processes
+within the software development environment.
+
+Here the commits of **Patrick Barsanti** in detail:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+-  **Patrick Barsanti** on 2025-05-08: `mend.bbclass: Ignore patched
+   CVEs <https://github.com/amarula/meta-mend/commit/c4d91abb6fe6fceb0b0e70fbb1d0b08a9c7e6244>`__
+-  **Patrick Barsanti** on 2025-05-08: `Revert “README: drop product
+   token” <https://github.com/amarula/meta-mend/commit/490cceec6e5ce6197609ec07eab3e2eaa41619e3>`__
+-  **Patrick Barsanti** on 2025-05-09: `mend.bbclass: Avoid code
+   duplication for
+   HTTP <https://github.com/amarula/meta-mend/commit/8cf865789feaf98b6e1c6f1fae5b6e1bc19e50d3>`__
+-  **Patrick Barsanti** on 2025-05-09: `mend.bbclass: Add final report
+   generation <https://github.com/amarula/meta-mend/commit/e900dea4c9f3394810b2295f1790caa0ab5d6e2e>`__
+-  **Patrick Barsanti** on 2025-07-03: `mend: Move config outside of
+   docker <https://github.com/amarula/meta-mend/commit/64d0893cfb3e3f547e7ae16596d515a1ddd628f2>`__
+-  **Patrick Barsanti** on 2025-07-03: `mend.wss.config: Add original
+   defaults to
+   excludes <https://github.com/amarula/meta-mend/commit/f0f7498a009a06490fadc8a1e64682a8ddeae76d>`__
+
+meta-tegra
+----------
+
+Repository URL: https://github.com/amarula/meta-tegra.git
+
+.. _summary-of-the-contributions-by-author-13:
+
+Summary of the contributions by author:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+**Adam Duskett**: Over the past three months, Adam Duskett has been
+actively contributing to software development. They have focused on key
+features, bug fixes, and overall improvements. Noteworthy changes
+include a revert commit related to merging branches, showcasing a
+careful approach to code management. Throughout the period, Adam
+Duskett’s commits have demonstrated a dedication to maintaining code
+integrity and quality. Their contributions have significantly influenced
+the project’s progress, ensuring a robust development process. The focus
+on reverting specific changes indicates a keen eye for detail and a
+commitment to refining the codebase. Overall, Adam Duskett’s involvement
+has been instrumental in advancing the software’s functionality and
+stability.
+
+Here the commits of **Adam Duskett** in detail:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+-  **Adam Duskett** on 2025-07-30: `Revert “Merge branch ‘OE4T:master’
+   into
+   bootfile-fix” <https://github.com/amarula/meta-tegra/commit/a14a29af88b1f46a2c3bc77e9be1fb5ae3535f69>`__
+
+slidev-theme-amarula
+--------------------
+
+Repository URL: https://github.com/amarula/slidev-theme-amarula.git
+
+.. _summary-of-the-contributions-by-author-14:
+
+Summary of the contributions by author:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+**Andrea Ricchi**: Andrea Ricchi made significant contributions over the
+past 3 months to enhance the Amarula Slidev presentation theme. Key
+updates include adding new components like TopBar and BottomBar for
+improved layout customization, integrating playwright-chromium for PDF
+and PNG export functionality, and updating the default layouts with
+dynamic data and improved design. They also refactored CSS for better
+readability, fixed issues with dark mode logo display, and replaced PNG
+logos with SVG versions for consistency. Additionally, Andrea unified
+the theme configuration, updated font settings, and resolved HTML
+validation warnings. Their efforts focused on enhancing the theme’s
+functionality, design, and maintainability across various components and
+layouts.
+
+.. _here-the-commits-of-andrea-ricchi-in-detail-5:
+
+Here the commits of **Andrea Ricchi** in detail:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+-  **Andrea Ricchi** on 2025-06-10: `First
+   commit <https://github.com/amarula/slidev-theme-amarula/commit/4f293ae7db0c96c79b29e683e76d5a603cf9d2ee>`__
+-  **Andrea Ricchi** on 2025-06-10: `Migrate theme from ‘kernel-slides’
+   to unify
+   configuration <https://github.com/amarula/slidev-theme-amarula/commit/69fbee67c2eadd992c1ace9c8191886d3b4bddb2>`__
+-  **Andrea Ricchi** on 2025-06-10: `Change default sans-serif font from
+   ‘Nunito Sans’ to
+   ‘Ubuntu’ <https://github.com/amarula/slidev-theme-amarula/commit/1fb4289917d4271e730bfb5395c8fcd207cdb4a5>`__
+-  **Andrea Ricchi** on 2025-06-10: `Replace PNG logos with updated SVG
+   versions across
+   layouts <https://github.com/amarula/slidev-theme-amarula/commit/23cb22a5cc0b6d9a3ac7a43058823a2bb5e1ea5f>`__
+-  **Andrea Ricchi** on 2025-06-10: `Fix invalid HTML by
+   wrapping <https://github.com/amarula/slidev-theme-amarula/commit/0b1233a1b9e975361c7a617244cb1cdd805724cd>`__
+-  **Andrea Ricchi** on 2025-06-10: `Refactor CSS layout for improved
+   readability and
+   structure <https://github.com/amarula/slidev-theme-amarula/commit/76e775d341803614e0efa3e88d889dbac0f1d953>`__
+-  **Andrea Ricchi** on 2025-06-10: `Update example.md with Amarula
+   theme and improve slide
+   content <https://github.com/amarula/slidev-theme-amarula/commit/048230e4939726583701bd4f2f81a70aab2a216d>`__
+-  **Andrea Ricchi** on 2025-06-11: `Fix use of dark mode logo for light
+   theme <https://github.com/amarula/slidev-theme-amarula/commit/39f1ea0d58da417eb13f3db190895c2c2ecdb280>`__
+-  **Andrea Ricchi** on 2025-06-11: `styles/layout.css: Add Amarula
+   orange accent
+   color <https://github.com/amarula/slidev-theme-amarula/commit/758f28144c33589a6cebb9966d168bb2839193f6>`__
+-  **Andrea Ricchi** on 2025-06-11: `Drop duplicated and unused
+   layouts <https://github.com/amarula/slidev-theme-amarula/commit/471413e88ddcbe603a83a3c2644fe5af3db4c6f1>`__
+-  **Andrea Ricchi** on 2025-06-11: `layouts/cover.vue: update with new
+   design <https://github.com/amarula/slidev-theme-amarula/commit/0d21beb7173b04017d29ff2a40f0b4880f093fbf>`__
+-  **Andrea Ricchi** on 2025-06-12: `styles/layout.css: Drop unused
+   configurations and update
+   bottom-bar <https://github.com/amarula/slidev-theme-amarula/commit/56b2c9ccb3823a5fb94557f1bafe4b91a0ac2c00>`__
+-  **Andrea Ricchi** on 2025-06-12: `Add BottomBar
+   component <https://github.com/amarula/slidev-theme-amarula/commit/14d7779aa4e4c061f2c991168d976a6992899643>`__
+-  **Andrea Ricchi** on 2025-06-12: `Add playwright-chromium
+   dependency <https://github.com/amarula/slidev-theme-amarula/commit/d408d8a808763b60ef79006965e6fb5464e991ba>`__
+-  **Andrea Ricchi** on 2025-06-12: `Add TopBar
+   component <https://github.com/amarula/slidev-theme-amarula/commit/a5716e96df4c84c4a9902ba43e3e7330476c2f41>`__
+-  **Andrea Ricchi** on 2025-06-12: `layouts/default.vue: Update to
+   TopBar and
+   BottomBar <https://github.com/amarula/slidev-theme-amarula/commit/860ee53dd276a8ed0766bff4287af030593a9cde>`__
+-  **Andrea Ricchi** on 2025-06-12: `README.md: Update Install and
+   Layouts
+   sections <https://github.com/amarula/slidev-theme-amarula/commit/ebbdb9b062f1f2b7f2427671299118066128ea9f>`__
+-  **Andrea Ricchi** on 2025-06-12: `Move SVGs logo in assets icon and
+   fixed
+   rendering <https://github.com/amarula/slidev-theme-amarula/commit/0326947a130b94a67f791215d7bde96d242c7b42>`__
+
+bitbucket-plugin
+----------------
+
+Repository URL: https://github.com/jenkinsci/bitbucket-plugin
+
+.. _summary-of-the-contributions-by-author-15:
+
+Summary of the contributions by author:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+**Michael Trimarchi**: Michael Trimarchi made a significant contribution
+to the BitbucketJobProbe by adjusting the log level from WARNING to
+FINE. This change aimed to reduce unnecessary logging for projects
+without an associated source code management system. The commit was
+linked to the Jira ticket JENKINS-75682 and was suggested by Mark Waite.
+This adjustment was beneficial for streamlining project monitoring and
+improving the overall efficiency of the system.
+
+.. _here-the-commits-of-michael-trimarchi-in-detail-6:
+
+Here the commits of **Michael Trimarchi** in detail:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+-  **Michael Trimarchi** on 2025-05-21: `BitbucketJobProbe: Move
+   loglevel from WARNING to
+   FINE <https://github.com/jenkinsci/bitbucket-plugin/commit/8af543be78daca5728aa59baa56e943ef30071fd>`__
+
+meta-openembedded
+-----------------
+
+Repository URL: https://github.com/openembedded/meta-openembedded.git
+
+.. _summary-of-the-contributions-by-author-16:
+
+Summary of the contributions by author:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+**Dario Binacchi**: Dario Binacchi made several significant
+contributions to the ufs-utils repository over the past 3 months. These
+include updating the SRC_URI to reflect the repository’s new ownership
+under the “SanDisk-Open-Source” organization, upgrading the version from
+7.14.11 to 7.14.12, and extending \_GNU_SOURCE to address compilation
+errors in the CFGLAS for all platforms, not just mipsarchn64. The
+addition of the \_GNU_SOURCE define was crucial in resolving errors
+during compilation, ensuring compatibility with Yocto’s redefined
+CFLAGS. These changes were accompanied by version upgrades from 6.14.11
+to 7.14.11 and from 6.13.11 to 6.14.11. Detailed release notes for
+version 7.14.11 can be found on the official repository page. Overall,
+Dario Binacchi’s contributions focused on maintaining the ufs-utils
+repository, addressing compatibility issues, and ensuring the software’s
+continued improvement and development under its new ownership.
+
+.. _here-the-commits-of-dario-binacchi-in-detail-4:
+
+Here the commits of **Dario Binacchi** in detail:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+-  **Dario Binacchi** on 2025-06-17: `ufs-utils: upgrade 6.13.11 ->
+   6.14.11 <https://github.com/openembedded/meta-openembedded/commit/79c61189dae4ddd9e601233e55db801abefe30dd>`__
+-  **Dario Binacchi** on 2025-07-13: `ufs-utils: upgrade 6.14.11 ->
+   7.14.11 <https://github.com/openembedded/meta-openembedded/commit/0ae2109bce71d8cb2dee4a176a784e39f893501b>`__
+-  **Dario Binacchi** on 2025-07-17: `ufs-utils: upgrade 7.14.11 ->
+   7.14.12 <https://github.com/openembedded/meta-openembedded/commit/f7bc16fc1e4a76ed96031fd6bde02183dfb8313b>`__
+-  **Dario Binacchi** on 2025-07-25: `ufs-utils: update
+   SRC_URI <https://github.com/openembedded/meta-openembedded/commit/54ab96e225eb2332c03a9e4a644c642297afa310>`__
+
+linux
+-----
+
+Repository URL: https://github.com/torvalds/linux.git
+
+.. _summary-of-the-contributions-by-author-17:
+
+Summary of the contributions by author:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+**Dario Binacchi**: Dario Binacchi made significant contributions over
+the 3-month period. They converted various device tree bindings to
+json-schema for Freescale MXS LRADC and added support for Engicam
+MicroGEA GTW, RMM, BMM boards, and the MicroGEA-MX6UL SoM. They also
+added devicetree bindings for these boards and selected drivers required
+by them in the configurations. Additionally, Dario contributed support
+for the i.MX28 Amarula RMM board, STM32h747i-disco board, and STM32h743
+MCU, along with additional pin configurations and UART support. They
+also ensured clock macro consistency for serial ports on the STM32H7
+series and improved padconfig usage in mxs dts files. These
+contributions reflect their dedication to expanding hardware support and
+enhancing the software ecosystem.
+
+.. _here-the-commits-of-dario-binacchi-in-detail-5:
+
+Here the commits of **Dario Binacchi** in detail:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+-  **Dario Binacchi** on 2025-04-27: `ARM: dts: stm32h7-pinctrl: add \_a
+   suffix to u[s]art_pins
+   phandles <https://github.com/torvalds/linux/commit/6a36dca4375fce51b627f5a985a79fc8b8bd7f55>`__
+-  **Dario Binacchi** on 2025-04-27: `dt-bindings: arm: stm32: add
+   compatible for stm32h747i-disco
+   board <https://github.com/torvalds/linux/commit/815d49f61ea049075482161f897aa13e1ae30cbb>`__
+-  **Dario Binacchi** on 2025-04-27: `ARM: stm32: add a new SoC -
+   STM32H747 <https://github.com/torvalds/linux/commit/cb0c6e1244e18a2c2d69574d58f304feccfd3b2c>`__
+-  **Dario Binacchi** on 2025-04-27: `dt-bindings: clock: stm32h7:
+   rename USART{7,8}_CK to
+   UART{7,8}_CK <https://github.com/torvalds/linux/commit/ecab3c40fa49a2073c4c916ebff9496a6b5db7bd>`__
+-  **Dario Binacchi** on 2025-04-27: `ARM: dts: stm32: add uart8 node
+   for stm32h743
+   MCU <https://github.com/torvalds/linux/commit/07aa43adae2363c3734055aeba0789536fa0f8f2>`__
+-  **Dario Binacchi** on 2025-04-27: `ARM: dts: stm32: add pin map for
+   UART8 controller on
+   stm32h743 <https://github.com/torvalds/linux/commit/47d16ab94b8e5e85aedba3cd22cfdf3877bf1dfb>`__
+-  **Dario Binacchi** on 2025-04-27: `ARM: dts: stm32: add an extra pin
+   map for USART1 on
+   stm32h743 <https://github.com/torvalds/linux/commit/8e71dfe46a4a1e9505b1a327470f879b63388968>`__
+-  **Dario Binacchi** on 2025-04-27: `ARM: dts: stm32: support
+   STM32h747i-disco
+   board <https://github.com/torvalds/linux/commit/49ba8fc6eab63165639ffbb9f976222d39739cab>`__
+-  **Dario Binacchi** on 2025-05-07: `ARM: dts: mxs: use padconfig
+   macros <https://github.com/torvalds/linux/commit/10d0bc88bbc884519abe7d966d86b1ca7f3d686b>`__
+-  **Dario Binacchi** on 2025-05-30: `dt-bindings: mfd: convert
+   mxs-lradc bindings to
+   json-schema <https://github.com/torvalds/linux/commit/009528b5aa13af4fe36d1ca71e2cef2bc92c6a3e>`__
+-  **Dario Binacchi** on 2025-06-20: `ARM: dts: imx28: add pwm7 muxing
+   options <https://github.com/torvalds/linux/commit/b63ae4182b6afa89ad0f7cff9c932328d887b936>`__
+-  **Dario Binacchi** on 2025-06-20: `dt-bindings: arm: fsl: add i.MX28
+   Amarula rmm
+   board <https://github.com/torvalds/linux/commit/2fe1b7ffd83589727d1a4bb38179a46093491249>`__
+-  **Dario Binacchi** on 2025-06-20: `ARM: dts: mxs: support i.MX28
+   Amarula rmm
+   board <https://github.com/torvalds/linux/commit/ad296c411452d1b490bf4742c2eb7e5e4a400561>`__
+-  **Dario Binacchi** on 2025-06-20: `ARM: mxs_defconfig: Cleanup
+   mxs_defconfig <https://github.com/torvalds/linux/commit/aa67e2bad30b7401fba9646bb7d65917a420baf1>`__
+-  **Dario Binacchi** on 2025-06-20: `ARM: mxs_defconfig: select new
+   drivers used by
+   imx28-amarula-rmm <https://github.com/torvalds/linux/commit/765081cde522253cf588a46ac2ba0ab8659a85f4>`__
+-  **Dario Binacchi** on 2025-06-20: `dt-bindings: arm: fsl: support
+   Engicam MicroGEA BMM
+   board <https://github.com/torvalds/linux/commit/3d1678688810ddf1fc1746c1b992b72e1c1ec89a>`__
+-  **Dario Binacchi** on 2025-06-20: `ARM: dts: imx6ul: support Engicam
+   MicroGEA-MX6UL
+   SoM <https://github.com/torvalds/linux/commit/a8281618e8a50f22082f7159900bc066abe7098c>`__
+-  **Dario Binacchi** on 2025-06-20: `ARM: dts: imx6ul: support Engicam
+   MicroGEA BMM
+   board <https://github.com/torvalds/linux/commit/02e0babff3f785c131f3a79ebf8c9014450335d0>`__
+-  **Dario Binacchi** on 2025-06-20: `ARM: imx_v6_v7_defconfig: cleanup
+   with
+   savedefconfig <https://github.com/torvalds/linux/commit/8adba3555dfdd93b360cbf1cd1f7aa72da5b1c98>`__
+-  **Dario Binacchi** on 2025-06-20: `ARM: imx_v6_v7_defconfig: select
+   CONFIG_INPUT_PWM_BEEPER <https://github.com/torvalds/linux/commit/128fe144e7b86ee53cccef7021312157fda311f0>`__
+-  **Dario Binacchi** on 2025-06-20: `dt-bindings: arm: fsl: support
+   Engicam MicroGEA RMM
+   board <https://github.com/torvalds/linux/commit/73ee9b11878a41f5677054be39ce7f9e8f63fa72>`__
+-  **Dario Binacchi** on 2025-06-20: `ARM: dts: imx6ul: support Engicam
+   MicroGEA RMM
+   board <https://github.com/torvalds/linux/commit/ffea3cac94ba5f43837acf6c42a4a2215e1e96a6>`__
+-  **Dario Binacchi** on 2025-06-20: `dt-bindings: arm: fsl: support
+   Engicam MicroGEA GTW
+   board <https://github.com/torvalds/linux/commit/69c9acadd4d277c4ad5480f1f8c77c551075e6d3>`__
+-  **Dario Binacchi** on 2025-06-20: `ARM: dts: imx6ul: support Engicam
+   MicroGEA GTW
+   board <https://github.com/torvalds/linux/commit/c343d58ed8b6b649ae8bf3a1a8dc2fc272ab39b5>`__
+-  **Dario Binacchi** on 2025-06-20: `ARM: imx_v6_v7_defconfig: select
+   CONFIG_USB_HSIC_USB3503 <https://github.com/torvalds/linux/commit/0c7124658677885b603f1748fb997b3bdc87dc69>`__
+
+u-boot
+------
+
+Repository URL: https://github.com/u-boot/u-boot.git
+
+.. _summary-of-the-contributions-by-author-18:
+
+Summary of the contributions by author:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+**Dario Binacchi**: Dario Binacchi made significant contributions over
+the past 3 months. They added support for the STM32H747XI SoC on the
+stm32h747-discovery board, including flash and SRAM resources, various
+interfaces, and controllers. Additionally, they introduced DTS files and
+pin map configurations for different UART controllers on the STM32h743
+MCU, enhancing the board’s capabilities. Dario also worked on
+standardizing clock macros for serial ports, ensuring consistency with
+the reference manual. Furthermore, they updated the board’s
+compatibility information, refined pin map configurations for UART
+controllers, and expanded configurations for peripherals using
+consistent schemes. Dario addressed clock system issues and memory
+allocation failures on the BSH SMM S2 board, enabling U-Boot loading
+from raw NAND sectors and supporting clock system enablement for UART.
+They also standardized the use of \`IS_ENABLED()\` in the codebase.
+Overall, Dario Binacchi’s contributions have significantly improved the
+functionality and compatibility of the software development projects
+they were involved in.
+
+.. _here-the-commits-of-dario-binacchi-in-detail-6:
+
+Here the commits of **Dario Binacchi** in detail:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+-  **Dario Binacchi** on 2025-04-27: `ARM: dts: stm32h7-pinctrl: add \_a
+   suffix to u[s]art_pins
+   phandles <https://github.com/u-boot/u-boot/commit/5d15b4305275e3822d0e978e2caf158293e54b6d>`__
+-  **Dario Binacchi** on 2025-04-27: `dt-bindings: arm: stm32: add
+   compatible for stm32h747i-disco
+   board <https://github.com/u-boot/u-boot/commit/484f098b2f73ed01e45c881a8e465718457a1a06>`__
+-  **Dario Binacchi** on 2025-04-27: `dt-bindings: clock: stm32h7:
+   rename USART{7,8}_CK to
+   UART{7,8}_CK <https://github.com/u-boot/u-boot/commit/e543e8b4094f7fa766412e5b7877dc321a9a8474>`__
+-  **Dario Binacchi** on 2025-04-27: `ARM: dts: stm32: add uart8 node
+   for stm32h743
+   MCU <https://github.com/u-boot/u-boot/commit/d4fe7cd8ca00d92c76b1cca3d16fbe1766483e90>`__
+-  **Dario Binacchi** on 2025-04-27: `ARM: dts: stm32: add pin map for
+   UART8 controller on
+   stm32h743 <https://github.com/u-boot/u-boot/commit/1addd0e42962941a811e2d307376c865f65c1c8e>`__
+-  **Dario Binacchi** on 2025-04-27: `ARM: dts: stm32: add an extra pin
+   map for USART1 on
+   stm32h743 <https://github.com/u-boot/u-boot/commit/3a310f59c38501d559455230b9a9226ca7986745>`__
+-  **Dario Binacchi** on 2025-04-27: `ARM: dts: stm32: support
+   STM32h747i-disco
+   board <https://github.com/u-boot/u-boot/commit/cb348ba58ff2b45dc7f6e9675193ff61b22bc7fc>`__
+-  **Dario Binacchi** on 2025-05-15: `arm: imx: imx8m: soc: replace
+   ifdef by
+   IS_ENABLED() <https://github.com/u-boot/u-boot/commit/4c82eeab9840983693791117aa75f7bd7fbc805b>`__
+-  **Dario Binacchi** on 2025-05-20: `spl: Kconfig: support U-Boot load
+   from raw
+   NAND <https://github.com/u-boot/u-boot/commit/8acea298bb82c38b20855cd46a46b9e418dc1fb0>`__
+-  **Dario Binacchi** on 2025-05-20: `imx: spl_imx_romapi: support raw
+   NAND
+   sector <https://github.com/u-boot/u-boot/commit/24d98fa63bbcb21988e4e822f11686319502fb1f>`__
+-  **Dario Binacchi** on 2025-05-20: `configs: imx8mn_bsh_smm_s2: load
+   U-Boot from raw
+   NAND <https://github.com/u-boot/u-boot/commit/dce71922df352b0eb1b6cc3d40c374ad80a7d6c5>`__
+-  **Dario Binacchi** on 2025-05-20: `board: bsh:
+   imx8mn_bsh_smm_s2/s2pro: enlarge
+   CONFIG_SPL_SYS_MALLOC_F_LEN <https://github.com/u-boot/u-boot/commit/ce3f23404c1990b949983d77d1ce543ac492c929>`__
+-  **Dario Binacchi** on 2025-05-20: `board: bsh:
+   imx8mn_bsh_smm_s2/s2pro: let clock system enable UART
+   clock <https://github.com/u-boot/u-boot/commit/c42c6a108b592bbcda4a116dc81a2237ae708d7e>`__
+-  **Dario Binacchi** on 2025-06-07: `ARM: dts: stm32: add
+   stm32h747i-disco-u-boot DTS
+   file <https://github.com/u-boot/u-boot/commit/366f0bfe4f8be35961469f405929e9bb77bb5599>`__
+-  **Dario Binacchi** on 2025-06-07: `board: stm32: add
+   stm32h747-discovery board
+   support <https://github.com/u-boot/u-boot/commit/7ab0ee3a59c01ca164a5b71e0c4c90555da5e806>`__
+
+**Michael Trimarchi**: In the past 3 months, Michael Trimarchi has made
+significant contributions to software development. Key highlights
+include adding board configurations for watchdog reset and enabling
+clock frameworks for various platforms, such as the imx6ulz_smm_m2b and
+imx6ulz_smm_m2. Additionally, Michael introduced the BSH SystemMaster
+(SMM) M2B board and implemented memory configuration systems to resolve
+compatibility issues. Noteworthy improvements were made to the NAND
+controller performance by adding support for EDO mode and transitioning
+to a more efficient clock API. Moreover, the addition of the i.MX6UL clk
+driver and adjustments to DDR settings for SPL on i.mx6 demonstrate
+Michael’s commitment to enhancing system stability and performance.
+Finally, bug fixes were implemented to address issues with the reset
+functionality and macro naming, ensuring smooth operation across
+different architectures and platforms.
+
+.. _here-the-commits-of-michael-trimarchi-in-detail-7:
+
+Here the commits of **Michael Trimarchi** in detail:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+-  **Michael Trimarchi** on 2025-05-15: `arm: imx: imx8m: soc: fix the
+   macro
+   name <https://github.com/u-boot/u-boot/commit/f7cddc4c6f4e4da57c6500cd0d88ea06e937b239>`__
+-  **Michael Trimarchi** on 2025-05-16: `arm: dts:
+   imx6ulz-bsh-smm-m2-u-boot: Drop soc
+   node <https://github.com/u-boot/u-boot/commit/e761a77cdb917cba41992a53ee9b55e925a20701>`__
+-  **Michael Trimarchi** on 2025-05-16: `configs: imx6ulz_smm_m2: Add
+   board watchdog reset
+   configuration <https://github.com/u-boot/u-boot/commit/fcf2a415a97a0cb7eddffcdfa7c44da83b5d1a59>`__
+-  **Michael Trimarchi** on 2025-05-16: `arm: dts: imx6ulz-bsh-smm-m2:
+   Fix reset using wdt-reboot
+   driver <https://github.com/u-boot/u-boot/commit/31899c52bde17f0e393f10853213740d779cf424>`__
+-  **Michael Trimarchi** on 2025-05-20: `board: freescale: imx8mn_evk:
+   let clock system enable UART
+   clock <https://github.com/u-boot/u-boot/commit/c1ccc4c0f3f96689cb71ec0ff30534af81627bf3>`__
+-  **Michael Trimarchi** on 2025-05-21: `board: bsh: imx6ulz_smm_m2:
+   Match SPL DDR settings to DCD
+   table <https://github.com/u-boot/u-boot/commit/da6547acb8e645fe7000ea07d7ad0fcafc037b3a>`__
+-  **Michael Trimarchi** on 2025-05-30: `clk: imx: add i.MX6UL clk
+   driver <https://github.com/u-boot/u-boot/commit/0f53197c3d6ccced1d73103de5ee222500353394>`__
+-  **Michael Trimarchi** on 2025-05-30: `mtd: mxs_nand_dt: Move from
+   clk_get/clk_enable to clk_bulk
+   api <https://github.com/u-boot/u-boot/commit/1c513b9edf64d82aaeb1308d2e0ea14e5a2e13f1>`__
+-  **Michael Trimarchi** on 2025-05-30: `mtd: nand: Add support for EDO
+   mode 1-5 to IMX6ULL
+   platform <https://github.com/u-boot/u-boot/commit/404a4c84d8800ce3e39cdaff1c6bc97ad3d6c459>`__
+-  **Michael Trimarchi** on 2025-05-30:
+   `configs/imx6ulz_smm_m2_defconfig: Enable clock
+   framework <https://github.com/u-boot/u-boot/commit/8642939ee049b737c179afd530da3dc1f9525964>`__
+-  **Michael Trimarchi** on 2025-05-31: `bsh: imx6ulz_smm_m2: Add
+   imx6ulz BSH SMM M2B
+   board <https://github.com/u-boot/u-boot/commit/c7b82b4aabc6ef9af953b779490eb2385d299f51>`__
+-  **Michael Trimarchi** on 2025-07-08:
+   `configs/imx6ulz_smm_m2b_defconfig: Enable clock
+   framework <https://github.com/u-boot/u-boot/commit/a61e5c6427b969522a1a4e3b16994ed4091d6bdf>`__
+-  **Michael Trimarchi** on 2025-07-08: `configs: imx6ulz_smm_m2b: Add
+   board watchdog reset
+   configuration <https://github.com/u-boot/u-boot/commit/a4b03f8005744b48e93a3b69a9a3ad76caa708eb>`__
+
+buildroot
+---------
+
+Repository URL: https://gitlab.com/buildroot.org/buildroot.git
+
+.. _summary-of-the-contributions-by-author-19:
+
+Summary of the contributions by author:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+**Adam Duskett**: Adam Duskett made several significant software
+development contributions over the span of 3 months. In the
+package/sysvinit update to version 3.14, the maximum inittab entry size
+was increased to 253 characters, with warnings and refusal for lines
+exceeding this limit. In the package/systemd update to version 257.5,
+notable changes included default options adjustments and dependencies on
+newer kernels. The package/polkit bump to version 126 removed the mozjs
+support option. Additionally, Adam Duskett enabled docker, rpm, and
+script modules in package/mender-update-modules to prepare for future
+updates. The package/refpolicy update to version 2.20250213 addressed
+errors related to dbus module absence. Various SELinux-related packages
+were also bumped to version 3.8.1. Lastly, Adam Duskett fixed shellcheck
+and check-package warnings in package/audit/S02auditd.
+
+.. _here-the-commits-of-adam-duskett-in-detail-1:
+
+Here the commits of **Adam Duskett** in detail:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+-  **Adam Duskett** on 2025-05-13: `package/sysvinit: bump to version
+   3.14 <https://gitlab.com/buildroot.org/buildroot/commit/ccfa9f40b8db0416165c07ca850ceb7b43a97cff>`__
+-  **Adam Duskett** on 2025-05-14: `package/systemd: bump to version
+   257.5 <https://gitlab.com/buildroot.org/buildroot/commit/7d8d48cd2ba1396ea146e94020939f4dfe08c5cb>`__
+-  **Adam Duskett** on 2025-05-15: `package/audit/S02auditd: fix
+   shellcheck and check-package
+   warnings <https://gitlab.com/buildroot.org/buildroot/commit/cbabeb507744e220f5edaabb3a1549c1399adad6>`__
+-  **Adam Duskett** on 2025-05-15: `package/libsepol: bump to version
+   3.8.1 <https://gitlab.com/buildroot.org/buildroot/commit/992b6783931157a809ed8435b08c2d21f380cc01>`__
+-  **Adam Duskett** on 2025-05-15: `package/libsemanage: bump to version
+   3.8.1 <https://gitlab.com/buildroot.org/buildroot/commit/2a7823a7fe2a1859ff8cab2d92a22a69003d62db>`__
+-  **Adam Duskett** on 2025-05-15: `package/libselinux: bump to version
+   3.8.1 <https://gitlab.com/buildroot.org/buildroot/commit/1ae3ad4e878e1f4217ba3276ff0c9e584234afa4>`__
+-  **Adam Duskett** on 2025-05-15: `package/policycoreutils: bump to
+   version
+   3.8.1 <https://gitlab.com/buildroot.org/buildroot/commit/9cd495b871ad8c3462294d175e927f00044dc862>`__
+-  **Adam Duskett** on 2025-05-15: `package/checkpolicy: bump to version
+   3.8.1 <https://gitlab.com/buildroot.org/buildroot/commit/ebf1217a7bd2b7750cde99718348f8f4e823588f>`__
+-  **Adam Duskett** on 2025-05-15: `package/restorecond: bump to version
+   3.8.1 <https://gitlab.com/buildroot.org/buildroot/commit/d0e1181b16819fd489ee7226be9957038310faa1>`__
+-  **Adam Duskett** on 2025-05-15: `package/semodule-utils: bump to
+   version
+   3.8.1 <https://gitlab.com/buildroot.org/buildroot/commit/0683e7d65b27609b2d3c642186d4cfbca8748aa6>`__
+-  **Adam Duskett** on 2025-05-15: `package/selinux-python: bump to
+   verson
+   3.8.1 <https://gitlab.com/buildroot.org/buildroot/commit/f93e0ec5850402b2cc0478e864223019277ecc79>`__
+-  **Adam Duskett** on 2025-05-15: `package/refpolicy: bump to version
+   2.20250213 <https://gitlab.com/buildroot.org/buildroot/commit/5cfe10ffb26f5b250fdbce3b1b0a692346349571>`__
+-  **Adam Duskett** on 2025-05-16: `package/polkit: bump version to
+   126 <https://gitlab.com/buildroot.org/buildroot/commit/b9a9930de0c873e68de1c8242ff9281d87eda722>`__
+-  **Adam Duskett** on 2025-05-16: `package/mender_x86_64_efi_defconfig:
+   bump kernel to
+   6.12.28 <https://gitlab.com/buildroot.org/buildroot/commit/8c4a96e52fbc60b0e6348fd4b41ea08cd78fd145>`__
+-  **Adam Duskett** on 2025-05-16: `package/mender-update-modules: new
+   package <https://gitlab.com/buildroot.org/buildroot/commit/a474642fdcd8c69e12126bbe8304479aa855d916>`__
+-  **Adam Duskett** on 2025-05-16: `package/mender-update-modules:
+   enable docker, rpm, and script
+   modules <https://gitlab.com/buildroot.org/buildroot/commit/6debbd693b920ffa618b8d30ac5eb6edbff814f2>`__
+
+**Dario Binacchi**: Dario Binacchi made significant contributions over
+the past 3 months. They updated various packages, including bumping
+Armadillo to version 14.6.1, INI handling library to version 61, and UFS
+utilities to version 7.14.12. Additionally, they updated Linux and
+U-Boot versions for different configurations, ensuring compatibility and
+testing on various boards. Dario also introduced a new package,
+PocketPy, a portable Python 3.x interpreter. They fixed issues like
+U-Boot startup on the BSH SMM S2 board and compilation errors in the UUU
+package. Furthermore, they addressed security vulnerabilities in
+ConnMan, improving DNS proxy handling and version updates. Overall,
+Dario’s contributions focused on package updates, bug fixes, security
+enhancements, and system compatibility.
+
+.. _here-the-commits-of-dario-binacchi-in-detail-7:
+
+Here the commits of **Dario Binacchi** in detail:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+-  **Dario Binacchi** on 2025-04-30: `boot/ti-k3-boot-firmware: bump to
+   version
+   11.00.11 <https://gitlab.com/buildroot.org/buildroot/commit/981e3686fce17e0d3ba09548d28fa88763a171e8>`__
+-  **Dario Binacchi** on 2025-04-30: `package/ufs-utils: bump to version
+   6.13.11 <https://gitlab.com/buildroot.org/buildroot/commit/e19ac5ed7c66e82d8853ac9c7ef23c4a6101f842>`__
+-  **Dario Binacchi** on 2025-05-12: `package/inih: bump to version
+   60 <https://gitlab.com/buildroot.org/buildroot/commit/d2e2e58d4313d3173f49e89ff198a7cd1d2b32c0>`__
+-  **Dario Binacchi** on 2025-05-12: `DEVELOPERS: add Dario Binacchi for
+   inih <https://gitlab.com/buildroot.org/buildroot/commit/501018ad6156fad90fd98c63d9de1630cd526acf>`__
+-  **Dario Binacchi** on 2025-05-12: `package/connman: bump to version
+   1.44 <https://gitlab.com/buildroot.org/buildroot/commit/ce9a64b5d15a484762cbd40007650784998b100b>`__
+-  **Dario Binacchi** on 2025-05-12: `package/connman: fix
+   CVE-2025-32743 <https://gitlab.com/buildroot.org/buildroot/commit/6c4da559ccad17acad5e638aba888543cf4245d0>`__
+-  **Dario Binacchi** on 2025-05-12: `configs/imx6ulz_bsh_smm_m2: bump
+   Linux to
+   6.12.28 <https://gitlab.com/buildroot.org/buildroot/commit/d64ae929685e3b79ba383dee1946a52576bae3de>`__
+-  **Dario Binacchi** on 2025-05-12: `board/bsh/imx6ulz-bsh-smm-m2:
+   flash
+   U-Boot <https://gitlab.com/buildroot.org/buildroot/commit/a7ea1e658de6d8f951ef8c4e81724c131306db6b>`__
+-  **Dario Binacchi** on 2025-05-13: `package/connman: fix
+   CVE-2025-32366 <https://gitlab.com/buildroot.org/buildroot/commit/a8cfe9986c9de8f575dc94e242c0ccc26e03b19d>`__
+-  **Dario Binacchi** on 2025-05-23: `board: bsh: imx8mn-bsh-smm-s2: fix
+   U-Boot
+   startup <https://gitlab.com/buildroot.org/buildroot/commit/43dcaa19a0a8549df39f51ab6782840834ea79a8>`__
+-  **Dario Binacchi** on 2025-05-26: `package/uuu: fix gcc-15 compile
+   errors <https://gitlab.com/buildroot.org/buildroot/commit/6788f3d26ccf36b928c68b423077ae590d176967>`__
+-  **Dario Binacchi** on 2025-06-04: `package/armadillo: bump to version
+   14.4.3 <https://gitlab.com/buildroot.org/buildroot/commit/0f99f5def92c210a278734c9fdc48d1d323aa298>`__
+-  **Dario Binacchi** on 2025-06-10: `package/pocketpy: new
+   package <https://gitlab.com/buildroot.org/buildroot/commit/669f28ac0b4520d088f69f365b0e5bffa5bf7c02>`__
+-  **Dario Binacchi** on 2025-06-17: `package/ufs-utils: bump to version
+   6.14.11 <https://gitlab.com/buildroot.org/buildroot/commit/c8ddc2a32617d07495490c142ebe14e68e6fc0bd>`__
+-  **Dario Binacchi** on 2025-06-25: `package/mmc-utils: bump version to
+   1.0 <https://gitlab.com/buildroot.org/buildroot/commit/e339bef04bd0bfcf70e75de9a097ba4e82785494>`__
+-  **Dario Binacchi** on 2025-07-07: `package/armadillo: bump to version
+   14.6.0 <https://gitlab.com/buildroot.org/buildroot/commit/250a115c32bcb2146f6a8e51a4e43f5ffecd280c>`__
+-  **Dario Binacchi** on 2025-07-07: `package/ufs-utils: bump to version
+   7.14.11 <https://gitlab.com/buildroot.org/buildroot/commit/e3a52cc941c154a2ddf6c71df3c8c1daf70a4f86>`__
+-  **Dario Binacchi** on 2025-07-08: `boot/uboot: bump to version
+   2025.07 <https://gitlab.com/buildroot.org/buildroot/commit/0802f39a78741967875ff6ba92e3711577644db3>`__
+-  **Dario Binacchi** on 2025-07-10: `configs/ti_am62x_sk: bump U-Boot
+   and Linux
+   versions <https://gitlab.com/buildroot.org/buildroot/commit/8fe9da71a3989a46c01fe39f6c22e8094e62de5e>`__
+-  **Dario Binacchi** on 2025-07-11: `configs/beaglebone: bump Linux to
+   6.12.23-ti-arm32-r11 and U-Boot to
+   2025.07 <https://gitlab.com/buildroot.org/buildroot/commit/d4c5cfe80db563fc9d380d68e2b201f8bd4a9c1e>`__
+-  **Dario Binacchi** on 2025-07-16: `package/ufs-utils: bump to version
+   7.14.12 <https://gitlab.com/buildroot.org/buildroot/commit/87be5a1e70707c3b4e2a9287d4649e4b48809fff>`__
+-  **Dario Binacchi** on 2025-07-17: `configs/imx6ulz_bsh_smm_m2: bump
+   Linux to 6.12.36 and U-Boot to
+   2025.07 <https://gitlab.com/buildroot.org/buildroot/commit/d3e89ca9475c7a7585aa3c405145b14c09f82689>`__
+-  **Dario Binacchi** on 2025-07-20: `configs/imx8mn_bsh_smm_s2[\_pro]:
+   bump Linux to 6.12.39 and U-Boot to
+   2025.07 <https://gitlab.com/buildroot.org/buildroot/commit/91b9d8c32b3c5793b795558d6890a168819df3e3>`__
+-  **Dario Binacchi** on 2025-07-28: `package/inih: bump to version
+   61 <https://gitlab.com/buildroot.org/buildroot/commit/b9a14eaff121f61011015f80c84155b84867757a>`__
+-  **Dario Binacchi** on 2025-07-28: `package/armadillo: bump to version
+   14.6.1 <https://gitlab.com/buildroot.org/buildroot/commit/9440bf5a62b99fd47ce76e8fc7fa911f39d7876b>`__
+
+**Michael Trimarchi**: Michael Trimarchi bumped the python-spidev
+package to version 3.7 to address a deprecation warning. Additionally,
+in the board/bsh/imx8mn-bsh-smm-s2, the entire NAND chip is now erased
+before attempting to create a UBI volume to prevent errors. These
+contributions demonstrate attention to detail in addressing warnings and
+ensuring a smooth operation in the NAND chip handling process.
+
+.. _here-the-commits-of-michael-trimarchi-in-detail-8:
+
+Here the commits of **Michael Trimarchi** in detail:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+-  **Michael Trimarchi** on 2025-05-15: `board/bsh/imx8mn-bsh-smm-s2:
+   erase the entire NAND
+   chip <https://gitlab.com/buildroot.org/buildroot/commit/97ac89eb115dbcd28efd1cf95d9a308f71b33041>`__
+-  **Michael Trimarchi** on 2025-07-07: `package/python-spidev: bump to
+   version
+   3.7 <https://gitlab.com/buildroot.org/buildroot/commit/3c46549f890977a805ecbf460bb2f022f482feaa>`__
+
+This overview highlights the continuous effort and innovation from our
+development team. We look forward to bringing even more exciting updates
+in the future!
+
+--------------
+
+*Generated by the Git Commit Article Generator*

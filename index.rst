@@ -18,7 +18,9 @@ Welcome to Amarula Wiki!
    hw/index
 
 
-Amarula Solutions Open source Contributions - March/April 2025
+.. include:: reports/report-08-2025.rst
+
+Amarul  Solutions Open source Contributions - March/April 2025
 --------------------------------------------------------------
 
 Amarula Solutions new contribuitions in opensource project
