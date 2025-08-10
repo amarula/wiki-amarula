@@ -233,6 +233,7 @@ To utilize yarn resolutions, follow these steps:
 
 1. Install Yarn globally if it doesn’t already installed by running the
    following command:
+
 ::
 
    npm install -g yarn
@@ -241,6 +242,7 @@ To utilize yarn resolutions, follow these steps:
 
 3. Open the ``package.json`` file and add a ``resolutions`` field if it
    doesn’t already exist. For example:
+
 ::
 
    "resolutions": {
