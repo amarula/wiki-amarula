@@ -70,3 +70,15 @@ of the ESP32 to provide innovative solutions.
 We are already implementing integrations of this principle into larger IoT projects, where the ESP32's ability
 to interact with other devices and platforms, combined with its reliability and low cost, offers significant
 added value for the creation of embedded, complete and innovative products.
+
+Live Demonstration
+-------------------
+
+In this video, a demonstration of the system described above is provided, showing how video streaming is quite
+responsive to movement despite the connection being via Wi-Fi.
+
+.. raw:: html
+
+  <video width="640" height="360" controls>
+    <source src="/video/esp32-camera.MP4" type="video/mp4">
+  </video>
