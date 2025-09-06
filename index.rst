@@ -18,6 +18,7 @@ Welcome to Amarula Wiki!
    hw/index
 
 
+.. include:: reports/report-09-2025.rst
 .. include:: reports/report-08-2025.rst
 
 Amarul  Solutions Open source Contributions - March/April 2025
