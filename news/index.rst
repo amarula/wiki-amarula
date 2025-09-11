@@ -5,6 +5,7 @@ News
    :maxdepth: 2
    :caption: Contents:
 
+   chatgpt-3.1.0
    metamend-2025
    embeddedworld-2025
    cutekeyboard
