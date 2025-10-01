@@ -1,0 +1,512 @@
+Today 2025-10-01 Developments: A Look at Our Codebase (1 Months Review)
+=======================================================================
+
+We’re excited to share a summary of the significant progress made across
+our repositories in the last 1 months. Our dedicated team has been busy
+pushing new features, refining existing functionalities, and enhancing
+the overall stability of our products.
+
+Here’s a breakdown of key contributions by repository:
+
+chatgpt-code-review-gerrit-plugin
+---------------------------------
+
+Repository URL:
+https://github.com/amarula/chatgpt-code-review-gerrit-plugin.git
+
+Summary of the contributions by author:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+**Michael Trimarchi**: In the past month, Michael Trimarchi made
+significant contributions to the project. They updated the GitHub action
+to use Java 21, addressing a critical issue related to Maven
+compilation. The error message indicated a fatal error compiling due to
+an unsupported release version. By implementing this update, Michael
+ensured the project’s compatibility with the required Java version and
+resolved the compilation error. This improvement demonstrates their
+commitment to maintaining the project’s functionality and compatibility
+with the latest technologies.
+
+Here the commits of **Michael Trimarchi** in detail:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+-  **Michael Trimarchi** on 2025-09-08: `.github: Update the github
+   action to use
+   java21 <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/6e210eb8a429f14d327ec9d29f512d3778448dc9>`__
+
+**Patrizio Gelosi**: In the past month, Patrizio Gelosi made significant
+contributions to software development. They refactored code to move
+shared logic into common packages, benefiting both OpenAI and LangChain.
+They added support for ON_DEMAND context policy in LangChain and fixed
+issues with token estimators. Patrizio also introduced default domain
+and model values for all providers, simplifying configuration. They
+expanded LangChain to support Moonshot AI and Google Gemini, enforcing
+JSON responses and implementing token-based memory retention.
+Additionally, they enhanced LangChain’s backend with features like
+structured responses and Gerrit retrieval. Patrizio prepared the
+codebase for multiple AI backends, updated configurations, and
+documentation for future integrations. Overall, these contributions
+improved functionality, integration capabilities, and code organization
+in the software project.
+
+Here the commits of **Patrizio Gelosi** in detail:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+-  **Patrizio Gelosi** on 2025-09-05: `chore: add license headers to
+   sources <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/5024020b159e6bc57a3400b16b853193c2b7c573>`__
+-  **Patrizio Gelosi** on 2025-09-05: `style: update to
+   google-java-format
+   1.28.0 <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/f4e68960420fb87f6a5f0307475eb0b78e20d6f3>`__
+-  **Patrizio Gelosi** on 2025-09-05: `chore: update
+   dependencies <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/4126f05922ffa731bd96a8bfca40e7ef705f8836>`__
+-  **Patrizio Gelosi** on 2025-09-08: `chore: bump to
+   gerrit-3.12.2 <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/f450c26266e23627692ed01fa6d4067efebe4d21>`__
+-  **Patrizio Gelosi** on 2025-09-08: `chore: upgrade SLF4J to latest
+   stable <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/29a3a031ad448f50225c42a15d5c1f3123fbbf33>`__
+-  **Patrizio Gelosi** on 2025-09-08: `chore: bump to version
+   3.1.0 <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/7a42d79590d8626a491cafec7052b2a9e1f5cccc>`__
+-  **Patrizio Gelosi** on 2025-09-08: `docs: sync README with
+   3.1.0 <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/d8914192e17bdac6e4b386e58e559e01f175b64b>`__
+-  **Patrizio Gelosi** on 2025-09-09: `feat: default to Stateful
+   mode <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/a90ab3d0a3102785e1198dd7a60bf998f86257dc>`__
+-  **Patrizio Gelosi** on 2025-09-11: `feat: prepare for multiple AI
+   backends <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/032dfc127b5622ec12f6c162b40dddc19d8bde66>`__
+-  **Patrizio Gelosi** on 2025-09-11: `fix: dynamic config key
+   parsing <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/6a75c074236456a138c12140b3ce9cbb34b3e1f6>`__
+-  **Patrizio Gelosi** on 2025-09-15: `chore: switch gpt names to
+   ai <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/645e6661de9c1cfee45248c4c355aa96b8996c28>`__
+-  **Patrizio Gelosi** on 2025-09-16: `chore: update .gitignore for VS
+   Code <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/07ad13e6e226c6718a597f0d6d05d629940c3b58>`__
+-  **Patrizio Gelosi** on 2025-09-16: `feat: add LangChain
+   backend <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/1a31d0b34346aa00783a1d989ddfc40fe7d34232>`__
+-  **Patrizio Gelosi** on 2025-09-16: `feat: LangChain token-based
+   memory <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/d8bb2295b67635dd500411d38cd4d0c519980cc9>`__
+-  **Patrizio Gelosi** on 2025-09-17: `feat: add Google Gemini support
+   in
+   LangChain <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/f667ec5b6413b1fe8c7d9ab62a02ae979960f454>`__
+-  **Patrizio Gelosi** on 2025-09-18: `feat: switch LangChain memory to
+   Gerrit
+   retrieval <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/82f0375e49a928dfdf943583e00f6443eaed01b4>`__
+-  **Patrizio Gelosi** on 2025-09-18: `feat: LangChain: enforce JSON
+   responses <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/adc31d7b9e6f08c04103db9ae366d4733d16af64>`__
+-  **Patrizio Gelosi** on 2025-09-19: `feat: add Moonshot AI support in
+   LangChain <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/c18072d7d24daa7dbfd1d051544c06d08b25f2e3>`__
+-  **Patrizio Gelosi** on 2025-09-19: `chore: reorganize test
+   packages <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/93dadcfa2633047175e2a6403f35d40108386f2a>`__
+-  **Patrizio Gelosi** on 2025-09-19: `feat: use default model
+   values <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/0902882258ff93ad9e4b1698b73695ebc970ce9e>`__
+-  **Patrizio Gelosi** on 2025-09-22: `feat: use default domain
+   values <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/1e375f5073ddb64ed7ab311e8164973606da8172>`__
+-  **Patrizio Gelosi** on 2025-09-23: `fix: LangChain token
+   estimators <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/4442252623196e35dd037a04d16797e664711d71>`__
+-  **Patrizio Gelosi** on 2025-09-24: `feat: LangChain: support
+   ON_DEMAND context
+   policy <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/91eef3aea683fb2c479937bc65f03ce6b31654e7>`__
+-  **Patrizio Gelosi** on 2025-09-24: `refactor: move shared code into
+   common
+   packages <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/27b4c69cde1be1aad6ebccfb02cd10a64bb7a7bc>`__
+
+git-analyzer
+------------
+
+Repository URL: https://github.com/amarula/git-analyzer.git
+
+.. _summary-of-the-contributions-by-author-1:
+
+Summary of the contributions by author:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+**Andrea Calabrese**: Andrea Calabrese added Rust coreutils to the
+configuration, enhancing the software’s functionality.
+
+Here the commits of **Andrea Calabrese** in detail:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+-  **Andrea Calabrese** on 2025-09-10: `Add Rust coreutils to
+   config <https://github.com/amarula/git-analyzer/commit/773238d08b46f40e4497395f5cbac3319fb4a025>`__
+
+**Dario Binacchi**: Dario Binacchi made a significant contribution to
+the software development by adding the Drogon repository to the
+config.ini file in the Amarula project. This enhancement suggests a
+proactive approach to optimizing the project’s functionality and
+potentially improving its performance. The addition of the Drogon
+repository could indicate a strategic decision to leverage additional
+resources or features for the project.
+
+Here the commits of **Dario Binacchi** in detail:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+-  **Dario Binacchi** on 2025-09-24: `amarula: config.ini: Add drogon
+   repo <https://github.com/amarula/git-analyzer/commit/4389cc01f73c0383dcbdf1e7dda6e68cc7641a63>`__
+
+**Michael Trimarchi**: Michael Trimarchi contributed a new plugin called
+“explain-error-plugin” to the amarula repository. This plugin is
+designed to analyze build reports. This addition indicates a focus on
+improving build processes and error analysis within the project. The
+introduction of this plugin suggests a commitment to enhancing the
+development workflow and ensuring better error handling.
+
+.. _here-the-commits-of-michael-trimarchi-in-detail-1:
+
+Here the commits of **Michael Trimarchi** in detail:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+-  **Michael Trimarchi** on 2025-10-01: `amarula: Add
+   explain-error-plugin
+   repo <https://github.com/amarula/git-analyzer/commit/6ed6a35a54ec4dbe99e2a956cc1ee4914d56c537>`__
+
+meta-mend
+---------
+
+Repository URL: https://github.com/amarula/meta-mend.git
+
+.. _summary-of-the-contributions-by-author-2:
+
+Summary of the contributions by author:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+**Michael Trimarchi**: Michael Trimarchi made several key contributions
+over the past month. They improved the functionality of the
+\`mend.bbclass\` by passing the mend URL to the UA CLI, using the
+\`MEND_URL\` for the REST API, adding debug output for waiting time in
+async method, and making \`mend_get_async_report\` more generic to
+download any report type. Additionally, they updated the documentation
+in the \`README.md\` regarding the change to the PDF report format, now
+stored in a zip file for large reports. Moreover, they implemented the
+use of async API for report generation, ensuring the readiness of the
+report to be downloaded in zip format instead of PDF. These changes
+enhance flexibility and efficiency in report generation and handling
+within the software.
+
+.. _here-the-commits-of-michael-trimarchi-in-detail-2:
+
+Here the commits of **Michael Trimarchi** in detail:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+-  **Michael Trimarchi** on 2025-09-06: `mend.bbclass: Use async api for
+   report
+   generation <https://github.com/amarula/meta-mend/commit/514bba3d745e45c476a1df2b69490834eefbd286>`__
+-  **Michael Trimarchi** on 2025-09-07: `README.md: Update documentation
+   for pdf report format
+   change <https://github.com/amarula/meta-mend/commit/6ade15934c1f8737508e4e94e11ebdddc7ae2a40>`__
+-  **Michael Trimarchi** on 2025-09-07: `classes: mend.bbclass: Make
+   mend_get_async_report more
+   generic <https://github.com/amarula/meta-mend/commit/04b2d19a7ea033d12c18d7b821859f3120f7cfeb>`__
+-  **Michael Trimarchi** on 2025-09-08: `classes: mend.bbclass: Add
+   debug output for waiting time in async
+   method <https://github.com/amarula/meta-mend/commit/43f9419e26d1721e2774bc6771794d7fbdd8244b>`__
+-  **Michael Trimarchi** on 2025-09-08: `classes: mend.bbclass: Use the
+   MEND_URL for the rest
+   api <https://github.com/amarula/meta-mend/commit/c14db68b65c48e73ea2f666213d3aa8608174ec2>`__
+-  **Michael Trimarchi** on 2025-09-08: `classes: mend.bbclass: Pass the
+   mend url to the ua
+   cli <https://github.com/amarula/meta-mend/commit/c66c93c98e5dbefedbea37589f0a1c14dfbbe54a>`__
+
+**Ondrej Pik**: Ondrej Pik made significant contributions to the
+software development process over the past month. They improved the
+\`mend.bbclass\` by ensuring the scanning process focuses on open source
+projects and avoids closed-source packages, enhancing the overall
+efficiency and accuracy of vulnerability discovery. Additionally, Ondrej
+Pik fixed the URL for the mend agent, ensuring it now ends with ‘/agent’
+to align with REST API requirements, thereby enhancing the service’s
+functionality and user experience. These changes showcase a commitment
+to optimizing security measures and streamlining operations within the
+software development environment.
+
+Here the commits of **Ondrej Pik** in detail:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+-  **Ondrej Pik** on 2025-09-28: `classes: mend.bbclass: Fix mend url
+   for
+   agent <https://github.com/amarula/meta-mend/commit/fc09ff6d794a9760e402a79bd23388811c0d65dc>`__
+-  **Ondrej Pik** on 2025-09-28: `classes: mend.bbclass: Skip packages
+   with closed
+   license <https://github.com/amarula/meta-mend/commit/dcb66ba02c465ba4bb13a944182c307a686548f6>`__
+
+nlcpp
+-----
+
+Repository URL: https://github.com/amarula/nlcpp.git
+
+.. _summary-of-the-contributions-by-author-3:
+
+Summary of the contributions by author:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+**Roman Smrž**: Roman Smrž made several significant contributions over
+the past month to the software development project. These include adding
+priority accessors to the Route object, exporting configuration for
+CMake find package, introducing methods to retrieve a list of next hops
+from a route, and incorporating protocol and family wrappers in the
+Route class. Additionally, Roman implemented a RouteCache wrapper class,
+refactored common functionality of typed caches to a shared template,
+and added methods to obtain generic family names and IDs from interface
+classes. Furthermore, Roman enhanced error handling by providing error
+codes from Exception objects, added socket methods to join and leave
+multicast groups, and introduced a generic netlink message helper class.
+These contributions demonstrate Roman’s commitment to improving
+functionality, error handling, and code organization within the project.
+
+Here the commits of **Roman Smrž** in detail:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+-  **Roman Smrž** on 2025-08-26: `Netlink
+   messages <https://github.com/amarula/nlcpp/commit/239fab6d22ac16f0cfecb760307b553317190108>`__
+-  **Roman Smrž** on 2025-08-26: `Callback wrappers in netlink
+   socket <https://github.com/amarula/nlcpp/commit/caf0202e9919bacf1a8ce60fcbae1c3413afb429>`__
+-  **Roman Smrž** on 2025-08-27: `Return success boolean from route
+   netlink
+   modifications <https://github.com/amarula/nlcpp/commit/16fce3ff554b59fa59bcd7deaaa2885163b48771>`__
+-  **Roman Smrž** on 2025-08-27: `Generic netlink message helper
+   class <https://github.com/amarula/nlcpp/commit/67c694a852ab580e56e47da4189119c17caa2e5c>`__
+-  **Roman Smrž** on 2025-08-27: `Get interface command in nl80211
+   netlink
+   family <https://github.com/amarula/nlcpp/commit/e38bd1281f40e1bd6fc7e8d56cf44c78dae412d8>`__
+-  **Roman Smrž** on 2025-09-05: `Route address scope and
+   label <https://github.com/amarula/nlcpp/commit/51fd11b6d8cf69348072b7232876f77630c00b30>`__
+-  **Roman Smrž** on 2025-09-05: `Ctrl generic family
+   interface <https://github.com/amarula/nlcpp/commit/dd65f5b0aa256a259fd395bf0616ba10c4acacef>`__
+-  **Roman Smrž** on 2025-09-08: `Socket methods to join and leave
+   mulitcast
+   group <https://github.com/amarula/nlcpp/commit/c309067c7817d7691b295d848fbf09fba5362571>`__
+-  **Roman Smrž** on 2025-09-08: `Provide error code from Exception
+   object <https://github.com/amarula/nlcpp/commit/be0fe45cb06ce653dd6af760867a274ba6b0b698>`__
+-  **Roman Smrž** on 2025-09-08: `Build shared library by
+   default <https://github.com/amarula/nlcpp/commit/0ea067886b038d04d2e34ac3acae47c2607193e2>`__
+-  **Roman Smrž** on 2025-09-09: `Use imported targets from PkgConfig in
+   CMake <https://github.com/amarula/nlcpp/commit/80de50c20e22fae79c2523b6d824c0bc1ae3575f>`__
+-  **Roman Smrž** on 2025-09-10: `Methods needed to poll and receive
+   events <https://github.com/amarula/nlcpp/commit/fa4661e5f074a8b8649a4caebbbf92d81a0d246c>`__
+-  **Roman Smrž** on 2025-09-11: `Disable sequence checking to receive
+   multicast
+   messages <https://github.com/amarula/nlcpp/commit/bd28864b59d1eb27c6c53d173617705659b5ff74>`__
+-  **Roman Smrž** on 2025-09-12: `Add family accessors to address
+   class <https://github.com/amarula/nlcpp/commit/9a92bcf410df819c2513d282ce3512c8f9108c23>`__
+-  **Roman Smrž** on 2025-09-12: `Use boolean return value for route
+   manipulation <https://github.com/amarula/nlcpp/commit/260b1440e337bdb493fa78dd660b8161a1ab3ac8>`__
+-  **Roman Smrž** on 2025-09-15: `Methods to get generic family name and
+   id from interface
+   classes <https://github.com/amarula/nlcpp/commit/bdfa2a9b71d08d582e405f9d8eb1b21d550c7463>`__
+-  **Roman Smrž** on 2025-09-16: `Refactor common functionality of typed
+   caches to shared
+   template <https://github.com/amarula/nlcpp/commit/9a110b49dfe695f00882abc35ac5cc220647add6>`__
+-  **Roman Smrž** on 2025-09-17: `Add route cache
+   wrapper <https://github.com/amarula/nlcpp/commit/c47917c617550b468058f98e6c14392af7513493>`__
+-  **Roman Smrž** on 2025-09-17: `Add protocol and family wrappers in
+   Route <https://github.com/amarula/nlcpp/commit/c80bd5ca8ac9d1327299a3c3edeab57f80fde0de>`__
+-  **Roman Smrž** on 2025-09-17: `Method to get list of next hops from
+   route <https://github.com/amarula/nlcpp/commit/a99b74907901132a3643c4a2a84a9f1248e4c7a4>`__
+-  **Roman Smrž** on 2025-09-17: `Use CMake build and install interfaces
+   for public
+   headers <https://github.com/amarula/nlcpp/commit/6ae05ed08929ca335cf10373b3b7383ff9b8fabd>`__
+-  **Roman Smrž** on 2025-09-17: `Export config for CMake find
+   package <https://github.com/amarula/nlcpp/commit/8af60d68a425b6c9439ebc1d400c60106067e751>`__
+-  **Roman Smrž** on 2025-09-17: `Version
+   0.1.1 <https://github.com/amarula/nlcpp/commit/affd1db71c132a40beeb10dca5cc9905c431a923>`__
+-  **Roman Smrž** on 2025-09-17: `Add priority accessors to Route
+   object <https://github.com/amarula/nlcpp/commit/689fae9f528c204b149ce715719c0402c981b855>`__
+
+explain-error-plugin
+--------------------
+
+Repository URL: https://github.com/jenkinsci/explain-error-plugin
+
+.. _summary-of-the-contributions-by-author-4:
+
+Summary of the contributions by author:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+**Michael Nazzareno Trimarchi**: Michael Nazzareno Trimarchi moved the
+plugin to utilize langchain4j in commit #32, showcasing a significant
+feature enhancement. This underscores a proactive approach to
+integrating cutting-edge technology for improved functionality. The
+collaborative effort with Xianpeng Shen and Copilot demonstrates a
+commitment to leveraging diverse expertise. This change likely aligns
+with a broader strategy to enhance the plugin’s performance and expand
+its capabilities. The decision to update the technology stack reflects a
+forward-thinking attitude towards software development.
+
+Here the commits of **Michael Nazzareno Trimarchi** in detail:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+-  **Michael Nazzareno Trimarchi** on 2025-10-01: `feat: Move the plugin
+   to use langchain4j
+   (#32) <https://github.com/jenkinsci/explain-error-plugin/commit/0649b29a532fbb0f661147489c574306f2b568ff>`__
+
+coreutils
+---------
+
+Repository URL: https://github.com/uutils/coreutils.git
+
+.. _summary-of-the-contributions-by-author-5:
+
+Summary of the contributions by author:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+**Andrea Calabrese**: Andrea Calabrese made significant contributions to
+the software development project over the past month. They added a
+benchmark for base64, enhancing performance monitoring by including
+tests for encoding, decoding, and decoding while ignoring garbage
+characters. Additionally, Andrea improved the fast_decode function
+within the base_common module, optimizing its efficiency by reusing
+input from the has_padding function and reducing computation overhead.
+These changes aim to address delays in processing larger files. Their
+commitment to performance optimization and code efficiency demonstrates
+a proactive approach to improving the software’s functionality.
+
+.. _here-the-commits-of-andrea-calabrese-in-detail-1:
+
+Here the commits of **Andrea Calabrese** in detail:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+-  **Andrea Calabrese** on 2025-09-09: `base_common: re-using input from
+   has_padding <https://github.com/uutils/coreutils/commit/f39f2a769a97ae3a6279a08686dfb8ae1194289c>`__
+-  **Andrea Calabrese** on 2025-09-09: `base_common: fast_decode
+   improvements <https://github.com/uutils/coreutils/commit/f953ccecef19f5b4127d9899332dbf20f5217e01>`__
+-  **Andrea Calabrese** on 2025-09-29: `Add benchmark for
+   base64 <https://github.com/uutils/coreutils/commit/60b9b876bc92641e168a6dd982af556290a7576e>`__
+
+buildroot
+---------
+
+Repository URL: https://gitlab.com/buildroot.org/buildroot.git
+
+.. _summary-of-the-contributions-by-author-6:
+
+Summary of the contributions by author:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+**Adam Duskett**: Adam Duskett made several significant contributions in
+software development over the past month. They updated the \`foot\`
+package to version 1.22.3, requiring libxkbcommon >= 1.8.0 and
+implementing necessary changes. Additionally, they bumped the \`fcft\`
+package to version 3.3.1 and the \`libxkbcommon\` package to version
+1.9.2, addressing website changes, sha256sum calculation, and license
+updates. Furthermore, they upgraded \`utf8proc\` to version 2.10.0,
+adding Unicode 16 support. In terms of package management, Adam Duskett
+removed the outdated \`dmenu-wayland\` package and introduced a new
+\`wmenu\` package, which serves as a dynamic menu replacement for
+Wayland compositors. They also updated the sway package to use \`wmenu\`
+instead of \`dmenu- wayland\`. Finally, they removed themselves from the
+sway packages due to unaddressed patch submissions. Overall, Adam
+Duskett’s contributions encompassed version updates, package changes,
+and improvements in compatibility and functionality within the software
+ecosystem.
+
+Here the commits of **Adam Duskett** in detail:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+-  **Adam Duskett** on 2025-05-14: `package/wmenu: new
+   package <https://gitlab.com/buildroot.org/buildroot/commit/1c3653466473c019889a361979e652b238b83a2e>`__
+-  **Adam Duskett** on 2025-05-14: `package/dmenu-wayland: remove
+   package <https://gitlab.com/buildroot.org/buildroot/commit/696113c2b7cd0eb46e705b7c37956303e359ebeb>`__
+-  **Adam Duskett** on 2025-05-14: `package/utf8proc: bump version to
+   2.10.0 <https://gitlab.com/buildroot.org/buildroot/commit/74b502a54e9632e74ab14a57f045191ca03f2767>`__
+-  **Adam Duskett** on 2025-05-14: `package/libxkbcommon: bump to
+   version
+   1.9.2 <https://gitlab.com/buildroot.org/buildroot/commit/8abbc307a5b3c4bb2fab264b804a74754f87f1df>`__
+-  **Adam Duskett** on 2025-05-14: `package/fcft: bump to version
+   3.3.1 <https://gitlab.com/buildroot.org/buildroot/commit/92ed32439c97de7aeefcf6fc73f5edfa17aa7fdf>`__
+-  **Adam Duskett** on 2025-05-14: `package/foot: bump version to
+   1.22.3 <https://gitlab.com/buildroot.org/buildroot/commit/ae33520d998313169ebd57de8de99e0c24a1ad4f>`__
+-  **Adam Duskett** on 2025-09-25: `DEVELOPERS: Remove
+   adam.duskett@amarulasolutions from sway
+   packages <https://gitlab.com/buildroot.org/buildroot/commit/20f99312c9ae6b20da8a5c801d972d76c8c0784f>`__
+
+**Andrea Ricchi**: Andrea Ricchi contributed to the integration of
+cutekeyboard in the DEVELOPERS list and updated the package version to
+1.4.0. These changes indicate progress in incorporating the cutekeyboard
+feature and ensuring the software is up to date. The commits suggest a
+focus on enhancing the user experience with cutekeyboard, possibly
+introducing new functionalities or improvements. Overall, Andrea
+Ricchi’s contributions over the month appear to be centered around
+developing and maintaining the cutekeyboard feature within the software,
+indicating a commitment to ongoing development and refinement of this
+specific aspect.
+
+Here the commits of **Andrea Ricchi** in detail:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+-  **Andrea Ricchi** on 2025-09-04: `package/cutekeyboard: bump version
+   to
+   1.4.0 <https://gitlab.com/buildroot.org/buildroot/commit/cb0c193c81fe0afb54de5d445b8c9dfa2831cc92>`__
+-  **Andrea Ricchi** on 2025-09-04: `DEVELOPERS: add Andrea Ricchi for
+   cutekeyboard <https://gitlab.com/buildroot.org/buildroot/commit/d652b20128b8498777db4788ae14049bcac3d58d>`__
+
+**Dario Binacchi**: Dario Binacchi made significant contributions over
+the past month, focusing on updating various packages to newer versions.
+Some notable changes include bumping package versions such as erofs-
+utils to 1.8.10, evtest to 1.36, and enet to 1.3.18. Improvements were
+made to package cutekeyboard to ensure compliance with
+release-monitoring.org. Additionally, Dario Binacchi resolved issues and
+integrated security fixes for packages like connman and atop to address
+CVE vulnerabilities. Overall, Dario Binacchi’s contributions involved
+updating, fixing, and enhancing various software packages across the
+development environment.
+
+.. _here-the-commits-of-dario-binacchi-in-detail-1:
+
+Here the commits of **Dario Binacchi** in detail:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+-  **Dario Binacchi** on 2025-09-02: `package/uuu: bump to version
+   1.5.233 <https://gitlab.com/buildroot.org/buildroot/commit/10a831794bbb276fca2666b77fac8692654c3752>`__
+-  **Dario Binacchi** on 2025-09-02: `package/armadillo: bump to version
+   15.0.1 <https://gitlab.com/buildroot.org/buildroot/commit/597d5d10ec77f7655e2608c2c45a257a9be50352>`__
+-  **Dario Binacchi** on 2025-09-02: `package/pocketpy: bump to version
+   2.1.1 <https://gitlab.com/buildroot.org/buildroot/commit/7489133fe11c986600760949e24b3b6824158ac4>`__
+-  **Dario Binacchi** on 2025-09-15: `package/inih: bump to version
+   62 <https://gitlab.com/buildroot.org/buildroot/commit/2b2191cff514e9b9397aba520588d22269e3ad99>`__
+-  **Dario Binacchi** on 2025-09-15: `package/armadillo: bump to version
+   15.0.2 <https://gitlab.com/buildroot.org/buildroot/commit/ef26611cc37574cc7209200847339808b4d98f38>`__
+-  **Dario Binacchi** on 2025-09-18: `package/acsccid: bump to version
+   1.1.12 <https://gitlab.com/buildroot.org/buildroot/commit/cbc1dbc8895e92d51dd7c0c93c704fc5312fbd3c>`__
+-  **Dario Binacchi** on 2025-09-18: `package/aespipe: bump to version
+   2.4j <https://gitlab.com/buildroot.org/buildroot/commit/e94b305e1e248cea18e2b44dfe45cdc8dd2b5a59>`__
+-  **Dario Binacchi** on 2025-09-18: `package/apr: bump to version
+   1.7.6 <https://gitlab.com/buildroot.org/buildroot/commit/2ad2eb4495ba260cdc71d5fb51f97d9ec2a6b1b8>`__
+-  **Dario Binacchi** on 2025-09-20: `package/atf: bump to version
+   0.23 <https://gitlab.com/buildroot.org/buildroot/commit/d6c3257e931ed256e3ebcd78938f6146bba8586f>`__
+-  **Dario Binacchi** on 2025-09-20: `DEVELOPERS: add Dario Binacchi for
+   atf <https://gitlab.com/buildroot.org/buildroot/commit/713fbb1f39f91a7f6b5ac70d8ceec1860ff11da4>`__
+-  **Dario Binacchi** on 2025-09-20: `package/cmocka: bump to version
+   1.1.8 <https://gitlab.com/buildroot.org/buildroot/commit/308735139901237bef012150f39ad815275f107a>`__
+-  **Dario Binacchi** on 2025-09-20: `DEVELOPERS: add Dario Binacchi for
+   cmocka <https://gitlab.com/buildroot.org/buildroot/commit/190c4823353db294e60773d3e4be6d51b1f08425>`__
+-  **Dario Binacchi** on 2025-09-21: `package/atop: security bump to
+   version
+   2.11.1 <https://gitlab.com/buildroot.org/buildroot/commit/45e7fe281160fe645e26ad58775aa5e384dbf222>`__
+-  **Dario Binacchi** on 2025-09-21: `package/atop: bump to version
+   2.12.0 <https://gitlab.com/buildroot.org/buildroot/commit/5d2abdc66ca687c926e1c4546c12aca7f7d72ca4>`__
+-  **Dario Binacchi** on 2025-09-22: `package/armadillo: bump to version
+   15.0.3 <https://gitlab.com/buildroot.org/buildroot/commit/af87b91b8f5bf6977cd205c5bacf2d6f020832a0>`__
+-  **Dario Binacchi** on 2025-09-23: `DEVELOPERS: add Dario Binacchi for
+   connman <https://gitlab.com/buildroot.org/buildroot/commit/5f63c441f8f23d09b14df79b2a28f27f905d7427>`__
+-  **Dario Binacchi** on 2025-09-23: `package/connman: security bump to
+   version
+   1.45 <https://gitlab.com/buildroot.org/buildroot/commit/f0b011e0aa497217385d9dc5af887757667281fe>`__
+-  **Dario Binacchi** on 2025-09-24: `package/bc: bump to
+   1.08.2 <https://gitlab.com/buildroot.org/buildroot/commit/42d36a4133f2304d9cbaa7632ea794280095898a>`__
+-  **Dario Binacchi** on 2025-09-24: `DEVELOPERS: add Dario Binacchi for
+   bc <https://gitlab.com/buildroot.org/buildroot/commit/d2bd4655259299fded94727e94a4fa4389113202>`__
+-  **Dario Binacchi** on 2025-09-25: `package/cutekeyboard: fix
+   CUTEKEYBOARD_VERSION <https://gitlab.com/buildroot.org/buildroot/commit/14885464292df19e664d95ade46a0d13cf0d25c5>`__
+-  **Dario Binacchi** on 2025-09-29: `package/empty: bump to version
+   0.6.23d <https://gitlab.com/buildroot.org/buildroot/commit/f9dc76a06d29cae2a9cab3a1ed396e3b87d30282>`__
+-  **Dario Binacchi** on 2025-09-29: `DEVELOPERS: add Dario Binacchi for
+   empty <https://gitlab.com/buildroot.org/buildroot/commit/49974951907e9d115e556043efeae1334fddf90f>`__
+-  **Dario Binacchi** on 2025-09-29: `package/enet: bump to version
+   1.3.18 <https://gitlab.com/buildroot.org/buildroot/commit/65c8f868e4d2da35164fa2905b73a0c3fe52ed0a>`__
+-  **Dario Binacchi** on 2025-09-30: `package/evtest: bump version to
+   1.36 <https://gitlab.com/buildroot.org/buildroot/commit/03d413ee883f2415e2674bcc7219b3fd7586aff6>`__
+-  **Dario Binacchi** on 2025-09-30: `package/erofs-utils: bump to
+   version
+   1.8.10 <https://gitlab.com/buildroot.org/buildroot/commit/aa8d5d89f75753aba6e9fd9fa6802371cb3c4758>`__
+
+This overview highlights the continuous effort and innovation from our
+development team. We look forward to bringing even more exciting updates
+in the future!
+
+--------------
+
+*Generated by the Git Commit Article Generator*
