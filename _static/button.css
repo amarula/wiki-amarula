@@ -1,0 +1,26 @@
+.contact-button-inline {
+    /* Standard Button Styling */
+    display: inline-block;
+    padding: 5px 12px;
+    background-color: #afab04;
+    color: white !important; /* !important to override theme link color */
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 0.8em; /* Smaller than title */
+    font-weight: bold;
+    transition: background-color 0.3s;
+    /* Set custom anchor for positioning */
+    position: relative;
+    float: right;            /* Pull to the right */
+    margin-top: -25px;       /* Move up to align with the title */
+    margin-left: 15px;       /* Space from content */
+}
+
+.contact-button-inline:hover {
+    background-color: #fdcb0e;
+}
+
+/* Clear the float for the content immediately following the button */
+.contact-button-clear {
+    clear: right;
+}

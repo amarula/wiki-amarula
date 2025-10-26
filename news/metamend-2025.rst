@@ -1,6 +1,13 @@
 ==============================================================================
 Amarula Launches meta-mend: Enhancing Yocto Security with Mend SCA Integration
 ==============================================================================
+.. raw:: html
+
+    <a href="https://www.amarulasolutions.com/contact" class="contact-button-inline">
+        Contact Us
+    </a>
+    <div class="contact-button-clear"></div>
+
 
 **Treviso, Italy - May 17, 2025** - Amarula, a company specializing in security solutions and dedicated to assisting organizations with compliance, including the upcoming Cyber Resilience Act (CRA) in Europe, today announced the release of ``meta-mend``, a new layer for the Yocto Project. This innovative layer provides seamless integration of Mend Software Composition Analysis (SCA) directly into the Yocto build process, empowering developers to proactively identify and mitigate open-source vulnerabilities within their embedded Linux distributions.
 

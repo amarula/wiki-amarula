@@ -1,5 +1,12 @@
 Firmware camera controller based on ESP32
 ===============================================
+.. raw:: html
+
+    <a href="https://www.amarulasolutions.com/contact" class="contact-button-inline">
+        Contact Us
+    </a>
+    <div class="contact-button-clear"></div>
+
 
 About This
 ----------

@@ -1,5 +1,11 @@
 Warning-ng Jenkins plugin codechecker integration
 ==============================================================
+.. raw:: html
+
+    <a href="https://www.amarulasolutions.com/contact" class="contact-button-inline">
+        Contact Us
+    </a>
+    <div class="contact-button-clear"></div>
 
 .. figure:: /images/code-checker-warnings.png
    :align: center

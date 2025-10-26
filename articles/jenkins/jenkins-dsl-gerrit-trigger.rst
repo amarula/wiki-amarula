@@ -3,6 +3,13 @@
 =======================================================
 DSL Pipeline for Espressif Project Verification Builds
 =======================================================
+.. raw:: html
+
+    <a href="https://www.amarulasolutions.com/contact" class="contact-button-inline">
+        Contact Us
+    </a>
+    <div class="contact-button-clear"></div>
+
 
 This article outlines the process of setting up a Jenkins DSL (Domain Specific Language) pipeline for automated verification builds of Espressif projects, integrated with Gerrit for code review. This setup ensures that every proposed change undergoes a thorough build and test process before being merged, enhancing code quality and stability.
 

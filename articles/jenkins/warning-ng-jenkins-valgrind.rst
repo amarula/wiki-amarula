@@ -1,5 +1,12 @@
 Warning-ng Jenkins plugin now can report Valgrind memory leak
 ==============================================================
+.. raw:: html
+
+    <a href="https://www.amarulasolutions.com/contact" class="contact-button-inline">
+        Contact Us
+    </a>
+    <div class="contact-button-clear"></div>
+
 
 .. figure:: /images/valgrind-warning.png
    :align: center

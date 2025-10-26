@@ -1,5 +1,12 @@
 Building Secure Yocto Images: An In-Depth Look at a Jenkins Pipeline with Mend SCA Integration 🔒
 =================================================================================================
+.. raw:: html
+
+    <a href="https://www.amarulasolutions.com/contact" class="contact-button-inline">
+        Contact Us
+    </a>
+    <div class="contact-button-clear"></div>
+
 
 .. figure:: /images/mend-security.png
    :align: center

@@ -3,6 +3,13 @@
 ============================================================================
 Tightly Coupled CI/CD: Integrating OS Builds with Labgrid Testing in Jenkins
 ============================================================================
+.. raw:: html
+
+    <a href="https://www.amarulasolutions.com/contact" class="contact-button-inline">
+        Contact Us
+    </a>
+    <div class="contact-button-clear"></div>
+
 
 This article outlines a robust Jenkins pipeline architecture designed for operating system (OS) development, where an Upstream
 Pipeline is responsible for building the OS image and a Downstream Pipeline, typically running functional validation

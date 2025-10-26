@@ -1,6 +1,5 @@
 _build
 _templates
-_static
 Makefile
 .idea/*
 .vscode/*

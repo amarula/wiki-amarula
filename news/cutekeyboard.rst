@@ -1,5 +1,12 @@
 CuteKeyboard Now Part of the Yocto Project!
 ===========================================
+.. raw:: html
+
+    <a href="https://www.amarulasolutions.com/contact" class="contact-button-inline">
+        Contact Us
+    </a>
+    <div class="contact-button-clear"></div>
+
 
 We're excited to announce that `CuteKeyboard <https://amarula.github.io/cutekeyboard/>`_,
 a popular open-source Qt virtual keyboard, is now officially included in the Yocto Project's 

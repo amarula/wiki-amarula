@@ -1,5 +1,12 @@
 Optimizing Yocto Builds with Jenkins and Resource Throttling
 ============================================================
+.. raw:: html
+
+    <a href="https://www.amarulasolutions.com/contact" class="contact-button-inline">
+        Contact Us
+    </a>
+    <div class="contact-button-clear"></div>
+
 
 .. figure:: /images/yocto-pipeline.png
    :align: center
