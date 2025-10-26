@@ -13,6 +13,7 @@ Jenkins technologies
    :maxdepth: 1
    :caption: Contents:
 
+   how-validate-os-build-labgrid-testing
    warning-ng-jenkins-valgrind
    warning-ng-jenkins-codechecker
    jenkins-yocto-kas-pipeline
