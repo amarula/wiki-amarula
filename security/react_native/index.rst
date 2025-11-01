@@ -4,7 +4,7 @@
    contain the root `toctree` directive.
 
 React Native and vulnerabilities
-======
+================================
 
 .. toctree::
    :maxdepth: 1
