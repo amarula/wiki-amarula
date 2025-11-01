@@ -1,0 +1,309 @@
+Today 2025-11-01 Developments: A Look at Our Codebase (1 Months Review)
+=======================================================================
+
+We’re excited to share a summary of the significant progress made across
+our repositories in the last 1 months. Our dedicated team has been busy
+pushing new features, refining existing functionalities, and enhancing
+the overall stability of our products.
+
+Here’s a breakdown of key contributions by repository:
+
+flutekeyboard
+-------------
+
+Repository URL: https://github.com/amarula/flutekeyboard.git
+
+Summary of the contributions by author:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+**Andrea Ricchi**: Andrea Ricchi made a significant contribution to the
+FluteKeyboard project by adding an option to hide the ‘space’ text. This
+new feature enhances user experience by providing customization options.
+This improvement demonstrates Andrea Ricchi’s commitment to refining the
+functionality of the software. The addition of this feature aligns with
+the project’s goal of offering a more flexible and user-friendly
+interface. This update showcases Andrea Ricchi’s attention to detail and
+responsiveness to user feedback. The new option to hide the ‘space’ text
+contributes to the overall usability and versatility of the
+FluteKeyboard software. This enhancement reflects Andrea Ricchi’s
+dedication to continuously improving the project within a short
+timeframe.
+
+Here the commits of **Andrea Ricchi** in detail:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+-  **Andrea Ricchi** on 2025-10-31: `FluteKeyboard: add option to hide
+   ‘space’
+   text <https://github.com/amarula/flutekeyboard/commit/4b91ee29cf939c8292c9b433855a72e1189a7c65>`__
+
+libcppconnman
+-------------
+
+Repository URL: https://github.com/amarula/libcppconnman.git
+
+.. _summary-of-the-contributions-by-author-1:
+
+Summary of the contributions by author:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+**Eduardo Gonzalez**: In the past month, Eduardo Gonzalez made
+significant contributions to the software development project. They
+added version and SOVERSION properties to the CMakeLists, ensuring the
+library files are versioned according to standard UNIX conventions. This
+change addressed issue #19. Additionally, Eduardo Gonzalez enforced
+building gtest as a static library in the tests, resolving problem #14
+without requiring the installation of the shared library. These
+improvements enhance the project’s stability and maintainability,
+showcasing Eduardo Gonzalez’s commitment to quality software
+development.
+
+Here the commits of **Eduardo Gonzalez** in detail:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+-  **Eduardo Gonzalez** on 2025-10-13: `tests: Force gtest static
+   lib <https://github.com/amarula/libcppconnman/commit/8f185f8f2220edda62a071d4532d9a88aff7981a>`__
+-  **Eduardo Gonzalez** on 2025-10-23: `CMakeLists: Add VERSION and
+   SOVERSION
+   properties <https://github.com/amarula/libcppconnman/commit/eb2370e7173cef202da34727d0d2160566631520>`__
+
+**Margherita Milani**: Margherita Milani introduced a simple header-only
+logger, log.hpp, allowing for runtime logging enablement or disablement
+using specific macros. This addition enhances the software’s logging
+capabilities, providing more control and flexibility for developers. The
+new logger is a valuable tool for debugging and monitoring the
+application’s behavior, contributing to improved overall code quality
+and maintainability.
+
+Here the commits of **Margherita Milani** in detail:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+-  **Margherita Milani** on 2025-10-03: `Add simple header-only logger
+   with
+   macro <https://github.com/amarula/libcppconnman/commit/09147c658bf0b24c583acfb51cfe29606014de73>`__
+
+explain-error-plugin
+--------------------
+
+Repository URL: https://github.com/jenkinsci/explain-error-plugin
+
+.. _summary-of-the-contributions-by-author-2:
+
+Summary of the contributions by author:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+**Michael Nazzareno Trimarchi**: Michael Nazzareno Trimarchi made a
+significant contribution by fixing the visibility of the ‘Explain Error’
+button (#46) to prevent it from displaying when the build is successful.
+The testing involved deploying the changes in a local instance to verify
+failure and success build scenarios. This improvement ensures a more
+accurate user experience by only showing the button when necessary.
+
+Here the commits of **Michael Nazzareno Trimarchi** in detail:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+-  **Michael Nazzareno Trimarchi** on 2025-10-31: `Fix ‘Explain Erorr’
+   button visibility
+   (#46) <https://github.com/jenkinsci/explain-error-plugin/commit/3109af474f503e5b797183558e63e36b6aafc16f>`__
+
+buildroot
+---------
+
+Repository URL: https://gitlab.com/buildroot.org/buildroot.git
+
+.. _summary-of-the-contributions-by-author-3:
+
+Summary of the contributions by author:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+**Dario Binacchi**: In the past month, Dario Binacchi made significant
+contributions to various software packages. They updated packages such
+as \`bdwgc\`, \`bcm2835\`, \`avrdude\`, \`bcc\`, \`atop\`, \`atkmm\`,
+\`armadillo\`, \`libgsasl\`, \`libbytesize\`, \`libevdev\`, \`libexif\`,
+\`libgeotiff\`, \`libglvnd\`, \`libgphoto2\`, \`less\`, \`leptonica\`,
+\`json-glib\`, \`jpeg-turbo\`, \`jitterentropy-library\`, \`jimtcl\`,
+\`iwd\`, \`hwloc\`, \`highway\`, \`gupnp\`, \`ifupdown\`,
+\`libarchive\`, \`ti_am62x_sk\`, \`stm32mp1*_dk*\`,
+\`stm32f769_disco_sd\`, \`stm32f746_disco_sd\`, \`stm32f429_disco_xip\`,
+\`ledmon\`, \`fscryptctl\`, \`gumbo-parser\`, \`gssdp\`, \`gnuchess\`,
+\`gsl\`, \`uboot\`, \`freeipmi\`, \`fping\`, \`fcft\`, \`fastd\`,
+\`fio\`, \`faketime\`, \`fakeroot\`, \`expat\`, and \`iproute2\`. These
+updates included version bumps, security fixes, bug patches, and license
+updates across a wide range of software packages. Dario Binacchi also
+added themselves as a developer for \`libgphoto2\` and \`less\`. The
+contributions focused on enhancing functionality, improving security,
+and ensuring compatibility with the latest versions of dependencies.
+Overall, Dario Binacchi’s contributions have positively impacted the
+stability and performance of the software packages they worked on.
+
+Here the commits of **Dario Binacchi** in detail:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+-  **Dario Binacchi** on 2025-10-02: `package/expat: security bump to
+   version
+   2.7.2 <https://gitlab.com/buildroot.org/buildroot/commit/130b35ddcf6370d73081eaf9fa49aeb576074552>`__
+-  **Dario Binacchi** on 2025-10-02: `package/expat: bump to version
+   2.7.3 <https://gitlab.com/buildroot.org/buildroot/commit/11ab6b6314a4753f7649e79ddda7132532cda11b>`__
+-  **Dario Binacchi** on 2025-10-03: `package/fakeroot: bump to version
+   1.37.1.2 <https://gitlab.com/buildroot.org/buildroot/commit/989fd5ca73e87befa536995aba7cc5ea112c2805>`__
+-  **Dario Binacchi** on 2025-10-03: `package/faketime: bump to version
+   0.9.12 <https://gitlab.com/buildroot.org/buildroot/commit/efe381e5931c9e8e58624b51c87f5993e2e9bc66>`__
+-  **Dario Binacchi** on 2025-10-04: `package/fastd: security bump to
+   version
+   23 <https://gitlab.com/buildroot.org/buildroot/commit/2b5bcfd626b3d861887518ab5fb99f96d62db7ac>`__
+-  **Dario Binacchi** on 2025-10-04: `package/fcft: bump to version
+   3.3.2 <https://gitlab.com/buildroot.org/buildroot/commit/81772044a075ddfd892a4ce49f108998c3f7ffef>`__
+-  **Dario Binacchi** on 2025-10-04: `package/fio: bump version to
+   3.41 <https://gitlab.com/buildroot.org/buildroot/commit/215133c0fc2819f059fbb35071ab2e0987f5107d>`__
+-  **Dario Binacchi** on 2025-10-06: `package/foot: bump to version
+   1.24.0 <https://gitlab.com/buildroot.org/buildroot/commit/d90d3ae8a667bd34d1af989267e3e3e5f3332a28>`__
+-  **Dario Binacchi** on 2025-10-06: `package/fping: bump to version
+   5.4 <https://gitlab.com/buildroot.org/buildroot/commit/63f1aa10151a5483fdf02d0a2f4837db35a58770>`__
+-  **Dario Binacchi** on 2025-10-06: `package/freeipmi: bump to version
+   1.6.16 <https://gitlab.com/buildroot.org/buildroot/commit/b4a52c203c4bfc3f3a26dc19fe19533647229fd9>`__
+-  **Dario Binacchi** on 2025-10-06: `package/freeradius-server: bump to
+   version
+   3.2.8 <https://gitlab.com/buildroot.org/buildroot/commit/747fed73f985b8972052cc8111707279079e4aaa>`__
+-  **Dario Binacchi** on 2025-10-07: `boot/uboot: bump to version
+   2025.10 <https://gitlab.com/buildroot.org/buildroot/commit/128c26f2875dd60ed5fafe25f63b3da11bb79f60>`__
+-  **Dario Binacchi** on 2025-10-08: `package/gawk: bump to version
+   5.3.2 <https://gitlab.com/buildroot.org/buildroot/commit/039459ffaf64f500075cd672a9166308b54d6a6a>`__
+-  **Dario Binacchi** on 2025-10-08: `package/fscryptctl: bump to
+   version
+   1.2.0 <https://gitlab.com/buildroot.org/buildroot/commit/0449bef9a0a62ea0cea661e7d7d9f20c0a4e3df8>`__
+-  **Dario Binacchi** on 2025-10-09: `package/gsl: bump to version
+   2.8 <https://gitlab.com/buildroot.org/buildroot/commit/46be3d810470e55a98e65d3f8e3fac00bcfe581f>`__
+-  **Dario Binacchi** on 2025-10-11: `package/gnuchess: bump to version
+   6.3.0 <https://gitlab.com/buildroot.org/buildroot/commit/5e12df3e8946db46b9b18d0dfdd436a70fe6aaed>`__
+-  **Dario Binacchi** on 2025-10-11: `package/gssdp: bump to version
+   1.6.4 <https://gitlab.com/buildroot.org/buildroot/commit/dba52585ab91e2f00350aad6c52c6e8b325aa9e7>`__
+-  **Dario Binacchi** on 2025-10-12: `package/gumbo-parser: bump to
+   version
+   0.13.2 <https://gitlab.com/buildroot.org/buildroot/commit/b38cc734ef0a30fa5972c03b781882eeeeccf9e9>`__
+-  **Dario Binacchi** on 2025-10-12: `package/gupnp-av: bump to version
+   0.14.4 <https://gitlab.com/buildroot.org/buildroot/commit/2136920d7fe41061c5ed0091500444995391a7e5>`__
+-  **Dario Binacchi** on 2025-10-13: `package/ifupdown: bump to version
+   0.8.44 <https://gitlab.com/buildroot.org/buildroot/commit/3980698ecea3db1d8154940acd61fda9e16c578d>`__
+-  **Dario Binacchi** on 2025-10-13: `package/gupnp: bump to version
+   1.6.9 <https://gitlab.com/buildroot.org/buildroot/commit/209adc30631230f47d008ef38d44ff3626a2052f>`__
+-  **Dario Binacchi** on 2025-10-13: `package/highway: bump to version
+   1.3.0 <https://gitlab.com/buildroot.org/buildroot/commit/a7037907da45091e663cb1b2cfbb51ca5016304b>`__
+-  **Dario Binacchi** on 2025-10-13: `package/hwloc: bump to version
+   2.12.2 <https://gitlab.com/buildroot.org/buildroot/commit/41fe787cde45ee498a8c34f2cd94a7ba47821a5d>`__
+-  **Dario Binacchi** on 2025-10-13: `configs/stm32f429_disco_xip: bump
+   Linux to
+   6.1.155 <https://gitlab.com/buildroot.org/buildroot/commit/675bb8337da0787620d01d712aab4e28946a6f1d>`__
+-  **Dario Binacchi** on 2025-10-14: `package/irqbalance: bump to
+   version
+   1.9.4 <https://gitlab.com/buildroot.org/buildroot/commit/0caf27785d3f29f17cf790c5cb7e77b0f49190ea>`__
+-  **Dario Binacchi** on 2025-10-14: `package/iproute2: bump to version
+   6.17.0 <https://gitlab.com/buildroot.org/buildroot/commit/532d5561f48b6c430e7414ba5eacccf9b6c1bd22>`__
+-  **Dario Binacchi** on 2025-10-14: `package/ipset: bump to version
+   7.24 <https://gitlab.com/buildroot.org/buildroot/commit/687934c0dcffa7a2a0c07d925159096c3532c056>`__
+-  **Dario Binacchi** on 2025-10-14: `package/iptraf-ng: security bump
+   to version
+   1.2.2 <https://gitlab.com/buildroot.org/buildroot/commit/8111bdcab1854815fedfbc5ac822758cb107541a>`__
+-  **Dario Binacchi** on 2025-10-14: `package/isl: bump to version
+   0.27 <https://gitlab.com/buildroot.org/buildroot/commit/675993944c181fc028f2cc65b665ade6f108317a>`__
+-  **Dario Binacchi** on 2025-10-14: `package/iw: bump to version
+   6.17 <https://gitlab.com/buildroot.org/buildroot/commit/0840468112c212fa4599db847d0a03748bfb2bbf>`__
+-  **Dario Binacchi** on 2025-10-16: `configs/ti_am62x_sk: bump U-Boot
+   and Linux
+   versions <https://gitlab.com/buildroot.org/buildroot/commit/74eeed692cffd59748068bc059f6a21aab1b6ece>`__
+-  **Dario Binacchi** on 2025-10-16: `configs/stm32mp1\ \_dk: bump Linux
+   to 6.12.53 and U-Boot to
+   2025.10 <https://gitlab.com/buildroot.org/buildroot/commit/4552ed40bc36c2cb01378901b5f7987c66992ce8>`__
+-  **Dario Binacchi** on 2025-10-16: `package/iwd: bump to version
+   3.10 <https://gitlab.com/buildroot.org/buildroot/commit/9a31b3d220c81e9dc394db8812c64d8dae44f39d>`__
+-  **Dario Binacchi** on 2025-10-16: `package/jimtcl: bump to version
+   0.83 <https://gitlab.com/buildroot.org/buildroot/commit/283821fc31c4890f141111cbc5994e36703c91eb>`__
+-  **Dario Binacchi** on 2025-10-16: `package/jitterentropy-library:
+   bump to version
+   3.6.3 <https://gitlab.com/buildroot.org/buildroot/commit/52101ad09260c1874065b165167424794815ad14>`__
+-  **Dario Binacchi** on 2025-10-16: `package/jpeg-turbo: bump to
+   version
+   3.1.2 <https://gitlab.com/buildroot.org/buildroot/commit/c531fe65209defd356e5ee8142896478a20ab371>`__
+-  **Dario Binacchi** on 2025-10-16: `package/json-glib: bump to version
+   1.10.8 <https://gitlab.com/buildroot.org/buildroot/commit/f2966f065a465c34f322abd3092a3b42a3eb08fb>`__
+-  **Dario Binacchi** on 2025-10-17: `package/ledmon: add upstream patch
+   to fix build w/
+   gcc-14 <https://gitlab.com/buildroot.org/buildroot/commit/c8923662cc7e1f0a1d30d0926f979c21d36aa9df>`__
+-  **Dario Binacchi** on 2025-10-17: `package/ledmon: bump to version
+   1.1.0 <https://gitlab.com/buildroot.org/buildroot/commit/7410161d2b431616f5b28bc169e4241ae3ca9331>`__
+-  **Dario Binacchi** on 2025-10-18: `package/leptonica: bump to version
+   1.86.0 <https://gitlab.com/buildroot.org/buildroot/commit/9b2728f9ae84e099b06da57d37fb91a4f0cf8091>`__
+-  **Dario Binacchi** on 2025-10-18: `configs/stm32f746_disco_sd: bump
+   Linux to 5.15.194 and U-Boot to
+   2025.10 <https://gitlab.com/buildroot.org/buildroot/commit/43be25a237c43739916602140683be16228d258b>`__
+-  **Dario Binacchi** on 2025-10-18: `configs/stm32f769_disco_sd: bump
+   Linux to 5.15.194 and U-Boot to
+   2025.10 <https://gitlab.com/buildroot.org/buildroot/commit/249a19973b47d6fb6dd94b6e1dd83d11299f863d>`__
+-  **Dario Binacchi** on 2025-10-18: `package/less: bump to version
+   685 <https://gitlab.com/buildroot.org/buildroot/commit/7be0c012520988903ec27848f1d6b3ea82f0f62a>`__
+-  **Dario Binacchi** on 2025-10-18: `DEVELOPERS: add Dario Binacchi for
+   less <https://gitlab.com/buildroot.org/buildroot/commit/3a0a221d57db01e67ebcf651c9d644dd490432d0>`__
+-  **Dario Binacchi** on 2025-10-19: `package/libarchive: security bump
+   to version
+   3.8.2 <https://gitlab.com/buildroot.org/buildroot/commit/a36b7cf77e7d44e7abf5c939baabc67e030282e8>`__
+-  **Dario Binacchi** on 2025-10-20: `package/libbpf: security bump to
+   version
+   1.6.0 <https://gitlab.com/buildroot.org/buildroot/commit/c457a046cbec81d39fae0f108e88324553b55445>`__
+-  **Dario Binacchi** on 2025-10-20: `package/libbpf: bump to version
+   1.6.2 <https://gitlab.com/buildroot.org/buildroot/commit/e1ef4be70b601863949cccd4ec0d98ff19513cc3>`__
+-  **Dario Binacchi** on 2025-10-20: `package/libbsd: bump version to
+   0.12.2 <https://gitlab.com/buildroot.org/buildroot/commit/c555b6565f2747047603dc8022f81b7ea14b4890>`__
+-  **Dario Binacchi** on 2025-10-20: `package/pocketpy: bump to version
+   2.1.3 <https://gitlab.com/buildroot.org/buildroot/commit/12b6b87d59ce1b9b5c21eea44bbb401ee8b9a210>`__
+-  **Dario Binacchi** on 2025-10-22: `package/libgphoto2: fix build with
+   gcc >=
+   14 <https://gitlab.com/buildroot.org/buildroot/commit/ebd07998d0b3f5e748aba7a9aabbd7df879bc1a8>`__
+-  **Dario Binacchi** on 2025-10-22: `package/libgphoto2: bump to
+   version
+   2.5.33 <https://gitlab.com/buildroot.org/buildroot/commit/9cae850cd70a81bfd0a6fb9887d8a08671784303>`__
+-  **Dario Binacchi** on 2025-10-22: `DEVELOPERS: add Dario Binacchi for
+   libgphoto2 <https://gitlab.com/buildroot.org/buildroot/commit/2726d965cdaa28c7c21929f4b0aff431304e5e3e>`__
+-  **Dario Binacchi** on 2025-10-22: `package/libglvnd: bump to version
+   1.7.0 <https://gitlab.com/buildroot.org/buildroot/commit/968cf34ad6f811c96d7ecedfd1aa774d6cde6ce3>`__
+-  **Dario Binacchi** on 2025-10-22: `package/libglib2: security bump to
+   version
+   2.84.4 <https://gitlab.com/buildroot.org/buildroot/commit/3252f45279b0104785c45e121a432a3335779a08>`__
+-  **Dario Binacchi** on 2025-10-22: `package/libglib2: bump to version
+   2.86.1 <https://gitlab.com/buildroot.org/buildroot/commit/b3a3316bf0af5516319484916cf5bc2032d37758>`__
+-  **Dario Binacchi** on 2025-10-22: `package/libgeotiff: bump to
+   version
+   1.7.4 <https://gitlab.com/buildroot.org/buildroot/commit/b102f46c1beca9291021e8abc48347b8e6b56df2>`__
+-  **Dario Binacchi** on 2025-10-22: `package/libexif: bump to version
+   0.6.25 <https://gitlab.com/buildroot.org/buildroot/commit/01e71aa9f6a7f6a3d7e54a666809bb7e44c49098>`__
+-  **Dario Binacchi** on 2025-10-22: `package/libevdev: bump to version
+   1.13.5 <https://gitlab.com/buildroot.org/buildroot/commit/bb2e03c03cf45823f2ecfe56f0d39017ed1e2d7e>`__
+-  **Dario Binacchi** on 2025-10-22: `package/libbytesize: bump to
+   version
+   2.11 <https://gitlab.com/buildroot.org/buildroot/commit/e840d7d50e21ff7a48fbde365ed0fd99be62362e>`__
+-  **Dario Binacchi** on 2025-10-23: `package/libgsasl: bump to version
+   2.2.2 <https://gitlab.com/buildroot.org/buildroot/commit/5cbd7c1b2952a11691bebcf41fcfd7d589940bba>`__
+-  **Dario Binacchi** on 2025-10-26: `package/armadillo: bump to version
+   15.2.0 <https://gitlab.com/buildroot.org/buildroot/commit/1d994f0761ea5ad58b4008d1292941438fc51b72>`__
+-  **Dario Binacchi** on 2025-10-26: `package/atkmm: bump to version
+   2.36.3 <https://gitlab.com/buildroot.org/buildroot/commit/43406aef2f39e4f30b424eca045d3aebd725921c>`__
+-  **Dario Binacchi** on 2025-10-26: `package/atop: bump to version
+   2.12.1 <https://gitlab.com/buildroot.org/buildroot/commit/e215e135842ea94c51f9033b52cc7d23301a4c24>`__
+-  **Dario Binacchi** on 2025-10-27: `package/avrdude: bump to version
+   8.1 <https://gitlab.com/buildroot.org/buildroot/commit/029b672ebe20022a082efe87aef569ca07092c6b>`__
+-  **Dario Binacchi** on 2025-10-27: `package/bat: bump to version
+   0.26.0 <https://gitlab.com/buildroot.org/buildroot/commit/46afb8763de7233780781749eca8a37113bbfa0b>`__
+-  **Dario Binacchi** on 2025-10-29: `package/bcc: bump version to
+   0.35.0 <https://gitlab.com/buildroot.org/buildroot/commit/58641412791a35e45f09ea41558c60deaea8246a>`__
+-  **Dario Binacchi** on 2025-10-31: `configs/imx8mn_bsh_smm_s2[\_pro]:
+   bump Linux to 6.12.56 and U-Boot to
+   2025.10 <https://gitlab.com/buildroot.org/buildroot/commit/821551a171b984cc47d275b53f8c3b60fd0dd970>`__
+-  **Dario Binacchi** on 2025-10-31: `package/bcm2835: bump version to
+   1.75 <https://gitlab.com/buildroot.org/buildroot/commit/6427fb66c41e88ff7d9382e2cada7c6b76293bfb>`__
+-  **Dario Binacchi** on 2025-10-31: `package/bdwgc: bump to version
+   8.2.10 <https://gitlab.com/buildroot.org/buildroot/commit/188f556e085a5eb7d338cc01627d8f9c80785442>`__
+
+This overview highlights the continuous effort and innovation from our
+development team. We look forward to bringing even more exciting updates
+in the future!
+
+--------------
+
+*Generated by the Git Commit Article Generator*
