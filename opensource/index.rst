@@ -19,4 +19,5 @@ Open Source Projects
    zephyr/index
    products/chatgpt-gerrit
    products/cutekeyboard
+   products/flutekeyboard
    products/meta-mend
