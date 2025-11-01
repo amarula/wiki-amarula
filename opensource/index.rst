@@ -21,3 +21,4 @@ Open Source Projects
    products/cutekeyboard
    products/flutekeyboard
    products/meta-mend
+   products/libcppconnman
