@@ -1,6 +1,13 @@
 ==================================================
 SCA Layer for Yocto with Mend Support
 ==================================================
+.. raw:: html
+
+    <a href="https://www.amarulasolutions.com/contact" class="contact-button-inline">
+        Contact Us
+    </a>
+    <div class="contact-button-clear"></div>
+
 
 Introduction
 ------------
