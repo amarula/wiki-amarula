@@ -4,13 +4,20 @@ Conferences
 Amarula Solutions have enough record of sponsering, participating, speaking 
 and showcasing our work at international conferences.
 
+2025, Amarula Solutions at ELCE 2025
+************************************
+
+Talk: `Feasibility and Architecture of a Dual-Board Embedded System: Yocto and Zephyr integration <https://osseu2025.sched.com/event/25Vwy/feasibility-and-architecture-of-a-dual-board-embedded-system-yocto-zephyr-integration-andrea-ricchi-dario-binacchi-amarula-solutions>`_
+
+Talk: `Upstream LTS component for Product Delivery <https://osseu2025.sched.com/event/25VpH/upstream-lts-component-for-product-delivery-michael-nazzareno-trimarchi-amarula>`_
+
 2024, Buildroot Developer Day
-*********
+*****************************
 
 Amarula: `Discussing and participating in the future of Buildroot as an open-source platform <https://elinux.org/Buildroot:DeveloperDaysELCE2024>`_
 
 2024, FOSDEM
-*********
+************
 
 Talk: `Linux CAN upstreaming on MMU-less systems <https://fosdem.org/2024/schedule/event/fosdem-2024-2864-linux-can-upstreaming-on-mmu-less-systems>`_
 
@@ -19,34 +26,34 @@ Talk: `Flutter, Buildroot, and you! <https://fosdem.org/2024/schedule/event/fosd
 Talk: `Flutter in Embedded <https://fosdem.org/2024/schedule/event/fosdem-2024-2667-flutter-in-embedded>`_
 
 2023, PYCON ITALY
-*********
+*****************
 
 Talk: `Dyndesign: Merging Classes Dynamically <https://2023.pycon.it/en/event/dyndesign-merging-classes-dynamically>`_
 
 2019, ELC:
-*********
+**********
 
 Talk: `Demystifying Linux MIPI DSI Subsystem <https://events.linuxfoundation.org/events/elc-north-america-2019/program/schedule>`_
 
 2019, ELC:
-*********
+**********
 
 Talk: `Linux Kernel Memory Subsystem and Facilities: From A Novice Programmer's Perspective <https://ossna19.sched.com/event/PURr/linux-kernel-memory-subsystem-and-facilities-from-a-novice-programmers-perspective-shyam-saini-amarula-solutions>`_
 
 
 2019, Devconf:
-*************
+**************
 
 Talk: `Linux Kernel Memory Management Subsystem <https://devconfin19.sched.com/event/RVLp/linux-kernel-memory-management-subsystem>`_
 
 
 2019, Linaro Connect:
-********************
+*********************
 
 Talk: `State of ARM U-Boot Development <https://www.amarulasolutions.com/news/amarula-solutions-at-linaro-connect-bangkok-2019>`_
 
 2019, Embedded World:
-********************
+*********************
 
 Showcase: `Amarula at Embedded World <https://www.amarulasolutions.com/news/amarula-solutions-at-linaro-connect-bangkok-2019>`_
 
@@ -61,19 +68,19 @@ Talk: `U-Boot from scratch <https://www.amarulasolutions.com/blog/amarula-soluti
 Talk: `Concurrency with tools/memory-model <https://linuxplumbersconf.org/event/2/contributions/264/>`_
 
 2018, Linuxlab:
-**************
+***************
 
 Talk: `U-Boot from scratch <https://www.amarulasolutions.com/news/amarula-solutions-at-linuxlab-2018>`_
 
 Talk: `Upgrading buildroot based devices with swupdate <https://2018.linux-lab.it/talks/upgrading_buildroot_based_devices_with_swupdate_2018-12-03>`_
 
 2018, Buildroot Developers Meeting:
-**********************************
+***********************************
 
 Sponsor: `Amarula sponsor Buildroot <https://buildroot.org/sponsors.html>`_
 
 2018, OSFC:
-**********
+***********
 
 Talk: `U-Boot from scratch <https://www.amarulasolutions.com/news/amarula-solutions-at-osfc-2018>`_
 
