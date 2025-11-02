@@ -3,8 +3,8 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Open Source Projects Contribuition
-==================================
+Open Source Projects Contribuitions
+===================================
 
 .. toctree::
    :maxdepth: 1
