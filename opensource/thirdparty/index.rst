@@ -3,17 +3,16 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Open Source Projects
-====================
+Open Source Projects Contribuition
+==================================
 
 .. toctree::
    :maxdepth: 1
    :caption: Contents:
 
-   thirdparty/index
-   products/dyndesign/index
-   products/chatgpt-gerrit
-   products/cutekeyboard
-   products/flutekeyboard
-   products/meta-mend
-   products/libcppconnman
+   uboot/index
+   optee/index
+   drm/index
+   media/index
+   multimedia/index
+   zephyr/index
