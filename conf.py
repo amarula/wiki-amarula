@@ -79,8 +79,6 @@ pygments_style = None
 
 html_theme = u'sphinx_rtd_theme'
 
-
-
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
 # documentation.
@@ -93,7 +91,7 @@ html_theme = u'sphinx_rtd_theme'
 html_static_path = ['_static']
 
 html_css_files = [
-    'button.css', # The file you created in _static
+    'custom.css', # The file you created in _static
 ]
 
 # Custom sidebar templates, must be a dictionary that maps document names

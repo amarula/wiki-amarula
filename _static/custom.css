@@ -1,3 +1,34 @@
+@import url("default.css");
+span.caption-text {
+  color: #E3510C;
+}
+
+/* Sidebar and Top Navigation Background Color */
+.wy-side-nav-search,
+.wy-nav-top {
+    background: #E3510C; /* Primary Orange */
+}
+
+/* Link and Hover Colors */
+a {
+    color: #E3510C; /* Primary Orange for links */
+}
+
+a:hover {
+    color: #CC480B; /* A slightly darker shade for hover effect */
+}
+
+/* Optional: Change the color of the theme's default "primary" buttons/highlights */
+/* Note: Class names may vary depending on the theme. */
+.btn-primary {
+    background-color: #E3510C;
+    border-color: #E3510C;
+}
+
+.btn-primary:hover {
+    background-color: #CC480B;
+}
+
 .contact-button-inline {
     /* Standard Button Styling */
     display: inline-block;
