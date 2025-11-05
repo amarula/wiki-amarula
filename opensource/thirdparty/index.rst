@@ -10,6 +10,7 @@ Open Source Projects Contribuitions
    :maxdepth: 1
    :caption: Contents:
 
+   buildroot/index
    uboot/index
    optee/index
    drm/index
