@@ -17,3 +17,4 @@ Open Source Projects
    products/flutekeyboard
    products/meta-mend
    products/libcppconnman
+   products/git-collect-plugin
