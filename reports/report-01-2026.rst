@@ -1,0 +1,368 @@
+Today 2026-01-02 Developments: A Look at Our Codebase (1 Months Review)
+=======================================================================
+
+We’re excited to share a summary of the significant progress made across
+our repositories in the last 1 months. Our dedicated team has been busy
+pushing new features, refining existing functionalities, and enhancing
+the overall stability of our products.
+
+Here’s a breakdown of key contributions by repository:
+
+openembedded-core
+-----------------
+
+Repository URL: https://git.openembedded.org/openembedded-core
+
+Summary of the contributions by author:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+**Adam Duskett**: Adam Duskett updated the RPM selftests to use SHA256
+keys due to the deprecation of SHA-1 signatures in RHEL9. This change
+ensures compatibility with sequoia-compatible sha256 RSA4096 keys. The
+new keys were added with the specified encryption parameters, and a
+gpg.batch file was included for future key regeneration needs. This
+update aligns Yocto with the latest security standards and best
+practices, as outlined in Red Hat’s security advisories [1][2]. 1:
+https://www.redhat.com/en/blog/rhel-security-sha-1-package-signatures-distrusted-rhel-9
+2: https://www.redhat.com/en/blog/updating-gpg-keys-for-fedora-and-rhel
+
+Here the commits of **Adam Duskett** in detail:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+-  **Adam Duskett** on 2025-12-03: `rpm selftests: use sha256
+   keys <https://git.openembedded.org/openembedded-core/commit/?id=692919be1947b95a73b9655977396c4f65f811c4>`__
+
+cutekeyboard
+------------
+
+Repository URL: https://github.com/amarula/cutekeyboard.git
+
+.. _summary-of-the-contributions-by-author-1:
+
+Summary of the contributions by author:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+**Andrea Ricchi**: Andrea Ricchi added Danish and Finnish layout
+support. This enhancement enables users to utilize the application in
+multiple languages, expanding the potential user base and improving
+accessibility for international markets.
+
+Here the commits of **Andrea Ricchi** in detail:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+-  **Andrea Ricchi** on 2025-12-04: `Add danish and finnish
+   layout <https://github.com/amarula/cutekeyboard/commit/b7e30f1d7ae81325e56a5b4d2bcf927cc9b7bbe3>`__
+
+git-analyzer
+------------
+
+Repository URL: https://github.com/amarula/git-analyzer.git
+
+.. _summary-of-the-contributions-by-author-2:
+
+Summary of the contributions by author:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+**Dario Binacchi**: Dario Binacchi added the Trantor repository to the
+config.ini file in the Amarula project. This change enables the Amarula
+project to access and utilize the resources and dependencies provided by
+the Trantor repository, enhancing the project’s functionality and
+capabilities.
+
+Here the commits of **Dario Binacchi** in detail:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+-  **Dario Binacchi** on 2026-01-02: `amarula: config.ini: Add trantor
+   repo <https://github.com/amarula/git-analyzer/commit/069e475a4f2fe7422c695f54d9d11e83394dd50f>`__
+
+**Michael Trimarchi**: Michael Trimarchi added the
+‘android-signing-plugin’ to the ‘config.ini’ in the ‘amarula’
+repository. In the ‘ai_utils’ source code, the prompt was updated to
+enhance professionalism. Changing the role to “Technical Lead”
+emphasizes efficiency over politeness, aligning with the role
+definition. By enforcing a standard changelog format and prohibiting the
+use of adjectives describing effort, the model focuses solely on
+code-related content. Additionally, the inclusion of the ‘git-collect’
+Jenkins plugin enhances the project’s automation capabilities.
+
+Here the commits of **Michael Trimarchi** in detail:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+-  **Michael Trimarchi** on 2025-12-08: `Add git-collect jenkins
+   plugin <https://github.com/amarula/git-analyzer/commit/27ec454d8bb95442d776e8865191ce720391015c>`__
+-  **Michael Trimarchi** on 2026-01-02: `src: ai_utils: Update the
+   prompt to make it more
+   professional <https://github.com/amarula/git-analyzer/commit/cf1e4cb218eaf3a91e778ece8cbdac8a480fe54e>`__
+-  **Michael Trimarchi** on 2026-01-02: `amarula: config.ini: Add
+   android-signing-plugin <https://github.com/amarula/git-analyzer/commit/cf59420d22bb2c207fce94562753c7c7e680eeb3>`__
+
+git-collect-plugin
+------------------
+
+Repository URL: https://github.com/amarula/git-collect-plugin.git
+
+.. _summary-of-the-contributions-by-author-3:
+
+Summary of the contributions by author:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+**Michael Nazzareno Trimarchi**: Michael Nazzareno Trimarchi created a
+Maven configuration file named maven.yml and added a build step for
+packaging using Maven. This addition enables the project to be built and
+packaged using Maven, streamlining the build process and ensuring
+consistency in the project’s build outputs.
+
+Here the commits of **Michael Nazzareno Trimarchi** in detail:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+-  **Michael Nazzareno Trimarchi** on 2026-01-01: `Create
+   maven.yml <https://github.com/amarula/git-collect-plugin/commit/9476d4177be5203660262b6828ec007919f44fdd>`__
+
+**Michael Trimarchi**: Michael Trimarchi added a release workflow to the
+.github directory. He fixed an issue by adding a default value for
+CollectGitStep, allowing support for remotes different from “origin”.
+Additionally, he enhanced the CollectGitStep to support SSH git,
+including Gerrit, and added a repository browser to the SCM git object.
+Michael also improved the plugin by adding forensic git support and
+updating CollectGitStep to report changes to the Jenkins UI.
+
+.. _here-the-commits-of-michael-trimarchi-in-detail-1:
+
+Here the commits of **Michael Trimarchi** in detail:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+-  **Michael Trimarchi** on 2025-12-06: `Add first revision of
+   git-collect-plugin <https://github.com/amarula/git-collect-plugin/commit/4cfddfaae971d9ab8b5aede85545ba758d15dbc5>`__
+-  **Michael Trimarchi** on 2025-12-06: `Add LICENSE
+   file <https://github.com/amarula/git-collect-plugin/commit/389e6377681dfcffa89e7f083f8cd651edba780d>`__
+-  **Michael Trimarchi** on 2025-12-06: `Add mimimal .gitignore
+   file <https://github.com/amarula/git-collect-plugin/commit/2e2600d86bf37cc50605a8bbb526b8d8e3bf2b37>`__
+-  **Michael Trimarchi** on 2025-12-06: `Add .vscode plugin debug
+   setup <https://github.com/amarula/git-collect-plugin/commit/64ed978d54d2db4522a326c3f5cba6f8d4b41f8f>`__
+-  **Michael Trimarchi** on 2025-12-06: `Fix how check if the directory
+   is a valid git
+   repository <https://github.com/amarula/git-collect-plugin/commit/567afe84498ff30c0529f5e105c39f5828b352d8>`__
+-  **Michael Trimarchi** on 2025-12-06: `README.md: Add an example how
+   to get builddata from a
+   markedCommit <https://github.com/amarula/git-collect-plugin/commit/972b9925eeb38373cb7937548c293423997b7536>`__
+-  **Michael Trimarchi** on 2025-12-06: `Add plugin
+   icon <https://github.com/amarula/git-collect-plugin/commit/be98af9cc94048b0aa775d3ba05569d6413b1eba>`__
+-  **Michael Trimarchi** on 2025-12-06: `Add proper warning
+   suppression <https://github.com/amarula/git-collect-plugin/commit/1558c5a3b0a46cd76cc7ea212a26858d29df7e90>`__
+-  **Michael Trimarchi** on 2025-12-07: `Add more splitting to the logic
+   to allow more
+   features <https://github.com/amarula/git-collect-plugin/commit/ef31bfc6d87d184cbb7242e800a55b595ca30b4c>`__
+-  **Michael Trimarchi** on 2025-12-07: `Add logging jenkins primitives
+   instead of
+   println <https://github.com/amarula/git-collect-plugin/commit/2fca0162a2012e50b07cd52d8bab47171d90d8d2>`__
+-  **Michael Trimarchi** on 2025-12-08: `Add changelog to the collected
+   informations <https://github.com/amarula/git-collect-plugin/commit/b1bf6093bfd0276e6b2800c9e87639992e83a256>`__
+-  **Michael Trimarchi** on 2025-12-08: `GitScanner: Fix marked
+   commit <https://github.com/amarula/git-collect-plugin/commit/1c6972b5246a56029e652e189fbd2193627ba639>`__
+-  **Michael Trimarchi** on 2025-12-08: `CollectGiStep: Fix removal of
+   changelog in finally
+   block <https://github.com/amarula/git-collect-plugin/commit/8ae7cbe8cbedee301ce4a97faf318b8c2c149fa6>`__
+-  **Michael Trimarchi** on 2025-12-08: `Update CollectGitStep to report
+   changes to the Jenkins
+   UI <https://github.com/amarula/git-collect-plugin/commit/bd2fa3ba1bc40065dbb47c6bd9fbef1c5afbb698>`__
+-  **Michael Trimarchi** on 2025-12-08: `CollectGitStep: Add forensic
+   git
+   support <https://github.com/amarula/git-collect-plugin/commit/eac454919ba7f42bbbe3d612e879be601f68be50>`__
+-  **Michael Trimarchi** on 2025-12-08: `Add Changelog
+   example <https://github.com/amarula/git-collect-plugin/commit/2b042249fd4a7e93ca3aef343f6d062c90873316>`__
+-  **Michael Trimarchi** on 2025-12-08: `Add basic class
+   documentation <https://github.com/amarula/git-collect-plugin/commit/755a21cd212438bae6441230cf7f58d9449b3d4c>`__
+-  **Michael Trimarchi** on 2025-12-09: `CollectGitStep: Drop unused
+   imports <https://github.com/amarula/git-collect-plugin/commit/6017cc465d6660cdca5d354bcb1d88215f84aea7>`__
+-  **Michael Trimarchi** on 2025-12-09: `CollectGitStep: Clone previus
+   buildData as reference for next
+   build <https://github.com/amarula/git-collect-plugin/commit/7e699c940ec384011888298405dad84992e3ce77>`__
+-  **Michael Trimarchi** on 2025-12-09: `CollectGitStep: Add repository
+   browser to the scm git
+   object <https://github.com/amarula/git-collect-plugin/commit/2cce0f8ce6489b4e2f2c13311e7ea7744d7e6335>`__
+-  **Michael Trimarchi** on 2025-12-10: `CollectGitStep: Support ssh
+   git, including
+   gerrit <https://github.com/amarula/git-collect-plugin/commit/0e096d10a488686f5e78276cc0384d6e830b95cb>`__
+-  **Michael Trimarchi** on 2025-12-30: `feat: Support remote different
+   from
+   origin <https://github.com/amarula/git-collect-plugin/commit/c8fbd38f40c69e4856f4ed63056063790aedebcd>`__
+-  **Michael Trimarchi** on 2025-12-31: `fix: Add default value for
+   CollectGitStep <https://github.com/amarula/git-collect-plugin/commit/0e569b5db46cbc7f76dd91e5be09d4b9babcaab7>`__
+-  **Michael Trimarchi** on 2026-01-01: `.github: Add release
+   workflow <https://github.com/amarula/git-collect-plugin/commit/c3c33e6803887b6b8b9bf38533a0af005523fd94>`__
+
+nlcpp
+-----
+
+Repository URL: https://github.com/amarula/nlcpp.git
+
+.. _summary-of-the-contributions-by-author-4:
+
+Summary of the contributions by author:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+**Roman Smrž**: Implemented bool conversion operators for Route and
+RouteAddress classes to enhance code readability and simplify
+conditional statements. This change allows for more intuitive handling
+of route and route address objects, improving overall code
+maintainability and reducing the risk of errors.
+
+Here the commits of **Roman Smrž** in detail:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+-  **Roman Smrž** on 2025-12-10: `Add bool conversion operators for
+   Route and
+   RouteAddress <https://github.com/amarula/nlcpp/commit/2bbec4525a8437709a985168cc39a22ae7c5bab5>`__
+
+explain-error-plugin
+--------------------
+
+Repository URL: https://github.com/jenkinsci/explain-error-plugin
+
+.. _summary-of-the-contributions-by-author-5:
+
+Summary of the contributions by author:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+**Michael Nazzareno Trimarchi**: Michael Nazzareno Trimarchi fixed a
+plugin log extraction failure, addressing issue #67. Additionally, JSON
+Output was added for AI Responses, enhancing the system’s capabilities
+and improving data handling for issue #64.
+
+.. _here-the-commits-of-michael-nazzareno-trimarchi-in-detail-1:
+
+Here the commits of **Michael Nazzareno Trimarchi** in detail:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+-  **Michael Nazzareno Trimarchi** on 2025-12-21: `Add JSON Output for
+   AI Responses
+   (#64) <https://github.com/jenkinsci/explain-error-plugin/commit/9cccf8ca1cf95afc0e01feeec2e30b3c8509d31a>`__
+-  **Michael Nazzareno Trimarchi** on 2025-12-21: `Fix plugin log
+   extraction failure
+   (#67) <https://github.com/jenkinsci/explain-error-plugin/commit/5b2011a0511ebc8b46c6573ce200c10661c1b054>`__
+
+openid-plugin
+-------------
+
+Repository URL: https://github.com/jenkinsci/openid-plugin.git
+
+.. _summary-of-the-contributions-by-author-6:
+
+Summary of the contributions by author:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+**Michael Trimarchi**: Michael Trimarchi tested the Jenkins project with
+Java 25 and Java 21 on ci.jenkins.io to prepare for future Java 25
+support. The project intentionally continues to generate Java 17 byte
+code as configured by the plugin parent pom. Testing confirmed that
+automated tests pass with Java 25, leading to the decision to drop
+support for Java 17 in the near future to focus on supporting Java 21
+and Java 25 only.
+
+.. _here-the-commits-of-michael-trimarchi-in-detail-2:
+
+Here the commits of **Michael Trimarchi** in detail:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+-  **Michael Trimarchi** on 2025-12-21: `Test with Java 25 and Java
+   21 <https://github.com/jenkinsci/openid-plugin/commit/50f6d472ed07ba675c2f10bf6bdf4d5e7224d6a8>`__
+
+android-signing-plugin
+----------------------
+
+Repository URL: https://github.com/jenkinsci/android-signing-plugin.git
+
+.. _summary-of-the-contributions-by-author-7:
+
+Summary of the contributions by author:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+**Michael Trimarchi**: Updated the code to move from FilePath to
+Launcher.lunch executable for running on a docker instance, ensuring
+proper command execution without relying on Jenkins components. This
+change enhances the flexibility and independence of the testing process.
+Additionally, tests were successfully conducted with Java 25 and Java 21
+to align with the Jenkins project’s upcoming support for Java 25, while
+intentionally maintaining Java 17 bytecode generation as per the plugin
+parent pom configuration. This adjustment streamlines the testing
+environment by focusing on supporting Java 21 and Java 25 exclusively,
+preparing for the eventual discontinuation of Java 17 support.
+
+.. _here-the-commits-of-michael-trimarchi-in-detail-3:
+
+Here the commits of **Michael Trimarchi** in detail:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+-  **Michael Trimarchi** on 2025-08-10: `Move from FilePath to
+   Launcher.lunch
+   executable <https://github.com/jenkinsci/android-signing-plugin/commit/83c8d539e24420f62b8204f54cb10c453b5844e0>`__
+-  **Michael Trimarchi** on 2025-12-21: `Test with Java 25 and Java
+   21 <https://github.com/jenkinsci/android-signing-plugin/commit/310a3736a9fb459d65214c6bd1f93bb2c7acb20a>`__
+
+buildroot
+---------
+
+Repository URL: https://gitlab.com/buildroot.org/buildroot.git
+
+.. _summary-of-the-contributions-by-author-8:
+
+Summary of the contributions by author:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+**Andrea Ricchi**: Andrea Ricchi updated the package/cutekeyboard
+version to 1.5.0, aligning with the latest release on GitHub. This
+change provides users with access to the new features and improvements
+detailed in the change log.
+
+.. _here-the-commits-of-andrea-ricchi-in-detail-1:
+
+Here the commits of **Andrea Ricchi** in detail:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+-  **Andrea Ricchi** on 2025-11-19: `package/cutekeyboard: bump version
+   to
+   1.5.0 <https://gitlab.com/buildroot.org/buildroot/commit/147236691d82b729f21abd7f6372e36736b5c703>`__
+
+**Dario Binacchi**: Dario Binacchi updated the QT6BASE_CONF_OPTS
+variable to correctly enable/disable the Vulkan feature during CMake
+configuration. Dario Binacchi also bumped the babeltrace2 version to
+2.1.2, eliminating the need to run autoreconf and updating license file
+names. Additionally, Dario Binacchi ensured EMBIGGEN_DISK_VERSION
+compliance with release-monitoring.org and updated various package
+versions, including cmocka, armadillo, uuu, and pocketpy.
+
+.. _here-the-commits-of-dario-binacchi-in-detail-1:
+
+Here the commits of **Dario Binacchi** in detail:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+-  **Dario Binacchi** on 2025-09-09: `package/qt6/qt6base: use correct
+   QT6BASE_CONF_OPTS variable for
+   Vulkan <https://gitlab.com/buildroot.org/buildroot/commit/451e735aa06b2bd986418118923ea7590a5b83a7>`__
+-  **Dario Binacchi** on 2025-09-26: `package/embiggen-disk: fix
+   EMBIGGEN_DISK_VERSION <https://gitlab.com/buildroot.org/buildroot/commit/9824b964a7db1a69885ddbfefc40663d591dc653>`__
+-  **Dario Binacchi** on 2025-12-07: `package/babeltrace2: bump to
+   version
+   2.1.2 <https://gitlab.com/buildroot.org/buildroot/commit/cea219e5180e7117a6002c4a784995c9dad48176>`__
+-  **Dario Binacchi** on 2025-12-07: `package/armadillo: bump to version
+   15.2.2 <https://gitlab.com/buildroot.org/buildroot/commit/ae7b3344d422154095cfd7efd9d106f0c74fc6b9>`__
+-  **Dario Binacchi** on 2025-12-08: `package/pocketpy: bump to version
+   2.1.5 <https://gitlab.com/buildroot.org/buildroot/commit/14f279184e85d44ecd71c797d09b53fa8c296214>`__
+-  **Dario Binacchi** on 2025-12-08: `package/cmocka: bump to version
+   2.0.0 <https://gitlab.com/buildroot.org/buildroot/commit/856d88d9a079a5d874e984fec65a6f7456143267>`__
+-  **Dario Binacchi** on 2025-12-29: `package/cmocka: bump to version
+   2.0.1 <https://gitlab.com/buildroot.org/buildroot/commit/259073938b149383c4c1e66bfe62e0616a0e8855>`__
+-  **Dario Binacchi** on 2025-12-29: `package/pocketpy: bump to version
+   2.1.6 <https://gitlab.com/buildroot.org/buildroot/commit/dc9fc60ca12bad99183663f266c278540057f15e>`__
+-  **Dario Binacchi** on 2025-12-29: `package/uuu: bump to version
+   1.5.243 <https://gitlab.com/buildroot.org/buildroot/commit/121a740ea7e7e19135b41f24ac539d37cb37b0cc>`__
+-  **Dario Binacchi** on 2025-12-29: `package/armadillo: bump to version
+   15.2.3 <https://gitlab.com/buildroot.org/buildroot/commit/f223fe1057f344a903feeafab666bc7dc6121a86>`__
+
+This overview highlights the continuous effort and innovation from our
+development team. We look forward to bringing even more exciting updates
+in the future!
+
+--------------
+
+*Generated by the Git Commit Article Generator*
