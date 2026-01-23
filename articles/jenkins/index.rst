@@ -19,3 +19,4 @@ Jenkins technologies
    jenkins-yocto-kas-pipeline
    jenkins-dsl-gerrit-trigger
    jenkins-mend-pipeline
+   jenkins-mobile-build-time
