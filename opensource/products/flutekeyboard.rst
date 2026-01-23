@@ -17,7 +17,7 @@ FluteKeyboard
 
 
 An open-source Flutter virtual keyboard
---------------------------------------
+---------------------------------------
 
 The project `FluteKeyboard <https://amarula.github.io/flutekeyboard/>`__, is open-source
 and hosted on GitHub. It's designed for developers using the **Flutter** framework,
