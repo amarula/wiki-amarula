@@ -18,6 +18,7 @@ Welcome to Amarula Wiki!
    hw/index
 
 
+.. include:: reports/report-02-2026.rst
 .. include:: reports/report-01-2026.rst
 .. include:: reports/report-12-2025.rst
 .. include:: reports/report-11-2025.rst

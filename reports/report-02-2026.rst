@@ -1,0 +1,307 @@
+Today 2026-02-01 Developments: A Look at Our Codebase (1 Months Review)
+=======================================================================
+
+We’re excited to share a summary of the significant progress made across
+our repositories in the last 1 months. Our dedicated team has been busy
+pushing new features, refining existing functionalities, and enhancing
+the overall stability of our products.
+
+Here’s a breakdown of key contributions by repository:
+
+chatgpt-code-review-gerrit-plugin
+---------------------------------
+
+Repository URL:
+https://github.com/amarula/chatgpt-code-review-gerrit-plugin.git
+
+Summary of the contributions by author:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+**Michael Trimarchi**: Michael Trimarchi updated the version in the
+pom.xml file to 3.1.1 following a plugin renaming. This change ensures
+that the project is using the correct version and aligns with the recent
+plugin updates.
+
+Here the commits of **Michael Trimarchi** in detail:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+-  **Michael Trimarchi** on 2026-01-02: `pom.xml: Bump the version to
+   3.1.1 <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/9f1300ebec4e11f6eff064b4d63ae1e1b523611d>`__
+
+**Patrizio Gelosi**: Patrizio Gelosi lowered the log level for patch set
+dump from \`info\` to \`debug\` to reduce log output. They fixed a bug
+causing the plugin to hang indefinitely when retrieving the project name
+key. Additionally, they implemented a feature where assistant
+instructions are included from \`.gerrit/ai-instructions.md\` files in
+git projects. Patrizio also improved error handling for missing files
+during git access and resolved an issue where an exception was
+incorrectly thrown during merge operations.
+
+Here the commits of **Patrizio Gelosi** in detail:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+-  **Patrizio Gelosi** on 2026-01-15: `fix: exception thrown during
+   merge <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/00b77caf78a8df9450cfed0325969903ec72c131>`__
+-  **Patrizio Gelosi** on 2026-01-15: `fix: hang while retrieving
+   project name
+   key <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/c25ed0dd6e92df2b7c1ee5dbc700fbed6330957f>`__
+-  **Patrizio Gelosi** on 2026-01-16: `fix: handle missing files in
+   git <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/840dae68499b31e38cff1af384fdfb73059b8470>`__
+-  **Patrizio Gelosi** on 2026-01-16: `feat: include assistant
+   instructions from git
+   repo <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/c591e5ed40dc43815d102fb5e7752c798b637784>`__
+-  **Patrizio Gelosi** on 2026-01-21: `chore: lower log level for patch
+   set
+   dump <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/b09c3e7b8bba275d404f1fb87bdfd945e4a95fe5>`__
+
+git-collect-plugin
+------------------
+
+Repository URL: https://github.com/amarula/git-collect-plugin.git
+
+.. _summary-of-the-contributions-by-author-1:
+
+Summary of the contributions by author:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+**Michael Trimarchi**: Michael Trimarchi removed a false positive
+warning in CollectGitStep and added the @POST annotation while
+suppressing the missing permission check. In the pom.xml file,
+unnecessary exclusions of injected tests were eliminated, and structs
+and jacarta.servlet-api were dropped. Additionally, a new getRemote()
+endpoint function was added to LocalGitInfo, and an invalid import was
+fixed in CollectGitStep. The transition from junit4 to junit5 was made
+to allow building and running tests after introducing a junit4 ban.
+Finally, fixes were applied to allow plugin adoption, including updating
+the Jenkins version in the pom.xml and addressing various missing files
+and configurations as required.
+
+.. _here-the-commits-of-michael-trimarchi-in-detail-1:
+
+Here the commits of **Michael Trimarchi** in detail:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+-  **Michael Trimarchi** on 2026-01-31: `Apply fix to allow plugin
+   adoptation <https://github.com/amarula/git-collect-plugin/commit/dd8109bc3950c2d759fa7932bea31f28711bf7e5>`__
+-  **Michael Trimarchi** on 2026-01-31: `Move from junit4 to
+   junit5 <https://github.com/amarula/git-collect-plugin/commit/ac8d2f1a077924a8cad2ddb2008d63b75cf6ff08>`__
+-  **Michael Trimarchi** on 2026-01-31: `CollectGitStep: Fix invalid
+   import <https://github.com/amarula/git-collect-plugin/commit/b68d874c66b8fcc1d80d7fc5924504ed30d169ef>`__
+-  **Michael Trimarchi** on 2026-01-31: `LocalGitInfo: Add getRemote()
+   endpoint
+   function <https://github.com/amarula/git-collect-plugin/commit/799a57a5b5f27b312facb1b568a64515f4194407>`__
+-  **Michael Trimarchi** on 2026-02-01: `pom.xml: Drop structs and
+   jacarta.servlet-api <https://github.com/amarula/git-collect-plugin/commit/e3e257e8842576830f6f1d4a06f60619a0256134>`__
+-  **Michael Trimarchi** on 2026-02-01: `pom.xml: There is not need to
+   exclude injected
+   tests <https://github.com/amarula/git-collect-plugin/commit/e2b6881392c67f4cb84fb1fb142ae86466644275>`__
+-  **Michael Trimarchi** on 2026-02-01: `CollectGitStep: Remove false
+   positive
+   warning <https://github.com/amarula/git-collect-plugin/commit/367a71288badef961e077ee45487aafc9d0e5a43>`__
+
+nlcpp
+-----
+
+Repository URL: https://github.com/amarula/nlcpp.git
+
+.. _summary-of-the-contributions-by-author-2:
+
+Summary of the contributions by author:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+**Roman Smrž**: Roman Smrž added an \`Address\` constructor from string
+with a family hint parameter to the codebase. This change enhances the
+flexibility of creating \`Address\` objects. Additionally, explicit tags
+were included in the C++ constructors to clarify the memory-management
+of raw pointers, improving code readability and maintainability.
+
+Here the commits of **Roman Smrž** in detail:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+-  **Roman Smrž** on 2026-01-06: `Explicit tags for handling raw
+   pointers in
+   constructors <https://github.com/amarula/nlcpp/commit/35cb85989a0617f6805b71a9338acfb007ca4c4f>`__
+-  **Roman Smrž** on 2026-01-07: `Address constructor from string with
+   family
+   hint <https://github.com/amarula/nlcpp/commit/29c02b83a5d248787e3da01763975df8044c4758>`__
+
+explain-error-plugin
+--------------------
+
+Repository URL: https://github.com/jenkinsci/explain-error-plugin
+
+.. _summary-of-the-contributions-by-author-3:
+
+Summary of the contributions by author:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+**Michael Nazzareno Trimarchi**: Michael Nazzareno Trimarchi added a
+deep link to the AI Error Explanation UI, allowing users to navigate
+directly to the specific location of a failure from the AI summary. The
+logic was updated to generate a URL for the failed step in the
+\`PipelineLogExtractor\`, with support for node- specific linking. This
+enhancement included adding a “View Full Report” button in the UI and
+updating related tests to match the method signature changes. The
+changes were made to improve user experience and streamline error
+troubleshooting in complex pipelines.
+
+Here the commits of **Michael Nazzareno Trimarchi** in detail:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+-  **Michael Nazzareno Trimarchi** on 2026-01-03: `Add deep link to AI
+   Error Explanation UI
+   (#69) <https://github.com/jenkinsci/explain-error-plugin/commit/26a5376a9a6c08d7ec8387e5da5fca1336a18b3b>`__
+
+meta-openembedded
+-----------------
+
+Repository URL: https://github.com/openembedded/meta-openembedded.git
+
+.. _summary-of-the-contributions-by-author-4:
+
+Summary of the contributions by author:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+**Adam Duskett**: Adam Duskett removed the unnecessary BBCLASSEXTEND =
+“native nativesdk” in the libtsm recipe to address a warning related to
+missing dependencies. Additionally, Adam Duskett added a recipe for
+kmscon in libtsm to fulfill a dependency requirement. In the kmscon
+recipe, default settings were provided to avoid dependencies, and a
+patch was included to resolve a compilation error when using LLVM as the
+preferred toolchain. These changes aim to enhance the build process and
+ensure smoother integration of the components.
+
+Here the commits of **Adam Duskett** in detail:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+-  **Adam Duskett** on 2026-01-20: `libtsm: add recipe for kmscon
+   dependency <https://github.com/openembedded/meta-openembedded/commit/200f48d7748deceb2312995d2753183a9087d555>`__
+-  **Adam Duskett** on 2026-01-20: `kmscon: Add
+   recipe <https://github.com/openembedded/meta-openembedded/commit/df2ac278120e9fdb04b62a044d391b91f52b62f1>`__
+-  **Adam Duskett** on 2026-01-23: `libtsm: drop BBCLASSEXTEND = “native
+   nativesdk” <https://github.com/openembedded/meta-openembedded/commit/e0719a3497b410c368c645b2ad907190c66cb6ef>`__
+
+u-boot
+------
+
+Repository URL: https://github.com/u-boot/u-boot.git
+
+.. _summary-of-the-contributions-by-author-5:
+
+Summary of the contributions by author:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+**Dario Binacchi**: Dario Binacchi updated the board for STM32MP2 to
+read the boot index from backup registers, aligning with a previous
+commit for STM32MP1. This enhancement allows the system to retrieve the
+boot index information efficiently on STM32MP2 platforms.
+
+Here the commits of **Dario Binacchi** in detail:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+-  **Dario Binacchi** on 2026-01-18: `board: stm32mp2: read boot index
+   from backup
+   register <https://github.com/u-boot/u-boot/commit/07cd29b175d405f904b3f638b75eb9006e5ecba0>`__
+
+buildroot
+---------
+
+Repository URL: https://gitlab.com/buildroot.org/buildroot.git
+
+.. _summary-of-the-contributions-by-author-6:
+
+Summary of the contributions by author:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+**Dario Binacchi**: Dario Binacchi updated various board configurations
+to include ‘set -eu’ in post-build scripts, ensuring proper error
+reporting during image generation. Additionally, Dario Binacchi fixed a
+typo in the readme.txt files of STM32F769-DISCO and STM32F469-DISCO
+boards. Furthermore, Dario Binacchi introduced support for the
+STM32h747i-disco board with detailed specifications. Lastly, U-Boot and
+Linux versions were bumped in multiple configurations for compatibility
+and feature enhancements.
+
+.. _here-the-commits-of-dario-binacchi-in-detail-1:
+
+Here the commits of **Dario Binacchi** in detail:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+-  **Dario Binacchi** on 2026-01-07: `boot/uboot: bump to version
+   2026.01 <https://gitlab.com/buildroot.org/buildroot/commit/98e71e54ba3df12b660cd56caa1678e497545dd6>`__
+-  **Dario Binacchi** on 2026-01-07: `configs/stm32mp1\ \_dk: bump Linux
+   to 6.12.63 and U-Boot to
+   2026.01 <https://gitlab.com/buildroot.org/buildroot/commit/799d184e89bc52de9c1b0e241f60d9827a473128>`__
+-  **Dario Binacchi** on 2026-01-07: `configs/ti_am62x_sk: bump U-Boot
+   and Linux
+   versions <https://gitlab.com/buildroot.org/buildroot/commit/05b9cec0e41891b3e424e2667e8bc9e4d4953da0>`__
+-  **Dario Binacchi** on 2026-01-07: `configs/beaglebone: bump U-Boot to
+   2026.01 <https://gitlab.com/buildroot.org/buildroot/commit/f842d9189a92e3bbab7f66a4151873e998cd9d88>`__
+-  **Dario Binacchi** on 2026-01-09: `configs/stm32f746_disco_sd: bump
+   Linux to 5.15.197 and U-Boot to
+   2026.01 <https://gitlab.com/buildroot.org/buildroot/commit/393fae1a1d191962d5650275e35a9eff3271ce9d>`__
+-  **Dario Binacchi** on 2026-01-09: `configs/stm32f769_disco_sd: bump
+   Linux to 5.15.197 and U-Boot to
+   2026.01 <https://gitlab.com/buildroot.org/buildroot/commit/a91732668fa1545c4986cc8191a4e085cdad0237>`__
+-  **Dario Binacchi** on 2026-01-09: `configs/stm32f469_disco\_{sd,
+   xip}: bump Linux to
+   5.15.197 <https://gitlab.com/buildroot.org/buildroot/commit/e25cf276fedcb600efdce8f3472f9ff40c0d3c9d>`__
+-  **Dario Binacchi** on 2026-01-10: `configs/stm32f429_disco_xip: bump
+   Linux to
+   6.1.159 <https://gitlab.com/buildroot.org/buildroot/commit/675bc1ee5219061e39ba355d4943ffee75529cb3>`__
+-  **Dario Binacchi** on 2026-01-10: `configs/imx8mn_bsh_smm_s2[\_pro]:
+   bump Linux to 6.12.64 and U-Boot to
+   2026.01 <https://gitlab.com/buildroot.org/buildroot/commit/55a9e573372f7e708590fb7cac9ccaa4dedcb7c6>`__
+-  **Dario Binacchi** on 2026-01-10: `configs/imx6ulz_bsh_smm_m2: bump
+   Linux to 6.12.64 and U-Boot to
+   2026.01 <https://gitlab.com/buildroot.org/buildroot/commit/5db217e51e9a23f7d7a4c8dc33e1b8bb7093a422>`__
+-  **Dario Binacchi** on 2026-01-19: `configs/stm32h747_disco_sd: new
+   defconfig <https://gitlab.com/buildroot.org/buildroot/commit/c5f5ac1cbb5b9a05f2680b04d368b1da4a17ffd2>`__
+-  **Dario Binacchi** on 2026-01-19: `package/cmocka: bump to version
+   2.0.2 <https://gitlab.com/buildroot.org/buildroot/commit/c654e2b7c5c8ad267493142597fd7231bdd74248>`__
+-  **Dario Binacchi** on 2026-01-22:
+   `board/stmicroelectronics/stm32f769-disco: fix typo in
+   readme.txt <https://gitlab.com/buildroot.org/buildroot/commit/7cedf74c1759394bb0cd8381c605664c8c20eb4f>`__
+-  **Dario Binacchi** on 2026-01-22:
+   `board/stmicroelectronics/stm32f469-disco: fix typo in
+   readme.txt <https://gitlab.com/buildroot.org/buildroot/commit/cd10beb0e8cef0ab3e1c199085751dc732d8d043>`__
+-  **Dario Binacchi** on 2026-01-24:
+   `board/stmicroelectronics/stm32f4xx: exit post-build.sh on
+   error <https://gitlab.com/buildroot.org/buildroot/commit/3c8ecc05c6b1c30141808910653dc109a27835cc>`__
+-  **Dario Binacchi** on 2026-01-24: `board/ti/common/am6xx: remove
+   debug flag from post-build
+   script <https://gitlab.com/buildroot.org/buildroot/commit/d2dcd7547c9dc4357e588cf5425ccd6242d91cf8>`__
+-  **Dario Binacchi** on 2026-01-24: `board/ti/common/am6xx: exit
+   post-build.sh on
+   error <https://gitlab.com/buildroot.org/buildroot/commit/dcb1764e6f0cd00bf5346711598fd43fb48608c8>`__
+-  **Dario Binacchi** on 2026-01-24:
+   `board/stmicroelectronics/stm32f746-disco: exit post-build.sh on
+   error <https://gitlab.com/buildroot.org/buildroot/commit/3eec14e664c475b6574d2858a3c63b7c6126e91e>`__
+-  **Dario Binacchi** on 2026-01-24: `board/beagleboard/beaglebone: exit
+   post-build.sh on
+   error <https://gitlab.com/buildroot.org/buildroot/commit/c22dc1b819b3428eb0313afc5216bd69575c1021>`__
+-  **Dario Binacchi** on 2026-01-24:
+   `board/stmicroelectronics/stm32f469-disco: exit post-build.sh on
+   error <https://gitlab.com/buildroot.org/buildroot/commit/6b5c20285687abbda9ef048d6787eb487735f99e>`__
+-  **Dario Binacchi** on 2026-01-24: `board/bsh/imx8mn-bsh-smm-s2-pro:
+   exit post-build.sh on
+   error <https://gitlab.com/buildroot.org/buildroot/commit/1a813ba4ee24429ab617d179d3b5efe6010333b2>`__
+-  **Dario Binacchi** on 2026-01-24: `board/bsh/imx6ulz-bsh-smm-m2: exit
+   post-build.sh on
+   error <https://gitlab.com/buildroot.org/buildroot/commit/374f5b66cbecf0254cf1b50ee106a15011d527b7>`__
+-  **Dario Binacchi** on 2026-01-24: `board/bsh/imx8mn-bsh-smm-s2: exit
+   post-build.sh on
+   error <https://gitlab.com/buildroot.org/buildroot/commit/fb847e83797022dceedbcf92c5c2c72cffc32883>`__
+-  **Dario Binacchi** on 2026-01-24:
+   `board/stmicroelectronics/stm32f769-disco: exit post-build.sh on
+   error <https://gitlab.com/buildroot.org/buildroot/commit/42411aa324f5e70dc42e9b83824cb8758207158a>`__
+-  **Dario Binacchi** on 2026-01-26: `package/less: bump to version
+   691 <https://gitlab.com/buildroot.org/buildroot/commit/54153e7ac859a6af36266a24bb49d7f1692b6761>`__
+
+This overview highlights the continuous effort and innovation from our
+development team. We look forward to bringing even more exciting updates
+in the future!
+
+--------------
+
+*Generated by the Git Commit Article Generator*
