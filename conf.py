@@ -19,8 +19,8 @@
 
 # -- Project information -----------------------------------------------------
 
-project = 'Amarula Solutions\'s Wiki'
-copyright = '2019, Amarula Solutions'
+project = 'Developer Portal'
+copyright = '2026, Amarula Solutions'
 author = 'Amarula Solutions'
 
 # The short X.Y version

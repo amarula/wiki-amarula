@@ -1,5 +1,5 @@
 Today 2025-08-04 Developments: A Look at Our Codebase (3 Months Review)
-=======================================================================
+-----------------------------------------------------------------------
 
 We’re excited to share a summary of the significant progress made across
 our repositories in the last 3 months. Our dedicated team has been busy
