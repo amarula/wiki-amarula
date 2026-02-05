@@ -25,4 +25,4 @@ Feel free to write for any corrections and updates to
    conf
    tech
 
-Team Amarula Wiki.
+Team Amarula Developer Portal.

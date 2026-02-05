@@ -1,5 +1,5 @@
-Welcome to Amarula Wiki!
-========================
+Welcome to Amarula Developer Portal!
+====================================
 
 .. _contents: Table of contents
 
