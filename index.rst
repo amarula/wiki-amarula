@@ -1,5 +1,14 @@
-Welcome to Amarula Developer Portal!
-====================================
+======================================
+Amarula Solutions Developer Portal
+======================================
+
+Welcome to the technical hub of **Amarula Solutions**.
+We are experts in **Embedded Linux**, **Android**, and **Open Source** integration. This portal hosts our documentation,
+board support packages (BSPs), and open-source contributions.
+
+.. note::
+   Looking for commercial support, consulting, or project quotes?
+   Please visit our main website: `www.amarulasolutions.com <https://www.amarulasolutions.com>`_
 
 .. _contents: Table of contents
 
