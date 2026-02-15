@@ -20,3 +20,4 @@ Jenkins technologies
    jenkins-dsl-gerrit-trigger
    jenkins-mend-pipeline
    jenkins-mobile-build-time
+   jenkins-gerrit
