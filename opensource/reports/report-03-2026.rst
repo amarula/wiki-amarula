@@ -1,0 +1,316 @@
+Today 2026-03-04 Developments: A Look at Our Codebase (1 Months Review)
+-----------------------------------------------------------------------
+
+We’re excited to share a summary of the significant progress made across
+our repositories in the last 1 months. Our dedicated team has been busy
+pushing new features, refining existing functionalities, and enhancing
+the overall stability of our products.
+
+Here’s a breakdown of key contributions by repository:
+
+openembedded-core
+-----------------
+
+Repository URL: https://git.openembedded.org/openembedded-core
+
+Summary of the contributions by author:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+**Adam Duskett**: Adam Duskett ensured a word boundary for “exit 1” in
+rpm/rootfs.py to prevent false failures caused by matching “exit 100%”.
+This change prevents incorrect regex matches in the log file.
+Additionally, in rpm-sequoia, version 1.10.0 was upgraded to 1.10.1,
+including commits for handling signatures that do not conform to the
+policy or use unsupported algorithms.
+
+Here the commits of **Adam Duskett** in detail:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+-  **Adam Duskett** on 2026-02-17: `rpm-sequoia: upgrade 1.10.0 ->
+   1.10.1 <https://git.openembedded.org/openembedded-core/commit/?id=f159f285ae2aec74e85022de53b14bb8d40a8be0>`__
+-  **Adam Duskett** on 2026-02-23: `rpm/rootfs.py: ensure exit 1 has a
+   word
+   boundary <https://git.openembedded.org/openembedded-core/commit/?id=c2ee574f1276245a7e2c291419bfae73891330ac>`__
+
+cutekeyboard
+------------
+
+Repository URL: https://github.com/amarula/cutekeyboard.git
+
+.. _summary-of-the-contributions-by-author-1:
+
+Summary of the contributions by author:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+**Andrea Ricchi**: Andrea Ricchi added local development paths for
+running an example without installing the plugin by defining
+PLUGIN_BUILD_DIR in example.pro to point to the source build output.
+This change allows for registering both the library and QML import paths
+at runtime. Additionally, Andrea Ricchi implemented a null check for
+objectName in Key.qml and introduced a persistent shift/uppercase
+configuration feature. This new feature enables toggling the keyboard to
+stay in uppercase mode after a character is typed, mimicking standard
+mobile-like shift behavior.
+
+Here the commits of **Andrea Ricchi** in detail:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+-  **Andrea Ricchi** on 2026-02-27: `Add persistent shift/uppercase
+   configuration <https://github.com/amarula/cutekeyboard/commit/92cbe07e9022eb6fa542062d989ddd8e35dad014>`__
+-  **Andrea Ricchi** on 2026-02-27: `Key.qml: add null check for
+   objectName <https://github.com/amarula/cutekeyboard/commit/da94d7276659a827db269bdfc4f5a042f97b5473>`__
+-  **Andrea Ricchi** on 2026-03-04: `Add local dev paths for running
+   example without installing
+   plugin <https://github.com/amarula/cutekeyboard/commit/56e886745c4b64934b2116664b2c92bfe0b7fdc5>`__
+
+git-analyzer
+------------
+
+Repository URL: https://github.com/amarula/git-analyzer.git
+
+.. _summary-of-the-contributions-by-author-2:
+
+Summary of the contributions by author:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+**Michael Trimarchi**: Michael Trimarchi updated the config.ini file in
+the Amarula project by adding the check-jenkins plugin fork and moving
+git-collect to the official new jenkinsci site. These changes enhance
+the project’s functionality and ensure compatibility with the latest
+tools and plugins, contributing to a more efficient and streamlined
+development process at Amarula Solutions.
+
+Here the commits of **Michael Trimarchi** in detail:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+-  **Michael Trimarchi** on 2026-02-20: `amarula: config.ini: Move
+   git-collect to official new jenkinsci
+   site <https://github.com/amarula/git-analyzer/commit/5bb359b467b5e1f60ba4977d03c1c85014fb084b>`__
+-  **Michael Trimarchi** on 2026-02-20: `amarula: config.ini: Add
+   check-jenkins plugin
+   fork <https://github.com/amarula/git-analyzer/commit/a74b95b38b817a36903adc7d0eecfea95f38b0bf>`__
+
+check-jenkins
+-------------
+
+Repository URL: https://github.com/amarula/check-jenkins
+
+.. _summary-of-the-contributions-by-author-3:
+
+Summary of the contributions by author:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+**Michael Trimarchi**: Michael Trimarchi fixed a bug in the
+\`web/fetcher.ts\` file to handle cases where results from
+\`warning-ng\` are missing in the remote endpoint. This change ensures
+that errors are skipped if the run has already been collected. The fix
+prevents unnecessary 404 errors from being generated. Additionally,
+Michael implemented persistent IndexedDB caching for check results in
+the \`web\` module to reduce latency and load on the Jenkins CI server.
+This optimization introduces a generic \`RequestLRUCache\` utility using
+IndexedDB for cross-session storage and improves data isolation between
+different Jenkins instances. The caching logic enhances performance by
+reducing the number of network requests needed to fetch and parse data.
+
+.. _here-the-commits-of-michael-trimarchi-in-detail-1:
+
+Here the commits of **Michael Trimarchi** in detail:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+-  **Michael Trimarchi** on 2026-02-15: `jenkins-checks: Implement
+   backend proxy and support for detailed
+   reports <https://github.com/amarula/check-jenkins/commit/1912addc599ed71cf5916feb85ebe5e94762d683>`__
+-  **Michael Trimarchi** on 2026-02-15: `web/fetcher: Explode test and
+   warning results into distinct check
+   runs <https://github.com/amarula/check-jenkins/commit/75b7d756fb7f88cea72464bfbfc08113715807db>`__
+-  **Michael Trimarchi** on 2026-02-17: `web/fetcher.ts: Avoid to poll
+   for warnings and junits if run is not
+   completed <https://github.com/amarula/check-jenkins/commit/097eb36964d5f24f0d1e6c15a7edc774c074f1db>`__
+-  **Michael Trimarchi** on 2026-02-17: `web/fetcher.ts: Don’t skip
+   success tests
+   result <https://github.com/amarula/check-jenkins/commit/0a259f7c30b03799f84739460e0b1a19b7f97df7>`__
+-  **Michael Trimarchi** on 2026-02-17: `web/fetcher.ts: Publish the run
+   even when the issues reported are
+   0 <https://github.com/amarula/check-jenkins/commit/b1f9008ce36c5dbc2f4bdc7faaf286586ccfd002>`__
+-  **Michael Trimarchi** on 2026-02-18: `web/fetcher.ts: Fix a bug
+   connected to attempt variable not
+   set <https://github.com/amarula/check-jenkins/commit/d6df2f8f7408ec847343a0cad2d4484a8a2992cd>`__
+-  **Michael Trimarchi** on 2026-02-20: `jenkins: Add connection and
+   request timeouts to
+   HttpClient <https://github.com/amarula/check-jenkins/commit/555fa5c8e10014b597384c9375f6af7dfe856c14>`__
+-  **Michael Trimarchi** on 2026-02-20: `web: implement persistent
+   IndexedDB caching for check
+   results <https://github.com/amarula/check-jenkins/commit/405e5a083088e3e57b8c93f853bc199a4b21176f>`__
+-  **Michael Trimarchi** on 2026-02-20: `web/fetcher.ts: Ask again to
+   the cache if the length is
+   0 <https://github.com/amarula/check-jenkins/commit/10939f8d0622c5f2a3884cd3b5905769b9e0357f>`__
+-  **Michael Trimarchi** on 2026-02-20: `web/fetcher.ts: Continue if the
+   totalruns are
+   0 <https://github.com/amarula/check-jenkins/commit/9b03ad455a120d081422abe31b729707f9673f53>`__
+-  **Michael Trimarchi** on 2026-02-20: `web: improve caching logic and
+   scope for check
+   runs <https://github.com/amarula/check-jenkins/commit/df3d7b68f5e746dc200586c03854ee6f0aa367fb>`__
+-  **Michael Trimarchi** on 2026-02-21: `jenkins: migrate proxying to
+   RestApi and support multi-instance
+   auth <https://github.com/amarula/check-jenkins/commit/289dfe609ab1d93cf12fe99efb56740849034620>`__
+-  **Michael Trimarchi** on 2026-02-21: `web: Fix multiproject
+   configuration
+   support <https://github.com/amarula/check-jenkins/commit/b745d9a0f8e2e6adacddd8e26eca606b0a7e51d6>`__
+-  **Michael Trimarchi** on 2026-02-22: `web/fetcher.ts: Fix when
+   results from warning-ng are not present in remote
+   endpoint <https://github.com/amarula/check-jenkins/commit/b3a91b770d49092c611e7f7c7337aa71168b46b7>`__
+
+meta-mend
+---------
+
+Repository URL: https://github.com/amarula/meta-mend.git
+
+.. _summary-of-the-contributions-by-author-4:
+
+Summary of the contributions by author:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+**Adam Duskett**: Adam Duskett added scarthgap compatibility to the
+layer configuration file, enabling seamless integration with scarthgap.
+This enhancement ensures that the layer functions effectively with
+scarthgap, expanding its compatibility and usability.
+
+.. _here-the-commits-of-adam-duskett-in-detail-1:
+
+Here the commits of **Adam Duskett** in detail:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+-  **Adam Duskett** on 2026-02-06: `conf/layer.conf: add scarthgap
+   compatibility <https://github.com/amarula/meta-mend/commit/5502ee60f281aa54c16843e9c3b8c95484b57e7f>`__
+
+explain-error-plugin
+--------------------
+
+Repository URL: https://github.com/jenkinsci/explain-error-plugin
+
+.. _summary-of-the-contributions-by-author-5:
+
+Summary of the contributions by author:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+**Michael Nazzareno Trimarchi**: Michael Nazzareno Trimarchi fixed the
+link to the pipeline-overview node in the PipelineLogExtractor,
+addressing issue #81. This correction ensures that users can access the
+pipeline overview information seamlessly, improving the overall user
+experience and efficiency of navigating through the pipeline logs.
+
+Here the commits of **Michael Nazzareno Trimarchi** in detail:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+-  **Michael Nazzareno Trimarchi** on 2026-02-07: `PipelineLogExtractor:
+   Fix link to pipeline-overview node
+   (#81) <https://github.com/jenkinsci/explain-error-plugin/commit/1818f0f29f73ba0f5f66a138642930c44f375f35>`__
+
+**Michael Trimarchi**: Michael Trimarchi dropped unused imports in the
+test source code. He implemented a common ancestor lookup for multi-node
+failures in pipelines to ensure the error URL points to the most
+relevant parent context. Additionally, Michael updated the
+PipelineLogExtractor to allow AI to distinguish logs by FlowNode,
+include WarningAction failures in log extraction, and temporarily drop
+strategy 3 to prevent confusion and improve explanation accuracy.
+
+.. _here-the-commits-of-michael-trimarchi-in-detail-2:
+
+Here the commits of **Michael Trimarchi** in detail:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+-  **Michael Trimarchi** on 2026-02-28: `PipelineLogExtractor:
+   Temporarily drop strategy
+   3 <https://github.com/jenkinsci/explain-error-plugin/commit/c6cb3b820ed24dd9bb143a79889c8a066cfb53dd>`__
+-  **Michael Trimarchi** on 2026-02-28: `PipelineLogExtractor: Include
+   WarningAction failures in log
+   extraction <https://github.com/jenkinsci/explain-error-plugin/commit/9df288a9dab754bb61f0620ed5bd226a1e4a2a6c>`__
+-  **Michael Trimarchi** on 2026-02-28: `PipelineLogExtractor: Let AI
+   distinguish log by
+   FlowNode <https://github.com/jenkinsci/explain-error-plugin/commit/9d10b2611099441e163e2d9d841f33986fe5480c>`__
+-  **Michael Trimarchi** on 2026-03-01: `feat: implement common ancestor
+   lookup for multi-node
+   failures <https://github.com/jenkinsci/explain-error-plugin/commit/0c5643bf3d87bd62f9a22a0770ff65a0bb54be53>`__
+-  **Michael Trimarchi** on 2026-03-02: `src: test: Drop unused
+   imports <https://github.com/jenkinsci/explain-error-plugin/commit/259b25f541da59aa6eafe559e858f3be062d8a81>`__
+
+meta-openembedded
+-----------------
+
+Repository URL: https://github.com/openembedded/meta-openembedded.git
+
+.. _summary-of-the-contributions-by-author-6:
+
+Summary of the contributions by author:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+**Adam Duskett**: Adam Duskett updated libtoml11 by moving SRCREV below
+SRC_URI as per the recipe style guide. Additionally, a BBCLASSEXTEND was
+added to potentially support native versions for future recipes. A
+cve_product and bugtracker URL were included, and PTEST_ENABLED is now
+checked instead of DISTRO_FEATURES for enabling ptests. The SRC_URI now
+uses gitsm, allowing the removal of SRCREV_json and SRCREV_doctest. In
+the libtoml11/files directory, upstream-status was changed in a patch,
+and run-ptest script was cleaned up to fix Shellcheck warnings and other
+issues. Adam Duskett also upgraded libtsm from version 4.4.0 to 4.4.2.
+
+.. _here-the-commits-of-adam-duskett-in-detail-2:
+
+Here the commits of **Adam Duskett** in detail:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+-  **Adam Duskett** on 2026-02-05: `libtsm: upgrade 4.4.0 ->
+   4.4.2 <https://github.com/openembedded/meta-openembedded/commit/83bf29198b4852e4001d63705504f21d38fa1a99>`__
+-  **Adam Duskett** on 2026-02-05: `kmscon: bump version to
+   9.3.1 <https://github.com/openembedded/meta-openembedded/commit/800998234a3b3989b09714c5ad2474e2e3571e66>`__
+-  **Adam Duskett** on 2026-02-16: `kmscon: bump version to
+   9.3.2 <https://github.com/openembedded/meta-openembedded/commit/83c76a57b0a3bfd705d4df28f34b81dbfb27efa2>`__
+-  **Adam Duskett** on 2026-02-17: `libtoml11/files/run-ptest:
+   cleanup <https://github.com/openembedded/meta-openembedded/commit/e1d3b9598e3a149f6f5ca323503b6e745dedf66d>`__
+-  **Adam Duskett** on 2026-02-17:
+   `libtoml11/files/0001-Remove-whitespace-in-operator.patch: change
+   upstream-status <https://github.com/openembedded/meta-openembedded/commit/2681b16e8ae3ba458e1f3621fbbd86a845a257a6>`__
+-  **Adam Duskett** on 2026-02-17: `libtoml11: use gitsm for
+   SRC_URI <https://github.com/openembedded/meta-openembedded/commit/6a5cb4697b1eaccf553cc4be5009b72b2da25011>`__
+-  **Adam Duskett** on 2026-02-17: `libtoml11: check PTEST_ENABLED
+   instead of
+   DISTRO_FEATURES <https://github.com/openembedded/meta-openembedded/commit/ce96911f6825d9bd63a1f26154d9d2de9eaad3d5>`__
+-  **Adam Duskett** on 2026-02-17: `libtoml11: Add a bugtracker
+   url <https://github.com/openembedded/meta-openembedded/commit/4c7aaad52ddb1b45a3f874819a2d302c26d9c5e6>`__
+-  **Adam Duskett** on 2026-02-17: `libtoml11: add a
+   cve_product <https://github.com/openembedded/meta-openembedded/commit/4eefeb335747f699dd29dfd8c29af69fe6ae4370>`__
+-  **Adam Duskett** on 2026-02-17: `libtoml11: add a
+   BBCLASSEXTEND <https://github.com/openembedded/meta-openembedded/commit/4e105b27491a249109b174d2d6849e579a62627c>`__
+-  **Adam Duskett** on 2026-02-17: `libtoml11: move SRCREV below
+   SRC_URI <https://github.com/openembedded/meta-openembedded/commit/e19775fba85e966d482ac7bee933754863e3acfe>`__
+
+
+buildroot
+---------
+
+Repository URL: https://gitlab.com/buildroot.org/buildroot.git
+
+.. _summary-of-the-contributions-by-author-8:
+
+Summary of the contributions by author:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+**Dario Binacchi**: Dario Binacchi updated the package/less to version
+692, as detailed in the change log at
+https://www.greenwoodsoftware.com/less/news.692.html. This update
+ensures that the project is using the latest version of the package,
+incorporating any new features, bug fixes, and improvements.
+
+Here the commits of **Dario Binacchi** in detail:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+-  **Dario Binacchi** on 2026-02-09: `package/less: bump to version
+   692 <https://gitlab.com/buildroot.org/buildroot/commit/429bcb111baada7445ac69b31e83e858559d7f9b>`__
+
+This overview highlights the continuous effort and innovation from our
+development team. We look forward to bringing even more exciting updates
+in the future!
+
+--------------
+
+*Generated by the Git Commit Article Generator*
