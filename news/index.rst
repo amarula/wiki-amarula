@@ -5,6 +5,7 @@ News
    :maxdepth: 2
    :caption: Contents:
 
+   embeddedworld-2026
    fosdem-2026
    chatgpt-3.1.0
    metamend-2025
