@@ -18,29 +18,46 @@ Follow steps 1, 2 and 3 from `espressif <https://docs.espressif.com/projects/esp
 Zephyr Tools
 ============
 
-Follow :ref:`these <zephyr-setup>` steps to download and set up zephyr and its build tools.
+Follow :ref:`these <zephyr-setup>` steps to download and set up zephyr and its build tools. Since `version 3.1.0`, Xtensa toolchain is included in the unified SDK.
 
-Environment
-===========
+Wifi and Bluetooth
+==================
 
-In order to build zephyr for ESP32 the following environment variables should be set.
-The value for `ESPRESSIF_TOOLCHAIN_PATH` depends on where you installed it during the tool instalation step. The value for `ESP_IDF_PATH` depends on where you downloaded it during the tool instalation step.
+Proprietary Wi-Fi and Bluetooth binaries are no longer bundled in the core repository; they must be retrieved as binary blobs using the command:
 
 .. code-block:: none
 
-   export ZEPHYR_TOOLCHAIN_VARIANT="espressif"
-   export ESPRESSIF_TOOLCHAIN_PATH="${HOME}/.espressif/tools/xtensa-esp32-elf/esp-2019r2-8.2.0/xtensa-esp32-elf/"
-   export ESP_IDF_PATH="${HOME}/esp/esp-idf"
+   west blobs fetch hal_espressif
 
-Put these commands in a script somewhere and source it at the start of your development session.
+Run this command just after the “Install the Zephyr SDK” step in the Getting Started Guide. 
 
 Build and run
 =============
 
-In order to build and run zephyr on the board use the following commands:
+In order to build and run Zephyr on the board use the following commands:
 
 .. code-block:: none
 
-   cd ~/zephyrproject
-   west build -b esp32 -s zephyr/samples/hello_world/
+   cd ~/zephyrproject/zephyr
+   west build -b esp32_devkitc_wroom/esp32/procpu samples/hello_world
    west flash
+
+If needed, also run
+
+.. code-block:: none
+
+	west packages pip --install
+
+After the build succeeds, open the serial monitor with
+
+.. code-block:: none
+
+	west espressif monitor
+
+Expected output:
+
+.. code-block:: none
+
+	***** Booting Zephyr OS vx.x.x-xxx-gxxxxxxxxxxxx *****
+	Hello World! esp32_devkitc_wroom
+
