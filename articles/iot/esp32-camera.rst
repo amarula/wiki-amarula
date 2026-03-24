@@ -84,8 +84,7 @@ Live Demonstration
 In this video, a demonstration of the system described above is provided, showing how video streaming is quite
 responsive to movement despite the connection being via Wi-Fi.
 
-.. raw:: html
-
-  <video width="640" height="360" controls>
-    <source src="/video/esp32-camera.MP4" type="video/mp4">
-  </video>
+.. video:: /video/esp32-camera.webm
+   :width: 640
+   :height: 420
+   :autoplay:
