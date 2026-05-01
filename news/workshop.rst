@@ -33,12 +33,13 @@ Keep it Simple
 **The Challenges**
 ------------------
 
-During the workshop, we propose 4 challenges:
+During the workshop, we propose 5 challenges:
 
 1. **Yocto:** Mastering the art of the upstream-compatible distribution.
 2. **Mainline Resurrection:** Upstream an unsupported **RK3588** board and one **i.MX6DL** board in Linux/U-Boot.
 3. **Zephyr Frontiers:** Support a new architecture on **Zephyr**.
-4. **And more...**
+4. **Swupdate:** Support FWU metadata on **swupdate**.
+5. **And more...**
 
 **Mentorship**
 --------------
