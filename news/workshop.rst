@@ -36,7 +36,8 @@ Keep it Simple
 During the workshop, we propose 5 challenges:
 
 1. **Yocto:** Mastering the art of the upstream-compatible distribution.
-2. **Mainline Resurrection:** Upstream an unsupported **RK3588** board and one **i.MX6DL** board in Linux/U-Boot.
+2. **Mainline Resurrection:** Upstream an unsupported board.
+    See `Workshop linux yocto mainline <workshop-linux-yocto-mainline.html>`_ for more details.
 3. **Zephyr Frontiers:** Support a new architecture on **Zephyr**.
 4. **Swupdate:** Support FWU metadata on **swupdate**.
 5. **And more...**
