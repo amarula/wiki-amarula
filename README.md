@@ -27,8 +27,9 @@ goals. Contact us today to discover how we can help you stay ahead of the curve.
 Install the following package in order to build the project
 
 ```bash
-sudo apt-get install python3-sphinx
-     pip install sphinx_rtd_theme --break-system-packages
+     python3 -m venv .venv
+     . ./.venv/bin/activate
+     pip install -r requirements.txt
 ```
 
 ### Sphinx Usage
