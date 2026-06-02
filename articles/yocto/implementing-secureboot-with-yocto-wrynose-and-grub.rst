@@ -280,7 +280,7 @@ Replacing the sample signing SIGNING_MODEL
    create_user_key_store "secureboot-demo"
 
 | Saving and running the script in the meta-signing-key/scripts
-  generates a secreboot-demo directory with
+  generates a secureboot-demo directory with
 | custom certificates in a directory tree that meta-secure-core expects.
 
 It is advised to move the new directory to your custom meta layer and do
