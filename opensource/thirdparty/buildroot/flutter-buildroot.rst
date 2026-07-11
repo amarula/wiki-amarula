@@ -1,8 +1,11 @@
 Flutter UI Framework Support in Buildroot
 #########################################
+.. note:: **TL;DR**
+   - Guide covering **Buildroot** embedded Linux build system usage — including board configuration, package integration, and image generation.
+   - Part of Amarula Solutions' embedded Linux build system documentation.
 
-Overview
-********
+How does it work?
+*****************
 
 The support for the **Flutter** UI framework in the Buildroot embedded Linux build system was primarily developed and contributed by **Adam Duskett** of **Amarula Solutions**. This significant effort introduced the necessary toolchain components and runtime packages to allow developers to cross-compile and run high-performance Flutter applications on custom embedded Linux distributions.
 
@@ -64,3 +67,10 @@ Profiling a Flutter application's performance on the target device is possible b
         flutter-pi --profile /usr/share/flutter/${your_app}/profile/ --vm-service-host=0.0.0.0 --vm-service-port=1234
 
 3.  The application output will provide a URL that can be accessed from a remote machine using Dart DevTools for profiling and debugging.
+
+
+.. tip::
+   Need Buildroot integration for your embedded product? Amarula Solutions
+   provides Buildroot BSP development, package integration, and mainline
+   upstreaming for ARM, RISC-V, and x86 platforms.
+   `Contact our BSP team <https://www.amarulasolutions.com/contact/>`_

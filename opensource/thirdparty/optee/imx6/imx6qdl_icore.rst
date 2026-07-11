@@ -1,5 +1,8 @@
 Optee OS
-################
+########
+.. note:: **TL;DR**
+   - Guide for **OP-TEE** (Open Portable Trusted Execution Environment) on embedded platforms — covering trusted application development, secure storage, and hardware-backed isolation.
+   - Part of Amarula Solutions' embedded security documentation.
 
 Optee_os Configs
 ****************
@@ -618,3 +621,10 @@ Insert sd card and Turn on the board, and get into u-boot command prompt by pres
         buildroot login: root
         # uname -a
         Linux buildroot 4.19.0-00618-gbad5e39a548d #16 SMP Wed Oct 24 18:00:15 IST 2018 armv7l GNU/Linux
+
+
+.. tip::
+   Need secure boot or TEE integration for your embedded product? Amarula
+   Solutions provides OP-TEE implementation, trusted application development,
+   and hardware-backed security for ARM platforms.
+   `Contact our security team <https://www.amarulasolutions.com/contact/>`_

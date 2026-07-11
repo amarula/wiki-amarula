@@ -1,5 +1,8 @@
 ESP32 Zephyr setup
 ##################
+.. note:: **TL;DR**
+   - Guide covering **Zephyr RTOS** development — including board setup, driver integration, and build system configuration for **Espressif ESP32, STM32, and TI CC3220SF** platforms.
+   - Part of Amarula Solutions' IoT firmware documentation.
 
 This tutorial shows you have to set up the ESP32 Wrover development board for use with zephyr on Linux.
 
@@ -61,3 +64,10 @@ Expected output:
 	***** Booting Zephyr OS vx.x.x-xxx-gxxxxxxxxxxxx *****
 	Hello World! esp32_devkitc_wroom
 
+
+
+.. tip::
+   Need Zephyr RTOS support for your IoT product? Amarula Solutions
+   provides Zephyr BSP development, driver porting, sensor integration,
+   and CI/CD pipelines for Zephyr-based embedded projects.
+   `Contact our IoT team <https://www.amarulasolutions.com/contact/>`_

@@ -1,5 +1,8 @@
 OP-Tee Test suite
 #################
+.. note:: **TL;DR**
+   - Guide for **OP-TEE** (Open Portable Trusted Execution Environment) on embedded platforms — covering trusted application development, secure storage, and hardware-backed isolation.
+   - Part of Amarula Solutions' embedded security documentation.
 
 optee client
 ************
@@ -396,3 +399,10 @@ AES performance testing tool
    Starting test: SHA1, size=1024 bytes, random=no, unaligned=no, inner loops=1, loops=5000, warm-up=2 s
    min=261.667us max=588.333us mean=273.777us stddev=27.9708us (cv 10.2167%) (3.567MiB/s)
    2-sigma interval: 217.835..329.718us (2.96181..4.48304MiB/s)
+
+
+.. tip::
+   Need secure boot or TEE integration for your embedded product? Amarula
+   Solutions provides OP-TEE implementation, trusted application development,
+   and hardware-backed security for ARM platforms.
+   `Contact our security team <https://www.amarulasolutions.com/contact/>`_
