@@ -1,16 +1,20 @@
 Olimex A64-Olinuxino
 ####################
 
+.. note:: **TL;DR**
+   - Mainline BSP bring-up guide for this board — covering **U-Boot**, **Linux kernel**, and **Buildroot** build from source with SD/flash boot, serial console access, and device tree configuration.
+   - Part of Amarula Solutions' upstream-first BSP documentation for Allwinner SoCs.
+
 This tutorial will show the details of Olimex A64-Olinuxino board mainline support and other needed details, for more information about `hardware <https://www.olimex.com/Products/OLinuXino/A64/>`_ and `linux-sunxi <http://linux-sunxi.org/Olimex_A64-OLinuXino>`_
 
-Hardware Access
-***************
+How do you access the hardware?
+*******************************
 Serial debug and Power connections
 
 .. image:: /images/a64-olin.jpeg
 
-BSP Build
-**********
+How do you build the BSP?
+*************************
 
 Manual Build
 ============
@@ -18,8 +22,8 @@ Image building need host to ready with all necessary tools ready, refer `here <h
 
 Below are the details of Image build for Olimex A64-Olinuxino board.
 
-ATF
----
+How do you build ATF?
+---------------------
 
 ::
 
@@ -28,8 +32,8 @@ ATF
         make PLAT=sun50iw1p1 bl31
         export BL31=/path/to/arm-trusted-firmware/build/sun50iw1p1/release/bl31.bin
         
-U-Boot
-------
+How do you build U-Boot?
+------------------------
 
 ::
 
@@ -38,8 +42,8 @@ U-Boot
         make a64-olinuxino_defconfig
         make
 
-Linux
------
+How do you build the Linux kernel?
+----------------------------------
 
 ::
 
@@ -50,8 +54,8 @@ Linux
         ARCH=arm64 make -j 4 Image dtbs
         ARCH=arm64 make modules && ARCH=arm64 make modules_install
 
-Buildroot
-=========
+How do you build with Buildroot?
+================================
 It's easy to build entire system using buildroot and mainline supported a64-olinuxino already. See read this `readme.txt <https://git.buildroot.net/buildroot/tree/board/olimex/a64-olinuxino/readme.txt>`_ for more info.
 
 ::
@@ -61,14 +65,14 @@ It's easy to build entire system using buildroot and mainline supported a64-olin
         make olimex_a64_olinuxino_defconfig
         make
 
-Booting
-*******
-SD Boot
-=======
+How do you boot the system?
+***************************
+How do you boot from SD card?
+=============================
 Prepare SD
 
-Linux
-*****
+How do you build the Linux kernel?
+**********************************
 USB OTG
 =======
 Here, we can take mass storage as gadget function and will show how it can work with 'host' and 'peripheral' modes
@@ -80,7 +84,8 @@ Build otg mass storage as statically linked module with
 Append bootargs with 'g_mass_storage.removable=1 g_mass_storage.luns=1'
 
 Peripheral
------------
+----------
+
 Plug USB otg cable A-type to host pc and B-type to bananapi
 
 ::
@@ -209,3 +214,9 @@ Insert SD card and power-on
         PING google.com (172.217.26.174): 56 data bytes
         64 bytes from 172.217.26.174: seq=0 ttl=55 time=24.710 ms
         64 bytes from 172.217.26.174: seq=1 ttl=55 time=24.677 ms
+
+.. tip::
+   Need mainline BSP support for Allwinner platforms? Amarula Solutions
+   provides U-Boot and Linux kernel mainlining, Buildroot/Yocto integration,
+   and upstream-first development for Allwinner-based embedded products.
+   `Contact our BSP team <https://www.amarulasolutions.com/contact/>`_

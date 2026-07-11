@@ -1,17 +1,21 @@
 Amarual A64-Relic
 #################
+
+.. note:: **TL;DR**
+   - Mainline BSP bring-up guide for this board — covering **U-Boot**, **Linux kernel**, and **Buildroot** build from source with SD/flash boot, serial console access, and device tree configuration.
+   - Part of Amarula Solutions' upstream-first BSP documentation for Allwinner SoCs.
 This tutorial will show the details of Amarula A64-Relic mainline support and other needed details
 
 
-BSP Build
-*********
+How do you build the BSP?
+*************************
 
 Manual Build
 ============
 Image building need host to ready with all necessary tools ready, refer `here <https://wiki.amarulasolutions.com/found/host/tools.html>`_ for Host and Crosstool
 
-ATF
----
+How do you build ATF?
+---------------------
 ::
 
         git clone https://github.com/apritzel/arm-trusted-firmware.git
@@ -19,8 +23,8 @@ ATF
         make PLAT=sun50iw1p1 bl31
         export BL31=/path/to/arm-trusted-firmware/build/sun50iw1p1/release/bl31.bin
 
-U-Boot
-------
+How do you build U-Boot?
+------------------------
 ::
 
         git clone git://git.denx.de/u-boot.git
@@ -28,8 +32,8 @@ U-Boot
         make amarula_a64_relic_defconfig
         make 
 
-Linux
------
+How do you build the Linux kernel?
+----------------------------------
 ::
 
         git clone git://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git
@@ -38,8 +42,8 @@ Linux
         ARCH=arm64 make defconfig
         ARCH=arm64 make -j 4 Image dtbs
 
-Buildroot
-=========
+How do you build with Buildroot?
+================================
 
 It's easy to build entire system using buildroot and mainline supported bananapi-m64 already. See read this `readme.txt <https://git.buildroot.net/buildroot/tree/board/bananapi/bananapi-m64/readme.txt>`_ for more info.
 
@@ -50,12 +54,12 @@ It's easy to build entire system using buildroot and mainline supported bananapi
         make amarula_a64_relic_defconfig
         make
 
-Boot
-****
+How do you boot the system?
+***************************
 Since the target doesn't support SD card, we need to boot the U-Boot from FEL and update the firmware images
 
-FEL boot
-========
+How do you boot via FEL?
+========================
 Set FEL mode pins and power-on the board
 
 ::
@@ -66,8 +70,8 @@ Set FEL mode pins and power-on the board
 
 Interrupt u-boot by pressing enter
 
-Write eMMC
-==========
+How do you write to eMMC?
+=========================
 on target, create GPT partitions and trigger fastboot
 
 ::
@@ -86,8 +90,8 @@ on host, write images from host onto eMMC using fastboot
         fastboot -i 0x1f3a flash esp boot.vfat
         fastboot -i 0x1f3a flash system rootfs.ext4
 
-Wifi
-****
+How do you configure WiFi?
+**************************
 System will automatically detect wifi if buildroot images were used, once done follow below steps
 
 ::
@@ -98,8 +102,8 @@ System will automatically detect wifi if buildroot images were used, once done f
         # udhcpc -i wlan0
         # ping google.com
 
-GUI Interface
-*************
+How do you set up the GUI interface?
+************************************
 For Display, Touchscreen, Camera, Sensor see below buildroot from respective github sources
 
 ::
@@ -111,3 +115,9 @@ For Display, Touchscreen, Camera, Sensor see below buildroot from respective git
         make
 
 follow flash instruction from board/amarula/a64-relic/readme.txt
+
+.. tip::
+   Need mainline BSP support for Allwinner platforms? Amarula Solutions
+   provides U-Boot and Linux kernel mainlining, Buildroot/Yocto integration,
+   and upstream-first development for Allwinner-based embedded products.
+   `Contact our BSP team <https://www.amarulasolutions.com/contact/>`_

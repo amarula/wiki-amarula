@@ -1,10 +1,14 @@
 Orangepi Win
 ############
 
+.. note:: **TL;DR**
+   - Mainline BSP bring-up guide for this board — covering **U-Boot**, **Linux kernel**, and **Buildroot** build from source with SD/flash boot, serial console access, and device tree configuration.
+   - Part of Amarula Solutions' upstream-first BSP documentation for Allwinner SoCs.
+
 This tutorial will show the details of Orangepi Win/Win+ board mainline support and other needed details, for more information about `hardware <http://www.orangepi.org/OrangePiWin_WinPlus/>`_ and `linux-sunxi <https://linux-sunxi.org/Xunlong_Orange_Pi_Win>`_
 
-Hardware Access
-***************
+How do you access the hardware?
+*******************************
 Serial debug and Power connections
 
 .. image:: /images/opi_win.jpeg
@@ -12,8 +16,8 @@ Serial debug and Power connections
 
 
 
-BSP Build
-*********
+How do you build the BSP?
+*************************
 
 Manual Build
 ============
@@ -21,8 +25,8 @@ Image building need host to ready with all necessary tools ready, refer `here <h
 
 Below are the details of Image build for Orangepi Win/Win+ board.
 
-ATF
----
+How do you build ATF?
+---------------------
 ::
 
         $ git clone https://github.com/apritzel/arm-trusted-firmware.git
@@ -30,8 +34,8 @@ ATF
         $ make PLAT=sun50iw1p1 bl31
         $ export BL31=/path/to/arm-trusted-firmware/build/sun50iw1p1/release/bl31.bin
         
-U-Boot
-------
+How do you build U-Boot?
+------------------------
 ::
 
         $ git clone git://git.denx.de/u-boot.git
@@ -39,8 +43,8 @@ U-Boot
         $ make orangepi_win_defconfig
         $ make 
         
-Linux
------
+How do you build the Linux kernel?
+----------------------------------
 ::
 
         $ git clone git://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git
@@ -49,8 +53,8 @@ Linux
         $ ARCH=arm64 make defconfig
         $ ARCH=arm64 make -j 4 Image dtbs
 
-Buildroot
-=========
+How do you build with Buildroot?
+================================
 It's easy to build entire system using buildroot and mainline supported orangepi-win already. See read this `readme.txt <https://git.buildroot.net/buildroot/tree/board/orangepi/orangepi-win/readme.txt>`_ for more info.
 
 ::
@@ -60,8 +64,8 @@ It's easy to build entire system using buildroot and mainline supported orangepi
         $ make orangepi_win_defconfig
         $ make
 
-SD Boot
-*******
+How do you boot from SD card?
+*****************************
 Partition the SD card in host with `Single Falcon partition <https://wiki.amarulasolutions.com/found/host/tools.html#falcon-partition>`_
 ::
 
@@ -158,12 +162,12 @@ Insert the SD card and power-on the board. See the Linux boot start from SPL
         [    0.000000] Policy zone: DMA
         [    0.000000] Kernel command line: console=ttyS0,115200 earlyprintk root=/dev/mmcblk0p1 rootwait
 
-FEL/USB Boot
-************
+How do you boot via FEL/USB?
+****************************
 More information `here <http://linux-sunxi.org/FEL/USBBoot>`_ and build the fel tools `from <https://wiki.amarulasolutions.com/found/host/tools.html#sunxi>`_
 
-Enter FEL
-=========
+How do you enter FEL mode?
+==========================
 Prepare `SD card <https://wiki.amarulasolutions.com/bsp/sunxi/a64/opi-win.html#sd-boot>`_ from and Power-on board without SD
 
 ::
@@ -173,8 +177,8 @@ Prepare `SD card <https://wiki.amarulasolutions.com/bsp/sunxi/a64/opi-win.html#s
         # sunxi-fel version
         AWUSBFEX soc=00001689(A64) 00000001 ver=0001 44 08 scratchpad=00017e00 00000000 00000000
 
-Build U-Boot
-============
+How do you build U-Boot for FEL?
+================================
 Mainline U-Boot not supporting FEL for H5/A64 due to 64-Bit mode in SPL so we need to build 32-bit SPL and 64-bit U-Boot proper
 
 Export arm toolchain from `here <https://wiki.amarulasolutions.com/found/host/tools.html#arm>`_
@@ -186,8 +190,8 @@ Export arm toolchain from `here <https://wiki.amarulasolutions.com/found/host/to
         $ git checkout -b sun64-fel32 origin/sun64-fel32
         $ make sun50i_spl32_defconfig && make
 
-Boot Linux
-==========
+How do you boot Linux via FEL?
+==============================
 From Host, get the boot.scr from `here <https://wiki.amarulasolutions.com/found/host/tools.html#boot64-fel-scr>`_
 
 ::
@@ -281,3 +285,9 @@ From Target UART
         [    0.000000] Policy zone: DMA
         [    0.000000] Kernel command line: console=ttyS0,115200 earlyprintk root=/dev/mmcblk0p1 rootwait
 
+
+.. tip::
+   Need mainline BSP support for Allwinner platforms? Amarula Solutions
+   provides U-Boot and Linux kernel mainlining, Buildroot/Yocto integration,
+   and upstream-first development for Allwinner-based embedded products.
+   `Contact our BSP team <https://www.amarulasolutions.com/contact/>`_

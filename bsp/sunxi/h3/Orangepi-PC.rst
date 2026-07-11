@@ -1,29 +1,33 @@
 Orangepi PC
 ###########
 
+.. note:: **TL;DR**
+   - Mainline BSP bring-up guide for this board — covering **U-Boot**, **Linux kernel**, and **Buildroot** build from source with SD/flash boot, serial console access, and device tree configuration.
+   - Part of Amarula Solutions' upstream-first BSP documentation for Allwinner SoCs.
+
 This tutorial will show the details of Olimex A20-OLinuXino-LIME2 board mainline support and other details like
 
 hardware, documentation, schematics are available at `hardware <http://www.orangepi.org/orangepipc/>`_ and `linux-sunxi <https://linux-sunxi.org/Orange_Pi_PC>`_
 
-Hardware Access
-***************
+How do you access the hardware?
+*******************************
 
 .. image:: /images/orange_pi_pc.jpg
 
-BSP Build
-*********
+How do you build the BSP?
+*************************
 Image building need host to ready with all necessary tools ready, refer here
 
-U-Boot
-======
+How do you build U-Boot?
+========================
 ::
 
         $ git clone git://git.denx.de/u-boot.git
         $ cd u-boot
         $ make orangepi_pc_defconfig && make 
         
-Linux
-=====
+How do you build the Linux kernel?
+==================================
 ::
 
         $ git clone git://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git
@@ -31,15 +35,15 @@ Linux
         $ make mrproper
         $ ARCH=arm sunxi_defconfig && $ ARCH=arm make -j 4 zImage dtbs
 
-Booting
-*******
-SD Boot
-=======
-FEL/USB Boot
-============
+How do you boot the system?
+***************************
+How do you boot from SD card?
+=============================
+How do you boot via FEL/USB?
+============================
 
-U-Boot
-******
+How do you build U-Boot?
+************************
 USB Mass Storage gadget
 =======================
 We can use the board as a USB Mass Storage device:
@@ -58,8 +62,8 @@ To do this you need to connect a USB cable between the OTG/Client port of the bo
 
 and use U-Boot's ums command.
 
-Linux
-******
+How do you build the Linux kernel?
+**********************************
 USB Mass Storage gadget
 =======================
 Build otg mass storage as statically linked module with
@@ -96,3 +100,9 @@ Append bootargs with `g_mass_storage.removable=1 g_mass_storage.luns=1`
         # echo /dev/mmcblk0 > /sys/devices/platform/soc/1c19000.usb/musb-hdrc.1.auto/gadget/lun0/file
 
 Access the disk and write and umount
+
+.. tip::
+   Need mainline BSP support for Allwinner platforms? Amarula Solutions
+   provides U-Boot and Linux kernel mainlining, Buildroot/Yocto integration,
+   and upstream-first development for Allwinner-based embedded products.
+   `Contact our BSP team <https://www.amarulasolutions.com/contact/>`_

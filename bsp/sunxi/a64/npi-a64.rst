@@ -1,10 +1,14 @@
 FriendlyARM Nanopi A64
 ######################
 
+.. note:: **TL;DR**
+   - Mainline BSP bring-up guide for this board — covering **U-Boot**, **Linux kernel**, and **Buildroot** build from source with SD/flash boot, serial console access, and device tree configuration.
+   - Part of Amarula Solutions' upstream-first BSP documentation for Allwinner SoCs.
+
 This tutorial will show the details of Nanopi A64 board mainline support and other needed details, for more information about `hardware <http://nanopi.io/nanopi-a64.html>`_ and `linux-sunxi <http://linux-sunxi.org/FriendlyARM_NanoPi_A64>`_
 
-Hardware Access
-***************
+How do you access the hardware?
+*******************************
 Hardware Access
 Serial debug:  4Pin, 2.54mm pitch pin-header 
 
@@ -16,8 +20,8 @@ Power cable: DC 5V/2A USB
 
 
 
-BSP Build
-*********
+How do you build the BSP?
+*************************
 
 Manual Build
 ============
@@ -25,8 +29,8 @@ Image building need host to ready with all necessary tools ready, refer `here <h
 
 Below are the details of Image build for Nanopi A64 board.
 
-ATF
----
+How do you build ATF?
+---------------------
 ::
 
         git clone https://github.com/apritzel/arm-trusted-firmware.git
@@ -34,8 +38,8 @@ ATF
         make PLAT=sun50iw1p1 bl31
         export BL31=/path/to/arm-trusted-firmware/build/sun50iw1p1/release/bl31.bin
 
-U-Boot
-------
+How do you build U-Boot?
+------------------------
 ::
 
         git clone git://git.denx.de/u-boot.git
@@ -43,8 +47,8 @@ U-Boot
         make nanopi_a64_defconfig
         make 
 
-Linux
------
+How do you build the Linux kernel?
+----------------------------------
 ::
 
         git clone git://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git
@@ -53,8 +57,8 @@ Linux
         ARCH=arm64 make defconfig
         ARCH=arm64 make -j 4 Image dtbs
 
-Buildroot
-=========
+How do you build with Buildroot?
+================================
 It's easy to build entire system using buildroot and mainline supported nanopi-a64 already. See read this `readme.txt <https://git.buildroot.net/buildroot/tree/board/friendlyarm/nanopi-a64/readme.txt>`_ for more info.
 
 ::
@@ -64,11 +68,11 @@ It's easy to build entire system using buildroot and mainline supported nanopi-a
         make friendlyarm_nanopi_a64_defconfig
         make
 
-Booting
-*******
+How do you boot the system?
+***************************
 
-SD Boot
-=======
+How do you boot from SD card?
+=============================
 Partition the SD card in host with `Single Falcon partitionc <https://wiki.amarulasolutions.com/found/host/tools.html#falcon-partition>`_
 
 ::
@@ -85,9 +89,15 @@ Partition the SD card in host with `Single Falcon partitionc <https://wiki.amaru
 
 Insert the SD card and power-on the board. See the Linux boot start from SPL
 
-Linux
-*****
+How do you build the Linux kernel?
+**********************************
 RTL8189ES Wifi
 ==============
 EMAC
 ====
+
+.. tip::
+   Need mainline BSP support for Allwinner platforms? Amarula Solutions
+   provides U-Boot and Linux kernel mainlining, Buildroot/Yocto integration,
+   and upstream-first development for Allwinner-based embedded products.
+   `Contact our BSP team <https://www.amarulasolutions.com/contact/>`_

@@ -1,15 +1,19 @@
 Bananapi M1 Plus
 ################
+
+.. note:: **TL;DR**
+   - Mainline BSP bring-up guide for this board — covering **U-Boot**, **Linux kernel**, and **Buildroot** build from source with SD/flash boot, serial console access, and device tree configuration.
+   - Part of Amarula Solutions' upstream-first BSP documentation for Allwinner SoCs.
 This tutorial will show the details of Bananapi M1 board mainline support and other needed details, for more information about `hardware <http://www.banana-pi.org/m1.html>`_ and `linux-sunxi <http://linux-sunxi.org/LeMaker_Banana_Pi>`_
 
 
-BSP Build
-*********
+How do you build the BSP?
+*************************
 
 Image building need host to ready with all necessary tools ready, refer `here <https://wiki.amarulasolutions.com/found/host/tools.html#arm>`_
 
-U-Boot
-======
+How do you build U-Boot?
+========================
 ::
 
    $ git clone git://git.denx.de/u-boot.git
@@ -17,8 +21,8 @@ U-Boot
    $ make make Bananapi_defconfig
    $ make 
 
-Linux
-=====
+How do you build the Linux kernel?
+==================================
 ::
 
    $ git clone git://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git
@@ -28,17 +32,17 @@ Linux
    $ ARCH=arm sunxi_defconfig
    $ ARCH=arm make -j 4 zImage dtbs
 
-SD Boot
-*******
+How do you boot from SD card?
+*****************************
 
-FEL/USB Boot
-************
+How do you boot via FEL/USB?
+****************************
 More information `here <http://linux-sunxi.org/FEL/USBBoot>`_ and build the fel tools from `here <https://wiki.amarulasolutions.com/found/host/tools.html#sunxi>`_
 
 Insert SD card from and Press K3 located between the HDMI and USB host connectors and Power-on
 
-Enter FEL
-==========
+How do you enter FEL mode?
+==========================
 
 ::
 
@@ -47,8 +51,8 @@ Enter FEL
    # sunxi-fel version
    AWUSBFEX soc=00001651(A20) 00000001 ver=0001 44 08 scratchpad=00007e00 00000000 00000000
 
-Boot Linux
-==========
+How do you boot Linux via FEL?
+==============================
 
 From Host, get the boot.scr from `here <https://wiki.amarulasolutions.com/found/host/tools.html#boot32-fel-scr>`_
 
@@ -154,3 +158,9 @@ From Target UART
    [    0.000000] Built 1 zonelists, mobility grouping on.  Total pages: 260202
 
    [    0.000000] Kernel command line: console=ttyS0,115200 earlyprintk root=/dev/mmcblk0p1 rootwait
+
+.. tip::
+   Need mainline BSP support for Allwinner platforms? Amarula Solutions
+   provides U-Boot and Linux kernel mainlining, Buildroot/Yocto integration,
+   and upstream-first development for Allwinner-based embedded products.
+   `Contact our BSP team <https://www.amarulasolutions.com/contact/>`_

@@ -1,19 +1,23 @@
 Oceanic 5205-5inMFD
 ###################
 
-Hardware Access
-***************
+.. note:: **TL;DR**
+   - Mainline BSP bring-up guide for this board — covering **U-Boot**, **Linux kernel**, and **Buildroot** build from source with SD/flash boot, serial console access, and device tree configuration.
+   - Part of Amarula Solutions' upstream-first BSP documentation for Allwinner SoCs.
 
-BSP Build
-*********
+How do you access the hardware?
+*******************************
+
+How do you build the BSP?
+*************************
 Manual Build
 ============
 Image building need host to ready with all necessary tools ready, refer `here <https://wiki.amarulasolutions.com/found/host/tools.html#arm64>`_
 
 Below are the details of Image build for SoPine board.
 
-ATF
----
+How do you build ATF?
+---------------------
 
 ::
 
@@ -22,8 +26,8 @@ ATF
         $ make PLAT=sun50iw1p1 bl31
         $ export BL31=/path/to/arm-trusted-firmware/build/sun50iw1p1/release/bl31.bin
         
-U-Boot
-------
+How do you build U-Boot?
+------------------------
 
 ::
 
@@ -32,8 +36,8 @@ U-Boot
         $ make oceanic_5205_5inmfd_defconfig
         $ make 
         
-Linux
------
+How do you build the Linux kernel?
+----------------------------------
 
 ::
 
@@ -43,8 +47,8 @@ Linux
         $ ARCH=arm64 make defconfig
         $ ARCH=arm64 make -j 4 Image dtbs
 
-Buildroot
-=========
+How do you build with Buildroot?
+================================
 
 Read readme.txt from board/oceanic/5205-5inmfd/readme.tx for more info.
 
@@ -55,3 +59,9 @@ Read readme.txt from board/oceanic/5205-5inmfd/readme.tx for more info.
         $ git checkout -b 5inmfd origin/5inmfd
         $ make oceanic_5205_5inmfd_defconfig
         $ make
+
+.. tip::
+   Need mainline BSP support for Allwinner platforms? Amarula Solutions
+   provides U-Boot and Linux kernel mainlining, Buildroot/Yocto integration,
+   and upstream-first development for Allwinner-based embedded products.
+   `Contact our BSP team <https://www.amarulasolutions.com/contact/>`_

@@ -1,16 +1,21 @@
 Bananapi M64
-###############
+############
+
+
+.. note:: **TL;DR**
+   - Mainline BSP bring-up guide for this board — covering **U-Boot**, **Linux kernel**, and **Buildroot** build from source with SD/flash boot, serial console access, and device tree configuration.
+   - Part of Amarula Solutions' upstream-first BSP documentation for Allwinner SoCs.
 This tutorial will show the details of Bananapi M64 board mainline support and other needed details, for more information about `hardware <http://www.banana-pi.org/m64.html>`_ and `linux-sunxi <https://linux-sunxi.org/Banana_Pi_M64>`_
 
-Hardware Access
-***************
+How do you access the hardware?
+*******************************
 Serial debug and Power connections
 
 .. image:: /images/bpi-m64.jpeg
 
 
-BSP Build
-*********
+How do you build the BSP?
+*************************
 Manual Build
 ============
 For manual building refer `here <https://wiki.amarulasolutions.com/uboot/image_build/allwinner_sunxi64.html>`_ for all necessary information.
@@ -19,8 +24,8 @@ Image building need host to ready with all necessary tools ready, refer `here <h
 
 Below are the details of Image build for Banana Pi BPI-M64 board.
 
-ATF
----
+How do you build ATF?
+---------------------
 
 ::
 
@@ -29,8 +34,8 @@ ATF
         make PLAT=sun50iw1p1 bl31
         export BL31=/path/to/arm-trusted-firmware/build/sun50iw1p1/release/bl31.bin
 
-U-Boot
-------
+How do you build U-Boot?
+------------------------
 
 ::
 
@@ -39,8 +44,8 @@ U-Boot
         make bananapi_m64_defconfig
         make 
 
-Linux
------
+How do you build the Linux kernel?
+----------------------------------
 
 ::
 
@@ -50,8 +55,8 @@ Linux
         ARCH=arm64 make defconfig
         ARCH=arm64 make -j 4 Image dtbs
 
-Buildroot
-=========
+How do you build with Buildroot?
+================================
 It's easy to build entire system using buildroot and mainline supported bananapi-m64 already. See read this `readme.txt <https://git.buildroot.net/buildroot/tree/board/bananapi/bananapi-m64/readme.txt>`_ for more info.
 
 ::
@@ -61,11 +66,11 @@ It's easy to build entire system using buildroot and mainline supported bananapi
         make bananapi_m64_defconfig
         make
 
-Booting
-*******
+How do you boot the system?
+***************************
 
-SD Boot
-=======
+How do you boot from SD card?
+=============================
 
 Partition the SD card in host with `Single Falcon partition <https://wiki.amarulasolutions.com/found/host/tools.html#falcon-partition>`_
 
@@ -185,8 +190,8 @@ Insert the SD card, USB Mass storage and power-on the board. See the Linux boot 
         [    0.000000] Policy zone: DMA
         [    0.000000] Kernel command line: console=ttyS0,115200 earlyprintk root=/dev/sda1 rootwait
         
-U-Boot
-******
+How do you build U-Boot?
+************************
 
 USB Mass Storage gadget
 =======================
@@ -206,8 +211,8 @@ To do this you need to connect a USB cable between the OTG/Client port of the bo
 
 and use U-Boot's ums command.
 
-Linux
-*****
+How do you build the Linux kernel?
+**********************************
 
 USB OTG
 =======
@@ -273,3 +278,9 @@ See USB stick detection on bananapi
         [  453.175770] sd 0:0:0:0: [sda] Write cache: disabled, read cache: enabled, doesn't support DPO or FUA
         [  453.191292]  sda: sda1
         [  453.197283] sd 0:0:0:0: [sda] Attached SCSI removable disk
+
+.. tip::
+   Need mainline BSP support for Allwinner platforms? Amarula Solutions
+   provides U-Boot and Linux kernel mainlining, Buildroot/Yocto integration,
+   and upstream-first development for Allwinner-based embedded products.
+   `Contact our BSP team <https://www.amarulasolutions.com/contact/>`_

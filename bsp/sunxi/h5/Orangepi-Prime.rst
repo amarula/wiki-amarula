@@ -1,16 +1,20 @@
 Orangepi Prime
 ##############
 
+.. note:: **TL;DR**
+   - Mainline BSP bring-up guide for this board — covering **U-Boot**, **Linux kernel**, and **Buildroot** build from source with SD/flash boot, serial console access, and device tree configuration.
+   - Part of Amarula Solutions' upstream-first BSP documentation for Allwinner SoCs.
+
 This tutorial will show the details of Orangepi Prime board mainline support and other needed details, for more information about `hardware <http://www.orangepi.org/OrangePiPrime/>`_
 
-Hardware Access
-***************
+How do you access the hardware?
+*******************************
 .. image:: /images/opi_prime.jpeg
 
 Serial debug and Power connections
 
-BSP Build
-*********
+How do you build the BSP?
+*************************
 Manual Build
 ============
 For manual building refer here for all necessary information.
@@ -19,8 +23,8 @@ Image building need host to ready with all necessary tools ready, refer here
 
 Below are the details of Image build for Orangepi Prime board.
 
-ATF
----
+How do you build ATF?
+---------------------
 ::
 
         $ git clone https://github.com/apritzel/arm-trusted-firmware.git
@@ -28,8 +32,8 @@ ATF
         $ make PLAT=sun50iw1p1 bl31
         $ export BL31=/path/to/arm-trusted-firmware/build/sun50iw1p1/release/bl31.bin
         
-U-Boot
-------
+How do you build U-Boot?
+------------------------
 ::
 
         $ git clone git://git.denx.de/u-boot.git
@@ -37,8 +41,8 @@ U-Boot
         $ make orangepi_prime_defconfig
         $ make
 
-Linux
------
+How do you build the Linux kernel?
+----------------------------------
 ::
 
         $ git clone git://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git
@@ -47,8 +51,8 @@ Linux
         $ ARCH=arm64 make defconfig
         $ ARCH=arm64 make -j 4 Image dtbs
 
-Buildroot
-=========
+How do you build with Buildroot?
+================================
 It's easy to build entire system using buildroot and mainline supported orangepi prime already. See read this `readme.txt <https://git.buildroot.net/buildroot/tree/board/orangepi/orangepi-prime/readme.txt>`_ for more info.
 
 ::
@@ -58,9 +62,15 @@ It's easy to build entire system using buildroot and mainline supported orangepi
         $ make orangepi_prime_defconfig
         $ make
 
-Booting
-*******
-SD Boot
-=======
-Buildroot
-=========
+How do you boot the system?
+***************************
+How do you boot from SD card?
+=============================
+How do you build with Buildroot?
+================================
+
+.. tip::
+   Need mainline BSP support for Allwinner platforms? Amarula Solutions
+   provides U-Boot and Linux kernel mainlining, Buildroot/Yocto integration,
+   and upstream-first development for Allwinner-based embedded products.
+   `Contact our BSP team <https://www.amarulasolutions.com/contact/>`_
