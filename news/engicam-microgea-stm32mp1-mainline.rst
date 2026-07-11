@@ -11,7 +11,7 @@ to push Engicam SOM's and Carrier board's BSP onto Mainline U-Boot,
 Linux Kernel, Yocto/Buildroot, and Multimedia Open source projects.
 
 We have supported PX30-Core in Mainline as posted before
-`PX30-Core <https://wiki.amarulasolutions.com/news/301020.html>`_, now
+`PX30-Core <https://wiki.amarulasolutions.com/news/engicam-px30-core-mainline.html>`_, now
 we have another project-based `STMicroelectronics <https://www.st.com/content/st_com/en.html>`_
 STM32MP1 SoM, `Engicam MicroGEAM STM32MP1 <https://www.engicam.com/vis-prod/101358>`_
 

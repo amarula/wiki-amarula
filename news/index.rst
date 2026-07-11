@@ -5,31 +5,74 @@ News
    - Product announcements, event coverage, and technical breakthroughs from **Amarula Solutions** — covering **embedded Linux mainlining, Yocto, Buildroot, U-Boot, Zephyr, Flutter, Jenkins CI/CD, and open source contributions**.
    - Stay updated on our latest **conference talks, product launches, workshop announcements, and upstream kernel contributions**.
 
+2026
+----
+
 .. toctree::
-   :maxdepth: 2
-   :caption: Contents:
+   :maxdepth: 1
 
    workshop
    embeddedworld-2026
    fosdem-2026
+
+2025
+----
+
+.. toctree::
+   :maxdepth: 1
+
    chatgpt-3.1.0
    metamend-2025
    embeddedworld-2025
    cutekeyboard
    CAN-rx-tx-statistics
-   linuxday-mantova
    warning-ng-jenkins-scanner
    busybox-ip-link
-   chatgpt-2.1.0
+
+2024
+----
+
+.. toctree::
+   :maxdepth: 1
+
+   linuxday-mantova
+
+2023
+----
+
+.. toctree::
+   :maxdepth: 1
+
    ewc2023
-   281121
-   052721
-   012021
-   171220
-   021220
-   241120
-   071120
-   301020
+
+2021
+----
+
+.. toctree::
+   :maxdepth: 1
+
+   runtime-display-switching-linux-drm
+   engicam-icore-mx8m-mini-mainline
+   drm-driver-dlpc3433-mipi-dsi-projector
+
+2020
+----
+
+.. toctree::
+   :maxdepth: 1
+
+   engicam-microgea-stm32mp1-mainline
+   live-embedded-event-2020-riscv-boot
+   type-c-power-delivery-altmode-displayport
+   rock-pi-4-mainline
+   engicam-px30-core-mainline
+
+Jobs
+----
+
+.. toctree::
+   :maxdepth: 1
+
    jobs
 
 .. tip::
