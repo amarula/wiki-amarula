@@ -1,15 +1,9 @@
 Implementing Secureboot with Yocto Wrynose and Grub
 ===================================================
-.. raw:: html
 
-    <a href="https://www.amarulasolutions.com/contact" class="contact-button-inline">
-        Contact Us
-    </a>
-    <div class="contact-button-clear"></div>
-
-|
-|
-
+.. note:: **TL;DR**
+   - Step-by-step guide to implementing **UEFI Secureboot on x64 embedded Linux** using **Yocto Wrynose, meta-secure-core (Wind River), GRUB, and kas** — covering custom signing keys, TPM-based LUKS auto-decryption, SELinux, read-only rootfs, and A/B updates with Mender.
+   - Includes a complete **kas YAML configuration**, custom key generation script, and reference implementation at **meta-amarula-solutions-demo-images** on GitHub.
 
 A customer recently came to Amarula Solutions with the task of creating
 a custom Yocto X64 image with the following features:
@@ -39,7 +33,7 @@ help! I decided to attack the project in the following order:
 - Add uEFI Secureboot
 - Add LUKS with auto-decryption
 
-Perhaps the order of operations wasn’t perfect, but in the end, the
+Perhaps the order of operations wasn't perfect, but in the end, the
 image works and updates properly.
 
 | This is the first blog post in a series detailing how to integrate all
@@ -51,19 +45,19 @@ Also, there is a link at the bottom of the post for our
 meta-amarula-solutions-demo-images github page if you want to dive right
 in and start building images immediately! [1]
 
-Why Secureboot?
----------------
+Why should you implement Secureboot in your embedded Linux image?
+-----------------------------------------------------------------
 
 | The EU Cyber Resilience Act (CRA) mandates that manufacturers
-  “implement secure boot processes verifying the integrity of software
-  before execution.”
+  "implement secure boot processes verifying the integrity of software
+  before execution."
 | The easiest way to deal with this requirement on a X64 device is to
   integrate secureboot into the image using meta-secure-core from
   Wind-River (https://github.com/Wind-River/meta-secure-core) and the
   meta-efi-secure-boot layer.
 
-Problems:
----------
+What challenges does Secureboot integration present?
+----------------------------------------------------
 
 - The documentation for meta-secure-core assumes that you already know a
   lot about Secureboot, module signing, making your own user keys, what
@@ -74,16 +68,16 @@ Problems:
 - For security purposes, the customer needs to provide their own signing
   keys that we never created.
 
-Solutions:
-----------
+How do we solve these challenges?
+----------------------------------
 
-Let’s start with the basics:
+Let's start with the basics:
 
 - What is uEFI Secureboot?
 
   - uEFI Secureboot is a setting in the uEFI. When enabled, the uEFI
     verifies firmware images (such as bootloaders) with certificates
-    stored in the uEFI. If the firmware image isn’t signed against a
+    stored in the uEFI. If the firmware image isn't signed against a
     certificate stored in the uEFI, then the image fails to load, and
     the boot process stops!
 
@@ -93,16 +87,16 @@ Let’s start with the basics:
   - Remove all installed certificates
     **This step is crucial! When all certificates are removed AND uEFI
     Secureboot is set to enforcing, then the uEFI Secureboot is et to a
-    special “SetupMode” where it is possible to enroll Secureboot
+    special "SetupMode" where it is possible to enroll Secureboot
     certificates into the uEFI!**
 
 - Using grub with meta-secure-core, a small amount of logic is
-  automatically prepended before the first entry to check if “SetupMode”
+  automatically prepended before the first entry to check if "SetupMode"
   is active, and if so, automatically provisions the certificates and
   reboots the device.[2]
 
-Building an image with secureboot using Yocto Wrynose
------------------------------------------------------
+How do you build a Yocto image with Secureboot enabled?
+-------------------------------------------------------
 
 The image requires the following:
 
@@ -125,28 +119,28 @@ secureboot is straightforward:
 
 - Setup BBLAYERS in conf/bblayers.conf as such:
 
-  | BBLAYERS ?= ”
+  | BBLAYERS ?= "
   | ${TOPDIR}/../openembedded-core/meta
   | ${TOPDIR}/../meta-openembedded/meta-oe
   | ${TOPDIR}/../meta-openembedded/meta-perl
   | ${TOPDIR}/../meta-secure-core/meta-efi-secure-boot
   | ${TOPDIR}/../meta-secure-core/meta-secure-core-common
   | ${TOPDIR}/../meta-secure-core/meta-signing-key
-  | ”
+  | "
 
 - Add the following to ``conf/local.conf``:
 
   .. rubric:: UEFI secureboot settings
      :name: uefi-secureboot-settings
 
-  PACKAGE_CLASSES = “package_rpm” DISTRO_FEATURES:remove = “efi”
-  DISTRO_FEATURES:append = ” efi-secure-boot modsign” GRUB_SIGN_VERIFY =
-  “1” UEFI_SELOADER = “0” UEFI_SB = “1” USER_KEY_SHOW_VERBOSE ?= “1”
-  SIGNING_MODEL = “sample”
+  PACKAGE_CLASSES = "package_rpm" DISTRO_FEATURES:remove = "efi"
+  DISTRO_FEATURES:append = " efi-secure-boot modsign" GRUB_SIGN_VERIFY =
+  "1" UEFI_SELOADER = "0" UEFI_SB = "1" USER_KEY_SHOW_VERBOSE ?= "1"
+  SIGNING_MODEL = "sample"
 
 - See [3] for why UEFI_SELOADER is diabled.
 
-- secure-core-image uses rpm’s for signature/security purposes
+- secure-core-image uses rpm's for signature/security purposes
 
 - Run ``bitbake secure-core-image``
 
@@ -225,16 +219,16 @@ Running the image in a qemu environment is as easy as
 
 Notes:
 
-- meta-secure-core auto-sets the root password to “toor”
+- meta-secure-core auto-sets the root password to "toor"
 - Once logged in as root, ``mokutil --sb-state`` should output
-  “SecureBoot enabled”
+  "SecureBoot enabled"
 
-Putting it together
--------------------
+How do you set up a professional, production-grade configuration?
+-----------------------------------------------------------------
 
 | While using a kas file with a local_conf_header is convinent, it also
-  isn’t well suited for a professional setup.
-| Instead, it’s best to make your own meta-layer with a custom distro on
+  isn't well suited for a professional setup.
+| Instead, it's best to make your own meta-layer with a custom distro on
   top of Yocto.
 | Check out the meta-amarula-solutions-demo-images github page linked
   below for an example of how to do just that.
@@ -247,12 +241,12 @@ Building the demo image is as easy as:
 - kas build kas/meta-amarula-solutions-demo-images.yaml
 - runqemu secureboot-demo-image ovmf.secboot kvm
 
-Replacing the sample signing SIGNING_MODEL
-------------------------------------------
+How do you replace sample signing keys with production keys?
+------------------------------------------------------------
 
 | Obviously, it is not a good idea to use sample certificates in
   production! Luckily, meta-secure-core has a bash script to generate
-  certificates for you called “create-user-key-store.sh” located at
+  certificates for you called "create-user-key-store.sh" located at
   meta-signing-key/scripts/create-user-key-store.sh.
 | However, the script is a bit less than intuitive to use. A script I
   wrote to use it is below:
@@ -301,3 +295,10 @@ https://github.com/Wind-River/meta-secure-core/blob/master/meta-efi-secure-boot/
 
 3:
 https://github.com/Wind-River/meta-secure-core/commit/6d83fbf86fee43ca6510208f7470b04419d4333b
+
+.. tip::
+   Need help implementing secure boot or CRA compliance for your embedded
+   Linux product? Amarula Solutions provides Yocto security consulting,
+   custom signing key infrastructure, TPM/LUKS integration, and secure
+   boot implementation for x64, ARM, and RISC-V platforms.
+   `Contact our security team <https://www.amarulasolutions.com/contact/>`_

@@ -1,12 +1,9 @@
 Warning-ng Jenkins plugin now can report Valgrind memory leak
-==============================================================
-.. raw:: html
+=============================================================
 
-    <a href="https://www.amarulasolutions.com/contact" class="contact-button-inline">
-        Contact Us
-    </a>
-    <div class="contact-button-clear"></div>
-
+.. note:: **TL;DR**
+   - How Amarula Solutions integrated **Valgrind memory analysis** into Jenkins CI/CD pipelines — using the **Warnings NG plugin's valgrind parser** with strict quality gates that fail builds on memory leaks, invalid accesses, or other memory errors.
+   - Complete pipeline example with **Amarula Solutions' Verification shared library**, parallel test stages, code coverage (Cobertura), and Gerrit integration.
 
 .. figure:: /images/valgrind-warning.png
    :align: center
@@ -22,15 +19,14 @@ At Amarula Solutions, we are constantly striving to optimize our IoT development
 A recent focus has been on enhancing memory safety and stability within our embedded systems.
 This article details a significant improvement we've made in this area.
 
-The Challenge:
-**************
+What is the challenge with memory safety in embedded systems?
+*************************************************************
+Memory leaks and other memory-related issues can have severe consequences in embedded systems, leading to unpredictable behavior, system crashes, and ultimately, device failures. To mitigate these risks, we implemented a robust system for detecting and preventing memory-related problems.
 
-Memory leaks and other memory-related issues can have severe consequences in embedded systems, leading to unpredictable behavior, system crashes, and ultimately, device failures. To mitigate these risks, we implemented a robust system for detecting and preventing memory-related problems.   
+What is the solution?
+*********************
 
-The Solution:
-*************
-
-* Valgrind Integration: We integrated the valgrindParser tool into our build process. This powerful tool analyzes memory usage during runtime, identifying potential memory leaks, invalid memory accesses, and other memory-related errors.   
+* Valgrind Integration: We integrated the valgrindParser tool into our build process. This powerful tool analyzes memory usage during runtime, identifying potential memory leaks, invalid memory accesses, and other memory-related errors.
 
 * Enhanced Issue Tracking: To streamline issue tracking, we modified our build system to retain issue records only for the most recent build. This ensures a clean and focused issue history, preventing clutter from older builds and improving the efficiency of issue resolution.
 
@@ -40,8 +36,8 @@ The Solution:
 
 * Open Source Contribution: We have merged these improvements into the warning-ng project, contributing to the open-source community and potentially benefiting other developers facing similar challenges.
 
-Benefits:
-*********
+What are the benefits?
+**********************
 
 * Improved Code Quality: Proactive identification and resolution of memory issues significantly enhance the robustness and long-term stability of our IoT devices.
 
@@ -49,11 +45,10 @@ Benefits:
 
 * Increased Customer Satisfaction: By delivering more reliable and stable devices, we enhance customer satisfaction and build stronger relationships with our customers.
 
-Conclusion:
-***********
-
+What is the bottom line for IoT memory safety?
+**********************************************
 This initiative represents a significant step forward in our commitment to delivering high-quality,
-reliable IoT solutions. By continuously improving our development processes and leveraging 
+reliable IoT solutions. By continuously improving our development processes and leveraging
 open-source tools and best practices, we are well-positioned to meet the evolving demands of the IoT landscape.
 
 Example of Jenkins pipeline
@@ -143,3 +138,9 @@ Example of Jenkins pipeline
 
 .. figure:: /images/pipeline-console.png
    :align: center
+
+.. tip::
+   Need memory safety testing in your embedded CI/CD pipeline? Amarula Solutions
+   integrates Valgrind, quality gates, and automated memory leak detection into
+   Jenkins pipelines for firmware and IoT projects.
+   `Contact our CI/CD team <https://www.amarulasolutions.com/contact/>`_

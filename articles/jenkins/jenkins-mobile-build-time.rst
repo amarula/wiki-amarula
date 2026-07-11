@@ -1,26 +1,21 @@
 ==========================================================
 Optimizing Android CI: Reducing Build Times by 25% with S3
 ==========================================================
-.. raw:: html
 
-    <a href="https://www.amarulasolutions.com/contact" class="contact-button-inline">
-        Contact Us
-    </a>
-    <div class="contact-button-clear"></div>
+.. note:: **TL;DR**
+   - How Amarula Solutions achieved a **25% reduction in Android CI build times** by integrating **Amazon S3 as a remote Gradle build cache** — sharing build outputs across Jenkins agents and eliminating redundant compilation.
+   - Covers **Gradle ``s3-build-cache`` plugin** configuration in Kotlin DSL, Jenkins credential injection for AWS, and plans for a multi-layered caching strategy with the Jenkins Cache Plugin.
 
-
-Introduction
-------------
-
+How does remote build caching speed up Android CI?
+--------------------------------------------------
 In large-scale Android and Kotlin Multiplatform (KMP) projects, build times
 often become a bottleneck in the CI/CD pipeline. To address this, we have
 integrated a remote build cache using Amazon S3. By sharing build outputs
 across different Jenkins agents, we have successfully reduced our total
 build time by approximately **25%**.
 
-The Challenge
--------------
-
+What is the challenge with clean builds?
+----------------------------------------
 Clean builds in Jenkins are traditionally slow because they start from a
 blank slate. Even with local caching on a single node, distributed builds
 across multiple nodes often miss the cache, forcing redundant compilation
@@ -32,9 +27,8 @@ of unchanged modules.
 |
 |
 
-Implementation: Gradle and S3
------------------------------
-
+How do you implement Gradle with S3 caching?
+--------------------------------------------
 The solution involves updating the Gradle configuration to support S3 as a
 storage backend and configuring the Jenkins pipeline to provide the
 necessary credentials.
@@ -79,7 +73,7 @@ populate the remote cache.
 
     'Build': {
       withCredentials([
-          [ $class: 'AmazonWebServicesCredentialsBinding', 
+          [ $class: 'AmazonWebServicesCredentialsBinding',
             credentialsId: "job-cacher-amarula",
             accessKeyVariable: 'AWS_ACCESS_KEY_ID',
             secretKeyVariable: 'AWS_SECRET_KEY'
@@ -90,18 +84,16 @@ populate the remote cache.
     }
 
 
-Performance Gains
------------------
-
+What performance gains were achieved?
+-------------------------------------
 By implementing the remote S3 cache, we observed:
 
 * **Time Savings:** Build stages dropped from ~8 minutes to ~6 minutes.
 * **Network Efficiency:** Only modified task outputs are downloaded.
 * **Warm Starts:** Every node benefits from the work of previous builds.
 
-Future Work: Jenkins Cache Plugin
----------------------------------
-
+What is planned for future caching improvements?
+------------------------------------------------
 While the Gradle S3 cache handles task-level outputs, we plan to
 incorporate the **Jenkins Cache Plugin** in the next release of the
 pipeline. This will specifically target **large artifacts** and
@@ -111,10 +103,15 @@ This multi-layered caching strategy will further stabilize our
 environment and minimize external network fetches for heavy binary
 dependencies.
 
-Conclusion
-----------
-
+What is the bottom-line impact?
+-------------------------------
 A 25% reduction in build time accelerates developer feedback and
 optimizes resource usage. Combining Gradle's S3 cache with the
 upcoming Jenkins Cache Plugin will provide a comprehensive solution
 for high-performance mobile DevOps.
+
+.. tip::
+   Need faster CI/CD builds for Android or Kotlin Multiplatform projects?
+   Amarula Solutions optimizes build pipelines with remote caching,
+   Gradle tuning, and Jenkins infrastructure design.
+   `Contact our mobile DevOps team <https://www.amarulasolutions.com/contact/>`_

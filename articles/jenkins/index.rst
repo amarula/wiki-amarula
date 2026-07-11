@@ -1,10 +1,9 @@
-.. test sphinx documentation master file, created by
-   sphinx-quickstart on Mon Mar  4 14:12:36 2019.
-   You can adapt this file completely to your liking, but it should at least
-   contain the root `toctree` directive.
-
 Jenkins technologies
 ====================
+
+.. note:: **TL;DR**
+   - Deep-dive articles on **Jenkins CI/CD for embedded systems** — covering **Yocto build pipelines with kas-container, Gerrit-triggered verification, Mend SCA security scanning, CodeChecker static analysis, Valgrind memory checking, Labgrid hardware testing, Android build caching, and CodeNarc for Groovy shared libraries**.
+   - All pipelines use **Amarula Solutions' Jenkins shared libraries** for consistency across projects.
 
 .. _contents: Table of contents
 
@@ -22,3 +21,9 @@ Jenkins technologies
    jenkins-mend-pipeline
    jenkins-mobile-build-time
    jenkins-gerrit
+
+.. tip::
+   Need a Jenkins CI/CD pipeline tailored for embedded development?
+   Amarula Solutions designs, builds, and maintains Jenkins-based automation
+   for Yocto, Android, and firmware projects.
+   `Contact our CI/CD team <https://www.amarulasolutions.com/contact/>`_

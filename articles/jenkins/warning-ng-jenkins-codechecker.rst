@@ -1,11 +1,9 @@
 Warning-ng Jenkins plugin codechecker integration
-==============================================================
-.. raw:: html
+=================================================
 
-    <a href="https://www.amarulasolutions.com/contact" class="contact-button-inline">
-        Contact Us
-    </a>
-    <div class="contact-button-clear"></div>
+.. note:: **TL;DR**
+   - Integration guide for **CodeChecker static analysis** with the **Jenkins Warnings NG plugin** — enabling automated C/C++ bug detection, style violation enforcement, security vulnerability scanning, and concurrency issue identification within CI/CD pipelines.
+   - Complete Groovy pipeline example using **Amarula Solutions' CodeChecker shared library** (``Analyzer``, ``Language``, ``CodeCheckerReportFormat``) with Clang-Tidy and Clang Static Analyzer support.
 
 .. figure:: /images/code-checker-warnings.png
    :align: center
@@ -15,7 +13,6 @@ Warning-ng Jenkins plugin codechecker integration
 
 Amarula Solutions
 
-=====================================================================
 Streamlining Static Analysis with CodeChecker and Jenkins Warnings NG
 =====================================================================
 
@@ -29,7 +26,6 @@ integrating these two tools and how they can improve your development workflow.
 
 What is CodeChecker?
 --------------------
-
 CodeChecker is an open-source static analysis tool suite capable of detecting a
 wide range of code defects, including:
 
@@ -48,7 +44,6 @@ command-line interface and can be easily integrated into build systems.
 
 What is the Jenkins Warnings NG Plugin?
 ---------------------------------------
-
 The Jenkins Warnings NG plugin is a powerful Jenkins plugin that collects and
 displays compiler warnings, static analysis issues, and other build warnings.
 It provides a centralized view of all warnings across different build tools and
@@ -65,9 +60,8 @@ analysis tools, making it easy to track and manage them. Key features include:
 * **Detailed Reporting:** Generates comprehensive reports on detected warnings,
   including context information and links to the source code.
 
-The Power of Integration: CodeChecker and Jenkins Warnings NG
--------------------------------------------------------------
-
+What are the benefits of integrating CodeChecker with Warnings NG?
+-------------------------------------------------------------------
 Integrating CodeChecker with the Jenkins Warnings NG plugin brings several
 advantages:
 
@@ -189,9 +183,8 @@ Example Jenkins Pipeline Snippet using Amarula Solutions Library:
 .. figure:: /images/pipeline-codechecker.png
    :align: center
 
-Conclusion:
------------
-
+What is the key takeaway for static analysis in CI/CD?
+------------------------------------------------------
 The combination of CodeChecker and the Jenkins Warnings NG plugin offers a
 powerful and efficient solution for automating static analysis and managing
 code quality within a continuous integration environment. By integrating these
@@ -201,3 +194,9 @@ promotes a culture of code quality and helps to streamline the development
 workflow. Remember to consult the official documentation for both CodeChecker
 and the Jenkins Warnings NG plugin for the most up-to-date information and
 detailed configuration instructions.
+
+.. tip::
+   Need automated static analysis for your C/C++ firmware or embedded project?
+   Amarula Solutions integrates CodeChecker, Clang-Tidy, and Jenkins Warnings NG
+   into CI/CD pipelines with quality gates and trend tracking.
+   `Contact our CI/CD team <https://www.amarulasolutions.com/contact/>`_

@@ -1,15 +1,12 @@
 Jelliphy - AI Framework for Interactive Web Application Development
-#####################################################################
-.. raw:: html
+###################################################################
 
-    <a href="https://www.amarulasolutions.com/contact" class="contact-button-inline">
-        Contact Us
-    </a>
-    <div class="contact-button-clear"></div>
+.. note:: **TL;DR**
+   - **Jelliphy** is a no-code browser-based framework that integrates the **ChatGPT API** into Git-hosted web applications — translating freehand annotations, UI element selections, and natural language descriptions directly into code patches.
+   - Supports multiple interaction modes (**Navigation, Pin Notes, Edit with CSS property manipulation, Sketch WIP**) and workflows (**Combined vs. Parallel Requests**) for collaborative, AI-assisted web development.
 
-
-Overview
-********
+How does Jelliphy enable AI-assisted web development?
+******************************************************
 
 Jelliphy is a **No-Code Browser-Based Framework** that integrates the **ChatGPT** API into your **Git-hosted** web application.
 
@@ -25,8 +22,8 @@ Jelliphy connects directly with your live user interface, enabling interaction w
 
 This tool is designed to streamline the development process, making it easier to implement changes and collaborate with team members.
 
-Architecture
-************
+How is Jelliphy architected?
+****************************
 
 Jelliphy operates as middleware between your browser and the ChatGPT API:
 
@@ -36,8 +33,8 @@ Jelliphy operates as middleware between your browser and the ChatGPT API:
 .. figure:: /images/jelliphy-intro_1.png
    :alt: Jelliphy UI workflow
 
-Key Benefits
-************
+What are the key benefits?
+**************************
 
 - **Visual Interaction**: Directly click or draw on UI elements to initiate change requests.
 - **Automated Patching**: Natural-language descriptions are converted into Git-diff patches.
@@ -49,8 +46,8 @@ Key Benefits
 
    Collaborative Workflow
 
-Modes of Operation
-******************
+What modes of operation does Jelliphy offer?
+********************************************
 
 Jelliphy offers multiple modes to facilitate interaction with ChatGPT:
 
@@ -119,14 +116,14 @@ Edit Mode includes several sub-modes to facilitate different types of UI modific
 
    Quick-Edit Content
 
-Workflow Strategies
-*******************
+What workflow strategies does Jelliphy support?
+***********************************************
 
 Combined vs. Parallel Requests
 ------------------------------
 
 - **Combined Requests**: Group multiple edits into a single prompt, generating one cohesive patch for related changes.
-- **Parallel Requests**: Submit each edit separately to ChatGPT, applying independent patches as soon as they’re ready.
+- **Parallel Requests**: Submit each edit separately to ChatGPT, applying independent patches as soon as they're ready.
 
   This is ideal for large-scale projects where multiple developers are working on different features simultaneously.
 
@@ -171,3 +168,9 @@ Notes and Considerations
 - Leverage Jelliphy's collaborative features to enhance team communication and project management.
 - Use Jelliphy in conjunction with other development tools to streamline your workflow and improve productivity.
 - Share your experiences and success stories with Jelliphy in the developer community to inspire others.
+
+.. tip::
+   Want to integrate AI-assisted development into your web application
+   workflow? Amarula Solutions develops custom AI tooling including the
+   Jelliphy framework and ChatGPT Gerrit plugin.
+   `Contact us about AI-powered development tools <https://www.amarulasolutions.com/contact/>`_

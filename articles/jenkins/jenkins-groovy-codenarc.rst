@@ -1,12 +1,9 @@
 Fixing Flattened CodeNarc XML Report Paths in Jenkins Shared Libraries
 ======================================================================
-.. raw:: html
 
-    <a href="https://www.amarulasolutions.com/contact" class="contact-button-inline">
-        Contact Us
-    </a>
-    <div class="contact-button-clear"></div>
-
+.. note:: **TL;DR**
+   - Technical deep-dive and workaround for a bug where **Gradle's CodeNarc plugin** generates flattened XML report paths when used with the **Jenkins JPI plugin** — breaking SonarQube integration. The solution bypasses Gradle's native task and invokes **Ant CodeNarc** directly with an anchored base directory.
+   - Uses **Groovy DSL** in ``build.gradle`` with isolated dependency configuration and dynamic task override pattern.
 
 If you are developing a Jenkins Shared Library and using Gradle to run CodeNarc, you might have noticed a frustrating bug: your generated XML reports completely lose their package hierarchy. Instead of files being cleanly mapped to ``com/amarula/build/Build.groovy``, they are dumped into an empty package path (``<Package path=''>``) with just the filename.
 
@@ -14,9 +11,8 @@ This causes massive headaches when integrating with code quality tools like Sona
 
 Here is exactly why this happens and the silver-bullet workaround to fix it.
 
-The Root Cause: The Jenkins JPI Plugin
---------------------------------------
-
+What causes the flattened CodeNarc report paths?
+------------------------------------------------
 The culprit is a deep-seated clash between Gradle's native CodeNarc task and the ``org.jenkins-ci.jpi`` plugin.
 
 To support Continuation Passing Style (CPS) compilation for Jenkins pipelines, the JPI plugin fundamentally hijacks your ``sourceSets.main`` under the hood. It secretly slices your ``src/`` directory into a fragmented list of every single sub-package folder.
@@ -25,9 +21,8 @@ When Gradle's standard ``codenarc`` plugin inherits this modified source set, it
 
 Standard overrides like ``source = fileTree('src')`` do not work because Gradle's task action continues to flatten the inputs right before the scan.
 
-The Solution: Bypassing Gradle for Ant
---------------------------------------
-
+How do you fix it by bypassing Gradle for Ant?
+----------------------------------------------
 To permanently fix this, we must completely bypass Gradle's native CodeNarc task action and invoke the underlying **Ant CodeNarc engine** directly. This allows us to feed the scanner an impenetrable base directory, preventing the JPI plugin from slicing it up.
 
 Step 1: Isolate the Dependencies
@@ -118,9 +113,14 @@ Finally, go to your root ``build.gradle`` file. Ensure the standard CodeNarc plu
     // Apply the custom Ant execution overrides
     apply from: 'gradle/codenarc-ant.gradle'
 
-Conclusion
-----------
-
+What is the outcome?
+--------------------
 By intercepting the task execution and forcing Ant to anchor directly to ``src`` and ``test/unit``, you successfully strip away the Jenkins JPI plugin's broken pathing logic.
 
 Running ``./gradlew check`` will now yield perfectly structured XML reports with complete ``com/yourcompany/...`` package hierarchies, making code quality analysis seamless once again.
+
+.. tip::
+   Struggling with Jenkins Shared Library tooling? Amarula Solutions develops
+   and maintains Jenkins shared libraries, Gradle build tooling, and CI/CD
+   pipeline infrastructure for enterprise teams.
+   `Contact our Jenkins team <https://www.amarulasolutions.com/contact/>`_

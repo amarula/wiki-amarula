@@ -3,24 +3,19 @@
 =======================================================
 DSL Pipeline for Espressif Project Verification Builds
 =======================================================
-.. raw:: html
 
-    <a href="https://www.amarulasolutions.com/contact" class="contact-button-inline">
-        Contact Us
-    </a>
-    <div class="contact-button-clear"></div>
-
+.. note:: **TL;DR**
+   - Step-by-step guide to creating a **Jenkins Job DSL pipeline** for automated verification of **Espressif firmware projects** integrated with **Gerrit Code Review** — covering Gerrit trigger configuration, Docker-based builds, clang-format/cmake-lint checks, Valgrind memory testing, and unit test execution with code coverage.
+   - Uses **Amarula Solutions' Verification shared library** (``com.amarula.build.Verification``) for consistent pipeline orchestration.
 
 This article outlines the process of setting up a Jenkins DSL (Domain Specific Language) pipeline for automated verification builds of Espressif projects, integrated with Gerrit for code review. This setup ensures that every proposed change undergoes a thorough build and test process before being merged, enhancing code quality and stability.
 
-Introduction
-------------
-
+How does automated verification work for Espressif projects?
+------------------------------------------------------------
 Automated verification is crucial in continuous integration and delivery workflows. For Espressif projects, which often involve embedded firmware, a robust CI/CD pipeline is essential. By leveraging Jenkins and Gerrit, we can create a system where every patchset submitted to Gerrit triggers a verification build on Jenkins, providing immediate feedback to developers.
 
-Prerequisites
--------------
-
+What are the prerequisites?
+----------------------------
 Before you begin, ensure you have the following:
 
 * A running Jenkins instance with the Job DSL plugin installed.
@@ -28,14 +23,13 @@ Before you begin, ensure you have the following:
 * Necessary Jenkins credentials for Git (e.g., SSH keys for Gitea).
 * Docker installed on your Jenkins agent for containerized builds.
 
-Jenkins DSL Pipeline Configuration
-----------------------------------
-
+How do you configure the Jenkins DSL pipeline?
+----------------------------------------------
 The core of this setup is a Jenkins Job DSL script that defines the pipeline. This script automates the creation and configuration of the Jenkins job.
 
 **1. Jenkins Job Definition**
 
-The DSL script defines a `pipelineJob` that is triggered by Gerrit events.
+The DSL script defines a ``pipelineJob`` that is triggered by Gerrit events.
 
 .. code-block:: groovy
 
@@ -64,15 +58,15 @@ The DSL script defines a `pipelineJob` that is triggered by Gerrit events.
         // ... (rest of the job definition)
     }
 
-* **`pipelineJob("amarula/duckacme/acme-verification")`**: Defines a new Jenkins pipeline job.
-* **`description`**: A human-readable description for the job.
-* **`cpsScm`**: Specifies that the pipeline script is loaded from Source Control Management.
-* **`git`**: Configures the Git repository where the `Jenkinsfile` resides.
-    * **`url`**: The URL of your Jenkins CI Git repository.
-    * **`credentials`**: The Jenkins credentials ID for accessing the Git repository.
-    * **`branch`**: The branch to checkout (e.g., `*/main` to match any remote main branch).
-* **`scriptPath("acme_Jenkinsfile")`**: The path to the Jenkinsfile within the Git repository.
-* **`logRotator`**: Configures log retention for the job.
+* **``pipelineJob("amarula/duckacme/acme-verification")``**: Defines a new Jenkins pipeline job.
+* **``description``**: A human-readable description for the job.
+* **``cpsScm``**: Specifies that the pipeline script is loaded from Source Control Management.
+* **``git``**: Configures the Git repository where the ``Jenkinsfile`` resides.
+    * **``url``**: The URL of your Jenkins CI Git repository.
+    * **``credentials``**: The Jenkins credentials ID for accessing the Git repository.
+    * **``branch``**: The branch to checkout (e.g., ``*/main`` to match any remote main branch).
+* **``scriptPath("acme_Jenkinsfile")``**: The path to the Jenkinsfile within the Git repository.
+* **``logRotator``**: Configures log retention for the job.
 
 **2. Gerrit Trigger Configuration**
 
@@ -131,21 +125,20 @@ The pipeline is configured to be triggered by specific events in Gerrit.
         }
     }
 
-* **`gerrit`**: Configures the Gerrit trigger.
-* **`serverName`**: The name of your Gerrit server as configured in Jenkins.
-* **`triggerOnEvents { patchsetCreated { ... } }`**: The pipeline will be triggered when a new patchset is created.
-    * **`excludeDrafts(true)`**: Prevents triggering on draft patchsets.
-    * **`excludeWipState(true)`**: Prevents triggering on Work-In-Progress patchsets.
-* **`gerritProjects`**: Defines which Gerrit projects will trigger the build.
-    * **`gerritProject`**: Each block specifies a project to monitor.
-        * **`compareType('ANT')`**: Uses ANT-style patterns for matching.
-        * **`pattern('duckacme/build')`**: Matches the `duckacme/build` project. Similar patterns are used for `duckacme/firmware`  and `duckacme/manifest`.
-        * **`branches { branch { pattern('**') } }`**: Monitors all branches within the specified projects.
+* **``gerrit``**: Configures the Gerrit trigger.
+* **``serverName``**: The name of your Gerrit server as configured in Jenkins.
+* **``triggerOnEvents { patchsetCreated { ... } }``**: The pipeline will be triggered when a new patchset is created.
+    * **``excludeDrafts(true)``**: Prevents triggering on draft patchsets.
+    * **``excludeWipState(true)``**: Prevents triggering on Work-In-Progress patchsets.
+* **``gerritProjects``**: Defines which Gerrit projects will trigger the build.
+    * **``gerritProject``**: Each block specifies a project to monitor.
+        * **``compareType('ANT')``**: Uses ANT-style patterns for matching.
+        * **``pattern('duckacme/build')``**: Matches the ``duckacme/build`` project. Similar patterns are used for ``duckacme/firmware``  and ``duckacme/manifest``.
+        * **``branches { branch { pattern('**') } }``**: Monitors all branches within the specified projects.
 
-Jenkinsfile Implementation
---------------------------
-
-The `acme_Jenkinsfile` contains the actual pipeline stages for building and testing the Espressif project. It runs on a designated agent (e.g., `firmware-nodes`) and utilizes Docker for a consistent build environment.
+How does the Jenkinsfile implement the build and test stages?
+-------------------------------------------------------------
+The ``acme_Jenkinsfile`` contains the actual pipeline stages for building and testing the Espressif project. It runs on a designated agent (e.g., ``firmware-nodes``) and utilizes Docker for a consistent build environment.
 
 .. code-block:: groovy
 
@@ -218,35 +211,40 @@ The `acme_Jenkinsfile` contains the actual pipeline stages for building and test
         ver.repoBuild(manifestUrl, buildCode, options)
     }
 
-* **`node('firmware-nodes')`**: Specifies the Jenkins agent where the pipeline will run.
-* **`dockerImage = 'acme-builder:latest'`**: Defines the Docker image to be used for the build environment. This ensures all dependencies are consistently available.
-* **`manifestUrl`**: The URL for the manifest repository.
-* **`credentials`**: A list of Jenkins credential IDs required for accessing repositories.
-* **`env.REPO_URL`, `env.REPO_BRANCH`, `env.GERRIT_TOPIC`**: Environment variables set for the build process.
-* **`buildCode`**: A map defining different build and test stages.
+* **``node('firmware-nodes')``**: Specifies the Jenkins agent where the pipeline will run.
+* **``dockerImage = 'acme-builder:latest'``**: Defines the Docker image to be used for the build environment. This ensures all dependencies are consistently available.
+* **``manifestUrl``**: The URL for the manifest repository.
+* **``credentials``**: A list of Jenkins credential IDs required for accessing repositories.
+* **``env.REPO_URL``**, **``env.REPO_BRANCH``**, **``env.GERRIT_TOPIC``**: Environment variables set for the build process.
+* **``buildCode``**: A map defining different build and test stages.
 
     * **'Build firmware'**:
-        * Executes shell commands to set up the build environment (`source build/envsetup.sh`), clean the output directory, and build the firmware (`make build`).
+        * Executes shell commands to set up the build environment (``source build/envsetup.sh``), clean the output directory, and build the firmware (``make build``).
     * **'Build Documentation'**:
-        * Executes shell commands to set up the build environment and build the project documentation (`make docs`).
+        * Executes shell commands to set up the build environment and build the project documentation (``make docs``).
     * **'Performing tests'**: This stage runs several tests in parallel:
         * **'Check formatting'**:
-            * Uses `clang-format` to check C/C++ file formatting.
-            * `recordIssues` is used to report findings with a quality gate, failing the build if more than 1 issue is found.
+            * Uses ``clang-format`` to check C/C++ file formatting.
+            * ``recordIssues`` is used to report findings with a quality gate, failing the build if more than 1 issue is found.
         * **'Check cmake formatting'**:
-            * Uses `cmake-lint` to check CMake file formatting.
+            * Uses ``cmake-lint`` to check CMake file formatting.
             * Reports issues and applies a quality gate.
         * **'Run memcheck'**:
-            * Executes `make memcheck` to run memory leak checks.
-            * `recordIssues` is configured with `valgrind` parser and a quality gate.
+            * Executes ``make memcheck`` to run memory leak checks.
+            * ``recordIssues`` is configured with ``valgrind`` parser and a quality gate.
         * **'Run Unit tests'**:
-            * Executes `make test` to run unit tests.
-            * `junit` publishes test results from `out/test/results.xml`.
-            * `recordCoverage` collects code coverage reports using Cobertura format.
-            * `recordIssues` with `sphinxBuild()` and a quality gate.
-* **`ver.repoBuild(manifestUrl, buildCode, options)`**: This is a call to a custom `Verification` class (presumably from `com.amarula.build.Verification`) that orchestrates the repository synchronization and execution of the defined build stages.
+            * Executes ``make test`` to run unit tests.
+            * ``junit`` publishes test results from ``out/test/results.xml``.
+            * ``recordCoverage`` collects code coverage reports using Cobertura format.
+            * ``recordIssues`` with ``sphinxBuild()`` and a quality gate.
+* **``ver.repoBuild(manifestUrl, buildCode, options)``**: This is a call to a custom ``Verification`` class (presumably from ``com.amarula.build.Verification``) that orchestrates the repository synchronization and execution of the defined build stages.
 
-Conclusion
-----------
-
+What is the value of this DSL pipeline approach?
+------------------------------------------------
 By implementing this Jenkins DSL pipeline, you can establish a robust and automated verification process for your Espressif projects. This integration with Gerrit ensures that code quality is maintained through continuous testing and immediate feedback, significantly improving the development workflow and reducing the likelihood of regressions.
+
+.. tip::
+   Need automated Gerrit-triggered verification for your firmware or
+   embedded projects? Amarula Solutions sets up Jenkins DSL pipelines with
+   static analysis, memory checking, and hardware testing.
+   `Contact our CI/CD team <https://www.amarulasolutions.com/contact/>`_

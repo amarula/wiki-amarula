@@ -1,16 +1,12 @@
 Firmware for a Remote Controller Based on ESP32
 ===============================================
-.. raw:: html
 
-    <a href="https://www.amarulasolutions.com/contact" class="contact-button-inline">
-        Contact Us
-    </a>
-    <div class="contact-button-clear"></div>
+.. note:: **TL;DR**
+   - Production-grade firmware for an **ESP32-S3 remote controller** communicating via **GPIO, UART, Wi-Fi, BLE (NimBLE), and MQTT5** — with a state machine architecture, AT-command parser (flex/bison), web server interface, and automated CI/CD pipeline.
+   - Quality assurance through **Unity unit tests, CMock, Valgrind memory leak detection, and LCOV code coverage** integrated with Gerrit code review and Jenkins CI.
 
-
-About This
-----------
-
+How is the remote controller architected?
+-----------------------------------------
 This project consists in creating a firmware for a custom device based on an **ESP32-S3** module.
 The designed device functions as a remote controller for the main industrial control system, communicating through digital I/Os and an infrared UART connection.
 
@@ -35,13 +31,12 @@ Key endpoints include:
 
 This web interface makes the device user-friendly, reducing setup and management time for end users.
 
-Commands
-^^^^^^^^
-
+What commands does the firmware support?
+----------------------------------------
 Every command has its own syntax
 
 Basic Commands
-""""""""""""""
+^^^^^^^^^^^^^^
 
 - **Output command**
 - **Analog output command**: PWM
@@ -53,7 +48,7 @@ Basic Commands
 - **Delete from BLE List command**
 
 Configuration Commands
-""""""""""""""""""""""
+^^^^^^^^^^^^^^^^^^^^^^
 
 Configuration commands are used to set parameters of the device's features (Wi-Fi, BLE, MQTT, etc.), and are permanently stored in the **NVS**.
 For instance:
@@ -64,13 +59,12 @@ For instance:
 - Web server password and hostname configuration.
 
 Command response
-""""""""""""""""
+^^^^^^^^^^^^^^^^
 
 Responses are sent using a command_response function, that sends the response based on where it is needed.
 
-Web Server
-----------
-
+How does the web server work?
+-----------------------------
 The WebServer allows the presentation of predefined or customized content via a browser. It starts when:
 - Wi-Fi connectivity is activated.
 
@@ -86,9 +80,8 @@ Main Endpoints
 - **Device Controller Status (GET)**: Extended status information from the infrared port.
 - **Device Controller Configuration (GET)**: Returns the device configuration.
 
-Project Structure
------------------
-
+How is the project structured?
+------------------------------
 The code is split into several libraries:
 
 1. **Util**: Contains shared utility functions.
@@ -148,9 +141,8 @@ The configuration of the bluetooth is done using the esp-idf library that will s
 Through the BLE command we can switch-on the bluetooth of the device and filter the result selecting a minimum required signal that means that we
 can set the further signal in which searching for the ble devices in the LBLE list.
 
-Quality Assurance
------------------
-
+How is quality assurance handled?
+---------------------------------
 To ensure firmware reliability, were employed:
 
 - Unit Testing using the Unity library
@@ -224,9 +216,13 @@ This can be summarized in 4 steps:
 
    - If approved (Code-Review +2 and Verified +1), the patch is merged into the target branch.
 
-Key Benefits
-------------
-
+What are the key benefits of this approach?
+-------------------------------------------
 - **Quality**: Automated testing ensures reliability.
 - **Efficiency**: Collaboration in Gerrit with CI/CD via Jenkins streamlines the process.
 
+.. tip::
+   Building an industrial IoT controller with ESP32? Amarula Solutions
+   provides firmware architecture, state machine design, BLE/MQTT/Wi-Fi
+   integration, and automated CI/CD with Gerrit and Jenkins.
+   `Contact our IoT firmware team <https://www.amarulasolutions.com/contact/>`_

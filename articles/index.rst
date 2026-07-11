@@ -1,10 +1,9 @@
-.. Articles documentation master file, created by
-   sphinx-quickstart on Thu Jan 25 11:56:52 2024.
-   You can adapt this file completely to your liking, but it should at least
-   contain the root `toctree` directive.
-
 Articles
-====================
+========
+
+.. note:: **TL;DR**
+   - Technical articles from **Amarula Solutions** covering **Embedded Linux, AI/LLM integration, IoT firmware, Jenkins CI/CD, Yocto, and Buildroot** — written by engineers for engineers.
+   - Topics span **mainline kernel development, secure boot, static analysis, Gerrit code review automation, and AI-assisted development workflows**.
 
 .. _contents: Table of contents
 
@@ -16,3 +15,9 @@ Articles
    jenkins/index
    iot/index
    yocto/index
+
+.. tip::
+   Interested in a deeper dive on any of these topics? Amarula Solutions
+   offers technical consulting, training, and custom development across
+   embedded Linux, CI/CD, and AI integration.
+   `Contact our engineering team <https://www.amarulasolutions.com/contact/>`_

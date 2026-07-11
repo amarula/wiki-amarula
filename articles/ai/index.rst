@@ -1,10 +1,9 @@
-.. test sphinx documentation master file, created by
-   sphinx-quickstart on Mon Mar  4 14:12:36 2019.
-   You can adapt this file completely to your liking, but it should at least
-   contain the root `toctree` directive.
-
 AI technologies
-======
+===============
+
+.. note:: **TL;DR**
+   - Articles on **AI-assisted development and LLM integration** — covering ChatGPT model evaluation (mathematical reasoning benchmarks), the **ChatGPT Gerrit Code Review plugin**, and **Jelliphy** (a no-code browser-based AI framework for web application development).
+   - Practical insights on when and how to leverage AI in software engineering workflows.
 
 .. _contents: Table of contents
 
@@ -15,3 +14,8 @@ AI technologies
 
    chatgpt-o1-preview-model-tested
    jelliphy
+
+.. tip::
+   Exploring AI integration for your development workflow? Amarula Solutions
+   builds AI-powered tools for code review, CI/CD, and embedded development.
+   `Contact us about AI integration <https://www.amarulasolutions.com/contact/>`_

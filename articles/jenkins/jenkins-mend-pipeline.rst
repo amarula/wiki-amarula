@@ -1,12 +1,9 @@
 Building Secure Yocto Images: An In-Depth Look at a Jenkins Pipeline with Mend SCA Integration 🔒
-=================================================================================================
-.. raw:: html
+================================================================================================
 
-    <a href="https://www.amarulasolutions.com/contact" class="contact-button-inline">
-        Contact Us
-    </a>
-    <div class="contact-button-clear"></div>
-
+.. note:: **TL;DR**
+   - Production Jenkins pipeline for **Yocto-based embedded Linux builds** with integrated **Mend Software Composition Analysis (SCA)** for vulnerability scanning — using **Amarula Solutions' shared libraries** (``Build``, ``Changelog``, ``Ui``), kas-container, and meta-mend Yocto layer.
+   - Covers Mend API credential injection, automated CVE reporting via ``warnings-ng``, and configurable build parameters for state cache control and artifact retention.
 
 .. figure:: /images/mend-security.png
    :align: center
@@ -122,7 +119,7 @@ Example Jenkins Pipeline
     }}
 
 
-Pipeline Overview: Orchestrating the Yocto Build Process ⚙️
+How does the pipeline orchestrate the Yocto build process?
 -----------------------------------------------------------
 
 The Jenkins pipeline operates within a throttle block, limiting concurrent "heavy_job"
@@ -130,8 +127,8 @@ executions on a designated node (build-node), ensuring resource efficiency. It u
 several custom Groovy functions and a well-structured set of build stages to manage
 the complexities of embedded system development.
 
-Core Functions: The Building Blocks 🏗️
-**************************************
+What are the core building-block functions?
+******************************************
 
 runContainerCmd(String cmd, String config): This function serves as the primary
 mechanism for executing commands within a kas-container. It relies on a specific container
@@ -146,8 +143,8 @@ Mend API keys and product tokens as runtime arguments into the kas-container,
 enabling vulnerability scanning during the build. SSH keys for Git repositories
 are also pre-configured, facilitating seamless source code access.
 
-User Configuration and Control 🎮
-*********************************
+How do users configure and control the pipeline?
+************************************************
 
 The pipeline offers several configurable parameters through its user interface,
 providing developers with fine-grained control over the build process:
@@ -165,16 +162,16 @@ be retained after the Jenkins job completes.
 **ENABLE_MEND**: This critical boolean parameter directly controls whether
 Mend SCA vulnerability analysis is performed.
 
-Deeper Dive into Build Stages: From Clean to Cloud 🚀
-*****************************************************
+What happens in the build stages?
+*********************************
 
 The heart of the pipeline resides within the buildCode map, which defines a series
 of distinct and often interdependent build stages. All of them allow not only to
 build Yocto OS and archive it but even scan for vulnerabilities and license
 compliance.
 
-The Role of meta-mend: Powering Vulnerability Analysis 🛡️
-*********************************************************
+How does meta-mend power vulnerability analysis?
+************************************************
 
 The meta-mend Yocto layer is instrumental in integrating Mend SCA into the build process.
 It provides a BitBake class (bbclass) that allows Yocto to interact seamlessly
@@ -200,7 +197,7 @@ for known vulnerabilities against Mend's extensive database.
 **Reporting and Archiving**: The outcomes of the Mend analysis are summarized in mend-report-*.json
 and mend cloud portal.
 
-Conclusion: A Secure and Streamlined Development Workflow ✅
+What are the key takeaways for secure embedded Linux builds?
 ------------------------------------------------------------
 
 This Jenkins pipeline exemplifies a robust and contemporary approach to developing embedded Linux systems.
@@ -210,3 +207,9 @@ it significantly enhances the security and overall reliability of the produced e
 This comprehensive workflow not only optimizes development time but also provides
 crucial insights into the software supply chain, ensuring that the released images
 are not only fully functional but also inherently secure.
+
+.. tip::
+   Need vulnerability scanning integrated into your Yocto build pipeline?
+   Amarula Solutions provides Mend SCA integration, meta-mend layer setup,
+   and secure CI/CD pipeline design for embedded Linux products.
+   `Contact our security team <https://www.amarulasolutions.com/contact/>`_

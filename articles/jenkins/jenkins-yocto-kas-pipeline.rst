@@ -1,12 +1,9 @@
 Optimizing Yocto Builds with Jenkins and Resource Throttling
 ============================================================
-.. raw:: html
 
-    <a href="https://www.amarulasolutions.com/contact" class="contact-button-inline">
-        Contact Us
-    </a>
-    <div class="contact-button-clear"></div>
-
+.. note:: **TL;DR**
+   - Production Jenkins pipeline for **Yocto image builds** using **kas-container, resource throttling (throttleJobProperty), multi-configuration targets, and shared SSTATE/downloads caching** — designed for consistent, reproducible embedded Linux builds.
+   - Demonstrates **Amarula Solutions' pattern** for containerized Yocto CI/CD with SSH key management, credential handling, and Docker-based build isolation.
 
 .. figure:: /images/yocto-pipeline.png
    :align: center
@@ -20,18 +17,16 @@ This article dissects a Jenkins pipeline designed for building Yocto images, foc
 optimization techniques, and the underlying build process. It explores the use of resource throttling,
 containerized builds, and multi-configuration approaches to improve efficiency and maintainability.
 
-Pipeline Overview
------------------
-
+How does this Jenkins pipeline orchestrate Yocto builds?
+--------------------------------------------------------
 The Jenkins pipeline presented automates the build process for multiple Yocto images using a configuration-driven approach.
 It utilizes a dedicated "big-node" for resource-intensive tasks and employs the ``throttleJobProperty``
 to manage concurrent builds, preventing system overload.
 The core functionality is encapsulated within the ``runYoctoTargetBuild`` function,
 which leverages a containerized build environment for consistency and reproducibility.
 
-Pipeline Breakdown
-------------------
-
+What are the key components of the pipeline?
+--------------------------------------------
 1.  **Agent Configuration:**
 
     * ``agent { node { label 'big-node' } }``: This directive assigns the pipeline to execute on a Jenkins node labeled "big-node," indicating a machine with ample resources (CPU, memory, storage) suitable for Yocto builds.
@@ -66,18 +61,16 @@ Pipeline Breakdown
         * ``KAS_CONTAINER_IMAGE="$kas_container_remote" kas-container --runtime-args '-v /lib/modules:/lib/modules' --ssh-dir ssh-build-hosts --git-credential-store $credentials shell $config -c "bitbake $target"``: This command launches the ``kas-container`` with necessary runtime arguments, mounts the SSH directory, provides Git credentials, and executes the ``bitbake`` command to build the specified target using the provided configuration file.
         * The ``--runtime-args '-v /lib/modules:/lib/modules'`` argument is very important, it allows the docker container to access the host machines kernel modules. This is required for some yocto builds.
 
-Key Optimization Techniques
----------------------------
-
+What techniques optimize Yocto build performance?
+-------------------------------------------------
 * **Resource Throttling:** The ``throttleJobProperty`` prevents resource contention and ensures stable builds, particularly crucial for resource-intensive Yocto tasks.
 * **Containerization:** The use of Docker containers provides a consistent and reproducible build environment, eliminating dependency conflicts and ensuring build consistency across different machines.
 * **Shared State (SSTATE) and Downloads:** The pipeline utilizes shared SSTATE and download directories, enabling faster rebuilds by reusing previously built components.
 * **Multi-Configuration:** The pipeline supports building multiple target images from a single configuration file, promoting code reuse and simplifying maintenance.
 * **SSH Key Management:** The pipeline securely manages SSH keys for accessing remote repositories, ensuring secure access to source code.
 
-Conclusion
-----------
-
+Why use this pipeline for your Yocto builds?
+--------------------------------------------
 This Jenkins pipeline demonstrates a robust and efficient approach to building Yocto images. By leveraging resource throttling, containerization, and multi-configuration, it optimizes the build process, improves maintainability, and ensures consistent and reliable builds. This pipeline serves as a valuable template for organizations seeking to automate and streamline their Yocto development workflows.
 
 Example of Jenkins pipeline
@@ -146,3 +139,9 @@ Example of Jenkins pipeline
 
 .. figure:: /images/pipeline-console-yocto.png
    :align: center
+
+.. tip::
+   Need a production-grade Jenkins pipeline for your Yocto builds?
+   Amarula Solutions designs and maintains containerized Yocto CI/CD
+   with kas, resource throttling, and multi-configuration support.
+   `Contact our CI/CD team <https://www.amarulasolutions.com/contact/>`_

@@ -1,16 +1,16 @@
 Firmware camera controller based on ESP32
-===============================================
-.. raw:: html
+=========================================
 
-    <a href="https://www.amarulasolutions.com/contact" class="contact-button-inline">
-        Contact Us
-    </a>
-    <div class="contact-button-clear"></div>
+.. note:: **TL;DR**
+   - Implementation of an **ESP32-based Ethernet-Wi-Fi bridge** enabling IP cameras with RTSP streams to transmit video over Wi-Fi — useful for extending connectivity of wired cameras in environments where Ethernet cabling isn't practical.
+   - Built on **ESP-IDF** with potential for integration into larger IoT systems leveraging MQTT, BLE, and Wi-Fi capabilities.
+
+.. figure:: /images/project-iot-project.png
+   :align: center
 
 
-About This
-----------
-
+How is the Ethernet-Wi-Fi camera bridge architected?
+----------------------------------------------------
 This article describes the implementation of a network bridge using the ESP32 to enable Ethernet-based IP cameras
 to transmit Real Time Streaming Protocol (RTSP) video streams over a Wi-Fi connection.
 The solution configures the ESP32 as a Wi-Fi Access Point (AP), allowing connected client devices to receive and
@@ -19,13 +19,6 @@ As a result, any device with Wi-Fi connectivity, such as a smartphone, PC or tab
 network created by the ESP32-based board and view the real time video stream from the IP camera.
 This represents a functional and adaptable solution to extend connectivity and simplify the integration
 of video systems in different application scenarios.
-
-.. figure:: /images/project-iot-project.png
-   :align: center
-
-
-The architecture
-""""""""""""""""
 
 The architecture of the solution involves using the ESP32 to manage data traffic between its Ethernet interface and its Wi-Fi interface.
 The operating process is as follows:
@@ -46,8 +39,8 @@ The operating process is as follows:
 
 
 
-Key advantages
-""""""""""""""
+What are the key advantages of this approach?
+---------------------------------------------
 
 Implementing this Ethernet-Wi-Fi bridge with ESP32 offers the following practical benefits:
 
@@ -62,8 +55,8 @@ Implementing this Ethernet-Wi-Fi bridge with ESP32 offers the following practica
   ensuring real-time video viewing.
 - **More functionalities**: Allow the iot device to perform operation based on client connect to him using wifi
 
-Integration into Larger IoT Systems
------------------------------------
+How can this be integrated into larger IoT systems?
+---------------------------------------------------
 
 In addition to its specific application as an IP camera bridge, the versatility of the ESP32 opens up interesting
 prospects for the integration of this solution into much larger IoT projects.
@@ -88,3 +81,9 @@ responsive to movement despite the connection being via Wi-Fi.
    :width: 640
    :height: 420
    :autoplay:
+
+.. tip::
+   Need custom IoT firmware or ESP32-based solutions? Amarula Solutions
+   provides firmware development, hardware integration, and CI/CD setup
+   for Espressif, STM32, and other embedded platforms.
+   `Contact our IoT team <https://www.amarulasolutions.com/contact/>`_
