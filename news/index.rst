@@ -12,6 +12,7 @@ News
    :maxdepth: 1
 
    workshop
+   workshop-linux-yocto-mainline
    embeddedworld-2026
    fosdem-2026
 
@@ -22,6 +23,7 @@ News
    :maxdepth: 1
 
    chatgpt-3.1.0
+   chatgpt-2.1.0
    metamend-2025
    embeddedworld-2025
    cutekeyboard
