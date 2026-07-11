@@ -3,15 +3,20 @@ Open Source Projects
 
 .. note:: **TL;DR**
    - Amarula Solutions' **open source project hub** — featuring our own products (CuteKeyboard, Flutekeyboard, ChatGPT Gerrit plugin, DynDesign, libcppconnman, meta-mend) and third-party integration guides for **U-Boot, OP-TEE, Zephyr, Buildroot, and Linux multimedia/DRM**.
-   - Includes monthly contribution reports tracking **upstream commits across Linux kernel, U-Boot, Buildroot, Yocto/OpenEmbedded, and Jenkins plugins** — organized by author.
+   - Visit the **Open Source Contributions page** for our maintainer roles, monthly upstream reports, and contribution statistics.
 
 .. _contents: Table of contents
 
 .. toctree::
    :maxdepth: 1
-   :caption: Contents:
+   :caption: Our Contributions
 
-   thirdparty/index
+   contributions
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Our Products
+
    products/dyndesign/index
    products/chatgpt-gerrit
    products/cutekeyboard
@@ -20,16 +25,11 @@ Open Source Projects
    products/libcppconnman
    products/git-collect-plugin
 
+.. toctree::
+   :maxdepth: 1
+   :caption: Third-Party Integration Guides
 
-.. include:: reports/report-03-2026.rst
-.. include:: reports/report-02-2026.rst
-.. include:: reports/report-01-2026.rst
-.. include:: reports/report-12-2025.rst
-.. include:: reports/report-11-2025.rst
-.. include:: reports/report-10-2025.rst
-.. include:: reports/report-09-2025.rst
-.. include:: reports/report-08-2025.rst
-.. include:: reports/tail.rst
+   thirdparty/index
 
 .. tip::
    Interested in our open source work or want to contribute? Amarula Solutions

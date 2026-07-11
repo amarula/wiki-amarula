@@ -34,6 +34,7 @@ We are experts in **Embedded Linux**, **Android**, and **Open Source** integrati
    :name: open-source
 
    opensource/index
+   opensource/contributions
    products-and-tools
 
 .. toctree::
