@@ -1,5 +1,8 @@
 Type-C Power Delivery with Altmode Display Port in Linux-5.10
-==============================================================
+=============================================================
+
+.. note:: **TL;DR**
+   - Amarula Solutions demonstrates **USB Type-C Power Delivery with Altmode DisplayPort** on **Rockchip RK3399 (ROC-RK3399-PC)** running **Linux 5.10** — using the FUSB302 Type-C controller with the Linux extcon framework.
 
 Hardware::
 
@@ -10,7 +13,7 @@ Amarula Solutions has partnered with Libretech and started a project
 to push Libre Computer Boards onto Mainline U-Boot, Linux Kernel, Buildroot
 and Multimedia Open source projects.
 
-The first success was that we mainlined full functional 
+The first success was that we mainlined full functional
 ROC-RK3399-PC(Renegade Elite) along with community  developers.
 
 Along with Mainlining, we are also providing Ubuntu 20.04 (Focal Fossa)
@@ -28,3 +31,9 @@ Wiki::
 
 .. Jagan Teki <jagan@amarulasolutions.com>
 .. Tuesday 24 November 2020 07:38:52 PM IST
+
+.. tip::
+   Need USB Type-C PD or DisplayPort Altmode support on your embedded
+   product? Amarula Solutions provides Linux kernel driver development for
+   USB-C, DisplayPort, and power delivery on Rockchip and other ARM platforms.
+   `Contact our kernel team <https://www.amarulasolutions.com/contact/>`_

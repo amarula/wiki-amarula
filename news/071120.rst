@@ -1,6 +1,9 @@
 ROCK Pi 4A/B/C Mainline Linux-5.10, U-Boot-2020-10
 ==================================================
 
+.. note:: **TL;DR**
+   - Amarula Solutions mainlined **ROCK Pi 4A/B/C** (Rockchip RK3399) in partnership with Radxa — running **Linux 5.10 and U-Boot v2020-10** with TPL/SPL bootflow, HDMI, DisplayPort, WiFi/BT, PCIe M.2, and Ubuntu 20.04.
+
 .. image:: /images/rock-pi-4-post.png
 
 Amarula Solutions has partnered with Radxa Limited and started a project
@@ -39,3 +42,9 @@ Wiki::
 
 .. Jagan Teki <jagan@amarulasolutions.com>
 .. Saturday 07 November 2020 05:16:38 PM IST
+
+.. tip::
+   Need mainline BSP support for Rockchip RK3399-based products? Amarula Solutions
+   provides U-Boot and Linux kernel mainlining, Yocto/Buildroot integration,
+   and multimedia enablement for Rockchip platforms.
+   `Contact our BSP team <https://www.amarulasolutions.com/contact/>`_

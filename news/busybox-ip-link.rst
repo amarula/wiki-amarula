@@ -1,6 +1,10 @@
 Support the `ip link set' command for CAN interface in Busybox
 ==============================================================
 
+.. note:: **TL;DR**
+   - The last missing patch for **full CAN interface support on MMU-less systems** has been merged into BusyBox — enabling ``ip link set`` configuration alongside existing ``candump`` and ``cansend`` tools.
+   - Culmination of a multi-project upstreaming effort spanning **Linux kernel, can-utils, BusyBox, libmnl, and Buildroot**.
+
 With the addition of support for the `ip link set' command for the CAN interface in BusyBox, the last missing patch needed to fully interact with a CAN interface on MMU-less systems has finally been merged:
 https://www.mail-archive.com/busybox@busybox.net/msg29248.html
 
@@ -19,3 +23,9 @@ Meanwhile, I am eager to update and extend my thanks to everyone who made it pos
 Marc Kleine-Budde, Krzysztof Kozłowski, Rob Herring, Vincent Mailhol, Lee Jones, Alexandre Torgue, Simon Horman, Stephen Rothwell, Jakub Kicinski, Paolo Abeni and the kernel test robot :) for **Linux kernel**, Marc Klein-Budde for **can-utils**, Nikolaus Voss, Bernhard Reutner-Fischer and Denys Vlasenko for **busybox**, Florian Westphal and Pablo Neira Ayuso for **libmnl**, Giulio Benetti, Yann E. Morin and Thomas Petazzoni for **buildroot**.
 
 Long live open source!
+
+.. tip::
+   Need CAN bus or MMU-less Linux support for your embedded product?
+   Amarula Solutions specializes in Linux kernel upstreaming for industrial
+   and automotive interfaces, including CAN, across MMU and MMU-less platforms.
+   `Contact our kernel team <https://www.amarulasolutions.com/contact/>`_

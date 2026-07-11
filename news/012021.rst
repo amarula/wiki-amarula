@@ -1,6 +1,10 @@
 Implementing Linux DRM drivers for DLPC3433 MIPI DSI Projectors
 ===============================================================
 
+.. note:: **TL;DR**
+   - Technical overview of implementing **Linux DRM drivers for the Texas Instruments DLPC3433 DLP-based MIPI DSI projector** — covering the three-subsystem architecture (DLPC3433 controller, DLPA3000 PMIC/LED driver, and DMD optics).
+   - An introductory guide to DLP projector integration in embedded Linux graphics pipelines.
+
 .. image:: /images/dlpc3433.png
 
 DLP-based projector technology has been evolved in multiple areas of
@@ -26,8 +30,14 @@ All the above subsystems are required to implement on respective Linux DRM
 driver stacks to function properly.
 
 Note:
-This blog will help you to understand the basic information on DLP-based projectors 
+This blog will help you to understand the basic information on DLP-based projectors
 implementations. If you have any specific questions or help, please reach us.
 
 .. Jagan Teki <jagan@amarulasolutions.com>
 .. Wednesday 20 January 2021 05:46:29 PM IST
+
+.. tip::
+   Need custom display or projector driver development for your embedded
+   Linux product? Amarula Solutions provides Linux DRM/KMS driver engineering,
+   MIPI DSI integration, and display pipeline development.
+   `Contact our display team <https://www.amarulasolutions.com/contact/>`_

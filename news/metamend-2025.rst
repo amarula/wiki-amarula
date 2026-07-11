@@ -1,13 +1,10 @@
 ==============================================================================
 Amarula Launches meta-mend: Enhancing Yocto Security with Mend SCA Integration
 ==============================================================================
-.. raw:: html
 
-    <a href="https://www.amarulasolutions.com/contact" class="contact-button-inline">
-        Contact Us
-    </a>
-    <div class="contact-button-clear"></div>
-
+.. note:: **TL;DR**
+   - **meta-mend** is a new Yocto layer that integrates **Mend Software Composition Analysis (SCA)** directly into the BitBake build process — enabling early vulnerability detection in embedded Linux distributions.
+   - Designed to help organizations meet **EU Cyber Resilience Act (CRA)** compliance requirements with minimal configuration.
 
 **Treviso, Italy - May 17, 2025** - Amarula, a company specializing in security solutions and dedicated to assisting organizations with compliance, including the upcoming Cyber Resilience Act (CRA) in Europe, today announced the release of ``meta-mend``, a new layer for the Yocto Project. This innovative layer provides seamless integration of Mend Software Composition Analysis (SCA) directly into the Yocto build process, empowering developers to proactively identify and mitigate open-source vulnerabilities within their embedded Linux distributions.
 
@@ -26,14 +23,20 @@ The layer is designed for ease of use and requires minimal configuration. Users 
 * **Optional ``kas-container`` with Java:** Provides a ready-to-use environment for Mend analysis.
 * **Alignment with CRA:** Helps organizations meet emerging cybersecurity regulations in Europe.
 
-**Availability:**
-
+How do you get started with meta-mend?
+--------------------------------------
 The ``meta-mend`` layer is available for download at https://github.com/amarula/meta-mend. Amarula encourages developers to explore the layer and contribute to its ongoing development.
 
-**About Amarula:**
-
+About Amarula
+-------------
 Amarula is a company specializing in security solutions for embedded systems. With a deep understanding of security best practices and emerging regulations like the Cyber Resilience Act in Europe, Amarula is committed to providing tools and expertise that help organizations build secure and compliant products.
 
-**Contact:**
+Contact
+-------
+https://www.amarulasolutions.com/contact/
 
-[https://www.amarulasolutions.com/contact/]
+.. tip::
+   Need help securing your embedded Linux distribution for CRA compliance?
+   Amarula Solutions offers Yocto security consulting, SCA integration,
+   and vulnerability management tailored to your product.
+   `Contact our security team <https://www.amarulasolutions.com/contact/>`_

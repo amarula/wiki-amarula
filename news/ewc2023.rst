@@ -1,6 +1,9 @@
 Amarula Solutions India Exhibiting at EmbeddedWorldChina2023
 ============================================================
 
+.. note:: **TL;DR**
+   - Amarula Solutions India exhibits at **Embedded World China 2023** (Shanghai, June 14-16) — showcasing **hardware enablement and Linux multimedia work** across a wide range of Linux-enabled hardware platforms in the Start-up Pavilion, Booth A310.
+
 .. image:: /images/amarula_ewch2023.png
 
 (Hyderabad, India - May, 2023) Amarula Solutions India, which specialized
@@ -22,3 +25,9 @@ Stay tuned!
 
 .. Jagan Teki <jagan@amarulasolutions.com>
 .. Wednesday 03 May 2023 01:17:26 AM IST
+
+.. tip::
+   Interested in Amarula Solutions' hardware enablement and multimedia
+   expertise? We provide mainline BSP development for Linux-enabled hardware
+   platforms across NXP, Rockchip, Allwinner, and STM32.
+   `Contact us <https://www.amarulasolutions.com/contact/>`_

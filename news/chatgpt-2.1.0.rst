@@ -1,5 +1,9 @@
 Update ChatGpt Gerrit plugin to version 2.1.0
-============================================================
+=============================================
+
+.. note:: **TL;DR**
+   - Version 2.1.0 of the **ChatGPT Gerrit Code Review plugin** introduces **voting capability**, comment resolution lifecycle, and command-based review triggering (``/review``, ``/review_last``).
+   - Key improvements: duplicate comment filtering, WIP exclusion, and refined temperature settings for better AI review quality.
 
 .. figure:: /images/chatgpt-news.png
    :align: center
@@ -14,7 +18,7 @@ Amarula Solutions S.R.O updates the https://amarula.github.io/chatgpt-code-revie
 * Transitioned to treating Patch Set review comments as separate entities, moving away from compiling them into a single list.
 * Implemented a complete lifecycle for review comment resolution. Each comment starts from an unresolved state, with options for users to agree, discuss alternatives, or dispute ChatGPT's suggestions, influencing the Change Set score.
 * Blocked the display of duplicate and conflicting comments.
-* Enabled processing of commands via comments. Command `/review` triggers full Change Set reviews and `/review_last` targets the latest Patch Set.
+* Enabled processing of commands via comments. Command ``/review`` triggers full Change Set reviews and ``/review_last`` targets the latest Patch Set.
 
 **Behavior change:**
 
@@ -31,3 +35,9 @@ Amarula Solutions S.R.O updates the https://amarula.github.io/chatgpt-code-revie
 
 Stay tuned!
 https://www.amarulasolutions.com/quotation/
+
+.. tip::
+   Looking to add AI-assisted code review to your Gerrit instance?
+   Amarula Solutions offers the ChatGPT Gerrit plugin with customization
+   and integration support for your development workflow.
+   `Contact us for a quote <https://www.amarulasolutions.com/quotation/>`_

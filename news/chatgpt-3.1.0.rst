@@ -1,12 +1,9 @@
 Update ChatGpt Gerrit plugin to version 3.1.0
-============================================================
-.. raw:: html
+=============================================
 
-    <a href="https://www.amarulasolutions.com/contact" class="contact-button-inline">
-        Contact Us
-    </a>
-    <div class="contact-button-clear"></div>
-
+.. note:: **TL;DR**
+   - Version 3.1.0 of the **ChatGPT Gerrit Code Review plugin** adds **Gerrit 3.12.2 support** and a new **ON_DEMAND code context policy** — fetching only the minimal code artifacts requested by the model instead of uploading the entire repository.
+   - Supported languages for on-demand context: **Python, C, Java, Kotlin**.
 
 .. figure:: /images/chatgpt-news.png
    :align: center
@@ -37,3 +34,9 @@ Amarula Solutions S.R.O updates the https://amarula.github.io/chatgpt-code-revie
 
 Stay tuned!
 https://www.amarulasolutions.com/quotation/
+
+.. tip::
+   Want AI-powered code review integrated into your Gerrit workflow?
+   Amarula Solutions develops and maintains the ChatGPT Gerrit plugin and
+   offers customization and deployment support.
+   `Contact us for a quote <https://www.amarulasolutions.com/quotation/>`_

@@ -1,13 +1,16 @@
 Engicam i.Core MX8M Mini Mainline Linux-5.13, U-Boot-2021-04
 ============================================================
 
+.. note:: **TL;DR**
+   - Amarula Solutions mainlined the **Engicam i.Core MX8M Mini SoM** (NXP i.MX8MM) along with **EDIMM 2.2 and CTouch 2.0 carrier boards** — running **Linux 5.13, U-Boot v2021-04**, with TPL/SPL bootflow and Ubuntu 20.04 support.
+
 .. image:: /images/eng-imx8mm.png
 
 Amarula Solutions has partnered with Engicam Srl and started a project
-to push Engicam SOM’s and Carrier board’s BSP onto Mainline U-Boot,
+to push Engicam SOM's and Carrier board's BSP onto Mainline U-Boot,
 Linux Kernel, Yocto/Buildroot and Multimedia Open source projects.
 
-Here is that we mainlined i.Core MX8M Mini SoM, which is a NXP i.MX8MM based 
+Here is that we mainlined i.Core MX8M Mini SoM, which is a NXP i.MX8MM based
 SoM along with two of its carrier boards namely EDIMM 2.2 and CTouch 2.0.
 
 Along with Mainlining, we are also providing Ubuntu 20.04 (Focal Fossa) Distribution
@@ -17,7 +20,7 @@ running flawlessly on their Carrier Boards.
 
 Supported features::
 
-        NXP i.MX8MM SoC 
+        NXP i.MX8MM SoC
         i.Core MX8M Mini SoM
         EDIMM2.2 Starter kit
         C.TOUCH 2.0 with 10" Open Frame board
@@ -34,3 +37,9 @@ Supported features::
 
 .. Jagan Teki <jagan@amarulasolutions.com>
 .. Thursday 27 May 2021 11:43:31 PM IST
+
+.. tip::
+   Need mainline BSP support for your NXP i.MX-based product? Amarula Solutions
+   provides U-Boot and Linux kernel mainlining, Yocto/Buildroot integration,
+   and long-term maintenance for i.MX6, i.MX8M, and i.MX8M Plus platforms.
+   `Contact our BSP team <https://www.amarulasolutions.com/contact/>`_
