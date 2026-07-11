@@ -41,20 +41,6 @@ Python & C++ Libraries
 - **libcppconnman** — C++ wrapper for ConnMan network manager.
   See `opensource/products/libcppconnman <opensource/products/libcppconnman.html>`_.
 
-Monthly Open Source Contributions
-=================================
-
-Amarula Solutions publishes monthly reports tracking our upstream contributions:
-
-- `opensource/reports/report-03-2026 <opensource/reports/report-03-2026.html>`_
-- `opensource/reports/report-02-2026 <opensource/reports/report-02-2026.html>`_
-- `opensource/reports/report-01-2026 <opensource/reports/report-01-2026.html>`_
-- `opensource/reports/report-12-2025 <opensource/reports/report-12-2025.html>`_
-- `opensource/reports/report-11-2025 <opensource/reports/report-11-2025.html>`_
-- `opensource/reports/report-10-2025 <opensource/reports/report-10-2025.html>`_
-- `opensource/reports/report-09-2025 <opensource/reports/report-09-2025.html>`_
-- `opensource/reports/report-08-2025 <opensource/reports/report-08-2025.html>`_
-
 .. toctree::
    :maxdepth: 1
    :caption: Reference
