@@ -1,10 +1,13 @@
 Import credential certificate
-******************************
+*****************************
+
+.. note:: **TL;DR**
+   - How to import **code-signing certificates** into Jenkins via **UI and SSH CLI** — covering keystore upload, certificate credential XML format with Base64-encoded keystore data, and SSH-based import for automation.
 
 .. _Importcredentialcertificate-ImportingcertificateviaUI:
 
-Importing certificate via UI
-============================
+How do you import a certificate via the UI?
+===========================================
 
 Jenkins → Credentials → System → <domain>→Add Credentials
 
@@ -28,8 +31,8 @@ Following example is for alcosystems ibac project:
 
 .. _Importcredentialcertificate-ImportingcertificateviaSSH:
 
-Importing certificate via SSH
-=============================
+How do you import a certificate via SSH?
+========================================
 
 In case the UI approach is not available for some reason, it is still possible to upload whole keystore via SSH by providing the Base64 encoded DER data (binary) of the keystore within XML structure.
 
@@ -82,4 +85,10 @@ In the example the default system STORE and unspecified DOMAIN is used ( \_ ).
 
 If accessing from remote to `sirio.amarulasolutions.com <http://sirio.amarulasolutions.com>`__, the firewall rules have to be enabled accordingly.
 
-| 
+|
+
+.. tip::
+   Need help managing code-signing certificates in your CI/CD pipeline?
+   Amarula Solutions provides Jenkins credential management, keystore
+   configuration, and secure CI/CD design for Android and embedded projects.
+   `Contact our CI/CD team <https://www.amarulasolutions.com/contact/>`_

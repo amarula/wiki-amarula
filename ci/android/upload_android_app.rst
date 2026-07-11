@@ -1,18 +1,21 @@
 Uploading to Google Play
-*************************
+************************
+
+.. note:: **TL;DR**
+   - How to automate **Google Play uploads** from Jenkins using the **Google Play Android Publisher Plugin** — covering service account setup, credential configuration, APK/AAB upload with release notes, and track selection (internal/alpha/beta/production).
 
 `Google Play Android Publisher Plugin <https://wiki.jenkins.io/display/JENKINS/Google+Play+Android+Publisher+Plugin>`__ can be used to automatically upload new releases of android applications to Google Play store.
 
 Plugin web site describes in detail how to let Jenkins accessing the API of google play. Basically there are 3 main requirements:
 
-#. Service account in Google API Console with the private/public keys generated
+#. Service account in Google API Console with the private/public keys generated
 #. Google Play account connected to the service account from step 1 and having the proper rights to publish the applications
-#. Jenkins having Service account credentials (private key) 
+#. Jenkins having Service account credentials (private key)
 
 .. _UploadingtoGooglePlay-Usinginpipeline:
 
-Using in pipeline
-=================
+How do you use the plugin in a pipeline?
+========================================
 
 Following snippet is example from travel smart application:
 
@@ -48,3 +51,9 @@ Following snippet is example from travel smart application:
    .. container:: confluence-information-macro-body
 
       Google is deprecating usage of standalone APK for uploading the application to google play. Instead the `android application bundle <https://developer.android.com/guide/app-bundle>`__ will be mandatory. See `Signing android application releases <./android_app_signing.html>`__ for the way how to sign .aab in jenkins pipeline.
+
+.. tip::
+   Need automated Google Play deployment from Jenkins? Amarula Solutions
+   configures Android publishing pipelines with code signing, release track
+   management, and Google Play API integration.
+   `Contact our mobile DevOps team <https://www.amarulasolutions.com/contact/>`_

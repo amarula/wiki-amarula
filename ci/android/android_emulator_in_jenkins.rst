@@ -1,8 +1,11 @@
 Android emulator in docker/jenkins pipeline
 *******************************************
 
-Create android emulator
-=======================
+.. note:: **TL;DR**
+   - How to set up an **Android emulator in Docker for Jenkins CI/CD** — covering emulator AVD creation in Dockerfiles, boot-completion detection via ``adb shell getprop sys.boot_completed``, and pipeline integration with Amarula Solutions' Build shared library.
+
+How do you create an Android emulator in Docker?
+================================================
 
 To create an emulator, use the following steps in DockerFile.
 
@@ -21,19 +24,19 @@ Example:
             ARG ANDROID_VERSION="android-25"
             ARG EMULATOR_ARCH="armeabi-v7a"
             ARG ANDROID_EMULATOR_PACKAGE="system-images;${ANDROID_VERSION};google_apis;${EMULATOR_ARCH}"
-            
+
             RUN mkdir $JENKINS_HOME/.android
             ENV ANDROID_AVD_HOME="/home/jenkins/.android/avd"
             ENV EMULATOR_NAME="android_emulator"
             RUN echo "no" | avdmanager --verbose create avd --force --name "${EMULATOR_NAME}" --device "pixel" -k "${ANDROID_EMULATOR_PACKAGE}"
 
 
-Add Emulator start script
-=========================
+How do you add an emulator start script?
+========================================
 
 Create a shell script and add the following lines in it.
 
-Use **emulator** command to start emulator. Use **EMULATOR_NAME** environment variable(defined in step **Create android emulator**), to start the emulator. 
+Use **emulator** command to start emulator. Use **EMULATOR_NAME** environment variable(defined in step **Create android emulator**), to start the emulator.
 
 Since emulator can take some time to boot, so we have to check if emulator is fully booted and ready to run app. For that we can use **adb shell getprop sys.boot_completed** command to check status of emulator in **while loop**.
 
@@ -56,8 +59,8 @@ Example:
 
             ADD script.sh /
 
-Start Emulator from Jenkins pipeline
-====================================
+How do you start the emulator from a Jenkins pipeline?
+======================================================
 
 We can use the **shell script** created above to start the emulator from **jenkins pipeline**.
 
@@ -66,21 +69,27 @@ Example pipeline:
 ::
 
             #!groovy
-        
+
             import com.amarula.build.Build
-            
+
             node('android-build') {
                 def build = new Build(this, env, 'abc123')
                 def repoUrl = "https://github.com/yourRepo"
-            
+
                 final def dockerImage = 'android-with-emulator:1.0'
-            
+
                 build.build(repoUrl, {
-                    
+
                     sh 'chmod +x gradlew'
-            
+
                     sh '. /start_emulator.sh'
                     sh './gradlew connectedAndroidTest'
-            
+
                 }, [branch: "master", history: true, dockerImage: dockerImage, gerritRemoteUrl: env.GERRIT_HTTPS_URL])
             }
+
+.. tip::
+   Need Android instrumentation tests in your CI/CD pipeline? Amarula
+   Solutions builds Docker-based Android emulator environments integrated
+   with Jenkins for automated UI and instrumentation testing.
+   `Contact our mobile DevOps team <https://www.amarulasolutions.com/contact/>`_

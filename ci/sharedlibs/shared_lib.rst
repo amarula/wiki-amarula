@@ -1,5 +1,9 @@
 Shared libraries
-*****************
+****************
+
+.. note:: **TL;DR**
+   - Overview of Amarula Solutions' **Jenkins shared libraries** — Groovy-based reusable pipeline components for **Git operations, repo multi-project management, Gerrit code review, build verification, notifications (Mattermost/Teams), SonarQube/CodeChecker static analysis, Mend vulnerability scanning, and UI parameterization**.
+   - Libraries loaded implicitly or explicitly via ``@Library()`` annotation in pipeline scripts.
 
 .. container:: contentLayout2
 
@@ -90,7 +94,7 @@ Shared libraries
                      import com.amarula.build.Build
                      import com.amarula.deploy.Sftp
 
-            | 
+            |
             | Importing shared library without the 'load implicitly' option would look like:
 
             ::
@@ -105,4 +109,10 @@ Shared libraries
                      /* Using a version specifier, such as branch, tag, etc */
                      @Library('ci_scripts@devel')
                      import com.amarula.*
-                     
+
+
+.. tip::
+   Need shared libraries for your Jenkins pipelines? Amarula Solutions
+   provides shared library development, code review integration, and
+   CI/CD automation components for embedded software teams.
+   `Contact our CI/CD team <https://www.amarulasolutions.com/contact/>`_

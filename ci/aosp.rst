@@ -1,5 +1,9 @@
 AOSP Android build project
-***************************
+**************************
+
+.. note:: **TL;DR**
+   - How to configure a **Jenkins multi-configuration project** for AOSP (Android Open Source Project) builds — combining the **repo plugin** for multi-repository management with the **matrix plugin** for build variant handling (e.g., userdebug vs. eng, different devices).
+   - Uses custom child workspaces and build variant-aware output directories.
 
 Android is multi-configuration Jenkins project. We need to combine repo plugin with matrix plugin.
 
@@ -31,3 +35,9 @@ Execution shell needs to take in account the variant for clean the project and f
          CPUS=$(getconf _NPROCESSORS_ONLN)
          echo "Build on " $CPUS " cores machine"
          make -j $CPUS
+
+.. tip::
+   Need automated AOSP builds in your CI/CD pipeline? Amarula Solutions
+   sets up multi-configuration Jenkins projects for Android OS development
+   with repo management, matrix builds, and artifact deployment.
+   `Contact our Android CI team <https://www.amarulasolutions.com/contact/>`_

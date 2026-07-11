@@ -1,5 +1,9 @@
 Pipeline script snippets
-*************************
+************************
+
+.. note:: **TL;DR**
+   - Collection of reusable Jenkins pipeline code snippets — covering **Groovy string interpolation, artifact sharing between jobs (CopyArtifact), parameterized builds with JSON-editor, extensible choice parameters, and Docker registry usage**.
+   - Practical patterns extracted from Amarula Solutions' production pipelines.
 
 .. container:: contentLayout2
 
@@ -33,7 +37,7 @@ Pipeline script snippets
                          shellVar="shell variable"
                          echo "shellVar=\${shellVar}"
                        """
-                       
+
                        sh '''
                          shellVar="shell variable"
                          echo "shellVar=${shellVar}"
@@ -53,7 +57,7 @@ Pipeline script snippets
                      + echo shellVar=shell variable
                      shellVar=shell variable
 
-            | 
+            |
 
             .. rubric:: Sharing artifacts between jobs
                :name: Pipelinescriptsnippets-Sharingartifactsbetweenjobs
@@ -123,7 +127,7 @@ Pipeline script snippets
 
                .. container:: codeHeader panelHeader pdl hide-border-bottom
 
-                  **Array of parameters defined via json-editor**  Expand source
+                  **Array of parameters defined via json-editor**  Expand source
 
                ::
 
@@ -221,7 +225,7 @@ Pipeline script snippets
                      def projectDir = jenkins.model.Jenkins.instance.getItem('2n')
                      def jobs = projectDir.getAllJobs()
                      def chromiumJob
-                     jobs.each { 
+                     jobs.each {
                        if (it.name.equals('chromium'))
                          chromiumJob = it
                      }
@@ -230,7 +234,7 @@ Pipeline script snippets
                          builds.add(it.description)
                      }
                      return builds
-            
+
             .. image:: /images/pipeline_script_snippet.png
 
             It can look like this when starting a new job:
@@ -260,3 +264,9 @@ Pipeline script snippets
                              }
                          }
                      }
+
+.. tip::
+   Need reusable pipeline patterns for your Jenkins CI/CD? Amarula Solutions
+   provides pipeline template libraries, parameterized build configuration,
+   and artifact management for embedded development teams.
+   `Contact our CI/CD team <https://www.amarulasolutions.com/contact/>`_

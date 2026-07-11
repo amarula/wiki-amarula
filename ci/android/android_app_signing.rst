@@ -1,5 +1,9 @@
 Signing android application releases
-*************************************
+************************************
+
+.. note:: **TL;DR**
+   - How to sign Android application releases in Jenkins — covering **APK signing** with the ``SignApksBuilder`` plugin (key alias, keystore credentials, zipalign) and **AAB signing** with ``jarsigner`` for Google Play App Bundle format.
+   - Includes troubleshooting for common keystore issues (PKCS12 integrity, algorithm availability).
 
 `Android signing plugin <https://jenkins.io/doc/pipeline/steps/android-signing/>`__ can be used to sign android application releases in pipeline. Certificate has to be added in Jenkins credentials for this purpose.
 
@@ -7,15 +11,15 @@ The precondition is to have the proper keystore (which key should be used to sig
 
 .. _Signingandroidapplicationreleases-Usingcertificateinpipeline:
 
-Using certificate in pipeline
-=============================
+How do you sign APKs in a pipeline?
+===================================
 
 Following snippet is example from alcosystems ibac project:
 
 **SigningStep**
 
 ::
-   
+
    step([$class: 'SignApksBuilder', apksToSign: "**/*-unsigned*.apk", keyAlias: 'alcosystems', keyStoreId: 'alcosystems-ibac_androidProdKeystore', zipalignPath: "${ANDROID_HOME}/build-tools/26.0.2/zipalign"])
 
 **class** - plugin class for signing, do not change
@@ -34,8 +38,8 @@ See `Android signing plugin <https://jenkins.io/doc/pipeline/steps/android-signi
 
 .. _Signingandroidapplicationreleases-Signingandroidapplicationbundle(.aabformat):
 
-Signing android application bundle (.aab format)
-------------------------------------------------
+How do you sign Android App Bundles (.aab)?
+-------------------------------------------
 
 Google is deprecating usage of standalone apk for uploading the application to google play. Instead the `android application bundle <https://developer.android.com/guide/app-bundle>`__ will be mandatory.
 
@@ -50,8 +54,8 @@ Till jenkins signApksBuilder plugin does not support signing of such format, the
       sh "jarsigner -verbose -storetype pkcs12 -sigalg SHA256withRSA -digestalg SHA-256 -keystore $keystore -storepass $password ${filePath} key0"
    }
 
-| 
-| **aliasVariable** - alias for the key which should be used from credentials keystore. In the example the key alias name is not defined within jenkins credentials but hardcoded in the pipeline straight (key0). 
+|
+| **aliasVariable** - alias for the key which should be used from credentials keystore. In the example the key alias name is not defined within jenkins credentials but hardcoded in the pipeline straight (key0).
 
 **credentialsId** - the id of the keystore within jenkins credentials. In the example the dokoki project keystore is used
 
@@ -72,3 +76,9 @@ Following exceptions were observed in past due to certain bugs in version of jav
    2. jarsigner error: java.lang.RuntimeException: keystore load: Integrity check failed: java.security.NoSuchAlgorithmException: Algorithm HmacPBESHA256 not available
 
 The solution was to re-generate p12 keystore (from jks or completely new one) within different version of java, e.g. java-1.11.0-openjdk-amd64 was used in successful scenario.
+
+.. tip::
+   Need code signing for your Android CI/CD pipeline? Amarula Solutions
+   configures APK/AAB signing with Jenkins credentials, keystore management,
+   and automated Google Play deployment.
+   `Contact our mobile DevOps team <https://www.amarulasolutions.com/contact/>`_

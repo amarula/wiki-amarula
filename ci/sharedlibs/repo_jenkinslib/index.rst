@@ -1,6 +1,10 @@
 Repo Jenkins library
 *********************
 
+.. note:: **TL;DR**
+   - Amarula Solutions' **Repo Jenkins shared library** (``repo_jenkins_lib``) — providing ``Git``, ``Gerrit``, ``GerritChange``, and ``Repo`` classes for Git and repo-managed project operations with Gerrit integration: init, sync, cherry-pick/checkout topics, and automated review label posting.
+   - Handles cross-repository dependency management for multi-project builds like AOSP.
+
 Rebo jenkins lib is shared library for Jenkins that helps with basic operations with Gerrit over git and repo managed projects.
 
 source: https://gitea.amarulasolutions.com/i-tools/repo_jenkins_lib
@@ -15,8 +19,8 @@ configured as:
 
 .. _RepoJenkinslibrary-Installation:
 
-Installation
-============
+How do you install the library?
+===============================
 
 Add the repository to your Jenkins instance as Shared library:
 --------------------------------------------------------------
@@ -36,8 +40,8 @@ Add the repository to your Jenkins instance as Shared library:
 
 .. _RepoJenkinslibrary-GeneratepasswordforGerritRESTAPI:
 
-Generate password for Gerrit REST API
--------------------------------------
+How do you generate a password for Gerrit REST API?
+---------------------------------------------------
 
 Create password for your Gerrit bot user and add it to Jenkins. You can use gerrit REST API to generate the password:
 
@@ -129,7 +133,7 @@ The variable 'env.GERRIT_TOPIC' used in the example below is automatically set b
    .. container:: expand-control
       :name: expander-control-1903968565
 
-       Click here to see the example code ...
+       Click here to see the example code ...
 
    ::
 
@@ -190,7 +194,7 @@ The next example shows another typical use-case of test build with cherry-pickin
    .. container:: expand-control
       :name: expander-control-1005801308
 
-       Click here to see the example code ...
+       Click here to see the example code ...
 
    ::
 
@@ -248,7 +252,7 @@ The GERRIT_REFSPEC is initialized by the Gerrit Trigger Plugin or can be set fro
    .. container:: expand-control
       :name: expander-control-219122963
 
-       Click here to see the example code ...
+       Click here to see the example code ...
 
    ::
 
@@ -295,14 +299,20 @@ The GERRIT_REFSPEC is initialized by the Gerrit Trigger Plugin or can be set fro
                    }
                  }
                }
-               
+
 .. _contents: Table of contents
 
 
 .. toctree::
    :maxdepth: 1
    :caption: Contents:
-   
+
    jenkins_gerrit_lib.rst
    jenkins_git_lib.rst
    jenkins_repo_lib.rst
+
+.. tip::
+   Working with repo-managed projects and Gerrit? Amarula Solutions
+   provides repo_jenkins_lib customization, multi-repository CI/CD, and
+   automated review workflows for Android and embedded projects.
+   `Contact our CI/CD team <https://www.amarulasolutions.com/contact/>`_

@@ -1,7 +1,10 @@
 com.amarula.git.Git
 ********************
 
-Helper class that generalizes Android Build steps.
+.. note:: **TL;DR**
+   - Reference for the ``Git`` class from Amarula Solutions' **repo_jenkins_lib** — provides Git repository operations including sync, checkout, and cherry-pick of Gerrit changes, with credential management and Gerrit REST API integration.
+
+Helper class that generalizes Git operations for Jenkins pipelines.
 
 .. _com.amarula.git.Git-Constructors:
 
@@ -13,82 +16,30 @@ Constructors
 Git(context, environment, String url, Map options = [:])
 --------------------------------------------------------
 
-Creates new instance for handling operations over a specific git repository.
+Creates new instance for Git operations.
 
--  **context** Jenkins steps ('this' in pipeline context)
--  **environment** Jenkins environment variables ('env' variable in pipeline context)
--  **url** URL of the git repository
--  **options** Optional options
+-  **context** Jenkins pipeline context (this variable)
+-  **environment** Jenkins environment (env variable)
+-  **url** Repository URL
+-  **options** Optional map:
+   -  **history** perform unshallow fetch
+   -  **gerritRemoteUrl** URL of the Gerrit instance for review operations
 
-   -  **directory** directory where to checkout the content, default is repository name from given URL
-   -  **gerritRemoteUrl** Gerrit URL, default is from environment GERRIT_HOST
-   -  **history** fetch full history (true), or only last commit (false), default is false
+.. _com.amarula.git.Git-Methods:
 
-.. _com.amarula.git.Git-Publicmethods:
+Methods
+=======
 
-Public methods
-==============
+**sync(String ref = 'master')** — Syncs the repository to the given branch or tag.
 
-.. _com.amarula.git.Git-getDirectory():
+**checkoutChange(String refspec)** — Checks out a Gerrit change and returns a ``GerritChange`` instance.
 
-getDirectory()
---------------
+**cherrypickChange(String refspec)** — Cherry-picks a Gerrit change and returns a ``GerritChange`` instance.
 
-Return checkout directory.
+**getDirectory()** — Returns the working directory of the repository.
 
-.. _com.amarula.git.Git-sync(branch='master'):
-
-sync(branch = 'master')
------------------------
-
-Checks out given branch or master by default.
-
--  **branch** Branch name to checkout, default is master
-
-.. _com.amarula.git.Git-GerritChangecheckoutChange(Stringrefspec):
-
-GerritChange checkoutChange(String refspec)
--------------------------------------------
-
-Checks out specific Gerrit change given by parameters.
-
--  **refspec** Gerrit refspec in form e.g. 'refs/changes/77/3377/2'
-
-Returns: Gerrit change specified by parameter or null if it doesn't exist
-
-.. _com.amarula.git.Git-GerritChangecheckoutChange(defchangeNumber,defpatchsetNumber):
-
-GerritChange checkoutChange(def changeNumber, def patchsetNumber)
------------------------------------------------------------------
-
-Checks out specific Gerrit change given by parameters.
-
--  **changeNumber** Gerrit Change number, e.g. '3377'
--  **patchsetNumber** Gerrit patch-set number, e.g. '2', if 0 then the latest patchset is used
-
-Returns: Gerrit change specified by parameters or null if it doesn't exist
-
-.. _com.amarula.git.Git-GerritChangecherrypickChange(Stringrefspec):
-
-GerritChange cherrypickChange(String refspec)
----------------------------------------------
-
-Cherrypicks specific Gerrit change given by parameters.
-
--  **refspec** Gerrit refspec in form e.g. 'refs/changes/77/3377/2'
-
-Returns: Gerrit change specified by parameter or null if it doesn't exist
-
-.. _com.amarula.git.Git-GerritChangecherrypickChange(defchangeNumber,defpatchsetNumber=0):
-
-GerritChange cherrypickChange(def changeNumber, def patchsetNumber = 0)
------------------------------------------------------------------------
-
-Cherrypicks specific Gerrit change given by parameters.
-
--  **changeNumber** Gerrit Change number, e.g. '3377'
--  **patchsetNumber** Gerrit patch-set number, e.g. '2', if 0 or not given the latest patchset is used
-
-Returns: Gerrit change specified by parameters or null if it doesn't exist
-
-| 
+.. tip::
+   Need Git operations integrated with Gerrit in your CI/CD? Amarula
+   Solutions provides repo_jenkins_lib for automated repository management,
+   change fetching, and review labeling in Jenkins pipelines.
+   `Contact our CI/CD team <https://www.amarulasolutions.com/contact/>`_

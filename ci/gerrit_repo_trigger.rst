@@ -1,26 +1,30 @@
 Gerrit trigger for repo projects
-*********************************
+********************************
+
+.. note:: **TL;DR**
+   - How to handle **Gerrit-triggered verification for multi-repository projects** (e.g., AOSP) using the ``repo`` tool — covering cross-repository dependency recognition via Gerrit topics, deduplication of concurrent builds, and automated review labeling via the Gerrit REST API.
+   - Implemented in Amarula Solutions' **repo_jenkins_lib** with classes ``Gerrit``, ``GerritChange``, ``Repo``, and ``Manifest``.
 
 Some projects are composed of several git repositories that are dependent in some way. These repositories are usually managed using \`\ ``repo``\ \` tool. Typical example of such project is Android open-source project (AOSP).
 
 .. _Gerrittriggerforrepoprojects-Challengesofverificationbuilds:
 
-Challenges of verification builds
-=================================
+What are the challenges of verification builds for repo projects?
+=================================================================
 
 One change in one repository may need another change in a different repository in order to be complete and the whole project working without errors. These inter-repository dependencies complicate verification builds. Meaning that fetching just one change is not enough to successfully complete a verification build.
 
 .. _Gerrittriggerforrepoprojects-Recognizerelatedchanges:
 
-Recognize related changes
--------------------------
+How do you recognize related changes?
+-------------------------------------
 
 It is up to the author of the patches to recognize dependencies between repositories and mark related patches with the same topic. The easiest way to do that is using :literal:`\`repo start <TOPIC> projectA projectB`\ \` and \`\ ``repo upload -t --br=<TOPIC> projectA projectB``\ \`. This will automatically add Gerrit topic to all the uploaded changes based on the development branch name.
 
 .. _Gerrittriggerforrepoprojects-Triggeronlyonebuild:
 
-Trigger only one build
-----------------------
+How do you prevent duplicate builds for the same topic?
+-------------------------------------------------------
 
 Each uploaded change triggers one build. We can't do anything about that if we want to keep the trigger automatic. But Gerrit Trigger plugin configuration has a feature for stopping builds that have the same topic. It means that when a new verification build for related changes is started, the already running build (if there is one) is stopped.
 
@@ -32,8 +36,8 @@ It is also recommended to change value of 'Build Schedule Delay' to at least 10 
 
 .. _Gerrittriggerforrepoprojects-Fetchchanges:
 
-Fetch changes
--------------
+How do you fetch all related changes?
+-------------------------------------
 
 All related changes have the same topic, which makes it easier to fetch. The topic is stored in 'GERRIT_TOPIC' environment variable. The goal is to checkout the latest change for each project.
 
@@ -63,8 +67,8 @@ We checkout the one that is descendant of the other commits:
 
 .. _Gerrittriggerforrepoprojects-Set'Verified'flag:
 
-Set 'Verified' flag
--------------------
+How do you set the Verified flag on all changes?
+------------------------------------------------
 
 The build is triggered for only one specific change, so only that one receives automatically the review. We have to set review for all the changes that we used. We can keep a list of changes from the 'Fetch changes' section and set review for each one using Gerrit REST API \`\ ``POST /changes/{change-id}/revisions/{revision-id}/review``\ \`.
 
@@ -78,8 +82,8 @@ The response contains changes in review made to the change with change ID ``GERR
 
 .. _Gerrittriggerforrepoprojects-ImplementationinRepoJenkinsLibrary:
 
-Implementation in Repo Jenkins Library
-======================================
+How is this implemented in the Repo Jenkins Library?
+====================================================
 
 https://gitea.amarulasolutions.com/i-tools/repo_jenkins_lib
 
@@ -94,7 +98,7 @@ Main classes
    .. container:: expand-control
       :name: expander-control-1809469218
 
-       com.amarula.gerrit.Gerrit
+       com.amarula.gerrit.Gerrit
 
    .. container:: expand-content expand-hidden
       :name: expander-content-1809469218
@@ -107,7 +111,7 @@ Main classes
    .. container:: expand-control
       :name: expander-control-1376837707
 
-       com.amarula.gerrit.GerritChange
+       com.amarula.gerrit.GerritChange
 
    .. container:: expand-content expand-hidden
       :name: expander-content-1376837707
@@ -120,7 +124,7 @@ Main classes
    .. container:: expand-control
       :name: expander-control-2124064004
 
-       com.amarula.repo.Manifest
+       com.amarula.repo.Manifest
 
    .. container:: expand-content expand-hidden
       :name: expander-content-2124064004
@@ -133,7 +137,7 @@ Main classes
    .. container:: expand-control
       :name: expander-control-807011084
 
-       com.amarula.repo.Repo
+       com.amarula.repo.Repo
 
    .. container:: expand-content expand-hidden
       :name: expander-content-807011084
@@ -168,10 +172,10 @@ Example usage of library
 
                    // checkout topic changes for manifest
                    changes.addAll(project.checkoutTopicForManifest(env.GERRIT_TOPIC))
-                   
+
                    // repo sync
                    project.sync()
-                   
+
                    // checkout topic changes for projects
                    changes.addAll(project.checkoutTopic(env.GERRIT_TOPIC))
 
@@ -188,3 +192,9 @@ Example usage of library
              }
            } /* END 'Repo init and sync' */
          }
+
+.. tip::
+   Working with multi-repository projects and need Gerrit verification?
+   Amarula Solutions provides repo_jenkins_lib customization, multi-repo
+   CI/CD setup, and Gerrit integration for Android and embedded projects.
+   `Contact our CI/CD team <https://www.amarulasolutions.com/contact/>`_

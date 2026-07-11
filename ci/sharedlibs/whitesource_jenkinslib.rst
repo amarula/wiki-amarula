@@ -1,5 +1,9 @@
 MendReport library
-*********************************
+******************
+
+.. note:: **TL;DR**
+   - Amarula Solutions' **Mend (WhiteSource) Jenkins shared library** — a Groovy API wrapper for triggering Mend SCA vulnerability analysis, generating PDF risk reports, and sending Mattermost notifications with a summary of detected vulnerabilities.
+   - Uses ``MendReport.Builder`` pattern with Mend API credentials from Jenkins credential store.
 
 Mend report library is used to determine the library/packages vulnerabilities by calling the Mend API.
 
@@ -41,7 +45,7 @@ If there is no exception based on result we can continue with generating reports
 
          void generatePdfReport(String projectToken, String project)
 
-This generates the report in pdf format which will be persisted in the build artifacts. 
+This generates the report in pdf format which will be persisted in the build artifacts.
 
 -  **ProjectToken** - The Mend token for the particular project
 -  **Project** - The Project name, used to name the pdf generated.
@@ -53,8 +57,8 @@ This generates the report in pdf format which will be persisted in the build art
 This gets the list of all the vulnerabilities of the particular product, and then table and send to the MatterMost verifier-build channel.
 
 -  **ProductToken** - Mend productToken for the specific product.
--  **PeopleToNotify** - A string detailing MatterMost usernames for people to be notified
--  **Project** - The Project name
+-  **PeopleToNotify** - A string detailing MatterMost usernames for people to be notified
+-  **Project** - The Project name
 
 .. _com.amarula.ws.MendReport-ExampleUsage:
 
@@ -119,8 +123,8 @@ Example Usage
              archiveArtifacts '**/*.pdf'
          }
 
-| 
-
-| 
-
-| 
+.. tip::
+   Need SCA vulnerability scanning in your CI/CD pipeline? Amarula Solutions
+   integrates Mend (WhiteSource) with Jenkins, generating reports and
+   Mattermost notifications for embedded software projects.
+   `Contact our security team <https://www.amarulasolutions.com/contact/>`_

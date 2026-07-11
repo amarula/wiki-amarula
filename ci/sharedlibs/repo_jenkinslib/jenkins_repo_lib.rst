@@ -1,6 +1,9 @@
 com.amarula.repo.Repo
 **********************
 
+.. note:: **TL;DR**
+   - Reference for the ``Repo`` class from Amarula Solutions' **repo_jenkins_lib** — provides repo tool operations for multi-repository projects (AOSP-style), including init, sync, and topic-based checkout/cherry-pick of Gerrit changes with cross-repository dependency handling.
+
 .. _com.amarula.repo.Repo-:
 
 .. _com.amarula.repo.Repo-Constructors:
@@ -13,102 +16,35 @@ Constructors
 Repo(context, environment, String manifestUrl, Map options = [:])
 -----------------------------------------------------------------
 
-Creates new instance for handling operations over a specific repo project.
+Creates new instance for repo-managed projects.
 
--  **context** Jenkins steps ('this' in pipeline context)
--  **environment** Jenkins environment variables ('env' variable in pipeline context)
--  **manifestUrl** URL of git repository with repo manifest
--  **options** Optional map of options for repo commands
+-  **context** Jenkins pipeline context (this variable)
+-  **environment** Jenkins environment (env variable)
+-  **manifestUrl** URL of the repo manifest repository
+-  **options** Optional map:
+   -  **manifestBranch** branch of the manifest to use (default: master)
+   -  **repoInitOpts** additional opts for ``repo init``
+   -  **repoSyncOpts** additional opts for ``repo sync``
 
-   -  **repoInitOpts** additional options for repo during repo init, '-u URL' is always added
-   -  **repoSyncOpts** additional options for repo during repo sync, '--force-sync --detach' is always added
-   -  **gerritRemoteUrl** Gerrit URL, default is from the manifest
+.. _com.amarula.repo.Repo-Methods:
 
-.. _com.amarula.repo.Repo-Publicmethods:
+Methods
+=======
 
-Public methods
-==============
+**init()** — Initializes the repo workspace.
 
-.. _com.amarula.repo.Repo-Repoinit():
+**sync()** — Syncs all repositories according to the manifest.
 
-Repo init()
------------
+**checkoutTopic(String topic)** — Checks out the latest changes for each project with the given Gerrit topic. Returns a list of ``GerritChange`` instances.
 
-Initializes new repo project and fetches latest manifest version. This behaviour can be changed using repoInitOpts option in constructor. E.g. to fetch the manifest based on tag or a branch.
+**checkoutTopicForManifest(String topic)** — Same as checkoutTopic but for the manifest repository.
 
-.. _com.amarula.repo.Repo-Reposync(archiveManifest=true):
+**cherrypickTopic(String topic)** — Cherry-picks changes with the given Gerrit topic. Returns a list of ``GerritChange`` instances.
 
-Repo sync(archiveManifest = true)
----------------------------------
+**cherrypickTopicForManifest(String topic)** — Same as cherrypickTopic but for the manifest repository.
 
-Performs sync on already initialized project. Behaviour can be changed using repoSyncOpts option. E.g. to change default number of threads to use.
-
--  **archiveManifest** Archive manifest snapshot, default is true
-
-.. _com.amarula.repo.Repo-checkoutTopic(Stringtopic):
-
-checkoutTopic(String topic)
----------------------------
-
-Checkouts latest topic change for each project.
-
--  **topic** Gerrit topic to checkout
-
-Returns: list of changes with given topic
-
-.. _com.amarula.repo.Repo-GerritChangecheckoutChange(GerritChangechange=null):
-
-GerritChange checkoutChange(GerritChange change = null)
--------------------------------------------------------
-
-Checkouts given change or a change defined from env variables if change not given. The env variables used is either GERRIT_REFSPEC or GERRIT_CHANGE_NUMBER with GERRIT_PATCHSET_NUMBER. Values are expected the same as Gerrit Trigger plugin sets them. If GERRIT_PATCHSET_NUMBER is not set or is 0, the latest patchset is picked.
-
--  **change** Change to checkout in its project or manifest
-
-Returns: the change or null if change was not found
-
-.. _com.amarula.repo.Repo-cherrypickTopic(Stringtopic):
-
-cherrypickTopic(String topic)
------------------------------
-
-Cherry-picks changes with given gerrit topic.
-
--  **topic** Gerrit topic to cherry-pick
-
-Returns: list of changes with given topic
-
-.. _com.amarula.repo.Repo-GerritChangecherrypickChange(GerritChangechange=null):
-
-GerritChange cherrypickChange(GerritChange change = null)
----------------------------------------------------------
-
-Cherry-picks given change or a change defined from env variables if change not given. The env variables used is either GERRIT_REFSPEC or GERRIT_CHANGE_NUMBER with GERRIT_PATCHSET_NUMBER. Values are expected the same as Gerrit Trigger plugin sets them. If GERRIT_PATCHSET_NUMBER is not set or is 0, the latest patchset is picked.
-
--  **change** Change to cherry-pick in its project or manifest
-
-Returns: the change or null if change was not found
-
-.. _com.amarula.repo.Repo-checkoutTopicForManifest(Stringtopic):
-
-checkoutTopicForManifest(String topic)
---------------------------------------
-
-Checkouts latest topic change for repo manifest.
-
--  **topic** Gerrit topic to checkout
-
-Returns: list of changes with given topic
-
-.. _com.amarula.repo.Repo-cherrypickTopicForManifest(Stringtopic):
-
-cherrypickTopicForManifest(String topic)
-----------------------------------------
-
-Cherry-picks changes with given gerrit topic for repo manifest.
-
--  **topic** Gerrit topic to cherry-pick
-
-Returns: list of changes with given topic
-
-| 
+.. tip::
+   Need repo-managed multi-project CI/CD? Amarula Solutions provides
+   repo_jenkins_lib for AOSP-style builds with cross-repository dependency
+   handling and automated Gerrit verification.
+   `Contact our CI/CD team <https://www.amarulasolutions.com/contact/>`_

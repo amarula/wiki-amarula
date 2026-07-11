@@ -1,10 +1,14 @@
 Sonarqube
-**********
+*********
+
+.. note:: **TL;DR**
+   - How to trigger **SonarQube static analysis** from Jenkins pipelines — covering **Gradle plugin integration** (``./gradlew sonarqube``), **SonarScanner CLI** usage in Docker, and credential/parameter injection for project-specific analysis configuration.
+   - Uses Amarula's private SonarQube instance with ``withSonarQubeEnv`` step.
 
 | There are several ways to trigger sonar analysis from jenkins, for complete documentation see:
 | https://docs.sonarqube.org/latest/analysis/scan/sonarscanner-for-jenkins/
 
-| 
+|
 
 In any case sonar needs:
 
@@ -15,15 +19,15 @@ If project with name and key does not exist on backend yet, it will be created a
 
 .. _Sonarqube-Gradle:
 
-Gradle
-------
+How do you use SonarQube with Gradle?
+-------------------------------------
 
-Sonar plugin is used for gradle and the parameters set in gradle build file. Analysis is triggered via task *./gradlew sonarqube*
+Sonar plugin is used for gradle and the parameters set in gradle build file. Analysis is triggered via task *./gradlew sonarqube*
 
 .. _Sonarqube-Jenkins:
 
-Jenkins
--------
+How do you use SonarQube with Jenkins?
+--------------------------------------
 
 Sonar-scanner-cli can be installed within jenkins or within docker when used. Then it is called within project source code root and sonar automatically detects the sources.
 
@@ -46,3 +50,9 @@ The backend access credentials can be set within global sonar qube env and proje
                   ${sonarHome}/bin/sonar-scanner
                   '''
          }
+
+.. tip::
+   Need code quality analysis in your CI/CD pipeline? Amarula Solutions
+   integrates SonarQube, CodeChecker, and static analysis tools into
+   Jenkins pipelines for embedded software projects.
+   `Contact our CI/CD team <https://www.amarulasolutions.com/contact/>`_

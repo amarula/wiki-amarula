@@ -1,6 +1,10 @@
 CI Jenkins library
 *******************
 
+.. note:: **TL;DR**
+   - Amarula Solutions' core **CI Jenkins shared library** (``ci_scripts``) — providing the ``Build``, ``Verification``, ``AndroidBuild``, ``Archiva``, ``Sftp``, and ``Ui`` classes for standardized Git/repo project building, Gerrit verification, artifact deployment, and UI parameterization across all Jenkins pipelines.
+   - Supports Docker-based builds, Mattermost/Teams notifications, and complete repo-managed project verification workflows.
+
 CI Jenkins Library is shared library for Jenkins that helps with common operations and generic builders for specific tasks. It simplifies some common tasks that we do in our Jenkins jobs.
 
 source: https://gitea.amarulasolutions.com/i-tools/ci_jenkins_lib
@@ -15,8 +19,8 @@ configured as:
 
 .. _CIJenkinslibrary-Installation:
 
-Installation
-============
+How do you install the library?
+===============================
 
 Add the repository to your Jenkins instance as Shared library:
 --------------------------------------------------------------
@@ -36,8 +40,8 @@ Add the repository to your Jenkins instance as Shared library:
 
 .. _CIJenkinslibrary-Setconfigurationvariables:
 
-Set configuration variables
----------------------------
+How do you configure it?
+------------------------
 
 #. go to "Manage Jenkins" > "Configure System"
 #. scroll down to "Global properties" section
@@ -175,7 +179,7 @@ Helper class derived from Build that generalizes Android OS code sync and build 
 com.amarula.build.Verification
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Helper class derived from Build that generalizes build verification of git and repo managed projects. It sends review to Gerrit to each change.
+Helper class derived from Build that generalizes build verification of git and repo managed projects. It sends review to Gerrit to each change.
 
 .. _CIJenkinslibrary-com.amarula.deploy.Archiva:
 
@@ -216,12 +220,12 @@ The example below show typical use-case of repo project build verification. The 
    .. container:: expand-control
       :name: expander-control-93842874
 
-       Click here to see the example code ...
+       Click here to see the example code ...
 
    ::
 
                import com.amarula.build.Verification
-                
+
                node {
                  def dockerImage = 'system-x-builder:1.0'
                  def manifestUrl = "${GITEA_SSH_URL}/myAndroidProject/manifest.git"
@@ -247,7 +251,7 @@ The next example shows another typical use-case of test build with cherry-pickin
    .. container:: expand-control
       :name: expander-control-870278278
 
-       Click here to see the example code ...
+       Click here to see the example code ...
 
    ::
 
@@ -264,17 +268,23 @@ The next example shows another typical use-case of test build with cherry-pickin
                  }, [dockerImage: dockerImage,
                      gerritMultitopic: true])
                }
-               
+
 .. _contents: Table of contents
 
 
 .. toctree::
    :maxdepth: 1
    :caption: Contents:
-   
+
    android_build_lib.rst
    jenkins_build_lib.rst
    verification_lib.rst
    archiva_lib.rst
    sftp_library.rst
    jenkins_ui_lib.rst
+
+.. tip::
+   Need a standardized CI/CD shared library for your team? Amarula Solutions
+   provides shared library architecture, custom class development, and
+   pipeline standardization for embedded software CI/CD workflows.
+   `Contact our CI/CD team <https://www.amarulasolutions.com/contact/>`_

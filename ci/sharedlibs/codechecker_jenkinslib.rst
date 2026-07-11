@@ -1,5 +1,9 @@
 CodeChecker Jenkins library
-****************************
+***************************
+
+.. note:: **TL;DR**
+   - Amarula Solutions' **CodeChecker Jenkins shared library** — a Groovy wrapper for the CodeChecker static analysis tool (C/C++) supporting **log, analyze, check, parse, and diffReport** operations, with **Gerrit change/topic verification** and integration into the CI Jenkins library's Build and Verification classes.
+   - Source: ``gitea.amarulasolutions.com/i-tools/codechecker_jenkins_lib``
 
 CodeChecker jenkins lib is shared library for Jenkins that wraps the CodeChecker static code analysis tool and helps with basic operations with Gerrit change/topic verification.
 
@@ -13,16 +17,10 @@ related documents: https://codechecker.readthedocs.io/en/latest/
 -  load implicitly: true
 -  allow default version to be overridden: true
 
-.. container:: confluence-information-macro confluence-information-macro-information conf-macro output-block
-
-   .. container:: confluence-information-macro-body
-
-      All the changes are currently under review. You need to use "IT-109" branch of the codechecker_jenkins_lib and the same name of branch for the repo_jenkins_lib. These branches contain code that is under review: https://gerrit-review.amarulasolutions.com/q/topic:%22codecheckerlib%22
-
 .. _CodeCheckerJenkinslibrary-Limitations:
 
-Limitations
-===========
+What are the limitations?
+=========================
 
 .. _CodeCheckerJenkinslibrary-Keepthebuild/outputdirectoryoftheproject:
 
@@ -33,8 +31,8 @@ Due to the nature how the analysis tools work it is necessary to keep the build 
 
 .. _CodeCheckerJenkinslibrary-Installation:
 
-Installation
-============
+How do you install the library?
+===============================
 
 Add the repository to your Jenkins instance as Shared library:
 --------------------------------------------------------------
@@ -76,7 +74,7 @@ Set configuration variables for CodeChecker server (optional)
 #. go to Manage Jenkins > Configure System
 #. scroll down to Global properties section
 #. use the Environment variables option
-#. define these variables (values are examples): 
+#. define these variables (values are examples):
 
    #. CODECHECKER_URL : "https://codechecker.amarulasolutions.com"
    #. CODECHECKER_PORT : "443"
@@ -85,8 +83,8 @@ Set configuration variables for CodeChecker server (optional)
 
 .. _CodeCheckerJenkinslibrary-AnalysisprocessusingCodeChecker:
 
-Analysis process using CodeChecker
-==================================
+How does the analysis process work?
+===================================
 
 In order to use the library correctly it is necessary to understand how the CodeChecker tool operates. You can find more information at the `official documentation page <https://codechecker.readthedocs.io/en/latest/>`__.
 
@@ -100,8 +98,8 @@ The "log" and "analyze" operations can be done at once using "check". All these 
 
 .. _CodeCheckerJenkinslibrary-Supportedfunctionalities:
 
-Supported functionalities
-=========================
+What functionalities are supported?
+===================================
 
 -  Supported languages: C/C++
 -  Log build using CodeChecker log ...
@@ -117,10 +115,10 @@ Supported functionalities
 
 .. _CodeCheckerJenkinslibrary-IntegrationintoCIJenkinslibrary:
 
-Integration into CI Jenkins library
-===================================
+How does it integrate with the CI Jenkins library?
+==================================================
 
-The Build and Verification classes from the `CI Jenkins library <./sharedlibs/ci_jenkinslib/index.html>`__ have become the standard way to build/verify projects. Therefore to make it even easier to use this library in our pipelines there are some convenient methods. The details can be found in the CI Jenkins library documentation: `com.amarula.build.Verification <./sharedlibs/ci_jenkinslib/verification.html>`__, `com.amarula.build.Build <./sharedlibs/ci_jenkinslib/jenkins_build_lib.html>`__
+The Build and Verification classes from the `CI Jenkins library <./sharedlibs/ci_jenkinslib/index.html>`__ have become the standard way to build/verify projects. Therefore to make it even easier to use this library in our pipelines there are some convenient methods. The details can be found in the CI Jenkins library documentation: `com.amarula.build.Verification <./sharedlibs/ci_jenkinslib/verification.html>`__, `com.amarula.build.Build <./sharedlibs/ci_jenkinslib/jenkins_build_lib.html>`__
 
 .. _CodeCheckerJenkinslibrary-Librarydescription:
 
@@ -222,7 +220,7 @@ The example below shows typical use-case of code analysis using this library. Th
          sh "tar -cvf codechecker_html.tar ${path}"
          archiveArtifacts 'codechecker_html.tar'
 
-| 
+|
 
 Following example shows a code that runs analysis and uploads the results to CodeChecker server.
 
@@ -236,7 +234,7 @@ Following example shows a code that runs analysis and uploads the results to Cod
          CodeCheckerAnalysis analysis = codechecker.check(Language.C_CPP, [Analyzer.clangtidy], 'make')
          analysis.uploadAnalysis('myProject', "master_rev_${gitRevision.trim()}")
 
-| 
+|
 
 The next example uses diffReport to get only new issues caused by a new Gerrit Change. The code assumes proper credentials are used to access the Git repository and Gerrit REST API. It also assumes it is running inside a properly configured Docker container.
 
@@ -261,9 +259,9 @@ The next example uses diffReport to get only new issues caused by a new Gerrit C
          String report = codechecker.diffReport(baseAnalysis, changeAnalysis, CodeCheckerReportFormat.GERRIT, repo, change)
          change.setReviewFromFile(report)
 
-| 
+|
 
-The previous example could be simplified using checkGerritChanges as shown below. The codechecker.checkGerritChanges step works with a List of GerritChanges. It finds out the target branch of the changes, checks out the branch and runs a base analysis. Then  applies one by one each change and runs a new analysis that is compared to the previous one. The results are reported to each Gerrit change.
+The previous example could be simplified using checkGerritChanges as shown below. The codechecker.checkGerritChanges step works with a List of GerritChanges. It finds out the target branch of the changes, checks out the branch and runs a base analysis. Then  applies one by one each change and runs a new analysis that is compared to the previous one. The results are reported to each Gerrit change.
 
 ::
 
@@ -280,7 +278,7 @@ The previous example could be simplified using checkGerritChanges as shown below
 
          codechecker.checkGerritChanges(Language.C_CPP, [], 'make', repo, [change])
 
-| 
+|
 
 The next example shows how to analyze Gerrit changes when building several variants. The results are reported to Gerrit.
 
@@ -299,3 +297,9 @@ The next example shows how to analyze Gerrit changes when building several varia
          codechecker.logGerritChanges('make X=2', repo, result)
 
          codechecker.analyzeGerritChanges(Language.C_CPP, [], result, repo)
+
+.. tip::
+   Need static analysis integrated into your CI/CD pipeline? Amarula Solutions
+   provides CodeChecker setup, Jenkins shared library configuration, and
+   Gerrit-integrated code quality automation for C/C++ embedded projects.
+   `Contact our CI/CD team <https://www.amarulasolutions.com/contact/>`_

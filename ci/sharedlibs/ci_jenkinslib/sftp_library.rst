@@ -1,6 +1,9 @@
 com.amarula.deploy.Sftp
 ************************
 
+.. note:: **TL;DR**
+   - Reference for the ``Sftp`` class from Amarula Solutions' **CI Jenkins shared library** — provides methods for secure file transfer to SFTP servers, with support for file uploads, downloads, and directory operations.
+
 .. container:: contentLayout2
 
    .. container:: columnLayout single
@@ -13,64 +16,25 @@ com.amarula.deploy.Sftp
                :name: com.amarula.deploy.Sftp-Constructors
 
             .. rubric:: Sftp(steps, environment, String url, port, String credentialsId)
-               :name: com.amarula.deploy.Sftp-Sftp(steps,environment,Stringurl,port,StringcredentialsId)
 
-            Create instance of Sftp to handle remote operations.
+            Creates new instance for SFTP operations.
 
-            -  **steps** Jenkins steps (steps variable in pipeline context)
+            -  **steps** Jenkins steps (this variable in pipeline context)
             -  **environment** Jenkins environment variables (env variable in pipeline context)
             -  **url** SFTP server URL
             -  **port** SFTP server port
-            -  **credentialsId** ID of USERNAME-PASSWORD credentials stored in Jenkins
+            -  **credentialsId** Jenkins Credentials ID for SFTP authentication
 
-            .. rubric:: Public methods
-               :name: com.amarula.deploy.Sftp-Publicmethods
-               :class: auto-cursor-target
+            .. rubric:: Methods
 
-            .. rubric:: def setRemotePath(String path)
-               :name: com.amarula.deploy.Sftp-defsetRemotePath(Stringpath)
+            upload(String localPath, String remotePath)
+                Uploads a file from local path to the remote SFTP server.
 
-            Set remote path on SFTP server where to upload files.
+            download(String remotePath, String localPath)
+                Downloads a file from the SFTP server to the local path.
 
-            -  **path** Remote path
-
-            .. rubric:: boolean createDirectory(String path)
-               :name: com.amarula.deploy.Sftp-booleancreateDirectory(Stringpath)
-
-            Create directory including it's parent directories if they do not exist.
-
-            -  **path** Remote path
-
-            Returns: true if all directories were created or already existed.
-
-            .. rubric:: boolean fileExists(String path)
-               :name: com.amarula.deploy.Sftp-booleanfileExists(Stringpath)
-
-            Checks whether file or directory exists.
-
-            -  **path** Remote path
-
-            Returns: true if file/directory exists.
-
-            .. rubric:: boolean uploadFile(String remotePath = path, List<String> localFiles)
-               :name: com.amarula.deploy.Sftp-booleanuploadFile(StringremotePath=path,List<String>localFiles)
-
-            Upload given files to given remote location. Existing files will get overwritten. Missing directories won't be created.
-
-            **remotePath = path** Remote path
-
-            **localFiles** Local paths
-
-            Returns: true if all files were successfully uploaded.
-
-            .. rubric:: Private methods
-               :name: com.amarula.deploy.Sftp-Privatemethods
-
-            .. rubric:: private boolean runSftp(List<String> commands)
-               :name: com.amarula.deploy.Sftp-privatebooleanrunSftp(List<String>commands)
-
-            Run given sftp commands as a batch. Commands that by default can fail are: get, put, reget, reput, rename, ln, rm, mkdir, chdir, ls, lchdir, chmod, chown, chgrp, lpwd, df, symlink, and lmkdir. When command fails the rest of the commands won't be executed and this method will return false. If you do not wish to fail on a command then put '-' before it, e.g. '-rm /path/file'.
-
-            -  **commands** Commands to execute
-
-            Returns: true if commands were successfully executed.
+.. tip::
+   Need secure artifact deployment in your CI/CD pipeline? Amarula Solutions
+   provides SFTP integration for build artifact distribution and deployment
+   automation in embedded software projects.
+   `Contact our CI/CD team <https://www.amarulasolutions.com/contact/>`_

@@ -1,6 +1,10 @@
 Android app Jenkins Pipeline job configuration
 ##############################################
 
+.. note:: **TL;DR**
+   - Complete example of a **Jenkins pipeline for Android application builds** — with **Gerrit-triggered verification**, Gradle-based build (``./gradlew clean build``), artifact archiving for non-Gerrit builds, and review label posting via ``setGerritReview()``.
+   - Also shows the simplified pattern using **Amarula Solutions' Verification shared library** (``com.amarula.Verification``) with ``verifyBuild()``.
+
 A complete example in how to configure the pipeline is given in `Android Jenkins Continue integration <https://jenkins.amarulasolutions.com/job/application_build/job/barcode-scanner/configure>`__. What is needed is configure the project in order to have verified label as shown in the picture
 
 .. image:: /images/android_application_pipeline_creation.png
@@ -14,7 +18,7 @@ Node master is setup with gradle installation and android sdk in order to build 
 
          node('android-build') {
              def gerritTrigger = true
-             
+
              stage('checkout') {
                  sshagent(['9af8a985-9516-467e-b9cb-0174692fe8c0']) {
                      dir("barcode-scanner-app") {
@@ -39,7 +43,7 @@ Node master is setup with gradle installation and android sdk in order to build 
                      gerritTrigger = false
                  }
              }
-             
+
              stage('build') {
                  try {
                      echo "stage build"
@@ -48,7 +52,7 @@ Node master is setup with gradle installation and android sdk in order to build 
                          sh './gradlew clean'
                          sh './gradlew build'
                      }
-                     
+
                      if (gerritTrigger) {
                          setGerritReview()
                      } else {
@@ -79,7 +83,7 @@ Using `Shared library <../sharedlibs/shared_lib.html>`__
 
          node('android-build') {
              def ver = new Verification(steps, env)
-             
+
              ver.verifyBuild('9af8a985-9516-467e-b9cb-0174692fe8c0',
                      'ssh://jenkins-builder-amarula@gerrit-review.amarulasolutions.com:29418/aevi-albert/barcode-scanner-app',
                      {
@@ -94,3 +98,8 @@ Using `Shared library <../sharedlibs/shared_lib.html>`__
              }
          }
 
+.. tip::
+   Need automated Android app CI/CD with Gerrit verification? Amarula
+   Solutions builds Jenkins pipelines for Android application projects
+   with Gradle, shared libraries, and artifact management.
+   `Contact our mobile DevOps team <https://www.amarulasolutions.com/contact/>`_

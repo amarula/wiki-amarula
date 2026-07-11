@@ -1,6 +1,10 @@
 com.amarula.build.AndroidBuild
 *******************************
 
+.. note:: **TL;DR**
+   - Reference documentation for the ``AndroidBuild`` class in Amarula Solutions' **CI Jenkins shared library** — a helper class that generalizes Android OS build steps with support for Docker-based builds, repo synchronization, and artifact deployment.
+   - Key methods: ``repoBuild()`` for building inside Docker, ``deploy()`` for artifact preparation, ``setBuildDescription()`` for unique job identification.
+
 Helper class that generalizes Android Build steps.
 
 .. _com.amarula.build.AndroidBuild-Constructors:
@@ -34,7 +38,7 @@ Sets unique Jenkins build description.
 
 .. _com.amarula.build.AndroidBuild-repoBuild(StringmanifestUrl,Stringscript=':',Closureclosure={},options=[:]):
 
-repoBuild(String manifestUrl, String script = ':', Closure closure = {}, options = [:])
+repoBuild(String manifestUrl, String script = ':', Closure closure = {}, options = [:])
 ---------------------------------------------------------------------------------------
 
 Runs build inside docker image. Performs 'make clean', 'make' and 'make otapackage'. Specific make options can be passed using env.BUILD_ANDROID_MAKEOPTS variable.
@@ -86,3 +90,9 @@ Example usage
              archiveArtifacts "${out}/*[-_]ota[-_]*.zip"
            }
          }
+
+.. tip::
+   Need automated Android OS CI/CD? Amarula Solutions provides AndroidBuild
+   pipeline integration, Docker-based AOSP builds, and artifact management
+   for Android embedded projects.
+   `Contact our Android CI team <https://www.amarulasolutions.com/contact/>`_

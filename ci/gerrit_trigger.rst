@@ -1,5 +1,9 @@
 Gerrit trigger
-***************
+**************
+
+.. note:: **TL;DR**
+   - How to configure the **Gerrit Trigger plugin** for Jenkins — automatically triggering verification builds on patchset creation, managing Code-Review vs. Verified labels, and accessing Gerrit change metadata as Jenkins environment variables (``GERRIT_CHANGE_ID``, ``GERRIT_REFSPEC``, ``GERRIT_BRANCH``, etc.).
+   - Used as the core integration point between **Amarula Solutions' Gerrit Code Review** and **Jenkins CI/CD** pipelines.
 
 plugin page: https://plugins.jenkins.io/gerrit-trigger
 
@@ -7,8 +11,8 @@ source: https://github.com/jenkinsci/gerrit-trigger-plugin
 
 .. _Gerrittrigger-SetupinPipelineconfiguration:
 
-Setup in Pipeline configuration
-===============================
+How do you set up Gerrit trigger in a pipeline?
+===============================================
 
 See example of typical configuration below:
 
@@ -28,8 +32,8 @@ We don't want Jenkins to set Code-Review label, only Verified, so we need to con
 
 .. _Gerrittrigger-TriggerEvents:
 
-Trigger Events
---------------
+What trigger events are available?
+----------------------------------
 
 -  **Draft Published:** Sent when a change moves from draft state to new.
 -  **Patchset Created:** Sent when a new patchset arrives on a change.
@@ -39,15 +43,15 @@ Trigger Events
 
 .. _Gerrittrigger-Pipelinesteps:
 
-Pipeline steps
-==============
+What pipeline steps are available?
+==================================
 
 **setGerritReview**: Allows altering the Gerrit review posted at the end of build during the build.
 
 .. _Gerrittrigger-Pipelinetriggerparameters:
 
-Pipeline trigger parameters
-===========================
+What pipeline trigger parameters are exposed?
+=============================================
 
 Not all of them has to be set. Accessible as environment variables.
 
@@ -150,7 +154,7 @@ Example of values
    .. container:: expand-control
       :name: expander-control-1547571607
 
-       Click here to expand...
+       Click here to expand...
 
       ::
 
@@ -185,3 +189,9 @@ Useful code snippets
 
          //def repoUrl = 'ssh://jenkins-builder-amarula@gerrit-review.amarulasolutions.com:29418/aevi-albert/qa-automated-tests'
          def repoUrl = "ssh://jenkins-builder-amarula@${GERRIT_HOST}:${GERRIT_PORT}/${GERRIT_PROJECT}"
+
+.. tip::
+   Need Gerrit-Jenkins integration for your code review workflow? Amarula
+   Solutions configures Gerrit triggers, verification pipelines, and
+   shared libraries for automated CI/CD in embedded development.
+   `Contact our CI/CD team <https://www.amarulasolutions.com/contact/>`_
