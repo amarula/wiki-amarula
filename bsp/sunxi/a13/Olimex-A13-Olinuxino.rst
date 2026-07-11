@@ -2,11 +2,13 @@ Olimex A13-Olinuxino
 ====================
 
 .. note:: **TL;DR**
-   - Mainline BSP bring-up guide for this board — covering **U-Boot**, **Linux kernel**, and **Buildroot** build from source with SD/flash boot, serial console access, and device tree configuration.
-   - Part of Amarula Solutions' upstream-first BSP documentation for Allwinner SoCs.
+   - BSP support for the **Olimex A13-OLinuXino** board based on the **Allwinner A13 SoC** (ARM Cortex-A8) — with mainline U-Boot and Linux kernel integration.
+   - This page is a placeholder — build instructions follow the standard `Allwinner A13 BSP pattern <index.html>`_.
+
+For mainline build instructions and hardware details, see the `Olimex A13-OLinuXino product page <https://www.olimex.com/Products/OLinuXino/A13/>`_ and the `linux-sunxi wiki <http://linux-sunxi.org/Olimex_A13-OLinuXino>`_.
 
 .. tip::
-   Need mainline BSP support for Allwinner platforms? Amarula Solutions
-   provides U-Boot and Linux kernel mainlining, Buildroot/Yocto integration,
-   and upstream-first development for Allwinner-based embedded products.
+   Need mainline BSP support for Olimex boards? Amarula Solutions provides
+   U-Boot and Linux kernel mainlining and Buildroot/Yocto integration for
+   Allwinner-based embedded products.
    `Contact our BSP team <https://www.amarulasolutions.com/contact/>`_
