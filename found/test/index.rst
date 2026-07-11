@@ -6,8 +6,7 @@
 Testing
 =======
 .. note:: **TL;DR**
-   - Reference guide covering foundational embedded development **tools and practices** — including host tool setup, cross-compilation toolchains, git bisect debugging, and OS automation.
-   - Part of Amarula Solutions' embedded development infrastructure documentation.
+   - Guide to **embedded Linux testing and OS automation** — covering automated OS testing frameworks, test infrastructure setup, and validation workflows for embedded platform releases.
 
 
 .. _contents: Table of contents

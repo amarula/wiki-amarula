@@ -3,11 +3,11 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-How do you build U-Boot?
-========================
+U-Boot
+======
 .. note:: **TL;DR**
-   - Technical guide covering **U-Boot** features for embedded systems — part of Amarula Solutions' upstream-first boot firmware documentation.
-   - Includes build instructions, configuration steps, and production deployment guidance.
+   - Amarula Solutions' **U-Boot documentation hub** — covering **image build guides** for Allwinner, Rockchip, NXP i.MX, and RISC-V platforms, **secure boot** (HABv4, verified boot), **boot time optimization**, **Falcon Mode** for fast boot, and **redundant boot** for production reliability.
+   - All guides use **mainline U-Boot** with the upstream-first methodology.
 
 .. toctree::
    :maxdepth: 2

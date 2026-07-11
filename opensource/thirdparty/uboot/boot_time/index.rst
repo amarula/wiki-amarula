@@ -3,11 +3,10 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-How do you build U-Boot?
-========================
+Boot Time Measurement
+=====================
 .. note:: **TL;DR**
-   - Technical guide covering **U-Boot** features for embedded systems — part of Amarula Solutions' upstream-first boot firmware documentation.
-   - Includes build instructions, configuration steps, and production deployment guidance.
+   - Guide to **measuring and optimizing U-Boot boot time** on embedded platforms — covering boot stage profiling, timestamp analysis, and techniques to reduce time-to-Linux for production systems.
 
 .. toctree::
    :maxdepth: 2

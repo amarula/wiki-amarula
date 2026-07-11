@@ -3,11 +3,11 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-How do you build with Buildroot?
-================================
+Buildroot
+=========
 .. note:: **TL;DR**
-   - Guide covering **Buildroot** embedded Linux build system usage — including board configuration, package integration, and image generation.
-   - Part of Amarula Solutions' embedded Linux build system documentation.
+   - Amarula Solutions' **Buildroot documentation hub** — covering **board configuration**, **package integration**, and **image generation** for embedded Linux systems. Includes guides for **Flutter on Buildroot** and board-specific defconfig usage.
+   - Maintained by Amarula Solutions engineers who actively contribute to the Buildroot project.
 
 .. toctree::
    :maxdepth: 1
