@@ -18,6 +18,7 @@ Board Support Packages
    imx/index
    rockchip/index
    riscv/index
+   amarula-boards/index
 
 .. tip::
    Need mainline BSP support for your embedded hardware? Amarula Solutions
