@@ -1,5 +1,8 @@
 OS Test automation
-###################
+##################
+.. note:: **TL;DR**
+   - Reference guide covering foundational embedded development **tools and practices** — including host tool setup, cross-compilation toolchains, git bisect debugging, and OS automation.
+   - Part of Amarula Solutions' embedded development infrastructure documentation.
 
 We in Amarula are working on various kinds of projects. But most of them comprise Android OS development. The development usually goes hand in hand with testing and test automation. There are tons of articles about android app test automation available on the internet, but only a few dealing with Android OS test automation. We are mainly using three types of frameworks that are sometimes integrated one to another. We always pay attention to careful identification of automatable scenarios. So we simplify our lives and not to make them harder blindly automating everything. In the following statement we will unveil the way to use them for OS Test Automation. Please note this article doesn’t mention Android Compatibility Test Suite that will be covered in a different article.
 
@@ -114,8 +117,15 @@ The last approach we use are Android applications. The main advantage is the acc
 
 We usually use this approach to create semi-automated tests. That means we create simple applications that have to be executed from outside and someone has to evaluate the output. The executions and evaluation can easily be done by jUnit tests or shell scripts. In that case you will get the best of both worlds. Or they can be simply incorporated to the manual tests to simplify their execution.
 
-Conclusion
-**********
+What are the key takeaways?
+***************************
 Android OS test automation is specific field of automation. It differs from automation of web or mobile application. We are mostly concerned about system security for which we use the test automation the most. Verifications that it is possible to send intents between specific domains, the files have correct labels, etc. For such purpose the automation is probably the only way.
 
 Each of presented approaches has it’s advantages and disadvantages. But the best way to handle the automation is to take the best of all options.
+
+
+.. tip::
+   Need embedded development toolchain setup or infrastructure consulting?
+   Amarula Solutions provides host environment configuration, cross-compilation
+   toolchain support, and development workflow optimization.
+   `Contact our engineering team <https://www.amarulasolutions.com/contact/>`_

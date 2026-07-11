@@ -1,5 +1,8 @@
-Introduction
-------------
+What is this about?
+-------------------
+.. note:: **TL;DR**
+   - Guide covering **embedded security topics** — including vulnerability assessment, secure development practices, and platform-specific security hardening.
+   - Part of Amarula Solutions' embedded security documentation.
 
 Resolving vulnerabilities in React Native applications is crucial to
 ensure the security and stability of the codebase. We will explore the
@@ -452,3 +455,9 @@ run:
 -  DNF/ centOS:8 - no command, image should contain at least journal.log
    file (installation log) and rpm.dnf.log file (in case of system
    packages update was executed).
+
+.. tip::
+   Need help securing your embedded product? Amarula Solutions offers
+   secure boot implementation, vulnerability assessment, and security
+   hardening for embedded Linux and Android platforms.
+   `Contact our security team <https://www.amarulasolutions.com/contact/>`_

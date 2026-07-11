@@ -1,5 +1,8 @@
 Giotto Tune
 ###########
+.. note:: **TL;DR**
+   - Hardware documentation for Amarula Solutions' **reference platforms and development boards** — including Vyasa RK3288 and Giotto.
+   - Covers hardware specifications, connectors, and board-specific configuration details.
 
 Giotto tune-box and board-amarula
 
@@ -42,3 +45,10 @@ Change or add in /media/user/config.txt dtoverlay=giotto-dac
         umount the sdcard partitions
  
 # Now your device is ready. Volume should be controlled by sysfs but this will be in another update
+
+
+.. tip::
+   Need custom hardware design or integration support? Amarula Solutions
+   provides PCB design, hardware bring-up, and embedded system integration
+   from prototype to production.
+   `Contact our hardware team <https://www.amarulasolutions.com/contact/>`_
