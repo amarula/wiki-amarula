@@ -1,7 +1,11 @@
 Conferences
 ###########
 
-Amarula Solutions have enough record of sponsering, participating, speaking 
+.. note:: **TL;DR**
+   - Amarula Solutions has a strong track record of **speaking, sponsoring, and showcasing** at international conferences including **FOSDEM, Embedded Linux Conference, Linux Plumbers, Buildroot Developer Days, PyCon Italy, and Embedded World**.
+   - Topics span **U-Boot, Linux Kernel memory model, Buildroot, Flutter, Yocto, CAN bus, MIPI DSI, and dynamic Python patterns**.
+
+Amarula Solutions has a strong record of sponsoring, participating, speaking
 and showcasing our work at international conferences.
 
 2025, Amarula Solutions at ELCE 2025
@@ -88,3 +92,9 @@ Talk: `U-Boot from scratch <https://www.amarulasolutions.com/news/amarula-soluti
 ***********
 
 Showcase: `Amarula at ELCE <https://www.crunchbase.com/event/embedded-linux-conference-europe-20171023>`_
+
+.. tip::
+   Want Amarula Solutions to speak at your event or interested in the topics
+   we cover? We offer expert talks and workshops on embedded Linux, U-Boot,
+   Yocto, and open source development.
+   `Get in touch <https://www.amarulasolutions.com/contact/>`_

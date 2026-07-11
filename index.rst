@@ -1,14 +1,15 @@
-======================================
+==================================
 Amarula Solutions Developer Portal
-======================================
+==================================
 
 Welcome to the technical hub of **Amarula Solutions**.
 We are experts in **Embedded Linux**, **Android**, and **Open Source** integration. This portal hosts our documentation,
 board support packages (BSPs), and open-source contributions.
 
-.. note::
-   Looking for commercial support, consulting, or project quotes?
-   Please visit our main website: `www.amarulasolutions.com <https://www.amarulasolutions.com>`_
+.. note:: **TL;DR**
+   - **Embedded Linux BSPs, Yocto, Buildroot, and U-Boot** — mainline-first board support for NXP i.MX, Rockchip, Allwinner, STM32, and TI platforms.
+   - **CI/CD pipeline infrastructure** — Jenkins-based automation with Gerrit integration, shared libraries, and containerized builds.
+   - **Open source upstream contributions** — active maintainers and contributors to Linux Kernel, U-Boot, Buildroot, Yocto, and Zephyr.
 
 .. _contents: Table of contents
 
@@ -27,8 +28,8 @@ board support packages (BSPs), and open-source contributions.
    hw/index
 
 
-Core Technologies
-=================
+What technologies power our embedded solutions?
+===============================================
 
 We specialize in bringing mainline stability to embedded products. Select a technology to view guides and documentation:
 
@@ -37,8 +38,8 @@ We specialize in bringing mainline stability to embedded products. Select a tech
 * Yocto Project & Buildroot build systems.
 * Embedded UI development with Flutter.
 
-Supported Hardware
-==================
+Which hardware platforms do we support?
+=======================================
 
 Documentation and BSPs for our primary supported platforms:
 
@@ -59,13 +60,16 @@ Documentation and BSPs for our primary supported platforms:
    * - **Allwinner**
      - A64, H3, H6
 
-Open Source Projects
-====================
+How do we contribute to open source?
+====================================
 
 We don't just use open source; we build it.
 
 --------------------------------------
 
-**Need specific help?**
-`Contact our Engineering Team <https://www.amarulasolutions.com/contact/>`_
-
+.. tip::
+   Need help with embedded Linux, Android, or CI/CD for your product?
+   Amarula Solutions provides commercial engineering services, from BSP
+   development and mainline kernel upstreaming to custom Yocto layers and
+   Jenkins pipeline design.
+   `Contact our Engineering Team <https://www.amarulasolutions.com/contact/>`_

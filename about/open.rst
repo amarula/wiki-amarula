@@ -1,8 +1,12 @@
 Open Source Activities
 ######################
 
-Amarula Solutions is an active open source participant and maintainer 
-for many subsystems Linux and related open source projects. 
+.. note:: **TL;DR**
+   - Amarula Solutions is an **active maintainer and contributor** to **Linux Kernel, U-Boot, Buildroot, and Yocto** — with upstream maintainer roles in Allwinner sunXi, SPI, MTD/SPI-NOR, and DSI subsystems.
+   - Key contributions span **boot firmware, kernel drivers, multimedia (display/camera), build systems, OTA update frameworks (swupdate, Mender), and Flutter**.
+
+Amarula Solutions is an active open source participant and maintainer
+for many subsystems Linux and related open source projects.
 
 Key project areas:
 ::
@@ -16,8 +20,8 @@ Key project areas:
 
 See our open source activities so far.
 
-Mainatiners
-***********
+What open source projects does Amarula maintain?
+************************************************
 
 Linux Kernel
 ============
@@ -28,7 +32,7 @@ Links:
 :
 
     `DSI Vendor driver <https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/tree/MAINTAINERS#n5077>`_
-        
+
     `DSI Vendor driver <https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/tree/MAINTAINERS#n5190>`_
 
 U-Boot
@@ -77,16 +81,16 @@ Link:
 :
 
     `Engicam i.CoreM6 <https://layers.openembedded.org/layerindex/branch/master/layer/meta-amarula-engicam>`_
-       
+
     `Vyasa RK3288 <http://git.yoctoproject.org/cgit/cgit.cgi/meta-rockchip/tree/conf/machine/vyasa-rk3288.conf>`_
 
-Contributions
-*************
+How does Amarula contribute to open source?
+*******************************************
 
 Linux Kernel
 ============
 
-Contributions on Linux kernel Memory model, Board designs from customer, SBC vendors, 
+Contributions on Linux kernel Memory model, Board designs from customer, SBC vendors,
 Kernel drivers, Devicetrees, bug fixes. see `linux contributions <https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/log/?qt=grep&q=amarula>`_
 
 U-Boot
@@ -104,3 +108,9 @@ Yocto
 =====
 
 Contributions on Meta BSPs, Boards, configurations. see `yocto contributions <https://layers.openembedded.org/layerindex/branch/master/layer/meta-amarula-engicam>`_
+
+.. tip::
+   Interested in contributing to open source or need maintainer support for
+   your project? Amarula Solutions offers sponsored upstream development and
+   maintainer services across Linux Kernel, U-Boot, Buildroot, and Yocto.
+   `Contact our open source team <https://www.amarulasolutions.com/contact/>`_

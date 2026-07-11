@@ -1,7 +1,11 @@
 Technical Showcase
 ##################
 
-Amarula Solutions have enough record of sponsering, participating, speaking 
+.. note:: **TL;DR**
+   - Amarula Solutions showcases **mainline-first embedded graphics** across NXP i.MX6, Allwinner, and Rockchip RK3399 platforms — demonstrating **Mesa/Etnaviv, Mali, OpenGL/OpenGL ES, Qt5, and MIPI-DSI/eDP/LVDS display interfaces**.
+   - Demos presented at **Embedded Linux Conference (ELC) and ELCE** with fully open source graphics stacks.
+
+Amarula Solutions has a strong record of sponsoring, participating, speaking
 and showcasing our work at international conferences.
 
 2019, ELC: Open Source Graphics Demo
@@ -25,7 +29,7 @@ Rockchip RK3399
         Mainline Linux kernel
         Display interface: eDP
         Graphic drivers: Mali-T860
-        raphic libraries: OpenGL, OpenGL ES, libdrm
+        Graphic libraries: OpenGL, OpenGL ES, libdrm
         Graphic applications: Qt5, glmark2
 
 .. image:: /images/2019_elc.png
@@ -33,4 +37,10 @@ Rockchip RK3399
 2017, ELCE:
 ***********
 
-Showcase: `Amarula at ELCE <>
+Showcase: `Amarula at ELCE <https://www.crunchbase.com/event/embedded-linux-conference-europe-20171023>`_
+
+.. tip::
+   Need a mainline graphics stack for your embedded product? Amarula Solutions
+   specializes in upstream GPU drivers, display pipeline integration, and custom
+   Qt/Flutter UI development on i.MX, Rockchip, STM32, and Allwinner platforms.
+   `Contact our graphics team <https://www.amarulasolutions.com/contact/>`_
