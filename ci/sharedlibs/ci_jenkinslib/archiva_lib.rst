@@ -1,5 +1,5 @@
 com.amarula.deploy.Archiva
-***************************
+**************************
 
 .. note:: **TL;DR**
    - Reference for the ``Archiva`` class from Amarula Solutions' **CI Jenkins shared library** — provides methods for uploading build artifacts to the Archiva Maven repository manager.

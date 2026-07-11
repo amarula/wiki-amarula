@@ -1,5 +1,5 @@
 Repo Jenkins library
-*********************
+********************
 
 .. note:: **TL;DR**
    - Amarula Solutions' **Repo Jenkins shared library** (``repo_jenkins_lib``) — providing ``Git``, ``Gerrit``, ``GerritChange``, and ``Repo`` classes for Git and repo-managed project operations with Gerrit integration: init, sync, cherry-pick/checkout topics, and automated review label posting.

@@ -1,5 +1,5 @@
 com.amarula.gerrit.GerritChange
-********************************
+*******************************
 
 .. note:: **TL;DR**
    - Reference for ``GerritChange`` from Amarula Solutions' **repo_jenkins_lib** — represents a single Gerrit change with methods for setting review labels (Verified +1/-1), getting change details, and listing related changes by topic.

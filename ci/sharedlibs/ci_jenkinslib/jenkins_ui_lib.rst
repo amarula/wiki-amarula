@@ -1,5 +1,5 @@
 com.amarula.ui.UI
-******************
+*****************
 
 .. note:: **TL;DR**
    - Reference for the ``Ui`` class from Amarula Solutions' **CI Jenkins shared library** — a builder-pattern class for creating parameterized Jenkins job UIs with boolean, string, choice, multiline string, and password parameters.

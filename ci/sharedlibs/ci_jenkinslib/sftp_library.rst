@@ -1,5 +1,5 @@
 com.amarula.deploy.Sftp
-************************
+***********************
 
 .. note:: **TL;DR**
    - Reference for the ``Sftp`` class from Amarula Solutions' **CI Jenkins shared library** — provides methods for secure file transfer to SFTP servers, with support for file uploads, downloads, and directory operations.

@@ -1,5 +1,5 @@
 Changelog library
-****************
+*****************
 
 .. note:: **TL;DR**
    - Amarula Solutions' **Changelog Jenkins library** — a Groovy wrapper around the **Git Changelog plugin** that generates formatted changelog reports using **mustache** HTML templates.

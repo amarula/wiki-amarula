@@ -1,5 +1,5 @@
 com.amarula.repo.Repo
-**********************
+*********************
 
 .. note:: **TL;DR**
    - Reference for the ``Repo`` class from Amarula Solutions' **repo_jenkins_lib** — provides repo tool operations for multi-repository projects (AOSP-style), including init, sync, and topic-based checkout/cherry-pick of Gerrit changes with cross-repository dependency handling.

@@ -1,5 +1,5 @@
 com.amarula.build.Verification
-*******************************
+******************************
 
 .. note:: **TL;DR**
    - Reference for the ``Verification`` class from Amarula Solutions' **CI Jenkins shared library** — extends ``Build`` with automated Gerrit review label posting (Verified +1/-1) based on build success or failure.

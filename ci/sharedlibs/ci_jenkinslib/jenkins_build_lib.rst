@@ -1,5 +1,5 @@
 com.amarula.build.Build
-************************
+***********************
 
 .. note:: **TL;DR**
    - Reference for the ``Build`` class from Amarula Solutions' **CI Jenkins shared library** (``ci_scripts``) — the core helper for building Git and repo-managed projects, with Gerrit change syncing (checkout or cherry-pick), Docker-based build environments, and credential management.

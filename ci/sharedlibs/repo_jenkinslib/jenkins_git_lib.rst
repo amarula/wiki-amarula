@@ -1,5 +1,5 @@
 com.amarula.git.Git
-********************
+*******************
 
 .. note:: **TL;DR**
    - Reference for the ``Git`` class from Amarula Solutions' **repo_jenkins_lib** — provides Git repository operations including sync, checkout, and cherry-pick of Gerrit changes, with credential management and Gerrit REST API integration.

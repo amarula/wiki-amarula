@@ -1,5 +1,5 @@
 CI Jenkins library
-*******************
+******************
 
 .. note:: **TL;DR**
    - Amarula Solutions' core **CI Jenkins shared library** (``ci_scripts``) — providing the ``Build``, ``Verification``, ``AndroidBuild``, ``Archiva``, ``Sftp``, and ``Ui`` classes for standardized Git/repo project building, Gerrit verification, artifact deployment, and UI parameterization across all Jenkins pipelines.

@@ -1,5 +1,5 @@
 com.amarula.build.AndroidBuild
-*******************************
+******************************
 
 .. note:: **TL;DR**
    - Reference documentation for the ``AndroidBuild`` class in Amarula Solutions' **CI Jenkins shared library** — a helper class that generalizes Android OS build steps with support for Docker-based builds, repo synchronization, and artifact deployment.
