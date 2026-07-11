@@ -1,6 +1,9 @@
 ==================================================
 SCA Layer for Yocto with Mend Support
-==================================================
+=====================================
+.. note:: **TL;DR**
+   - Documentation for an Amarula Solutions **open source product/tool** — maintained by the engineering team with source code available on GitHub.
+   - Part of Amarula's commitment to building and releasing open source software for the embedded development community.
 .. raw:: html
 
     <a href="https://www.amarulasolutions.com/contact" class="contact-button-inline">
@@ -9,15 +12,15 @@ SCA Layer for Yocto with Mend Support
     <div class="contact-button-clear"></div>
 
 
-Introduction
-------------
+What is this about?
+-------------------
 
 The ``meta-mend`` layer provides seamless integration of Mend Software Composition Analysis (SCA) into the Yocto Project build process. This enables developers to identify and address open-source vulnerabilities within their embedded Linux distributions during development. Leveraging Mend's comprehensive vulnerability database and analysis capabilities, this layer enhances the security posture of Yocto-based products.
 
 Our specialization in security and our commitment to helping companies comply with emerging regulations like the Cyber Resilience Act (CRA) in Europe drive the development of this layer. By incorporating SCA directly into the build pipeline, we empower organizations to proactively manage software risks and build more secure products.
 
-Usage
------
+How do you use it?
+------------------
 
 This layer introduces a BitBake class (`mend.bbclass`) that facilitates the application of Mend checks to your Yocto build. The Mend analysis requires a Java runtime environment on the host system. To simplify setup, we provide a custom `kas-container` image that includes the necessary Java installation.
 
@@ -36,8 +39,8 @@ You can clone the repository using Git:
 
         git clone https://github.com/amarula/meta-mend
 
-Configuration
--------------
+How do you configure it?
+------------------------
 
 To enable Mend SCA analysis in your Yocto build, you need to inherit the `mend` class and configure the required Mend API credentials. This configuration is typically done in your ``conf/local.conf`` file or within the ``local_conf_header`` section of your ``kas`` configuration file.
 
@@ -113,3 +116,10 @@ License
 -------
 
 The ``meta-mend`` layer is licensed under the MIT License. See the ``LICENSE`` file for more details.
+
+
+.. tip::
+   Interested in this open source tool? Amarula Solutions provides
+   sponsored development, feature integration, and commercial support for
+   our open source products.
+   `Contact us <https://www.amarulasolutions.com/contact/>`_

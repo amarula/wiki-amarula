@@ -1,5 +1,8 @@
 FluteKeyboard
 =============
+.. note:: **TL;DR**
+   - Documentation for an Amarula Solutions **open source product/tool** — maintained by the engineering team with source code available on GitHub.
+   - Part of Amarula's commitment to building and releasing open source software for the embedded development community.
 .. raw:: html
 
     <a href="https://www.amarulasolutions.com/contact" class="contact-button-inline">
@@ -41,8 +44,8 @@ Whether you're designing an embedded application, FluteKeyboard allows you to ta
 |
 |
 
-Key Features
-------------
+What are the key features?
+--------------------------
 
 * **Open-Source**: Freely available and modifiable according to your needs.
 * **Flutter Embedded Focus**: Optimised for embedded systems with smooth performance.
@@ -57,3 +60,10 @@ As an open-source project, FluteKeyboard is readily available for developers
 to explore and implement. By visiting the `project's repository <https://github.com/amarula/flutekeyboard>`__
 (or the package page on `PubDev <https://pub.dev/packages/flutekeyboard>`__), you can access the codebase,
 documentation, and instructions for incorporating FluteKeyboard into your Flutter applications.
+
+
+.. tip::
+   Interested in this open source tool? Amarula Solutions provides
+   sponsored development, feature integration, and commercial support for
+   our open source products.
+   `Contact us <https://www.amarulasolutions.com/contact/>`_

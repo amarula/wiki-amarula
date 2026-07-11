@@ -1,10 +1,13 @@
 Amarula  Solutions Open source Contributions - March/April 2025
 ---------------------------------------------------------------
+.. note:: **TL;DR**
+   - Summary of Amarula Solutions' past **open source contributions** to Buildroot, Yocto, and Zephyr — listing merged and pending patches by engineer.
+   - Covers firmware, board configurations, package updates, Linux kernel patches, and U-Boot upstreaming.
 
 Amarula Solutions new contribuitions in opensource project
 
 Contribuitions
-------------------------
+--------------
 
 Patches
 ^^^^^^^
@@ -237,3 +240,10 @@ Michael Trimarchi
 * Rewrite rebuild actions using javascript java injection (`<https://github.com/jenkinsci/pipeline-graph-view-plugin/pull/580>`_)
 
 #jenkins #kompute #opensource #linux 
+
+
+.. tip::
+   Want to contribute to the open source projects featured in these reports?
+   Amarula Solutions is always looking for collaboration opportunities in
+   embedded Linux, Buildroot, Yocto, U-Boot, and Zephyr.
+   `Contact our open source team <https://www.amarulasolutions.com/contact/>`_

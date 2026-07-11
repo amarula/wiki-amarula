@@ -1,5 +1,8 @@
 Git Collect Plugin for Jenkins
 ==============================
+.. note:: **TL;DR**
+   - Documentation for an Amarula Solutions **open source product/tool** — maintained by the engineering team with source code available on GitHub.
+   - Part of Amarula's commitment to building and releasing open source software for the embedded development community.
 .. raw:: html
 
     <a href="https://www.amarulasolutions.com/contact" class="contact-button-inline">
@@ -34,8 +37,8 @@ The Git Collect plugin is designed to fit seamlessly into complex containerized 
 * **Jenkins SSH Agent Plugin:** Use SSH keys managed by Jenkins to clone repositories in your shell scripts, then use ``collectGit`` to register the data.
 * **Jenkins Docker Plugin:** Works within Docker containers where the git repository might be mounted or cloned internally.
 
-Usage
------
+How do you use it?
+------------------
 
 The plugin exposes the ``collectGit`` step for use in Jenkins Pipelines.
 
@@ -85,7 +88,14 @@ You can also specify a marked commit if you need to reference a specific point i
         }
     }
 
-Resources
----------
+Where can you learn more?
+-------------------------
 
 * **Source Code:** `GitHub Repository <https://github.com/amarula/git-collect-plugin>`_
+
+
+.. tip::
+   Interested in this open source tool? Amarula Solutions provides
+   sponsored development, feature integration, and commercial support for
+   our open source products.
+   `Contact us <https://www.amarulasolutions.com/contact/>`_

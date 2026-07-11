@@ -1,5 +1,8 @@
 Amarula Libcppconnman
 =====================
+.. note:: **TL;DR**
+   - Documentation for an Amarula Solutions **open source product/tool** — maintained by the engineering team with source code available on GitHub.
+   - Part of Amarula's commitment to building and releasing open source software for the embedded development community.
 .. raw:: html
 
     <a href="https://www.amarulasolutions.com/contact" class="contact-button-inline">
@@ -72,3 +75,10 @@ and :strong:`open-source technology`. By providing such a library, they support 
 utilize |ConnMan| for network connectivity, easing the development of robust C++ applications for their embedded 
 products. This commitment to open-source contributions reflects their value of transparency and their deep 
 involvement in the embedded technology community.
+
+
+.. tip::
+   Interested in this open source tool? Amarula Solutions provides
+   sponsored development, feature integration, and commercial support for
+   our open source products.
+   `Contact us <https://www.amarulasolutions.com/contact/>`_

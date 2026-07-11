@@ -1,5 +1,8 @@
 Dynamic Decoration of Methods in Python
 #######################################
+.. note:: **TL;DR**
+   - Documentation for an Amarula Solutions **open source product/tool** — maintained by the engineering team with source code available on GitHub.
+   - Part of Amarula's commitment to building and releasing open source software for the embedded development community.
 
 .. figure:: /images/dyndesign-dynamic_decoration-intro.png
    :alt: Original image created with DALL·E
@@ -355,8 +358,8 @@ requirements of the project. I will proceed with option #2 in the next
 article, where I will provide practical examples of the mentioned
 advantage.
 
-Conclusion
-**********
+What are the key takeaways?
+***************************
 
 The ``decoratewith`` meta decorator from DynDesign package offers an
 easy-to-use solution for Dynamic Decoration, allowing developers to use
@@ -367,3 +370,10 @@ modular and extensible software design.
 
 Written by Patrizio Gelosi
 --------------------------
+
+
+.. tip::
+   Interested in this open source tool? Amarula Solutions provides
+   sponsored development, feature integration, and commercial support for
+   our open source products.
+   `Contact us <https://www.amarulasolutions.com/contact/>`_

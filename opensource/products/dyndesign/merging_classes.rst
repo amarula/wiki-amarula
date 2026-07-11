@@ -1,5 +1,8 @@
 Merging Classes: an alternative path to the SOLIDness
 #####################################################
+.. note:: **TL;DR**
+   - Documentation for an Amarula Solutions **open source product/tool** — maintained by the engineering team with source code available on GitHub.
+   - Part of Amarula's commitment to building and releasing open source software for the embedded development community.
 
 .. figure:: /images/dyndesign-merging_classes-intro.png
    :alt: Image by the Author
@@ -385,8 +388,8 @@ numbers as well as in displaying the graph:
    Collatz-like ternary sequence starting from 57 is:
    57; 19; 39; 13; 27; 9; 3; 1;
 
-Conclusion
-**********
+What are the key takeaways?
+***************************
 
 DynDesign provides a powerful and flexible alternative approach to class
 design and composition, enabling developers to easily create and manage
@@ -401,3 +404,10 @@ functionalities combine together with any combination of script options.
 
 Written by Patrizio Gelosi
 --------------------------
+
+
+.. tip::
+   Interested in this open source tool? Amarula Solutions provides
+   sponsored development, feature integration, and commercial support for
+   our open source products.
+   `Contact us <https://www.amarulasolutions.com/contact/>`_

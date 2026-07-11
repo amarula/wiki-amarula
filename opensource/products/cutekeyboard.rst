@@ -1,5 +1,8 @@
 CuteKeyboard
-====================
+============
+.. note:: **TL;DR**
+   - Documentation for an Amarula Solutions **open source product/tool** — maintained by the engineering team with source code available on GitHub.
+   - Part of Amarula's commitment to building and releasing open source software for the embedded development community.
 .. raw:: html
 
     <a href="https://www.amarulasolutions.com/contact" class="contact-button-inline">
@@ -36,8 +39,8 @@ CuteKeyboard allows you to tailor the keyboard's appearance.
 |
 |
 
-Key Features
-------------
+What are the key features?
+--------------------------
 
 * **Open-Source**: Freely available and modifiable according to your needs.
 * **Qt Compatibility**: Works seamlessly with both Qt 5 and Qt 6 applications.
@@ -51,3 +54,10 @@ As an open-source project, CuteKeyboard is readily available for developers
 to explore and implement. By visiting the `project's repository <https://github.com/amarula/cutekeyboard/>`__
 (details likely found on code-sharing platforms like GitHub), you can access the codebase,
 documentation, and instructions for incorporating CuteKeyboard into your Qt applications.
+
+
+.. tip::
+   Interested in this open source tool? Amarula Solutions provides
+   sponsored development, feature integration, and commercial support for
+   our open source products.
+   `Contact us <https://www.amarulasolutions.com/contact/>`_

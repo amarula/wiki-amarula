@@ -1,6 +1,9 @@
 ====================
 ChatGPT meets Gerrit
 ====================
+.. note:: **TL;DR**
+   - Documentation for an Amarula Solutions **open source product/tool** — maintained by the engineering team with source code available on GitHub.
+   - Part of Amarula's commitment to building and releasing open source software for the embedded development community.
 .. raw:: html
 
     <a href="https://www.amarulasolutions.com/contact" class="contact-button-inline">
@@ -187,8 +190,8 @@ Last but certainly not least, we give utmost importance to security and privacy.
 
 Recognizing scenarios where code confidentiality is paramount, we’ve introduced a new configuration option (``gptFullFileReview``) which, when set to false, restricts the code reviewed by ChatGPT to only the changes made, without including the entire file. This feature ensures that sensitive information remains within the confines of the organization, thus safeguarding intellectual property and adhering to privacy standards.
 
-Conclusion
-----------
+What are the key takeaways?
+---------------------------
 
 Our exploration of the integration of ChatGPT into Gerrit has highlighted several key points:
 
@@ -198,3 +201,10 @@ Our exploration of the integration of ChatGPT into Gerrit has highlighted severa
 * **Security and Privacy**: We shared best practices for maintaining security and privacy when using ChatGPT within Gerrit.
 
 By integrating ChatGPT into Gerrit, we aim to enhance code quality, streamline project management, and introduce AI-driven intelligence into the software development lifecycle. This integration is a step towards a more efficient, collaborative, and intelligent coding environment, highlighting our commitment to innovation and excellence in software development.
+
+
+.. tip::
+   Interested in this open source tool? Amarula Solutions provides
+   sponsored development, feature integration, and commercial support for
+   our open source products.
+   `Contact us <https://www.amarulasolutions.com/contact/>`_
