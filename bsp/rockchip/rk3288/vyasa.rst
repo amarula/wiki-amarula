@@ -1,11 +1,15 @@
 Vyasa RK3288
 ############
 
+.. note:: **TL;DR**
+   - Mainline BSP bring-up guide for this board — covering **U-Boot**, **Linux kernel**, **Buildroot/Yocto** build from source with SD/flash boot, serial console access, and device tree configuration.
+   - Part of Amarula Solutions' upstream-first BSP documentation.
+
 This tutorial will show the details of Vyasa RK3288 Linux BSP Guide. Most of the software supported by Vyasa is mainlined already.
 You can check `hardware details here <https://www.amarula-electronics.com/product/vyasa-pico-itx-2-5-single-board-computer/>`_
 
-Hardware Access
-***************
+How do you access the hardware?
+*******************************
 Serial: NULL Modem cable, Serial-to-USB converter
 
 Power: DC-in 12V ~ 24V socket supply
@@ -36,8 +40,8 @@ Manual Build
 ============
 Image building need host to ready with all necessary tools ready, refer `here <https://wiki.amarulasolutions.com/found/host/tools.html>`_
 
-U-Boot
-------
+How do you build U-Boot?
+------------------------
 ::
 
         $ git clone git://git.denx.de/u-boot.git
@@ -45,8 +49,8 @@ U-Boot
         $ make vyasa-rk3288_defconfig
         $ make 
 
-Linux
------
+How do you build the Linux kernel?
+----------------------------------
 ::
 
         $ git clone git://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git
@@ -67,8 +71,8 @@ Linux
 Rootfs
 ------
 
-Buildroot
-=========
+How do you build with Buildroot?
+================================
 It's easy to build entire system using buildroot and mainline supported Vyasa board already. See read this `readme.txt <https://git.buildroot.net/buildroot/tree/board/amarula/vyasa/readme.txt>`_ for more info.
 
 ::
@@ -280,8 +284,8 @@ Switch to Graphical mode
 
         root@localhost:~# systemctl start graphical.target
 
-Booting
-********
+How do you boot the system?
+***************************
 SDMMC Boot
 ==========
 Write SD
@@ -820,3 +824,9 @@ Lauterbach Trace32 script for debugging U-Boot
         list.auto
 
         enddo
+
+.. tip::
+   Need mainline BSP support for Rockchip platforms? Amarula Solutions
+   provides U-Boot and Linux kernel mainlining, Yocto/Buildroot integration,
+   and upstream-first development for RK3288, RK3399, PX30, and RK3568 SoCs.
+   `Contact our BSP team <https://www.amarulasolutions.com/contact/>`_

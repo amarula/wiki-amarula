@@ -1,13 +1,17 @@
 ROC-RK3399-PC
 =============
 
+.. note:: **TL;DR**
+   - Mainline BSP bring-up guide for this board — covering **U-Boot**, **Linux kernel**, **Buildroot/Yocto** build from source with SD/flash boot, serial console access, and device tree configuration.
+   - Part of Amarula Solutions' upstream-first BSP documentation.
+
 About this
 ----------
 
 This tutorial will show the details of `ROC-RK3399-PC <http://en.t-firefly.com/product/rocrk3399pc>`_ board mainline support.
 
-Hardware Access
----------------
+How do you access the hardware?
+-------------------------------
 
 .. image:: /images/roc-rk3399-pc.jpg
 
@@ -47,7 +51,7 @@ Linux
         $ ARCH=arm64 make Image dtbs -j 4
 
 Booting from
------------
+------------
 
 SPI Flash::
 
@@ -144,8 +148,8 @@ Program SD card/eMMC/USB/SSD::
         Power off or reboot, the board will pickup the distro based
         on u-boot distboot order.
 
-Buildroot
----------
+How do you build with Buildroot?
+--------------------------------
 
 Assume the disk connected via /dev/mmcblk0 in host::
  
@@ -155,3 +159,9 @@ Assume the disk connected via /dev/mmcblk0 in host::
         (check the sha256 values with roc-rk3399-pc-sdcard.img.xz.sha256sum)
         sudo dd if=roc-rk3399-pc-sdcard.img of=/dev/mmcblk0
         sudo sync
+
+.. tip::
+   Need mainline BSP support for Rockchip platforms? Amarula Solutions
+   provides U-Boot and Linux kernel mainlining, Yocto/Buildroot integration,
+   and upstream-first development for RK3288, RK3399, PX30, and RK3568 SoCs.
+   `Contact our BSP team <https://www.amarulasolutions.com/contact/>`_

@@ -1,13 +1,17 @@
 NanoPI M4
 =========
 
+.. note:: **TL;DR**
+   - Mainline BSP bring-up guide for this board — covering **U-Boot**, **Linux kernel**, **Buildroot/Yocto** build from source with SD/flash boot, serial console access, and device tree configuration.
+   - Part of Amarula Solutions' upstream-first BSP documentation.
+
 About this
 ----------
 
 This tutorial will show the details of `NanoPI M4 <http://wiki.friendlyarm.com/wiki/index.php/NanoPi_M4>`_ board mainline support.
 
-Hardware Access
----------------
+How do you access the hardware?
+-------------------------------
 
 .. image:: /images/nanopi_m4.jpg
 
@@ -43,7 +47,7 @@ Linux
         ARCH=arm64 make Image dtbs -j 16
 
 Booting from
------------
+------------
 
 SD::
 
@@ -115,3 +119,9 @@ Boot log
            Loading Device Tree to 00000000f4f19000, end 00000000f4f29a4d ... OK
 
         Starting kernel ...
+
+.. tip::
+   Need mainline BSP support for Rockchip platforms? Amarula Solutions
+   provides U-Boot and Linux kernel mainlining, Yocto/Buildroot integration,
+   and upstream-first development for RK3288, RK3399, PX30, and RK3568 SoCs.
+   `Contact our BSP team <https://www.amarulasolutions.com/contact/>`_

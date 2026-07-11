@@ -1,27 +1,31 @@
 i.CoreM6 1.5
 ############
 
+.. note:: **TL;DR**
+   - Mainline BSP bring-up guide for this board — covering **U-Boot**, **Linux kernel**, **Buildroot/Yocto** build from source with SD/flash boot, serial console access, and device tree configuration.
+   - Part of Amarula Solutions' upstream-first BSP documentation.
+
 This tutorial will show the details of `Engicam i.CoreM6 1.5 <https://www.engicam.com/vis-prod/101123>`_ SOM  Mainline software support and other needed details.
 
 This SOM is compatible with EDIMM STARTER KIT `i.Core 1.5 MIPI Evaluation board <https://www.engicam.com/vis-prod/101145>`_
 Support Boot from SD/MMC card and eMMC.
 
-BSP Build
-*********
+How do you build the BSP?
+*************************
 Manual Build
 ============
 Image building need host to ready with all necessary tools ready, refer `here <https://wiki.amarulasolutions.com/found/host/tools.html>`_ for Host and Crosstool
 
-U-Boot
-------
+How do you build U-Boot?
+------------------------
 ::
 
         $ git clone git://git.denx.de/u-boot.git
         $ cd u-boot
         $ make imx6qdl_icore_mipi_defconfig && make
         
-Linux
------
+How do you build the Linux kernel?
+----------------------------------
 ::
 
         $ git clone git://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git
@@ -30,8 +34,8 @@ Linux
         $ ARCH=arm make imx_v6_v7_defconfig
         $ ARCH=arm make LOADADDR=0x10008000 uImage dtbs
         
-Buildroot
-=========
+How do you build with Buildroot?
+================================
 ::
 
         $ git clone https://github.com/amarula/buildroot-amarula
@@ -39,8 +43,8 @@ Buildroot
         $ git checkout -b imx6-media origin/imx6-media
         $ make engicam_imx6qdl_icore_qt5_gst1_media_defconfig && make
 
-Boot
-****
+How do you boot the system?
+***************************
 Write SD
 ========
 For manual build images will write by `partitioning SD card <https://wiki.amarulasolutions.com/found/host/tools.html#sd-setup>`_
@@ -185,3 +189,9 @@ configure the pipeline with default format AYUV32/640x480,this can be alter with
         Launch the camera with ipu1_csi0 capture
 
         # gst-launch-1.0 -v v4l2src device=/dev/video4 ! autovideosink
+
+.. tip::
+   Need mainline BSP support for NXP i.MX platforms? Amarula Solutions
+   provides U-Boot and Linux kernel mainlining, Yocto/Buildroot integration,
+   and upstream-first development for i.MX6, i.MX8M, and i.MX8M Plus SoCs.
+   `Contact our BSP team <https://www.amarulasolutions.com/contact/>`_

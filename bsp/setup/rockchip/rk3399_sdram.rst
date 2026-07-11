@@ -1,6 +1,10 @@
 Create U-Boot handle sdram timings dtsi from rkbin on RK3399
 ############################################################
 
+.. note:: **TL;DR**
+   - Mainline BSP bring-up guide for this board — covering **U-Boot**, **Linux kernel**, **Buildroot/Yocto** build from source with SD/flash boot, serial console access, and device tree configuration.
+   - Part of Amarula Solutions' upstream-first BSP documentation.
+
 These steps are derived from the instructions supported by Liviu Dudau <liviu@dudau.co.uk> 
 and posted here for public usage as per communication.
 
@@ -45,3 +49,9 @@ Example sdram rkbin:
 6. Insert the start of the DT fragment into each .dtsi file, edit the initial values (don't forget
    that they are in little endian form) to match what the SPL code expects, convert the frequency
    value from the binary back into MHz (line 38 in the attached dtsi files for reference)
+
+.. tip::
+   Need help setting up BSPs for embedded platforms? Amarula Solutions
+   provides mainline U-Boot and Linux kernel support, Yocto/Buildroot
+   integration, and eMMC/SDRAM flashing guidance.
+   `Contact our BSP team <https://www.amarulasolutions.com/contact/>`_

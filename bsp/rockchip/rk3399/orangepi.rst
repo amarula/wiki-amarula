@@ -1,22 +1,26 @@
 Orangepi RK3399
 ###############
 
+.. note:: **TL;DR**
+   - Mainline BSP bring-up guide for this board — covering **U-Boot**, **Linux kernel**, **Buildroot/Yocto** build from source with SD/flash boot, serial console access, and device tree configuration.
+   - Part of Amarula Solutions' upstream-first BSP documentation.
+
 This tutorial will show the details of OrangePI RK3399 board mainline support.
 
 Hardware details and wiki `OrangePI RK3399 <http://www.orangepi.org/Orange%20Pi%20RK3399>`_
 
-Hardware Access
-***************
+How do you access the hardware?
+*******************************
 .. image:: /images/opi_rk3399.jpg
 
-BSP Build
-*********
+How do you build the BSP?
+*************************
 
 Manual Build
 ============
 
-ATF
----
+How do you build ATF?
+---------------------
 ::
         $ git clone https://github.com/ARM-software/arm-trusted-firmware.git
         $ cd /path/to/arm-trusted-firmware
@@ -24,8 +28,8 @@ ATF
         $ make CROSS_COMPILE=aarch64-linux-gnu- PLAT=rk3399 bl31
         $ cp /path/to/arm-trusted-firmware/build/rk3399/release/bl31/bl31.elf /path/to/u-boot
 
-U-Boot
-------
+How do you build U-Boot?
+------------------------
 ::     
         $ git clone https://github.com/amarula/u-boot-amarula
         $ cd u-boot-amarula
@@ -34,8 +38,8 @@ U-Boot
         $ make
         $ make u-boot.itb
 
-Linux
------
+How do you build the Linux kernel?
+----------------------------------
 ::
 
         $ git clone git://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git
@@ -44,16 +48,16 @@ Linux
         $ ARCH=arm64 make defconfig
         $ ARCH=arm64 make Image dtbs -j 4
 
-Buildroot
-=========
+How do you build with Buildroot?
+================================
 ::
         $ git clone https://github.com/amarula/buildroot-amarula
         $ cd buildroot-amarula
         $ git checkout -b rockdev origin/rockdev
         $ make orangepi_rk3399_defconfig
 
-SD Boot
-*******
+How do you boot from SD card?
+*****************************
 Create Single partition and Insert the SD on host or use sdcard.img from buildroot.
 
 ::
@@ -142,3 +146,9 @@ something like:
         [    0.000000] Built 1 zonelists, mobility grouping on.  Total pages: 515592
         [    0.000000] Policy zone: DMA32
         [    0.000000] Kernel command line: earlycon=uart8250,mmio32,0xff1a0000 root=/dev/mmcblk1p1 rootwait
+
+.. tip::
+   Need mainline BSP support for Rockchip platforms? Amarula Solutions
+   provides U-Boot and Linux kernel mainlining, Yocto/Buildroot integration,
+   and upstream-first development for RK3288, RK3399, PX30, and RK3568 SoCs.
+   `Contact our BSP team <https://www.amarulasolutions.com/contact/>`_

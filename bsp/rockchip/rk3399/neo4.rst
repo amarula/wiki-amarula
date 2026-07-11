@@ -1,22 +1,26 @@
 NanoPI NEO4
 ###########
 
+.. note:: **TL;DR**
+   - Mainline BSP bring-up guide for this board — covering **U-Boot**, **Linux kernel**, **Buildroot/Yocto** build from source with SD/flash boot, serial console access, and device tree configuration.
+   - Part of Amarula Solutions' upstream-first BSP documentation.
+
 This tutorial will show the details of NanoPI NEO4 board mainline support.
 
 Hardware details and wiki `NanoPI NEO4 <http://wiki.friendlyarm.com/wiki/index.php/NanoPi_NEO4>`_
 
-Hardware Access
-***************
+How do you access the hardware?
+*******************************
 .. image:: /images/neo4.jpg
 
-BSP Build
-*********
+How do you build the BSP?
+*************************
 
 Manual Build
-=============
+============
 
-ATF
----
+How do you build ATF?
+---------------------
 ::
         $ git clone https://github.com/ARM-software/arm-trusted-firmware.git
         $ cd /path/to/arm-trusted-firmware
@@ -24,8 +28,8 @@ ATF
         $ make CROSS_COMPILE=aarch64-linux-gnu- PLAT=rk3399 bl31
         $ cp /path/to/arm-trusted-firmware/build/rk3399/release/bl31/bl31.elf /path/to/u-boot
 
-U-Boot
-------
+How do you build U-Boot?
+------------------------
 ::     
         $ git clone https://github.com/amarula/u-boot-amarula
         $ cd u-boot-amarula
@@ -43,8 +47,8 @@ Rockchip miniloader
         $ ./tools/trust_merger RKTRUST/RK3399TRUST.ini
         $ ./tools/loaderimage --pack --uboot /path/to/u-boot/u-boot-dtb.bin uboot.img
 
-Linux
------
+How do you build the Linux kernel?
+----------------------------------
 ::
 
         $ git clone git://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git
@@ -53,11 +57,11 @@ Linux
         $ ARCH=arm64 make defconfig
         $ ARCH=arm64 make Image dtbs -j 4
 
-Buildroot
-*********
+How do you build with Buildroot?
+********************************
 
-SD Boot
-*******
+How do you boot from SD card?
+*****************************
 Create Single partition and Insert the SD on host
 
 ::
@@ -209,3 +213,9 @@ something like:
         [    0.000000] Built 1 zonelists, mobility grouping on.  Total pages: 257544
         [    0.000000] Policy zone: DMA32
         [    0.000000] Kernel command line: earlycon=uart8250,mmio32,0xff1a0000 root=/dev/mmcblk0p1 rootwait
+
+.. tip::
+   Need mainline BSP support for Rockchip platforms? Amarula Solutions
+   provides U-Boot and Linux kernel mainlining, Yocto/Buildroot integration,
+   and upstream-first development for RK3288, RK3399, PX30, and RK3568 SoCs.
+   `Contact our BSP team <https://www.amarulasolutions.com/contact/>`_

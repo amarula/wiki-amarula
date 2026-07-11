@@ -1,16 +1,20 @@
 Tinker RK3288
 #############
 
+.. note:: **TL;DR**
+   - Mainline BSP bring-up guide for this board — covering **U-Boot**, **Linux kernel**, **Buildroot/Yocto** build from source with SD/flash boot, serial console access, and device tree configuration.
+   - Part of Amarula Solutions' upstream-first BSP documentation.
+
 This tutorial will show the details of Tinker board mainline support and other needed details, for more information about `hardware <https://www.asus.com/in/Single-Board-Computer/Tinker-Board/>`_
 
-Hardware Access
-***************
+How do you access the hardware?
+*******************************
 .. image:: /images/tinker.jpg
 
 Serial debug and Power connections
 
-BSP Build
-*********
+How do you build the BSP?
+*************************
 
 Manual Build
 ============
@@ -19,8 +23,8 @@ Image building need host to ready with all necessary tools ready, refer here
 Below are the details of Image build for Tinker RK3288 board.
 Manual Build
 
-U-Boot
-------
+How do you build U-Boot?
+------------------------
 ::
 
         $ git clone git://git.denx.de/u-boot.git
@@ -28,8 +32,8 @@ U-Boot
         $ make tinker-rk3288_defconfig
         $ make 
 
-Linux
------
+How do you build the Linux kernel?
+----------------------------------
 ::
 
         $ git clone git://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git
@@ -40,8 +44,8 @@ Linux
         $ ARCH=arm make modules -j 4
         $ ARCH=arm make modules_install -j 4
 
-Buildroot
-=========
+How do you build with Buildroot?
+================================
 It's easy to build entire system using buildroot and mainline supported Tinker board already. See read this `readme.txt <https://git.buildroot.net/buildroot/tree/board/asus/tinker/readme.txt>`_ for more info.
 
 ::
@@ -50,8 +54,8 @@ It's easy to build entire system using buildroot and mainline supported Tinker b
         $ cd buildroot
         $ make asus_tinker_rk3288_defconfig && make
 
-SD Boot
-*******
+How do you boot from SD card?
+*****************************
 Create Single partition and Insert the SD on host
 
 ::
@@ -100,3 +104,9 @@ Configure falcon
         Net:   failed to enable clock 0
         No ethernet found.
         Hit any key to stop autoboot:  0
+
+.. tip::
+   Need mainline BSP support for Rockchip platforms? Amarula Solutions
+   provides U-Boot and Linux kernel mainlining, Yocto/Buildroot integration,
+   and upstream-first development for RK3288, RK3399, PX30, and RK3568 SoCs.
+   `Contact our BSP team <https://www.amarulasolutions.com/contact/>`_

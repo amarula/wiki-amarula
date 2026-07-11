@@ -1,17 +1,24 @@
 Rockpro64
 =========
 
-This tutorial will show the details of NanoPC T4 board mainline support.
+.. note:: **TL;DR**
+   - Mainline BSP bring-up guide for this board — covering **U-Boot**, **Linux kernel**, **Buildroot/Yocto** build from source with SD/flash boot, serial console access, and device tree configuration.
+   - Part of Amarula Solutions' upstream-first BSP documentation.
 
-Hardware details and wiki `NanoPC T4 <https://www.pine64.org/rockpro64>`_
+This tutorial will show the details of RockPro64 board mainline support.
 
-Hardware Access
+Hardware details and wiki `RockPro64 <https://www.pine64.org/rockpro64>`_
+
+How do you access the hardware?
+*******************************
 
 .. image:: /images/rockpro64.jpg
 
-BSP Build
+How do you build the BSP?
+*************************
 
-ATF
+How do you build ATF?
+---------------------
 ::
         $ git clone https://github.com/ARM-software/arm-trusted-firmware.git
         $ cd /path/to/arm-trusted-firmware
@@ -19,7 +26,8 @@ ATF
         $ make CROSS_COMPILE=aarch64-linux-gnu- PLAT=rk3399 bl31
         $ cp /path/to/arm-trusted-firmware/build/rk3399/release/bl31/bl31.elf /path/to/u-boot
 
-U-Boot
+How do you build U-Boot?
+------------------------
 ::    
 
         $ git clone https://github.com/amarula/u-boot-amarula
@@ -29,7 +37,8 @@ U-Boot
         $ make
         $ make u-boot.itb
 
-Linux
+How do you build the Linux kernel?
+----------------------------------
 
 ::
 
@@ -39,10 +48,12 @@ Linux
         $ ARCH=arm64 make defconfig
         $ ARCH=arm64 make Image dtbs -j 4
 
-Buildroot
+How do you build with Buildroot?
+********************************
 
 
-SD Boot
+How do you boot from SD card?
+*****************************
 
 Create Single partition and Insert the SD on host
 
@@ -129,3 +140,9 @@ something like:
         [    0.000000] Built 1 zonelists, mobility grouping on.  Total pages: 999432
         [    0.000000] Policy zone: DMA32
         [    0.000000] Kernel command line: earlycon=uart8250,mmio32,0xff1a0000 root=/dev/mmcblk1p1 rootwait
+
+.. tip::
+   Need mainline BSP support for Rockchip platforms? Amarula Solutions
+   provides U-Boot and Linux kernel mainlining, Yocto/Buildroot integration,
+   and upstream-first development for RK3288, RK3399, PX30, and RK3568 SoCs.
+   `Contact our BSP team <https://www.amarulasolutions.com/contact/>`_

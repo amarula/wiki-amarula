@@ -1,5 +1,9 @@
 NanoPC T4
-===========
+=========
+
+.. note:: **TL;DR**
+   - Mainline BSP bring-up guide for this board — covering **U-Boot**, **Linux kernel**, **Buildroot/Yocto** build from source with SD/flash boot, serial console access, and device tree configuration.
+   - Part of Amarula Solutions' upstream-first BSP documentation.
 
 This tutorial will show the details of NanoPC T4 board mainline support.
 
@@ -133,3 +137,9 @@ something like:
         [    0.000000] Built 1 zonelists, mobility grouping on.  Total pages: 999432
         [    0.000000] Policy zone: DMA32
         [    0.000000] Kernel command line: earlycon=uart8250,mmio32,0xff1a0000 root=/dev/mmcblk1p1 rootwait
+
+.. tip::
+   Need mainline BSP support for Rockchip platforms? Amarula Solutions
+   provides U-Boot and Linux kernel mainlining, Yocto/Buildroot integration,
+   and upstream-first development for RK3288, RK3399, PX30, and RK3568 SoCs.
+   `Contact our BSP team <https://www.amarulasolutions.com/contact/>`_

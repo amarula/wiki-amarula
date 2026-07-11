@@ -1,19 +1,23 @@
 HiFive Unleashed A00
 ####################
 
+.. note:: **TL;DR**
+   - Mainline BSP bring-up guide for this board — covering **U-Boot**, **Linux kernel**, **Buildroot/Yocto** build from source with SD/flash boot, serial console access, and device tree configuration.
+   - Part of Amarula Solutions' upstream-first BSP documentation.
+
 This tutorial will show the details of SiFive HiFive Unleashed A00 board mainline support.
 
 More information about SoC manual and schematics are at
 `FU540 C000 <https://static.dev.sifive.com/FU540-C000-v1.0.pdf>`_ and
 `Schematics <https://sifive.cdn.prismic.io/sifive%2Ff7173056-bf37-4407-87cb-d5ab76abf61a_hifive-unleashed-a00-schematics.pdf>`_
 
-Hardware Access
-===============
+How do you access the hardware?
+===============================
 
 .. image:: /images/hifive-unleashed.jpg
 
 Prebuilt
-=======
+========
 
 Prebuilt images for Booting from MMC, SPI with Mainline Linux are
 available in below link. The necessary steps available at REAME file.
@@ -27,7 +31,7 @@ Building
 ========
 
 OpenSBI
-------
+-------
 
 .. code-block:: none
 
@@ -35,8 +39,8 @@ OpenSBI
    cd opensbi
    CROSS_COMPILE=/path/to/riscv64-linux-gnu- make PLATFORM=sifive/fu540 FW_DYNAMIC=y
 
-U-Boot
-------
+How do you build U-Boot?
+------------------------
 
 .. code-block:: none
 
@@ -45,8 +49,8 @@ U-Boot
    make sifive_fu540_defconfig
    make
 
-Linux
------
+How do you build the Linux kernel?
+----------------------------------
 
 .. code-block:: none
 
@@ -56,8 +60,8 @@ Linux
    ARCH=riscv make defconfig
    ARCH=arm64 make Image dtbs
 
-Buildroot
---------
+How do you build with Buildroot?
+--------------------------------
 
 .. code-block:: none
 
@@ -65,8 +69,8 @@ Buildroot
    cd buildroot-amarula
    make hifive_unleashed_defconfig
 
-Booting
-=======
+How do you boot the system?
+===========================
 
 1. Parttion table
    SiFive ZSBL (BROM) would look for partition GUID for next boot stages like
@@ -144,7 +148,7 @@ Turn On the board and open minicom with /dev/ttyUSB1 with 115200 baudrate.
 
 
 OpenSBI with U-Boot as payload
------------------------------
+------------------------------
 
 Use same SD card partition as of above method.
 
@@ -533,3 +537,9 @@ OpenSBI FW_DYNAMIC
      Using Device Tree in place at 00000000844e18c4, end 00000000844e640e
 
   Starting kernel ...
+
+.. tip::
+   Need BSP support for RISC-V platforms? Amarula Solutions provides U-Boot,
+   OpenSBI, and Linux kernel mainlining with Yocto/Buildroot integration for
+   SiFive and other RISC-V hardware.
+   `Contact our BSP team <https://www.amarulasolutions.com/contact/>`_

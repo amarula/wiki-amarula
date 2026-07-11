@@ -1,10 +1,9 @@
-.. test sphinx documentation master file, created by
-   sphinx-quickstart on Mon Mar  4 14:12:36 2019.
-   You can adapt this file completely to your liking, but it should at least
-   contain the root `toctree` directive.
-
 Board Support Packages
 ======================
+
+.. note:: **TL;DR**
+   - Amarula Solutions' **BSP documentation** for embedded platforms — covering **NXP i.MX, Rockchip, Allwinner, and RISC-V (SiFive)** with mainline-first **U-Boot and Linux kernel** build instructions, SD/flash boot procedures, and Buildroot/Yocto integration.
+   - All boards use **mainline U-Boot and linux-next kernels** with the upstream-first methodology.
 
 
 .. _contents: Table of contents
@@ -19,3 +18,9 @@ Board Support Packages
    imx/index
    rockchip/index
    riscv/index
+
+.. tip::
+   Need mainline BSP support for your embedded hardware? Amarula Solutions
+   provides board bring-up, U-Boot and Linux kernel mainlining, and
+   Yocto/Buildroot integration for ARM, RISC-V, and x86 platforms.
+   `Contact our BSP team <https://www.amarulasolutions.com/contact/>`_

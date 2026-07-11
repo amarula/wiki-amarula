@@ -1,13 +1,17 @@
 ENGICAM-PX30-CTOUCH2.0
 ======================
 
+.. note:: **TL;DR**
+   - Mainline BSP bring-up guide for this board — covering **U-Boot**, **Linux kernel**, **Buildroot/Yocto** build from source with SD/flash boot, serial console access, and device tree configuration.
+   - Part of Amarula Solutions' upstream-first BSP documentation.
+
 This is the tutorial for ENGICAM PX30-CTOUCH2.0 carrier board with PX30.Core SOM.
 
 Hardware details and wiki `CTOUCH2.0 Starter Kit <https://www.engicam.com/vis-prod/101365>`_
 
 
-Hardware Access
----------------
+How do you access the hardware?
+-------------------------------
 
 .. image:: /images/engicam-px30-ctouch2-0.jpeg
 
@@ -277,3 +281,9 @@ At Host::
         I/O size (minimum/optimal): 512 bytes / 512 bytes
 
 On host /dev/mmcblk2 will be detected as a storage device.
+
+.. tip::
+   Need mainline BSP support for Rockchip platforms? Amarula Solutions
+   provides U-Boot and Linux kernel mainlining, Yocto/Buildroot integration,
+   and upstream-first development for RK3288, RK3399, PX30, and RK3568 SoCs.
+   `Contact our BSP team <https://www.amarulasolutions.com/contact/>`_

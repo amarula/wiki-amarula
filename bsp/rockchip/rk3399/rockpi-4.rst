@@ -1,5 +1,9 @@
 ROCKPI-4
-=========
+========
+
+.. note:: **TL;DR**
+   - Mainline BSP bring-up guide for this board — covering **U-Boot**, **Linux kernel**, **Buildroot/Yocto** build from source with SD/flash boot, serial console access, and device tree configuration.
+   - Part of Amarula Solutions' upstream-first BSP documentation.
 
 This is the tutorial for the Radxa ROCK-PI-4 target.
 
@@ -17,8 +21,8 @@ Model A
 Model B
 Model C
 
-Hardware Access
----------------
+How do you access the hardware?
+-------------------------------
 
 .. image:: /images/rockpi_4.jpg
 
@@ -176,3 +180,9 @@ Since DisplayPort is still in Mainling list. Please use below patch to
 support dual display support on ROCK-Pi 4C.
 
 ROCK-Pi 4C DisplayPort patch `Virtual PD <https://patchwork.kernel.org/project/linux-rockchip/patch/20200904191830.387296-3-jagan@amarulasolutions.com/>`_
+
+.. tip::
+   Need mainline BSP support for Rockchip platforms? Amarula Solutions
+   provides U-Boot and Linux kernel mainlining, Yocto/Buildroot integration,
+   and upstream-first development for RK3288, RK3399, PX30, and RK3568 SoCs.
+   `Contact our BSP team <https://www.amarulasolutions.com/contact/>`_

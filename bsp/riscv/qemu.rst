@@ -1,6 +1,10 @@
 QEMU RISC-V
 ###########
 
+.. note:: **TL;DR**
+   - Mainline BSP bring-up guide for this board — covering **U-Boot**, **Linux kernel**, **Buildroot/Yocto** build from source with SD/flash boot, serial console access, and device tree configuration.
+   - Part of Amarula Solutions' upstream-first BSP documentation.
+
 Testing RISC V under qemu
 *************************
 Build and Install
@@ -71,3 +75,9 @@ Your output image are in output/images. In order to execute just run:
 ::
 
         qemu-system-riscv64 -M virt -kernel output/images/bbl -append "root=/dev/vda ro console=ttyS0" -drive file=output/images/rootfs.ext2,format=raw,id=hd0 -device virtio-blk-device,drive=hd0 -netdev user,id=net0 -device virtio-net-device,netdev=net0 -nographic
+
+.. tip::
+   Need BSP support for RISC-V platforms? Amarula Solutions provides U-Boot,
+   OpenSBI, and Linux kernel mainlining with Yocto/Buildroot integration for
+   SiFive and other RISC-V hardware.
+   `Contact our BSP team <https://www.amarulasolutions.com/contact/>`_

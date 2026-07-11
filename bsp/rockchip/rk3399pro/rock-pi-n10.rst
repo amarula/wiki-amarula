@@ -1,13 +1,17 @@
 ROCKPI-N10
 ==========
 
+.. note:: **TL;DR**
+   - Mainline BSP bring-up guide for this board — covering **U-Boot**, **Linux kernel**, **Buildroot/Yocto** build from source with SD/flash boot, serial console access, and device tree configuration.
+   - Part of Amarula Solutions' upstream-first BSP documentation.
+
 This tutorial will show the details of Radxa ROCKPI-N10 board with VMARC RK3399pro SOM mainline support.
 
 Hardware details and wiki `ROCKPI-N10 <https://wiki.radxa.com/RockpiN10>`_
 
 
-Hardware Access
----------------
+How do you access the hardware?
+-------------------------------
 
 .. image:: /images/rk3399pro-rock-pi-n10.jpg
 
@@ -155,3 +159,9 @@ Put this micro-SD card onto your board in the slot and power the board. You shou
 	[    0.000000] Memory: 3921744K/4061184K available (12220K kernel code, 1864K rwdata, 6448K rodata, 5056K init, 450K bss, 106672K reserved, 32768K cma-reserved)
 
 use root for login.
+
+.. tip::
+   Need mainline BSP support for Rockchip platforms? Amarula Solutions
+   provides U-Boot and Linux kernel mainlining, Yocto/Buildroot integration,
+   and upstream-first development for RK3288, RK3399, PX30, and RK3568 SoCs.
+   `Contact our BSP team <https://www.amarulasolutions.com/contact/>`_

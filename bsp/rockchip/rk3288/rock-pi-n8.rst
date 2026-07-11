@@ -1,13 +1,17 @@
 ROCKPI-N8
-==========
+=========
+
+.. note:: **TL;DR**
+   - Mainline BSP bring-up guide for this board — covering **U-Boot**, **Linux kernel**, **Buildroot/Yocto** build from source with SD/flash boot, serial console access, and device tree configuration.
+   - Part of Amarula Solutions' upstream-first BSP documentation.
 
 This tutorial will show the details of Radxa ROCKPI-N8 board with VMARC RK3288 SOM.
 
 Hardware details and wiki `ROCKPI-N8 <https://wiki.radxa.com/RockpiN8>`_
 
 
-Hardware Access
----------------
+How do you access the hardware?
+-------------------------------
 
 .. image:: /images/rock-pi-n8.jpg
 
@@ -410,3 +414,9 @@ Put the micro-SD card onto your board in the slot and power the board. You shoul
 	rockpi-n8 login:
 
 use root for login.
+
+.. tip::
+   Need mainline BSP support for Rockchip platforms? Amarula Solutions
+   provides U-Boot and Linux kernel mainlining, Yocto/Buildroot integration,
+   and upstream-first development for RK3288, RK3399, PX30, and RK3568 SoCs.
+   `Contact our BSP team <https://www.amarulasolutions.com/contact/>`_

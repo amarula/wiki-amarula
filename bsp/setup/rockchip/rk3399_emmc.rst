@@ -1,6 +1,10 @@
 RK3399 eMMC Boot
 ################
 
+.. note:: **TL;DR**
+   - Mainline BSP bring-up guide for this board — covering **U-Boot**, **Linux kernel**, **Buildroot/Yocto** build from source with SD/flash boot, serial console access, and device tree configuration.
+   - Part of Amarula Solutions' upstream-first BSP documentation.
+
 Few of high ended RK3399 SBC's like Firefly and Orangepi vendor boards 
 by default boot from eMMC and there is no way to boot from SD by means 
 of any hardware jumpers or etc.
@@ -29,3 +33,9 @@ future recovery.
         $ dd if=/dev/zero of=/dev/block/mmcxxx bs=1b seek=2112 count=1
         $ dd if=/dev/zero of=/dev/block/mmcxxx bs=1b seek=3136 count=1
         $ dd if=/dev/zero of=/dev/block/mmcxxx bs=1b seek=4160 count=1
+
+.. tip::
+   Need help setting up BSPs for embedded platforms? Amarula Solutions
+   provides mainline U-Boot and Linux kernel support, Yocto/Buildroot
+   integration, and eMMC/SDRAM flashing guidance.
+   `Contact our BSP team <https://www.amarulasolutions.com/contact/>`_

@@ -1,17 +1,21 @@
 BTicino i.MX6DL
 ###############
 
+.. note:: **TL;DR**
+   - Mainline BSP bring-up guide for this board — covering **U-Boot**, **Linux kernel**, **Buildroot/Yocto** build from source with SD/flash boot, serial console access, and device tree configuration.
+   - Part of Amarula Solutions' upstream-first BSP documentation.
+
 This tutorial will show the detail usage of BTicino i.MX6DL Mamoj board with respective mainline projects.
 
-Hardware Access
-***************
+How do you access the hardware?
+*******************************
 
 BSP Building
 ************
 Image building need host to ready with all necessary tools ready, refer `here <https://wiki.amarulasolutions.com/found/host/tools.html#arm64>`_
 
-U-Boot
-======
+How do you build U-Boot?
+========================
 
 ::
 
@@ -20,8 +24,8 @@ U-Boot
         $ git checkout bticino origin/bticino
         $ make imx6dl_mamoj_defconfig && make
 
-Linux
-=====
+How do you build the Linux kernel?
+==================================
 
 ::
 
@@ -31,11 +35,11 @@ Linux
         $ ARCH=arm make imx_v6_v7_defconfig
         $ ARCH=arm make LOADADDR=0x10008000 uImage dtbs
 
-Buildroot
-=========
+How do you build with Buildroot?
+================================
 
-Boot
-****
+How do you boot the system?
+***************************
 
 USB SDP
 =======
@@ -245,3 +249,9 @@ I2C
 ===
 USB
 ===
+
+.. tip::
+   Need mainline BSP support for NXP i.MX platforms? Amarula Solutions
+   provides U-Boot and Linux kernel mainlining, Yocto/Buildroot integration,
+   and upstream-first development for i.MX6, i.MX8M, and i.MX8M Plus SoCs.
+   `Contact our BSP team <https://www.amarulasolutions.com/contact/>`_
