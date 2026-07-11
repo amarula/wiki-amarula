@@ -1,12 +1,15 @@
 Rockchip RK3288
 ###############
+.. note:: **TL;DR**
+   - Technical guide covering **U-Boot** features for embedded systems — part of Amarula Solutions' upstream-first boot firmware documentation.
+   - Includes build instructions, configuration steps, and production deployment guidance.
 
 Image building need host to ready with all necessary tools ready, `refer here <https://wiki.amarulasolutions.com/uboot/tools.html>`_
 
 Below are the details of Image build for Vyasa RK3288 board.
 
-U-Boot
-******
+How do you build U-Boot?
+************************
 ::
 
         $ git clone git://git.denx.de/u-boot.git
@@ -14,8 +17,8 @@ U-Boot
         $ make vyasa-rk3288_defconfig
         $ make 
 
-Linux
-*****
+How do you build the Linux kernel?
+**********************************
 ::
 
         $ git clone git://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git
@@ -42,3 +45,10 @@ Rootfs
         $ cp -rf rfs-rk3288/* /mnt
 
         $ umount /mnt
+
+
+.. tip::
+   Need U-Boot development or secure boot implementation for your embedded
+   product? Amarula Solutions provides boot firmware engineering, mainline
+   upstreaming, and production boot configuration.
+   `Contact our BSP team <https://www.amarulasolutions.com/contact/>`_

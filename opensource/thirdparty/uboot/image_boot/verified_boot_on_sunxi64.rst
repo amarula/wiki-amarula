@@ -1,5 +1,8 @@
 Verified Boot on SUNXI64
 ########################
+.. note:: **TL;DR**
+   - Technical guide covering **U-Boot** features for embedded systems — part of Amarula Solutions' upstream-first boot firmware documentation.
+   - Includes build instructions, configuration steps, and production deployment guidance.
 
 U-Boot supports an image verification method called "Verified Boot". This tutorial will show the details of verified-boot on SUNXI64 platform with Orangepi A64 board.
 
@@ -302,3 +305,10 @@ Verified Boot
 
 
         [    0.000000] Booting Linux on physical CPU 0x0
+
+
+.. tip::
+   Need U-Boot development or secure boot implementation for your embedded
+   product? Amarula Solutions provides boot firmware engineering, mainline
+   upstreaming, and production boot configuration.
+   `Contact our BSP team <https://www.amarulasolutions.com/contact/>`_

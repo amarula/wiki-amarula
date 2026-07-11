@@ -1,18 +1,21 @@
 i.MX6 HABv4
 ###########
+.. note:: **TL;DR**
+   - Technical guide covering **U-Boot** features for embedded systems — part of Amarula Solutions' upstream-first boot firmware documentation.
+   - Includes build instructions, configuration steps, and production deployment guidance.
 
-About this
-**********
+What is this guide about?
+*************************
 
 This tutorial describe the information and usage about i.MX Secure Architecture.
 
-i.MX Security
-*************
+How does i.MX Trust Architecture secure embedded systems?
+*********************************************************
 Verify the loaded software to ensure that it is authorized during runtime is usually 
 termed as Verified or Secure or Trusted system mechanism.
 
-i.MX Trust Architecture - Overview
-==================================
+What is the i.MX Trust Architecture?
+====================================
 .. image:: /images/imx_trust_arch.png
 
 
@@ -38,8 +41,8 @@ Physical attack
 
  - Countermeasures: secure storage, tamper detection
 
-i.MX Trust Architecture - Features
-==================================
+What features does i.MX Trust Architecture provide?
+===================================================
 Trusted Execution:
 
     TrustZone Secure & Normal Worlds (processor modes)
@@ -112,8 +115,8 @@ Tamper Detection:
 
         SW alarm flags
 
-High Assurance Boot (HAB)
-*************************
+How does High Assurance Boot (HAB) work?
+****************************************
 Below are the recommend acronyms related to this tutorial.
 
 Boot ROM: Small piece of one-time programmable firmware written in on-chip read-only memory location
@@ -155,8 +158,8 @@ Secret Key: Generally an outcome key of DEK Blob key used to encrypt and decrypt
 AES: Advanced Encryption Standard used for Encryption process
 
 
-HAB Secure Boot chain 
-=====================
+What is the HAB Secure Boot chain?
+==================================
 .. image:: /images/hab-secure-boot.png
 
 Upon reset i.MX Boot ROM reads the efuse to determine the security configuration of the SoC and
@@ -173,8 +176,8 @@ If signature verification fails, execution is not allowed to leave the ROM for s
 
 If signature verification pass, execution is allowed to leave the ROM for securely configured SoCs, also called “open” devices
 
-HAB Overview
-============
+What is High Assurance Boot?
+============================
 - HAB support Signing and Encryption process, where later one change the software-data into 
   unreadable random gibberish using secrete key.
 - HABv4 is the version supported by i.MX6
@@ -183,11 +186,11 @@ HAB Overview
   AES-128 operation during decryption boot operation.
 - HAB support X.509 Public key certificate, in CMS signature format. 
 
-HAB - Signed Boot
-=================
+How do you implement signed boot?
+=================================
 
-Signed Boot Flow
-----------------
+How does signed boot flow work?
+-------------------------------
 .. image:: /images/hab-sign.png
 
 During Signing, host need to generate PKI tree, Super Root Keys, or SRK, are components of the PKI tree,
@@ -199,14 +202,14 @@ the result to the SRK fuse values.
 
 If the SRK verification is successful, this establishes the root of trust, and the remainder of the signature can be processed to authenticate the image.
 
-Image Signer Flow
------------------
+How does the image signer flow work?
+------------------------------------
 
 .. image:: /images/Image_Sign.png
 
 
 Signed Boot - Usage
---------------------
+-------------------
 
 Signed Image Format (U-Boot)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -222,8 +225,8 @@ Download cryptographic tool
         $ tar xvf cst-2.3.2.tar.gz
         $ cd cst-2.3.2/keys
 
-Generate PKI tree (Private keys)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+How do you generate the PKI tree?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 serial - 8-digit OpenSSL uses the contents of this file for the certificate serial numbers.
 
 key_pass.txt - Contains your pass phrase that will protect the HAB code signing private keys.
@@ -288,8 +291,8 @@ key_pass.txt - Contains your pass phrase that will protect the HAB code signing 
 
 Private keys will generate on keys directory and corresponding Certificates are placed in the crts directory.
 
-Generate SRK table (Public keys)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+How do you generate the SRK table?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 ::
 
         $ cd ../crts
@@ -317,8 +320,8 @@ Generate SRK table (Public keys)
 SRK_1_2_3_4_table.bin - SRK table contents with HAB data
 SRK_1_2_3_4_fuse.bin - contains SHA256 result to be burned to fuse
 
-Build Secure-enabled U-Boot
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
+How do you build secure-enabled U-Boot?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 ::
 
@@ -343,8 +346,8 @@ Build Secure-enabled U-Boot
 
         DCD Blocks:   00910000 0000002c 00000328
 
-Generate Signature for U-Boot Image
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+How do you generate the U-Boot signature?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 ::
 
         $ cd ~/cst-2.3.2/linux64
@@ -407,8 +410,8 @@ Generate Signature for U-Boot Image
 
         CSF Processed successfully and signed data available in U-Boot_CSF.bin
 
-Create Signed U-Boot
-^^^^^^^^^^^^^^^^^^^^
+How do you create signed U-Boot?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 ::
 
         $ objcopy -I binary -O binary --pad-to 0x2000 --gap-fill=0x00 U-Boot_CSF.bin U-Boot_CSF_pad.bin
@@ -417,8 +420,8 @@ Create Signed U-Boot
 
 << Put SD card and power-on the board >>
 
-Burn e-fuse with SRK
-^^^^^^^^^^^^^^^^^^^^
+How do you burn e-fuses with SRK?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 ::
 
         efuse dump
@@ -518,8 +521,8 @@ Burn e-fuse with SRK
 
         Programming bank 3 word 0x00000007 to 0xc86dda92...
 
-Check HAB isn't finding ERRORS?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+How do you verify HAB status?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 ::
 
         icorem6qdl> hab_status
@@ -536,8 +539,8 @@ Check HAB isn't finding ERRORS?
 HAB authentication works fine, and the hab_status show 'No HAB Events Found!' 
 So the device is open now try to close for enabling Secure boot
 
-Enable Secure boot
-^^^^^^^^^^^^^^^^^^
+How do you enable Secure Boot?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Be careful with this step and if you're sure with all steps above and 
 hab_status should show 'No HAB Events Found!'
 Once this setup executed, chip will only boot an image signed with the keys that match the SRK blown fuses.
@@ -618,11 +621,11 @@ Once this setup executed, chip will only boot an image signed with the keys that
 
         No HAB Events Found!
 
-HAB - Encrypted boot
-====================
+How do you implement encrypted boot?
+====================================
 
-Encrypted Boot Flow
--------------------
+How does encrypted boot flow work?
+----------------------------------
 .. image:: /images/hab-encrypt.png
 
 During Encryption, host need to follow similar steps as Signing process for 'Header' of Software Data.
@@ -639,8 +642,8 @@ During Decryption, First HAB evaluates the SRK table included in the signature b
 the result to the SRK fuse values like Verification process and HAB evaluates secrete key by decrypt the
 DEK_blob using OTPMK and encrypted payload is further decrypt using secrete key ie generated before.
 
-Image Encrypt Flow
-------------------
+How does image encryption flow work?
+------------------------------------
 .. image:: /images/Image_Encrypt.png
 
 Encrypted boot - Usage
@@ -654,8 +657,8 @@ The below procedure will describe an example on how encrypted boot has been done
 
 See the same steps in Signed Boot - Usage PKI tree, SRK table and E-fuse burn.
 
-Generate Signature for U-Boot Image
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+How do you generate the U-Boot signature?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 CST from NXP doesn't allow to use encryption, so you need to build a new binary
 
@@ -757,8 +760,8 @@ CST from NXP doesn't allow to use encryption, so you need to build a new binary
 
         CSF Processed successfully and signed data available in U-Boot_CSF.bin
 
-Create DEK_blob
-^^^^^^^^^^^^^^^
+How do you create a DEK blob?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Once dek.bin generated by cst_encrypt need to protect the dek.bin by creating DEK_blob.bin at target
 
 ::
@@ -789,23 +792,23 @@ Once dek.bin generated by cst_encrypt need to protect the dek.bin by creating DE
 
         72 bytes written
 
-Create Encrypted U-Boot
-^^^^^^^^^^^^^^^^^^^^^^^
+How do you create encrypted U-Boot?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 ::
 
         $ objcopy -I binary -O binary --pad-to=0x1FB8 --gap-fill=0x00 U-Boot_CSF.bin U-Boot_CSF_pad.bin
         $ cat cat u-boot-dtb.imx U-Boot_CSF_pad.bin DEK_blob.bin > u-boot-dtb-encrypte.imx
         $ dd if=u-boot-dtb-encrypted.imx of=/dev/sda bs=1K seek=1 && sync
 
-HAB - Signed uImage
-*******************
+How do you sign a uImage?
+*************************
 Now that your bootloader image is properly authenticated/encrypted and that your device is secured, you can sign 
 your kernel image so U-Boot ensures to load a known version.
 
 Here are the details of Signing uImage from linux-next. 
 
-Signed uImage Format
-====================
+What is the signed uImage format?
+=================================
 See uImage format, which built from linux-next tree
 
 ::
@@ -827,13 +830,13 @@ same procedure as with "HAB - Signed Boot"
 
 .. image:: /images/Signed-uImage-format.png
 
-Signed uImage Creation
-======================
+How do you create a signed uImage?
+==================================
 Use the same PKI tree and SRK keys that been tested with U-Boot and proceed with "Image Signer Flow" of U-Boot
 except the numerical difference, nevertheless the same procedure.
 
-4K PAD
-------
+How do you apply 4K padding?
+----------------------------
 Since Linux follows 4K pagesize format for Image process, So pad the built uImage to nearest 4K padding. 
 here the actual uImage size is 0x69E838 after nearest 4K padding it becomes 0x69F000.
 
@@ -841,8 +844,8 @@ here the actual uImage size is 0x69E838 after nearest 4K padding it becomes 0x69
 
         $ objcopy -I binary -O binary --pad-to=0x69F000 --gap-fill=0x00 uImage uImage-pad.bin
 
-Generate IVT
-------------
+How do you generate the IVT?
+----------------------------
 By default imx header attach the IVT for U-Boot (u-boot-dtb.imx), but Linux we need to explicitly attach the
 IVT based on the perl script as below.
 
@@ -880,8 +883,8 @@ IVT based on the perl script as below.
 
         close($out);
 
-Create IVT uImage
------------------
+How do you create an IVT uImage?
+--------------------------------
 Build the genIVT that should create ivt.bin
 
 ::
@@ -894,8 +897,8 @@ Attach ivt.bin to padded uImage
 
         $ cat uImage-pad.bin ivt.bin > uImage-pad-ivt.bin
 
-Create CSF uImage
------------------
+How do you create a CSF uImage?
+-------------------------------
 Create uImage.CSF file and build the binary.
 
 ::
@@ -963,8 +966,8 @@ Attach uImage_CSF.bin with padded ivt uImage
 
         $ cat uImage-pad-ivt.bin uImage_CSF.bin > uImage-pad-ivt-csf.bin
 
-Create Signed uImage
---------------------
+How do you create a signed uImage?
+----------------------------------
 ::
         
         $ objcopy -I binary -O binary --pad-to=0x6A1020 --gap-fill=0x00 uImage-pad-ivt-csf.bin uImage-signed.bin
@@ -972,8 +975,8 @@ Create Signed uImage
 
 That’s it, you can now modify your U-Boot bootcmd so it includes the HAB command that checks the kernel,
 
-Signed uImage CHECK??
----------------------
+How do you verify a signed uImage?
+----------------------------------
 ::
 
         icorem6qdl> fatload mmc 0:1 0x10800000 uImage-signed.bin
@@ -994,3 +997,10 @@ Signed uImage CHECK??
         HAB Configuration: 0xcc, HAB State: 0x99
 
         No HAB Events Found!
+
+
+.. tip::
+   Need U-Boot development or secure boot implementation for your embedded
+   product? Amarula Solutions provides boot firmware engineering, mainline
+   upstreaming, and production boot configuration.
+   `Contact our BSP team <https://www.amarulasolutions.com/contact/>`_

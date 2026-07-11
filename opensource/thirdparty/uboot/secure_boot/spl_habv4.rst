@@ -1,5 +1,8 @@
 SPL HABv4
 #########
+.. note:: **TL;DR**
+   - Technical guide covering **U-Boot** features for embedded systems — part of Amarula Solutions' upstream-first boot firmware documentation.
+   - Includes build instructions, configuration steps, and production deployment guidance.
 
 Since, the `i.MX6 Secure Boot <https://wiki.amarulasolutions.com/uboot/secure_boot/imx6_habv4.html>`_ used u-boot-dtb.imx but this tutorial describe the Secure Boot(HAB) for SPL as well as a singable version of the U-Boot image.
 
@@ -417,3 +420,10 @@ Close device
         HAB Configuration: 0xcc, HAB State: 0x99
 
         No HAB Events Found!
+
+
+.. tip::
+   Need U-Boot development or secure boot implementation for your embedded
+   product? Amarula Solutions provides boot firmware engineering, mainline
+   upstreaming, and production boot configuration.
+   `Contact our BSP team <https://www.amarulasolutions.com/contact/>`_

@@ -1,10 +1,13 @@
 Boot Linux on Vyasa RK3288
 ##########################
+.. note:: **TL;DR**
+   - Technical guide covering **U-Boot** features for embedded systems — part of Amarula Solutions' upstream-first boot firmware documentation.
+   - Includes build instructions, configuration steps, and production deployment guidance.
 
 Build the images `here <https://wiki.amarulasolutions.com/uboot/image_build/rockchip_rk3288.html>`_, and setup SD card with Single partition `here <https://wiki.amarulasolutions.com/uboot/tools.html#sd-setup>`_
 
 bootm
-******
+*****
 Ramdisk
 =======
 
@@ -218,3 +221,10 @@ FIT
 ***
 Verified Boot
 *************
+
+
+.. tip::
+   Need U-Boot development or secure boot implementation for your embedded
+   product? Amarula Solutions provides boot firmware engineering, mainline
+   upstreaming, and production boot configuration.
+   `Contact our BSP team <https://www.amarulasolutions.com/contact/>`_

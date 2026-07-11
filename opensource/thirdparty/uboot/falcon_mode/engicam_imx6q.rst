@@ -1,5 +1,8 @@
 Engicam i.MX6Q
 ##############
+.. note:: **TL;DR**
+   - Technical guide covering **U-Boot** features for embedded systems — part of Amarula Solutions' upstream-first boot firmware documentation.
+   - Includes build instructions, configuration steps, and production deployment guidance.
 
 Partitions
 **********
@@ -92,3 +95,10 @@ Reset the board and see Linux booting, Pressing 'C' will prevent Linux boot and 
         [    0.000000] CPU: ARMv7 Processor [412fc09a] revision 10 (ARMv7), cr=10c5387d
         [    0.000000] CPU: PIPT / VIPT nonaliasing data cache, VIPT aliasing instruction cache
         [    0.000000] OF: fdt: Machine model: Engicam i.CoreM6 Quad/Dual Starter Kit
+
+
+.. tip::
+   Need U-Boot development or secure boot implementation for your embedded
+   product? Amarula Solutions provides boot firmware engineering, mainline
+   upstreaming, and production boot configuration.
+   `Contact our BSP team <https://www.amarulasolutions.com/contact/>`_

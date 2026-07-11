@@ -1,8 +1,11 @@
 I.MX8MM Secure Boot using High Assurance Boot v4
 ################################################
+.. note:: **TL;DR**
+   - Technical guide covering **U-Boot** features for embedded systems — part of Amarula Solutions' upstream-first boot firmware documentation.
+   - Includes build instructions, configuration steps, and production deployment guidance.
 
-Introduction
-============
+What is this about?
+===================
 
 This tutorial describes the information and usage on how to secure boot i.MX8MM chipsets using
 HABv4. The platform used in this tutorial is an Engicam Ctouch 2.0 based on i.M8M Mini
@@ -145,7 +148,7 @@ The HABv4 APIs can be used to extend the root of trust additionally tothe Linux 
 and can be authenticated at bootloader level.
 
 i.MX8M Signed Image
-====================
+===================
 
 .. image:: /images/image_flash_mem.png
 
@@ -153,7 +156,7 @@ i.MX8M Signed Image
 The below procedure outlines on how signed secure boot has been created with Engicam i.CoreMX8M MINI CTouch2.0 board.
 
 Download NXP Code Signing tool
--------------------------------
+------------------------------
 
 ::
 
@@ -161,8 +164,8 @@ Download NXP Code Signing tool
         $ tar xzf cst-3.3.1.tar.gz
         $ cd cst-3.3.1/keys
 
-Generate PKI tree (Private keys)
---------------------------------
+How do you generate the PKI tree?
+---------------------------------
 Create a serial file with an 8-digit content. OpenSSL uses the contents of this file for the certificate
 serial numbers. 
 
@@ -229,8 +232,8 @@ Create key_pass.txt which contains your pass phrase that will protect the HAB co
 Private keys will generate on keys directory and corresponding Certificates are placed in the crts directory.
 
 
-Generate SRK table (Public keys)
---------------------------------
+How do you generate the SRK table?
+----------------------------------
 
 ::
 
@@ -475,7 +478,7 @@ The resulting Authenticate Data section in csf_fit.txt should be:
 Adjust necessary paths in both csf_spl.txt and csf_fit.txt.
 
 Signing and Asembling the flash.bin binary
--------------------------------------------
+------------------------------------------
 
 ::
 
@@ -570,7 +573,7 @@ procedure and each stage has verified the other successsully without any errors.
 
 
 Programming e-fuse with SRK Hash
----------------------------------
+--------------------------------
 ::
 
         efuse dump
@@ -597,3 +600,10 @@ References
 ----------
 - 1. https://www.nxp.com/docs/en/application-note/AN4581.pdf
 - 2. u-boot/doc/imx/habv4/introdcution_habv4.txt 
+
+
+.. tip::
+   Need U-Boot development or secure boot implementation for your embedded
+   product? Amarula Solutions provides boot firmware engineering, mainline
+   upstreaming, and production boot configuration.
+   `Contact our BSP team <https://www.amarulasolutions.com/contact/>`_

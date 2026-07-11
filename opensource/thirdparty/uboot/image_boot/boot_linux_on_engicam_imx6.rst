@@ -1,5 +1,8 @@
 Boot Linux on Engicam i.MX6
 ###########################
+.. note:: **TL;DR**
+   - Technical guide covering **U-Boot** features for embedded systems — part of Amarula Solutions' upstream-first boot firmware documentation.
+   - Includes build instructions, configuration steps, and production deployment guidance.
 
 
 This tutorial describe possible ways of booting Image like Linux and detailed documents are `1 <https://www.denx.de/wiki/pub/U-Boot/OpenSourceIndia2013/Multi_image_booting_scenarios.pdf>`_ `2 <https://www.denx.de/wiki/pub/U-Boot/MiniSummitELCE2013/U-Boot_verified_RSA_boot_flow_on_arm_target.pdf>`_
@@ -612,3 +615,10 @@ VerifiedBoot
         [    4.677537] usb 1-1: device descriptor read/64, error -71
         Starting udev
 
+
+
+.. tip::
+   Need U-Boot development or secure boot implementation for your embedded
+   product? Amarula Solutions provides boot firmware engineering, mainline
+   upstreaming, and production boot configuration.
+   `Contact our BSP team <https://www.amarulasolutions.com/contact/>`_

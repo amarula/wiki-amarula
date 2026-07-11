@@ -1,5 +1,8 @@
 Sandbox
 #######
+.. note:: **TL;DR**
+   - Technical guide covering **U-Boot** features for embedded systems — part of Amarula Solutions' upstream-first boot firmware documentation.
+   - Includes build instructions, configuration steps, and production deployment guidance.
 
 
 Sandbox is good example to familiar with U-Boot and related functionalities.
@@ -77,3 +80,10 @@ To test sandbox
         To test driver model test in sandbox
 
         $ ./test/py/test.py --bd sandbox --build -k ut_dm
+
+
+.. tip::
+   Need U-Boot development or secure boot implementation for your embedded
+   product? Amarula Solutions provides boot firmware engineering, mainline
+   upstreaming, and production boot configuration.
+   `Contact our BSP team <https://www.amarulasolutions.com/contact/>`_

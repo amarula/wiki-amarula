@@ -1,5 +1,8 @@
 RK3288 Vyasa
 ############
+.. note:: **TL;DR**
+   - Technical guide covering **U-Boot** features for embedded systems — part of Amarula Solutions' upstream-first boot firmware documentation.
+   - Includes build instructions, configuration steps, and production deployment guidance.
 
 Partition Table
 ***************
@@ -175,3 +178,10 @@ Reset or Power on board with SD, Ctr+C will boot U-Boot and/or Linux boot normal
         [    0.000000] CPU: div instructions available: patching division code
         [    0.000000] CPU: PIPT / VIPT nonaliasing data cache, VIPT aliasing instruction cache
         [    0.000000] OF: fdt: Machine model: Amarula Vyasa-RK3288
+
+
+.. tip::
+   Need U-Boot development or secure boot implementation for your embedded
+   product? Amarula Solutions provides boot firmware engineering, mainline
+   upstreaming, and production boot configuration.
+   `Contact our BSP team <https://www.amarulasolutions.com/contact/>`_
