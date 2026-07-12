@@ -1,6 +1,6 @@
-==========================
+===============================
 IoT Firmware & RTOS Development
-==========================
+===============================
 
 .. note:: **TL;DR**
    - Hub aggregating **IoT and RTOS documentation** — covering **Zephyr RTOS** (ESP32, STM32, TI CC3220SF), **ESP32 firmware projects** (ESP-IDF, FreeRTOS, MQTT, BLE), and **CI/CD for IoT firmware** (Gerrit, Jenkins, Unity, Valgrind, CodeChecker).

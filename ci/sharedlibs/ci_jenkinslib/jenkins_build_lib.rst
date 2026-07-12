@@ -35,7 +35,7 @@ setSyncMethod(String method)
 Sets the sync method for receiving changes. Values: ``Build.CHECKOUT`` or ``Build.CHERRYPICK``.
 
 .. _com.amarula.build.Build-setBuildDescription():
-
+--------------------------------------------------
 setBuildDescription()
 ---------------------
 

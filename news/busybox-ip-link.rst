@@ -1,14 +1,14 @@
-Support the `ip link set' command for CAN interface in Busybox
-==============================================================
+Support the ``ip link set`` command for CAN interface in Busybox
+================================================================
 
 .. note:: **TL;DR**
    - The last missing patch for **full CAN interface support on MMU-less systems** has been merged into BusyBox — enabling ``ip link set`` configuration alongside existing ``candump`` and ``cansend`` tools.
    - Culmination of a multi-project upstreaming effort spanning **Linux kernel, can-utils, BusyBox, libmnl, and Buildroot**.
 
-With the addition of support for the `ip link set' command for the CAN interface in BusyBox, the last missing patch needed to fully interact with a CAN interface on MMU-less systems has finally been merged:
+With the addition of support for the ``ip link set`` command for the CAN interface in BusyBox, the last missing patch needed to fully interact with a CAN interface on MMU-less systems has finally been merged:
 https://www.mail-archive.com/busybox@busybox.net/msg29248.html
 
-So, summarizing, even for MMU-less systems, we can now use the `ip link' command to configure and activate a CAN interface, and the candump and cansend commands to receive and transmit data:
+So, summarizing, even for MMU-less systems, we can now use the ``ip link`` command to configure and activate a CAN interface, and the candump and cansend commands to receive and transmit data:
 
 * ip link set can1 type can bitrate 125000 loopback on listen-only on
 * ip link set up can1

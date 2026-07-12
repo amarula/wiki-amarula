@@ -1,5 +1,5 @@
-Building Secure Yocto Images: An In-Depth Look at a Jenkins Pipeline with Mend SCA Integration 🔒
-================================================================================================
+Building Secure Yocto Images: An In-Depth Look at a Jenkins Pipeline with Mend SCA Integration
+==============================================================================================
 
 .. note:: **TL;DR**
    - Production Jenkins pipeline for **Yocto-based embedded Linux builds** with integrated **Mend Software Composition Analysis (SCA)** for vulnerability scanning — using **Amarula Solutions' shared libraries** (``Build``, ``Changelog``, ``Ui``), kas-container, and meta-mend Yocto layer.
@@ -128,7 +128,7 @@ several custom Groovy functions and a well-structured set of build stages to man
 the complexities of embedded system development.
 
 What are the core building-block functions?
-******************************************
+*******************************************
 
 runContainerCmd(String cmd, String config): This function serves as the primary
 mechanism for executing commands within a kas-container. It relies on a specific container
@@ -183,7 +183,7 @@ How meta-mend Works in the Pipeline:
 pipeline addresses this by utilizing a kas-container image (registry.amarulasolutions.com:443/custom-builder:1.0)
 that specifically includes Java, thereby fulfilling this prerequisite for the Mend analysis.
 
-**Configuration Injection**: During the runYoctoTargetBuild function call, when ENABLE_MEND is set to true,
+Configuration Injection: During the runYoctoTargetBuild function call, when ENABLE_MEND is set to true,
 essential Mend configuration variables (WS_USERKEY, WS_APIKEY, WS_PRODUCTTOKEN, WS_WSS_URL, WS_PRODUCTNAME)
 are passed directly into the container's environment as runtime arguments. These variables
 are then picked up by the mend BitBake class, enabling it to authenticate with the Mend service

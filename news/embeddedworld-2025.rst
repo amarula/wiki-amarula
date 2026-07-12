@@ -21,9 +21,9 @@ The demo utilizes two ST boards:
 * **STM32F429I-DISC1 Board:** This board reads humidity, pressure, and temperature sensors via I2C and runs a GUI powered by LVGL on Zephyr OS (4.0.0).
 
 How do the boards communicate and what functionality do they provide?
---------------------------------------------------------------------
+---------------------------------------------------------------------
 The two boards communicate via CAN, creating a prototype of a smart thermostat with integrated weather station functionality. Sensor data is displayed on both GUIs. The system is designed for dynamic adjustments to heating, cooling, or ventilation based on real-time data.  The Flutter application also integrates a real-time weather forecast page using OpenWeatherMap.
-
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 What expertise does Amarula Solutions bring?
 --------------------------------------------
 Amarula Solutions offers comprehensive embedded systems development, including:

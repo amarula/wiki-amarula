@@ -5,10 +5,13 @@ Jenkins Checks Plugin: Enhanced Reporting and Proxy
    - The updated **Jenkins Checks Plugin for Gerrit** transforms basic status reporting into deep integration — surfacing **compiler warnings, static analysis issues (warnings-ng), and JUnit test failures** directly in the Gerrit UI with color-coded severity tags and inline code pointers.
    - Features a **TypeScript-based multi-stage fetcher** and a **Java proxy servlet** for secure, authenticated Jenkins API access.
 
+
 .. figure:: /images/jenkins-gerrit.png
    :align: center
+
 |
 |
+
 
 
 How does the plugin integrate Jenkins checks into Gerrit?

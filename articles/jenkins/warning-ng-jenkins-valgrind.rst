@@ -5,6 +5,7 @@ Warning-ng Jenkins plugin now can report Valgrind memory leak
    - How Amarula Solutions integrated **Valgrind memory analysis** into Jenkins CI/CD pipelines — using the **Warnings NG plugin's valgrind parser** with strict quality gates that fail builds on memory leaks, invalid accesses, or other memory errors.
    - Complete pipeline example with **Amarula Solutions' Verification shared library**, parallel test stages, code coverage (Cobertura), and Gerrit integration.
 
+
 .. figure:: /images/valgrind-warning.png
    :align: center
 |

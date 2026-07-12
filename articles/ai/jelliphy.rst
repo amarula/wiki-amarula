@@ -143,7 +143,7 @@ Once you have finalized your notes or transformations, click **Apply** to submit
    Patch Generation and Application process
 
 Sketch Mode (WIP)
-******************
+*******************
 
 Sketch Mode enables you to draw directly on the page. Jelliphy converts your sketches into image prompts for ChatGPT, which interprets them to generate relevant code changes.
 This feature is currently under development and is intended to offer a more intuitive method for specifying design modifications.
@@ -154,7 +154,7 @@ This feature is currently under development and is intended to offer a more intu
    Sketch Mode Drawing
 
 Notes and Considerations
-***********************
+************************
 
 - Ensure your Git working directory is clean before applying patches to avoid merge conflicts.
 - Select Combined Patches for atomic feature overhauls and Parallel Patches for simultaneous independent tweaks.

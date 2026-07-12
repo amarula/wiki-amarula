@@ -7,6 +7,8 @@ Update ChatGpt Gerrit plugin to version 2.1.0
 
 .. figure:: /images/chatgpt-news.png
    :align: center
+
+
 |
 |
 Amarula Solutions S.R.O updates the https://amarula.github.io/chatgpt-code-review-website/ to version 2.1.0

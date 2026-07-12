@@ -1,6 +1,6 @@
-=======================
+===========================
 Amarula Products & Tools
-=======================
+===========================
 
 .. note:: **TL;DR**
    - Overview of Amarula Solutions' **open source products and developer tools** — including the **ChatGPT Gerrit Code Review plugin**, **CuteKeyboard** (Qt virtual keyboard), **Flutekeyboard**, **Jelliphy** (AI web framework), **DynDesign** (Python dynamic decoration), **meta-mend** (Yocto security), **libcppconnman**, and the **git-collect Jenkins plugin**.

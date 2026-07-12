@@ -5,8 +5,10 @@ Warning-ng Jenkins plugin now can report Yocto vulnerabilities
    - The **warning-ng Jenkins plugin** now includes a **Yocto vulnerability scanner** — allowing CI/CD pipelines to record and track CVE issues from Yocto builds on a dashboard with a single pipeline step.
    - Enables consistent vulnerability history, patch discovery via devtool, and streamlined upstream remediation.
 
+
 .. figure:: /images/yocto-vulnerabilities.png
    :align: center
+
 |
 |
 

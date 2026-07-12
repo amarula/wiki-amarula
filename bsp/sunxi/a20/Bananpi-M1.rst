@@ -9,7 +9,7 @@ This tutorial will show the details of Bananapi M1 board mainline support and ot
 
 How do you build the BSP?
 *************************
-Image building need host to ready with all necessary tools ready, `refer here <https://wiki.amarulasolutions.com/found/host/tools.html#arm>`_
+Image building need host to ready with all necessary tools ready, `refer to the host tools page <https://wiki.amarulasolutions.com/found/host/tools.html#arm>`_
 
 How do you build U-Boot?
 ========================
@@ -36,7 +36,7 @@ How do you boot from SD card?
 
 How do you boot via FEL/USB?
 ****************************
-More information `here <http://linux-sunxi.org/FEL/USBBoot>`_ and build the fel tools from `here <https://wiki.amarulasolutions.com/found/host/tools.html#sunxi>`_
+More information `here <http://linux-sunxi.org/FEL/USBBoot>`_ and build the fel tools from `this link <https://wiki.amarulasolutions.com/found/host/tools.html#sunxi>`_
 
 Insert SD card from and Press K3 located between the HDMI and USB host connectors and Power-on
 
@@ -52,7 +52,7 @@ Insert SD card from and Press K3 located between the HDMI and USB host connector
 How do you boot Linux via FEL?
 ******************************
 
-From Host, get the boot.scr from `here <https://wiki.amarulasolutions.com/found/host/tools.html#boot32-fel-scr>`_
+From Host, get the boot.scr from `this link <https://wiki.amarulasolutions.com/found/host/tools.html#boot32-fel-scr>`_
 
 ::
 

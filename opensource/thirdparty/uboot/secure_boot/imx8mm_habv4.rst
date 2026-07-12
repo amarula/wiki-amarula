@@ -1,5 +1,6 @@
 I.MX8MM Secure Boot using High Assurance Boot v4
 ################################################
+
 .. note:: **TL;DR**
    - Technical guide covering **U-Boot** features for embedded systems — part of Amarula Solutions' upstream-first boot firmware documentation.
    - Includes build instructions, configuration steps, and production deployment guidance.

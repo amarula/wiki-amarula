@@ -26,6 +26,7 @@ step1: In our git repository we run,
 
    git bisect bad  2f4c1d83f4e8
 
+
 .. image:: /images/step1.png
 
 Git bisect looked at all of the commits between a63d800196eb  and 2f4c1d83f4e8, picked the middle one i.e be62fbf37626, and switched the current checkout to that instead.
@@ -37,15 +38,19 @@ step3: Run  either git bisect bad  or git bisect good based on above build.
 
 If commit id is buggy(say it is) then we run git bisect bad  else we would run git bisect good
 
+
 .. image:: /images/step.png
 Step4 .... N: keep repeating above step 2 and step3
 
+
 .. image:: /images/step3.png
+
 
 .. image:: /images/4.png
 
 Now that we are commit aab203eb2e0d, we build repo at this commit and check again whether this repos is buggy or not.
 Lets say it is not buggy, then execute git bisect good  and after this will the first first bad commit , i.e, the first time when the bug was introduced in the repo.
+
 
 .. image:: /images/5.png   
 

@@ -12,7 +12,7 @@ How do you build the BSP?
 
 Manual Build
 ============
-Image building need host to ready with all necessary tools ready, refer `here <https://wiki.amarulasolutions.com/found/host/tools.html>`_ for Host and Crosstool
+Image building need host to ready with all necessary tools ready, refer `to the host tools page <https://wiki.amarulasolutions.com/found/host/tools.html>`_ for Host and Crosstool
 
 How do you build ATF?
 ---------------------

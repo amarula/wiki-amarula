@@ -1,6 +1,6 @@
-=============================
+=================================
 Embedded Linux Build Systems
-=============================
+=================================
 
 .. note:: **TL;DR**
    - Hub aggregating all **Yocto Project and Buildroot** documentation — covering build system setup, custom layer/distro creation, security integration (secure boot, Mend SCA), and CI/CD pipeline integration for production embedded Linux images.

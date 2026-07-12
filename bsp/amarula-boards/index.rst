@@ -1,5 +1,5 @@
 Amarula Reference Boards
-=======================
+=========================
 
 .. note:: **TL;DR**
    - Hardware documentation for Amarula Solutions' **reference platforms and development boards** — used for internal development, customer demonstrations, and proof-of-concept builds.

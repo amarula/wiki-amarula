@@ -73,7 +73,8 @@ How do you boot the system?
 ===========================
 
 1. Parttion table
-   SiFive ZSBL (BROM) would look for partition GUID for next boot stages like
+
+SiFive ZSBL (BROM) would look for partition GUID for next boot stages like
 .. code-block:: none
 
    5B193300-FC78-40CD-8002-E86C45580B47 - FSBL
@@ -83,7 +84,8 @@ How do you boot the system?
    partition table.
 
 2. Bootmodes
-   Bootmodes are configured in SiFive Unleased via MSEL3-MSEL0.
+
+Bootmodes are configured in SiFive Unleased via MSEL3-MSEL0.
 .. code-block:: none
 
    MSEL = 1111, default bootmode. load FSBL from QSPI
@@ -93,7 +95,7 @@ How do you boot the system?
 
 3. Serial ports
 
-   Board as USB port which used USB-to-Serial, host will trigger
+Board as USB port which used USB-to-Serial, host will trigger
 .. code-block:: none
  
    /dev/ttyUSB1 - for debug
@@ -122,7 +124,7 @@ Turn On the board and open minicom with /dev/ttyUSB1 with 115200 baudrate.
    SiFive FSBL:       2018-03-20
    HiFive-U serial #: 000001e0
 
-   OpenSBI v0.4 (Sep 18 2019 22:56:42)
+OpenSBI v0.4 (Sep 18 2019 22:56:42)
         ____                    _____ ____ _____
        / __ \                  / ____|  _ \_   _|
       | |  | |_ __   ___ _ __ | (___ | |_) || |
@@ -144,7 +146,8 @@ Turn On the board and open minicom with /dev/ttyUSB1 with 115200 baudrate.
    PMP1: 0x0000000000000000-0x0000007fffffffff (A,R,W,X)
    [    0.000000] OF: fdt: Ignoring memory range 0x80000000 - 0x80200000
    [    0.000000] Linux version 5.1.0 (jagan@jagan-XPS-13-9350) (gcc version 8.3.0 (Buildroot 2019.11-git-00334-g2b5e835dcd)) #1 SMP Wed Sep 18 22:51:28 IST 9
-   [    0.000000] earlycon: sbi0 at I/O port 0x0 (options '')
+
+[    0.000000] earlycon: sbi0 at I/O port 0x0 (options '')
 
 
 OpenSBI with U-Boot as payload
@@ -170,7 +173,7 @@ Turn On the board and open minicom with /dev/ttyUSB1 with 115200 baudrate.
    SiFive FSBL:       2018-03-20
    HiFive-U serial #: 000001e0
 
-   OpenSBI v0.4 (Sep 18 2019 22:56:42)
+OpenSBI v0.4 (Sep 18 2019 22:56:42)
         ____                    _____ ____ _____
        / __ \                  / ____|  _ \_   _|
       | |  | |_ __   ___ _ __ | (___ | |_) || |
@@ -266,14 +269,16 @@ OpenSBI FW_DYNAMIC
    Retrieving file: /boot/hifive-unleashed-a00.dtb
    6987 bytes read in 7 ms (974.6 KiB/s)
    ## Flattened Device Tree blob at 88000000
-   Booting using the fdt blob at 0x88000000
+
+Booting using the fdt blob at 0x88000000
    Using Device Tree in place at 0000000088000000, end 0000000088004b4a
    
    Starting kernel ...
    
    [    0.000000] OF: fdt: Ignoring memory range 0x80000000 - 0x80200000
    [    0.000000] Linux version 5.6.0 (jagan@jagan-XPS-13-9350) (gcc version 8.4.0 (Buildroot 2020.05-git-00624-g689b9c1a7c-dirty)) #1 SMP Wed Apr 8
-   22:35:27 IST 2020
+
+22:35:27 IST 2020
    [    0.000000] initrd not found or empty - disabling initrd
    [    0.000000] Zone ranges:
    [    0.000000]   DMA32    [mem 0x0000000080200000-0x00000000ffffffff]
@@ -399,7 +404,8 @@ OpenSBI FW_DYNAMIC
   Bytes transferred = 920 (398 hex)
   => source $fdt_add_r
   ## Executing script at 80200000
-  Probe flash
+
+Probe flash
   SF: Detected is25wp256 with page size 256 Bytes, erase size 4 KiB, total 32 MiB
   Program loader1
   SF: 1048576 bytes @ 0x5000 Erased: OK
@@ -507,10 +513,12 @@ OpenSBI FW_DYNAMIC
   device 0 offset 0x1fff000, size 0x1000
   SF: 4096 bytes @ 0x1fff000 Read: OK
   ## Executing script at 88100000
-  device 0 offset 0x525000, size 0xe00000
+
+device 0 offset 0x525000, size 0xe00000
   SF: 14680064 bytes @ 0x525000 Read: OK
   ## Loading kernel from FIT Image at 84000000 ...
-     Using 'conf@0' configuration                                         
+
+Using 'conf@0' configuration                                         
      Trying 'kernel@0' kernel subimage                                    
        Description:  RISC-V Linux kernel                                  
        Type:         Kernel Image                                         
@@ -523,7 +531,8 @@ OpenSBI FW_DYNAMIC
        Entry Point:  0xa4000000
      Verifying Hash Integrity ... OK
   ## Loading fdt from FIT Image at 84000000 ...
-     Using 'conf@0' configuration
+
+Using 'conf@0' configuration
      Trying 'fdt@0' fdt subimage
        Description:  HiFive Unleashed A00 blob
        Type:         Flat Device Tree

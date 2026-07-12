@@ -33,6 +33,7 @@ CuteKeyboard goes beyond the standard virtual keyboard by offering a high level
 of customization. Whether you're designing an embedded/desktop applicaiton,
 CuteKeyboard allows you to tailor the keyboard's appearance.
 
+
 .. image:: /images/20240416_135331.jpg
     :alt: CuteKeyboard Demo
     :target: https://youtu.be/TFNbTDwV0WE

@@ -7,7 +7,7 @@ Boot Linux on Engicam i.MX6
 
 This tutorial describe possible ways of booting Image like Linux and detailed documents are `1 <https://www.denx.de/wiki/pub/U-Boot/OpenSourceIndia2013/Multi_image_booting_scenarios.pdf>`_ `2 <https://www.denx.de/wiki/pub/U-Boot/MiniSummitELCE2013/U-Boot_verified_RSA_boot_flow_on_arm_target.pdf>`_
 
-Build the images `here <https://wiki.amarulasolutions.com/uboot/image_build/engicam_imx6.html>`_, and setup SD card with Single and Dual partitions `here <https://wiki.amarulasolutions.com/uboot/tools.html#sd-setup>`_
+Build the images `the Engicam i.MX6 image build page <https://wiki.amarulasolutions.com/uboot/image_build/engicam_imx6.html>`_, and setup SD card with Single and Dual partitions `the relevant build page <https://wiki.amarulasolutions.com/uboot/tools.html#sd-setup>`_
 
 bootm
 *****
@@ -176,7 +176,7 @@ vmlinux.bin
 
 FIT Input
 =========
-FIT input for Linux and `FDT <https://downloads.amarulasolutions.com/public/linux_image_boot_imx6/kernel_fdt.its>`_, here and Linux, FDT and Ramdisk, `here <https://downloads.amarulasolutions.com/public/linux_image_boot_imx6/kernel_fdt_ramdisk.its>`_
+FIT input for Linux and `FDT <https://downloads.amarulasolutions.com/public/linux_image_boot_imx6/kernel_fdt.its>`_, here and Linux, FDT and Ramdisk, `the relevant build page <https://downloads.amarulasolutions.com/public/linux_image_boot_imx6/kernel_fdt_ramdisk.its>`_
 
 ::
 

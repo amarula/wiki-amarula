@@ -20,7 +20,7 @@ Manual Build
 ============
 For manual building refer `here <https://wiki.amarulasolutions.com/uboot/image_build/allwinner_sunxi64.html>`_ for all necessary information.
 
-Image building need host to ready with all necessary tools ready, refer `here <https://wiki.amarulasolutions.com/found/host/tools.html#arm64>`_
+Image building need host to ready with all necessary tools ready, refer `the host tools ARM64 page <https://wiki.amarulasolutions.com/found/host/tools.html#arm64>`_
 
 Below are the details of Image build for Banana Pi BPI-M64 board.
 

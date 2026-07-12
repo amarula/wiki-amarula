@@ -1,6 +1,6 @@
-====================
+=======================
 CI/CD & Test Automation
-====================
+=======================
 
 .. note:: **TL;DR**
    - Hub for **Jenkins CI/CD infrastructure** at Amarula Solutions — covering pipeline design for embedded projects (Yocto, Android, firmware), Gerrit-triggered verification, static analysis (CodeChecker), memory checking (Valgrind), hardware-in-the-loop testing (Labgrid), and shared Groovy libraries for pipeline standardization.

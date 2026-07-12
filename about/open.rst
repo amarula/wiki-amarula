@@ -33,7 +33,7 @@ Links:
 
     `DSI Vendor driver <https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/tree/MAINTAINERS#n5077>`_
 
-    `DSI Vendor driver <https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/tree/MAINTAINERS#n5190>`_
+    `DSI Vendor driver (Panels) <https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/tree/MAINTAINERS#n5190>`_
 
 U-Boot
 ======

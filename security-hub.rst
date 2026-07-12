@@ -1,6 +1,6 @@
-=================
+====================
 Embedded Security
-=================
+====================
 
 .. note:: **TL;DR**
    - Hub aggregating all **embedded security documentation** — covering **secure boot** (UEFI, i.MX HABv4, SPL), **OP-TEE trusted execution**, **Mend SCA vulnerability scanning**, **verified boot**, and platform-specific security hardening for embedded Linux and Android.
@@ -17,15 +17,15 @@ Secure Boot Implementation
    * - **UEFI Secureboot with Yocto and GRUB**
      - x64 UEFI Secureboot, TPM/LUKS auto-decryption, SELinux, Mender A/B updates. See `article <articles/yocto/implementing-secureboot-with-yocto-wrynose-and-grub.html>`_.
    * - **i.MX6 HABv4 Signed Boot**
-     - PKI tree generation, SRK fusing, signed U-Boot, signed uImage, encrypted boot with DEK blob. See `guide <opensource/thirdparty/uboot/secure_boot/imx6_habv4.html>`_.
+     - PKI tree generation, SRK fusing, signed U-Boot, signed uImage, encrypted boot with DEK blob. See the `i.MX6 HABv4 guide <opensource/thirdparty/uboot/secure_boot/imx6_habv4.html>`_.
    * - **i.MX8MM HABv4 Secure Boot**
-     - Extension of i.MX6 HABv4 for i.MX8M Mini platforms. See `guide <opensource/thirdparty/uboot/secure_boot/imx8mm_habv4.html>`_.
+     - Extension of i.MX6 HABv4 for i.MX8M Mini platforms. See the `i.MX8MM HABv4 guide <opensource/thirdparty/uboot/secure_boot/imx8mm_habv4.html>`_.
    * - **SPL HABv4**
-     - Secure Boot for U-Boot SPL (Secondary Program Loader). See `guide <opensource/thirdparty/uboot/secure_boot/spl_habv4.html>`_.
+     - Secure Boot for U-Boot SPL (Secondary Program Loader). See the `SPL HABv4 guide <opensource/thirdparty/uboot/secure_boot/spl_habv4.html>`_.
    * - **Verified Boot on i.MX6**
-     - Authenticated kernel boot flow. See `guide <opensource/thirdparty/uboot/image_boot/verified_boot_on_imx6.html>`_.
+     - Authenticated kernel boot flow. See the `verified boot on i.MX6 guide <opensource/thirdparty/uboot/image_boot/verified_boot_on_imx6.html>`_.
    * - **Verified Boot on Allwinner A64**
-     - Authenticated kernel boot on 64-bit Allwinner. See `guide <opensource/thirdparty/uboot/image_boot/verified_boot_on_sunxi64.html>`_.
+     - Authenticated kernel boot on 64-bit Allwinner. See the `verified boot on Sunxi64 guide <opensource/thirdparty/uboot/image_boot/verified_boot_on_sunxi64.html>`_.
    * - **Redundant Boot with U-Boot**
      - Multi-partition failover for high-availability boot. See `guide <opensource/thirdparty/uboot/image_boot/redundant.html>`_.
 

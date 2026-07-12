@@ -64,7 +64,7 @@ Showcase: `Amarula at Embedded World <https://www.amarulasolutions.com/news/amar
 2019, FOSDEM:
 *************
 
-Talk: `U-Boot from scratch <https://www.amarulasolutions.com/blog/amarula-solutions-at-fosdem-2019/>`_
+Talk: `U-Boot from scratch (FOSDEM 2019) <https://www.amarulasolutions.com/blog/amarula-solutions-at-fosdem-2019/>`_
 
 2018, Linux Plumbers Conference:
 ********************************
@@ -74,7 +74,7 @@ Talk: `Concurrency with tools/memory-model <https://linuxplumbersconf.org/event/
 2018, Linuxlab:
 ***************
 
-Talk: `U-Boot from scratch <https://www.amarulasolutions.com/news/amarula-solutions-at-linuxlab-2018>`_
+Talk: `U-Boot from scratch (Linuxlab 2018) <https://www.amarulasolutions.com/news/amarula-solutions-at-linuxlab-2018>`_
 
 Talk: `Upgrading buildroot based devices with swupdate <https://2018.linux-lab.it/talks/upgrading_buildroot_based_devices_with_swupdate_2018-12-03>`_
 
@@ -86,7 +86,7 @@ Sponsor: `Amarula sponsor Buildroot <https://buildroot.org/sponsors.html>`_
 2018, OSFC:
 ***********
 
-Talk: `U-Boot from scratch <https://www.amarulasolutions.com/news/amarula-solutions-at-osfc-2018>`_
+Talk: `U-Boot from scratch (OSFC 2018) <https://www.amarulasolutions.com/news/amarula-solutions-at-osfc-2018>`_
 
 2017, ELCE:
 ***********

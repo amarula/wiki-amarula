@@ -1,6 +1,6 @@
-============================
+===============================
 Getting Started for Engineers
-============================
+===============================
 
 .. note:: **TL;DR**
    - Onboarding hub for embedded Linux development — **host toolchain setup, cross-compilation, debugging, and foundational knowledge** needed before diving into board bring-up or build systems.

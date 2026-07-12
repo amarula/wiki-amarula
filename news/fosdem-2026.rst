@@ -5,7 +5,7 @@ Amarula Solutions at FOSDEM 2026
    - Amarula Solutions participates in **FOSDEM 2026** (Jan 31 – Feb 1, Brussels) — one of Europe's premier open-source conferences.
    - Focus on **embedded Linux, open-source collaboration, and community-driven innovation**.
 
-.. image:: /images/fosdem-2026.png
+.. figure:: /images/flyer_image.png
    :alt: Amarula Solutions at FOSDEM 2026
 
 We are excited to announce our participation in one of Europe's most influential open-source events.

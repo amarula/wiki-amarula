@@ -12,7 +12,7 @@ How do you access the hardware?
 
 BSP Building
 ************
-Image building need host to ready with all necessary tools ready, refer `here <https://wiki.amarulasolutions.com/found/host/tools.html#arm64>`_
+Image building need host to ready with all necessary tools ready, refer `the host tools ARM64 setup <https://wiki.amarulasolutions.com/found/host/tools.html#arm64>`_
 
 How do you build U-Boot?
 ========================
@@ -134,7 +134,7 @@ eMMC
 ====
 FEC
 ===
-Build the BSP and Setup host tftp server from `here <https://wiki.amarulasolutions.com/found/host/tools.html#tftp>`_
+Build the BSP and Setup host tftp server from `the host tools setup <https://wiki.amarulasolutions.com/found/host/tools.html#tftp>`_
 
 ::
 

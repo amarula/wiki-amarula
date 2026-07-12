@@ -37,7 +37,7 @@ How do you boot from SD card?
 
 How do you boot via FEL/USB?
 ****************************
-More information `here <http://linux-sunxi.org/FEL/USBBoot>`_ and build the fel tools from `here <https://wiki.amarulasolutions.com/found/host/tools.html#sunxi>`_
+More information `this link <http://linux-sunxi.org/FEL/USBBoot>`_ and build the fel tools from `this link <https://wiki.amarulasolutions.com/found/host/tools.html#sunxi>`_
 
 Insert SD card from and Press K3 located between the HDMI and USB host connectors and Power-on
 
@@ -54,7 +54,7 @@ How do you enter FEL mode?
 How do you boot Linux via FEL?
 ==============================
 
-From Host, get the boot.scr from `here <https://wiki.amarulasolutions.com/found/host/tools.html#boot32-fel-scr>`_
+From Host, get the boot.scr from `this link <https://wiki.amarulasolutions.com/found/host/tools.html#boot32-fel-scr>`_
 
 ::
 
