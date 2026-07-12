@@ -15,6 +15,7 @@ Open Source Projects
 
 .. toctree::
    :maxdepth: 1
+   :titlesonly:
    :caption: Our Products
 
    products/dyndesign/index
