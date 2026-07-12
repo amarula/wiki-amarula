@@ -1,0 +1,461 @@
+Today 2026-06-30 Developments: A Look at Our Codebase (2026-06 Monthly Review)
+==============================================================================
+
+.. note:: **TL;DR**
+   - Monthly summary of Amarula Solutions' **open source contributions** across repositories — covering commits to **openembedded-core, Buildroot, Linux kernel, U-Boot, Zephyr, and Jenkins plugins** grouped by author.
+   - Auto-generated report from the Git Commit Article Generator.
+
+We’re excited to share a summary of the significant progress made across
+our repositories in the month of 2026-06. Our dedicated team has been
+busy pushing new features, refining existing functionalities, and
+enhancing the overall stability of our products.
+
+Here’s a breakdown of key contributions by repository:
+
+openembedded-core
+-----------------
+
+Repository URL: https://git.openembedded.org/openembedded-core
+
+Summary of the contributions by author:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+**Jesse Van Gavere**: Jesse Van Gavere updated the Rust project to
+export CARGO_BUILD_TARGET, simplifying the cross- compilation process
+with the SDK. This change eliminates the need for users to manually set
+the target sys when running cargo build, improving efficiency and
+reducing errors. The updated configuration now allows users to
+immediately build with the correct target after sourcing the SDK,
+streamlining the development workflow. This enhancement aligns with best
+practices outlined in the Rust documentation for build targets.
+
+Here the commits of **Jesse Van Gavere** in detail:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+- **Jesse Van Gavere** on 2026-05-27: `rust: export
+  CARGO_BUILD_TARGET <https://git.openembedded.org/openembedded-core/commit/?id=dc1a3a439c57c59578abbc474d10779de4d42c5a>`__
+
+axelera-aisbc-bsp
+-----------------
+
+Repository URL: https://github.com/axelera-ai-hub/axelera-aisbc-bsp.git
+
+.. _summary-of-the-contributions-by-author-06-1:
+
+Summary of the contributions by author:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+**Adam Duskett**: Adam Duskett added the Avahi service to meta-axelera,
+enabling users to connect to a machine using its $hostname.local address
+instead of the IP address. This change, linked to YouTrack-Id
+AXELERA-203, enhances user experience by simplifying the connection
+process.
+
+Here the commits of **Adam Duskett** in detail:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+- **Adam Duskett** on 2026-06-08: `meta-axelera: Add avahi
+  service <https://github.com/axelera-ai-hub/axelera-aisbc-bsp/commit/6e8c180a12802af6980ab80bf18c7b032b2d4952>`__
+
+**Michael Trimarchi**: Michael Trimarchi released version 1.4.0-rc1,
+integrating the Voyager SDK into the BSP and making it pip-installable,
+eliminating the need for a large Ubuntu Docker container. This release
+also added OP-TEE support to Rockchip platforms for secure execution and
+included various recipe updates and fixes. Notable changes include
+adding avahi service, fixing daemon configuration, resolving build
+failures, updating kernel modules, and excluding certain packages for
+analysis. Additionally, fixes were made to the avahi-daemon
+configuration file, LOCAL_VERSION definition, and optee-rockchip URL.
+
+Here the commits of **Michael Trimarchi** in detail:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+- **Michael Trimarchi** on 2026-06-04: `kas: base.yaml: Bump to the
+  latest mend
+  support <https://github.com/axelera-ai-hub/axelera-aisbc-bsp/commit/99899726702fb3e9acc7e147a916a866ff3b2964>`__
+- **Michael Trimarchi** on 2026-06-04: `kas: base.yaml: Exclude
+  linux-rockchip package from
+  Mend <https://github.com/axelera-ai-hub/axelera-aisbc-bsp/commit/6f6788d9c1d1491b2ba50e629061cbe8c76d60bb>`__
+- **Michael Trimarchi** on 2026-06-04: `meta-axelera: optee: Make
+  download repo depend on
+  USE_GITHUB <https://github.com/axelera-ai-hub/axelera-aisbc-bsp/commit/44f2c7b13ab83d68a4f2016d08907ebd586dc4dd>`__
+- **Michael Trimarchi** on 2026-06-05: `kas/include/base.yaml: Fix build
+  of
+  esdk <https://github.com/axelera-ai-hub/axelera-aisbc-bsp/commit/3e23a27b4e97632cb931e07f466763fdb1b99d79>`__
+- **Michael Trimarchi** on 2026-06-05: `recipes-security: Fix
+  optee-rockchip
+  url <https://github.com/axelera-ai-hub/axelera-aisbc-bsp/commit/e0226c6b058bd315425680f79957e1df99a2fd9b>`__
+- **Michael Trimarchi** on 2026-06-06: `kas/include/base.yaml: Missing
+  include definition of
+  LOCAL_VERSION <https://github.com/axelera-ai-hub/axelera-aisbc-bsp/commit/0fcfc367715cbad807cd1f649368715f2d72be82>`__
+- **Michael Trimarchi** on 2026-06-08: `meta-connectivity: Fix
+  avahi-daemon configuration
+  file <https://github.com/axelera-ai-hub/axelera-aisbc-bsp/commit/28d1e53bbd24984c9371b8b8b26de38c34402a5f>`__
+- **Michael Trimarchi** on 2026-06-16: `kas: base.yaml: Move some repo
+  to the public
+  space <https://github.com/axelera-ai-hub/axelera-aisbc-bsp/commit/44494e573d3ed816fa1ca83b050096f9ea396f0b>`__
+- **Michael Trimarchi** on 2026-06-17: `Release version
+  1.4.0-rc1 <https://github.com/axelera-ai-hub/axelera-aisbc-bsp/commit/7da842e5c0e9963c2df2fd10dcc6af773bc8fe31>`__
+
+**Patrick Barsanti**: Updated the kernel-module-axelera to version 1.7.0
+to align with the latest release. Resolved build failures in the BSP by
+adjusting the recipe SRC_URI for librkcrypto to depend on USE_GITHUB.
+Added voyager-sdk to the voyager-image to facilitate native integration
+and simplify deployment and inference processes on the Antelao board.
+Integrated optee-test with optee-rockchip binaries to ensure xtest
+functionality post-patch. Included librkcrypto-test package in
+IMAGE_INSTALL to ship librkcrypto and librkcrypto_test binary.
+
+Here the commits of **Patrick Barsanti** in detail:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+- **Patrick Barsanti** on 2026-05-27: `meta-axelera: Add librkcrypto
+  recipe <https://github.com/axelera-ai-hub/axelera-aisbc-bsp/commit/536e3b59aceac1741f8f5f188d7f00c65eb91811>`__
+- **Patrick Barsanti** on 2026-05-27: `voyager-image: Add
+  librkcrypto-test <https://github.com/axelera-ai-hub/axelera-aisbc-bsp/commit/245cd87c164da2a3bfaadc762beb8b7640f1fcc9>`__
+- **Patrick Barsanti** on 2026-05-29: `meta-axelera: Add optee-test for
+  rockchip <https://github.com/axelera-ai-hub/axelera-aisbc-bsp/commit/a80bca2aac3a33d85f749aab8ac18052254521b6>`__
+- **Patrick Barsanti** on 2026-06-11: `meta-axelera: Add voyager-sdk
+  recipe <https://github.com/axelera-ai-hub/axelera-aisbc-bsp/commit/77813294e22492e7cfe26ce96ea4bc81e2964bff>`__
+- **Patrick Barsanti** on 2026-06-11: `meta-voyager: voyager-image.inc:
+  Add
+  voyager-sdk <https://github.com/axelera-ai-hub/axelera-aisbc-bsp/commit/8fea60f5bdeae988df3c0401cf69c32ec4fcecc1>`__
+- **Patrick Barsanti** on 2026-06-18: `meta-axelera: optee: Make
+  librkcrypto depend on
+  USE_GITHUB <https://github.com/axelera-ai-hub/axelera-aisbc-bsp/commit/88129b3f47073cd34c04014deacf5b79537c32f5>`__
+- **Patrick Barsanti** on 2026-06-25: `meta-axelera:
+  kernel-module-axelera: Bump to version
+  1.7.0 <https://github.com/axelera-ai-hub/axelera-aisbc-bsp/commit/c0269ed35894c1a434c2bd7de1546a8478c8dc90>`__
+
+trusted-firmware-a
+------------------
+
+Repository URL:
+https://github.com/TrustedFirmware-A/trusted-firmware-a.git
+
+.. _summary-of-the-contributions-by-author-06-2:
+
+Summary of the contributions by author:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+**Dario Binacchi**: Dario Binacchi transitioned the STM32MP firmware
+management to a multi-image bank structure to enable A/B redundancy
+support on STM32MP1 and STM32MP2 platforms. This change allows the FWU
+framework to manage FIP, BootFS, and RootFS partitions as a single
+redundant unit by defining IO policies, block specifications, and
+partition GUIDs in the common platform files. Additionally, Dario
+Binacchi introduced build flags to support A/B redundancy systems and
+added Linux data partition GUID and extended bootloader GUID to
+correctly identify partitions based on the Discoverable Partitions
+Specification.
+
+Here the commits of **Dario Binacchi** in detail:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+- **Dario Binacchi** on 2026-03-09: `feat(st): add extended bootloader
+  GUID <https://github.com/TrustedFirmware-A/trusted-firmware-a/commit/e9a8085667b849bcba562aaf457089d3f63888d7>`__
+- **Dario Binacchi** on 2026-03-09: `feat(st): enable A/B redundancy
+  support <https://github.com/TrustedFirmware-A/trusted-firmware-a/commit/15208d0117dfa16e6ed4db05c7518b06fd9f46e1>`__
+- **Dario Binacchi** on 2026-06-01: `feat(st): add Linux data partition
+  GUID <https://github.com/TrustedFirmware-A/trusted-firmware-a/commit/caf7a47b57e1227b9c28af84ff4097b072d2440a>`__
+- **Dario Binacchi** on 2026-06-01: `feat(st): add
+  STM32MP_PSA_FWU_AB_SUPPORT build
+  flag <https://github.com/TrustedFirmware-A/trusted-firmware-a/commit/3f01837eb5c726acbccd75de844e2a551c9af11d>`__
+
+chatgpt-code-review-gerrit-plugin
+---------------------------------
+
+Repository URL:
+https://github.com/amarula/chatgpt-code-review-gerrit-plugin.git
+
+.. _summary-of-the-contributions-by-author-06-3:
+
+Summary of the contributions by author:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+**Patrizio Gelosi**: Patrizio Gelosi added support for the \`–mode\`
+option in \`/show\` commands to display instructions and prompts for
+suggestion generation. They refactored the review orchestration to
+handle multi-agent specialization levels explicitly, preparing the
+codebase for more specialized review agents in the future. Additionally,
+Patrizio Gelosi introduced a new configuration option,
+\`agentSpecializationLevel\`, to select agent specialization modes,
+replacing the boolean \`multiAgentMode\` for extensibility. They also
+implemented support for DeepSeek models, linked sidebar reply headers to
+related comments, and enabled automatic reviews for patch sets updating
+only commit messages. Finally, Patrizio Gelosi improved the clarity of
+plugin messages and centralized system messages to enhance message logic
+coherence.
+
+Here the commits of **Patrizio Gelosi** in detail:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+- **Patrizio Gelosi** on 2026-06-03: `docs: update usage
+  examples <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/63b62793151ac25f4de6b0d2e68c3ff0af10a05c>`__
+- **Patrizio Gelosi** on 2026-06-03: `refactor: remove unused
+  code <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/9efd2803d42a0d0d5189de8eff0299d474aca4ba>`__
+- **Patrizio Gelosi** on 2026-06-04: `feat: support review
+  suggestions <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/a8f6faa64b96ab650dc3cb34d2d461d9bee16b26>`__
+- **Patrizio Gelosi** on 2026-06-05: `refactor: centralize system
+  messages <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/3eeeab00a0a1adb87ce0e1320f7f4ea255a43d22>`__
+- **Patrizio Gelosi** on 2026-06-05: `feat: improve plugin message
+  clarity <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/03dec944c2a45ecc79a6db6e175950594348b6d3>`__
+- **Patrizio Gelosi** on 2026-06-08: `fix: block invalid context policy
+  values <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/3855064daca618faa2d27224d4a0970123b12a88>`__
+- **Patrizio Gelosi** on 2026-06-08: `feat: raise invalid param
+  messages <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/23b58732f6b30423e4ffd6a86ce2f606f0872524>`__
+- **Patrizio Gelosi** on 2026-06-08: `fix: support non-master
+  branches <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/d7e8f14f5c010cf10fe079fa4c6a4e7dbf3e541e>`__
+- **Patrizio Gelosi** on 2026-06-09: `chore: reduce prompt log
+  verbosity <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/d0b9ef7ad765a0571d4dc050e126aaac72ba4d86>`__
+- **Patrizio Gelosi** on 2026-06-12: `feat: auto-review commit message
+  updates <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/f13a710b8d3d875bb89b572970d5f828aa3a8a44>`__
+- **Patrizio Gelosi** on 2026-06-12: `feat: skip redundant /suggest
+  review <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/1d45aeaaa8473b18cfc41f2d6d1d85b88663a205>`__
+- **Patrizio Gelosi** on 2026-06-12: `fix: reset selective log
+  config <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/f1c3d9820103c3c54de021dfe41969c1a9cfdd1a>`__
+- **Patrizio Gelosi** on 2026-06-12: `feat: link sidebar reply
+  headers <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/401d4c328d43d58454e72d986e835e323535797d>`__
+- **Patrizio Gelosi** on 2026-06-15: `feat: support
+  deepseek <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/8a66a35ac872cf783db28a74f2cf64da572e3859>`__
+- **Patrizio Gelosi** on 2026-06-15: `refactor: model multi-agent
+  levels <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/966406df83fe82a20ead17b5f806a27077a5acda>`__
+- **Patrizio Gelosi** on 2026-06-15: `feat: configure agent
+  specialization <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/7fe084eccd9dc82c05eb075095b60741a7fbcaf1>`__
+- **Patrizio Gelosi** on 2026-06-16: `feat: support /show mode
+  option <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/2b050d43bfd7bf6138e9fc81a2216e0772ab9fdd>`__
+
+chatgpt-code-review-website
+---------------------------
+
+Repository URL:
+https://github.com/amarula/chatgpt-code-review-website.git
+
+.. _summary-of-the-contributions-by-author-06-4:
+
+Summary of the contributions by author:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+**Michael Trimarchi**: Michael Trimarchi fixed the GitHub link in
+index.html. The change was made to update the link from ‘chatgpt’ to
+‘reviewai’. This modification ensures that the correct link is
+displayed, aligning with the project’s current branding and
+functionality.
+
+.. _here-the-commits-of-michael-trimarchi-06-1:
+
+Here the commits of **Michael Trimarchi** in detail:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+- **Michael Trimarchi** on 2026-06-29: `Move from chatgpt name to
+  reviewai <https://github.com/amarula/chatgpt-code-review-website/commit/fa5f99f7ee16456f62739d81d98b5ad8d2767947>`__
+- **Michael Trimarchi** on 2026-06-29: `index.html: Fix the github
+  link <https://github.com/amarula/chatgpt-code-review-website/commit/ae6377b3b654d5243a1b4ae02c291919e28587f4>`__
+
+**Patrizio Gelosi**: Patrizio Gelosi updated preview screenshots to
+reflect new features introduced in version 4.0.0, ensuring that users
+have an accurate preview of the software’s capabilities. This
+enhancement improves user experience by providing an up-to-date
+representation of the product, aiding in decision-making and feature
+exploration.
+
+.. _here-the-commits-of-patrizio-gelosi-06-1:
+
+Here the commits of **Patrizio Gelosi** in detail:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+- **Patrizio Gelosi** on 2026-06-30: `Update preview
+  screenshots <https://github.com/amarula/chatgpt-code-review-website/commit/3548755f549e5a3f5bdf8cd3fdfc4d7cd2240019>`__
+
+flutekeyboard
+-------------
+
+Repository URL: https://github.com/amarula/flutekeyboard.git
+
+.. _summary-of-the-contributions-by-author-06-5:
+
+Summary of the contributions by author:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+**Markus43**: Updated AlphanumericKeyboard to support multi-layout
+functionality and a language picker. Introduced the FluteLayout class to
+handle keyboard layout data and enable multiple layouts simultaneously.
+This enhancement allows users to switch between languages or custom
+layouts at runtime using a dedicated picker menu. The feature includes
+built-in layouts for various languages, layout switching state
+management, and visual indicators for the active layout. The example app
+and README were also updated to showcase this new functionality.
+
+Here the commits of **Markus43** in detail:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+- **Markus43** on 2026-06-15: `Add multi-layout support and language
+  picker to
+  AlphanumericKeyboard <https://github.com/amarula/flutekeyboard/commit/453b8c3033b1e505303efc2236ee1588b9cfae42>`__
+
+check-jenkins
+-------------
+
+Repository URL: https://github.com/amarula/check-jenkins
+
+.. _summary-of-the-contributions-by-author-06-6:
+
+Summary of the contributions by author:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+**Michael Trimarchi**: Michael Trimarchi implemented several key
+enhancements over a 3-month period. He introduced a mechanism to skip
+coverage fetches when the plugin is unavailable, preventing unnecessary
+API requests. Additionally, he added functionality to track and skip
+enrichment fetches for endpoints that return 403 errors, reducing the
+load on Jenkins instances without certain plugins. Michael also
+parallelized various fetch operations to improve efficiency, such as
+tool-level issue fetches and coverage endpoint requests. These changes
+optimize resource utilization and enhance the overall performance of the
+system.
+
+.. _here-the-commits-of-michael-trimarchi-06-2:
+
+Here the commits of **Michael Trimarchi** in detail:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+- **Michael Trimarchi** on 2026-06-24: `Add code coverage integration
+  from Jenkins Code Coverage API
+  plugin <https://github.com/amarula/check-jenkins/commit/5ebad4e0e78ac549eb8c529b8cd538c1e5f34e7b>`__
+- **Michael Trimarchi** on 2026-06-25: `web/coverage: Cache the correct
+  statusLink for Code Coverage check
+  runs <https://github.com/amarula/check-jenkins/commit/45649a0d5778885ea0598ab21fb975a12746dbd1>`__
+- **Michael Trimarchi** on 2026-06-25: `web/coverage: Add multi-layer
+  caching with IndexedDB
+  persistence <https://github.com/amarula/check-jenkins/commit/f3e99989519fc0a2f8912b065791073c25e1529d>`__
+- **Michael Trimarchi** on 2026-06-25: `web/coverage: Include attempt in
+  coverage cache and check
+  run <https://github.com/amarula/check-jenkins/commit/4c1e712155ef5ef95067f0f404e3f5bc7cab923f>`__
+- **Michael Trimarchi** on 2026-06-25: `README: Document code coverage
+  integration and
+  configuration <https://github.com/amarula/check-jenkins/commit/d423169caa1dd71212a34df6f89fa78d0e5ba458>`__
+- **Michael Trimarchi** on 2026-06-30: `web: Fix coverage column layout
+  flash and cross-project
+  visibility <https://github.com/amarula/check-jenkins/commit/2ac16263c79249a68c52ffb7ddafe55d32187594>`__
+- **Michael Trimarchi** on 2026-06-30: `web/coverage: Parallelize
+  fetchAllCoverage endpoint
+  requests <https://github.com/amarula/check-jenkins/commit/128c40f80b8c4f3680fe05fce8854f484a4e553e>`__
+- **Michael Trimarchi** on 2026-06-30: `web/coverage: Parallelize
+  IndexedDB read and findCompletedRun in
+  updateCache <https://github.com/amarula/check-jenkins/commit/76933bcf6959627dcd2137bc4a227c53764164b0>`__
+- **Michael Trimarchi** on 2026-06-30: `web/plugin: Run
+  prefetchCoverageRanges and showPercentageColumns in
+  parallel <https://github.com/amarula/check-jenkins/commit/913447c620a0bdf0da2a796a0196c6bb4cbc6c83>`__
+- **Michael Trimarchi** on 2026-06-30: `web/fetcher: Parallelize per-run
+  enrichment
+  fetches <https://github.com/amarula/check-jenkins/commit/3e1b2e7f036546969334f5cd08bec57f394c3194>`__
+- **Michael Trimarchi** on 2026-06-30: `web/fetcher: Parallelize
+  tool-level issue fetches in
+  buildWarnings <https://github.com/amarula/check-jenkins/commit/c59697ca8bdfd7763ff6cf47f6c4415b0b51e887>`__
+- **Michael Trimarchi** on 2026-06-30: `web: Add test infrastructure
+  (setup, utils, runner
+  script) <https://github.com/amarula/check-jenkins/commit/53291f392478998faa10ad1a090d4991a26e90d3>`__
+- **Michael Trimarchi** on 2026-06-30: `web/BUILD: Add test targets for
+  web-test-runner <https://github.com/amarula/check-jenkins/commit/cc703037b1ee42d4717588d7d91cafa479978387>`__
+- **Michael Trimarchi** on 2026-06-30: `web/coverage: Export parsePct,
+  parseProject and extract
+  getLowCoverageReason <https://github.com/amarula/check-jenkins/commit/94cfdfe70fc6628e2db92a13f31ef2b9470909a3>`__
+- **Michael Trimarchi** on 2026-06-30: `web/coverage_test: Add tests for
+  parsers, formatters and
+  analyzers <https://github.com/amarula/check-jenkins/commit/6d00f720db5435279e1057a11af8214f1c3ce74d>`__
+- **Michael Trimarchi** on 2026-06-30: `web/fetcher_test: Add tests for
+  category mapping, tag colors, and run
+  conversion <https://github.com/amarula/check-jenkins/commit/b53fd85120b906f2ae21e37bc01a9eea6a157d30>`__
+- **Michael Trimarchi** on 2026-06-30:
+  `web/coverage-percentage-views_test: Add tests for Lit web
+  components <https://github.com/amarula/check-jenkins/commit/e4bff0da4b28d2af4ab7870890918e7520c00fc2>`__
+- **Michael Trimarchi** on 2026-06-30: `web/fetcher: Add
+  unavailableEndpoints tracking for 403
+  responses <https://github.com/amarula/check-jenkins/commit/718e6bea069cb476ee3b52db61e1826993a1d59f>`__
+- **Michael Trimarchi** on 2026-06-30: `web/fetcher: Guard enrichment
+  fetches with unavailableEndpoints
+  check <https://github.com/amarula/check-jenkins/commit/58bf1cb5826015fc5917df9507c8680b0df6e12f>`__
+- **Michael Trimarchi** on 2026-06-30: `web/coverage: Skip coverage
+  fetches when plugin is
+  unavailable <https://github.com/amarula/check-jenkins/commit/50753f8afa5ff5721d7f6fa5367cd0a37b4398b3>`__
+
+openid-plugin
+-------------
+
+Repository URL: https://github.com/jenkinsci/openid-plugin.git
+
+.. _summary-of-the-contributions-by-author-06-7:
+
+Summary of the contributions by author:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+**Michael Trimarchi**: Michael Trimarchi added @RequirePOST to the
+OpenIdLoginService to prevent CSRF attacks on login endpoints by
+ensuring that doStartLogin and doStartAssociate now only accept POST
+requests. This change mitigates the risk of attackers tricking victims
+into initiating OpenID logins or associations via potentially malicious
+GET requests. Additionally, in the openid-prototype.js file, Michael
+Trimarchi removed the eval() function for javascript: URLs to eliminate
+a DOM XSS vector, as there is no legitimate use case for it.
+Furthermore, he fixed broken provider loading caused by variable
+shadowing in the same file, ensuring that OpenID provider buttons now
+load correctly by addressing the issue with local variable declarations
+conflicting with global variables.
+
+.. _here-the-commits-of-michael-trimarchi-06-3:
+
+Here the commits of **Michael Trimarchi** in detail:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+- **Michael Trimarchi** on 2026-06-28: `openid-prototype.js: Fix broken
+  provider loading from variable
+  shadowing <https://github.com/jenkinsci/openid-plugin/commit/e4f412497aa02036234f0b92b425469d19015699>`__
+- **Michael Trimarchi** on 2026-06-28: `openid-prototype.js: Remove
+  eval() of javascript: URLs to fix DOM XSS
+  vector <https://github.com/jenkinsci/openid-plugin/commit/18ea7b3e6cb61c75b4055dee2497fb67802c5540>`__
+- **Michael Trimarchi** on 2026-06-28: `OpenIdLoginService: Add
+  @RequirePOST to prevent CSRF on login
+  endpoints <https://github.com/jenkinsci/openid-plugin/commit/f1efefbbc8b26f79bdd2ff9ec248acec4527a55d>`__
+
+buildroot
+---------
+
+Repository URL: https://gitlab.com/buildroot.org/buildroot.git
+
+.. _summary-of-the-contributions-by-author-06-8:
+
+Summary of the contributions by author:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+**Dario Binacchi**: Dario Binacchi updated the libgphoto2 package to
+version 2.5.34, incorporating a merged patch. In addition, the armadillo
+package was upgraded to version 15.2.7, and the less package was updated
+to version 704. These updates ensure that the latest features and
+improvements are available to users, enhancing the overall functionality
+and performance of the software packages.
+
+.. _here-the-commits-of-dario-binacchi-06-1:
+
+Here the commits of **Dario Binacchi** in detail:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+- **Dario Binacchi** on 2026-06-08: `package/libgphoto2: bump to version
+  2.5.34 <https://gitlab.com/buildroot.org/buildroot/commit/8b05934511aba4f0323b03548faae6ddc29f941a>`__
+- **Dario Binacchi** on 2026-06-08: `package/armadillo: bump to version
+  15.2.7 <https://gitlab.com/buildroot.org/buildroot/commit/96105fef9e8d26ef0bf44627738c46aca3763e5a>`__
+- **Dario Binacchi** on 2026-06-08: `package/less: bump to version
+  704 <https://gitlab.com/buildroot.org/buildroot/commit/df53284720d4529652cef174d554498b912413b1>`__
+
+This overview highlights the continuous effort and innovation from our
+development team. We look forward to bringing even more exciting updates
+in the future!
+
+--------------
+
+*Generated by the Git Commit Article Generator*
+
+.. tip::
+   Want to contribute to the open source projects featured in these reports?
+   Amarula Solutions is always looking for collaboration opportunities in
+   embedded Linux, Buildroot, Yocto, U-Boot, and Zephyr.
+   `Contact our open source team <https://www.amarulasolutions.com/contact/>`_

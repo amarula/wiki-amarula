@@ -41,6 +41,9 @@ We publish monthly reports tracking all upstream commits across our repositories
    :maxdepth: 1
    :caption: 2026 Reports
 
+   reports/report-06-2026
+   reports/report-05-2026
+   reports/report-04-2026
    reports/report-03-2026
    reports/report-02-2026
    reports/report-01-2026

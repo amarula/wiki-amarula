@@ -1,0 +1,781 @@
+Today 2026-05-31 Developments: A Look at Our Codebase (2026-05 Monthly Review)
+==============================================================================
+
+.. note:: **TL;DR**
+   - Monthly summary of Amarula Solutions' **open source contributions** across repositories — covering commits to **openembedded-core, Buildroot, Linux kernel, U-Boot, Zephyr, and Jenkins plugins** grouped by author.
+   - Auto-generated report from the Git Commit Article Generator.
+
+We’re excited to share a summary of the significant progress made across
+our repositories in the month of 2026-05. Our dedicated team has been
+busy pushing new features, refining existing functionalities, and
+enhancing the overall stability of our products.
+
+Here’s a breakdown of key contributions by repository:
+
+axelera-aisbc-bsp
+-----------------
+
+Repository URL: https://github.com/axelera-ai-hub/axelera-aisbc-bsp.git
+
+Summary of the contributions by author:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+**Michael Trimarchi**: Michael Trimarchi updated the kernel module to
+release v1.6.1, addressing YouTrack issue AXELERA-199. Additionally, a
+configuration file was modified to enable device reboot after 5 seconds
+in case of a kernel panic. Furthermore, the .gitignore file was adjusted
+to exclude all meta layers and created directories, enhancing project
+organization and cleanliness.
+
+Here the commits of **Michael Trimarchi** in detail:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+- **Michael Trimarchi** on 2026-04-19: `.gitignore: Exclude all the meta
+  layers and created
+  directory <https://github.com/axelera-ai-hub/axelera-aisbc-bsp/commit/b2ead16b6f639e59e7e7a486aac679e6007fb4a6>`__
+- **Michael Trimarchi** on 2026-05-14: `recipes-kernel:
+  axelera.cfg <https://github.com/axelera-ai-hub/axelera-aisbc-bsp/commit/35c8a00d97cd7c063a02eeaca6e0b4cb685633f7>`__
+- **Michael Trimarchi** on 2026-05-26: `recipes-kernel: kernel-module:
+  Bump to release
+  v1.6.1 <https://github.com/axelera-ai-hub/axelera-aisbc-bsp/commit/604318eb6f16ef5ac6e3255b7ebc6ceb6983dc93>`__
+
+**Patrick Barsanti**: Updated the voyager-image in meta-axelera by
+adding optee-rockchip to enable optee support, addressing YouTrack issue
+AXELERA-194. Additionally, included a recipe for optee-rockchip to
+facilitate the automatic startup of the tee-supplicant service alongside
+copying pre-built binaries from Rockchip to the RPMB partition of the
+eMMC for system support.
+
+Here the commits of **Patrick Barsanti** in detail:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+- **Patrick Barsanti** on 2026-05-22: `meta-axelera: Add
+  optee-rockchip <https://github.com/axelera-ai-hub/axelera-aisbc-bsp/commit/a8f8039553db0af43041ce36bdf6c8dd1c718150>`__
+- **Patrick Barsanti** on 2026-05-22: `meta-axelera: voyager-image: Add
+  optee-rockchip <https://github.com/axelera-ai-hub/axelera-aisbc-bsp/commit/f550c92fc62f262e72e401b301040b9ff911d776>`__
+
+chatgpt-code-review-gerrit-plugin
+---------------------------------
+
+Repository URL:
+https://github.com/amarula/chatgpt-code-review-gerrit-plugin.git
+
+.. _summary-of-the-contributions-by-author-05-1:
+
+Summary of the contributions by author:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+**Michael Trimarchi**: Michael Trimarchi updated the Jenkinsfile to skip
+tests during the build stage and added a static analysis step. He also
+ensured that the cleanWs action always occurs in the finally block.
+Additionally, Michael used a large cluster to build the plugin and added
+a link to failing/unstable CI results for better visibility.
+Furthermore, he included an explanation of errors in case of failure and
+added code coverage recording along with unit test recording in the
+Jenkinsfile. Lastly, Michael added the first release of the verification
+pipeline and integrated static analysis and linting tools (Checkstyle,
+PMD, SpotBugs, ESLint) into the Maven configuration to enhance code
+quality and maintainability.
+
+.. _here-the-commits-of-michael-trimarchi-05-1:
+
+Here the commits of **Michael Trimarchi** in detail:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+- **Michael Trimarchi** on 2026-05-05: `build: add static analysis and
+  linting tools to Maven
+  configuration <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/8bcf0cede4266fd5cfa72b7a3a16446f8bcc5321>`__
+- **Michael Trimarchi** on 2026-05-06: `.gerrit/Jenkinsfile: Add first
+  release of verification
+  pipeline <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/3014e2af6cda11a912850b9f3c6fab19a547decb>`__
+- **Michael Trimarchi** on 2026-05-06: `Add missing eslint configuration
+  file <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/a8893b531d5aadac40c0a3a91ba0c2c6ca5edcc9>`__
+- **Michael Trimarchi** on 2026-05-06: `.gerrit/Jenkinsfile: Add static
+  analysis
+  step <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/e39444e657e959ae0221a2b0ff86a1f70c02431c>`__
+- **Michael Trimarchi** on 2026-05-06: `.gerrit/Jenkinsfile: Add unit
+  test
+  recording <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/ce4cf3b87cf4cfca3e64c0dcdb8a0cdfa937ba28>`__
+- **Michael Trimarchi** on 2026-05-06: `pom.xml: Add junit generation
+  output
+  file <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/9761ed259f478dd731fd1a312af5fed8ebd097dd>`__
+- **Michael Trimarchi** on 2026-05-06: `.gerrit/Jenkinsfile: Avoid to
+  collect as aggregate
+  results <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/b6ff72c67e8c50de7afa1315e68181fbd37382fe>`__
+- **Michael Trimarchi** on 2026-05-06: `pom.xml: Add code coverage
+  support <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/175a9e15dd2ae8bda112807283403f2f5c8ae82b>`__
+- **Michael Trimarchi** on 2026-05-06: `.gerrit/Jenkinsfile: Add code
+  coverage
+  recording <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/fa851b5a40fd614eecf1ed1fca9faccf4e086cef>`__
+- **Michael Trimarchi** on 2026-05-08: `.gerrit/Jenkinsfile: Run explain
+  error in case of
+  failure <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/926264bdac6151d28889da41b4bed5f1096c48ca>`__
+- **Michael Trimarchi** on 2026-05-12: `.gerrit/Jenkinsfile: Add the
+  link of the failing/unstable CI
+  result <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/0219b512491487eef80d5140d3aa022943c2ecc0>`__
+- **Michael Trimarchi** on 2026-05-12: `.gerrit/Jenkinsfile: Use a large
+  cluster to build the
+  plugin <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/0692ddf827137b0f8cf082c10bc4bbd9266e173a>`__
+- **Michael Trimarchi** on 2026-05-12: `.gerrit/Jenkinsfile: cleanWs
+  always in finally
+  action <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/350c94f19516c56e03e9b7766b3f0a1f67e31bb2>`__
+- **Michael Trimarchi** on 2026-05-24: `.gerrit/Jenkinsfile: Skip test
+  during build
+  stage <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/de619d4ae52da8c79cf19c0bab0e622c672b6c66>`__
+
+**Patrizio Gelosi**: Patrizio Gelosi bumped the version to 4.0.0 and
+integrated the AI Review Agent from Gerrit 3.14.0, enabling a chatbot
+interface within Gerrit change pages. This change centralized AI
+functionality control, migrated to new OpenAI APIs, added support for
+multiple providers and models, and improved code context policies for
+efficient AI model behavior. The update also included fixes for crashes,
+conversation reuse, JSON parsing, and code lookup issues, as well as
+enhancements for user avatars, model selection, and UI readability in
+the Review Agent sidebar.
+
+Here the commits of **Patrizio Gelosi** in detail:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+- **Patrizio Gelosi** on 2026-04-24: `feat: switch to float-based
+  scoring <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/47047c03b7124af24a396ff24340acbb3d855fe4>`__
+- **Patrizio Gelosi** on 2026-04-24: `fix: correct token estimator
+  models with
+  LangChain <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/a194ef03f8463d37c9f36939c20d12869dfa81ba>`__
+- **Patrizio Gelosi** on 2026-04-24: `fix: reset history on
+  /forget_thread <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/7c889d1a34927282e5d0fdfca044337ff474aaef>`__
+- **Patrizio Gelosi** on 2026-04-24: `chore: reduce LangChain log
+  duplication <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/b3ec41bcd14e597501a8d4735745f20632be71e4>`__
+- **Patrizio Gelosi** on 2026-04-24: `feat: extend
+  taskSpecificAssistants to
+  LangChain <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/509a0a4693c2c6b05a36246b74855539cdc7adf1>`__
+- **Patrizio Gelosi** on 2026-04-27: `feat: remove system message on +1
+  reviews <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/f0713cf44b6d95498cbb3d2eb6fd9518d91aa1b4>`__
+- **Patrizio Gelosi** on 2026-04-27: `feat: hide utility commands from
+  Gerrit
+  comments <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/76f8f0ad542fe66ad0ba88b65617131c11bae8e5>`__
+- **Patrizio Gelosi** on 2026-04-27: `fix: filter patchset by
+  enabledFileExtensions <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/41297774a8101c555ccdc7e2ca5047fa5a4c69a9>`__
+- **Patrizio Gelosi** on 2026-04-27: `fix: wrong prompt header in
+  patchset
+  review <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/f52e4593b15117b0ea9063cbaa0e7beaa86c1335>`__
+- **Patrizio Gelosi** on 2026-04-27: `fix: add patch context to commit
+  message
+  review <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/38011358574cfa94ac13273958915a732951e5bd>`__
+- **Patrizio Gelosi** on 2026-04-27: `fix: reuse conversation context
+  for
+  reviews <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/df706cd7f83582c32f3f26042abbfd1ab9b191c2>`__
+- **Patrizio Gelosi** on 2026-04-28: `feat: support Ollama via LangChain
+  transport <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/c34f377dffe5a88c873a3e551726c61cef6ae0b5>`__
+- **Patrizio Gelosi** on 2026-04-28: `feat: add code review scores to
+  Review
+  Agent <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/25156b9a8a0abaa041032548e3625c5cae0d7fab>`__
+- **Patrizio Gelosi** on 2026-04-28: `refactor: modularize JS files by
+  responsibility <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/78154b90738e0c0a1ebd927bf2560ca0fb2ac4c5>`__
+- **Patrizio Gelosi** on 2026-04-28: `feat: handle no-temperature
+  models <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/2d93320e357af62ddf911236b894607b2ae4380d>`__
+- **Patrizio Gelosi** on 2026-04-29: `feat: show model in collapsed
+  dropdown <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/57222b2f6afeeb3c6b516abd1d013015e188e1c5>`__
+- **Patrizio Gelosi** on 2026-04-29: `fix: show current model before
+  each
+  review <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/530b6f7d9d61accdb19ca4a862b5cdb6e2417370>`__
+- **Patrizio Gelosi** on 2026-04-29: `feat: show actual patch
+  prompt <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/b286caf3bbd4e2ef953998d9e8eeafdbb18cbe39>`__
+- **Patrizio Gelosi** on 2026-04-29: `feat: add patchContextLines config
+  setting <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/c757a4431178ae26f02c4c9ccbcbd3e0f176ca1f>`__
+- **Patrizio Gelosi** on 2026-04-29: `fix: /configure not working in
+  sidebar <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/60fea73c39e2ec6209c6c73b29efe42ef1368914>`__
+- **Patrizio Gelosi** on 2026-04-29: `feat: harmonize plugin prompts
+  with Gerrit
+  prompts <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/29c2637d7ca7ac9baf588c46693f57913392522d>`__
+- **Patrizio Gelosi** on 2026-04-29: `feat: extend /show –instructions
+  to all
+  scopes <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/19b9179a0adf9ab22391a2867c53ada8468c9342>`__
+- **Patrizio Gelosi** on 2026-04-30: `feat: extend /show –prompts to all
+  scopes <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/664a920f804851392d3151c350c9940b4fb4d2a1>`__
+- **Patrizio Gelosi** on 2026-04-30: `feat: add scope filter to /show
+  commands <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/be0b2200a79cf51f2f7f4d6741c3f864b9d73877>`__
+- **Patrizio Gelosi** on 2026-04-30: `refactor: unify
+  DebugCodeBlocksPrompting
+  logic <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/43d3a9c694bf2d38ee8dcdb548eb8c88adf627e7>`__
+- **Patrizio Gelosi** on 2026-04-30: `fix: prevent Review Agent hang in
+  “Thinking…” <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/2de8ee1943efb2eef9ae8e9da348e609c4e7a4a9>`__
+- **Patrizio Gelosi** on 2026-04-30: `fix: skip global score update for
+  scoped
+  reviews <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/9efdf40e33b99c0714d823f00d1382d9ed989585>`__
+- **Patrizio Gelosi** on 2026-04-30: `perf: reduce delay in Review Agent
+  UI
+  updates <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/c147ff2a7eab00de4dad5972eb8a2be3090ebff0>`__
+- **Patrizio Gelosi** on 2026-05-04: `feat: improve ON_DEMAND code
+  context
+  efficiency <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/e64269aec25f02b0fad9932726ea5353739a4223>`__
+- **Patrizio Gelosi** on 2026-05-04: `feat: add aiMaxToolResponseRounds
+  setting <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/e60965bf1b92b7c1216f62a679518d54be8e78bb>`__
+- **Patrizio Gelosi** on 2026-05-04: `fix: avoid race overriding sidebar
+  error
+  status <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/077642bc7ccf90e608f3a7ff54014681a61f675e>`__
+- **Patrizio Gelosi** on 2026-05-06: `feat: integrate mock AI backend
+  support <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/06b70f0dbacfc44bf1a1ee234e18dcc59ae294d1>`__
+- **Patrizio Gelosi** on 2026-05-06: `chore: update .gitignore with node
+  exclusions <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/b07a4a3f38a82e73f828dccb7ba0990ac222f802>`__
+- **Patrizio Gelosi** on 2026-05-06: `fix: address ESLint
+  findings <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/048d9544a4eec6e5cb1d045e029c414e12c09c5b>`__
+- **Patrizio Gelosi** on 2026-05-06: `fix: suppress low-severity
+  Checkstyle
+  output <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/21e4d748388885ffbc3473eaec8e62ffb30f5007>`__
+- **Patrizio Gelosi** on 2026-05-07: `feat: rename multi-agent config
+  option <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/c0ed996e62a4a93aa124e4af9de06a3e3d28e114>`__
+- **Patrizio Gelosi** on 2026-05-08: `feat: support OpenAI conversations
+  in
+  LangChain <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/bae7eb3e9adeaa65376d3aca0592643f3195cf34>`__
+- **Patrizio Gelosi** on 2026-05-08: `feat: add Ollama runtime
+  config <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/85161ffb98170b2def8ee66b000a904c0bfedee5>`__
+- **Patrizio Gelosi** on 2026-05-11: `feat: migrate plugin data to
+  DB <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/6bdc60b2a1b3fc44eda6623be63c2e151b37fbbe>`__
+- **Patrizio Gelosi** on 2026-05-13: `chore: add LangChain debug
+  logging <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/cafbafea363b2177c069a9da7615ac3d68056fa4>`__
+- **Patrizio Gelosi** on 2026-05-13: `fix: avoid mixed LangChain
+  prompts <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/7620450d96b0636ef451209289f37da6c6994288>`__
+- **Patrizio Gelosi** on 2026-05-13: `fix: handle trailing AI JSON
+  whitespace <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/18120e4dd522d081454b2678bee821632f5ad6b7>`__
+- **Patrizio Gelosi** on 2026-05-14: `feat: route multi-agent user
+  messages <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/094d55dd82e0ffd58f619e8a7ed358a7e882b789>`__
+- **Patrizio Gelosi** on 2026-05-14: `fix: avoid Gemini failures with
+  ON_DEMAND
+  context <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/c6893ec70e501eb6aa6d2773e0cc8b463de144a6>`__
+- **Patrizio Gelosi** on 2026-05-15: `fix: handle mixed inline code
+  snippets <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/5b10b9cb1a7f82c5c1ffc8df19e2078fdadd5582>`__
+- **Patrizio Gelosi** on 2026-05-15: `refactor: rename LangChain
+  executor <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/a20eafc618cc712a397baef3bc824ee4d6928cab>`__
+- **Patrizio Gelosi** on 2026-05-15: `chore: generalize AI message
+  wording <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/7987a6a26f66ce991d7ecd8da1098aa3d4efc850>`__
+- **Patrizio Gelosi** on 2026-05-19: `feat: add reply
+  separators <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/299ccb282e95d8243b25accaa154a8477d7ce53a>`__
+- **Patrizio Gelosi** on 2026-05-20: `refactor: replace turn mixin with
+  class <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/301d7e493be0c42cfbb59fe77ee0dd75140bd7a3>`__
+- **Patrizio Gelosi** on 2026-05-21: `refactor: centralize JSON
+  utils <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/e91cb59ea7f119d8e953c8147a3edfc2bfc76f1c>`__
+- **Patrizio Gelosi** on 2026-05-21: `fix: show Code-Review -1 changes
+  in Agent
+  sidebar <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/365d75a860d42d0129e627d1c4456b77ea5c77a7>`__
+- **Patrizio Gelosi** on 2026-05-22: `feat: drop AI Assistant
+  tab <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/9b8b11d87db1bacd58174942e21279980648c3fb>`__
+- **Patrizio Gelosi** on 2026-05-22: `fix: handle unknown
+  commands <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/4636b68b8436af2f76e5dfe0f6674ce96f08b122>`__
+- **Patrizio Gelosi** on 2026-05-22: `feat: reduce LangChain OpenAI
+  context <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/5c86d2a74dba389566ccd75ea09e24b5151ab2d7>`__
+- **Patrizio Gelosi** on 2026-05-25: `fix: reuse OpenAI conversation
+  after
+  review <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/87519e4b63f9119349a3c494dedea9e30f47bea9>`__
+- **Patrizio Gelosi** on 2026-05-26: `feat: hide default model before
+  each
+  review <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/15d8f1d790c25742622fea7ecf1d1181e462b223>`__
+- **Patrizio Gelosi** on 2026-05-26: `feat: centralize provider
+  transport <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/1ae8932953c0c5c628484aaee7e5baf7ffa10f2a>`__
+- **Patrizio Gelosi** on 2026-05-27: `docs: refresh README
+  content <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/a384e9add5407806547a991dc482e51f863008cb>`__
+- **Patrizio Gelosi** on 2026-05-27: `chore: bump to version
+  4.0.0 <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/8a699ccd426c8a40c4455552b50b0e0436318c1c>`__
+- **Patrizio Gelosi** on 2026-05-28: `fix: override AI models per
+  project <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/5ffe80169e2d14c34d1f7f950abc711633005c62>`__
+- **Patrizio Gelosi** on 2026-05-28: `feat: support Gerrit gravatar for
+  AI user
+  avatars <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/9aa45c1f672e47a5389a827f66443328b2332d57>`__
+- **Patrizio Gelosi** on 2026-05-29: `refactor: centralize AI user
+  detection <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/acb74bceb36707d6f656ee2602dfe42834c8e261>`__
+
+flutekeyboard
+-------------
+
+Repository URL: https://github.com/amarula/flutekeyboard.git
+
+.. _summary-of-the-contributions-by-author-05-2:
+
+Summary of the contributions by author:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+**Andrea Ricchi**: Andrea Ricchi added a .github/CODEOWNERS file. This
+file helps define code ownership within the project, ensuring that
+specific individuals or teams are responsible for reviewing and
+approving changes to certain areas of the codebase.
+
+Here the commits of **Andrea Ricchi** in detail:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+- **Andrea Ricchi** on 2026-05-19: `Add .github/CODEOWNERS
+  file <https://github.com/amarula/flutekeyboard/commit/34e21f14e48ff2ca54d7684a1a18bd318ae10a13>`__
+
+**Patrick Barsanti**: Patrick Barsanti added a custom layout feature to
+the NumericKeyboard, enabling custom layouts similar to the
+AlphanumericKeyboard. This enhancement includes support for special keys
+like return, backspace, and blank. Additionally, a new example was added
+showcasing a custom numeric layout with hexadecimal values and two extra
+columns on the right. Furthermore, a BlankButton was introduced to the
+AlphanumericKeyboard, providing users with the ability to replace
+certain keys with a blank key for alignment purposes. Lastly, Patrick
+Barsanti added FVM support by including the stable version of Flutter in
+the project’s configuration file and updating the gitignore to include
+the .fvm directory.
+
+.. _here-the-commits-of-patrick-barsanti-05-1:
+
+Here the commits of **Patrick Barsanti** in detail:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+- **Patrick Barsanti** on 2026-05-06: `Add FVM
+  support <https://github.com/amarula/flutekeyboard/commit/8474e0e0ace9202fd040aaf32a655c88baa6199a>`__
+- **Patrick Barsanti** on 2026-05-06: `AlphanumericKeyboard: Add
+  BlankButton <https://github.com/amarula/flutekeyboard/commit/729a5dc38c2a1e406b5c34bd60fc66f6b868c9d5>`__
+- **Patrick Barsanti** on 2026-05-06: `NumericKeyboard: Replace
+  placeholder with blank
+  button <https://github.com/amarula/flutekeyboard/commit/d508e2a5c355a8f06eaccef58a4238c5c5bed580>`__
+- **Patrick Barsanti** on 2026-05-07: `Add custom layout for
+  NumericKeyboard <https://github.com/amarula/flutekeyboard/commit/2466eed74269f7e99d5dc035e876d687c21df2e0>`__
+
+git-analyzer
+------------
+
+Repository URL: https://github.com/amarula/git-analyzer.git
+
+.. _summary-of-the-contributions-by-author-05-3:
+
+Summary of the contributions by author:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+**Dario Binacchi**: Dario Binacchi added repositories for managing FWU
+metadata on the STM32MP25 platform, including the projects related to
+recent Firmware Update activities. This enhancement enables efficient
+management of firmware metadata for the specified platform, contributing
+to smoother FWU processes and overall system reliability.
+
+Here the commits of **Dario Binacchi** in detail:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+- **Dario Binacchi** on 2026-05-01: `Add repos for STM32MP25 FWU
+  metadata
+  management <https://github.com/amarula/git-analyzer/commit/a9886cd44f6ab4ced7762ff4b9ec4a99f1a917d3>`__
+
+check-jenkins
+-------------
+
+Repository URL: https://github.com/amarula/check-jenkins
+
+.. _summary-of-the-contributions-by-author-05-4:
+
+Summary of the contributions by author:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+**Michael Trimarchi**: Michael Trimarchi corrected a typo in
+\`fetcher.ts\` and fixed the name of a variable. Additionally, in the
+\`web/fetcher\` module, base severity categories were supported, tag
+coloring logic was refactored for improved readability, and a low size
+threshold check was added. Furthermore, tooltips for build failed
+reasons were added, duplicated entries in the check tab were fixed, and
+boolean values were converted. Lastly, error explanation functionality
+was added, try-catch blocks were implemented to handle exceptions,
+grammar and spelling errors were fixed, unnecessary semicolons were
+removed, and asynchronous functionality was improved in the push
+function.
+
+.. _here-the-commits-of-michael-trimarchi-05-2:
+
+Here the commits of **Michael Trimarchi** in detail:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+- **Michael Trimarchi** on 2026-05-09: `fetchers.ts: Deduct the type
+  from the return
+  function <https://github.com/amarula/check-jenkins/commit/4f99b850bf2373d350e320a5976129cdb08939aa>`__
+- **Michael Trimarchi** on 2026-05-09: `fetcher.ts: Add away to the push
+  function becasue is
+  async <https://github.com/amarula/check-jenkins/commit/9bff0d783b03fe11b872478e66d1bdf90fd5718e>`__
+- **Michael Trimarchi** on 2026-05-09: `fetcher.ts: Remove ; that is
+  just not
+  needed <https://github.com/amarula/check-jenkins/commit/6223f833fa74950889ee4c22ea58cc6880efcd7c>`__
+- **Michael Trimarchi** on 2026-05-09: `fetcher.ts: Fix grammar
+  spelling <https://github.com/amarula/check-jenkins/commit/61e3b83fc81e038e8691998672154adc9eb4956b>`__
+- **Michael Trimarchi** on 2026-05-09: `fetcher.ts: Use try catch for
+  toJson function to avoid
+  exception <https://github.com/amarula/check-jenkins/commit/0eb0bed8b1bddd5cb8f4e839741251c3ef7d0c23>`__
+- **Michael Trimarchi** on 2026-05-09: `fetcher.ts: Add explain error
+  plugin error
+  fetch <https://github.com/amarula/check-jenkins/commit/3199568a52a35f8f818c7013167ffb4571d3a663>`__
+- **Michael Trimarchi** on 2026-05-09: `fetcher.ts: Check if the json is
+  null and data are
+  valid <https://github.com/amarula/check-jenkins/commit/10e2380a7ab13acc23e225e8d0941bd343e21dd8>`__
+- **Michael Trimarchi** on 2026-05-09: `fetcher.ts: Drop Boolean and
+  convert to
+  boolean <https://github.com/amarula/check-jenkins/commit/26e9d37bf5045989369971c1811324ee8dacb601>`__
+- **Michael Trimarchi** on 2026-05-09: `fetcher.ts: Fix duplicated entry
+  in check
+  tab <https://github.com/amarula/check-jenkins/commit/b03ff59aaac8b2158fcaed3392bca6d797ae76ed>`__
+- **Michael Trimarchi** on 2026-05-09: `fetcher.ts: Add build failed
+  reason as
+  tooltip <https://github.com/amarula/check-jenkins/commit/ff5734ee303b07fbfef450b51235a98fb572a51d>`__
+- **Michael Trimarchi** on 2026-05-23: `web/fetcher: Support base
+  severity categories and refactor tag
+  coloring <https://github.com/amarula/check-jenkins/commit/d1ffa0667af3182aa565ccadabb5d2715454c6c0>`__
+- **Michael Trimarchi** on 2026-05-23: `web/fetcher.ts: Fix name of
+  variable <https://github.com/amarula/check-jenkins/commit/df3a90b6346edc4586db79ea73cd025d2ee61eb9>`__
+- **Michael Trimarchi** on 2026-05-24: `web: Correct statusDesciption
+  typo in
+  fetcher.ts <https://github.com/amarula/check-jenkins/commit/eb4fb9b13f141fc2c06cc77f9851cb666e6b5f49>`__
+
+libcppconnman
+-------------
+
+Repository URL: https://github.com/amarula/libcppconnman.git
+
+.. _summary-of-the-contributions-by-author-05-5:
+
+Summary of the contributions by author:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+**Eduardo Gonzalez**: Added tethering tests to gconnman_tech_test.cpp
+and implemented a tether command in connmanctl.cpp. Stopped using loops
+for technologies type match in connmanctl.cpp and added tethering
+methods in connman:technology, including setting methods for
+tethering-properties. Installed the readline dependency in
+conf-build-test.yml and added readline functionality in connmanctl_dbus
+example for improved command string manipulation. Fixed a logic jump in
+connmanctl.cpp and removed the use of cout and print methods, requiring
+the consumer to define the output stream. Also, added the misspelled
+property value for ‘preferred’ in connman service.
+
+Here the commits of **Eduardo Gonzalez** in detail:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+- **Eduardo Gonzalez** on 2026-05-05: `Add readline in connmanctl
+  example <https://github.com/amarula/libcppconnman/commit/7d6c245a019b1f88837e5e4ca8fd00ada05eb942>`__
+- **Eduardo Gonzalez** on 2026-05-08: `Remove use of cout and
+  print <https://github.com/amarula/libcppconnman/commit/a1c11fd675d04c9c92fa428927cc2b659f707baf>`__
+- **Eduardo Gonzalez** on 2026-05-08: `connmanctl.cpp: Fix logic
+  jump <https://github.com/amarula/libcppconnman/commit/0ace17ee2a4e6799b3e44e1a94abe424a0b81559>`__
+- **Eduardo Gonzalez** on 2026-05-12: `gconnman_service.cpp: Add connman
+  misspelled
+  word <https://github.com/amarula/libcppconnman/commit/bc388a370a39336b0f7ddf57bb9ad304fe4ce0ab>`__
+- **Eduardo Gonzalez** on 2026-05-12: `conf-build-test.yml: Install
+  readline
+  dependency <https://github.com/amarula/libcppconnman/commit/4daec534b8d61bacb31fc4058014f790d3503a8a>`__
+- **Eduardo Gonzalez** on 2026-05-12: `connman:technology: Add tethering
+  methods <https://github.com/amarula/libcppconnman/commit/01edd38df9907eeda53a35afd1f77e9fa82bf4e3>`__
+- **Eduardo Gonzalez** on 2026-05-12: `connmanctl.cpp: Stop using loop
+  for technologies type
+  match <https://github.com/amarula/libcppconnman/commit/a6500e5bcee43e5123c756e0c87fed3a16b684da>`__
+- **Eduardo Gonzalez** on 2026-05-12: `connmanctl.cpp: Add tether
+  command <https://github.com/amarula/libcppconnman/commit/a32f56842db703ec3570ab58e21189bd56e4a239>`__
+- **Eduardo Gonzalez** on 2026-05-14: `gconnman_tech_test.cpp: Add
+  tethering
+  tests <https://github.com/amarula/libcppconnman/commit/499e497a78ea551f4a64fc0c32547f37fc0637d8>`__
+
+meta-mend
+---------
+
+Repository URL: https://github.com/amarula/meta-mend.git
+
+.. _summary-of-the-contributions-by-author-05-6:
+
+Summary of the contributions by author:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+**Francesco Nicoletta Puzzillo**: Francesco Nicoletta Puzzillo tidied up
+the README by fixing inconsistent spacing and lowercase in the Usage
+section. They added a requirement for cve-exclusion and documented the
+usage of the blacklist. In the ‘mend.bbclass’ file, Francesco Nicoletta
+Puzzillo renamed the variable MEND_BLACKLIST_PACKAGE to
+MEND_BLACKLIST_PACKAGES for clarity and added network permissions to the
+do_mend_check() function for interfacing with Mend APIs.
+
+Here the commits of **Francesco Nicoletta Puzzillo** in detail:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+- **Francesco Nicoletta Puzzillo** on 2026-05-29: `classes:
+  mend.bbclass: Add network permissions to
+  check <https://github.com/amarula/meta-mend/commit/ee4c9dc51c8e06c8acaac21a64d17b12f4623bd9>`__
+- **Francesco Nicoletta Puzzillo** on 2026-05-29: `classes:
+  mend.bbclass: Rename blacklist
+  variable <https://github.com/amarula/meta-mend/commit/da2a12c2df6c289e50267c37da99bef342dc50f2>`__
+- **Francesco Nicoletta Puzzillo** on 2026-05-29: `README: Add blacklist
+  usage
+  docs <https://github.com/amarula/meta-mend/commit/1552b658ec32f8e53d84fde12521463918cf8a73>`__
+- **Francesco Nicoletta Puzzillo** on 2026-05-29: `README: Add
+  cve-exclusion
+  requirement <https://github.com/amarula/meta-mend/commit/85ac20260f93758fc606129f3a6c909a9e12b7e5>`__
+- **Francesco Nicoletta Puzzillo** on 2026-05-29: `README: Tidy
+  up <https://github.com/amarula/meta-mend/commit/2e445197162e286426489b9a6c6b0681d2d2f910>`__
+
+**Michael Trimarchi**: Michael Trimarchi added a blacklist package
+option to the mend.bbclass, enabling the skipping of specified packages.
+This feature is particularly useful for avoiding issues with Linux
+kernel packages that may lead to incorrect results. Additionally, the
+ability to skip recipes when the nopackages class is inherited was
+implemented to exclude unnecessary files from the rootfs scan, as
+demonstrated with the gcc-initial example.
+
+.. _here-the-commits-of-michael-trimarchi-05-3:
+
+Here the commits of **Michael Trimarchi** in detail:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+- **Michael Trimarchi** on 2026-04-21: `classes: mend.bbclass: Skip
+  recipt where nopackages is
+  inherit <https://github.com/amarula/meta-mend/commit/af8f1c11e5c133d06d8f7129623770eba73a99b2>`__
+- **Michael Trimarchi** on 2026-04-21: `classes: mend.bbclass: Add
+  blacklist package
+  option <https://github.com/amarula/meta-mend/commit/ded540847321619d608095423d0059276f2fade2>`__
+
+explain-error-plugin
+--------------------
+
+Repository URL: https://github.com/jenkinsci/explain-error-plugin
+
+.. _summary-of-the-contributions-by-author-05-7:
+
+Summary of the contributions by author:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+**Michael Nazzareno Trimarchi**: Updated the code to disable Ollama
+thinking trace, preventing JSON parsing failures. Added support for the
+ErrorExplanationAction in the rest API to enhance functionality.
+
+Here the commits of **Michael Nazzareno Trimarchi** in detail:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+- **Michael Nazzareno Trimarchi** on 2026-05-04:
+  `ErrorExplanationAction: Add support of rest api
+  (#156) <https://github.com/jenkinsci/explain-error-plugin/commit/1284e4f2fdbbc8d1bba7c1d74aa86b9cfb286b4f>`__
+- **Michael Nazzareno Trimarchi** on 2026-05-08: `fix: disable Ollama
+  thinking trace to prevent JSON parsing failures
+  (#158) <https://github.com/jenkinsci/explain-error-plugin/commit/62a622177afff1ba4b2ff1e5e54e9c1d074a19f3>`__
+
+openid-plugin
+-------------
+
+Repository URL: https://github.com/jenkinsci/openid-plugin.git
+
+.. _summary-of-the-contributions-by-author-05-8:
+
+Summary of the contributions by author:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+**Michael Trimarchi**: Updated spotless formatting with no functional
+change. Added @NonNull annotation to OpenIdLoginService to reduce
+warnings. Implemented support for redirecting users to the originally
+requested URL after successful OpenID authentication to maintain user
+intent and enhance security by preventing Open Redirect vulnerabilities.
+
+.. _here-the-commits-of-michael-trimarchi-05-4:
+
+Here the commits of **Michael Trimarchi** in detail:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+- **Michael Trimarchi** on 2026-05-31: `Support redirecting to the
+  originally requested URL after
+  login <https://github.com/jenkinsci/openid-plugin/commit/cfc6d1794fb536631807bb30e3bb354b761d9282>`__
+- **Michael Trimarchi** on 2026-05-31: `OpenIdLoginService: Add nonull
+  annotation for reduce the
+  warnings <https://github.com/jenkinsci/openid-plugin/commit/0cdabf35586e878e8085c41828543cdc3c01cd19>`__
+- **Michael Trimarchi** on 2026-05-31: `Add spotless
+  formatting <https://github.com/jenkinsci/openid-plugin/commit/3a47112e1d11c8e4026e84a60386f06d75d9e799>`__
+
+meta-openembedded
+-----------------
+
+Repository URL: https://github.com/openembedded/meta-openembedded.git
+
+.. _summary-of-the-contributions-by-author-05-9:
+
+Summary of the contributions by author:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+**Adam Duskett**: Adam Duskett upgraded Tailscale from version 1.94.2 to
+1.98.3, regenerating go module dependencies and license checksums while
+manually verifying and completing unknown license entries. In kmscon, a
+fix was implemented to address zlib cross-compiling errors by adding a
+new native zlib dependency for the genunifont executable. Additionally,
+Adam Duskett upgraded Plymouth from version 24.004.60 to 26.124.222 and
+Dracut from version 110 to 111. Furthermore, kmscon was upgraded from
+version 9.3.3 to 9.3.5.
+
+Here the commits of **Adam Duskett** in detail:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+- **Adam Duskett** on 2026-05-01: `kmscon: upgrade 9.3.3 ->
+  9.3.5 <https://github.com/openembedded/meta-openembedded/commit/f36312669ce6c501c603e4cbfbe1cf6112d0f146>`__
+- **Adam Duskett** on 2026-05-04: `dracut: upgrade 110 ->
+  111 <https://github.com/openembedded/meta-openembedded/commit/70d12c42dcf14d954454c8fea101470c512714fe>`__
+- **Adam Duskett** on 2026-05-18: `plymouth: upgrade 24.004.60 ->
+  26.124.222 <https://github.com/openembedded/meta-openembedded/commit/47e9739586748a60428a116c0dcd761a2f648588>`__
+- **Adam Duskett** on 2026-05-21: `kmscon: fix zlib cross-compiling
+  errors <https://github.com/openembedded/meta-openembedded/commit/72154f38fc5384729ef3a42eb7c4ca0afaf1664b>`__
+- **Adam Duskett** on 2026-05-27: `tailscale: upgrade 1.94.2 ->
+  1.98.3 <https://github.com/openembedded/meta-openembedded/commit/f08a6e7c7edaedeec7165101b67be3a49fdbda58>`__
+
+meta-st-openstlinux
+-------------------
+
+Repository URL:
+https://github.com/STMicroelectronics/meta-st-openstlinux.git
+
+.. _summary-of-the-contributions-by-author-05-10:
+
+Summary of the contributions by author:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+**Christophe Priouzeau**: Christophe Priouzeau fixed the issue in
+PSPLASH where the splash image was not drawn when its dimensions matched
+the display resolution. The logic was updated to ensure that the image
+is displayed even if it perfectly matches the screen size. This change
+enhances the user experience by correctly rendering the splash image
+regardless of its dimensions in relation to the display resolution.
+
+Here the commits of **Christophe Priouzeau** in detail:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+- **Christophe Priouzeau** on 2026-05-25: `PSPLASH: fix image drawing
+  when size matches
+  display <https://github.com/STMicroelectronics/meta-st-openstlinux/commit/38e297c6f1c7960694a545d6f02a2f0141d4bda2>`__
+
+linux
+-----
+
+Repository URL: https://github.com/torvalds/linux.git
+
+.. _summary-of-the-contributions-by-author-05-11:
+
+Summary of the contributions by author:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+**Dario Binacchi**: Dario Binacchi added support for the Ampire
+AM-1280800W8TZQW-T00H 10.1” TFT LCD panel by including panel timings and
+device tree bindings. This contribution enables the integration of the
+LCD module into the system as part of the panel-simple framework. The
+addition of these configurations enhances the display capabilities of
+the system, facilitating the use of the specific LCD panel in the target
+device.
+
+.. _here-the-commits-of-dario-binacchi-05-1:
+
+Here the commits of **Dario Binacchi** in detail:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+- **Dario Binacchi** on 2026-05-15: `dt-bindings: display: simple: Add
+  AM-1280800W8TZQW-T00H <https://github.com/torvalds/linux/commit/adcea8fcedb67cbd2f8a164393526f26c36c3dbd>`__
+- **Dario Binacchi** on 2026-05-15: `drm/panel: simple: Add
+  AM-1280800W8TZQW-T00H <https://github.com/torvalds/linux/commit/6acb810ebc5d8dea5c250326c14dc44e32dc8e92>`__
+
+u-boot
+------
+
+Repository URL: https://github.com/u-boot/u-boot.git
+
+.. _summary-of-the-contributions-by-author-05-12:
+
+Summary of the contributions by author:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+**Dario Binacchi**: Dario Binacchi replaced ‘tristate’ with ‘bool’ for
+LCD panel drivers in U-Boot to align with the build model and avoid
+misleading configuration options. The indentation of help text for
+certain LCD drivers was fixed to adhere to the standard Kconfig format.
+Additionally, Dario Binacchi factorized FWU multi-bank support code
+common to STM32MP1 and STM32MP2 platforms into a shared source file, and
+enabled automatic detection of active A/B banks on STM32MP15 and
+STM32MP25 platforms to ensure correct identification of bootable
+partitions. New unit tests were added for functions related to FWU
+metadata and partition lookup by UUID. Lastly, a new GUID was defined to
+identify Extended Boot Loader Partitions in U-Boot.
+
+.. _here-the-commits-of-dario-binacchi-05-2:
+
+Here the commits of **Dario Binacchi** in detail:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+- **Dario Binacchi** on 2026-04-30: `lib: uuid: add partition type GUID
+  for extended
+  bootloader <https://github.com/u-boot/u-boot/commit/2a55938b42b90eb656fe32384294318e37305830>`__
+- **Dario Binacchi** on 2026-04-30: `test: dm: part: add test for
+  part_get_info_by_uuid <https://github.com/u-boot/u-boot/commit/27a928553a1327e48e7749cb7d5d65ddaeef3e9a>`__
+- **Dario Binacchi** on 2026-04-30: `test: cmd: add unit tests for part
+  command <https://github.com/u-boot/u-boot/commit/a392450189d2434be19c194df560c8bc9335e337>`__
+- **Dario Binacchi** on 2026-04-30: `cmd: part: support lookup by
+  UUID <https://github.com/u-boot/u-boot/commit/703f8c313dd948e28868d964f798bad34ecc1572>`__
+- **Dario Binacchi** on 2026-04-30: `test: cmd: part: add UUID lookup
+  tests <https://github.com/u-boot/u-boot/commit/2dc71c48bf14aa22f24824dcd94550cc5277f402>`__
+- **Dario Binacchi** on 2026-04-30: `fwu: add helper to get image GUID
+  by type and bank
+  index <https://github.com/u-boot/u-boot/commit/97cdde6dfad31341d5efc9a8030b90049577ab90>`__
+- **Dario Binacchi** on 2026-04-30: `test: dm: fwu_mdata: add test for
+  fwu_mdata_get_image_guid <https://github.com/u-boot/u-boot/commit/63fc73ff31c47df8dd3cb708dc34053972d5f4a0>`__
+- **Dario Binacchi** on 2026-04-30: `board: st: stm32mp25: support
+  dynamic A/B bank
+  bootup <https://github.com/u-boot/u-boot/commit/4300f9f4c5d709c86297c8a8702b92af604ed7c3>`__
+- **Dario Binacchi** on 2026-05-12: `video: Kconfig: fix indentation of
+  help
+  text <https://github.com/u-boot/u-boot/commit/2be4b2269ee4cef497043e39bfe1e727fd85950f>`__
+- **Dario Binacchi** on 2026-05-12: `video: kconfig: replace tristate
+  with bool for LCD panel
+  drivers <https://github.com/u-boot/u-boot/commit/5f5b8ae2938380babe1843fba4aebc299b811ab8>`__
+- **Dario Binacchi** on 2026-05-18: `board: st: stm32mp15: support
+  dynamic A/B bank
+  bootup <https://github.com/u-boot/u-boot/commit/560d8f32703ffa748197f6b782884952697669ff>`__
+- **Dario Binacchi** on 2026-05-18: `board: st: factorize STM32MP FWU
+  multi-bank
+  support <https://github.com/u-boot/u-boot/commit/4369c6a05035351089b09e26bd8f4915cd5f5d9f>`__
+
+buildroot
+---------
+
+Repository URL: https://gitlab.com/buildroot.org/buildroot.git
+
+.. _summary-of-the-contributions-by-author-05-13:
+
+Summary of the contributions by author:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+**Andrea Ricchi**: Andrea Ricchi updated the package/cutekeyboard
+version to 1.6.0, aligning with the release notes available at the
+provided link. This version bump signifies a specific point in the
+project’s development, ensuring clarity and consistency for users and
+developers.
+
+.. _here-the-commits-of-andrea-ricchi-05-1:
+
+Here the commits of **Andrea Ricchi** in detail:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+- **Andrea Ricchi** on 2026-05-07: `package/cutekeyboard: bump version
+  to
+  1.6.0 <https://gitlab.com/buildroot.org/buildroot/commit/3776bc77873e6ac96273ef9d933054b141b219e6>`__
+
+**Dario Binacchi**: Dario Binacchi disabled babeld for musl toolchains
+due to the incompatibility causing runtime crashes. This decision was
+made after detecting unsafe relocations at build time. Additionally,
+Dario Binacchi updated the less package to version 702 and fixed the
+build failure in libgphoto2 with gcc >= 14 by applying an upstream
+patch.
+
+.. _here-the-commits-of-dario-binacchi-05-3:
+
+Here the commits of **Dario Binacchi** in detail:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+- **Dario Binacchi** on 2026-04-06: `package/libgphoto2: fix build with
+  gcc >=
+  14 <https://gitlab.com/buildroot.org/buildroot/commit/d2ad5b883342b92c354c8a110ffbaf1ca7dda20f>`__
+- **Dario Binacchi** on 2026-05-26: `package/less: bump to version
+  702 <https://gitlab.com/buildroot.org/buildroot/commit/6547d32302c74fdcb587a8b956dfe9b964958d8c>`__
+- **Dario Binacchi** on 2026-05-30: `package/babeld: disable for musl
+  toolchains <https://gitlab.com/buildroot.org/buildroot/commit/a01c1258fe3e8d1403a5a8281257edf85123430b>`__
+
+This overview highlights the continuous effort and innovation from our
+development team. We look forward to bringing even more exciting updates
+in the future!
+
+--------------
+
+*Generated by the Git Commit Article Generator*
+
+.. tip::
+   Want to contribute to the open source projects featured in these reports?
+   Amarula Solutions is always looking for collaboration opportunities in
+   embedded Linux, Buildroot, Yocto, U-Boot, and Zephyr.
+   `Contact our open source team <https://www.amarulasolutions.com/contact/>`_
