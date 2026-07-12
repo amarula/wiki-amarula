@@ -45,7 +45,6 @@ Meena Murphy
   * **[v4] configs/engicam_px30_core_defconfig: new defconfigi** ([https://patchwork.ozlabs.org/project/buildroot/patch/20250401095407.488618-2-meena.murthy@amarulasolutions.com/])
   * **configs/engicam_px30_core: bump Linux to 6.12.22 and U-Boot to 2025.04** ([https://patchwork.ozlabs.org/project/buildroot/patch/20250409073750.1561127-2-meena.murthy@amarulasolutions.com/])
 
-
 Other patches
 ^^^^^^^^^^^^^
 
@@ -67,7 +66,6 @@ Michael Trimarchi
   * **Update codechecker version to the latest** ([https://github.com/dl9pf/meta-codechecker/pull/20])
   * **Support CLANGSA** ([https://github.com/dl9pf/meta-codechecker/pull/23])
   * **Crumb fix and BitbucketSCM support** ([https://github.com/jenkinsci/bitbucket-plugin/pull/114])
-
 
 Amarula Solutions Open Source Contributions - February 2025
 -----------------------------------------------------------
@@ -187,7 +185,6 @@ Andrea Ricchi
 
 * [v2,1/1] package/cutekeyboard: bump version to 1.3.0 (`<https://patchwork.ozlabs.org/project/buildroot/patch/20250207150149.15505-1-andrea.ricchi@amarulasolutions.com/>`_)
 
-
 **#linux #buildroot #yocto #opensource #embedded**
 
 Linux kernel and U-boot contribuitions
@@ -217,9 +214,7 @@ Dario Binacchi
 
 * Drop custom compatible from stm32f (`<https://patchwork.ozlabs.org/project/uboot/patch/20250224183931.313491-3-dario.binacchi@amarulasolutions.com/>`_)
 
-
 **#linux #u-boot #opensource #embedded**
-
 
 Other opensource contribuitions
 -------------------------------
@@ -240,7 +235,6 @@ Michael Trimarchi
 * Rewrite rebuild actions using javascript java injection (`<https://github.com/jenkinsci/pipeline-graph-view-plugin/pull/580>`_)
 
 #jenkins #kompute #opensource #linux 
-
 
 .. tip::
    Want to contribute to the open source projects featured in these reports?

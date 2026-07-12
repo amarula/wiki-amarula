@@ -61,8 +61,6 @@ openembedded-core
 
 Repository URL: https://git.openembedded.org/openembedded-core
 
-.. _summary-of-the-contributions-by-author-1:
-
 Summary of the contributions by author:
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -93,8 +91,6 @@ CANopenTerm
 
 Repository URL: https://github.com/CANopenTerm/CANopenTerm.git
 
-.. _summary-of-the-contributions-by-author-2:
-
 Summary of the contributions by author:
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -104,8 +100,6 @@ CanopenTerm within Buildroot. The error causing the CMake installation
 failure was successfully addressed, ensuring the correct installation of
 CANopenTerm. This fix enhances the overall build process stability and
 reliability for users leveraging the BUILD_YOCTO option.
-
-.. _here-the-commits-of-dario-binacchi-in-detail-1:
 
 Here the commits of **Dario Binacchi** in detail:
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -119,8 +113,6 @@ ufs-utils
 
 Repository URL: https://github.com/SanDisk-Open-Source/ufs-utils.git
 
-.. _summary-of-the-contributions-by-author-3:
-
 Summary of the contributions by author:
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -132,8 +124,6 @@ invalid check, the warning was resolved. This commit demonstrates Dario
 Binacchi’s attention to detail in resolving issues related to pointer
 handling in the codebase.
 
-.. _here-the-commits-of-dario-binacchi-in-detail-2:
-
 Here the commits of **Dario Binacchi** in detail:
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -144,8 +134,6 @@ calendar-addon-jitsi
 --------------------
 
 Repository URL: https://github.com/amarula/calendar-addon-jitsi.git
-
-.. _summary-of-the-contributions-by-author-4:
 
 Summary of the contributions by author:
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -160,8 +148,6 @@ technologies. Michael Trimarchi’s commits demonstrate a focus on
 enhancing functionality and addressing potential bugs within the
 project’s codebase. The migration to V8 Javascript shows a commitment to
 keeping the project up-to-date with modern development practices.
-
-.. _here-the-commits-of-michael-trimarchi-in-detail-1:
 
 Here the commits of **Michael Trimarchi** in detail:
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -180,8 +166,6 @@ connman_proxy
 
 Repository URL: https://github.com/amarula/connman_proxy.git
 
-.. _summary-of-the-contributions-by-author-5:
-
 Summary of the contributions by author:
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -194,8 +178,6 @@ new key, and notifications to callbacks now include the
 \`timeservers_synced\` information. These enhancements improve the
 accuracy and reliability of time synchronization within the software.
 
-.. _here-the-commits-of-andrea-ricchi-in-detail-1:
-
 Here the commits of **Andrea Ricchi** in detail:
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -207,8 +189,6 @@ cutekeyboard
 ------------
 
 Repository URL: https://github.com/amarula/cutekeyboard.git
-
-.. _summary-of-the-contributions-by-author-6:
 
 Summary of the contributions by author:
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -225,8 +205,6 @@ contributions demonstrate a proactive approach to software development,
 prioritizing efficiency and future-proofing of the project’s build
 process.
 
-.. _here-the-commits-of-andrea-ricchi-in-detail-2:
-
 Here the commits of **Andrea Ricchi** in detail:
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -241,8 +219,6 @@ flutekeyboard
 -------------
 
 Repository URL: https://github.com/amarula/flutekeyboard.git
-
-.. _summary-of-the-contributions-by-author-7:
 
 Summary of the contributions by author:
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -259,8 +235,6 @@ BaseKeyboard abstract class for shared keyboard fields. Lastly, they
 included a returnIcon parameter to enable users to customize the return
 button with an icon. These contributions enhanced the functionality and
 customization options of the FluteKeyboard software.
-
-.. _here-the-commits-of-andrea-ricchi-in-detail-3:
 
 Here the commits of **Andrea Ricchi** in detail:
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -299,8 +273,6 @@ ftu
 
 Repository URL: https://github.com/amarula/ftu.git
 
-.. _summary-of-the-contributions-by-author-8:
-
 Summary of the contributions by author:
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -315,8 +287,6 @@ strings in dart_to_csv and added relevant tests. Furthermore, they
 formatted code in csv_to_dart, improved GitHub workflow triggers, added
 unit tests for CSV parsing, and refactored the interface for
 testability.
-
-.. _here-the-commits-of-andrea-ricchi-in-detail-4:
 
 Here the commits of **Andrea Ricchi** in detail:
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -354,8 +324,6 @@ git-analyzer
 
 Repository URL: https://github.com/amarula/git-analyzer.git
 
-.. _summary-of-the-contributions-by-author-9:
-
 Summary of the contributions by author:
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -369,8 +337,6 @@ the project’s configuration and aligning it with relevant external
 contributions. Their contributions showcase a dedication to enhancing
 the project’s organization and integration with other open-source
 initiatives.
-
-.. _here-the-commits-of-dario-binacchi-in-detail-3:
 
 Here the commits of **Dario Binacchi** in detail:
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -458,8 +424,6 @@ contributions, and updating README.md with usage instructions. Overall,
 Michael Trimarchi significantly improved project quality and
 functionality through bug fixes, feature additions, and project
 restructuring.
-
-.. _here-the-commits-of-michael-trimarchi-in-detail-2:
 
 Here the commits of **Michael Trimarchi** in detail:
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -608,8 +572,6 @@ git-training
 
 Repository URL: https://github.com/amarula/git-training.git
 
-.. _summary-of-the-contributions-by-author-10:
-
 Summary of the contributions by author:
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -622,8 +584,6 @@ the end of each line, and expanded some slides with additional context
 and examples. These efforts demonstrate a commitment to enhancing the
 content and user experience of the git.md file, showcasing their
 dedication to improving the software development process.
-
-.. _here-the-commits-of-michael-trimarchi-in-detail-3:
 
 Here the commits of **Michael Trimarchi** in detail:
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -658,8 +618,6 @@ jenkins-dsl-training
 
 Repository URL: https://github.com/amarula/jenkins-dsl-training.git
 
-.. _summary-of-the-contributions-by-author-11:
-
 Summary of the contributions by author:
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -672,8 +630,6 @@ initial commit for a Jenkins DSL pipeline presentation based on previous
 work. These contributions demonstrate a focus on enhancing presentation
 materials, addressing warnings, and keeping dependencies up-to-date, all
 while laying the groundwork for a new project.
-
-.. _here-the-commits-of-michael-trimarchi-in-detail-4:
 
 Here the commits of **Michael Trimarchi** in detail:
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -695,8 +651,6 @@ meta-mend
 
 Repository URL: https://github.com/amarula/meta-mend.git
 
-.. _summary-of-the-contributions-by-author-12:
-
 Summary of the contributions by author:
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -710,8 +664,6 @@ a JSON report, providing warnings during the build process and skipping
 the step if necessary variables are not defined. These improvements
 enhance the efficiency and accuracy of the software development
 workflow, ensuring that essential processes are carried out effectively.
-
-.. _here-the-commits-of-michael-trimarchi-in-detail-5:
 
 Here the commits of **Michael Trimarchi** in detail:
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -763,8 +715,6 @@ meta-tegra
 
 Repository URL: https://github.com/amarula/meta-tegra.git
 
-.. _summary-of-the-contributions-by-author-13:
-
 Summary of the contributions by author:
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -793,8 +743,6 @@ slidev-theme-amarula
 
 Repository URL: https://github.com/amarula/slidev-theme-amarula.git
 
-.. _summary-of-the-contributions-by-author-14:
-
 Summary of the contributions by author:
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -810,8 +758,6 @@ the theme configuration, updated font settings, and resolved HTML
 validation warnings. Their efforts focused on enhancing the theme’s
 functionality, design, and maintainability across various components and
 layouts.
-
-.. _here-the-commits-of-andrea-ricchi-in-detail-5:
 
 Here the commits of **Andrea Ricchi** in detail:
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -868,8 +814,6 @@ bitbucket-plugin
 
 Repository URL: https://github.com/jenkinsci/bitbucket-plugin
 
-.. _summary-of-the-contributions-by-author-15:
-
 Summary of the contributions by author:
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -880,8 +824,6 @@ without an associated source code management system. The commit was
 linked to the Jira ticket JENKINS-75682 and was suggested by Mark Waite.
 This adjustment was beneficial for streamlining project monitoring and
 improving the overall efficiency of the system.
-
-.. _here-the-commits-of-michael-trimarchi-in-detail-6:
 
 Here the commits of **Michael Trimarchi** in detail:
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -894,8 +836,6 @@ meta-openembedded
 -----------------
 
 Repository URL: https://github.com/openembedded/meta-openembedded.git
-
-.. _summary-of-the-contributions-by-author-16:
 
 Summary of the contributions by author:
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -915,8 +855,6 @@ Dario Binacchi’s contributions focused on maintaining the ufs-utils
 repository, addressing compatibility issues, and ensuring the software’s
 continued improvement and development under its new ownership.
 
-.. _here-the-commits-of-dario-binacchi-in-detail-4:
-
 Here the commits of **Dario Binacchi** in detail:
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -934,8 +872,6 @@ linux
 
 Repository URL: https://github.com/torvalds/linux.git
 
-.. _summary-of-the-contributions-by-author-17:
-
 Summary of the contributions by author:
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -951,8 +887,6 @@ also ensured clock macro consistency for serial ports on the STM32H7
 series and improved padconfig usage in mxs dts files. These
 contributions reflect their dedication to expanding hardware support and
 enhancing the software ecosystem.
-
-.. _here-the-commits-of-dario-binacchi-in-detail-5:
 
 Here the commits of **Dario Binacchi** in detail:
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -1032,8 +966,6 @@ u-boot
 
 Repository URL: https://github.com/u-boot/u-boot.git
 
-.. _summary-of-the-contributions-by-author-18:
-
 Summary of the contributions by author:
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -1054,8 +986,6 @@ They also standardized the use of \`IS_ENABLED()\` in the codebase.
 Overall, Dario Binacchi’s contributions have significantly improved the
 functionality and compatibility of the software development projects
 they were involved in.
-
-.. _here-the-commits-of-dario-binacchi-in-detail-6:
 
 Here the commits of **Dario Binacchi** in detail:
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -1121,8 +1051,6 @@ Finally, bug fixes were implemented to address issues with the reset
 functionality and macro naming, ensuring smooth operation across
 different architectures and platforms.
 
-.. _here-the-commits-of-michael-trimarchi-in-detail-7:
-
 Here the commits of **Michael Trimarchi** in detail:
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -1170,8 +1098,6 @@ buildroot
 
 Repository URL: https://gitlab.com/buildroot.org/buildroot.git
 
-.. _summary-of-the-contributions-by-author-19:
-
 Summary of the contributions by author:
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -1188,8 +1114,6 @@ updates. The package/refpolicy update to version 2.20250213 addressed
 errors related to dbus module absence. Various SELinux-related packages
 were also bumped to version 3.8.1. Lastly, Adam Duskett fixed shellcheck
 and check-package warnings in package/audit/S02auditd.
-
-.. _here-the-commits-of-adam-duskett-in-detail-1:
 
 Here the commits of **Adam Duskett** in detail:
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -1245,8 +1169,6 @@ package. Furthermore, they addressed security vulnerabilities in
 ConnMan, improving DNS proxy handling and version updates. Overall,
 Dario’s contributions focused on package updates, bug fixes, security
 enhancements, and system compatibility.
-
-.. _here-the-commits-of-dario-binacchi-in-detail-7:
 
 Here the commits of **Dario Binacchi** in detail:
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -1317,8 +1239,6 @@ before attempting to create a UBI volume to prevent errors. These
 contributions demonstrate attention to detail in addressing warnings and
 ensuring a smooth operation in the NAND chip handling process.
 
-.. _here-the-commits-of-michael-trimarchi-in-detail-8:
-
 Here the commits of **Michael Trimarchi** in detail:
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -1336,7 +1256,6 @@ in the future!
 --------------
 
 *Generated by the Git Commit Article Generator*
-
 
 .. tip::
    Want to contribute to the open source projects featured in these reports?
