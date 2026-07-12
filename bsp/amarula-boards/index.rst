@@ -9,7 +9,7 @@ Amarula Reference Boards
    :maxdepth: 1
    :caption: Contents:
 
-   giotto/gitto.rst
+   giotto/giotto.rst
    vyasa/vyasa.rst
 
 .. tip::
