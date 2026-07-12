@@ -45,9 +45,3 @@ We are experts in **Embedded Linux**, **Android**, and **Open Source** integrati
    about/about.rst
    news/index
    articles/index
-
-.. toctree::
-   :maxdepth: 1
-   :hidden:
-
-   report

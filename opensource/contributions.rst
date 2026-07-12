@@ -88,3 +88,9 @@ We regularly present our open source work at conferences — see :doc:`../about/
    development and welcomes co-engineering on Linux Kernel, U-Boot,
    Buildroot, Yocto, and Zephyr.
    `Contact our open source team <https://www.amarulasolutions.com/contact/>`_
+
+.. toctree::
+   :maxdepth: 1
+   :hidden:
+
+   ../report
