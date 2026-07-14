@@ -21,6 +21,7 @@ Jenkins technologies
    jenkins-mend-pipeline
    jenkins-mobile-build-time
    jenkins-gerrit
+   jenkins-gerrit-https-pipeline
 
 .. tip::
    Need a Jenkins CI/CD pipeline tailored for embedded development?
