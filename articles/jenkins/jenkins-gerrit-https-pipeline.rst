@@ -52,7 +52,7 @@ their Gerrit checks.
 Walkthrough of an Amarula Gerrit-Trigger Pipeline
 -------------------------------------------------
 
-Using the provided ``checks-jenkins.Jenkinsfile`` as a blueprint, we can see how an
+Using the provided `checks-jenkins.Jenkinsfile <https://github.com/amarula/checks-jenkins/blob/master/.jenkins/checks-jenkins.Jenkinsfile>`_ as a blueprint, we can see how an
 elegant Gerrit validation pipeline is structured using HTTPS and Amarula's tools:
 
 1. Environment and Credential Setup
