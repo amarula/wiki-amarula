@@ -13,6 +13,7 @@ Yocto projects
    :caption: Contents:
 
    implementing-secureboot-with-yocto-wrynose-and-grub
+   stm32mp-ab-firmware-update
 
 .. tip::
    Need help building a secure, production-grade Yocto image? Amarula Solutions
