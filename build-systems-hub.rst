@@ -41,6 +41,9 @@ Buildroot is used for lightweight, single-purpose embedded Linux images.
 - **CuteKeyboard in Buildroot** — Qt virtual keyboard integration.
   See `opensource/products/cutekeyboard <opensource/products/cutekeyboard.html>`_.
 
+- **Buildroot Shared State Cache (sstate-cache)** — Yocto-style shared state caching for faster incremental builds.
+  See `articles/buildroot/buildroot-sstate-cache <articles/buildroot/buildroot-sstate-cache.html>`_.
+
 .. toctree::
    :maxdepth: 1
    :caption: Reference
@@ -48,6 +51,8 @@ Buildroot is used for lightweight, single-purpose embedded Linux images.
 
    articles/yocto/index
    opensource/thirdparty/buildroot/index
+   articles/buildroot/index
+   articles/buildroot/buildroot-sstate-cache
    opensource/products/meta-mend
    articles/jenkins/jenkins-yocto-kas-pipeline
    articles/jenkins/jenkins-mend-pipeline

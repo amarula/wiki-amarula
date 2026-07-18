@@ -15,6 +15,7 @@ Articles
    jenkins/index
    iot/index
    yocto/index
+   buildroot/index
 
 .. tip::
    Interested in a deeper dive on any of these topics? Amarula Solutions
