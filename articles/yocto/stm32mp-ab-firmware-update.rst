@@ -23,6 +23,8 @@ different approach: a **metadata-driven** A/B update framework where the boot
 workflow is governed by FWU (Firmware Update) metadata, and partitions are identified
 by UUIDs rather than by their physical position on the storage medium.
 
+.. image:: /images/update-fwdata.drawio.png
+
 Why Metadata-Driven Matters
 ----------------------------
 
