@@ -1,57 +1,188 @@
-@import url("default.css");
-span.caption-text {
-  color: #E3510C;
+/* ==========================================================================
+   Amarula Solutions Brand — Custom Styles for Sphinx RTD Theme
+   Brand colors: #fdcb0e (gold), #351c4d (deep purple), #00d084 (green)
+   ========================================================================== */
+
+/* ---- Logo ---- */
+.wy-side-nav-search > a img.logo,
+.wy-side-nav-search .wy-side-nav-search > a img.logo {
+    max-width: 100%;
+    padding: 10px 15px;
+    background: transparent;
 }
 
-/* Sidebar and Top Navigation Background Color */
-.wy-side-nav-search,
+/* ---- Sidebar & Top Navigation ---- */
+.wy-side-nav-search {
+    background-color: #351c4d;  /* Deep purple */
+}
+.wy-side-nav-search input[type="text"] {
+    border-color: #351c4d;
+}
+
 .wy-nav-top {
-    background: #E3510C; /* Primary Orange */
+    background: #351c4d;
 }
 
-/* Link and Hover Colors */
-a {
-    color: #E3510C; /* Primary Orange for links */
+/* Sidebar background */
+.wy-nav-side {
+    background: #2c153d;  /* Slightly darker shade of purple for sidebar */
 }
 
-a:hover {
-    color: #CC480B; /* A slightly darker shade for hover effect */
+/* Sidebar menu links */
+.wy-menu-vertical a {
+    color: #e8e8e8;
+}
+.wy-menu-vertical a:hover {
+    background-color: #351c4d;
+    color: #fdcb0e;
+}
+.wy-menu-vertical li.current > a,
+.wy-menu-vertical li.on a {
+    color: #fdcb0e;
+}
+.wy-menu-vertical li.current > a:hover,
+.wy-menu-vertical li.on a:hover {
+    color: #fdcb0e;
+    background-color: #3d2056;
 }
 
-/* Optional: Change the color of the theme's default "primary" buttons/highlights */
-/* Note: Class names may vary depending on the theme. */
-.btn-primary {
-    background-color: #E3510C;
-    border-color: #E3510C;
+/* Sidebar toctree caption */
+.wy-menu-vertical p.caption {
+    color: #fdcb0e;
 }
 
-.btn-primary:hover {
-    background-color: #CC480B;
+/* ---- Content Links ---- */
+.rst-content a {
+    color: #6a2c91;  /* Purple tint readable on white */
+}
+.rst-content a:visited {
+    color: #4c1f69;
+}
+.rst-content a:hover {
+    color: #fdcb0e;
 }
 
-.contact-button-inline {
-    /* Standard Button Styling */
-    display: inline-block;
-    padding: 5px 12px;
-    background-color: #afab04;
-    color: white !important; /* !important to override theme link color */
-    text-decoration: none;
-    border-radius: 4px;
-    font-size: 0.8em; /* Smaller than title */
-    font-weight: bold;
-    transition: background-color 0.3s;
-    /* Set custom anchor for positioning */
-    position: relative;
-    float: right;            /* Pull to the right */
-    margin-top: -25px;       /* Move up to align with the title */
-    margin-left: 15px;       /* Space from content */
+/* ---- Headings ---- */
+.rst-content h1,
+.rst-content h2,
+.rst-content h3,
+.rst-content h4,
+.rst-content h5,
+.rst-content h6 {
+    color: #351c4d;
 }
 
-.contact-button-inline:hover {
-    background-color: #fdcb0e;
+/* ---- Toctree inside content ---- */
+.rst-content .toctree-wrapper a {
+    color: #6a2c91;
 }
 
-/* Clear the float for the content immediately following the button */
-.contact-button-clear {
-    clear: right;
+/* ---- Admonition / Note boxes ---- */
+.rst-content .admonition.note,
+.rst-content .admonition.tip,
+.rst-content .admonition.warning,
+.rst-content .admonition.attention,
+.rst-content .admonition.important {
+    border-left: 4px solid #fdcb0e;
+}
+.rst-content .admonition.note .admonition-title,
+.rst-content .admonition.tip .admonition-title {
+    background: #fef9e7;  /* Light gold tint */
+    color: #351c4d;
+}
+.rst-content .admonition.warning .admonition-title {
+    background: #fdebd0;
+    color: #935116;
+}
+
+/* ---- Tables ---- */
+.rst-content table.docutils thead th {
+    background-color: #351c4d;
+    color: #ffffff;
+    border-color: #351c4d;
+}
+.rst-content table.docutils tbody tr:nth-child(even) {
+    background-color: #fdf6e3;
+}
+
+/* ---- Buttons ---- */
+.btn-neutral {
+    background-color: #f5f5f5 !important;
+    color: #351c4d !important;
+}
+.btn-neutral:hover,
+.btn-neutral:focus {
+    background-color: #fdcb0e !important;
+    color: #351c4d !important;
+}
+.btn-neutral:visited {
+    color: #351c4d !important;
+}
+
+/* ---- Code blocks ---- */
+.rst-content code,
+.rst-content tt {
+    color: #351c4d;
+    background: #f9f2fc;
+    border: 1px solid #e2d1f0;
+}
+.rst-content pre {
+    background: #f9f2fc;
+}
+
+/* ---- Navigation (next/prev) ---- */
+.rst-content .btn-neutral {
+    background-color: #f5f5f5;
+    color: #351c4d;
+}
+
+/* ---- Footer ---- */
+footer {
+    color: #666;
+}
+
+/* ---- Section subtitles / captions ---- */
+span.caption-text {
+    color: #fdcb0e;
+}
+
+/* ---- Table of contents inside page ---- */
+.rst-content .contents a {
+    color: #6a2c91;
+}
+
+/* ---- Highlight/Selection ---- */
+::selection {
+    background: #fdcb0e;
+    color: #351c4d;
+}
+::-moz-selection {
+    background: #fdcb0e;
+    color: #351c4d;
+}
+
+/* ---- Version / revision indicator ---- */
+.rst-content .versionmodified {
+    color: #fdcb0e;
+}
+
+/* ---- Breadcrumbs ---- */
+.wy-breadcrumbs {
+    color: #999;
+}
+.wy-breadcrumbs a {
+    color: #6a2c91;
+}
+
+/* ---- Search results ---- */
+.rst-content .highlighted {
+    background-color: #fdf6e3;
+    box-shadow: 0 0 0 2px #fdcb0e;
+}
+
+/* ---- Responsive fixes ---- */
+@media screen and (max-width: 768px) {
+    .wy-nav-top {
+        background: #351c4d;
+    }
 }
