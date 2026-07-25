@@ -194,7 +194,7 @@ Yocto build process. During the 'Yocto image Type A' stage, it performs the soft
 composition analysis, scanning the open-source components within the Yocto image
 for known vulnerabilities against Mend's extensive database.
 
-**Reporting and Archiving**: The outcomes of the Mend analysis are summarized in mend-report-*.json
+**Reporting and Archiving**: The outcomes of the Mend analysis are summarized in ``mend-report-*.json``
 and mend cloud portal.
 
 What are the key takeaways for secure embedded Linux builds?

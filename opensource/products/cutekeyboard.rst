@@ -13,6 +13,7 @@ CuteKeyboard
 
 .. figure:: /images/keyboardcute.png
    :align: center
+
 |
 |
 
@@ -37,6 +38,7 @@ CuteKeyboard allows you to tailor the keyboard's appearance.
 .. image:: /images/20240416_135331.jpg
     :alt: CuteKeyboard Demo
     :target: https://youtu.be/TFNbTDwV0WE
+
 |
 |
 

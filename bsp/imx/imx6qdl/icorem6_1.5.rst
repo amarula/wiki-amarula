@@ -137,8 +137,6 @@ Bus 001 Device 010: ID 15a2:0061 Freescale Semiconductor, Inc. i.MX 6Solo/6DualL
 
 8. Identify board booting on serial
 
-   ::
-
 MIPI-CSI2 OV5640 Camera
 ***********************
 Build

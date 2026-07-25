@@ -21,9 +21,9 @@ Amarula Solutions engineers serve as official maintainers in the following subsy
 - `SPI subsystem custodian <https://gitlab.denx.de/u-boot/custodians/u-boot-spi>`_
 - `MTD/SPI-NOR custodian <https://gitlab.denx.de/u-boot/custodians/u-boot-spi>`_
 
-**Buildroot:**
+**Buildroot**:
 - Board configurations for i.MX, Allwinner, Rockchip
-- Package maintainership: python-*, Mender, Flutter
+- Package maintainership: ``python-*``, Mender, Flutter
 - See `DEVELOPERS file <https://git.buildroot.net/buildroot/tree/DEVELOPERS#n1019>`_
 
 **Yocto:**

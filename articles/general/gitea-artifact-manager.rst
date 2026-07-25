@@ -1,15 +1,14 @@
-===================================================
+=========================================================
 Centralized Build Artifacts with Gitea Artifact Manager
-===================================================
+=========================================================
 
 .. note:: **TL;DR**
+
    - **gitea-artifact-manager** is a Jenkins plugin by Amarula Solutions
      that stores build artifacts in the Gitea Generic Package Registry
-     instead of the local filesystem — providing versioned, centralized
-     artifact management without additional infrastructure.
+     instead of the local filesystem.
    - Standard Jenkins pipeline steps like ``archiveArtifacts`` work
-     transparently; each build's artifacts become immutable, versioned
-     Gitea packages keyed by build number.
+     transparently.
 
 |
 

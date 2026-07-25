@@ -8,6 +8,7 @@ Warning-ng Jenkins plugin now can report Valgrind memory leak
 
 .. figure:: /images/valgrind-warning.png
    :align: center
+
 |
 |
 
@@ -57,6 +58,7 @@ Example of Jenkins pipeline
 
 .. figure:: /images/pipeline-overview.png
    :align: center
+
 |
 |
 

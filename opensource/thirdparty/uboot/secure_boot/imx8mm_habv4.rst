@@ -59,15 +59,17 @@ The main features supported by the HABv4 are:
 
  - Super Root Key (SRK) revocation support.
 
-.. image:: /images/secure_boot.png
-Figure I: HABv4 Secure Boot architecture[I]
+.. figure:: /images/secure_boot.png
+
+   Figure I: HABv4 Secure Boot architecture[I]
 
 The above Figure 1 can be understood in two parts: Code signing part which does the signing of
 images. The authentication part which checks whether the image to be booted is not tampered and
 if the verification is successful the root of trust is passed to the next image to be booted.
 
-.. image:: /images/secure_boot1.png
-Figure II: HABv4 Secure Boot flow[II]
+.. figure:: /images/secure_boot1.png
+
+   Figure II: HABv4 Secure Boot flow[II]
 
 HABv4 authentication is based on public key cryptography using the RSA or ECDSA
 algorithms in which image data(for instance u-boot binary) is signed offline using a series of
@@ -98,16 +100,18 @@ The boot flow on i.MX 8M family devices are slightly different when compared wit
 series device. The boot flow changes are due to the different architecture, multiple firmware and
 software components required to initialize the device[I].
 
-.. image:: /images/imx8mm_bootflow.png
-Figure III: i.MX8M Boot Flow[I] 
+.. figure:: /images/imx8mm_bootflow.png
+
+   Figure III: i.MX8M Boot Flow[I]
 
  - NOTE: for i.MX8M mini hdmi/dp firmware is not required in the boot process
 
 On reset, ROM code reads the efuse to determine the security configuration of the SoC and
 the type of the boot device. The ROM then locates flash.bin, layout shown in Figure IV.
 
-.. image:: /images/imx8mm_flash.png
-Figure IV: i.MX8M Boot Flow[I] 
+.. figure:: /images/imx8mm_flash.png
+
+   Figure IV: i.MX8M Boot Flow[I]
 
 The above Figure shows 2 CSF binaries required, one per verification stage:
 

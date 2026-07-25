@@ -4,6 +4,7 @@ Bananapi M1 Plus
 .. note:: **TL;DR**
    - Mainline BSP bring-up guide for this board — covering **U-Boot**, **Linux kernel**, and **Buildroot** build from source with SD/flash boot, serial console access, and device tree configuration.
    - Part of Amarula Solutions' upstream-first BSP documentation for Allwinner SoCs.
+
 This tutorial will show the details of Bananapi M1 board mainline support and other needed details, for more information about `hardware <http://www.banana-pi.org/m1.html>`_ and `linux-sunxi <http://linux-sunxi.org/LeMaker_Banana_Pi>`_
 
 
@@ -37,7 +38,7 @@ How do you boot from SD card?
 
 How do you boot via FEL/USB?
 ****************************
-More information `this link <http://linux-sunxi.org/FEL/USBBoot>`_ and build the fel tools from `this link <https://wiki.amarulasolutions.com/found/host/tools.html#sunxi>`_
+More information `FEL/USB page <http://linux-sunxi.org/FEL/USBBoot>`_ and build the fel tools from `the fel tools page <https://wiki.amarulasolutions.com/found/host/tools.html#sunxi>`_
 
 Insert SD card from and Press K3 located between the HDMI and USB host connectors and Power-on
 
@@ -54,7 +55,7 @@ How do you enter FEL mode?
 How do you boot Linux via FEL?
 ==============================
 
-From Host, get the boot.scr from `this link <https://wiki.amarulasolutions.com/found/host/tools.html#boot32-fel-scr>`_
+From Host, get the boot.scr from `the boot.scr page <https://wiki.amarulasolutions.com/found/host/tools.html#boot32-fel-scr>`_
 
 ::
 

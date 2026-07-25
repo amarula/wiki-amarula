@@ -35,7 +35,7 @@ setSyncMethod(String method)
 Sets the sync method for receiving changes. Values: ``Build.CHECKOUT`` or ``Build.CHERRYPICK``.
 
 .. _com.amarula.build.Build-setBuildDescription():
---------------------------------------------------
+
 setBuildDescription()
 ---------------------
 
@@ -61,7 +61,7 @@ Runs build inside docker image (if specified). It performs repository sync, chec
 .. _com.amarula.build.Build-repoBuild():
 
 repoBuild(String manifestUrl, Closure buildCode, Map options = [:])
-------------------------------------------------------------------
+-------------------------------------------------------------------
 
 Same as build() but for repo-managed projects (like AOSP).
 

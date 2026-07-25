@@ -57,16 +57,21 @@ SPI Flash::
 
         load mmc 1:1 $kernel_addr_r idbloader.img
         sf probe
-        sf erase 0 +$filesize
-        sf write $kernel_addr_r 0 ${filesize}
-        load mmc 1:1 ${kernel_addr_r} u-boot.itb
-        sf erase 0x40000 +$filesize
-        sf write $kernel_addr_r 0x40000 ${filesize}
+
+.. code-block:: none
+
+    sf erase 0 +$filesize
+    sf write $kernel_addr_r 0 ${filesize}
+    load mmc 1:1 ${kernel_addr_r} u-boot.itb
+    sf erase 0x40000 +$filesize
+    sf write $kernel_addr_r 0x40000 ${filesize}
+
 SD::
 
-        cd u-boot-amarula
-        sudo dd if=u-boot-rockchip.bin of=/dev/mmcblk0 seek=64
-        sudo sync
+    cd u-boot-amarula
+    sudo dd if=u-boot-rockchip.bin of=/dev/mmcblk0 seek=64
+    sudo sync
+
 eMMC::
 
         connect USB-OTG cable.

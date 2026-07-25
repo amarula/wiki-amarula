@@ -40,6 +40,7 @@ If commit id is buggy(say it is) then we run git bisect bad  else we would run g
 
 
 .. image:: /images/step.png
+
 Step4 .... N: keep repeating above step 2 and step3
 
 

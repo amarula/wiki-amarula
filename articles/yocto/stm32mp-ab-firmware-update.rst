@@ -77,7 +77,7 @@ A substantial portion of the series (20 patches) covers U-Boot enhancements:
 These changes have been submitted upstream, successfully reviewed, and merged
 into the official U-Boot repository [2]_ [3]_.
 
-  Machine Configuration and WIC
+Machine Configuration and WIC
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 A/B firmware update is enabled via a single ``MACHINE_FEATURES`` flag:

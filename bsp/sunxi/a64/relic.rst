@@ -4,6 +4,7 @@ Amarual A64-Relic
 .. note:: **TL;DR**
    - Mainline BSP bring-up guide for this board — covering **U-Boot**, **Linux kernel**, and **Buildroot** build from source with SD/flash boot, serial console access, and device tree configuration.
    - Part of Amarula Solutions' upstream-first BSP documentation for Allwinner SoCs.
+
 This tutorial will show the details of Amarula A64-Relic mainline support and other needed details
 
 

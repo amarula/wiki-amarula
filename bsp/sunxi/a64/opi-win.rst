@@ -181,7 +181,7 @@ How do you build U-Boot for FEL?
 ================================
 Mainline U-Boot not supporting FEL for H5/A64 due to 64-Bit mode in SPL so we need to build 32-bit SPL and 64-bit U-Boot proper
 
-Export arm toolchain from `refer to the host tools page (arm64) <https://wiki.amarulasolutions.com/found/host/tools.html#arm>`_
+Export arm toolchain from `refer to the host tools page (arm) <https://wiki.amarulasolutions.com/found/host/tools.html#arm>`_
 
 ::
 
@@ -192,7 +192,7 @@ Export arm toolchain from `refer to the host tools page (arm64) <https://wiki.am
 
 How do you boot Linux via FEL?
 ==============================
-From Host, get the boot.scr from `refer to the host tools page (arm64) <https://wiki.amarulasolutions.com/found/host/tools.html#boot64-fel-scr>`_
+From Host, get the boot.scr from `the host tools page (arm64 fel) <https://wiki.amarulasolutions.com/found/host/tools.html#boot64-fel-scr>`_
 
 ::
 

@@ -5,6 +5,7 @@ Bananapi M64
 .. note:: **TL;DR**
    - Mainline BSP bring-up guide for this board — covering **U-Boot**, **Linux kernel**, and **Buildroot** build from source with SD/flash boot, serial console access, and device tree configuration.
    - Part of Amarula Solutions' upstream-first BSP documentation for Allwinner SoCs.
+
 This tutorial will show the details of Bananapi M64 board mainline support and other needed details, for more information about `hardware <http://www.banana-pi.org/m64.html>`_ and `linux-sunxi <https://linux-sunxi.org/Banana_Pi_M64>`_
 
 How do you access the hardware?

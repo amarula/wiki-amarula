@@ -52,7 +52,7 @@ Insert SD card from and Press K3 located between the HDMI and USB host connector
 How do you boot Linux via FEL?
 ******************************
 
-From Host, get the boot.scr from `this link <https://wiki.amarulasolutions.com/found/host/tools.html#boot32-fel-scr>`_
+From Host, get the boot.scr from `the boot.scr page <https://wiki.amarulasolutions.com/found/host/tools.html#boot32-fel-scr>`_
 
 ::
 

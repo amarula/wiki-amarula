@@ -3,13 +3,12 @@ Gitea Artifact Manager for Jenkins
 ==================================
 
 .. note:: **TL;DR**
-   - A **Jenkins plugin by Amarula Solutions** that uses the Gitea Generic
-     Package Registry as a storage backend for Jenkins build artifacts and
-     stashes — replacing traditional local filesystem storage.
-   - Licensed under **Apache 2.0**, this plugin integrates Gitea's REST API
-     with standard Jenkins pipeline steps like ``archiveArtifacts``,
-     providing centralized, versioned artifact management with no extra
-     infrastructure.
+
+   - A **Jenkins plugin** by Amarula Solutions that uses the Gitea
+     Generic Package Registry as a storage backend for Jenkins build
+     artifacts, replacing local filesystem storage.
+   - Licensed under **Apache 2.0**; standard steps like
+     ``archiveArtifacts`` work transparently.
 
 .. raw:: html
 
