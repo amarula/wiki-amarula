@@ -124,15 +124,15 @@ Turn On the board and open minicom with /dev/ttyUSB1 with 115200 baudrate.
    SiFive FSBL:       2018-03-20
    HiFive-U serial #: 000001e0
 
-OpenSBI v0.4 (Sep 18 2019 22:56:42)
-        ____                    _____ ____ _____
-       / __ \                  / ____|  _ \_   _|
-      | |  | |_ __   ___ _ __ | (___ | |_) || |
-      | |  | | '_ \ / _ \ '_ \ \___ \|  _ < | |
-      | |__| | |_) |  __/ | | |____) | |_) || |_
-       \____/| .__/ \___|_| |_|_____/|____/_____|
-             | |
-             |_|
+   OpenSBI v0.4 (Sep 18 2019 22:56:42)
+           ____                    _____ ____ _____
+          / __ \                  / ____|  _ \_   _|
+         | |  | |_ __   ___ _ __ | (___ | |_) || |
+         | |  | | '_ \ / _ \ '_ \ \___ \|  _ < | |
+         | |__| | |_) |  __/ | | |____) | |_) || |_
+          \____/| .__/ \___|_| |_|_____/|____/_____|
+                | |
+                |_|
 
    Platform Name          : SiFive Freedom U540
    Platform HART Features : RV64ACDFIMSU
@@ -173,15 +173,15 @@ Turn On the board and open minicom with /dev/ttyUSB1 with 115200 baudrate.
    SiFive FSBL:       2018-03-20
    HiFive-U serial #: 000001e0
 
-OpenSBI v0.4 (Sep 18 2019 22:56:42)
-        ____                    _____ ____ _____
-       / __ \                  / ____|  _ \_   _|
-      | |  | |_ __   ___ _ __ | (___ | |_) || |
-      | |  | | '_ \ / _ \ '_ \ \___ \|  _ < | |
-      | |__| | |_) |  __/ | | |____) | |_) || |_
-       \____/| .__/ \___|_| |_|_____/|____/_____|
-             | |
-             |_|
+   OpenSBI v0.4 (Sep 18 2019 22:56:42)
+           ____                    _____ ____ _____
+          / __ \                  / ____|  _ \_   _|
+         | |  | |_ __   ___ _ __ | (___ | |_) || |
+         | |  | | '_ \ / _ \ '_ \ \___ \|  _ < | |
+         | |__| | |_) |  __/ | | |____) | |_) || |_
+          \____/| .__/ \___|_| |_|_____/|____/_____|
+                | |
+                |_|
 
    Platform Name          : SiFive Freedom U540
    Platform HART Features : RV64ACDFIMSU
@@ -379,7 +379,7 @@ Booting using the fdt blob at 0x88000000
   MMC:   spi@10050000:mmc@0: 0
   Loading Environment from SPI Flash... SF: Detected is25wp256 with page size 256 Bytes, erase size 4 KiB, total 3
   2 MiB
-  *** Warning - bad CRC, using default environment
+  *\*\* Warning - bad CRC, using default environment
 
   In:    serial@10010000
   Out:   serial@10010000
@@ -405,147 +405,150 @@ Booting using the fdt blob at 0x88000000
   => source $fdt_add_r
   ## Executing script at 80200000
 
-Probe flash
-  SF: Detected is25wp256 with page size 256 Bytes, erase size 4 KiB, total 32 MiB
-  Program loader1
-  SF: 1048576 bytes @ 0x5000 Erased: OK
-  ethernet@10090000: PHY present at 0
-  ethernet@10090000: Starting autonegotiation...
-  ethernet@10090000: Autonegotiation complete
-  ethernet@10090000: link up, 100Mbps full-duplex (lpa: 0xcde1)
-  Using ethernet@10090000 device
-  TFTP from server 192.168.1.10; our IP address is 192.168.1.11
-  Filename 'u-boot-spl.bin'.
-  Load address: 0x84000000
-  Loading: ##############
-	   5.9 KiB/s
-  done
-  Bytes transferred = 66623 (1043f hex)
-  device 0 offset 0x5000, size 0x1043f
-  SF: 66623 bytes @ 0x5000 Written: OK
-  Program loader2
-  SF: 1048576 bytes @ 0x105000 Erased: OK
-  ethernet@10090000: PHY present at 0
-  ethernet@10090000: Starting autonegotiation...
-  ethernet@10090000: Autonegotiation complete
-  ethernet@10090000: link up, 100Mbps full-duplex (lpa: 0xcde1)
-  Using ethernet@10090000 device
-  TFTP from server 192.168.1.10; our IP address is 192.168.1.11
-  Filename 'u-boot.itb'.
-  Load address: 0x84000000
-  Loading: #################################################################
-	   #######################################
-	   674.8 KiB/s
-  done
-  Bytes transferred = 532404 (81fb4 hex)
-  device 0 offset 0x105000, size 0x81fb4
-  SF: 532404 bytes @ 0x105000 Written: OK
-  Program uImage.itb
-  SF: 14680064 bytes @ 0x525000 Erased: OK
-  ethernet@10090000: PHY present at 0
-  ethernet@10090000: Starting autonegotiation...
-  ethernet@10090000: Autonegotiation complete
-  ethernet@10090000: link up, 100Mbps full-duplex (lpa: 0xcde1)
-  Using ethernet@10090000 device
-  TFTP from server 192.168.1.10; our IP address is 192.168.1.11
-  Filename 'uImage.itb'.
-  Load address: 0x84000000
-  Loading: #################################################################
-	   #################################################################
-	   #################################################################
-	   #################################################################
-	   #################################################################
-	   #################################################################
-	   #################################################################
-	   #################################################################
-	   #################################################################
-	   #################################################################
-	   #################################################################
-	   #################################################################
-	   #################################################################
-	   #################################################################
-	   #################################################################
-	   ###########################
-	   283.2 KiB/s
-  done
-  Bytes transferred = 5126451 (4e3933 hex)
-  device 0 offset 0x525000, size 0x4e3933
-  SF: 5126451 bytes @ 0x525000 Written: OK
-  Program boot_initramfs.scr
-  SF: 4096 bytes @ 0x1fff000 Erased: OK
-  ethernet@10090000: PHY present at 0
-  ethernet@10090000: Starting autonegotiation...
-  ethernet@10090000: Autonegotiation complete
-  ethernet@10090000: link up, 100Mbps full-duplex (lpa: 0xcde1)
-  Using ethernet@10090000 device
-  TFTP from server 192.168.1.10; our IP address is 192.168.1.11
-  Filename 'boot_initramfs.scr'.
-  Load address: 0x84000000
-  Loading: #
-	   26.4 KiB/s
-  done
-  Bytes transferred = 193 (c1 hex)
-  device 0 offset 0x1fff000, size 0xc1
-  SF: 193 bytes @ 0x1fff000 Written: OK
-  Done!
-  =>
+.. code-block:: none
 
-  U-Boot SPL 2020.04-rc4 (Apr 29 2020 - 13:46:59 +0530)
-  Trying to boot from SPI
+   Probe flash
+     SF: Detected is25wp256 with page size 256 Bytes, erase size 4 KiB, total 32 MiB
+     Program loader1
+     SF: 1048576 bytes @ 0x5000 Erased: OK
+     ethernet@10090000: PHY present at 0
+     ethernet@10090000: Starting autonegotiation...
+     ethernet@10090000: Autonegotiation complete
+     ethernet@10090000: link up, 100Mbps full-duplex (lpa: 0xcde1)
+     Using ethernet@10090000 device
+     TFTP from server 192.168.1.10; our IP address is 192.168.1.11
+     Filename 'u-boot-spl.bin'.
+     Load address: 0x84000000
+     Loading: ##############
+   	   5.9 KiB/s
+     done
+     Bytes transferred = 66623 (1043f hex)
+     device 0 offset 0x5000, size 0x1043f
+     SF: 66623 bytes @ 0x5000 Written: OK
+     Program loader2
+     SF: 1048576 bytes @ 0x105000 Erased: OK
+     ethernet@10090000: PHY present at 0
+     ethernet@10090000: Starting autonegotiation...
+     ethernet@10090000: Autonegotiation complete
+     ethernet@10090000: link up, 100Mbps full-duplex (lpa: 0xcde1)
+     Using ethernet@10090000 device
+     TFTP from server 192.168.1.10; our IP address is 192.168.1.11
+     Filename 'u-boot.itb'.
+     Load address: 0x84000000
+     Loading: #################################################################
+   	   #######################################
+   	   674.8 KiB/s
+     done
+     Bytes transferred = 532404 (81fb4 hex)
+     device 0 offset 0x105000, size 0x81fb4
+     SF: 532404 bytes @ 0x105000 Written: OK
+     Program uImage.itb
+     SF: 14680064 bytes @ 0x525000 Erased: OK
+     ethernet@10090000: PHY present at 0
+     ethernet@10090000: Starting autonegotiation...
+     ethernet@10090000: Autonegotiation complete
+     ethernet@10090000: link up, 100Mbps full-duplex (lpa: 0xcde1)
+     Using ethernet@10090000 device
+     TFTP from server 192.168.1.10; our IP address is 192.168.1.11
+     Filename 'uImage.itb'.
+     Load address: 0x84000000
+     Loading: #################################################################
+   	   #################################################################
+   	   #################################################################
+   	   #################################################################
+   	   #################################################################
+   	   #################################################################
+   	   #################################################################
+   	   #################################################################
+   	   #################################################################
+   	   #################################################################
+   	   #################################################################
+   	   #################################################################
+   	   #################################################################
+   	   #################################################################
+   	   #################################################################
+   	   ###########################
+   	   283.2 KiB/s
+     done
+     Bytes transferred = 5126451 (4e3933 hex)
+     device 0 offset 0x525000, size 0x4e3933
+     SF: 5126451 bytes @ 0x525000 Written: OK
+     Program boot_initramfs.scr
+     SF: 4096 bytes @ 0x1fff000 Erased: OK
+     ethernet@10090000: PHY present at 0
+     ethernet@10090000: Starting autonegotiation...
+     ethernet@10090000: Autonegotiation complete
+     ethernet@10090000: link up, 100Mbps full-duplex (lpa: 0xcde1)
+     Using ethernet@10090000 device
+     TFTP from server 192.168.1.10; our IP address is 192.168.1.11
+     Filename 'boot_initramfs.scr'.
+     Load address: 0x84000000
+     Loading: #
+   	   26.4 KiB/s
+     done
+     Bytes transferred = 193 (c1 hex)
+     device 0 offset 0x1fff000, size 0xc1
+     SF: 193 bytes @ 0x1fff000 Written: OK
+     Done!
+     =>
+
+     U-Boot SPL 2020.04-rc4 (Apr 29 2020 - 13:46:59 +0530)
+     Trying to boot from SPI
 
 
-  U-Boot 2020.04-rc4 (Apr 29 2020 - 13:46:59 +0530)
+     U-Boot 2020.04-rc4 (Apr 29 2020 - 13:46:59 +0530)
 
-  CPU:   rv64imafdc
-  Model: SiFive HiFive Unleashed A00
-  DRAM:  8 GiB
-  MMC:   spi@10050000:mmc@0: 0
-  Loading Environment from SPI Flash... SF: Detected is25wp256 with page size 256 Bytes, erase size 4 KiB, total 3
-  2 MiB
-  *** Warning - bad CRC, using default environment
+     CPU:   rv64imafdc
+     Model: SiFive HiFive Unleashed A00
+     DRAM:  8 GiB
+     MMC:   spi@10050000:mmc@0: 0
+     Loading Environment from SPI Flash... SF: Detected is25wp256 with page size 256 Bytes, erase size 4 KiB, total 3
+     2 MiB
+     *\*\* Warning - bad CRC, using default environment
 
-  In:    serial@10010000
-  Out:   serial@10010000
-  Err:   serial@10010000
-  Net:   eth0: ethernet@10090000
-  Hit any key to stop autoboot:  0 
-  SF: Detected is25wp256 with page size 256 Bytes, erase size 4 KiB, total 32 MiB
-  device 0 offset 0x1fff000, size 0x1000
-  SF: 4096 bytes @ 0x1fff000 Read: OK
-  ## Executing script at 88100000
+     In:    serial@10010000
+     Out:   serial@10010000
+     Err:   serial@10010000
+     Net:   eth0: ethernet@10090000
+     Hit any key to stop autoboot:  0 
+     SF: Detected is25wp256 with page size 256 Bytes, erase size 4 KiB, total 32 MiB
+     device 0 offset 0x1fff000, size 0x1000
+     SF: 4096 bytes @ 0x1fff000 Read: OK
+     ## Executing script at 88100000
 
-device 0 offset 0x525000, size 0xe00000
-  SF: 14680064 bytes @ 0x525000 Read: OK
-  ## Loading kernel from FIT Image at 84000000 ...
+   device 0 offset 0x525000, size 0xe00000
+     SF: 14680064 bytes @ 0x525000 Read: OK
+     ## Loading kernel from FIT Image at 84000000 ...
 
-Using 'conf@0' configuration                                         
-     Trying 'kernel@0' kernel subimage                                    
-       Description:  RISC-V Linux kernel                                  
-       Type:         Kernel Image                                         
-       Compression:  gzip compressed                                      
-       Data Start:   0x840000e4
-       Data Size:    5117737 Bytes = 4.9 MiB
-       Architecture: RISC-V
-       OS:           Linux
-       Load Address: 0xa4000000
-       Entry Point:  0xa4000000
-     Verifying Hash Integrity ... OK
-  ## Loading fdt from FIT Image at 84000000 ...
+   Using 'conf@0' configuration                                         
+        Trying 'kernel@0' kernel subimage                                    
+          Description:  RISC-V Linux kernel                                  
+          Type:         Kernel Image                                         
+          Compression:  gzip compressed                                      
+          Data Start:   0x840000e4
+          Data Size:    5117737 Bytes = 4.9 MiB
+          Architecture: RISC-V
+          OS:           Linux
+      Load Address: 0xa4000000
+      Entry Point:  0xa4000000
+        Verifying Hash Integrity ... OK
+     ## Loading fdt from FIT Image at 84000000 ...
 
-Using 'conf@0' configuration
-     Trying 'fdt@0' fdt subimage
-       Description:  HiFive Unleashed A00 blob
-       Type:         Flat Device Tree
-       Compression:  uncompressed
-       Data Start:   0x844e18c4
-       Data Size:    6987 Bytes = 6.8 KiB
-       Architecture: RISC-V
-     Verifying Hash Integrity ... OK
-     Booting using the fdt blob at 0x844e18c4
-     Uncompressing Kernel Image
-     Using Device Tree in place at 00000000844e18c4, end 00000000844e640e
+   Using 'conf@0' configuration
+        Trying 'fdt@0' fdt subimage
+          Description:  HiFive Unleashed A00 blob
+          Type:         Flat Device Tree
+          Compression:  uncompressed
+          Data Start:   0x844e18c4
+          Data Size:    6987 Bytes = 6.8 KiB
+      Architecture: RISC-V
+      Verifying Hash Integrity ... OK
+        Booting using the fdt blob at 0x844e18c4
+        Uncompressing Kernel Image
+        Using Device Tree in place at 00000000844e18c4, end 00000000844e640e
 
-  Starting kernel ...
+     Starting kernel ...
+
 
 .. tip::
    Need BSP support for RISC-V platforms? Amarula Solutions provides U-Boot,

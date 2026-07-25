@@ -2,12 +2,9 @@ General Articles
 ================
 
 .. note:: **TL;DR**
-   - Technical articles covering general software engineering, DevOps
-     infrastructure, and IT tooling --- written by Amarula Solutions
-     engineers for practitioners managing development infrastructure.
+   - Technical articles covering general software engineering, DevOps infrastructure, and IT tooling, written by Amarula Solutions engineers for practitioners managing development infrastructure.
 
 .. _contents: Table of contents
-
 
 .. toctree::
    :maxdepth: 1

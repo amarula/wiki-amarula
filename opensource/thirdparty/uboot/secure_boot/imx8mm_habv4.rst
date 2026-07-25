@@ -104,7 +104,7 @@ software components required to initialize the device[I].
 
    Figure III: i.MX8M Boot Flow[I]
 
- - NOTE: for i.MX8M mini hdmi/dp firmware is not required in the boot process
+   NOTE: for i.MX8M mini hdmi/dp firmware is not required in the boot process
 
 On reset, ROM code reads the efuse to determine the security configuration of the SoC and
 the type of the boot device. The ROM then locates flash.bin, layout shown in Figure IV.

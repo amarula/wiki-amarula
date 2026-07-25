@@ -43,13 +43,15 @@ Rockchip
 ********
 
 rkdeveloptool
+
 ::
-        sudo apt-get install libudev-dev libusb-1.0-0-dev dh-autoreconf
-        git clone https://github.com/rockchip-linux/rkdeveloptool
-        cd rkdeveloptool
-        sudo autoreconf -i
-        sudo make 
-        sudo make install
+
+    sudo apt-get install libudev-dev libusb-1.0-0-dev dh-autoreconf
+    git clone https://github.com/rockchip-linux/rkdeveloptool
+    cd rkdeveloptool
+    sudo autoreconf -i
+    sudo make
+    sudo make install
 
 If you encounter compile error like below::
 
