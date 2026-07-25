@@ -3,7 +3,7 @@ The Workshop Upstream Manifesto
 
 .. note:: **TL;DR**
    - A hands-on two-day workshop (May 6-7, 2026, Carpi, Italy) focused on **mainline-first embedded development** — covering Yocto, kernel upstreaming, Zephyr, swupdate, and RAUC challenges.
-   - Mentored by Amarula senior engineers and special guest **Michael Opdenacker** (Bootlin).
+   - Mentored by Amarula senior engineers and special guest **Michael Opdenacker** (rootcommit).
 
 .. epigraph::
 
