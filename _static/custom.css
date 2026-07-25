@@ -1,6 +1,6 @@
 /* ==========================================================================
    Amarula Solutions Brand — Custom Styles for Sphinx RTD Theme
-   Brand colors: #fdcb0e (gold), #351c4d (deep purple), #00d084 (green)
+   Brand colors: #fdcb0e (gold), #222222 (black), #00d084 (green)
    ========================================================================== */
 
 /* ---- Logo ---- */
@@ -13,27 +13,27 @@
 
 /* ---- Sidebar & Top Navigation ---- */
 .wy-side-nav-search {
-    background-color: #351c4d;  /* Deep purple */
+    background-color: #222222;
 }
 .wy-side-nav-search input[type="text"] {
-    border-color: #351c4d;
+    border-color: #444444;
 }
 
 .wy-nav-top {
-    background: #351c4d;
+    background: #222222;
 }
 
 /* Sidebar background */
 .wy-nav-side {
-    background: #2c153d;  /* Slightly darker shade of purple for sidebar */
+    background: #1a1a1a;
 }
 
 /* Sidebar menu links */
 .wy-menu-vertical a {
-    color: #e8e8e8;
+    color: #cccccc;
 }
 .wy-menu-vertical a:hover {
-    background-color: #351c4d;
+    background-color: #333333;
     color: #fdcb0e;
 }
 .wy-menu-vertical li.current > a,
@@ -43,7 +43,7 @@
 .wy-menu-vertical li.current > a:hover,
 .wy-menu-vertical li.on a:hover {
     color: #fdcb0e;
-    background-color: #3d2056;
+    background-color: #444444;
 }
 
 /* Sidebar toctree caption */
@@ -53,13 +53,13 @@
 
 /* ---- Content Links ---- */
 .rst-content a {
-    color: #6a2c91;  /* Purple tint readable on white */
+    color: #222222;
 }
 .rst-content a:visited {
-    color: #4c1f69;
+    color: #555555;
 }
 .rst-content a:hover {
-    color: #fdcb0e;
+    color: #c9a200;
 }
 
 /* ---- Headings ---- */
@@ -69,12 +69,12 @@
 .rst-content h4,
 .rst-content h5,
 .rst-content h6 {
-    color: #351c4d;
+    color: #222222;
 }
 
 /* ---- Toctree inside content ---- */
 .rst-content .toctree-wrapper a {
-    color: #6a2c91;
+    color: #222222;
 }
 
 /* ---- Admonition / Note boxes ---- */
@@ -87,8 +87,8 @@
 }
 .rst-content .admonition.note .admonition-title,
 .rst-content .admonition.tip .admonition-title {
-    background: #fef9e7;  /* Light gold tint */
-    color: #351c4d;
+    background: #fef9e7;
+    color: #222222;
 }
 .rst-content .admonition.warning .admonition-title {
     background: #fdebd0;
@@ -97,9 +97,9 @@
 
 /* ---- Tables ---- */
 .rst-content table.docutils thead th {
-    background-color: #351c4d;
+    background-color: #222222;
     color: #ffffff;
-    border-color: #351c4d;
+    border-color: #222222;
 }
 .rst-content table.docutils tbody tr:nth-child(even) {
     background-color: #fdf6e3;
@@ -108,32 +108,26 @@
 /* ---- Buttons ---- */
 .btn-neutral {
     background-color: #f5f5f5 !important;
-    color: #351c4d !important;
+    color: #222222 !important;
 }
 .btn-neutral:hover,
 .btn-neutral:focus {
     background-color: #fdcb0e !important;
-    color: #351c4d !important;
+    color: #222222 !important;
 }
 .btn-neutral:visited {
-    color: #351c4d !important;
+    color: #222222 !important;
 }
 
 /* ---- Code blocks ---- */
 .rst-content code,
 .rst-content tt {
-    color: #351c4d;
-    background: #f9f2fc;
-    border: 1px solid #e2d1f0;
+    color: #222222;
+    background: #f5f5f5;
+    border: 1px solid #e0e0e0;
 }
 .rst-content pre {
-    background: #f9f2fc;
-}
-
-/* ---- Navigation (next/prev) ---- */
-.rst-content .btn-neutral {
-    background-color: #f5f5f5;
-    color: #351c4d;
+    background: #f5f5f5;
 }
 
 /* ---- Footer ---- */
@@ -148,22 +142,22 @@ span.caption-text {
 
 /* ---- Table of contents inside page ---- */
 .rst-content .contents a {
-    color: #6a2c91;
+    color: #222222;
 }
 
 /* ---- Highlight/Selection ---- */
 ::selection {
     background: #fdcb0e;
-    color: #351c4d;
+    color: #222222;
 }
 ::-moz-selection {
     background: #fdcb0e;
-    color: #351c4d;
+    color: #222222;
 }
 
 /* ---- Version / revision indicator ---- */
 .rst-content .versionmodified {
-    color: #fdcb0e;
+    color: #c9a200;
 }
 
 /* ---- Breadcrumbs ---- */
@@ -171,7 +165,7 @@ span.caption-text {
     color: #999;
 }
 .wy-breadcrumbs a {
-    color: #6a2c91;
+    color: #555555;
 }
 
 /* ---- Search results ---- */
@@ -183,6 +177,6 @@ span.caption-text {
 /* ---- Responsive fixes ---- */
 @media screen and (max-width: 768px) {
     .wy-nav-top {
-        background: #351c4d;
+        background: #222222;
     }
 }
