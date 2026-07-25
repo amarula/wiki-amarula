@@ -16,6 +16,7 @@ Articles
    iot/index
    yocto/index
    buildroot/index
+   general/index
 
 .. tip::
    Interested in a deeper dive on any of these topics? Amarula Solutions

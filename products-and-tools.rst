@@ -32,6 +32,13 @@ Build & Security Tools
 - **git-collect-plugin** — Jenkins plugin for collecting Git repository statistics.
   See `opensource/products/git-collect-plugin <opensource/products/git-collect-plugin.html>`_.
 
+Infrastructure & DevOps Tools
+=============================
+
+- **ldap-passwd-webui** — Web-based LDAP and Active Directory password manager
+  with self-service password change and admin user/group management.
+  See `opensource/products/ldap-passwd-webui <opensource/products/ldap-passwd-webui.html>`_.
+
 Python & C++ Libraries
 ======================
 
@@ -49,6 +56,7 @@ Python & C++ Libraries
    opensource/products/chatgpt-gerrit
    opensource/products/cutekeyboard
    opensource/products/flutekeyboard
+   opensource/products/ldap-passwd-webui
    opensource/products/dyndesign/index
    opensource/products/meta-mend
    opensource/products/libcppconnman
