@@ -1,15 +1,16 @@
-===========================================
+=======================================================
 Self-Service LDAP Management with ldap-passwd-webui
-===========================================
+=======================================================
 
 .. note:: **TL;DR**
-   - **ldap-passwd-webui** is a lightweight web-based interface for **LDAP and
-     Active Directory password management**, forked and maintained by Amarula
-     Solutions from `jirutka/ldap-passwd-webui <https://github.com/jirutka/ldap-passwd-webui>`__.
-   - It provides **end-user self-service password changes** and
+   - **ldap-passwd-webui** is a lightweight web-based interface for
+     **LDAP and Active Directory password management**, forked and
+     maintained by Amarula Solutions from
+     `jirutka/ldap-passwd-webui <https://github.com/jirutka/ldap-passwd-webui>`__.
+   - Provides **end-user self-service password changes** and
      **administrative user/group management** with Material Design 3,
-     comprehensive security hardening, and support for OpenLDAP and Active
-     Directory.
+     comprehensive security hardening, and support for OpenLDAP and
+     Active Directory.
 
 |
 
