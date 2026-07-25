@@ -3,7 +3,7 @@ Amarula Products & Tools
 ===========================
 
 .. note:: **TL;DR**
-   - Overview of Amarula Solutions' **open source products and developer tools** — including the **ChatGPT Gerrit Code Review plugin**, **CuteKeyboard** (Qt virtual keyboard), **Flutekeyboard**, **Jelliphy** (AI web framework), **DynDesign** (Python dynamic decoration), **meta-mend** (Yocto security), **libcppconnman**, and the **git-collect Jenkins plugin**.
+   - Overview of Amarula Solutions' **open source products and developer tools** — including the **ChatGPT Gerrit Code Review plugin**, **CuteKeyboard** (Qt virtual keyboard), **Flutekeyboard**, **Jelliphy** (AI web framework), **DynDesign** (Python dynamic decoration), **meta-mend** (Yocto security), **libcppconnman**, **ldap-passwd-webui**, **gitea-artifact-manager**, and the **git-collect Jenkins plugin**.
 
 AI-Powered Tools
 ================
@@ -39,6 +39,10 @@ Infrastructure & DevOps Tools
   with self-service password change and admin user/group management.
   See `opensource/products/ldap-passwd-webui <opensource/products/ldap-passwd-webui.html>`_.
 
+- **gitea-artifact-manager** — Jenkins plugin that stores build artifacts in
+  Gitea's Generic Package Registry, replacing local filesystem storage.
+  See `opensource/products/gitea-artifact-manager <opensource/products/gitea-artifact-manager.html>`_.
+
 Python & C++ Libraries
 ======================
 
@@ -57,6 +61,7 @@ Python & C++ Libraries
    opensource/products/cutekeyboard
    opensource/products/flutekeyboard
    opensource/products/ldap-passwd-webui
+   opensource/products/gitea-artifact-manager
    opensource/products/dyndesign/index
    opensource/products/meta-mend
    opensource/products/libcppconnman

@@ -14,6 +14,7 @@ General Articles
    :caption: Contents:
 
    ldap-passwd-webui
+   gitea-artifact-manager
 
 .. tip::
    Have a tool or process that could benefit from documentation? Amarula
