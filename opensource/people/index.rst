@@ -15,6 +15,7 @@ Amarula Solutions Team
    dario-binacchi
    andrea-ricchi
    adam-duskett
+   eduardo-gonzalez
 
 .. tip::
    Amarula Solutions is always looking for talented embedded Linux
