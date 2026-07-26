@@ -43,5 +43,6 @@ We are experts in **Embedded Linux**, **Android**, and **Open Source** integrati
    :name: company
 
    about/about.rst
+   opensource/people/index
    news/index
    articles/index

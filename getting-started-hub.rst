@@ -34,6 +34,11 @@ Who Is This For?
    Overviews of our build-system strategy (Yocto vs Buildroot), security
    integration, and open-source compliance practices.
 
+:Curious who wrote this?:
+   Every guide on this wiki is written by Amarula Solutions engineers
+   actively contributing upstream. Browse our :doc:`team directory
+   <opensource/people/index>` to see the people behind the patches.
+
 ----
 
 The Embedded Linux Learning Path
@@ -342,6 +347,7 @@ project needs.
    cicd-hub
    security-hub
    iot-and-rtos-hub
+   opensource/people/index
    about/about
    opensource/contributions
    products-and-tools
