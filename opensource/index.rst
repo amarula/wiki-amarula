@@ -12,6 +12,7 @@ Open Source Projects
    :caption: Our Contributions
 
    contributions
+   people/index
 
 .. toctree::
    :maxdepth: 1
