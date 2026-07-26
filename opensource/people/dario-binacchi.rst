@@ -1,7 +1,7 @@
 .. ============================================================================
    Dario Binacchi — Profile page for Amarula Solutions' open source contributor
-   directory. Data sourced from amarulasolutions.com/team/dario-binacchi and
-   the monthly contribution reports in opensource/reports/.
+   directory. Data sourced from passgat.github.io and monthly contribution
+   reports in opensource/reports/.
    ============================================================================
 
 ==============
@@ -14,22 +14,26 @@ Dario Binacchi
 
 **Role:** Senior Embedded Linux Developer
 
-**At Amarula since:** 2017
+**Location:** Suzzara, near Mantua, Italy
 
-**Location:** Italy
+**GitHub:** `passgat <https://github.com/passgat>`__
+**LinkedIn:** `dario-binacchi <https://www.linkedin.com/in/dario-binacchi-698a9734>`__
+**Personal site:** `passgat.github.io <https://passgat.github.io>`__
 
 |
 
 Dario is an embedded developer with a strong passion for open source
-software. He completed a thesis on Digital Signal Processors and earned
-his degree in Software Engineering in 2000. His career began in the
-embedded domain, first working on bare-metal systems before
-transitioning to Linux-based architectures.
+software. He graduated in Software Engineering in 2000, completing a
+thesis on Digital Signal Processors. He started his career working on
+bare-metal embedded systems before transitioning to Linux-based
+architectures.
 
-He joined Amarula Solutions around 2017, brought in by CEO Michael
-Trimarchi, and has since become one of the most active contributors to
-Buildroot, U-Boot, and the Linux kernel — work he describes as a source
-of "great inspiration and satisfaction."
+He joined Amarula Solutions, brought in by CEO Michael Trimarchi, and
+has since become one of the most active contributors to Buildroot,
+U-Boot, and the Linux kernel — work he describes as "a source of great
+inspiration and satisfaction."
+
+He approaches programming as "learning while having fun."
 
 |
 
@@ -38,35 +42,59 @@ of "great inspiration and satisfaction."
 Open Source Focus
 =================
 
-**Buildroot**
-  Dario is the single most prolific contributor in Amarula's Buildroot
-  activity. Since 2025 he has maintained and bumped Linux and U-Boot
-  versions across a wide range of boards:
-  STM32MP1/MP2, STM32F4/F7/H7 Discovery kits, BeagleBone, TI AM62x,
-  i.MX6ULZ, and i.MX8MN BSH boards. He has also introduced new
-  packages (``cmocka``, ``uuu``, ``armadillo``, ``libgphoto2``,
-  ``embiggen-disk``, ``ufs-utils``, ``pocketpy``) and maintained
-  the Qt6 and Python package ecosystems.
+**Buildroot** (500+ patches)
+  Buildroot is Dario's preferred build system and his most prolific
+  project. He maintains and updates packages and boards from ST, TI,
+  and BSH, covering STM32MP1/MP2, STM32F4/F7/H7 Discovery kits,
+  BeagleBone, TI AM62x, i.MX6ULZ, and i.MX8MN platforms. He has
+  introduced new packages and maintained the Qt6 and Python ecosystems.
 
-**Linux Kernel**
-  Contributions span the STM32 platform (device trees, clock drivers,
-  CAN controller fixes), the i.MX family, and DRM panel drivers
-  including Ampire and Rocktech display panels. He actively works on
-  ARM architecture improvements and CAN networking.
+**Linux Kernel** (200+ patches)
+  Contributions target ARM and ARM64 platforms, spanning board
+  bring-up, clock drivers, the CAN subsystem, DRM, and touchscreen
+  drivers. Dario is the **maintainer of the slCAN and bxCAN drivers**
+  within the Linux kernel CAN subsystem.
 
-**U-Boot**
-  Board maintenance for STM32MP1/MP2, i.MX, and TI platforms, plus
-  upstream version bumps. He authored patches for the STM32F4 clock
-  driver and contributed to the release cycle documentation.
+**U-Boot** (200+ patches)
+  Started with video support for the BeagleBoard, later expanding
+  into clocks, pinctrl, NAND, RTC, PWM, GPIO, and more. He serves as
+  **co-custodian of the NAND subsystem** alongside Michael Trimarchi.
 
 **CAN Bus Networking**
-  Dario maintains the Linux kernel's CAN subsystem components and has
-  upstreamed fixes for STM32 CAN controllers used in industrial
-  applications.
+  Dario maintains the Linux kernel's slCAN and bxCAN drivers and has
+  upstreamed CAN controller fixes for STM32 and other platforms used
+  in industrial applications.
 
 **Additional Projects**
-  He contributes to the Zephyr RTOS (ESP32 support) and has worked on
-  Yocto/OpenEmbedded BSP layers.
+  Contributions to Zephyr RTOS, Yocto/OpenEmbedded, and Xenomai.
+
+|
+
+----
+
+Talks
+=====
+
+.. list-table::
+   :header-rows: 1
+   :widths: 15 30 55
+
+   * - Year
+     - Event
+     - Topic
+   * - 2024
+     - FOSDEM, Brussels
+     - Linux CAN upstreaming on MMU-less systems
+   * - 2024
+     - Linux Day, Mantova
+     - FOSS upstreaming: guidelines for contributing to open source
+   * - 2024
+     - ELCE, Vienna
+     - Buildroot Developer Meeting
+   * - 2025
+     - ELCE, Amsterdam
+     - Dual-board embedded system: Yocto & Zephyr integration
+       (co-presented with Andrea Ricchi)
 
 |
 
@@ -104,14 +132,12 @@ Selected Contributions (2025–2026)
 
 |
 
-----
-
 Beyond the Code
 ===============
 
 When not writing kernel patches or bumping Buildroot packages, Dario
-enjoys jogging, watching movies, reading, and fishing on the banks of
-the Po River.
+enjoys jogging, watching movies, reading, and fishing ("passgat too
+:)" as he puts it) while sitting along the Po river.
 
 |
 
