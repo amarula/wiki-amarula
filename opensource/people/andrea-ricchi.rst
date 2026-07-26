@@ -118,7 +118,7 @@ gap between kernel-space robustness and user-facing polish.
 |
 
 .. note::
-   This profile is part of the :doc:`Amarula Solutions Open Source Team directory <index>`.
+   This profile is part of the :doc:`Open Source Team directory <index>`.
    Amarula is a larger team; this directory covers only members with public upstream contributions.
 
 .. tip::

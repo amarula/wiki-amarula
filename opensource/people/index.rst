@@ -1,6 +1,6 @@
-=============================================
-Amarula Solutions Open Source Team
-=============================================
+=================
+Open Source Team
+=================
 
 .. note:: **TL;DR**
    - Profile pages for Amarula Solutions' engineers active in open source — covering their roles, areas of expertise, upstream contributions, and selected work across Buildroot, U-Boot, Linux Kernel, Yocto, Zephyr, and Jenkins.
