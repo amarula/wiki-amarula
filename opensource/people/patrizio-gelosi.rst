@@ -115,6 +115,10 @@ pieces by **Chopin** and **Beethoven**.
 
 |
 
+.. note::
+   This profile is part of the :doc:`Amarula Solutions team directory <index>`.
+   See the team page for the full list of contributors and their areas of expertise.
+
 .. tip::
    Interested in AI-assisted code review or want to integrate ChatGPT
    into your Gerrit workflow? Amarula Solutions provides plugin

@@ -118,6 +118,10 @@ analytical rigor he applied to statistical physics at SISSA.
 
 |
 
+.. note::
+   This profile is part of the :doc:`Amarula Solutions team directory <index>`.
+   See the team page for the full list of contributors and their areas of expertise.
+
 .. tip::
    Need a C++ library for ConnMan integration or embedded networking
    support? Amarula Solutions provides custom library development,

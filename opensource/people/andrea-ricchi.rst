@@ -117,6 +117,10 @@ gap between kernel-space robustness and user-facing polish.
 
 |
 
+.. note::
+   This profile is part of the :doc:`Amarula Solutions team directory <index>`.
+   See the team page for the full list of contributors and their areas of expertise.
+
 .. tip::
    Need an embedded UI for your Qt or Flutter-based product? Amarula
    Solutions provides custom virtual keyboard development, Buildroot

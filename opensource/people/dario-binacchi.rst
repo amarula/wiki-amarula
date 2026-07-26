@@ -115,6 +115,10 @@ the Po River.
 
 |
 
+.. note::
+   This profile is part of the :doc:`Amarula Solutions team directory <index>`.
+   See the team page for the full list of contributors and their areas of expertise.
+
 .. tip::
    Dario is one of the many open source engineers at Amarula Solutions.
    Interested in collaborating? Amarula funds upstream development across

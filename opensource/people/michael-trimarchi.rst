@@ -120,6 +120,10 @@ Jenkins pipelines.
 
 |
 
+.. note::
+   This profile is part of the :doc:`Amarula Solutions team directory <index>`.
+   See the team page for the full list of contributors and their areas of expertise.
+
 .. tip::
    Michael leads Amarula Solutions' open source strategy. Interested in
    collaborating on U-Boot, embedded Linux, or CI/CD infrastructure?
