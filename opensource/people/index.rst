@@ -13,6 +13,7 @@ Amarula Solutions Team
 
    michael-trimarchi
    dario-binacchi
+   andrea-ricchi
 
 .. tip::
    Amarula Solutions is always looking for talented embedded Linux
