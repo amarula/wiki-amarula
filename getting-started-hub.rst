@@ -258,7 +258,7 @@ Pick the path that matches what you're working on right now.
      - Zephyr on ESP32 and TI CC3220, ESP32 camera projects
      - :doc:`iot-and-rtos-hub`
    * - **AI / ML Tools**
-     - Gerrit ChatGPT plugin, Jelliphy framework
+     - ReviewAI Gerrit plugin, Jelliphy framework
      - :doc:`products-and-tools`
 
 ----
@@ -305,7 +305,7 @@ Tools & Products
 
 We maintain several open-source tools developed in-house:
 
-- :doc:`ChatGPT Gerrit Plugin <opensource/products/chatgpt-gerrit>` — AI-powered code review directly in Gerrit.
+- :doc:`ReviewAI Gerrit Plugin <opensource/products/reviewai-gerrit-plugin>` — AI-powered code review directly in Gerrit.
 - :doc:`CuteKeyboard <opensource/products/cutekeyboard>` — Qt virtual keyboard, now upstream in Yocto's meta-qt.
 - :doc:`Flutekeyboard <opensource/products/flutekeyboard>` — Flutter virtual keyboard for embedded displays.
 - :doc:`meta-mend <opensource/products/meta-mend>` — Yocto layer for Mend SCA vulnerability analysis.

@@ -56,7 +56,7 @@ Open Source Focus
 
 **Jenkins & CI/CD**
   The most prolific contributor to Amarula's Jenkins ecosystem: lead
-  developer of the **ChatGPT Gerrit Code Review plugin**, the **Gitea
+  developer of the **ReviewAI Gerrit Code Review plugin**, the **Gitea
   Artifact Manager plugin**, and the **warning-ng scanner suite**
   (Yocto, Valgrind, CodeChecker). He maintains Gerrit Checks integration
   and the shared Jenkins pipeline libraries that power Amarula's CI
@@ -86,7 +86,7 @@ Selected Contributions (2025–2026)
      - Project / Area
    * - Gitea Artifact Manager Jenkins plugin (new)
      - Jenkins
-   * - ChatGPT Gerrit plugin version 4.0 with ``--mode`` flag
+   * - ReviewAI Gerrit plugin version 4.0 with ``--mode`` flag
      - Jenkins
    * - Static analysis + code coverage pipeline for Gerrit Checks plugin
      - Jenkins

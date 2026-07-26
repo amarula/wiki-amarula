@@ -3,13 +3,13 @@ Amarula Products & Tools
 ===========================
 
 .. note:: **TL;DR**
-   - Overview of Amarula Solutions' **open source products and developer tools** — including the **ChatGPT Gerrit Code Review plugin**, **CuteKeyboard** (Qt virtual keyboard), **Flutekeyboard**, **Jelliphy** (AI web framework), **DynDesign** (Python dynamic decoration), **meta-mend** (Yocto security), **libcppconnman**, **ldap-passwd-webui**, **gitea-artifact-manager**, and the **git-collect Jenkins plugin**.
+   - Overview of Amarula Solutions' **open source products and developer tools** — including the **ReviewAI Gerrit Code Review plugin**, **CuteKeyboard** (Qt virtual keyboard), **Flutekeyboard**, **Jelliphy** (AI web framework), **DynDesign** (Python dynamic decoration), **meta-mend** (Yocto security), **libcppconnman**, **ldap-passwd-webui**, **gitea-artifact-manager**, and the **git-collect Jenkins plugin**.
 
 AI-Powered Tools
 ================
 
-- **ChatGPT Gerrit Plugin** — AI-assisted code review in Gerrit with voting, comment resolution, and on-demand context fetching.
-  See `opensource/products/chatgpt-gerrit <opensource/products/chatgpt-gerrit.html>`_.
+- **ReviewAI Gerrit Plugin** — AI-powered code review in Gerrit with sidebar chat, automatic Patch Set review, multi-provider support, and specialized review agents.
+  See `opensource/products/reviewai-gerrit-plugin <opensource/products/reviewai-gerrit-plugin.html>`_.
 
 - **Jelliphy** — No-code browser-based AI framework for interactive web application development using ChatGPT.
   See `articles/ai/jelliphy <articles/ai/jelliphy.html>`_.
@@ -57,7 +57,7 @@ Python & C++ Libraries
    :caption: Reference
    :hidden:
 
-   opensource/products/chatgpt-gerrit
+   opensource/products/reviewai-gerrit-plugin
    opensource/products/cutekeyboard
    opensource/products/flutekeyboard
    opensource/products/ldap-passwd-webui

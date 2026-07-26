@@ -2,7 +2,7 @@ Open Source Projects
 ====================
 
 .. note:: **TL;DR**
-   - Amarula Solutions' **open source project hub** — featuring our own products (CuteKeyboard, Flutekeyboard, ChatGPT Gerrit plugin, ldap-passwd-webui, gitea-artifact-manager, DynDesign, libcppconnman, meta-mend) and third-party integration guides for **U-Boot, OP-TEE, Zephyr, Buildroot, and Linux multimedia/DRM**.
+   - Amarula Solutions' **open source project hub** — featuring our own products (CuteKeyboard, Flutekeyboard, ReviewAI Gerrit plugin, ldap-passwd-webui, gitea-artifact-manager, DynDesign, libcppconnman, meta-mend) and third-party integration guides for **U-Boot, OP-TEE, Zephyr, Buildroot, and Linux multimedia/DRM**.
    - Visit the **Open Source Contributions page** for our maintainer roles, monthly upstream reports, and contribution statistics.
 
 .. _contents: Table of contents
@@ -20,7 +20,7 @@ Open Source Projects
    :caption: Our Products
 
    products/dyndesign/index
-   products/chatgpt-gerrit
+   products/reviewai-gerrit-plugin
    products/cutekeyboard
    products/flutekeyboard
    products/meta-mend

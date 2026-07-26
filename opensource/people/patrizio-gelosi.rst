@@ -29,7 +29,7 @@ His project portfolio spans natural language processing engines, image
 processing platforms (2D and 3D), document processing systems for both
 digital and scanned documents, HTML graphic editors, and web application
 plugins for CRM and CMS platforms. Since joining Amarula, he has become
-the **lead developer of the ChatGPT Gerrit Code Review plugin**,
+the **lead developer of the ReviewAI Gerrit Code Review plugin**,
 driving its evolution from an experimental AI integration into a mature,
 production-grade code review tool.
 
@@ -40,9 +40,9 @@ production-grade code review tool.
 Open Source Focus
 =================
 
-**ChatGPT Gerrit Plugin (Lead Developer)**
+**ReviewAI Gerrit Plugin (Lead Developer)**
   Patrizio is the primary developer of Amarula's flagship open source
-  product, the ChatGPT Gerrit Code Review plugin. He has led a
+  product, the ReviewAI Gerrit Code Review plugin. He has led a
   comprehensive architectural migration from OpenAI's deprecated
   Assistants API to the official Chat Completions API, implemented
   **parallel AI review processing** across multiple patch files, and
@@ -81,25 +81,25 @@ Selected Contributions (2025–2026)
    * - Contribution
      - Project
    * - Migration from Assistants API to official OpenAI Chat Completions API
-     - ChatGPT Gerrit Plugin
+     - ReviewAI Gerrit Plugin
    * - Parallel AI review processing across multiple patch files
-     - ChatGPT Gerrit Plugin
+     - ReviewAI Gerrit Plugin
    * - Review Agent framework integration with structured output
-     - ChatGPT Gerrit Plugin
+     - ReviewAI Gerrit Plugin
    * - Gerrit/plugin prompt harmonization with default neutral reviews
-     - ChatGPT Gerrit Plugin
+     - ReviewAI Gerrit Plugin
    * - AI Assistant modularization and central function calling
-     - ChatGPT Gerrit Plugin
+     - ReviewAI Gerrit Plugin
    * - /help command and /show command result formatting
-     - ChatGPT Gerrit Plugin
+     - ReviewAI Gerrit Plugin
    * - Multi-conversation AI history per patch set
-     - ChatGPT Gerrit Plugin
+     - ReviewAI Gerrit Plugin
    * - Per-provider model selection and dynamic configuration
-     - ChatGPT Gerrit Plugin
+     - ReviewAI Gerrit Plugin
    * - Connection error handling and response timeout extension
-     - ChatGPT Gerrit Plugin
+     - ReviewAI Gerrit Plugin
    * - Version 4.0.0 bump with compatibility fixes for Gerrit 3.9+
-     - ChatGPT Gerrit Plugin
+     - ReviewAI Gerrit Plugin
 
 |
 
@@ -120,8 +120,8 @@ pieces by **Chopin** and **Beethoven**.
    Amarula is a larger team; this directory covers only members with public upstream contributions.
 
 .. tip::
-   Interested in AI-assisted code review or want to integrate ChatGPT
+   Interested in AI-assisted code review or want to integrate ReviewAI
    into your Gerrit workflow? Amarula Solutions provides plugin
-   deployment, customization, and commercial support for the ChatGPT
+   deployment, customization, and commercial support for the ReviewAI
    Gerrit plugin.
    `Contact us <https://www.amarulasolutions.com/contact/>`_
