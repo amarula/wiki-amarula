@@ -4,30 +4,23 @@ Centralized Build Artifacts with Gitea Artifact Manager
 
 .. note:: **TL;DR**
 
-   - **gitea-artifact-manager** is a Jenkins plugin by Amarula Solutions
-     that stores build artifacts in the Gitea Generic Package Registry
-     instead of the local filesystem.
-   - Standard Jenkins pipeline steps like ``archiveArtifacts`` work
-     transparently.
+   - **gitea-artifact-manager** is a Jenkins plugin by Amarula Solutions that allows Jenkins to offload build artifacts directly to your existing Gitea Git server, turning it into a dedicated artifact repository.
+   - Standard Jenkins pipeline steps like ``archiveArtifacts`` work transparently; your CI/CD pipeline stays fully on-premise with no extra infrastructure.
 
 |
 
-Why Move Artifacts to Gitea?
--------------------------------
+The Problem It Solves
+======================
 
-Jenkins' default behavior stores build artifacts — compiled binaries,
-test reports, firmware images — on the master's local disk. For the
-kinds of embedded Linux builds Amarula runs (Yocto images, kernel
-binaries, root filesystems, SDK installers), this presents real problems:
+If your organization relies on self-hosted infrastructure, you know the
+challenge of keeping your entire CI/CD pipeline localized and
+cost-effective.
 
-#. **Disk pressure** — a single Yocto build can produce gigabytes of
-   artifacts. Jenkins' build rotation eventually deletes them.
-#. **No audit trail** — which Jenkins build produced which binary that
-   was shipped to a customer? Finding out means digging through
-   ``$JENKINS_HOME/jobs/`` on disk.
-#. **No off-master access** — other tools in the pipeline (test
-   automation, flashing stations, release scripts) need to reach the
-   artifacts but can't access the Jenkins filesystem.
+**This plugin specifically solves on-premise artifact storage** by
+allowing Jenkins to seamlessly offload build artifacts directly to
+your already-installed Gitea Git server. You can now use Gitea as your
+dedicated artifact repository, eliminating the need to deploy and
+maintain a separate, heavy third-party artifact manager.
 
 Running a dedicated artifact server like JFrog Artifactory or Sonatype
 Nexus adds operational overhead — another service to maintain, monitor,
@@ -35,8 +28,53 @@ and back up. For teams already using Gitea for Git hosting and code
 review, the Generic Package Registry is already there, already backed
 up, and already authenticated.
 
+|
+
+How It Enhances Your Workflow
+===============================
+
+**True On-Premise Control**
+   Keeps your codebase and your binary artifacts tightly unified within
+   your secure, self-hosted Jenkins and Gitea environment. No external
+   services, no cloud dependencies.
+
+**Overcomes Bottlenecks**
+   Built to help teams bypass the typical friction points of the testing
+   and artifact-publishing phases. Artifacts flow directly from Jenkins
+   to Gitea's versioned package registry.
+
+**Improves Quality**
+   Automates the artifact lifecycle to enhance overall software
+   reliability and traceability. Each build's artifacts become immutable,
+   versioned Gitea packages keyed by build number — you always know
+   which binary came from which build.
+
+**Highly Adaptable**
+   Designed to adapt to your most difficult challenges, whether your
+   company develops embedded systems or complex cloud architectures.
+   The plugin implements Jenkins' ``ArtifactManager`` extension point,
+   so it works with any pipeline using standard steps.
+
+|
+
+Amarula's Use Case
+====================
+
+Amarula Solutions runs Jenkins-based CI/CD for embedded Linux builds —
+Yocto images, kernel binaries, root filesystems, SDK installers. These
+produce gigabytes of artifacts that need to be retained, auditable, and
+accessible to flashing stations and release scripts.
+
+Gitea was already part of Amarula's infrastructure for Git hosting and
+code review. Leveraging its Generic Package Registry for artifacts
+eliminated the need for a separate artifact server, reducing operational
+complexity while providing the versioning and retention needed for
+embedded development workflows.
+
+|
+
 How It Works
---------------
+---------------
 
 The `gitea-artifact-manager <https://github.com/amarula/gitea-artifact-manager>`__
 plugin acts as a translation layer between Jenkins' artifact management

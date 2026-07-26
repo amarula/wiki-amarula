@@ -11,7 +11,6 @@ General Articles
    :caption: Contents:
 
    ldap-passwd-webui
-   gitea-artifact-manager
    bianchina-test-board
 
 .. tip::
