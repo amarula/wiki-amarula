@@ -23,6 +23,7 @@ We are experts in **Embedded Linux**, **Android**, and **Open Source** integrati
    :name: solutions
 
    bsp/index
+   hardware-hub
    build-systems-hub
    cicd-hub
    security-hub

@@ -254,6 +254,9 @@ Pick the path that matches what you're working on right now.
    * - **Security**
      - Secure boot, OP-TEE, HABv4, dm-verity, vulnerability scanning
      - :doc:`security-hub`
+   * - **Hardware Design**
+     - Schematic, PCB, FPGA, mechanical CAD, pre-compliance testing
+     - :doc:`hardware-hub`
    * - **IoT & RTOS**
      - Zephyr on ESP32 and TI CC3220, ESP32 camera projects
      - :doc:`iot-and-rtos-hub`
