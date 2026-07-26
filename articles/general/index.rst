@@ -12,6 +12,7 @@ General Articles
 
    ldap-passwd-webui
    gitea-artifact-manager
+   bianchina-test-board
 
 .. tip::
    Have a tool or process that could benefit from documentation? Amarula

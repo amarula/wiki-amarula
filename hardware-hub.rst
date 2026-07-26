@@ -137,6 +137,26 @@ saving time and money in the final compliance phase.
 
 |
 
+Open Hardware Projects
+========================
+
+.. figure:: /images/bianchina-board-hero.png
+   :align: right
+   :width: 320
+
+Amarula also develops **open hardware** — designs published for the
+community to study, modify, and manufacture.
+
+:doc:`Bianchina Test Board <../articles/general/bianchina-test-board>`
+   A multi-function debugging platform combining a 100 MSps logic
+   analyzer, pattern generator, JTAG programmer (FT2232H), bus
+   protocol analyzers (SPI, I²C, UART, I²S, CAN), programmable
+   power supply, and dual SD-card loader — all in one USB-connected
+   board. **We are currently seeking funding and manufacturing
+   partners to bring Bianchina to mass production.**
+
+|
+
 The Hardware-Software Advantage
 =================================
 
@@ -180,6 +200,8 @@ Related Wiki Pages
 
 - :doc:`BSP Index <bsp/index>` — mainline U-Boot and Linux kernel
   guides for our supported hardware platforms.
+- :doc:`Bianchina Test Board <articles/general/bianchina-test-board>` — open hardware debugging platform combining logic
+  analyzer, JTAG programmer, and protocol analyzers.
 - :doc:`Build Systems Hub <build-systems-hub>` — Yocto and Buildroot
   integration for production firmware images.
 - :doc:`CI/CD Hub <cicd-hub>` — Jenkins pipelines for automated
