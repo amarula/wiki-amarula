@@ -11,6 +11,7 @@ Amarula Solutions Team
    :maxdepth: 1
    :caption: Contributors
 
+   michael-trimarchi
    dario-binacchi
 
 .. tip::
