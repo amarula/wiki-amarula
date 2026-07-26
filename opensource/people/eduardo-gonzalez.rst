@@ -119,8 +119,8 @@ analytical rigor he applied to statistical physics at SISSA.
 |
 
 .. note::
-   This profile is part of the :doc:`Amarula Solutions team directory <index>`.
-   See the team page for the full list of contributors and their areas of expertise.
+   This profile is part of the :doc:`Amarula Solutions Open Source Team directory <index>`.
+   Amarula is a larger team; this directory covers only members with public upstream contributions.
 
 .. tip::
    Need a C++ library for ConnMan integration or embedded networking

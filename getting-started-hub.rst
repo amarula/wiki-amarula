@@ -36,8 +36,9 @@ Who Is This For?
 
 :Curious who wrote this?:
    Every guide on this wiki is written by Amarula Solutions engineers
-   actively contributing upstream. Browse our :doc:`team directory
-   <opensource/people/index>` to see the people behind the patches.
+   actively contributing upstream. Browse our :doc:`open source team
+   directory <opensource/people/index>` to see the people behind the
+   patches.
 
 ----
 

@@ -36,6 +36,6 @@ Feel free to write for any corrections and updates to
    BSP development to production-ready Yocto images.
    `Visit our main website <https://www.amarulasolutions.com>`_
 
-:doc:`Meet the team → <../opensource/people/index>`
+:doc:`Meet the open source team → <../opensource/people/index>`
 
 Team Amarula Developer Portal.
