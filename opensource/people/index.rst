@@ -16,6 +16,7 @@ Amarula Solutions Team
    andrea-ricchi
    adam-duskett
    eduardo-gonzalez
+   patrizio-gelosi
 
 .. tip::
    Amarula Solutions is always looking for talented embedded Linux
