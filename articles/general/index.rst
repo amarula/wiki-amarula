@@ -12,6 +12,7 @@ General Articles
 
    ldap-passwd-webui
    bianchina-test-board
+   roadmap-for-newbies
 
 .. tip::
    Have a tool or process that could benefit from documentation? Amarula
