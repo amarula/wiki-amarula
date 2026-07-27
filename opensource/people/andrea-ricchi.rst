@@ -18,20 +18,22 @@ Andrea Ricchi
 
 **At Amarula since:** 2020
 
+**Portfolio:** `andrearicchi.github.io <https://andrearicchi.github.io/>`__
+
 |
 
 Andrea is a passionate embedded software developer with deep expertise
-in C/C++ and a focus on safety and performance. For application-layer
-work he builds user interfaces using **Qt** and **Flutter/Dart**, while
-managing the underlying systems through custom Linux distributions
-built with **Yocto** and **Buildroot**.
+in **C/C++**, **Rust**, and **Dart**, and a strong focus on safety and
+performance. For application-layer work he builds user interfaces with
+**Qt** and **Flutter**, while managing the underlying systems through
+custom Linux distributions built with **Yocto** and **Buildroot**.
 
-He is a strong advocate for open source, actively contributing to
-**ConnMan**, **Buildroot**, and **Yocto**, and serves as the upstream
-maintainer of **CuteKeyboard** (Qt virtual keyboard, now in Yocto's
-meta-qt layer) and **FluteKeyboard** (Flutter virtual keyboard for
-embedded displays). He has presented at **FOSDEM 2024** and **ELCE
-2025**.
+A committed open source advocate, Andrea actively contributes to
+**ConnMan**, **Buildroot**, and **Yocto**. He is also the upstream
+maintainer of **CuteKeyboard** (a Qt virtual keyboard, now part of
+Yocto's meta-qt layer) and **FluteKeyboard** (a Flutter virtual
+keyboard for embedded displays). He has presented at **FOSDEM 2024**
+and **ELCE 2025**.
 
 |
 
@@ -41,11 +43,11 @@ Open Source Focus
 =================
 
 **CuteKeyboard**
-  Andrea is the upstream maintainer of CuteKeyboard, an open-source
-  Qt virtual keyboard adopted into Yocto's meta-qt layer. He drives
-  feature development, manages Buildroot package integration, handles
-  multi-layout support (including Danish and Finnish keyboard layouts),
-  and coordinates GitHub CI workflows.
+  Upstream maintainer of CuteKeyboard, an open-source Qt virtual
+  keyboard adopted into Yocto's meta-qt layer. Andrea drives feature
+  development, manages Buildroot package integration, adds multi-layout
+  support (including Danish and Finnish keyboard layouts), and
+  coordinates GitHub CI workflows.
 
 **FluteKeyboard**
   Creator and maintainer of FluteKeyboard, a Flutter-based virtual
@@ -54,15 +56,16 @@ Open Source Focus
   checks, and local development tooling.
 
 **ConnMan**
-  Contributes to ConnMan, the lightweight network manager used in
-  embedded Linux distributions, with improvements to timezone
-  handling and file comparison logic.
+  Contributor to ConnMan, the lightweight network manager used in
+  embedded Linux distributions, with improvements to timezone handling
+  and file comparison logic.
 
 **Buildroot**
-  Maintains the ``cutekeyboard`` and ``flutekeyboard`` packages,
-  registered as a developer for these packages in the upstream
-  ``DEVELOPERS`` file. He also contributed to ``timezone`` package
-  fixes.
+  Maintainer of the ``cutekeyboard``, ``flutekeyboard``, and
+  ``libcppconnman`` packages, registered as their developer in the
+  upstream ``DEVELOPERS`` file. ``libcppconnman`` is a C++ library that
+  exposes an easy-to-use API for communicating with ConnMan over D-Bus
+  via GDBus. He has also contributed fixes to the ``timezone`` package.
 
 **Yocto**
   Builds and maintains Yocto BSP layers, integrating custom embedded
@@ -91,6 +94,8 @@ Selected Contributions (2025–2026)
      - FluteKeyboard
    * - CuteKeyboard Buildroot package bumps and maintenance
      - Buildroot
+   * - libcppconnman package (C++ ConnMan D-Bus API)
+     - Buildroot
    * - Registered as Buildroot DEVELOPERS entry for cutekeyboard
      - Buildroot
    * - FluteKeyboard: hide-system-bars option and local dev paths
@@ -109,11 +114,11 @@ Selected Contributions (2025–2026)
 Beyond the Code
 ===============
 
-Andrea is based in Carpi, Italy, and combines his technical work with
-a team lead role, mentoring junior engineers and coordinating embedded
-software projects across Amarula's Italian office. He balances
-low-level C/C++ system work with modern UI development, bridging the
-gap between kernel-space robustness and user-facing polish.
+Based in Carpi, Italy, Andrea combines his technical work with a team
+lead role, mentoring junior engineers and coordinating embedded
+software projects across Amarula's Italian office. He enjoys balancing
+low-level C/C++ and Rust system work with modern UI development,
+bridging kernel-space robustness and user-facing polish.
 
 |
 
