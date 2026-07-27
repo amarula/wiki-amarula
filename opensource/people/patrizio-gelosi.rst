@@ -42,25 +42,33 @@ Open Source Focus
 
 **ReviewAI Gerrit Plugin (Lead Developer)**
   Patrizio is the primary developer of Amarula's flagship open source
-  product, the ReviewAI Gerrit Code Review plugin. He has led a
-  comprehensive architectural migration from OpenAI's deprecated
-  Assistants API to the official Chat Completions API, implemented
-  **parallel AI review processing** across multiple patch files, and
-  built a modular AI Assistant framework with per-provider model
-  configuration. His work on prompt engineering — harmonizing Gerrit
-  and plugin-level prompts with default neutral review behavior — has
-  made the plugin's output more consistent and actionable for
-  developers.
+  product, the ReviewAI Gerrit Code Review plugin. He led the migration
+  from OpenAI's deprecated Assistants API to the official Responses API,
+  integrated ReviewAI with the Gerrit Review Agent sidebar, and
+  centralized provider transport through LangChain for OpenAI, Gemini,
+  DeepSeek, MoonShot, and Ollama. His work includes configurable
+  single-agent, scoped-agent, and specialized-agent (Sashiko-inspired)
+  review modes; topic-wide analysis; AI-generated review suggestions;
+  and targeted repository exploration under the ON_DEMAND policy using a
+  limited set of basic commands.
 
 **Key Technical Achievements**
-  - Migration from OpenAI Assistants API to Chat Completions API
-  - Parallel AI review architecture for multi-file patch sets
-  - Centralized function calling and tool definitions
-  - Dynamic AI configuration per provider and model
-  - Review Agent framework integration for structured output
-  - ``/help`` slash command and ``/show`` command result formatting
-  - Multi-conversation AI history per patch set
-  - Connection error handling and response timeout management
+  - Migration from OpenAI Assistants API to the Responses API
+  - Gerrit Review Agent sidebar integration with private per-user
+    conversations
+  - Configurable single, scoped, and specialized AI review workflows
+  - Sashiko-inspired Level 2 agent orchestration and final review
+    synthesis
+  - Topic-wide reviews across related Gerrit changes
+  - AI-generated suggestions for patch sets and commit messages
+  - Query-driven ON_DEMAND code retrieval with ``tree``, ``get_content``,
+    and ``grep``
+  - Multi-provider LangChain transport and dynamic model configuration
+  - Database-backed conversation storage and multi-conversation patch-set
+    history
+  - Per-provider and per-model AI cost tracking through telemetry
+  - Gerrit permission gating, custom AI administrator groups, and
+    admin-only tooling
 
 **DevOps & CI**
   Contributes to build system maintenance, version bumping, and
@@ -80,25 +88,26 @@ Selected Contributions (2025–2026)
 
    * - Contribution
      - Project
-   * - Migration from Assistants API to official OpenAI Chat Completions API
+   * - Migration from Assistants API to official OpenAI Responses API
      - ReviewAI Gerrit Plugin
    * - Parallel AI review processing across multiple patch files
      - ReviewAI Gerrit Plugin
-   * - Review Agent framework integration with structured output
+   * - Gerrit Review Agent sidebar integration with provider and model
+       selection
      - ReviewAI Gerrit Plugin
-   * - Gerrit/plugin prompt harmonization with default neutral reviews
+   * - Adoption of the Sashiko workflow for Level 2 specialized agents
      - ReviewAI Gerrit Plugin
-   * - AI Assistant modularization and central function calling
+   * - AI-generated review suggestions for patch sets and commit messages
      - ReviewAI Gerrit Plugin
-   * - /help command and /show command result formatting
+   * - Query-driven ON_DEMAND code context retrieval
      - ReviewAI Gerrit Plugin
-   * - Multi-conversation AI history per patch set
+   * - LangChain transport for OpenAI, Gemini, DeepSeek, MoonShot, and Ollama
      - ReviewAI Gerrit Plugin
-   * - Per-provider model selection and dynamic configuration
+   * - Per-provider and per-model AI cost tracking in telemetry
      - ReviewAI Gerrit Plugin
-   * - Connection error handling and response timeout extension
+   * - Separate production and development builds with Bazel in-tree support
      - ReviewAI Gerrit Plugin
-   * - Version 4.0.0 bump with compatibility fixes for Gerrit 3.9+
+   * - Gerrit/plugin prompt harmonization and configurable review scoring
      - ReviewAI Gerrit Plugin
 
 |
