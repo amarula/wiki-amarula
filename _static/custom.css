@@ -52,14 +52,39 @@
 }
 
 /* ---- Content Links ---- */
-.rst-content a {
-    color: #222222;
+.rst-content a,
+.rst-content a:link {
+    color: #b8860b;  /* Dark gold, visible on white, brand-aligned */
+    text-decoration: underline;
+    text-underline-offset: 2px;
 }
 .rst-content a:visited {
-    color: #555555;
+    color: #8B6914;  /* Muted gold for visited */
 }
 .rst-content a:hover {
-    color: #c9a200;
+    color: #fdcb0e;  /* Bright Amarula gold on hover */
+}
+
+/* Links in admonitions, tables, and reference lists */
+.rst-content .admonition a,
+.rst-content table a,
+.rst-content .toctree-wrapper a,
+.rst-content .contents a {
+    color: #b8860b;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+.rst-content .admonition a:visited,
+.rst-content table a:visited,
+.rst-content .toctree-wrapper a:visited,
+.rst-content .contents a:visited {
+    color: #8B6914;
+}
+.rst-content .admonition a:hover,
+.rst-content table a:hover,
+.rst-content .toctree-wrapper a:hover,
+.rst-content .contents a:hover {
+    color: #fdcb0e;
 }
 
 /* ---- Headings ---- */
@@ -69,11 +94,6 @@
 .rst-content h4,
 .rst-content h5,
 .rst-content h6 {
-    color: #222222;
-}
-
-/* ---- Toctree inside content ---- */
-.rst-content .toctree-wrapper a {
     color: #222222;
 }
 
@@ -140,11 +160,6 @@ span.caption-text {
     color: #fdcb0e;
 }
 
-/* ---- Table of contents inside page ---- */
-.rst-content .contents a {
-    color: #222222;
-}
-
 /* ---- Highlight/Selection ---- */
 ::selection {
     background: #fdcb0e;
@@ -165,7 +180,7 @@ span.caption-text {
     color: #999;
 }
 .wy-breadcrumbs a {
-    color: #555555;
+    color: #b8860b;
 }
 
 /* ---- Search results ---- */
