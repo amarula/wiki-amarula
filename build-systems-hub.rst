@@ -15,6 +15,9 @@ The Yocto Project is our primary build system for production-grade embedded Linu
 - **Implementing Secureboot with Yocto Wrynose and GRUB** — UEFI Secureboot, TPM/LUKS, SELinux, A/B updates with Mender.
   See `articles/yocto/implementing-secureboot-with-yocto-wrynose-and-grub <articles/yocto/implementing-secureboot-with-yocto-wrynose-and-grub.html>`_.
 
+- **Upstreaming Legacy Systems: PX30 and Yocto Integration** — non-destructive bring-up, Fastboot flashing, and FIT image boot.
+  See `articles/yocto/deal-with-legacy-devices <articles/yocto/deal-with-legacy-devices.html>`_.
+
 **Yocto in CI/CD:**
 
 - **Optimizing Yocto Builds with Jenkins and Resource Throttling** — kas-container, SSTATE caching, multi-configuration.
