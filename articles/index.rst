@@ -2,8 +2,8 @@ Articles
 ========
 
 .. note:: **TL;DR**
-   - Technical articles from **Amarula Solutions** covering **Embedded Linux, AI/LLM integration, IoT firmware, Jenkins CI/CD, Yocto, and Buildroot** — written by engineers for engineers.
-   - Topics span **mainline kernel development, secure boot, static analysis, Gerrit code review automation, and AI-assisted development workflows**.
+   - Technical articles from **Amarula Solutions** covering **Embedded Linux, AI/LLM integration, IoT firmware, Jenkins CI/CD, Yocto, Buildroot, and cross-platform mobile development** — written by engineers for engineers.
+   - Topics span **mainline kernel development, secure boot, static analysis, Gerrit code review automation, AI-assisted development workflows, and Kotlin Multiplatform migrations from Android to iOS**.
 
 .. _contents: Table of contents
 
@@ -16,6 +16,7 @@ Articles
    iot/index
    yocto/index
    buildroot/index
+   mobile/index
    general/index
 
 .. tip::

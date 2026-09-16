@@ -248,6 +248,9 @@ Pick the path that matches what you're working on right now.
    * - **Android AOSP**
      - Board bring-up, CI pipelines, app signing, emulator testing
      - :doc:`ci/android/android`
+   * - **Mobile Apps (KMP)**
+     - Kotlin Multiplatform migration, shared Compose UI, expect/actual abstractions
+     - :doc:`articles/mobile/index`
    * - **CI/CD Pipelines**
      - Jenkins job DSL, Gerrit triggers, shared libraries
      - :doc:`cicd-hub`
