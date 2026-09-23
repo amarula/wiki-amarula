@@ -243,8 +243,8 @@ Pick the path that matches what you're working on right now.
      - Minimal images, Flutter apps, sstate caching
      - :doc:`build-systems-hub`
    * - **Kernel / Drivers**
-     - DRM, MIPI DSI, CSI camera, device trees
-     - :doc:`news/index`
+     - DRM, MIPI DSI, CSI camera, H.264 encoder bring-up, device trees
+     - :doc:`articles/kernel/index`
    * - **Android AOSP**
      - Board bring-up, CI pipelines, app signing, emulator testing
      - :doc:`ci/android/android`
