@@ -47,6 +47,8 @@ Android users while the new platform was built.
 Kotlin Multiplatform, paired with Compose Multiplatform for the UI layer, made
 it possible to do all three at once.
 
+.. image:: /images/travel-smart-before-after.png
+
 Why Kotlin Multiplatform instead of a second native team?
 ---------------------------------------------------------
 
@@ -123,6 +125,8 @@ screen could plug into a production-quality, already-shared data layer, the team
 avoided the classic failure mode of cross-platform projects — a beautiful new UI
 sitting on top of a shaky, half-migrated foundation.
 
+.. image:: /images/travel-smart-module-structure.png
+
 What actually changes when you go multiplatform?
 ------------------------------------------------
 
@@ -153,6 +157,8 @@ SDK's underlying transport) and iOS gets its own (Core Location, the Vision
 framework, native Firebase pods), but the rest of the app — and every screen
 built on top of it — only ever talks to the shared interface and does not know
 or care which platform it is running on.
+
+.. image:: /images/travel-smart-kmp-call-path.png
 
 **Some replacements are harder than they look.** The Android Firebase SDK in
 particular is not multiplatform-compatible on its own, so it was replaced with a
