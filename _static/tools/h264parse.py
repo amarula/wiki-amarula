@@ -4,7 +4,7 @@
 # h264parse.py - parse the SPS, PPS and slice headers of an H.264 stream, and
 # work out which field widths the encoder actually used.
 #
-# Usage:  h264parse.py <file> [--nal N] [--poc-type N] [--fnum-bits N]
+# Usage:  h264parse.py <file> [--frame N] [--poc-type N] [--fnum-bits N]
 #
 # Answers: "why does the decoder misread the slice header?"
 #
@@ -20,7 +20,8 @@
 # alternatives for you and shows which combination is self-consistent, which
 # turns a guess into a measurement.
 #
-# Overrides:
+# Options:
+#   --frame N       which access unit to parse (default 0)
 #   --poc-type N    assume pic_order_cnt_type N in the slice header
 #   --fnum-bits N   assume frame_num is N bits wide
 #
@@ -159,8 +160,8 @@ def parse_pps(payload):
     return pps
 
 
-def parse_slice(payload, sps, pps, nal_type, poc_type=None, fnum_bits=None,
-                poc_lsb_bits=None):
+def parse_slice(payload, sps, pps, nal_type, nal_ref_idc, poc_type=None,
+                fnum_bits=None, poc_lsb_bits=None):
     """Parse a slice header, optionally against a different assumption."""
     br = BitReader(payload)
     fields = []
@@ -182,7 +183,36 @@ def parse_slice(payload, sps, pps, nal_type, poc_type=None, fnum_bits=None,
         fields.append(("pic_order_cnt_lsb", br.u(poc_lsb_bits)))
     if pps["redundant_pic_cnt_present"]:
         fields.append(("redundant_pic_cnt", br.ue()))
-    fields.append(("dec_ref_pic_marking", br.u(2)))
+
+    # dec_ref_pic_marking(), 7.3.3.3.  An IDR slice carries two flags, any
+    # other reference slice carries an adaptive flag and, if it is set, a
+    # loop of memory management control operations.  Reading two bits for
+    # both is only right for the IDR, and it shifts every field after it on
+    # a P frame - which is how a parser invents a value the syntax forbids.
+    if nal_ref_idc:
+        if nal_type == IDR_SLICE:
+            fields.append(("no_output_of_prior_pics_flag", br.u(1)))
+            fields.append(("long_term_reference_flag", br.u(1)))
+        else:
+            adaptive = br.u(1)
+            fields.append(("adaptive_ref_pic_marking_mode_flag", adaptive))
+            if adaptive:
+                ops = []
+                while True:
+                    op = br.ue()
+                    ops.append(op)
+                    if op == 0:
+                        break
+                    if op in (1, 3):
+                        br.ue()     # difference_of_pic_nums_minus1
+                    if op == 2:
+                        br.ue()     # long_term_pic_num
+                    if op in (3, 6):
+                        br.ue()     # long_term_frame_idx
+                    if op == 4:
+                        br.ue()     # max_long_term_frame_idx_plus1
+                fields.append(("mmco", ops))
+
     fields.append(("slice_qp_delta", br.se()))
     if pps["deblocking_filter_control_present"]:
         idc = br.ue()
@@ -210,13 +240,14 @@ def load(path, nal_index=None):
             continue
         header = data[off]
         nal_type = header & 0x1f
+        nal_ref_idc = (header >> 5) & 3
         body = unescape(data[off + 1:off + size])
         if nal_type == SPS and sps is None:
             sps = parse_sps(body)
         elif nal_type == PPS and pps is None:
             pps = parse_pps(body)
         elif nal_type in (NON_IDR_SLICE, IDR_SLICE):
-            slices.append((nal_type, body))
+            slices.append((nal_type, nal_ref_idc, body))
     return framing, sps, pps, slices
 
 
@@ -261,7 +292,7 @@ def report(fields, label, pps):
 
 def main(argv):
     if len(argv) < 2:
-        print("usage: h264parse.py <file> [--poc-type N] [--fnum-bits N]")
+        print("usage: h264parse.py <file> [--frame N] [--poc-type N] [--fnum-bits N]")
         return 1
 
     path = argv[1]
@@ -270,6 +301,13 @@ def main(argv):
         override_poc = int(argv[argv.index("--poc-type") + 1])
     if "--fnum-bits" in argv:
         override_fnum = int(argv[argv.index("--fnum-bits") + 1])
+
+    # Which access unit to look at.  The first one is usually an IDR, whose
+    # slice header differs from every other frame's, so a stream that starts
+    # mid-GOP - or a question about the P frames - needs this.
+    frame = 0
+    if "--frame" in argv:
+        frame = int(argv[argv.index("--frame") + 1])
 
     framing, sps, pps, slices = load(path)
     print(f"{path}: framing={framing}")
@@ -288,7 +326,7 @@ def main(argv):
           f"{pps['deblocking_filter_control_present']}")
     print()
 
-    nal_type, body = slices[0]
+    nal_type, nal_ref_idc, body = slices[frame]
     native_fnum = sps["log2_max_frame_num_minus4"] + 4
     candidates = []
 
@@ -297,9 +335,10 @@ def main(argv):
         fnum = native_fnum if override_fnum is None else override_fnum
         candidates.append((f"poc_type={poc}, frame_num={fnum} bits",
                            parse_slice(body, sps, pps, nal_type,
-                                       poc_type=poc, fnum_bits=fnum)))
+                                       nal_ref_idc, poc_type=poc,
+                                       fnum_bits=fnum)))
     else:
-        native = parse_slice(body, sps, pps, nal_type)
+        native = parse_slice(body, sps, pps, nal_type, nal_ref_idc)
         candidates.append((f"as the SPS describes it (poc_type="
                            f"{sps['pic_order_cnt_type']}, frame_num="
                            f"{native_fnum} bits)", native))
@@ -316,7 +355,8 @@ def main(argv):
                     tried.add((poc, fnum))
                     try:
                         alt = parse_slice(body, sps, pps, nal_type,
-                                          poc_type=poc, fnum_bits=fnum)
+                                          nal_ref_idc, poc_type=poc,
+                                          fnum_bits=fnum)
                     except Exception as exc:  # ran off a short header
                         print(f"--- poc_type={poc}, frame_num={fnum} bits --- "
                               f"failed: {exc}\n")
