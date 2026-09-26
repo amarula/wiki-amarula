@@ -1,0 +1,115 @@
+name: Build and deploy docs
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+  workflow_dispatch:
+
+# Cancel superseded PR builds, but never cancel a deploy already running on
+# master — a half-applied deploy is worse than a slightly stale one.
+concurrency:
+  group: docs-deploy-${{ github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
+permissions:
+  contents: read
+
+jobs:
+  build-and-deploy:
+    name: Build and deploy
+    runs-on: ubuntu-24.04
+    environment:
+      name: production
+      url: https://wiki.amarulasolutions.com/
+    steps:
+      - name: Check out
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+          persist-credentials: false
+
+      # Pinned to match the verified local .venv (Python 3.14.4, Sphinx 7.2.6,
+      # zero warnings). Change it and the first PR run will tell you.
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.14'
+          cache: pip
+          cache-dependency-path: requirements.txt
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      # -d keeps the 16 MB doctree cache out of _build/, so it is never
+      # deployed. -W fails on any warning and --keep-going reports all of
+      # them before doing so.
+      - name: Build
+        run: |
+          sphinx-build -b html -d "$RUNNER_TEMP/doctrees" \
+            -j auto -W --keep-going ./ _build/
+
+      - name: Summarise build
+        run: |
+          {
+            echo "### Docs build"
+            echo ""
+            echo "| | |"
+            echo "|---|---|"
+            echo "| HTML files | $(find _build -name '*.html' \| wc -l) |"
+            echo "| Payload | $(du -sh _build \| cut -f1) |"
+            echo "| Sitemap URLs | $(grep -o '<loc>' _build/sitemap.xml \| wc -l) |"
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Configure SSH
+        if: github.event_name != 'pull_request'
+        env:
+          SSH_KEY: ${{ secrets.DEPLOY_SSH_KEY }}
+          KNOWN_HOSTS: ${{ secrets.DEPLOY_KNOWN_HOSTS }}
+        run: |
+          install -m 700 -d ~/.ssh
+          printf '%s\n' "$SSH_KEY"     > ~/.ssh/deploy_key
+          printf '%s\n' "$KNOWN_HOSTS" > ~/.ssh/known_hosts
+          chmod 600 ~/.ssh/deploy_key ~/.ssh/known_hosts
+
+      # The destination is pinned server-side: the deploy key carries
+      # command="rrsync -wo /srv/wiki.amarulasolutions.com/htdocs", so the
+      # bare "user@host:" form resolves there and nowhere else. There is
+      # deliberately no DEPLOY_PATH secret to misconfigure.
+      - name: Deploy
+        if: github.event_name != 'pull_request'
+        env:
+          DEPLOY_HOST: ${{ secrets.DEPLOY_HOST }}
+          DEPLOY_USER: ${{ secrets.DEPLOY_USER }}
+          DEPLOY_PORT: ${{ secrets.DEPLOY_PORT }}
+        run: |
+          set -euo pipefail
+          : "${DEPLOY_HOST:?DEPLOY_HOST secret is not set}"
+          : "${DEPLOY_USER:?DEPLOY_USER secret is not set}"
+          : "${DEPLOY_PORT:?DEPLOY_PORT secret is not set}"
+
+          # sshd on that host is not on port 22.
+          rsync -rlptz --checksum --delay-updates --delete-after \
+                --stats --human-readable \
+                --exclude '.doctrees/' --exclude '.buildinfo' \
+                -e "ssh -p ${DEPLOY_PORT} -i ~/.ssh/deploy_key \
+                       -o IdentitiesOnly=yes -o BatchMode=yes \
+                       -o StrictHostKeyChecking=yes" \
+                _build/ "${DEPLOY_USER}@${DEPLOY_HOST}:"
+
+      # Plain curl User-Agent on purpose: Anubis answers browser-like agents
+      # with a proof-of-work page, which would make this comparison useless.
+      - name: Verify the published site
+        if: github.event_name != 'pull_request'
+        run: |
+          set -euo pipefail
+          curl -fsS --max-time 30 -o /tmp/live-sitemap.xml \
+            https://wiki.amarulasolutions.com/sitemap.xml
+
+          expected=$(grep -o '<loc>' _build/sitemap.xml | wc -l)
+          actual=$(grep -o '<loc>' /tmp/live-sitemap.xml | wc -l)
+          echo "sitemap URLs: built=$expected live=$actual"
+          test "$actual" -eq "$expected"
+
+          curl -fsS --max-time 30 -o /dev/null https://wiki.amarulasolutions.com/index.html
+          curl -fsS --max-time 30 -o /dev/null https://wiki.amarulasolutions.com/searchindex.js
