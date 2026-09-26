@@ -11,6 +11,7 @@ General Articles
    :caption: Contents:
 
    ldap-passwd-webui
+   patchwork-v3-migration
    bianchina-test-board
    roadmap-for-newbies
 
