@@ -11,6 +11,7 @@ News
 .. toctree::
    :maxdepth: 1
 
+   workshop-prague
    workshop
    workshop-linux-yocto-mainline
    embeddedworld-2026
