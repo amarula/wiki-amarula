@@ -91,6 +91,39 @@ was:
 
 **Phone** +420 212 245 723
 
+The teams
+---------
+
+**Michael Opdenacker** team:
+- Jennifer Chukwu
+- Peter Janicka
+
+**Michael Trimarchi** team:
+- Roman Smrz
+- Giacomo Trimarchi
+
+The challenges
+--------------
+
+Team Michael Opdenacker proposal:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Contribute to Yocto by reviewing, testing and pushing patches submitted
+to the openembedded-core mailing list by the Auto Upgrade Helper.
+
+Also investigate update failures, fix them (adapting the OE core recipes)
+and pushing them upstream.
+
+Target: 20 patches sent upstream!
+
+
+Team Michael Trimarchi proposal:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Upstream in linux kernel pcm1795 and pcm1796 starting from a 2018 contribuition from Michael Trimarchi. Upstream
+rockchip rga fix to mainline. Upstream pmic changes in uboot on nxp chipset. Upstream Velp imx6dl board from BGM
+elettronica.
+
 .. note::
    This page is a live announcement: as the Prague challenges get defined and
    the patches go out, we will report the results here — the same way we
