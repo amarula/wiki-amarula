@@ -95,10 +95,12 @@ The teams
 ---------
 
 **Michael Opdenacker** team:
+
 - Jennifer Chukwu
 - Peter Janicka
 
 **Michael Trimarchi** team:
+
 - Roman Smrz
 - Giacomo Trimarchi
 
