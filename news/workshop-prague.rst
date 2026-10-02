@@ -126,6 +126,25 @@ Upstream in linux kernel pcm1795 and pcm1796 starting from a 2018 contribuition 
 rockchip rga fix to mainline. Upstream pmic changes in uboot on nxp chipset. Upstream Velp imx6dl board from BGM
 elettronica.
 
+First day results:
+------------------
+
+**Jennifer**, **Michael**, **Peterj**
+
+They sent two patches to the yocto projects:
+
+- https://lore.kernel.org/openembedded-core/20261001135051.3423293-1-jennifer.chukwu@amarulasolutions.com/T/#t
+- https://lore.kernel.org/openembedded-core/20261001151029.3446046-1-jennifer.chukwu@amarulasolutions.com/
+
+**Michael T**, **Roman**, **Giacomo T**
+
+Prepare of patches pcm1795 and pcm1796:
+
+- Better split of the contribuition in multiple patches, allow to have better review process from manteiner
+- Fix a bug on the patch about audio format (to verify)
+- Introduction lesson about CPUDAI and CODECDAI done by **Michael Trimarchi** and in particular on regmap,
+  alsa, I2S, SPI, I2C
+
 .. note::
    This page is a live announcement: as the Prague challenges get defined and
    the patches go out, we will report the results here — the same way we
