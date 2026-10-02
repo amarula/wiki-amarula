@@ -91,6 +91,8 @@ was:
 
 **Phone** +420 212 245 723
 
+.. image:: /images/workshop_team.jpg
+
 The teams
 ---------
 
@@ -109,6 +111,8 @@ The challenges
 
 Team Michael Opdenacker proposal:
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. image:: /images/jennifer_peter_michael_team.jpg
 
 Contribute to Yocto by reviewing, testing and pushing patches submitted
 to the openembedded-core mailing list by the Auto Upgrade Helper.
@@ -145,6 +149,26 @@ Prepare of patches pcm1795 and pcm1796:
 - Introduction lesson about CPUDAI and CODECDAI done by **Michael Trimarchi** and in particular on regmap,
   alsa, I2S, SPI, I2C
 
+Second day results:
+-------------------
+
+**Jennifer**, **Michael**, **Peterj**
+
+They sent two patches to the yocto projects:
+
+- https://lore.kernel.org/openembedded-core/20261002122329.923388-1-jennifer.chukwu@amarulasolutions.com/
+- https://lore.kernel.org/openembedded-core/20261002101441.1943643-1-jennifer.chukwu@amarulasolutions.com/
+
+In addition to this, while Yocto was running:
+
+- Michael taught Jennifer and Peter about **Yocto fundamentals**, using `Root Commit <https://rootcommit.com/pub/training/yocto/yocto-lectures.pdf>`_ training slides
+- Jennifer got some proficiency in vim!
+
+
+**Michael T**, **Roman**, **Giacomo T**
+
+- https://lore.kernel.org/all/20261002-work-v1-0-f0e53bc7331f@amarulasolutions.com/
+
 .. note::
    This page is a live announcement: as the Prague challenges get defined and
    the patches go out, we will report the results here — the same way we
@@ -153,6 +177,6 @@ Prepare of patches pcm1795 and pcm1796:
 .. tip::
    A hackathon project is only as good as its last upstream contribution.
    Interested in future workshops or embedded Linux training?
-   Amarula Solutions offers custom on-site and remote training in Yocto,
-   U-Boot, Linux kernel, and Buildroot.
+   Amarula Solutions offers custom on-site and remote training in collaboration
+   with Root Commit for Yocto, U-Boot, Linux kernel, and Buildroot.
    `Contact us about training <https://www.amarulasolutions.com/contact/>`_
