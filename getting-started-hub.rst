@@ -27,8 +27,9 @@ Who Is This For?
    and upstream contribution workflows.
 
 :DevOps / CI engineer:
-   Jenkins pipeline libraries, Gerrit integration, build throttling, and
-   containerized build infrastructure.
+   Jenkins pipeline libraries, Gerrit integration, build throttling,
+   containerized build infrastructure, and the turnkey
+   :doc:`Amarula Solutions Infrastructure <ci/infrastructure>` platform.
 
 :Engineering manager:
    Overviews of our build-system strategy (Yocto vs Buildroot), security
@@ -184,7 +185,9 @@ Security is not a bolt-on — it must be designed in from the start.
 -----------------------
 
 Amarula runs a Jenkins-based CI infrastructure integrated with Gerrit for code
-review. All BSP work flows through this pipeline.
+review. All BSP work flows through this pipeline — delivered as the turnkey,
+Ansible-provisioned :doc:`Amarula Solutions Infrastructure <ci/infrastructure>`
+platform (LDAP SSO, Gerrit, Gitea, Jenkins, Mend SCA, and AI review/diagnostics).
 
 - **Gerrit integration** — :doc:`Gerrit trigger <ci/gerrit_trigger>`, :doc:`repo trigger <ci/gerrit_repo_trigger>`, and :doc:`HTTPS pipeline <articles/jenkins/jenkins-gerrit-https-pipeline>`.
 - **Shared libraries** — reusable Jenkins pipeline functions for Android

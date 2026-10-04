@@ -13,8 +13,13 @@ platform — OpenLDAP (SSO), Gerrit (code review), Gitea (Git hosting), Jenkins
 (CI/CD), Apache2 (reverse proxy/TLS), a standardized Pipeline Library, Mend SCA
 security scanning, and AI review/diagnostics plugins.
 
-- **Amarula Solutions Infrastructure** — architecture, infrastructure as code, deployment, and CRA compliance.
-  See `ci/infrastructure <ci/infrastructure.html>`_.
+.. figure:: /images/infrastructure/architecture.png
+   :align: center
+   :alt: Amarula Solutions Infrastructure architecture — OpenLDAP, Gerrit, Gitea, Jenkins, Apache2, Pipeline Library, Mend SCA, reviewAI and explain-error
+
+   **Amarula Solutions Infrastructure** — architecture, infrastructure as code,
+   deployment models, CRA compliance, and the AI workflow:
+   `ci/infrastructure <ci/infrastructure.html>`_.
 
 Jenkins Pipeline Documentation
 ==============================

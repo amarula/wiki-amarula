@@ -7,7 +7,7 @@ We are experts in **Embedded Linux**, **Android**, and **Open Source** integrati
 
 .. note:: **TL;DR**
    - **Embedded Linux BSPs, Yocto, Buildroot, and U-Boot** — mainline-first board support for NXP i.MX, Rockchip, Allwinner, STM32, and TI platforms.
-   - **CI/CD pipeline infrastructure** — Jenkins-based automation with Gerrit integration, shared libraries, and containerized builds.
+   - **CI/CD pipeline infrastructure** — the turnkey **Amarula Solutions Infrastructure** platform: LDAP SSO, Gerrit, Gitea, Jenkins, Mend SCA, and AI review/diagnostics, provisioned with Ansible.
    - **Open source upstream contributions** — active maintainers and contributors to Linux Kernel, U-Boot, Buildroot, Yocto, and Zephyr.
 
 .. toctree::
@@ -16,6 +16,7 @@ We are experts in **Embedded Linux**, **Android**, and **Open Source** integrati
    :name: quick-links
 
    getting-started-hub
+   ci/infrastructure
 
 .. toctree::
    :maxdepth: 1

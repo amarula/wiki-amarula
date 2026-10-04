@@ -125,6 +125,20 @@
     background-color: #fdf6e3;
 }
 
+/* Tables marked with ":class: fit-table" stay inside the content column.
+   Constraining the width is what makes long cell text wrap: the row simply
+   grows vertically instead of the table spilling past the page edge. */
+.rst-content table.fit-table {
+    width: 100%;
+    max-width: 100%;
+}
+/* The theme keeps header cells on one line; allow them to wrap so long
+   column titles do not spill into the next column. */
+.rst-content table.fit-table thead,
+.rst-content table.fit-table thead th {
+    white-space: normal;
+}
+
 /* ---- Buttons ---- */
 .btn-neutral {
     background-color: #f5f5f5 !important;

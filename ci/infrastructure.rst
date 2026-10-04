@@ -7,6 +7,12 @@ Amarula Solutions Infrastructure
    - Fully **provisioned as code with Ansible**: the same playbook deploys a single-box Vagrant evaluation environment in about 45 minutes or a distributed production topology — no configuration drift, every change auditable in Git.
    - **100% open source and self-hosted**, with the audit trail, SBOM generation, and vulnerability reporting needed for **EU Cyber Resilience Act (CRA)** compliance.
 
+.. figure:: /images/infrastructure/architecture.png
+   :align: center
+   :alt: Amarula Solutions Infrastructure architecture — OpenLDAP, Gerrit, Gitea, Jenkins, Apache2, Pipeline Library, Mend SCA, reviewAI and explain-error
+
+   Eight integrated components — from identity to AI, provisioned as code in under an hour.
+
 What is Amarula Solutions Infrastructure?
 =========================================
 
@@ -30,34 +36,35 @@ How is the platform architected?
 .. list-table::
    :widths: 20 25 55
    :header-rows: 1
+   :class: fit-table
 
    * - Component
      - Role
      - What it provides
    * - **OpenLDAP**
      - Central authentication and SSO
-     - One user directory for every tool. Users and groups are defined once; permissions are mapped automatically.
+     - One user directory for every tool — permissions are mapped automatically.
    * - **Gerrit 3.x**
      - Code review
-     - Patch-set-based review workflow — the same model used by the Android project and the Linux kernel.
+     - Patch-set-based review — the model used by Android and the Linux kernel.
    * - **Gitea**
      - Git hosting
-     - Lightweight self-hosted Git with a GitHub-compatible API and generic package registry for build artifacts.
+     - Self-hosted Git with a GitHub-compatible API and package registry for artifacts.
    * - **Jenkins**
      - CI/CD engine
-     - Pipeline orchestration for Yocto, Android, firmware, and application builds, with 2,000+ available plugins.
+     - Build orchestration for Yocto, Android, firmware, and applications.
    * - **Apache2**
      - Reverse proxy and TLS
-     - Single entry point for all services with certificate termination and virtual-host routing.
+     - Single TLS entry point for all services.
    * - **Pipeline Library**
      - Standardized CI/CD steps
-     - Amarula's Groovy shared libraries: build orchestration, manifest sync, changelog generation, UI parameters, and error handling.
+     - Amarula's Groovy shared libraries — build, sync, changelog, UI, and error handling.
    * - **Mend SCA**
      - Security and license scanning
-     - Every build is scanned for known CVEs and license issues; SBOMs are generated automatically.
+     - Every build scanned for CVEs and licenses; SBOM generated automatically.
    * - **reviewAI + explain-error**
      - AI code review and build diagnostics
-     - Automated AI review on every Gerrit patch set and AI root-cause analysis for every Jenkins failure.
+     - AI review on every Gerrit patch set; AI root-cause analysis for every Jenkins failure.
 
 How does infrastructure as code work here?
 ==========================================
@@ -124,43 +131,11 @@ How do you go from evaluation to production?
 The same Ansible roles and the same playbook drive both environments; the only
 difference is the inventory file.
 
-**Development / evaluation — a single Vagrant box:**
+.. figure:: /images/infrastructure/deployment-models.png
+   :align: center
+   :alt: Development/evaluation single-box Vagrant inventory next to the distributed production inventory
 
-.. code-block:: ini
-
-    [gateway]
-    udi_gateway ansible_host=192.168.202.201
-
-    [database]
-    udi_database ansible_host=192.168.202.201
-
-    [gerrit]
-    udi_gerrit ansible_host=192.168.202.201
-
-    [gitea]
-    udi_gitea ansible_host=192.168.202.201
-
-    [jenkins]
-    udi_jenkins ansible_host=192.168.202.201
-
-**Production — a distributed topology:**
-
-.. code-block:: ini
-
-    [gateway]
-    udi_gateway ansible_host=10.0.0.1
-
-    [database]
-    udi_database ansible_host=10.0.0.2
-
-    [gerrit]
-    udi_gerrit ansible_host=10.0.0.3
-
-    [gitea]
-    udi_gitea ansible_host=10.0.0.4
-
-    [jenkins]
-    udi_jenkins ansible_host=10.0.0.5
+   The only difference between evaluation and production is the addresses in the inventory file.
 
 Evaluation runs with ``make vagrant`` (about 45 minutes on a laptop); production
 deploys with ``make provision``. After provisioning, the full stack is running:
@@ -210,6 +185,7 @@ from December 2027 to every product with digital elements sold in the EU:
 .. list-table::
    :widths: 40 60
    :header-rows: 1
+   :class: fit-table
 
    * - CRA requirement
      - How the infrastructure helps
@@ -244,11 +220,85 @@ customer's network.
 
 The resulting workflow:
 
-.. code-block:: text
+.. figure:: /images/infrastructure/ai-workflow.png
+   :align: center
+   :alt: Developer pushes to Gerrit where reviewAI reviews, then human review and merge; Jenkins CI with explain-error and Mend SCA produces the artifact
 
-    DEVELOPER → push → GERRIT + reviewAI → HUMAN REVIEW → MERGE
-                             │
-    JENKINS CI + explain-error + Mend SCA → ✓ ARTIFACT
+   AI eliminates the waiting — instant code review, instant failure diagnosis, instant security feedback.
+
+What is the return on investment?
+=================================
+
+.. figure:: /images/infrastructure/roi.png
+   :align: center
+   :alt: ROI summary — 80% reduction in setup time, 3x faster time-to-first-build, 90% fewer configuration errors
+
+   Based on Amarula's own deployment data; the Vagrant evaluation lets you measure ROI on your own infrastructure before committing.
+
+How does the platform compare?
+==============================
+
+.. list-table::
+   :widths: 26 25 25 24
+   :header-rows: 1
+   :class: fit-table
+
+   * - Capability
+     - Amarula Infrastructure
+     - SaaS forges (GitHub/GitLab)
+     - Build your own
+   * - Deployment time
+     - ~45 minutes
+     - Days to weeks
+     - Weeks to months
+   * - Data sovereignty
+     - ✅ Your network
+     - ❌ Vendor cloud
+     - ✅ Your network
+   * - No vendor lock-in
+     - ✅ 100% open source
+     - ❌ Proprietary
+     - ✅ But your code
+   * - Integrated code review
+     - ✅ Gerrit built-in
+     - ✅ PR-based model
+     - ⚠️ You build it
+   * - Central auth (SSO)
+     - ✅ LDAP, auto-mapped
+     - ✅ SAML/OIDC by tier
+     - ⚠️ You integrate it
+   * - Built-in SCA security
+     - ✅ Mend, every build
+     - ⚠️ Dependabot
+     - ⚠️ You add it
+   * - AI code review
+     - ✅ reviewAI
+     - ⚠️ Copilot (separate)
+     - ❌ Not feasible
+   * - AI build diagnostics
+     - ✅ explain-error
+     - ❌ None
+     - ❌ Not feasible
+   * - CRA compliance
+     - ✅ Full audit trail
+     - ⚠️ Partial
+     - ⚠️ Your responsibility
+   * - Infrastructure as code
+     - ✅ One playbook
+     - ⚠️ Separate tooling
+     - ⚠️ Depends on skill
+   * - Pipeline standardization
+     - ✅ One shared library
+     - ⚠️ Per-repo CI YAML
+     - ❌ Ad-hoc per project
+   * - Maintenance burden
+     - 🟢 Low (Ansible)
+     - 🟢 Low (vendor)
+     - 🔴 High (your team)
+
+The platform occupies a specific position: the capabilities of a SaaS forge,
+the sovereignty of self-hosted software, and AI integrated into the workflow —
+all provisioned as code.
 
 How does an engagement work?
 ============================
@@ -256,6 +306,7 @@ How does an engagement work?
 .. list-table::
    :widths: 18 12 70
    :header-rows: 1
+   :class: fit-table
 
    * - Phase
      - Timeline

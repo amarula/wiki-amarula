@@ -4,6 +4,18 @@ Amarula Products & Tools
 
 .. note:: **TL;DR**
    - Overview of Amarula Solutions' **open source products and developer tools** — including the **ReviewAI Gerrit Code Review plugin**, **CuteKeyboard** (Qt virtual keyboard), **Flutekeyboard**, **Jelliphy** (AI web framework), **DynDesign** (Python dynamic decoration), **meta-mend** (Yocto security), **libcppconnman**, **ldap-passwd-webui**, **gitea-artifact-manager**, and the **git-collect Jenkins plugin**.
+   - The **Amarula Solutions Infrastructure** — the turnkey, Ansible-provisioned platform Amarula runs internally (LDAP SSO, Gerrit, Gitea, Jenkins, Mend SCA, AI review and diagnostics), available for evaluation and production deployment.
+
+Turnkey Infrastructure Platform
+===============================
+
+- **Amarula Solutions Infrastructure** — the complete development platform
+  Amarula runs every day, productized and provisioned with Ansible: LDAP SSO,
+  Gerrit code review, Gitea Git hosting, Jenkins CI/CD, a standardized Pipeline
+  Library, Mend SCA security scanning, and AI review and build diagnostics.
+  Deployed in about 45 minutes on a Vagrant box for evaluation, or distributed
+  in production with the same playbook.
+  See `ci/infrastructure <ci/infrastructure.html>`_.
 
 AI-Powered Tools
 ================
