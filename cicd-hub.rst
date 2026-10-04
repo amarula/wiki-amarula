@@ -5,6 +5,17 @@ CI/CD & Test Automation
 .. note:: **TL;DR**
    - Hub for **Jenkins CI/CD infrastructure** at Amarula Solutions — covering pipeline design for embedded projects (Yocto, Android, firmware), Gerrit-triggered verification, static analysis (CodeChecker), memory checking (Valgrind), hardware-in-the-loop testing (Labgrid), and shared Groovy libraries for pipeline standardization.
 
+The Platform
+============
+
+Amarula Solutions delivers CI/CD as part of a turnkey, Ansible-provisioned
+platform — OpenLDAP (SSO), Gerrit (code review), Gitea (Git hosting), Jenkins
+(CI/CD), Apache2 (reverse proxy/TLS), a standardized Pipeline Library, Mend SCA
+security scanning, and AI review/diagnostics plugins.
+
+- **Amarula Solutions Infrastructure** — architecture, infrastructure as code, deployment, and CRA compliance.
+  See `ci/infrastructure <ci/infrastructure.html>`_.
+
 Jenkins Pipeline Documentation
 ==============================
 

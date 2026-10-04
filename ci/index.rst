@@ -4,11 +4,13 @@ Continuous integration
 .. note:: **TL;DR**
    - Amarula Solutions' CI/CD documentation covering **Jenkins, Gerrit, Docker, SonarQube, Artifactory** — with guides on pipeline design, project organization, build throttling, shared libraries, Android application pipelines, and AOSP builds.
    - All pipelines leverage **Amarula Solutions' custom Groovy shared libraries** for consistent build verification, changelog generation, code analysis, and deployment across projects.
+   - These guides document the pipelines running on **Amarula Solutions Infrastructure** — the turnkey, Ansible-provisioned platform (OpenLDAP, Gerrit, Gitea, Jenkins, Apache2, Pipeline Library, Mend SCA, and AI plugins) described in :doc:`infrastructure`.
 
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
 
+   infrastructure.rst
    jenkins.rst
    android/android
    aosp.rst
