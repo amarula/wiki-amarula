@@ -1,0 +1,534 @@
+Engineering Review — 2026-09
+============================
+
+.. note::
+
+   **TL;DR**
+
+   - Monthly engineering review of Amarula Solutions’ **open source
+     contributions** — 124 commits by 9 authors across 9 repositories,
+     covering **Buildroot, openembedded-core/Yocto, the Linux kernel,
+     U-Boot, Zephyr, Jenkins plugins, and Amarula products**.
+   - Auto-generated report from the Git Commit Analyzer, grouped by
+     repository and author.
+
+*9 repositories · 9 authors · 124 commits · +13522/-3134*
+
+We’re excited to share a summary of the significant progress made across
+our repositories in the month of 2026-09. Our dedicated team has been
+busy pushing new features, refining existing functionalities, and
+enhancing the overall stability of our products.
+
+Here’s a breakdown of key contributions by repository:
+
+openembedded-core
+-----------------
+
+Repository URL: https://git.openembedded.org/openembedded-core
+
+*3 commits by 1 author*
+
+**Adam Duskett** — Implemented new features in libsolv, libtoml11, and
+json-c packages
+
+- Features (2): new recipe; patch to fix compiling with a C++ compiler;
+  Enable comps for rpm packageconfig
+- Changes (1): explicitly enable comps for rpm packageconfig; Add patch
+  for compiling with a C++ compiler
+
+Here the commits of **Adam Duskett** in detail:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- 2026-09-07 · `json-c: add patch to fix compiling with a C++
+  compiler <https://git.openembedded.org/openembedded-core/commit/?id=b756d7c3474be6fcefc075ee9f67f9fff6752ce4>`__
+- 2026-09-07 · `libtoml11: new
+  recipe <https://git.openembedded.org/openembedded-core/commit/?id=f7f5124b9c5caca1b55f3df8299c490417775404>`__
+- 2026-09-07 · `libsolv: explicitly enable comps for rpm
+  packageconfig <https://git.openembedded.org/openembedded-core/commit/?id=e490096e3889797e880c186b261c538c95864687>`__
+
+axelera-aisbc-bsp
+-----------------
+
+Repository URL: https://github.com/axelera-ai-hub/axelera-aisbc-bsp.git
+
+*12 commits by 4 authors*
+
+**Annachiara Gallo** — Update branch, revision, and LIC_FILE_CHKSUM for
+ffmpeg-rockchip and add branch update patch for meta-selinux
+
+- Features (1): branch update patch; Update branch, revision,
+  LIC_FILE_CHKSUM
+- Changes (1): Update branch, revision, LIC_FILE_CHKSUM; Add branch
+  update patch
+
+Here the commits of **Annachiara Gallo** in detail:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- 2026-09-18 · `meta-selinux: Add branch update
+  patch <https://github.com/axelera-ai-hub/axelera-aisbc-bsp/commit/4c5e7e1103c27bdd3a41ea871a9ce5101fa3fd3a>`__
+- 2026-09-18 · `ffmpeg-rockchip: Update branch, revision,
+  LIC_FILE_CHKSUM <https://github.com/axelera-ai-hub/axelera-aisbc-bsp/commit/50eb115bb3b8a9a1be187e8e25481305af64294e>`__
+
+**Michael Trimarchi** — 3 commits across kas, meta-axelera (addressing
+AXELERA-213).
+
+- Changes (3): base.yaml exclude refpolicy-targeted; Force resize even
+  if the partition is mounted; Bump axelera-doc repo to the last commit
+
+Here the commits of **Michael Trimarchi** in detail:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- 2026-09-16 · `kas: base.yaml: Bump axelera-doc repo to the last
+  commit <https://github.com/axelera-ai-hub/axelera-aisbc-bsp/commit/9863c54a9cc80ab6e5cf506dc226837810499cb9>`__
+- 2026-09-16 · `meta-axelera: Force resize even if the partition is
+  mounted <https://github.com/axelera-ai-hub/axelera-aisbc-bsp/commit/f91673529d8f1a4b3954aa6e72b2cb36f1ea8ebb>`__
+- 2026-09-21 · `kas: base.yaml exclude
+  refpolicy-targeted <https://github.com/axelera-ai-hub/axelera-aisbc-bsp/commit/8015817f2fd982cf717662c9b8ee872ab52845da>`__
+
+**Patrick Barsanti** — 6 commits across meta-axelera, mender,
+meta-security (addressing AXELERA-233, AXELERA-229).
+
+- Features (2): sudo-spoof; engineering build without filesystem
+  integrity
+- Fixes (2): ramdisk rootfs mounting; variable name typo in
+  mender-update
+- Changes (2): Fail instead of defaulting when active slot is not found;
+  Exclude kas/patches/meta-\*
+
+Here the commits of **Patrick Barsanti** in detail:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- 2026-09-10 · `meta-security: Fix ramdisk rootfs
+  mounting <https://github.com/axelera-ai-hub/axelera-aisbc-bsp/commit/5ab4bddbb439e11bbdab48640a9a1e3a5191e6c5>`__
+- 2026-09-10 · `.gitignore: Exclude
+  kas/patches/meta-\* <https://github.com/axelera-ai-hub/axelera-aisbc-bsp/commit/5de82c8fd6afd8e8a9b88d6377e364da4c3ddc85>`__
+- 2026-09-10 · `mender: Fix variable name typo in
+  mender-update <https://github.com/axelera-ai-hub/axelera-aisbc-bsp/commit/3fee5c2413c9c9eee6f3c89adfda9a2c39bbf813>`__
+- 2026-09-10 · `mender: Fail instead of defaulting when active slot is
+  not
+  found <https://github.com/axelera-ai-hub/axelera-aisbc-bsp/commit/17293d37498f0648044b255f74c0cc5dba043dd8>`__
+- 2026-09-10 · `meta-axelera: Add engineering build without filesystem
+  integrity <https://github.com/axelera-ai-hub/axelera-aisbc-bsp/commit/d926d94f885649c0c55cf2cf94c50b74eaa089b8>`__
+- 2026-09-21 · `meta-axelera: Add
+  sudo-spoof <https://github.com/axelera-ai-hub/axelera-aisbc-bsp/commit/27809ea004461a583a31ad1cd7153c3c323f9f68>`__
+
+**Sezen Tosunoglu** — Update to version v1.4.0-rc2 in meta-axelera area
+
+- Changes (1): v1.4.0-rc2
+
+Here the commits of **Sezen Tosunoglu** in detail:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- 2026-09-21 ·
+  `v1.4.0-rc2 <https://github.com/axelera-ai-hub/axelera-aisbc-bsp/commit/164d72d3b5d001ec16ffaafa7f4ac14284dafe35>`__
+
+chatgpt-code-review-gerrit-plugin
+---------------------------------
+
+Repository URL: https://github.com/amarula/chatgpt-code-review-gerrit-plugin.git
+
+*56 commits by 2 authors*
+
+**Michael Trimarchi** — 4 commits across src, .gerrit.
+
+- Fixes (3): keep repository file filters per call, not on the instance;
+  run event intake on its own pool; stop a reload landing on a database
+  that is shutting down
+- Changes (1): Jenkinsfile change the quality gate
+
+Here the commits of **Michael Trimarchi** in detail:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- 2026-09-12 · `.gerrit: Jenkinsfile change the quality
+  gate <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/2878b29af952d6bfa537f350d475e047b1451c16>`__
+- 2026-09-19 · `fix(coordinator): run event intake on its own
+  pool <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/d294c600a25fe3aee338b02a7bf57db823f79001>`__
+- 2026-09-19 · `fix(git): keep repository file filters per call, not on
+  the
+  instance <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/f9380eca38e80785d6ab4969c8274a9375cc3a45>`__
+- 2026-09-19 · `fix(db): stop a reload landing on a database that is
+  shutting
+  down <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/e01f63c7ec98a8194ad6e1f818c82ef8474c41f5>`__
+
+**Patrizio Gelosi** — Implemented features for supporting new OpenAI
+models and clarifying condition label instructions, along with various
+fixes and chores in different areas.
+
+- Features (18): new OpenAI models; clarify condition label
+  instructions; record database schema versions; ALL in file extension
+  filters
+- Fixes (24): add GPT-6 pricing; preserve structured response JSON
+  boundaries; moderator response after denied attempt; bound H2
+  reachability probes during reload
+- Refactors (7): make deferred review callbacks explicit; synchronize
+  shared timestamp formatting; resolve violations without behavior
+  changes; normalize code formatting
+- Documentation (2): describe AI moderator role; AI request coordination
+- Tests (1): exercise schemas against PostgreSQL
+
+Here the commits of **Patrizio Gelosi** in detail:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- 2026-09-01 · `fix(review): report concurrent review commands as
+  busy <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/89633a048a92ba8b5d8feaadba3272216ebfa138>`__
+- 2026-09-01 · `fix(requests): track queued AI messages
+  independently <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/11500945ad58681b393217bc759b663af9c4ffc7>`__
+- 2026-09-01 · `fix(review): supersede stale patch set
+  reviews <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/85375f6a8633ed481887f5eba58aca5914e9015e>`__
+- 2026-09-01 · `fix(review): stop superseded patch set reviews
+  early <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/ead7a8b168c866e1491b3c867ee8837ebdac6685>`__
+- 2026-09-01 · `fix(review): cancel stale reviews on state
+  changes <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/acb09cc639cef840759dd9e2778890670eb5e85f>`__
+- 2026-09-02 · `fix(review): show interrupt messages in
+  sidebar <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/f2da6779ec22bd671c5070dc192e6ffd07b2c5b0>`__
+- 2026-09-02 · `fix(review): cancel reviews for closed
+  changes <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/c7e4885fb37ebe87c10fd793b5dc0e0d5315b1c7>`__
+- 2026-09-02 · `feat(request): clear AI request data for closed
+  changes <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/67124427317330254fd784795918c5e3623ed845>`__
+- 2026-09-02 · `docs: document AI request
+  coordination <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/4f63592afc84ccca87ccfc7a79ac82df766ca532>`__
+- 2026-09-02 · `feat(requests): prepare Gerrit events for durable
+  processing <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/e92283531f5aaa54236c7130b482fdf350582ae0>`__
+- 2026-09-02 · `fix(comments): reload comments by exact Gerrit message
+  ID <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/944adce2bbb65f2efa7976b39b9ffd3be4b99e3d>`__
+- 2026-09-02 · `refactor(requests): separate event dispatch and
+  execution <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/c3b3efac76f0cce91c3b1a664638325fe8f72e43>`__
+- 2026-09-03 · `fix(conversations): reset timed-out
+  conversations <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/07227cef64f545775fd3c4c651940409162733f9>`__
+- 2026-09-03 · `refactor(requests): use stable Gerrit change
+  references <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/1158d775f10df592b22fa8592764b477a7d9a52a>`__
+- 2026-09-08 · `feat(feedback): remove classifier
+  history <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/8070f4b536d576536978405c3d4db25b3c69e347>`__
+- 2026-09-08 · `feat(cleanup): clear review state for closed
+  changes <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/edd080d2e255d9d37661c97c8dffb019c280eafe>`__
+- 2026-09-08 · `fix(messages): forward messages for empty patch
+  sets <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/daae781cd9bf2a229875ad7080e57a0dba145482>`__
+- 2026-09-08 · `feat(system-messages): clarify skipped
+  reviews <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/9f869fda8b8a835f864506689eee4f5e36ac60a5>`__
+- 2026-09-08 · `feat(models): support new OpenAI
+  model <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/b5f141c24009d5f32f1c43a873a8333205e69a53>`__
+- 2026-09-08 · `fix(telemetry): update model
+  pricing <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/1c7e26cc1ca36f60321a7da570bfe419b7029d76>`__
+- 2026-09-08 · `fix(build): avoid duplicate Gerrit API manifest
+  entries <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/fa11a18d52cf025b6204bb379678c6beb94c39d6>`__
+- 2026-09-08 · `refactor(roles): centralize AI role-based access
+  control <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/88cb219eea9d1ea4439f294acb2106727478323d>`__
+- 2026-09-09 · `feat(roles): introduce AI moderator
+  role <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/87acf1a31383256a7302677701fd6cbba6fc7845>`__
+- 2026-09-09 · `feat(access): restrict forget_thread to
+  moderators <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/0de41f944f55df006a4c8911eb962045187d4672>`__
+- 2026-09-09 · `fix(commands): ignore denied commands in
+  history <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/679722a3a45635a91f743a171b6b0ea8aef21e8a>`__
+- 2026-09-09 · `fix(commands): abort chains containing denied
+  commands <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/226f51d9bbc54cc7fa857bd62f86d3f4a612495b>`__
+- 2026-09-09 · `feat(feedback): restrict concern dismissal to
+  moderators <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/3193e9f355101b2bc1e3f777dbf49f31c6ee8fbe>`__
+- 2026-09-09 · `feat(feedback): restrict review-agent controls to
+  moderators <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/d62b30e2298d6d1c8347bbbe5e62d306df081d8c>`__
+- 2026-09-09 · `fix(feedback): reject unauthorized moderator
+  requests <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/52a464d2fca26a1a975a525d55c4ce3d0e9af186>`__
+- 2026-09-09 · `docs: describe AI moderator
+  role <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/35a1b31df43b9695657336a572afe08567cc59b2>`__
+- 2026-09-10 · `feat(voting): prevent positive vote after all
+  dismissals <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/0995295d6b9f0d9b57516b7812008fa7d8dfe630>`__
+- 2026-09-10 · `feat(review): display status reasons for repeated review
+  concerns <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/95619ed875b702e4dd4d612923d168a7d36bfe61>`__
+- 2026-09-10 · `fix(storage): make schema migration
+  PostgreSQL-compatible <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/33954abe17acf0e1f8d78bc9bfa05a9c418630bf>`__
+- 2026-09-10 · `test(storage): exercise schemas against
+  PostgreSQL <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/b74fdff56eef12dce50a527cbc63e56d3e2ec882>`__
+- 2026-09-10 · `fix(review): avoid +1 vote for oversized patch
+  sets <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/8a4cce92fadff2fc38ce4b10dce4f0360c7e7485>`__
+- 2026-09-15 · `feat(config): remove obsolete comment
+  settings <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/bbd12fe6c4ff4aa147a77abd0a1b2c288cb7bf04>`__
+- 2026-09-15 · `feat(config): add disabled file extension
+  filtering <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/83cb7d170e5ea07b69c8f5c9012deb60e22abf02>`__
+- 2026-09-15 · `feat(config): support ALL in file extension
+  filters <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/17eff199fb0dbbdf0e47f9d481e9a1612a828235>`__
+- 2026-09-16 · `fix(lifecycle): preserve H2 ownership across plugin
+  reloads <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/bc6053608021125a7c349a43e7dbba6a713e8a03>`__
+- 2026-09-16 · `feat(db): record database schema
+  versions <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/bace99eade5aaef67753baceec90b73949d28f3a>`__
+- 2026-09-16 · `style(spotless): normalize code
+  formatting <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/dc62b12eaada143a588bb626d893168c724245fb>`__
+- 2026-09-16 · `chore(pmd): resolve violations without behavior
+  changes <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/6cd03db1db81eaeca43e4fecfb4c3c389ea812fe>`__
+- 2026-09-16 · `fix(token-estimator): preserve interruption during
+  initialization <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/c5a01c99685665d48c879ea3682ea0d944a1fd13>`__
+- 2026-09-16 · `fix(spotbugs): use locale-independent identifier case
+  conversion <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/cadc8823f5fe79548520917741f894bd7c37ade5>`__
+- 2026-09-16 · `chore(spotbugs): synchronize shared timestamp
+  formatting <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/8731a3035f9e62d857e1e33ef6b31b7d746af2d3>`__
+- 2026-09-16 · `chore(spotbugs): make deferred review callbacks
+  explicit <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/ef90484723abc15cddcf639f854e5e1e370c80cd>`__
+- 2026-09-21 · `fix(db): bound H2 reachability probes during
+  reload <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/f48c4150b81f157c0fb5a9c588a0c81e3ff38f53>`__
+- 2026-09-21 · `fix(feedback): correct moderator response after denied
+  attempt <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/3d586a774325e1533132de99443212e4d7276382>`__
+- 2026-09-23 · `fix(openai): preserve structured response JSON
+  boundaries <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/822e325c61de6f7f98954dab98985c0333d7084e>`__
+- 2026-09-24 · `feat(labels): clarify condition label
+  instructions <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/8328b729e285f3f90a39a0e68503242ffadb3c1b>`__
+- 2026-09-24 · `feat(models): support new OpenAI
+  models <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/cb7cada9a2d5c7c43b849c76de5f7e0668418300>`__
+- 2026-09-28 · `fix(telemetry): add GPT-6
+  pricing <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/49bc8d5facf400fae47f6245e73092c093954df2>`__
+
+cutekeyboard
+------------
+
+Repository URL: https://github.com/amarula/cutekeyboard.git
+
+*7 commits by 1 author*
+
+**Andrea Ricchi** — Andrea Ricchi made 7 commits from 2026-09-08 to
+2026-09-21, affecting 13 files with a net change of +869/-30.
+
+- Features (2): GitHub Pages deployment workflow; GitHub Pages site
+  source under docs/
+- Refactors (1): Guard focus item pointers in the input context
+- Version bumps (1): version -> 1.7.0; Bump project version to 1.7.0
+- Changes (3): link the website; Build with qmake on Qt6 and verify the
+  install rules in CI; Compile icon resources in the CMake build
+
+Here the commits of **Andrea Ricchi** in detail:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- 2026-09-08 · `Guard focus item pointers in the input
+  context <https://github.com/amarula/cutekeyboard/commit/42568e7f9f6711e7c113c06d88f5ce5b1b987dd6>`__
+- 2026-09-08 · `Compile icon resources in the CMake
+  build <https://github.com/amarula/cutekeyboard/commit/12cf34bce7a570d452467df2d5ff9e4985aca45d>`__
+- 2026-09-10 · `Build with qmake on Qt6 and verify the install rules in
+  CI <https://github.com/amarula/cutekeyboard/commit/cc3e528d13a3ee7a19391ef95fdad52bfd2c3559>`__
+- 2026-09-10 · `Bump project version to
+  1.7.0 <https://github.com/amarula/cutekeyboard/commit/f2cc211b21fba45f884abc1ef92ce18f140570d9>`__
+- 2026-09-21 · `README: link the
+  website <https://github.com/amarula/cutekeyboard/commit/0523e10381e9553a42542a7f8c18c2c52fe806a4>`__
+- 2026-09-21 · `Add GitHub Pages deployment
+  workflow <https://github.com/amarula/cutekeyboard/commit/93d79c401dfba01adaf7f6eea90b9ec884a5d0e8>`__
+- 2026-09-21 · `Add GitHub Pages site source under
+  docs/ <https://github.com/amarula/cutekeyboard/commit/8a33027c323f9894c0f8ed716d969ae9fb3f9e10>`__
+
+flutekeyboard
+-------------
+
+Repository URL: https://github.com/amarula/flutekeyboard.git
+
+*2 commits by 1 author*
+
+**Andrea Ricchi** — Redesign the landing page for the Pages site in
+version 0.4.1
+
+- Changes (2): Pages site: redesign the landing page; Version 0.4.1
+
+Here the commits of **Andrea Ricchi** in detail:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- 2026-09-17 · `Version
+  0.4.1 <https://github.com/amarula/flutekeyboard/commit/ea3d9ab41ffdaebf53dee4ba8e02ed668dfe4a29>`__
+- 2026-09-18 · `Pages site: redesign the landing
+  page <https://github.com/amarula/flutekeyboard/commit/a7e6ccd002f876684596b1ff8c7b0766b7e89cd3>`__
+
+git-collect-plugin
+------------------
+
+Repository URL: https://github.com/jenkinsci/git-collect-plugin.git
+
+*6 commits by 1 author*
+
+**Michael Trimarchi** — 6 commits across CollectGitStep,
+MultiScmEnvAction.
+
+- Features (1): the repository browser option; Build the SCM of a
+  collection that brought no commit
+- Fixes (1): the browser URL of https remotes and add browserUrl
+- Refactors (1): Export GIT_REMOTE variable
+- Changes (3): Build the SCM of a collection that brought no commit;
+  Collect the history of a repository once; Notify all SCM listeners to
+  record forensics; Export GIT_REMOTE variable
+
+Here the commits of **Michael Trimarchi** in detail:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- 2026-09-05 · `CollectGitStep: Notify all SCM listeners to record
+  forensics <https://github.com/jenkinsci/git-collect-plugin/commit/446592744df070f8745a06d7e5c87069da929bb4>`__
+- 2026-09-05 · `MultiScmEnvAction: Export GIT_REMOTE
+  variable <https://github.com/jenkinsci/git-collect-plugin/commit/ffb56b1c10495f48fa296a921505f89ace1996ed>`__
+- 2026-09-20 · `CollectGitStep: Fix the browser URL of https remotes and
+  add
+  browserUrl <https://github.com/jenkinsci/git-collect-plugin/commit/f5d70c400ebf887f03bb00c19ac2cb772697a7a5>`__
+- 2026-09-20 · `CollectGitStep: Add the repository browser
+  option <https://github.com/jenkinsci/git-collect-plugin/commit/e5b690fd293058693fe0109657847b0eeb60ffbf>`__
+- 2026-09-24 · `CollectGitStep: Collect the history of a repository
+  once <https://github.com/jenkinsci/git-collect-plugin/commit/3d1e67f6c54234fc6a04e4c114b5dba279f3b134>`__
+- 2026-09-24 · `CollectGitStep: Build the SCM of a collection that
+  brought no
+  commit <https://github.com/jenkinsci/git-collect-plugin/commit/818f50274523f9e42f48512ee237e598f8da8575>`__
+
+check-jenkins
+-------------
+
+Repository URL: https://github.com/amarula/check-jenkins
+
+*28 commits by 1 author*
+
+**Michael Trimarchi** — 28 commits across web, .jenkins, docs.
+
+- Features (2): recordIssues and recordCoverage to release pipeline;
+  absolute coverage and per-attempt coverage fetch; Measure in-memory
+  TTLs with the monotonic clock
+- Fixes (4): some minor codesyle ordering; coverage columns wrapping the
+  tier emoji above the value; coverage column width and alignment;
+  coverage cache eviction and covered-build check runs
+- Refactors (2): ls -l from static-analysis script; Parallelize
+  per-attempt coverage fetches
+- Documentation (6): describe the patch-based coverage classification;
+  update README coverage columns; add files endpoint and correct cache
+  size in architecture; parallel per-attempt coverage fetch and larger
+  LRU
+- Changes (14): Register the correct files path in warning-ng and
+  coverage…; Generate SCM git collect object for release image; Measure
+  in-memory TTLs with the monotonic clock; Scope rerun state to the
+  change view
+
+Here the commits of **Michael Trimarchi** in detail:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- 2026-09-05 · `Report per-file incremental coverage
+  percentage <https://github.com/amarula/check-jenkins/commit/8a87ebe12a453f94ee171317e7136367f10eeaeb>`__
+- 2026-09-06 · `Support absolute coverage and per-attempt coverage
+  fetch <https://github.com/amarula/check-jenkins/commit/569c220cab2515bf763505a4a9f39014a3f7eec1>`__
+- 2026-09-06 · `Fix coverage cache eviction and covered-build check
+  runs <https://github.com/amarula/check-jenkins/commit/cc372f69efe75ec5d3970559fee272ecfffea287>`__
+- 2026-09-06 · `Show project coverage before per-file low-coverage
+  alerts <https://github.com/amarula/check-jenkins/commit/f1a6dab46d144f71ea9b5bd6bdab97921956387e>`__
+- 2026-09-06 · `Link coverage check results to the file’s coverage
+  report <https://github.com/amarula/check-jenkins/commit/bd04445bd1f9e35b9a76ad9af3af27bffc0588fe>`__
+- 2026-09-07 · `Repurpose unit-test coverage columns into branch and
+  instruction <https://github.com/amarula/check-jenkins/commit/b9740b5f36c27d9e7e93876d8a4f95d1d34c920d>`__
+- 2026-09-07 · `Parallelize per-attempt coverage
+  fetches <https://github.com/amarula/check-jenkins/commit/f7ed002bf8a3dec654477756a27dd99b77cab4d3>`__
+- 2026-09-07 · `Fix coverage column width and
+  alignment <https://github.com/amarula/check-jenkins/commit/c61549c78092543ba1b0cfa6a584657c4a6d3b5f>`__
+- 2026-09-07 · `docs: rename coverage components to branch and
+  instruction <https://github.com/amarula/check-jenkins/commit/acef89e64c7a39711351bbd36611a0c722e73346>`__
+- 2026-09-07 · `docs: document coverage columns, links and check-run
+  ordering <https://github.com/amarula/check-jenkins/commit/75fadc1810fb1fb3d8a2fd324f61ff5052d1d030>`__
+- 2026-09-07 · `docs: document parallel per-attempt coverage fetch and
+  larger
+  LRU <https://github.com/amarula/check-jenkins/commit/8f996b3911f96ca82309326d154bcf5ef0b1fd31>`__
+- 2026-09-07 · `docs: add files endpoint and correct cache size in
+  architecture <https://github.com/amarula/check-jenkins/commit/63f02668aea863fa83982adae0cb940199e298b7>`__
+- 2026-09-07 · `docs: update README coverage
+  columns <https://github.com/amarula/check-jenkins/commit/fd484e0b0a209669380bce946d81bffa024a12c3>`__
+- 2026-09-08 · `Show project coverage delta in the coverage check
+  result <https://github.com/amarula/check-jenkins/commit/090545b124c0fde69801e5b02364d9199bf7ef4c>`__
+- 2026-09-12 · `Classify the coverage check on patch coverage, not
+  global
+  coverage <https://github.com/amarula/check-jenkins/commit/8dea583d55c1bb28c466e4e8f02b7011685154d7>`__
+- 2026-09-12 · `docs: describe the patch-based coverage
+  classification <https://github.com/amarula/check-jenkins/commit/60a1e5c75db9e49bd250055676eab2646543c009>`__
+- 2026-09-12 · `Fix coverage columns wrapping the tier emoji above the
+  value <https://github.com/amarula/check-jenkins/commit/d8e556c3fcb5537ac19b2740103f3fe6b8caa428>`__
+- 2026-09-12 · `Grade a fully covered patch as SUCCESS, not
+  INFO <https://github.com/amarula/check-jenkins/commit/85fa4a7aeb9843ce778f2fa7cf61c38a712077bb>`__
+- 2026-09-13 · `Collect test and lint results in the verification
+  pipeline <https://github.com/amarula/check-jenkins/commit/7bd544451a1605f67e62480b530a8315c8e0dd3e>`__
+- 2026-09-13 · `Run PMD, CPD, Checkstyle and SpotBugs over the plugin
+  sources <https://github.com/amarula/check-jenkins/commit/d93769f6f0ec901ed4abc16dffd5f0a3ace5ef7b>`__
+- 2026-09-13 · `.jenkins: Drop ls -l from static-analysis
+  script <https://github.com/amarula/check-jenkins/commit/55eb570ba60846fb395094cc0a5000e0f21f3341>`__
+- 2026-09-13 · `Collect web test coverage in the verification
+  pipeline <https://github.com/amarula/check-jenkins/commit/64534af014f58192b6d1c519a1c3b31c4fb041aa>`__
+- 2026-09-15 · `.jenkins: Add recordIssues and recordCoverage to release
+  pipeline <https://github.com/amarula/check-jenkins/commit/48cfd6055d361c34ce4569abee2e1d228134e365>`__
+- 2026-09-17 · `web/fetcher: Scope rerun state to the change
+  view <https://github.com/amarula/check-jenkins/commit/a26783a3e473c99a53c876beb95c1c904020dec6>`__
+- 2026-09-17 · `web/fetcher: Measure in-memory TTLs with the monotonic
+  clock <https://github.com/amarula/check-jenkins/commit/6f5a70a2a2c9b0529f73e091a3946d1f2c38aa9c>`__
+- 2026-09-20 · `ProxyTriggerAction: Fix some minor codesyle
+  ordering <https://github.com/amarula/check-jenkins/commit/5bdf8c214a347ffed44cb4ff53567a6ea35aad0d>`__
+- 2026-09-20 · `.jenkins: Generate SCM git collect object for release
+  image <https://github.com/amarula/check-jenkins/commit/2e2ccbd4099db60b8ea63a53415c766e6cb987f6>`__
+- 2026-09-20 · `.jenkins: Register the correct files path in warning-ng
+  and coverage
+  plugin <https://github.com/amarula/check-jenkins/commit/1d66054c5413e7cfe86614195f56f1bda6ecdb0e>`__
+
+nlcpp
+-----
+
+Repository URL: https://github.com/amarula/nlcpp.git
+
+*3 commits by 1 author*
+
+**Roman Smrž** — 3 commits across .jenkins, src.
+
+- Features (1): Jenkins pipeline; Generate JUnit-style report in Jenkins
+  tests
+- Refactors (1): Guard for self-assignment in copy- and move-assignment…
+- Changes (1): Generate JUnit-style report in Jenkins tests; Add Jenkins
+  pipeline
+
+Here the commits of **Roman Smrž** in detail:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- 2026-09-18 · `Generate JUnit-style report in Jenkins
+  tests <https://github.com/amarula/nlcpp/commit/5754ee78e63b7bd48816af3f7a0ca5f1ac3ea44c>`__
+- 2026-09-18 · `Add Jenkins
+  pipeline <https://github.com/amarula/nlcpp/commit/a13b86646efbd91b8b215655c5c597180f178285>`__
+- 2026-09-22 · `Guard for self-assignment in copy- and move-assignment
+  operators <https://github.com/amarula/nlcpp/commit/ea44d2b0cdde0d7ae5b36651e5bb47ad10682aaa>`__
+
+buildroot
+---------
+
+Repository URL: https://gitlab.com/buildroot.org/buildroot.git
+
+*7 commits by 2 authors*
+
+**Andrea Ricchi** — Bumped package/cutekeyboard to version 1.7.0
+
+- Version bumps (1): package/cutekeyboard -> 1.7.0; Bumped version to
+  1.7.0
+
+Here the commits of **Andrea Ricchi** in detail:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- 2026-09-16 · `package/cutekeyboard: bump version to
+  1.7.0 <https://gitlab.com/buildroot.org/buildroot/commit/e44b1c4195d14fc5b3960bf01ced0e3697358417>`__
+
+**Dario Binacchi** — Bumped versions for package/ufs-utils,
+package/less, package/atf, and package/pocketpy.
+
+- Fixes (1): build without threads
+- Version bumps (4): package/ufs-utils -> 8.14.12; package/less -> 710;
+  package/atf -> 0.26; package/pocketpy -> 2.2.0
+- Changes (1): bump to version 710
+
+Here the commits of **Dario Binacchi** in detail:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- 2026-09-07 · `package/atf: bump to version
+  0.25 <https://gitlab.com/buildroot.org/buildroot/commit/0aeecbb88949b1ca0a4768750d9ddecdaba7dc3d>`__
+- 2026-09-07 · `package/pocketpy: fix build without
+  threads <https://gitlab.com/buildroot.org/buildroot/commit/376daf3dd0ac4dda52ede3284dec59a92bb24130>`__
+- 2026-09-07 · `package/pocketpy: bump to version
+  2.2.0 <https://gitlab.com/buildroot.org/buildroot/commit/e8ee9feba137fba7cabfbac56e4f8bab89762c99>`__
+- 2026-09-28 · `package/ufs-utils: bump to version
+  8.14.12 <https://gitlab.com/buildroot.org/buildroot/commit/3f4e6fcd9599419b47cce241916ef29eb0dd3e72>`__
+- 2026-09-28 · `package/atf: bump to version
+  0.26 <https://gitlab.com/buildroot.org/buildroot/commit/af7fca093e3a0e6e9cd2061f3023f86e4bfaabf8>`__
+- 2026-09-28 · `package/less: bump to version
+  710 <https://gitlab.com/buildroot.org/buildroot/commit/59b5c3d2bb8992069d68a2a0c650a736a7bd9aa8>`__
+
+--------------
+
+*Generated by the Git Commit Analyzer*
+
+.. tip::
+
+   Want to contribute to the open source projects featured in these
+   reports? Amarula Solutions is always looking for collaboration
+   opportunities in embedded Linux, Buildroot, Yocto, U-Boot, and
+   Zephyr. `Contact our open source
+   team <https://www.amarulasolutions.com/contact/>`__

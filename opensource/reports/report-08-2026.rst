@@ -1,0 +1,556 @@
+Engineering Review — 2026-08
+============================
+
+.. note::
+
+   **TL;DR**
+
+   - Monthly engineering review of Amarula Solutions’ **open source
+     contributions** — 140 commits by 7 authors across 11 repositories,
+     covering **Buildroot, openembedded-core/Yocto, the Linux kernel,
+     U-Boot, Zephyr, Jenkins plugins, and Amarula products**.
+   - Auto-generated report from the Git Commit Analyzer, grouped by
+     repository and author.
+
+*11 repositories · 7 authors · 140 commits · +23031/-2223*
+
+We’re excited to share a summary of the significant progress made across
+our repositories in the month of 2026-08. Our dedicated team has been
+busy pushing new features, refining existing functionalities, and
+enhancing the overall stability of our products.
+
+Here’s a breakdown of key contributions by repository:
+
+axelera-aisbc-bsp
+-----------------
+
+Repository URL: https://github.com/axelera-ai-hub/axelera-aisbc-bsp.git
+
+*3 commits by 1 author*
+
+**Patrick Barsanti** — Implemented secure update enforcement in mender
+with original mender.conf logic and reintroduced mender support in
+meta-axelera.
+
+- Features (1): secure update enforcement
+- Changes (2): Restore original mender.conf logic; Reintroduce mender
+  support
+
+Here the commits of **Patrick Barsanti** in detail:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- 2026-08-04 · `meta-axelera: Reintroduce mender
+  support <https://github.com/axelera-ai-hub/axelera-aisbc-bsp/commit/7928f8b26aeb1df2ef7bdea3e93c25dade6f8114>`__
+- 2026-08-06 · `recipes-mender: Restore original mender.conf
+  logic <https://github.com/axelera-ai-hub/axelera-aisbc-bsp/commit/c1fd432b3d79ee7366c3f7a67c64a00e6bd5f0be>`__
+- 2026-08-06 · `mender: Add secure update
+  enforcement <https://github.com/axelera-ai-hub/axelera-aisbc-bsp/commit/8d5fd17cd627fcf6835cc6c7dd0b3d0b26a01ad3>`__
+
+CANopenTerm
+-----------
+
+Repository URL: https://github.com/CANopenTerm/CANopenTerm.git
+
+*1 commit by 1 author*
+
+**Dario Binacchi** — Fixed executable installation path in CMake
+
+- Fixes (1): executable installation path
+
+Here the commits of **Dario Binacchi** in detail:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- 2026-08-24 · `Fix executable installation
+  path <https://github.com/CANopenTerm/CANopenTerm/commit/1e80c92094e6b9d5bb523d66a719716ea489ee59>`__
+
+chatgpt-code-review-gerrit-plugin
+---------------------------------
+
+Repository URL: https://github.com/amarula/chatgpt-code-review-gerrit-plugin.git
+
+*76 commits by 2 authors*
+
+**Michael Trimarchi** — 16 commits across src, README.md.
+
+- Features (8): sanitize stale concern ledgers at startup; clear concern
+  ledger on merge or abandon; commercial support info; dotfiles in
+  enabledFileExtensions
+- Fixes (8): don’t persist filtered-out replies; exclude rebase changes
+  from the incremental patch; make concern sanitizer resilient to
+  database unavailability; scope on-demand tools to the change’s own
+  files
+
+Here the commits of **Michael Trimarchi** in detail:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- 2026-08-01 · `fix: expose condition labels to specialized
+  agents <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/4a4aaf6480977e9764856b04d826b7059a571929>`__
+- 2026-08-01 · `feat: continue AI threads without
+  mentions <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/791ce704e570a89e981be87adbfbc3cd5dbc4036>`__
+- 2026-08-01 · `fix: add default Verified
+  description <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/4c09a7027cbc03a1e04a4d26a8670222c332a097>`__
+- 2026-08-02 · `feat: add /ai-review-config REST endpoint (dev variant
+  only) <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/5784445de2f1563c9ea6abe708691985c46311e8>`__
+- 2026-08-02 · `feat: add PostgreSQL support for multi-site conversation
+  storage <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/a605395720a8736da727b2655e9590704ae4bf47>`__
+- 2026-08-03 · `fix: read project plugin config with parent
+  inheritance <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/4944761cf35657256ba3308077bba4b600999b03>`__
+- 2026-08-25 · `fix: require aiReview ALLOW to consider a project
+  AI-configured <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/f677d852f30a929e83370e7fef9c598074bf32e2>`__
+- 2026-08-25 · `feat: allow exact file names in
+  enabledFileExtensions <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/bbe53a052095a7a2edb2ac6a800555329f2ab45f>`__
+- 2026-08-25 · `feat: support dotfiles in
+  enabledFileExtensions <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/797556a7788e398e4477385640b7032febd5ede9>`__
+- 2026-08-27 · `README.md: Add commercial support
+  info <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/57bdff59b449cc6a800fe2cd92f6c9270f3d6d11>`__
+- 2026-08-27 · `fix(code-context): scope on-demand tools to the change’s
+  own
+  files <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/70dae23f064996d132557b9ec6c2f4879acad31d>`__
+- 2026-08-27 · `feat(concerns): clear concern ledger on merge or
+  abandon <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/ee935c63cfccd6eeb6328d8720f54f377d3d8fb4>`__
+- 2026-08-27 · `feat(concerns): sanitize stale concern ledgers at
+  startup <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/646b6d2ad41324469da2eed8cb6fb36e68cc4a7b>`__
+- 2026-08-27 · `fix(concerns): make concern sanitizer resilient to
+  database
+  unavailability <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/e2a9f62557786eae478fa727852d384849d06fa2>`__
+- 2026-08-27 · `fix(concerns): exclude rebase changes from the
+  incremental
+  patch <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/0124fc19aa48914051bac996871ec85d666f9a91>`__
+- 2026-08-27 · `fix(concerns): don’t persist filtered-out
+  replies <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/440cc26119e3c96dafccd1552338c9aa0504d644>`__
+
+**Patrizio Gelosi** — 60 commits across src, docs, README.md.
+
+- Features (21): resolve terminal Gerrit review threads; expose feedback
+  state in thread debugger; include concern ledger in thread output;
+  integrate classification with level 2 agents
+- Fixes (27): exclude same-file rebase changes; avoid duplicate concern
+  resolutions; avoid empty messages when resolving concerns; avoid false
+  +1 review votes
+- Refactors (8): extract lifecycle event handler; localize new
+  user-facing strings; carry concern IDs through review batches;
+  propagate concern IDs through replies
+- Documentation (4): add Prometheus plugin download link; add CI
+  integration guide; comment classification workflow; review agent
+  architecture
+
+Here the commits of **Patrizio Gelosi** in detail:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- 2026-08-03 · `fix: block /COMMIT_MSG ON_DEMAND
+  lookups <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/09057690823b0e1710c43931715e08a3ba3aa3da>`__
+- 2026-08-05 · `fix: avoid AI replies to resolved
+  comments <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/3885273ac3c67f114afd79b4d14778e4728f042c>`__
+- 2026-08-05 · `refactor(concerns): introduce canonical concern
+  model <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/e2f6b145a1517f3108524f7f64968fa7393d32b3>`__
+- 2026-08-05 · `feat(concerns): add concern ledger
+  storage <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/c8cdfd6ffa379f67dd7dd175c2e67b596f34c618>`__
+- 2026-08-05 · `refactor(ai): propagate concern IDs through
+  replies <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/d9392bf42d7fd9608a71a41301a13bd8e32b6511>`__
+- 2026-08-05 · `fix(gerrit): surface review publication
+  failures <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/11a3b6723af16e84691aaf18aec6289bf3989deb>`__
+- 2026-08-05 · `refactor(level2): reuse canonical review
+  concerns <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/61bf9edd24a92ffbf6fdc44556c626a238885319>`__
+- 2026-08-06 · `feat(gerrit): expose incremental patch
+  sets <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/713cfcdaa51c2bbfe8cc33f22df3b0e599694c8c>`__
+- 2026-08-06 · `feat(concerns): load prior review
+  context <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/7fdc4f672caffadb112669567aec79806875f7c8>`__
+- 2026-08-06 · `feat(concerns): add concern status review
+  stage <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/97ad96280d5078dbd02c180ab64d3316bf6c4df7>`__
+- 2026-08-06 · `fix: enable GPT-5.6 ZDR tool
+  workflows <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/9b1e5ce2cf49497836719518e96e196eccbdfcaa>`__
+- 2026-08-06 · `feat(concerns): add new issue finder
+  stage <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/f90966e603503ce9bd198574c3ccef65e52dbe77>`__
+- 2026-08-06 · `feat(level0): track concerns across
+  reviews <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/17090be6ea88e9a6510edc1dac882fc292ac74a6>`__
+- 2026-08-06 · `feat(level1): track scoped concerns across
+  reviews <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/0238fe7134d05fe55a0597466d592782f17b51cf>`__
+- 2026-08-06 · `feat(level2): track specialized concerns across
+  reviews <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/5c04062aeacc2da1ca44f61ba154ea94107144b5>`__
+- 2026-08-06 · `fix(level2): avoid legacy repetition on follow-up
+  reviews <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/470d805ef41fc93ee90eb880cf4bb95b94f64c37>`__
+- 2026-08-06 · `fix(concerns): clear concern ledger on
+  /forget_thread <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/2515f09386df7376a756f7cc95b58dc1a69d66c4>`__
+- 2026-08-06 · `fix(concerns): align reviewer and finder patch
+  context <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/2b8ad3a62e47bfe3c894ff485c45c44fa76f8007>`__
+- 2026-08-07 · `fix: extend COMMIT_MSG lookup
+  blocking <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/b8b118ea14d05c1d7ab1fa315427276c3b3d8e91>`__
+- 2026-08-07 · `docs: document review agent
+  architecture <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/57edad2fe0e58076e008d4b92fe18fa47d60b67a>`__
+- 2026-08-07 · `feat(concerns): track reviewed revision
+  checkpoint <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/2d72aaca1c44122b2827ce5017c44f1b31b01caa>`__
+- 2026-08-17 · `chore: lower unresolved model
+  logging <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/5616f750a53b63b0137e8f0443c78b1133dfc388>`__
+- 2026-08-17 · `feat(concerns): add the DISMISSED lifecycle
+  state <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/1b4267d85bb6ccb1be540b2290819bcc88994830>`__
+- 2026-08-17 · `fix(comments): make comment-thread traversal
+  cycle-safe <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/e18b756ce64398a7750494bd8f65eb973cbbf093>`__
+- 2026-08-18 · `refactor(review): carry concern IDs through review
+  batches <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/e11f415c50646350384e931a4079cf2ece0a0f8b>`__
+- 2026-08-18 · `feat(concerns): bind published comments to ledger
+  concerns <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/5f79afe4691d789496b745d8ce4c7217523b98f1>`__
+- 2026-08-18 · `feat(user-context): persist feedback journal and
+  summaries <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/737e12553086f00aed1461def908d5993b0ea10b>`__
+- 2026-08-18 · `feat(user-context): classify pending feedback in level
+  0 <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/e8d4017aca8cfc880acc215b6dbae3a3129f055c>`__
+- 2026-08-18 · `feat(user-context): integrate classification with level
+  2
+  agents <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/eb51e1e19904298ec35d0ccda8a73e2b7b458307>`__
+- 2026-08-19 · `feat(user-context): integrate classification with level
+  1
+  agents <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/68949c57883759da15adbbd186b634b799477fec>`__
+- 2026-08-19 · `docs: document comment classification
+  workflow <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/70f0ac9a27677e05938b862a52b3774942200e84>`__
+- 2026-08-19 · `fix(user-context): enforce user-disabled review
+  scopes <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/b7dec5bfd093b8f3297415be5876f2c4d87ecd79>`__
+- 2026-08-19 · `fix(user-context): enforce specialized-agent
+  exclusions <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/879faba06712c173a7e31835662be41b4a1a1b7a>`__
+- 2026-08-19 · `fix(feedback): fix missing status
+  feedback <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/189ed65c6e73dbc922fc33b97dde8ed29e1d98ae>`__
+- 2026-08-19 · `fix(concerns): align specialized concern reviewer
+  prompts <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/929cfd56edf59c0f026934f6d0c12bdf82856ecc>`__
+- 2026-08-21 · `fix(ci-labels): use CI labels in agent
+  prompts <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/d44fb71710c75f70358b8bf03f205534f9ba975f>`__
+- 2026-08-21 · `fix(ci-labels): exclude agents from CI
+  evidence <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/a614a0508775f8a3710616b43e03af492909ee15>`__
+- 2026-08-21 · `fix(ci-labels): track semantic concern
+  ownership <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/4c6eb7d5a1fdb195086ebdab2a9fec05f916aa33>`__
+- 2026-08-21 · `fix(ci-labels): prevent cross-scope
+  findings <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/1a8ccf193bc358debee17c2938b7b152ed838e7b>`__
+- 2026-08-24 · `feat(debug): add /ai-review-threads endpoint for thread
+  debugging <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/7e11ce55961dd28bb22c06cfad441a422c66eb0b>`__
+- 2026-08-24 · `feat(debug): include concern ledger in thread
+  output <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/2c883d63ee163f12c68e7c76dc60bd171f0e69b7>`__
+- 2026-08-24 · `feat(debug): expose feedback state in thread
+  debugger <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/6c6174f1b33a813f0c1efaa5b5533e6cfd62ee39>`__
+- 2026-08-24 · `feat(concerns): merge pending concern
+  updates <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/11509f4197db3a14d318105b778e91c9e78c12c2>`__
+- 2026-08-24 · `feat(concerns): persist updates after
+  publication <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/5da808a69c39cfde2d0a1cbd6365ace050ba4770>`__
+- 2026-08-25 · `docs: add CI integration
+  guide <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/7e1b28c5ab5c02b832190dbe96d232f374712fcc>`__
+- 2026-08-25 · `feat(concerns): resolve terminal Gerrit review
+  threads <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/091d40c1ccf5491663dc09f401222810e03fe690>`__
+- 2026-08-25 · `docs: add Prometheus plugin download
+  link <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/c56fc3da88469b1be0980dce3890003dbe624e25>`__
+- 2026-08-25 · `fix(user-context): track skipped
+  concerns <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/d0c3c7e84abe1c228054bfba3c5e6d21277d96c7>`__
+- 2026-08-25 · `fix(on-demand): prevent tool-call errors after on-demand
+  context
+  limit <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/145cb6014f6dafba441d23fd32f32c86ea0417ec>`__
+- 2026-08-26 · `chore: reduce ON_DEMAND missing file log
+  noise <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/58a3924de3c665b0d7a312b9be5446f544dacfff>`__
+- 2026-08-26 · `fix(ci-labels): exclude unmet review
+  conditions <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/e159ada93c671381b5b64c48fdc070ead7e31a72>`__
+- 2026-08-26 · `fix(concerns): preserve concerns sharing a source
+  location <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/101bbc8d38bbacda7e25f1173e80bee53f0fe5bc>`__
+- 2026-08-27 · `refactor(concerns): localize new user-facing
+  strings <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/5aebf775c50465c395c00d170228c17ab907de16>`__
+- 2026-08-27 · `fix(concerns): exclude same-file rebase
+  changes <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/d296c66704f52126bab7b1e696db34800987aa20>`__
+- 2026-08-27 · `fix(concerns): resolve ledgers with full change
+  IDs <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/7ab2793c6f3a73ca16668b561b9f0ea094d8a986>`__
+- 2026-08-27 · `refactor(concerns): extract lifecycle event
+  handler <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/110e1f245f3bb095d85556e9ab8effa8ff123fd0>`__
+- 2026-08-27 · `fix(code-context): preserve colons in grep file
+  paths <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/aafeb11541dd61c2cd0c82c34dd9fc90b1871859>`__
+- 2026-08-28 · `fix(level0): avoid false +1 review
+  votes <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/b30d35a168e6e5e85ed511229ee4a534848d58f7>`__
+- 2026-08-28 · `fix(gerrit): avoid empty messages when resolving
+  concerns <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/877fc27cab31b60d08f2eb0bf16e27ae9e473f46>`__
+- 2026-08-28 · `fix(gerrit): avoid duplicate concern
+  resolutions <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/f6d60efc694ed58a7431e5ddacff11c2792b253f>`__
+
+flutekeyboard
+-------------
+
+Repository URL: https://github.com/amarula/flutekeyboard.git
+
+*1 commit by 1 author*
+
+**Andrea Ricchi** — Andrea Ricchi updated CI to run the test suite and
+check test formatting
+
+- Build (1): run the test suite and check test formatting
+
+Here the commits of **Andrea Ricchi** in detail:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- 2026-08-10 · `CI: run the test suite and check test
+  formatting <https://github.com/amarula/flutekeyboard/commit/31ab9b770ad530c5cdbc7b4bb18aca896b0c2353>`__
+
+check-jenkins
+-------------
+
+Repository URL: https://github.com/amarula/check-jenkins
+
+*6 commits by 1 author*
+
+**Michael Trimarchi** — 6 commits across web, GetConfig, src.
+
+- Features (2): configurable coverage report id; Allow to get
+  configuration look at parent project too
+- Fixes (1): avoid picking up both project and parent jenkins config;
+  De-duplicate Jenkins config reading between endpoints
+- Refactors (1): the automatic release note feature
+- Changes (2): De-duplicate Jenkins config reading between endpoints;
+  Render coverage reference build as a link, not raw HTML
+
+Here the commits of **Michael Trimarchi** in detail:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- 2026-08-04 · `GetConfig: Allow to get configuration look at parent
+  project
+  too <https://github.com/amarula/check-jenkins/commit/4b8db0718ea28f1335f561bab278e5022070f894>`__
+- 2026-08-13 · `Support configurable coverage report
+  id <https://github.com/amarula/check-jenkins/commit/39ff63d8c4b9a07ff02381185d1433acf47a1929>`__
+- 2026-08-19 · `GetConfig: avoid picking up both project and parent
+  jenkins
+  config <https://github.com/amarula/check-jenkins/commit/c13e4cd30dfa86cbf63b72e0511579188e15b4a0>`__
+- 2026-08-19 · `.jenkins: Use the automatic release note
+  feature <https://github.com/amarula/check-jenkins/commit/b229c9962a7a8330f6024f0814046f30ff44baa6>`__
+- 2026-08-29 · `Render coverage reference build as a link, not raw
+  HTML <https://github.com/amarula/check-jenkins/commit/4a743927012f2a31b60c1e82447f03e3b4a69236>`__
+- 2026-08-29 · `De-duplicate Jenkins config reading between
+  endpoints <https://github.com/amarula/check-jenkins/commit/46bafe809ae41cf337de555b6a54777b1bc5a904>`__
+
+kernel-slides
+-------------
+
+Repository URL: https://github.com/amarula/kernel-slides.git
+
+*28 commits by 1 author*
+
+**Michael Trimarchi** — 28 commits across slides, contributions,
+resources.
+
+- Features (27): Open source contributions section; Resources section;
+  Appendix: mmap() section; Kernel debugging section
+- Fixes (1): table of contents section links
+
+Here the commits of **Michael Trimarchi** in detail:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- 2026-08-29 · `resources: add Resources
+  section <https://github.com/amarula/kernel-slides/commit/e9e18d4b60568b71df452b48437e69f14167f3b3>`__
+- 2026-08-29 · `mmap: add Appendix: mmap()
+  section <https://github.com/amarula/kernel-slides/commit/06875b602be5d5ac1268d42a19c20a36d45351fe>`__
+- 2026-08-29 · `debugging: add Kernel debugging
+  section <https://github.com/amarula/kernel-slides/commit/e9d842686cd91f43278bcf160d252cd4e66edc90>`__
+- 2026-08-29 · `dma: add Direct Memory Access (DMA)
+  section <https://github.com/amarula/kernel-slides/commit/5db9f7e4e6f4bda82de3e0a10e757cdbf77628d7>`__
+- 2026-08-29 · `locking: add Locking
+  section <https://github.com/amarula/kernel-slides/commit/dfa7a39069e1be83bf7199066b46dad68fee7887>`__
+- 2026-08-29 · `scheduling: add Processes, scheduling & interrupts
+  section <https://github.com/amarula/kernel-slides/commit/210fdb241c1322fa2c55f20186f1ca3cba96602e>`__
+- 2026-08-29 · `misc: add misc subsystem
+  section <https://github.com/amarula/kernel-slides/commit/99831a28cfde6d4ff2ceca8b2f0bc7daa19bb9f8>`__
+- 2026-08-29 · `clock: add Clocking & power management
+  section <https://github.com/amarula/kernel-slides/commit/02027d95cc73f9ed0827578758b75411c0cfd846>`__
+- 2026-08-29 · `io-memory: add I/O memory
+  section <https://github.com/amarula/kernel-slides/commit/b0f0655270b16f4f14df85a1ffd6a9bf57b8d24c>`__
+- 2026-08-29 · `memory-management: add Memory management
+  section <https://github.com/amarula/kernel-slides/commit/11057def33158a28a630080786a5aa11ac6c9289>`__
+- 2026-08-29 · `frameworks: add Kernel frameworks
+  section <https://github.com/amarula/kernel-slides/commit/5849242b9b6d88858c67bcb08a2a69f1afe81f6e>`__
+- 2026-08-29 · `i2c: add I2C subsystem
+  section <https://github.com/amarula/kernel-slides/commit/b1d0edbf4a8cc6f6b7fa7b6f3377dcd8bdcccb0f>`__
+- 2026-08-29 · `device-model: add Device & driver model
+  section <https://github.com/amarula/kernel-slides/commit/aa898e3f332460e07be335496ff266528f1696d5>`__
+- 2026-08-29 · `pinctrl: add Pin muxing (pinctrl)
+  section <https://github.com/amarula/kernel-slides/commit/ae74397a4dfe6923e66023c659740944cc283bdc>`__
+- 2026-08-29 · `device-tree: add Hardware description & Device Tree
+  section <https://github.com/amarula/kernel-slides/commit/72b138a89ae25dd838d168d5ef9fbcaa69508ae3>`__
+- 2026-08-29 · `modules-dev: add Developing kernel modules
+  section <https://github.com/amarula/kernel-slides/commit/d7303bbc4aa5b89141db22c63e30d5837bb99e81>`__
+- 2026-08-29 · `modules: add Kernel modules
+  section <https://github.com/amarula/kernel-slides/commit/34a3673841b5fdf228a41e75ec2059a2b6bc1d24>`__
+- 2026-08-29 · `booting: add Booting the kernel
+  section <https://github.com/amarula/kernel-slides/commit/1167c2e4181ba57c83edad5c0604e579239426e5>`__
+- 2026-08-29 · `configuration: add Kernel configuration and building
+  section <https://github.com/amarula/kernel-slides/commit/ea01ca6c85877dbdf50dbc242e18137736366b1e>`__
+- 2026-08-29 · `source-code: add Linux kernel source code
+  section <https://github.com/amarula/kernel-slides/commit/0808e2b154b4be325da009525962db899bcb1db2>`__
+- 2026-08-29 · `sources: add Linux kernel sources
+  section <https://github.com/amarula/kernel-slides/commit/d8504f5b03304ce3c3232ddedc07f4df79bf6862>`__
+- 2026-08-29 · `introduction: add Linux kernel introduction
+  section <https://github.com/amarula/kernel-slides/commit/b7498d0c5b1c76db62f0ac1db63a0d2158b43a1e>`__
+- 2026-08-29 · `slides: add Linux kernel deck
+  skeleton <https://github.com/amarula/kernel-slides/commit/4e13f46a5e24dab8c273e3999db1ddb1bc57cd47>`__
+- 2026-08-29 · `slides: add rendered diagram and image
+  assets <https://github.com/amarula/kernel-slides/commit/43d6ade9b359d64d1ee2470da629d8220a39d736>`__
+- 2026-08-29 · `slides: add draw.io diagram
+  sources <https://github.com/amarula/kernel-slides/commit/206c4059f00fcecc48299a8c93615db12126c02e>`__
+- 2026-08-29 · `slides: add diagram generation
+  tooling <https://github.com/amarula/kernel-slides/commit/63a5354ee95c3e9e23f6455226e9bb6c84db76b3>`__
+- 2026-08-29 · `contributions: add Open source contributions
+  section <https://github.com/amarula/kernel-slides/commit/56a5e2e04f7b0af4daa03b6ca5b268ec5534bec4>`__
+- 2026-08-29 · `slides: fix table of contents section
+  links <https://github.com/amarula/kernel-slides/commit/c71230810dfb6ed3fc6286b3feb6111c680dc9c9>`__
+
+libcppconnman
+-------------
+
+Repository URL: https://github.com/amarula/libcppconnman.git
+
+*10 commits by 1 author*
+
+**Eduardo Gonzalez** — 10 commits across gconnman_serv_test.cpp,
+connman_service, gconnman_tech_test.cpp (addressing #50, #48, #23).
+
+- Features (2): setIPv6Configuration test; setIPv4Configuration test;
+  Parse and expose IPv6.Configuration
+- Fixes (1): memory leak when test fails
+- Refactors (1): thread-safe std::tm
+- Tests (1): Add valgrind executable tests
+- Changes (5): Parse and expose IPv6.Configuration; Parse and expose
+  IPv4.Configuration; Run also if the manager has services; Check the
+  changed property
+
+Here the commits of **Eduardo Gonzalez** in detail:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- 2026-08-21 · `gconnman_clock.cpp: Use thread-safe
+  std::tm <https://github.com/amarula/libcppconnman/commit/9337bcd07ebbbb6e517085fd5122a1f93147415c>`__
+- 2026-08-21 · `tests: Add valgrind executable
+  tests <https://github.com/amarula/libcppconnman/commit/6c21580483eedfc9a4cdf3c68998c508c659b3d3>`__
+- 2026-08-21 · `gconnman_tech_test.cpp: Run also if manager has
+  technologies <https://github.com/amarula/libcppconnman/commit/f13df0e172dd1a6689fc49539b7021bd863616f1>`__
+- 2026-08-24 · `gconnman_tech_test.cpp: Check the changed
+  property <https://github.com/amarula/libcppconnman/commit/6a460ac7668467c35b37d5d26d06c8070f356aa0>`__
+- 2026-08-24 · `gconnman_agent_test.cpp: Fix memory leak when test
+  fails <https://github.com/amarula/libcppconnman/commit/f63926c0bf141e81c9e78b79878a1cb0f268cf8b>`__
+- 2026-08-27 · `connman_service: Parse and expose
+  IPv4.Configuration <https://github.com/amarula/libcppconnman/commit/1bed1ffb0f3751679d9133aeb7d542d80104b8ed>`__
+- 2026-08-27 · `gconnman_serv_test.cpp: Add setIPv4Configuration
+  test <https://github.com/amarula/libcppconnman/commit/6be03e598868b0f016425885697593bf8f813c96>`__
+- 2026-08-27 · `gconnman_serv_test.cpp: Run also if the manager has
+  services <https://github.com/amarula/libcppconnman/commit/12f79fafac1db776baa4caa2620cc0c41adbec55>`__
+- 2026-08-27 · `connman_service: Parse and expose
+  IPv6.Configuration <https://github.com/amarula/libcppconnman/commit/82b4d0e2fb96ec6f2dec26c980a537b65f8c3f8f>`__
+- 2026-08-27 · `gconnman_serv_test.cpp: Add setIPv6Configuration
+  test <https://github.com/amarula/libcppconnman/commit/84848d9b1a0aa49c4e20200c0cdb6a12b8dd76ac>`__
+
+trantor
+-------
+
+Repository URL: https://github.com/an-tao/trantor.git
+
+*1 commit by 1 author*
+
+**Dario Binacchi** — Fix EPOLLRDHUP/POLLRDHUP mismatch on Linux
+SPARC/SPARC64 (#407)
+
+- Fixes (1): EPOLLRDHUP/POLLRDHUP mismatch on Linux SPARC/SPARC64 (#407)
+
+Here the commits of **Dario Binacchi** in detail:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- 2026-08-21 · `Fix EPOLLRDHUP/POLLRDHUP mismatch on Linux SPARC/SPARC64
+  (#407) <https://github.com/an-tao/trantor/commit/0f45310fbbb692f3eb222b4229a631c0c6745172>`__
+
+openid-plugin
+-------------
+
+Repository URL: https://github.com/jenkinsci/openid-plugin.git
+
+*7 commits by 1 author*
+
+**Michael Trimarchi** — Modernize OpenID login form, drop dead
+providers, and remember last OpenID link
+
+- Refactors (1): Prototype.js dependency and remember last OpenID link;
+  Inline single OpenID input and drop provider registry
+- Documentation (1): Update screenshots for the simplified OpenID login
+  form
+- Changes (5): Migrate tests to JUnit 5 and enforce JUnit 4 import ban;
+  Update login tests for the simplified OpenID form; Harden redirect
+  validation against open redirect; Inline single OpenID input and drop
+  provider registry
+
+Here the commits of **Michael Trimarchi** in detail:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- 2026-08-16 · `openid-prototype.js: Drop Prototype.js dependency and
+  remember last OpenID
+  link <https://github.com/jenkinsci/openid-plugin/commit/5e265900e1c220b4f861a24798bd87a7618d0271>`__
+- 2026-08-16 · `Modernize OpenID login form and remove dead OpenID
+  providers <https://github.com/jenkinsci/openid-plugin/commit/03e8cf9e82cc4c757fd632e66a9a27a9824f8c99>`__
+- 2026-08-16 · `openid-prototype.js: Inline single OpenID input and drop
+  provider
+  registry <https://github.com/jenkinsci/openid-plugin/commit/9dc0ef7a1f5e8c47165c3fe46727439661765355>`__
+- 2026-08-16 · `OpenIdLoginService: Harden redirect validation against
+  open
+  redirect <https://github.com/jenkinsci/openid-plugin/commit/95075467d950f1ba4ed57424441b6fb95a23e48c>`__
+- 2026-08-16 · `OpenIdLoginServiceTest: Update login tests for the
+  simplified OpenID
+  form <https://github.com/jenkinsci/openid-plugin/commit/c6001e52cc3b5fd74557d61f2754319e3d293822>`__
+- 2026-08-16 · `docs: Update screenshots for the simplified OpenID login
+  form <https://github.com/jenkinsci/openid-plugin/commit/9e4c4c63418be0519275261edd052b2b4a68c50b>`__
+- 2026-08-16 · `Migrate tests to JUnit 5 and enforce JUnit 4 import
+  ban <https://github.com/jenkinsci/openid-plugin/commit/13f0b20d149c1963dd587c96ca7afbc1b12083a6>`__
+
+android-signing-plugin
+----------------------
+
+Repository URL: https://github.com/jenkinsci/android-signing-plugin.git
+
+*2 commits by 1 author*
+
+**Michael Trimarchi** — Implemented configurable AAB JAR digest
+algorithm and AAB signing support
+
+- Fixes (1): Add Android App Bundle (AAB) signing support; Made the AAB
+  JAR digest algorithm configurable
+- Changes (1): Make the AAB JAR digest algorithm configurable
+
+Here the commits of **Michael Trimarchi** in detail:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- 2026-08-17 · `Add Android App Bundle (AAB) signing
+  support <https://github.com/jenkinsci/android-signing-plugin/commit/30ed223e522cf6ca7d4cb6c6c65529da60201e0e>`__
+- 2026-08-17 · `Make the AAB JAR digest algorithm
+  configurable <https://github.com/jenkinsci/android-signing-plugin/commit/257d2c770575c28861b4622c4459c2148bfa3845>`__
+
+buildroot
+---------
+
+Repository URL: https://gitlab.com/buildroot.org/buildroot.git
+
+*5 commits by 1 author*
+
+**Dario Binacchi** — Fix incomplete ‘struct tm’ type on uClibc in
+package/drogon
+
+- Fixes (5): incomplete ‘struct tm’ type on uClibc; build with examples;
+  Revert “configs/stm32f429_disco_xip: fix boot failure after…;
+  Revert”configs/stm32f469_disco\_{sd, xip}: fix boot failure…
+
+Here the commits of **Dario Binacchi** in detail:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- 2026-08-05 · `Revert “configs/stm32f769_disco_sd: fix boot failure
+  after uClibc
+  bump” <https://gitlab.com/buildroot.org/buildroot/commit/c784c1fadb54f16f0f8655362694456fe89f9f5f>`__
+- 2026-08-05 · `Revert “configs/stm32f469_disco\_{sd, xip}: fix boot
+  failure after uClibc
+  bump” <https://gitlab.com/buildroot.org/buildroot/commit/8f103c70deb23faa4df537fee1cab0ae1e0c1bdb>`__
+- 2026-08-05 · `Revert “configs/stm32f429_disco_xip: fix boot failure
+  after uClibc
+  bump” <https://gitlab.com/buildroot.org/buildroot/commit/2f5eb8f8f3d150c018423a27fb17bdf8d0b46311>`__
+- 2026-08-21 · `package/drogon: fix build with
+  examples <https://gitlab.com/buildroot.org/buildroot/commit/4788039a894ed8a8041a5719c6acf1c2b3faa8d1>`__
+- 2026-08-30 · `package/drogon: Fix incomplete ‘struct tm’ type on
+  uClibc <https://gitlab.com/buildroot.org/buildroot/commit/0742e67d2f94118d4227d29e409dc50de0acfb07>`__
+
+--------------
+
+*Generated by the Git Commit Analyzer*
+
+.. tip::
+
+   Want to contribute to the open source projects featured in these
+   reports? Amarula Solutions is always looking for collaboration
+   opportunities in embedded Linux, Buildroot, Yocto, U-Boot, and
+   Zephyr. `Contact our open source
+   team <https://www.amarulasolutions.com/contact/>`__

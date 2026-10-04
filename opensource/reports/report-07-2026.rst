@@ -1,0 +1,718 @@
+Engineering Review — 2026-07
+============================
+
+.. note::
+
+   **TL;DR**
+
+   - Monthly engineering review of Amarula Solutions’ **open source
+     contributions** — 196 commits by 7 authors across 8 repositories,
+     covering **Buildroot, openembedded-core/Yocto, the Linux kernel,
+     U-Boot, Zephyr, Jenkins plugins, and Amarula products**.
+   - Auto-generated report from the Git Commit Analyzer, grouped by
+     repository and author.
+
+*8 repositories · 7 authors · 196 commits · +17291/-4377*
+
+We’re excited to share a summary of the significant progress made across
+our repositories in the month of 2026-07. Our dedicated team has been
+busy pushing new features, refining existing functionalities, and
+enhancing the overall stability of our products.
+
+Here’s a breakdown of key contributions by repository:
+
+axelera-aisbc-bsp
+-----------------
+
+Repository URL: https://github.com/axelera-ai-hub/axelera-aisbc-bsp.git
+
+*29 commits by 2 authors*
+
+**Adam Duskett** — 11 commits across refpolicy,
+overlayfs-etc-preinit.sh.in, meta-selinux (addressing AXELERA-211).
+
+- Features (7): voyager policy; 0001-allow-mount-anyfile.patch; patch to
+  backport commit 46ec0414; the seclabel to the /etc overlay directory
+- Refactors (2): expose_lower check; recipe
+- Changes (2): backport commit e2910408 to skip re-labeling on ro
+  rootfs; set selinux context when mounting
+
+Here the commits of **Adam Duskett** in detail:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- 2026-07-14 · `meta-voyager: add initial selinux
+  support <https://github.com/axelera-ai-hub/axelera-aisbc-bsp/commit/66dd14bc93b9e5749e0330b28a66d412d9209d27>`__
+- 2026-07-15 · `meta-axelera/conf/machine/include/axelera-base.inc: add
+  seclabel <https://github.com/axelera-ai-hub/axelera-aisbc-bsp/commit/19a4bcb88955aea89ad46b206ed5c160eab310ce>`__
+- 2026-07-15 · `overlayfs-etc-preinit.sh.in: add the seclabel to the
+  /etc overlay
+  directory <https://github.com/axelera-ai-hub/axelera-aisbc-bsp/commit/22633331484f6c783799dcd998d32719d293a1e0>`__
+- 2026-07-15 · `selinux-scripts/selinux-autorelabel: remove
+  recipe <https://github.com/axelera-ai-hub/axelera-aisbc-bsp/commit/8c6d961a5fecebd3918d736d51a02b97f4c8bb8b>`__
+- 2026-07-16 · `refpolicy: add
+  file_contexts.subs <https://github.com/axelera-ai-hub/axelera-aisbc-bsp/commit/79e2e3cc792eee4f7f39072dbf4ff15ca667aa87>`__
+- 2026-07-16 · `overlayfs-etc-preinit.sh.in: remove expose_lower
+  check <https://github.com/axelera-ai-hub/axelera-aisbc-bsp/commit/920a7269dad06eb8968445853621397eb31442aa>`__
+- 2026-07-16 · `overlayfs-etc-preinit.sh.in: set selinux context when
+  mounting <https://github.com/axelera-ai-hub/axelera-aisbc-bsp/commit/43d5af80d4917feb513ccdfbe2fdb5e7b59f7a95>`__
+- 2026-07-16 · `meta-selinux: add patch to backport commit
+  46ec0414 <https://github.com/axelera-ai-hub/axelera-aisbc-bsp/commit/fbbd4d886a70123fb3fe885f23b10ff965b32ea5>`__
+- 2026-07-16 · `meta-selinux: backport commit e2910408 to skip
+  re-labeling on ro
+  rootfs <https://github.com/axelera-ai-hub/axelera-aisbc-bsp/commit/5ee05b6105362bb48ec52106af9fa8957620ffa1>`__
+- 2026-07-17 · `refpolicy: add
+  0001-allow-mount-anyfile.patch <https://github.com/axelera-ai-hub/axelera-aisbc-bsp/commit/df924b56bab92b971773df140058cd195f5671f6>`__
+- 2026-07-17 · `refpolicy: add voyager
+  policy <https://github.com/axelera-ai-hub/axelera-aisbc-bsp/commit/515e9f63fdd6b4056463b43691c63ba700b2caee>`__
+
+**Patrick Barsanti** — 18 commits across meta-axelera, u-boot-rockchip,
+linux-rockchip (addressing AXELERA-209, AXELERA-221, AXELERA-207).
+
+- Features (5): dm-verity; Secureboot support for Android bootflow;
+  vbmeta, misc and security partitions; meta-python2
+- Fixes (3): Avoid to skip_initramfs for dm-verity; vbmeta boot issues;
+  “bad CRC, using default environment”; Avoid skipping initramfs for
+  dm-verity, fix bad CRC issue
+- Refactors (5): hardcoded UUIDs from bootargs; :append from IMAGE\_
+  variables; vbmeta generation to do_deploy; meta-voyager from gitignore
+- Changes (5): Enlarge boot_a and boot_b partitions; Enlarge
+  SYS_BOOTM_LEN; Ship udev rules with metis deb package; Flash vbmeta
+  partition
+
+Here the commits of **Patrick Barsanti** in detail:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- 2026-07-09 · `meta-axelera: Move accelerator rules to kernel-module
+  recipe <https://github.com/axelera-ai-hub/axelera-aisbc-bsp/commit/214d9132a0688005ac80c14c2070139f34302247>`__
+- 2026-07-09 · `u-boot-rockchip: Fix “bad CRC, using default
+  environment” <https://github.com/axelera-ai-hub/axelera-aisbc-bsp/commit/6e854915798beeb8cf3403b38f914868226b8e65>`__
+- 2026-07-13 · `meta-axelera: linux-rockchip: Add configs for DM
+  Verity <https://github.com/axelera-ai-hub/axelera-aisbc-bsp/commit/a5f8ee1a9b9cea94e267fc3b21cb5649752b2dcc>`__
+- 2026-07-14 · `kas: base.yaml: Add
+  meta-python2 <https://github.com/axelera-ai-hub/axelera-aisbc-bsp/commit/cd790bef360d21ad08595609369bab6518417748>`__
+- 2026-07-14 · `meta-axelera: Add vbmeta, misc and security
+  partitions <https://github.com/axelera-ai-hub/axelera-aisbc-bsp/commit/959ec6048c2d66da0563a11c60cf77716a0b3f38>`__
+- 2026-07-14 · `meta-axelera: rk-binary-native: Install
+  avbtool <https://github.com/axelera-ai-hub/axelera-aisbc-bsp/commit/7f1ba56cc8aa42b8b152169c9ed22ac6dce03d3a>`__
+- 2026-07-14 · `meta-axelera: Add Secureboot support for Android
+  bootflow <https://github.com/axelera-ai-hub/axelera-aisbc-bsp/commit/555630510cca8a033c4bf0085541bbcee1172a95>`__
+- 2026-07-14 · `mender-axelera-state-scripts: Flash vbmeta
+  partition <https://github.com/axelera-ai-hub/axelera-aisbc-bsp/commit/988f105f1a0cdb45197032cea700a99a62f797ca>`__
+- 2026-07-15 · `meta-voyager: wic: Fix vbmeta boot
+  issues <https://github.com/axelera-ai-hub/axelera-aisbc-bsp/commit/0a16e8ec40474c3f5891f23f0657d0f26ff1ce3a>`__
+- 2026-07-22 · `kernel-module-axelera: Ship udev rules with metis deb
+  package <https://github.com/axelera-ai-hub/axelera-aisbc-bsp/commit/d20829ff6d99243be3e13fa1b76d49106d6a4ae9>`__
+- 2026-07-23 · `u-boot-rockchip: Enlarge
+  SYS_BOOTM_LEN <https://github.com/axelera-ai-hub/axelera-aisbc-bsp/commit/ce4ad368e37cda734f978539b7bfc4987151b763>`__
+- 2026-07-24 · `u-boot-rockchip: Avoid to skip_initramfs for
+  dm-verity <https://github.com/axelera-ai-hub/axelera-aisbc-bsp/commit/e7f861d73946ade5daad1a912046441ac7022497>`__
+- 2026-07-27 · `linux-rockchip: Move vbmeta generation to
+  do_deploy <https://github.com/axelera-ai-hub/axelera-aisbc-bsp/commit/20e16a765f2574b383cf2273fc10ea510c62d718>`__
+- 2026-07-27 · `meta-axelera: Enlarge boot_a and boot_b
+  partitions <https://github.com/axelera-ai-hub/axelera-aisbc-bsp/commit/7c3faaa4385d7de2f5ec0b5cc70ea84b0af29fee>`__
+- 2026-07-27 · `meta-axelera: Introduce
+  dm-verity <https://github.com/axelera-ai-hub/axelera-aisbc-bsp/commit/bf69807ea0489cd9a77b6c04b842e5f75e19ea08>`__
+- 2026-07-27 · `linux-rockchip: Remove hardcoded UUIDs from
+  bootargs <https://github.com/axelera-ai-hub/axelera-aisbc-bsp/commit/04d62b63623928129d2586949185cb4c98c4a45a>`__
+- 2026-07-28 · `meta-axelera: Remove meta-voyager from
+  gitignore <https://github.com/axelera-ai-hub/axelera-aisbc-bsp/commit/2697dfa43ff41830134e565093ce6bcf9acc61ae>`__
+- 2026-07-29 · `meta-axelera: Remove :append from IMAGE\_
+  variables <https://github.com/axelera-ai-hub/axelera-aisbc-bsp/commit/aacc39ce89f135f47c8ef8b04230952a171e8ba7>`__
+
+chatgpt-code-review-gerrit-plugin
+---------------------------------
+
+Repository URL: https://github.com/amarula/chatgpt-code-review-gerrit-plugin.git
+
+*52 commits by 2 authors*
+
+**Michael Trimarchi** — 11 commits across src, .gerrit, .github.
+
+- Features (2): multi-version Gerrit builds in release pipeline; first
+  github release pipeline
+- Fixes (4): prevent duplicate GerritListener registrations on plugin…;
+  allow inherited ALLOW to override inherited DENY for…; skip events for
+  projects without AI review configuration; resolve critical SpotBugs
+  NPE and uninitialized field…
+- Refactors (3): reflection-based prompt loading with Map-based loading;
+  maven workflow; support Bazel in-tree builds
+- Changes (2): Release only if keep build is enabled; HIGH new bugs are
+  stopping issue to approve change
+
+Here the commits of **Michael Trimarchi** in detail:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- 2026-07-07 · `chore: support Bazel in-tree
+  builds <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/df81e6b2f15501afb9fb82f721cd6c2703d1d569>`__
+- 2026-07-30 · `.gerrit/release_Jenkinsfile: Add first github release
+  pipeline <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/6520ebabcf4a3c9cc9c47d4baf856551bb1417eb>`__
+- 2026-07-30 · `fix: resolve critical SpotBugs NPE and uninitialized
+  field
+  warnings <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/2e39e2a65190d7c3ecf8558c60602561eca9a159>`__
+- 2026-07-30 · `.gerrit/Jenkinsfile: HIGH new bugs are stopping issue to
+  approve
+  change <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/8aff657156d39102fc20df578b75df1a7b41dfb3>`__
+- 2026-07-30 · `refactor: replace reflection-based prompt loading with
+  Map-based
+  loading <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/d4dc1770111af73b134b82369d60f6dd8e5c33a5>`__
+- 2026-07-30 · `.gerrit/release_Jenkinsfile: Release only if keep build
+  is
+  enabled <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/b55f595cf5526d8b3e5c658036844aa4f2b38a46>`__
+- 2026-07-30 · `feat: multi-version Gerrit builds in release
+  pipeline <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/163aaa25d2fdac79a4eac916bd096cbb3935c125>`__
+- 2026-07-30 · `.github: Drop maven
+  workflow <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/4e07390164259fe0a319f7328c63be99c23c1e60>`__
+- 2026-07-31 · `fix: prevent duplicate GerritListener registrations on
+  plugin
+  reload <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/1ad841f3e415db9818855180bc71bd8c33cf1e55>`__
+- 2026-07-31 · `fix: skip events for projects without AI review
+  configuration <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/6259f9b7058b49239b30c58c259f8a97f4c64a60>`__
+- 2026-07-31 · `fix: allow inherited ALLOW to override inherited DENY
+  for
+  aiReview <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/3a224b4f8bed5669dc5f8180dd211fa789feb8e5>`__
+
+**Patrizio Gelosi** — 41 commits across src, docs, BUILD (1 version
+bump).
+
+- Features (21): read ON_DEMAND from patch set tree; allow Service Users
+  AI reviews; label descriptions to prompts; inject AI review condition
+  into prompt
+- Fixes (9): avoid noisy log when code range offsets exceed line length;
+  trigger reviews on label changes; exclude irrelevant feedback replies;
+  prevent 404 no-update links
+- Refactors (9): up shutdown resources; bump to version 4.1.0; update
+  vendor and plugin title; separate dev-only features
+- Documentation (2): aiReviewApplicableIf configuration; organize
+  documentation by topic
+
+Here the commits of **Patrizio Gelosi** in detail:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- 2026-07-01 · `fix: support complex repo paths in
+  ON_DEMAND <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/c37c23ce823af8286eb95d9c00dd96a102d63f15>`__
+- 2026-07-01 · `fix: skip new files in ON_DEMAND
+  context <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/476b81c55e81413e44fb989cb78137d9010f01c4>`__
+- 2026-07-02 · `refactor: centralize repo file
+  traversal <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/bd7ca8c3821cc91841e582aca91f1c450918bf5a>`__
+- 2026-07-02 · `fix: avoid tool continuation
+  failures <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/be3556fd00c13957519b197e0b889fc88e55bc79>`__
+- 2026-07-03 · `feat: make sidebar chat
+  private <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/bf2d247b484bd5c6d2c2b75f08d7b0ffbcd13130>`__
+- 2026-07-03 · `chore: silence migration IDE
+  warning <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/0604444e5ed4f5622b9fe096598f223fdc9ec05e>`__
+- 2026-07-03 · `feat: make message debugging
+  admin-only <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/327008d8c514d3e1467b7f2a3a609ea5ff142a59>`__
+- 2026-07-03 · `feat: make advanced panels
+  admin-only <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/0c2349604fe45e4a85e4180f9530d315c316f2a7>`__
+- 2026-07-03 · `feat: hide admin commands from Change
+  Log <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/0b2fdf0876586cea3addf5b79a4590e6ea7c6c46>`__
+- 2026-07-06 · `chore: remove text resource trailing
+  spaces <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/84a642236ca0727bf72991fd2a760cb9de7bb4cf>`__
+- 2026-07-06 · `feat: add custom AI admin
+  group <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/25a253bd45562b94b475208afd2c98917bf78d35>`__
+- 2026-07-06 · `chore: reduce log
+  verbosity <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/8028e03639745d35ac54d4209dbc6c50da122708>`__
+- 2026-07-07 · `feat: restrict mock models to
+  admins <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/bfefb52d266380a0e9134a7687a40c1b62334fd5>`__
+- 2026-07-08 · `chore: separate dev-only
+  features <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/4f40189a9d175e81c61ac566665ff094ca5d04a4>`__
+- 2026-07-08 · `fix: avoid false +1 topic
+  scores <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/8d16069336f622c0844c7606032b4698ca0018af>`__
+- 2026-07-09 · `feat: report unavailable dev
+  features <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/01df2951dd0b4f3d43efaa4946e5af5524fed88c>`__
+- 2026-07-09 · `feat: add version info to
+  show <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/20bbec1f5464fd686f535e9d844497e92652367f>`__
+- 2026-07-09 · `chore: bump to version
+  4.1.0 <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/0b342a7f6f92b41136345ddc8f56cc66c54fbf25>`__
+- 2026-07-13 · `feat: support new OpenAI
+  models <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/33330171a04d1f297b5ca6d37d5ca6c72900a8cf>`__
+- 2026-07-13 · `feat: support new Moonshot
+  models <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/bc2eccd2ae27dd68daee5de496024dc526000a94>`__
+- 2026-07-15 · `feat: trim large ON_DEMAND
+  trees <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/a3aeaa8c54f876c2d96081a194c1003770509c09>`__
+- 2026-07-16 · `chore: clean up shutdown
+  resources <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/b95ddfd22be3bf32e03fe68525ec6bdf135d911a>`__
+- 2026-07-17 · `chore: update vendor and plugin
+  title <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/ff72c57fcb2626114495a66ff02554b65557338c>`__
+- 2026-07-20 · `feat: add telemetry
+  support <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/e0bea8e530e6fee55d019806c2826b2cae3d052b>`__
+- 2026-07-22 · `chore: restore correct version and
+  metadata <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/de4f030ac3cf1ba64ec605ff0489be2b21b47840>`__
+- 2026-07-22 · `docs: organize documentation by
+  topic <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/b6272f295634d704da1b3b7ff7ada6a1da7d9457>`__
+- 2026-07-22 · `fix: prevent recursive local data
+  output <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/fa48142d728bbb6c2ff8de76f443d8946e88863a>`__
+- 2026-07-23 · `feat: track provider and model
+  costs <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/b78cea96ac185ba8067eba764c04d06cef00bfd8>`__
+- 2026-07-27 · `feat: evaluate AI review applicability with
+  Gerrit <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/245a8a3ef06995260ec8b1562aced7e3bd82af03>`__
+- 2026-07-27 · `feat: add aiReviewApplicableIf config
+  key <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/2e82a157a13a972e8426bcc16b7b56b19faca76b>`__
+- 2026-07-27 · `feat: gate reviews by Gerrit
+  applicability <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/3159f9be367909114d01c003c3ce5c7890d0483c>`__
+- 2026-07-27 · `feat: start deferred reviews on applicable
+  labels <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/7e4133f0ae125a6730fd973a9d71e35c7d800342>`__
+- 2026-07-28 · `docs: document aiReviewApplicableIf
+  configuration <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/57a0bc3b51998d80828077d6d8b19111bbd92086>`__
+- 2026-07-28 · `feat: inject AI review condition into
+  prompt <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/348f89ae382d903e0c33f741082baa1623b8b834>`__
+- 2026-07-29 · `feat: add label descriptions to
+  prompts <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/aa66b26982ba678a0cb61cabd6f7b7ec20bc673c>`__
+- 2026-07-29 · `fix: prevent 404 no-update
+  links <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/91d1ed36b0f05bb6c59984a6c4ddc40c622354f8>`__
+- 2026-07-29 · `fix: exclude irrelevant feedback
+  replies <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/ecfaeed25f04c4656a462134896f85f8a6f7a5b6>`__
+- 2026-07-29 · `feat: read ON_DEMAND from patch set
+  tree <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/a77a38cd8760521f189c786f90b5bd1aaa30138f>`__
+- 2026-07-31 · `fix: trigger reviews on label
+  changes <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/a964c63b4b0482b89a3154b3d36696baf6828878>`__
+- 2026-07-31 · `feat: allow Service Users AI
+  reviews <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/eb5dbd268e9d3c341f0b99def6e3d8ed6a510b08>`__
+- 2026-07-31 · `fix: avoid noisy log when code range offsets exceed line
+  length <https://github.com/amarula/chatgpt-code-review-gerrit-plugin/commit/2323a01ee1ab40a708caeedca802eb7bf2bb70f0>`__
+
+cutekeyboard
+------------
+
+Repository URL: https://github.com/amarula/cutekeyboard.git
+
+*1 commit by 1 author*
+
+**Andrea Ricchi** — Added .github/CODEOWNERS file
+
+- Features (1): .github/CODEOWNERS file
+
+Here the commits of **Andrea Ricchi** in detail:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- 2026-07-06 · `Add .github/CODEOWNERS
+  file <https://github.com/amarula/cutekeyboard/commit/d6e24be77e9ab953bd383b8e348459fb600eba44>`__
+
+flutekeyboard
+-------------
+
+Repository URL: https://github.com/amarula/flutekeyboard.git
+
+*11 commits by 1 author*
+
+**Andrea Ricchi** — Implement GitHub Pages deployment workflow and link
+live demo in README for version 0.4.0
+
+- Features (4): GitHub Pages deployment workflow; GitHub Pages site
+  source under docs/; web platform support; VS Code settings for the fvm
+  Flutter SDK
+- Refactors (1): polish secondary hint implementation
+- Changes (6): Version 0.4.0; Exclude the GitHub Pages site from the
+  published package; link the live demo and fix the usage snippet; clamp
+  keyboard width to the viewport
+
+Here the commits of **Andrea Ricchi** in detail:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- 2026-07-29 · `Add VS Code settings for the fvm Flutter
+  SDK <https://github.com/amarula/flutekeyboard/commit/8f28998d1df45fe2cfcbc5d00934ee28598eb553>`__
+- 2026-07-29 · `TextKey: polish secondary hint
+  implementation <https://github.com/amarula/flutekeyboard/commit/7c3689d5cd16d259306665be9edb7bb3e1b16708>`__
+- 2026-07-29 · `Extend FittedBox scaling to popup and icon
+  keys <https://github.com/amarula/flutekeyboard/commit/de9968cc1fb4c788a53827f6771c8c3ddd8bf576>`__
+- 2026-07-29 · `Document secondary key hints in README and
+  CHANGELOG <https://github.com/amarula/flutekeyboard/commit/f1380068a608f00f125c66c610526b49309ec072>`__
+- 2026-07-30 · `README: link the live demo and fix the usage
+  snippet <https://github.com/amarula/flutekeyboard/commit/0efccb540780f4de4366ab15924356057d24bb1b>`__
+- 2026-07-30 · `Add GitHub Pages deployment
+  workflow <https://github.com/amarula/flutekeyboard/commit/429bb0feb187a6faa22fc880ac0b98b4ca66c6f0>`__
+- 2026-07-30 · `Add GitHub Pages site source under
+  docs/ <https://github.com/amarula/flutekeyboard/commit/f9d78aa7dac03a136e355a128ebec6660065183f>`__
+- 2026-07-30 · `Example: clamp keyboard width to the
+  viewport <https://github.com/amarula/flutekeyboard/commit/0d3b8c7d6653abcb600e95e9f00ce6c294a47b97>`__
+- 2026-07-30 · `Example: add web platform
+  support <https://github.com/amarula/flutekeyboard/commit/c2268e58cf0fcaac249a9aabf824e007ce84d033>`__
+- 2026-07-30 · `Version
+  0.4.0 <https://github.com/amarula/flutekeyboard/commit/1fb0b4d62b83c1edc5eaab7280deb59e98c02e8a>`__
+- 2026-07-30 · `Exclude the GitHub Pages site from the published
+  package <https://github.com/amarula/flutekeyboard/commit/08c885ee9efbc26199c3aa936b79af92dcabd2d1>`__
+
+git-analyzer
+------------
+
+Repository URL: https://github.com/amarula/git-analyzer.git
+
+*11 commits by 1 author*
+
+**Michael Trimarchi** — Implemented features to reduce data transfer and
+improve code quality
+
+- Features (3): pre-commit hook to automaic fix trivial codestyles; use
+  shallow clones to reduce data transfer; generate per-month reports
+  when months_back > 1
+- Fixes (6): ignore third-party import errors in pylint CI runs; add
+  module docstrings, wrap long lines, narrow exception…; use org/repo
+  path segments for clone directory names; remove Repo open from
+  generate_commit_hyperlink
+- Refactors (1): extract helpers to reduce function complexity
+- Documentation (1): rewrite README with full usage instructions
+
+Here the commits of **Michael Trimarchi** in detail:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- 2026-07-12 · `feat: generate per-month reports when months_back >
+  1 <https://github.com/amarula/git-analyzer/commit/ef394771d2a716fd5eea781629306953e67b2f87>`__
+- 2026-07-12 · `docs: rewrite README with full usage
+  instructions <https://github.com/amarula/git-analyzer/commit/fc8f9d72ed17778abe930365df2ef3fd893f86fa>`__
+- 2026-07-12 · `fix: handle git_pull_or_clone returning None on remote
+  errors <https://github.com/amarula/git-analyzer/commit/865bc59ead15806331417004e1d6f0f67996acb5>`__
+- 2026-07-12 · `fix: close GitPython Repo objects to avoid fd
+  exhaustion <https://github.com/amarula/git-analyzer/commit/530db00b10d933005347a468e445606ada201b52>`__
+- 2026-07-12 · `fix: remove Repo open from
+  generate_commit_hyperlink <https://github.com/amarula/git-analyzer/commit/920c58267a0b368275f53b39efaa1cf33f095b48>`__
+- 2026-07-12 · `fix: use org/repo path segments for clone directory
+  names <https://github.com/amarula/git-analyzer/commit/0edf992cb23af60426e66b9b2189d3d5b88ebcc4>`__
+- 2026-07-12 · `feat: use shallow clones to reduce data
+  transfer <https://github.com/amarula/git-analyzer/commit/11061c19af2948965002662ea438bd5508491ed0>`__
+- 2026-07-12 · `Add pre-commit hook to automaic fix trivial
+  codestyles <https://github.com/amarula/git-analyzer/commit/a0ad30612b0659a22eec24bb5860dc3cebf363ba>`__
+- 2026-07-12 · `fix: add module docstrings, wrap long lines, narrow
+  exception
+  handlers <https://github.com/amarula/git-analyzer/commit/0c35a09537b404b2a64fda39cd6dde66f1f5e8b5>`__
+- 2026-07-12 · `refactor: extract helpers to reduce function
+  complexity <https://github.com/amarula/git-analyzer/commit/fb8a462769abd65dea4af98f55ecbfb91ff1425c>`__
+- 2026-07-12 · `fix: ignore third-party import errors in pylint CI
+  runs <https://github.com/amarula/git-analyzer/commit/59c0ffbba5be7fca729b30e4a2bd71f7be7dd1ad>`__
+
+check-jenkins
+-------------
+
+Repository URL: https://github.com/amarula/check-jenkins
+
+*62 commits by 1 author*
+
+**Michael Trimarchi** — Implemented new features and fixes related to
+Jenkins release pipeline, GitHub release archival, and endpoint tracking
+
+- Features (9): GitHub release archival to release pipeline;
+  checks-jenkins release pipeline; docker-compose for
+  gerrit-plugin-builder image; Gerrit plugin builder Dockerfile (Java
+  17, Bazel, Chrome,…
+- Fixes (7): add @license tag and prettier formatting to…; add @license
+  tag and prettier formatting to index-db.ts; swapped variable names in
+  IndexedDB staleness pruning; remove spurious leading space in coverage
+  percentage dash
+- Refactors (15): tag detection and commitish capture inside Docker;
+  proper library class to build; apply prettier formatting and fix
+  eqeqeq in coverage.ts; apply prettier formatting and fix
+  no-explicit-any in…
+- Documentation (25): correct rerun action description for GET vs POST;
+  fix rerun trigger flow to show GET for no-auth path; update fetcher
+  lifecycle docs with cache-first strategy; add stale-while-revalidate
+  sequence diagrams to data flow
+- Build (1): add Jenkins verification pipeline for checks-jenkins plugin
+- Changes (5): Handle Jenkins 5xx via \_jenkins_unavailable marker
+  across…; Don’t show login prompt on network or 5xx errors; Throw
+  IOException for 5xx responses from Jenkins; Disable rerun button when
+  a build is already running
+
+Here the commits of **Michael Trimarchi** in detail:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- 2026-07-04 · `docs: Add architecture overview
+  document <https://github.com/amarula/check-jenkins/commit/bbcc48fc57389596c39ba8a517ecb67e49f9346b>`__
+- 2026-07-04 · `docs: Add backend design
+  document <https://github.com/amarula/check-jenkins/commit/1262af8e0214131069bc8144552fcaa6abc5b84f>`__
+- 2026-07-04 · `docs: Add frontend design
+  document <https://github.com/amarula/check-jenkins/commit/99584d2145191ca33ebebf9f8d931729c8b43bbf>`__
+- 2026-07-04 · `docs: Add data flow document with sequence
+  diagrams <https://github.com/amarula/check-jenkins/commit/37ad84e9558842965ece185a4efb6a156d05368f>`__
+- 2026-07-04 · `docs: Add configuration reference
+  document <https://github.com/amarula/check-jenkins/commit/b0f2762ade0da8bb67f0faf13c1be2c12bd0a890>`__
+- 2026-07-04 · `docs: Add coverage system design
+  document <https://github.com/amarula/check-jenkins/commit/18f4f67b16c52cce8d50fe9205cedb31c105f772>`__
+- 2026-07-04 · `docs: Add caching strategy
+  document <https://github.com/amarula/check-jenkins/commit/61c3fe1acf2e47fb9e723aa52850303892b5c362>`__
+- 2026-07-04 · `docs: Add web components reference
+  document <https://github.com/amarula/check-jenkins/commit/5b3f0a60d3a8238db1abaeedcf9ef062b301312c>`__
+- 2026-07-04 · `docs: Add contributing
+  guide <https://github.com/amarula/check-jenkins/commit/a8675556187353ffba4ed4ac599d73a8e540340d>`__
+- 2026-07-04 · `docs: Add screenshots to README with descriptive
+  context <https://github.com/amarula/check-jenkins/commit/eec56c76fad1d2c62909b9db340b5d4cdd9461c4>`__
+- 2026-07-04 · `docs: Add Documentation section and cross-links to
+  README <https://github.com/amarula/check-jenkins/commit/7eb9d441ee06b735c0de169f7ff394b911d36e6b>`__
+- 2026-07-04 · `web/fetcher: Add flattened-tree naming for
+  upstream/downstream
+  visualization <https://github.com/amarula/check-jenkins/commit/af47bbd06392e9e06b89cd473249378a9d647782>`__
+- 2026-07-04 · `web/fetcher: Skip tree naming for runs without
+  externalId <https://github.com/amarula/check-jenkins/commit/40510ede9ece46a2a835f8e51803ef59d591a6be>`__
+- 2026-07-04 · `web/fetcher: Extract tree/leaf emojis to named
+  constants <https://github.com/amarula/check-jenkins/commit/6c0a4b6af64bf5973e0008261e331be564ad5147>`__
+- 2026-07-04 · `web/fetcher: Skip tree naming when no parent-child
+  dependencies
+  exist <https://github.com/amarula/check-jenkins/commit/6b2d1a748eed94ca31716cf25d1ef8b28dfc271f>`__
+- 2026-07-04 · `web/fetcher: Only prefix runs that participate in the
+  dependency
+  graph <https://github.com/amarula/check-jenkins/commit/f5095880bc34551622d95795a8ed83d7b7991399>`__
+- 2026-07-04 · `docs: Document flattened-tree pipeline visualization
+  feature <https://github.com/amarula/check-jenkins/commit/272eab92a1863ed195d2f10072658122e2d9458a>`__
+- 2026-07-04 · `web/fetcher: Sort runs by depth so tree renders top-down
+  in the
+  UI <https://github.com/amarula/check-jenkins/commit/f4a313bef40d72aabd3ee9e81364c93cd239144c>`__
+- 2026-07-04 · `docs: Add pipeline visualization screenshot to
+  README <https://github.com/amarula/check-jenkins/commit/0ccffd426f9090d0b91e6d9230f59d6d5d3449f4>`__
+- 2026-07-04 · `README.md: Fix documentation about warning ng plugin and
+  coverage
+  one <https://github.com/amarula/check-jenkins/commit/24d5e01f3710f618fed40dcdd79c3324c7f658a0>`__
+- 2026-07-04 · `web/fetcher: Disable rerun button when a build is
+  already
+  running <https://github.com/amarula/check-jenkins/commit/18d3c20efac18e523ee3c709eb82903c0f771ec9>`__
+- 2026-07-04 · `docs: Document rerun double-trigger
+  prevention <https://github.com/amarula/check-jenkins/commit/cb4fec28ced581635e6f38ca4c19b0d96ae28347>`__
+- 2026-07-04 · `ProxyTriggerAction: Throw IOException for 5xx responses
+  from
+  Jenkins <https://github.com/amarula/check-jenkins/commit/847ce26dc84c96c45acdffd773dc7a2ccfb06d2e>`__
+- 2026-07-04 · `web/fetcher: Don’t show login prompt on network or 5xx
+  errors <https://github.com/amarula/check-jenkins/commit/658e045e2349f51657193c8d8d5d5e23ea2b6f75>`__
+- 2026-07-04 · `Revert “web/fetcher: Don’t show login prompt on network
+  or 5xx
+  errors” <https://github.com/amarula/check-jenkins/commit/08e3248700ce95ced19e67aff15bd397be0726de>`__
+- 2026-07-04 · `Handle Jenkins 5xx via \_jenkins_unavailable marker
+  across all
+  consumers <https://github.com/amarula/check-jenkins/commit/ddbfbe132691ee75b838a255c3be53d2b5e7c290>`__
+- 2026-07-05 · `docs: Add token configuration to README examples and
+  auth
+  explanation <https://github.com/amarula/check-jenkins/commit/56e5c570b9ad3e93c183879d699df8476db59d87>`__
+- 2026-07-05 · `docs: Add Jenkins API token generation instructions to
+  README <https://github.com/amarula/check-jenkins/commit/329f777bfe420ba3821a20a85d1e52293b729b42>`__
+- 2026-07-05 · `feat: Add coverage emoji indicators matching Jenkins
+  weather-icon
+  tiers <https://github.com/amarula/check-jenkins/commit/e15775845dd242ed153dc9eafcf395ba27f85ef4>`__
+- 2026-07-05 · `docs: Add emoji to Code Coverage and Low-Coverage-Reason
+  README
+  headings <https://github.com/amarula/check-jenkins/commit/8154da1de44cee923351b36dbef686257b60dd39>`__
+- 2026-07-05 · `docs: Document coverage emoji tiers with example in
+  README <https://github.com/amarula/check-jenkins/commit/61887d294bad1454aec31717ee2cbe8dc4f160ee>`__
+- 2026-07-06 · `README.md: Move developement on
+  gerrithub.io <https://github.com/amarula/check-jenkins/commit/5bc09ce1b7113eea9c9b7ef084fb2879e3846e14>`__
+- 2026-07-06 · `fix: group independent pipeline trees by root in
+  flattened-tree
+  naming <https://github.com/amarula/check-jenkins/commit/14649718e8f845be0f9d612fa39b935c7561c0d1>`__
+- 2026-07-06 · `fix: remove spurious leading space in coverage
+  percentage
+  dash <https://github.com/amarula/check-jenkins/commit/82f1a9832d0378d21024b45756d5a65fc413e0ee>`__
+- 2026-07-06 · `docs: explain multi-tree grouping in flattened-tree
+  pipeline
+  naming <https://github.com/amarula/check-jenkins/commit/eb714a4db675fc77b5c266d042efb05f54f66885>`__
+- 2026-07-07 · `fix: correct swapped variable names in IndexedDB
+  staleness
+  pruning <https://github.com/amarula/check-jenkins/commit/4899e9a84d75ef75c044786d90106537babb3a52>`__
+- 2026-07-07 · `feat: serve cached check runs immediately with
+  background
+  refresh <https://github.com/amarula/check-jenkins/commit/4d6ae8843dd0c8760db7aea737eb5114130ac898>`__
+- 2026-07-07 · `docs: describe stale-while-revalidate caching in
+  architecture
+  overview <https://github.com/amarula/check-jenkins/commit/5b32c40a78e0a4912a847b71aa7f0f4defa818fc>`__
+- 2026-07-07 · `docs: document runs cache with stale-while-revalidate
+  pattern <https://github.com/amarula/check-jenkins/commit/2429d3789d8b1a4ce19cce4b281c4f2f39427749>`__
+- 2026-07-07 · `docs: add stale-while-revalidate sequence diagrams to
+  data
+  flow <https://github.com/amarula/check-jenkins/commit/de96ffbd125cd0f2cccb6df7d1473dc0a573545d>`__
+- 2026-07-07 · `docs: update fetcher lifecycle docs with cache-first
+  strategy <https://github.com/amarula/check-jenkins/commit/57064a61fbfb0fdd70cce86fa4841bdec02bf416>`__
+- 2026-07-07 · `docs: fix rerun trigger flow to show GET for no-auth
+  path <https://github.com/amarula/check-jenkins/commit/454c83adba4ef20f4a87785539b5fd331eea4b52>`__
+- 2026-07-07 · `docs: correct rerun action description for GET vs
+  POST <https://github.com/amarula/check-jenkins/commit/149bf6887a1de77ff992239902f5322cb2b35393>`__
+- 2026-07-13 · `feat: add retry budget for unavailable enrichment
+  endpoints <https://github.com/amarula/check-jenkins/commit/1cec580c822ba3d7f1035aa6fce35122b7c647cb>`__
+- 2026-07-14 · `feat: add TTL to unavailable endpoint
+  tracking <https://github.com/amarula/check-jenkins/commit/c0be22eda705f57260ac0ec6c27b2cf870e29dc2>`__
+- 2026-07-14 · `style: apply prettier formatting and fix eqeqeq in
+  coverage.ts <https://github.com/amarula/check-jenkins/commit/00c3e9a1914ba3c6c4462f723d5aa32e6661f00a>`__
+- 2026-07-14 · `style: apply prettier formatting and fix no-explicit-any
+  in
+  coverage_test.ts <https://github.com/amarula/check-jenkins/commit/2f8dd0126d415d932ddad6211e8333a0bfb4a8cb>`__
+- 2026-07-14 · `style: fix prettier, eqeqeq, no-unused-vars, no-empty in
+  fetcher.ts <https://github.com/amarula/check-jenkins/commit/63bce9f23ed6beae6521845d9394ce4c41f74d7a>`__
+- 2026-07-14 · `style: apply prettier formatting and fix no-explicit-any
+  in
+  fetcher_test.ts <https://github.com/amarula/check-jenkins/commit/6108d7b6cf587aa164f7e1a52a238f17e35fb11f>`__
+- 2026-07-14 · `fix: add @license tag and prettier formatting to
+  index-db.ts <https://github.com/amarula/check-jenkins/commit/40dc793ab9a67346128ac3c521124712fadd0c67>`__
+- 2026-07-14 · `style: apply prettier formatting to
+  coverage-percentage-views_test.ts <https://github.com/amarula/check-jenkins/commit/d96d8a269f64032c2e01c022a5dbc9ab9fc67467>`__
+- 2026-07-14 · `style: apply prettier formatting and fix
+  no-floating-promises in
+  plugin.ts <https://github.com/amarula/check-jenkins/commit/04b0283d9828a4959f7868113f1ea0039a5aba7e>`__
+- 2026-07-14 · `fix: add @license tag and prettier formatting to
+  request-cache-service.ts <https://github.com/amarula/check-jenkins/commit/ef41208866ca7dad23665eb45fdef1e8b2bfe19b>`__
+- 2026-07-14 · `style: apply prettier formatting to
+  test-util.ts <https://github.com/amarula/check-jenkins/commit/d64dc36b52826dabb0a675b1b7af822d6bfcc012>`__
+- 2026-07-14 · `style: apply prettier formatting to
+  test-setup.ts <https://github.com/amarula/check-jenkins/commit/d3f65f353daff923040fde18447c14836bfdd03c>`__
+- 2026-07-14 · `docker: add docker-compose for gerrit-plugin-builder
+  image <https://github.com/amarula/check-jenkins/commit/d07ee5f3b1a0fbcf2e3f57c1710da54a817fa883>`__
+- 2026-07-14 · `docker: add Gerrit plugin builder Dockerfile (Java 17,
+  Bazel, Chrome, Node
+  22) <https://github.com/amarula/check-jenkins/commit/738d42dc6dfbe0207301a83c8237187dd9411eda>`__
+- 2026-07-14 · `ci: add Jenkins verification pipeline for checks-jenkins
+  plugin <https://github.com/amarula/check-jenkins/commit/1d0b86402e7cc25f910eb3ce5cfba81468e891cf>`__
+- 2026-07-15 · `feat: add checks-jenkins release
+  pipeline <https://github.com/amarula/check-jenkins/commit/91d89a0bc7fc084c487ffc6816a494f26ada2809>`__
+- 2026-07-15 · `feat: add GitHub release archival to release
+  pipeline <https://github.com/amarula/check-jenkins/commit/c978e5cddc10a538263c0cc575e79f296bc59dd2>`__
+- 2026-07-28 · `checks-jenkins_release_Jenkinsfile: Use proper library
+  class to
+  build <https://github.com/amarula/check-jenkins/commit/53ddc69ed8fc80de322febb0f91304bc97bb8cce>`__
+- 2026-07-29 · `checks-jenkins_release_Jenkinsfile: move tag detection
+  and commitish capture inside
+  Docker <https://github.com/amarula/check-jenkins/commit/f173b4d826254440636485a92b9e8bdf54ae7336>`__
+
+libcppconnman
+-------------
+
+Repository URL: https://github.com/amarula/libcppconnman.git
+
+*7 commits by 2 authors*
+
+**Andrea Ricchi** — 6 commits across gconnman_manager, gagent,
+gconnman_agent_test.cpp (addressing #40).
+
+- Features (2): agent method reply tests; onReportError callback; Answer
+  ReportError and support connman retry
+- Build (1): use CMAKE_CURRENT_SOURCE_DIR for LICENSE install
+- Changes (3): Answer ReportError and support connman retry; Always
+  complete Cancel and Release invocations; Do not hold mtx\_ while
+  invoking changed callbacks
+
+Here the commits of **Andrea Ricchi** in detail:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- 2026-07-01 · `build: use CMAKE_CURRENT_SOURCE_DIR for LICENSE
+  install <https://github.com/amarula/libcppconnman/commit/8a87171b6f9d6b77c699cb23cc5d65b402dd464d>`__
+- 2026-07-01 · `gconnman_manager: Do not hold mtx\_ while invoking
+  changed
+  callbacks <https://github.com/amarula/libcppconnman/commit/caed122bf8b0d65dd65b26481a98e2433ef69d2c>`__
+- 2026-07-28 · `gagent: Always complete Cancel and Release
+  invocations <https://github.com/amarula/libcppconnman/commit/5d153a2cd20d799371aa8d2d8529f155a7476809>`__
+- 2026-07-28 · `gagent: Answer ReportError and support connman
+  retry <https://github.com/amarula/libcppconnman/commit/0778699a8a55f3726b6b0af354a97e47c6cef7b5>`__
+- 2026-07-28 · `gconnman_agent_test.cpp: Add agent method reply
+  tests <https://github.com/amarula/libcppconnman/commit/ad19c3a995bfcf06927dd3299910ed2f4071dc81>`__
+- 2026-07-28 · `gconnman_manager: Add onReportError
+  callback <https://github.com/amarula/libcppconnman/commit/23c805703576dcaa1d372b71a6d1da655176cbd9>`__
+
+**Eduardo Gonzalez** — Updated project version to 2.0.0 in
+CMakeLists.txt
+
+- Changes (1): Set project version to 2.0.0
+
+Here the commits of **Eduardo Gonzalez** in detail:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- 2026-07-17 · `CMakeLists.txt: Set project version to
+  2.0.0 <https://github.com/amarula/libcppconnman/commit/7452cf8859a4eee59da1fd8f8b1aa6177073c009>`__
+
+buildroot
+---------
+
+Repository URL: https://gitlab.com/buildroot.org/buildroot.git
+
+*23 commits by 3 authors*
+
+**Adam Duskett** — Bumped versions of yaml-cpp, mender-connect, and
+mender-artifact packages
+
+- Version bumps (3): package/yaml-cpp -> 0.9.0; package/mender-connect
+  -> 3.0.0; package/mender-artifact -> 4.4.1; Bumped version to 0.9.0
+- Changes (1): bump to version e4cdd9db21
+
+Here the commits of **Adam Duskett** in detail:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- 2026-07-27 · `package/mender-artifact: bump version to
+  4.4.1 <https://gitlab.com/buildroot.org/buildroot/commit/6b47cae61a9fd73f3be857b520e26ee0d1a9d8d4>`__
+- 2026-07-27 · `package/mender-connect: bump version to
+  3.0.0 <https://gitlab.com/buildroot.org/buildroot/commit/9f8fa5ee0db859a5f87aff144e88bcc4b899a6c4>`__
+- 2026-07-27 · `package/mender-grubenv: bump to version
+  e4cdd9db21 <https://gitlab.com/buildroot.org/buildroot/commit/2e237d22179f7f534900e0fd11fc74942d12a6b2>`__
+- 2026-07-27 · `package/yaml-cpp: bump version to
+  0.9.0 <https://gitlab.com/buildroot.org/buildroot/commit/a19e6cfe63064fb827b6234142374accd0317846>`__
+
+**Andrea Ricchi** — Added new package libcppconnman
+
+- Features (1): new package
+
+Here the commits of **Andrea Ricchi** in detail:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- 2026-07-21 · `package/libcppconnman: add new
+  package <https://gitlab.com/buildroot.org/buildroot/commit/b34c1454eacc8a9d98e9b73b586c3312538b549c>`__
+
+**Dario Binacchi** — Multiple version bumps and fixes in configs and
+packages
+
+- Fixes (4): needs gcc >= 8; build on mips64 n32; boot failure after
+  uClibc bump
+- Version bumps (12): package/armadillo -> 15.4.2; version -> 6.12.96;
+  configs/imx6ulz_bsh_smm_m2 -> 6.12.96; configs/stm32f769_disco_sd ->
+  5.15.211
+- Changes (2): configs/stm32f469_disco\_{sd, xip}: fix boot failure
+  after…; bump U-Boot and Linux versions
+
+Here the commits of **Dario Binacchi** in detail:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- 2026-07-09 · `boot/uboot: bump to version
+  2026.07 <https://gitlab.com/buildroot.org/buildroot/commit/29f09f3ac4284890eda4a13f3748cb59d390d410>`__
+- 2026-07-11 · `configs/beaglebone: bump Linux to 6.18.38 and U-Boot to
+  2026.07 <https://gitlab.com/buildroot.org/buildroot/commit/a01bc94fba8bb2d5e40274ce1563040e81470f03>`__
+- 2026-07-12 · `configs/ti_am62x_sk: bump U-Boot and Linux
+  versions <https://gitlab.com/buildroot.org/buildroot/commit/d552378b00d6f5a7788cbef5f7fc27c8f927d336>`__
+- 2026-07-12 · `configs/stm32mp1*_dk\*: bump Linux to 6.12.95 and U-Boot
+  to
+  2026.07 <https://gitlab.com/buildroot.org/buildroot/commit/ec402e6c8e8638b55a178815d72c8585954673d8>`__
+- 2026-07-12 · `configs/stm32f746_disco_sd: bump Linux to 5.15.211 and
+  U-Boot to
+  2026.07 <https://gitlab.com/buildroot.org/buildroot/commit/0875457c116c432431118cb2d5e34afb6a321bdd>`__
+- 2026-07-14 · `package/armadillo: bump to version
+  15.4.1 <https://gitlab.com/buildroot.org/buildroot/commit/f2d4e6f159b4cd3dc6750cf4e5bd595864de45a3>`__
+- 2026-07-21 · `configs/stm32h747_disco_sd: bump Linux to 6.18.39 and
+  U-Boot to
+  2026.07 <https://gitlab.com/buildroot.org/buildroot/commit/2547ad8dfeb9f6c19ab6113efe92a6d17a97ab9c>`__
+- 2026-07-21 · `configs/stm32f429_disco_xip: fix boot failure after
+  uClibc
+  bump <https://gitlab.com/buildroot.org/buildroot/commit/72f7aa47e73e9a93dbfa3e4128c0d8e7932edb50>`__
+- 2026-07-21 · `configs/stm32f469_disco\_{sd, xip}: fix boot failure
+  after uClibc
+  bump <https://gitlab.com/buildroot.org/buildroot/commit/832ff692ab26e7ab10d86625f13ac9beda7461a2>`__
+- 2026-07-21 · `configs/stm32f769_disco_sd: fix boot failure after
+  uClibc
+  bump <https://gitlab.com/buildroot.org/buildroot/commit/dd67de1bd3374a75ab1845ef29e3ad3c3bed2aac>`__
+- 2026-07-21 · `configs/stm32f429_disco_xip: bump Linux to
+  6.1.177 <https://gitlab.com/buildroot.org/buildroot/commit/0a33d2553c9412e378a7a60e21cb892494c10abb>`__
+- 2026-07-21 · `configs/stm32f469_disco\_{sd, xip}: bump Linux to
+  5.15.211 <https://gitlab.com/buildroot.org/buildroot/commit/0c30a2c7a72742350de60f728cecb5119e834a1a>`__
+- 2026-07-21 · `configs/stm32f769_disco_sd: bump Linux to 5.15.211 and
+  U-Boot to
+  2026.07 <https://gitlab.com/buildroot.org/buildroot/commit/731ff274c62f521d0e7d5a9763f0260b28445fa3>`__
+- 2026-07-22 · `configs/imx6ulz_bsh_smm_m2: bump Linux to 6.12.96 and
+  U-Boot to
+  2026.07 <https://gitlab.com/buildroot.org/buildroot/commit/762ea654fdd99acc2947660294e0dd98554ef91d>`__
+- 2026-07-22 · `configs/imx8mn_bsh_smm_s2[\_pro]: bump Linux to 6.12.96
+  and U-Boot to
+  2026.07 <https://gitlab.com/buildroot.org/buildroot/commit/a424126096b5c909f1a7f99abf944e3df596aeed>`__
+- 2026-07-30 · `package/openblas: fix build on mips64
+  n32 <https://gitlab.com/buildroot.org/buildroot/commit/fd685fc8c2c061641e94bff8f5db76d49be6a18b>`__
+- 2026-07-30 · `package/armadillo: needs gcc >=
+  8 <https://gitlab.com/buildroot.org/buildroot/commit/cec50f48d6b2f2d2b8683b1637e4513a5acb0d5a>`__
+- 2026-07-30 · `package/armadillo: bump to version
+  15.4.2 <https://gitlab.com/buildroot.org/buildroot/commit/33608902b85f22e97aa7c5e08c9a62a48cee79fe>`__
+
+--------------
+
+*Generated by the Git Commit Analyzer*
+
+.. tip::
+
+   Want to contribute to the open source projects featured in these
+   reports? Amarula Solutions is always looking for collaboration
+   opportunities in embedded Linux, Buildroot, Yocto, U-Boot, and
+   Zephyr. `Contact our open source
+   team <https://www.amarulasolutions.com/contact/>`__
