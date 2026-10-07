@@ -8,6 +8,11 @@ Conferences
 Amarula Solutions has a strong record of sponsoring, participating, speaking
 and showcasing our work at international conferences.
 
+2026, Amarula Solutions at ELCE 2026
+************************************
+
+Talk: `A Clockwork Frequency: Bringing Spread Spectrum To The Linux Clock Subsystem <https://osselceu2026.sched.com/event/2RaYT/a-clockwork-frequency-bringing-spread-spectrum-to-the-linux-clock-subsystem-dario-binacchi-amarula-solutions>`_
+
 2025, Amarula Solutions at ELCE 2025
 ************************************
 
