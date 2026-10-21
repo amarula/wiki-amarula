@@ -14,6 +14,7 @@ IOT projects
 
    esp32-s3-project
    esp32-camera
+   mender-over-mcu
 
 .. tip::
    Building an IoT product on ESP32? Amarula Solutions provides firmware
