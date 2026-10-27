@@ -16,6 +16,7 @@ Kernel Development
    :caption: Contents:
 
    h264-encoder-porting
+   i2c-fpga-linux-driver
 
 .. tip::
    Need a hardware subsystem brought up on mainline Linux? Amarula Solutions
