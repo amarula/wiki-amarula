@@ -14,6 +14,7 @@ General Articles
    patchwork-v3-migration
    bianchina-test-board
    roadmap-for-newbies
+   i2c-fpga-linux-driver
 
 .. tip::
    Have a tool or process that could benefit from documentation? Amarula
