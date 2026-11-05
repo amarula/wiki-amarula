@@ -12,6 +12,7 @@ Mobile Application Development
    :caption: Contents:
 
    one-codebase-two-platforms
+   ble-move-data-log
 
 .. tip::
    Planning a cross-platform mobile application, or migrating an existing one
