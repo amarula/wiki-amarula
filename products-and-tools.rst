@@ -3,7 +3,7 @@ Amarula Products & Tools
 ===========================
 
 .. note:: **TL;DR**
-   - Overview of Amarula Solutions' **open source products and developer tools** — including the **ReviewAI Gerrit Code Review plugin**, **Jitsi Audio Bridge** (local meeting transcription and summarisation), **CuteKeyboard** (Qt virtual keyboard), **Flutekeyboard**, **Jelliphy** (AI web framework), **DynDesign** (Python dynamic decoration), **meta-mend** (Yocto security), **libcppconnman**, **ldap-passwd-webui**, **gitea-artifact-manager**, and the **git-collect Jenkins plugin**.
+   - Overview of Amarula Solutions' **open source products and developer tools** — including the **ReviewAI Gerrit Code Review plugin**, **Jitsi Audio Bridge** (local meeting transcription and summarisation), **KMPMoney** (currency-safe Kotlin Multiplatform money library), **CuteKeyboard** (Qt virtual keyboard), **Flutekeyboard**, **Jelliphy** (AI web framework), **DynDesign** (Python dynamic decoration), **meta-mend** (Yocto security), **libcppconnman**, **ldap-passwd-webui**, **gitea-artifact-manager**, and the **git-collect Jenkins plugin**.
    - The **Amarula Solutions Infrastructure** — the turnkey, Ansible-provisioned platform Amarula runs internally (LDAP SSO, Gerrit, Gitea, Jenkins, Mend SCA, AI review and diagnostics), available for evaluation and production deployment.
 
 Turnkey Infrastructure Platform
@@ -70,6 +70,14 @@ Python & C++ Libraries
 - **libcppconnman** — C++ wrapper for ConnMan network manager.
   See `opensource/products/libcppconnman <opensource/products/libcppconnman.html>`_.
 
+Kotlin Multiplatform Libraries
+===============================
+
+- **KMPMoney** — Currency-safe arbitrary-precision money library for Kotlin
+  Multiplatform (JVM, Android, iOS), with lossless allocation, cash rounding,
+  and pluggable exchange-rate conversion.
+  See `opensource/products/kmpmoney <opensource/products/kmpmoney.html>`_.
+
 .. toctree::
    :maxdepth: 1
    :caption: Reference
@@ -77,6 +85,7 @@ Python & C++ Libraries
 
    opensource/products/reviewai-gerrit-plugin
    opensource/products/jitsi-audio-bridge
+   opensource/products/kmpmoney
    opensource/products/cutekeyboard
    opensource/products/flutekeyboard
    opensource/products/ldap-passwd-webui
