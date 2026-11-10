@@ -3,7 +3,7 @@ Mobile Application Development
 
 .. note:: **TL;DR**
    - Articles on **cross-platform mobile application development** — sharing business logic and UI across **Android and iOS** with **Kotlin Multiplatform (KMP)** and **Compose Multiplatform**, and the migration strategies that make it safe to adopt in a product that is already live.
-   - Covers **incremental migration behind build-time feature flags**, platform abstraction with ``expect``/``actual`` interfaces and one native implementation per platform, and dependency modernization (kapt to KSP, Groovy to Kotlin DSL, Koin, kotlinx-datetime and kotlinx.serialization).
+   - Covers **incremental migration behind build-time feature flags**, platform abstraction with ``expect``/``actual`` interfaces and one native implementation per platform, dependency modernization (kapt to KSP, Groovy to Kotlin DSL, Koin, kotlinx-datetime and kotlinx.serialization), and **Kotlin Flow** — cold vs. hot streams, operators, and ``StateFlow``/``SharedFlow``.
 
 .. _contents: Table of contents
 
@@ -13,6 +13,7 @@ Mobile Application Development
 
    one-codebase-two-platforms
    ble-move-data-log
+   kotlin-flow
 
 .. tip::
    Planning a cross-platform mobile application, or migrating an existing one
