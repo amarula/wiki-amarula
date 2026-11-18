@@ -14,6 +14,7 @@ Mobile Application Development
    one-codebase-two-platforms
    ble-move-data-log
    kotlin-flow
+   firebase-auth-silent-logout
 
 .. tip::
    Planning a cross-platform mobile application, or migrating an existing one
